@@ -22,10 +22,15 @@ Regle du second panneau, decidee avec le proprietaire de la borne : des
 qu un second joueur peut rejoindre, les MEMES boutons s allument des deux
 cotes. Un jeu a un seul joueur laisse le panneau 2 eteint.
 
-Cote LED, on n ecrit QUE dans brightness, jamais dans multi_intensity : les
-couleurs restent celles que la carte a posees. Meme regle que le demon des
-credits, pour la meme raison — rien n entre en conflit avec le code de la
-carte, et une remise a 255 rend la LED exactement telle qu elle etait.
+Cote LED : brightness pour allumer ou eteindre, et multi_intensity pour la
+couleur d origine du bouton quand la base la connait — bleu pour un coup de
+poing, rouge pour un saut, comme sur la vraie borne. La couleur posee par la
+carte est memorisee AVANT d etre changee, et rendue des qu on quitte le jeu
+ou qu on survole un jeu sans couleurs. C est la meme discipline que le demon
+des credits : rien ne reste modifie derriere nous.
+
+L ordre des composantes est lu dans multi_index, que le materiel publie
+lui-meme (« red green blue » ici) : on ne le suppose pas.
 
 Aucune dependance : uniquement la bibliotheque standard.
 """
@@ -45,6 +50,53 @@ JOURNAL = "/recalbox/share/system/panneau.log"
 ORDRE_BOUTONS = [3, 4, 5, 1, 2, 6]
 PLEIN = "255"
 PERIODE = 0.3                # cadence de lecture du fichier d etat
+
+# Couleurs nommees par la base, telles qu elles sont ecrites sur les bornes.
+TEINTES = {
+    "red": (0xFF, 0x00, 0x00), "blue": (0x00, 0x00, 0xFF),
+    "green": (0x00, 0xFF, 0x00), "yellow": (0xFF, 0xFF, 0x00),
+    "white": (0xFF, 0xFF, 0xFF), "black": (0x20, 0x20, 0x20),
+    "orange": (0xFF, 0x60, 0x00), "purple": (0x80, 0x00, 0xFF),
+    "pink": (0xFF, 0x40, 0x80), "cyan": (0x00, 0xFF, 0xFF),
+    "grey": (0x60, 0x60, 0x60), "gray": (0x60, 0x60, 0x60),
+}
+
+
+# Palette « comme les arcades d origine », pour les jeux dont la base ne
+# connait pas les couleurs (1522 sur 1735). Elle n est pas inventee : c est,
+# pour chaque nombre de boutons, la palette la plus frequente parmi les 213
+# jeux dont arcade-database publie les vraies couleurs d epoque.
+#   4 boutons : Rouge Jaune Vert Bleu — le Neo Geo MVS, 8 jeux sur 16
+#   6 boutons : Bleu Jaune Rouge x2 — les jeux de combat Capcom, deux rangees
+#   3 boutons : egalite Capcom (bleu) / Sega (rouge) — bleu retenu
+PALETTE_DEFAUT = {
+    1: ["red"],
+    2: ["red", "blue"],
+    3: ["blue", "blue", "blue"],
+    4: ["red", "yellow", "green", "blue"],
+    5: ["blue", "yellow", "red", "blue", "yellow"],
+    6: ["blue", "yellow", "red", "blue", "yellow", "red"],
+}
+
+
+def teinte_par_defaut(nombre, numero):
+    palette = PALETTE_DEFAUT.get(nombre) or PALETTE_DEFAUT[6]
+    return palette[numero - 1] if numero - 1 < len(palette) else "white"
+
+
+def lire_fichier(chemin):
+    try:
+        with open(chemin) as fh:
+            return fh.read().strip()
+    except (IOError, OSError):
+        return None
+
+
+def couleur_pour(chemin_led, rvb):
+    """La couleur dans l ordre que CETTE led annonce dans multi_index."""
+    index = (lire_fichier(os.path.join(chemin_led, "multi_index")) or "red green blue").split()
+    par_nom = {"red": rvb[0], "green": rvb[1], "blue": rvb[2]}
+    return " ".join(str(par_nom.get(nom, 0)) for nom in index)
 
 
 def journal(msg):
@@ -91,9 +143,9 @@ def chemins_led(joueur):
     return paires
 
 
-def ecrire(chemin, valeur):
+def ecrire(chemin, valeur, fichier="brightness"):
     try:
-        with open(os.path.join(chemin, "brightness"), "w") as fh:
+        with open(os.path.join(chemin, fichier), "w") as fh:
             fh.write(valeur)
     except (IOError, OSError):
         pass
@@ -104,25 +156,46 @@ class Panneau:
         self.joueur = joueur
         self.boutons = chemins_led(joueur)
         self.dernier = None          # ce qu on a applique en dernier
+        self.origine = {}            # couleur posee par la carte, par led
 
-    def appliquer(self, nombre, allume=True):
-        """Allume les `nombre` premiers boutons logiques, eteint le reste."""
-        voulu = (nombre if allume else 0)
+    def _memoriser(self, chemin):
+        if chemin not in self.origine:
+            valeur = lire_fichier(os.path.join(chemin, "multi_intensity"))
+            if valeur:
+                self.origine[chemin] = valeur
+
+    def _rendre_couleur(self, chemin):
+        if chemin in self.origine:
+            ecrire(chemin, self.origine[chemin], "multi_intensity")
+
+    def appliquer(self, nombre, couleurs, allume=True):
+        """Allume les `nombre` premiers boutons logiques, eteint le reste,
+        et pose la couleur d origine de chacun quand la base la connait."""
+        voulu = (nombre, tuple(sorted(couleurs.items()))) if allume else 0
         if voulu == self.dernier:
             return
         for position, chemins in enumerate(self.boutons):
             numero = ORDRE_BOUTONS[position] if position < len(ORDRE_BOUTONS) else position + 1
-            valeur = PLEIN if (allume and numero <= nombre) else "0"
+            utilise = allume and numero <= nombre
+            teinte = ((couleurs.get("BUTTON%d" % numero) or {}).get("couleur")
+                      or teinte_par_defaut(nombre, numero))
+            rvb = TEINTES.get((teinte or "").strip().lower())
             for chemin in chemins:
-                ecrire(chemin, valeur)
+                self._memoriser(chemin)
+                if utilise and rvb:
+                    ecrire(chemin, couleur_pour(chemin, rvb), "multi_intensity")
+                else:
+                    self._rendre_couleur(chemin)
+                ecrire(chemin, PLEIN if utilise else "0")
         self.dernier = voulu
 
     def rendre(self):
-        """Tout a 255 : l etat de repos de la carte."""
+        """Tout a 255 et couleurs d origine : l etat de repos de la carte."""
         if self.dernier == "repos":
             return
         for chemins in self.boutons:
             for chemin in chemins:
+                self._rendre_couleur(chemin)
                 ecrire(chemin, PLEIN)
         self.dernier = "repos"
 
@@ -159,6 +232,12 @@ def main():
 
         # Partie en cours : le demon des credits est maitre des LED.
         if etat.get("State") == "playing" or etat.get("Action") == "rungame":
+            # On rend les couleurs d origine AVANT que le demon des credits
+            # ne memorise les siennes : sinon il retiendrait nos couleurs
+            # comme etant celles de la carte.
+            if dernier_jeu is not None:
+                for p in panneaux.values():
+                    p.rendre()
             dernier_jeu = None
             for p in panneaux.values():
                 p.dernier = None       # on ne sait plus ce qu il y a dessus
@@ -182,12 +261,14 @@ def main():
             continue
 
         nombre = int(fiche["nombre"])
+        couleurs = fiche.get("boutons") or {}
         deuxieme = int(fiche.get("joueurs") or 1) >= 2
-        panneaux[1].appliquer(nombre)
-        panneaux[2].appliquer(nombre, allume=deuxieme)
+        panneaux[1].appliquer(nombre, couleurs)
+        panneaux[2].appliquer(nombre, couleurs, allume=deuxieme)
         if jeu != dernier_jeu:
-            journal("%s : %d bouton(s), joueur 2 %s"
-                    % (jeu, nombre, "allume" if deuxieme else "eteint"))
+            journal("%s : %d bouton(s), %d couleur(s), joueur 2 %s"
+                    % (jeu, nombre, sum(1 for v in couleurs.values() if v.get("couleur")),
+                       "allume" if deuxieme else "eteint"))
         dernier_jeu = jeu
 
 

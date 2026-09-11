@@ -50,6 +50,10 @@ while [ ! -f /tmp/arret-nuit ]; do
             [ -f /tmp/arret-nuit ] && break
             verifier_diagnostic
             n=$((n + 1))
+            # toutes les 30 min, les nouvelles fiches partent sur la borne
+            if [ $((n % 15)) -eq 0 ]; then
+                sh /mnt/recalbox/outils/deployer-vers-borne.sh
+            fi
             if [ $((n % 5)) -eq 0 ]; then
                 DISPLAY=:0 python3 -c "
 import sys; sys.path.insert(0,'/mnt/recalbox/outils')

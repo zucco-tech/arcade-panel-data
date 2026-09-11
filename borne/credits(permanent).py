@@ -410,7 +410,8 @@ class Panneau:
                     self._ecrire(chemin, "brightness", "0")
                     continue
                 self._ecrire(chemin, "brightness", str(PLEIN))
-                teinte = (couleurs.get("BUTTON%d" % numero) or {}).get("couleur")
+                teinte = ((couleurs.get("BUTTON%d" % numero) or {}).get("couleur")
+                          or teinte_par_defaut(nombre, numero))
                 rvb = TEINTES.get((teinte or "").strip().lower())
                 if rvb:
                     self._ecrire(chemin, "multi_intensity", couleur(*rvb))
@@ -426,6 +427,28 @@ class Panneau:
                 if chemin in self.origine:
                     self._ecrire(chemin, "multi_intensity", self.origine[chemin])
         self.origine.clear()
+
+
+# Palette « comme les arcades d origine », pour les jeux dont la base ne
+# connait pas les couleurs (1522 sur 1735). Elle n est pas inventee : c est,
+# pour chaque nombre de boutons, la palette la plus frequente parmi les 213
+# jeux dont arcade-database publie les vraies couleurs d epoque.
+#   4 boutons : Rouge Jaune Vert Bleu — le Neo Geo MVS, 8 jeux sur 16
+#   6 boutons : Bleu Jaune Rouge x2 — les jeux de combat Capcom, deux rangees
+#   3 boutons : egalite Capcom (bleu) / Sega (rouge) — bleu retenu
+PALETTE_DEFAUT = {
+    1: ["red"],
+    2: ["red", "blue"],
+    3: ["blue", "blue", "blue"],
+    4: ["red", "yellow", "green", "blue"],
+    5: ["blue", "yellow", "red", "blue", "yellow"],
+    6: ["blue", "yellow", "red", "blue", "yellow", "red"],
+}
+
+
+def teinte_par_defaut(nombre, numero):
+    palette = PALETTE_DEFAUT.get(nombre) or PALETTE_DEFAUT[6]
+    return palette[numero - 1] if numero - 1 < len(palette) else "white"
 
 
 def joueurs_simultanes(fiche_boutons):
