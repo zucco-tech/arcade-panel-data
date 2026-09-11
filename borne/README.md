@@ -1,34 +1,55 @@
-# La borne
+# Les scripts de la borne
 
-**La seule partie de ce dépôt liée à un matériel particulier.** Tout le reste
-vaut pour n'importe quelle installation.
+Ce dossier est lu par Recalbox au démarrage. Un script dont le nom contient
+`(permanent)` est lancé une fois et laissé tourner ; un nom entre crochets
+`[evenement]` est appelé à chaque événement du frontend.
 
-`credits(permanent).py` est un script permanent d'EmulationStation qui pilote
-les LED d'une carte **AllInOne (digipcb.tech)** sous Recalbox.
+| script | rôle |
+|---|---|
+| `credits(permanent).py` | pendant une partie : lit le compteur de crédits en mémoire, fait clignoter PIÈCE ou START, éclaire les boutons utiles, éteint le poste 2 s'il ne sert pas |
+| `panneau(permanent).py` | dans le menu : éclaire les boutons du jeu **survolé**, avec ses couleurs d'origine, avant même de le lancer |
+| `marquee(permanent).py` | affiche le nom du jeu sur le marquee |
+| `allinone[…].sh` | remet les couleurs de la carte aux changements de système |
+| `gardefou[…].ash` | garde-fou du frontend |
 
-## Ce qu'il fait
+## Qui pilote les LED, et quand
 
-| | bouton pièce | start J1 | start J2 |
-|---|---|---|---|
-| plus de crédit | **clignote rouge** | — | — |
-| du crédit, partie pas lancée | — | **clignote** | — |
-| partie en cours | — | — | — |
-| crédit disponible, jeu à deux | — | — | **clignote** |
+Deux scripts écrivent dans les LED, jamais en même temps :
 
-Il lit `donnees/credits-arcade.json`, et apprend tout seul les jeux qui n'y
-sont pas, la première fois qu'on y joue.
+```
+menu, jeu survole      panneau(permanent).py
+partie en cours        credits(permanent).py   (panneau se tait)
+retour au menu         panneau reprend, apres avoir rendu les couleurs
+```
 
-## Ce qu'il ne fait pas
+Les deux suivent la même règle : on n'écrit que dans `brightness`, et dans
+`multi_intensity` seulement pour poser la couleur d'origine d'un bouton — la
+couleur posée par la carte est mémorisée avant, et rendue en partant. Rien
+ne reste modifié derrière eux.
 
-Il ne modifie **aucun fichier de Recalbox ni de digi**. Côté LED il n'écrit
-que dans `brightness`, et dans `multi_intensity` seulement le temps d'un
-clignotement — en relisant d'abord la couleur posée par la carte pour la
-remettre après, et sans jamais écraser une couleur repeinte entre-temps.
+## Les données
 
-## Deux particularités de la carte prototype
+```
+/recalbox/share/system/credits-arcade.json    ou lire les credits, par jeu
+/recalbox/share/system/boutons-arcade.json    combien de boutons, combien de joueurs, couleurs
+```
 
-Réglables en tête de fichier, et **absentes des données** :
+Elles sont fabriquées sur le PC de relevé et poussées ici toutes les
+30 minutes, hors partie. Le démon des crédits ne relit sa base qu'au
+démarrage : le déploiement le redémarre, uniquement quand personne ne joue.
 
-- les LED `start` et `select` du driver sont croisées par rapport au panneau
-- les WS2812B attendent l'ordre **vert, rouge, bleu** alors que le driver les
-  déclare rouge, vert, bleu — écrire du rouge franc allume du vert
+## Les journaux
+
+```
+/recalbox/share/system/credits.log     ce que le demon des credits a decide, jeu par jeu
+/recalbox/share/system/panneau.log     ce que le panneau a eclaire au survol
+```
+
+## Les sauvegardes
+
+Chaque modification d'un script d'origine est précédée d'une copie datée
+dans `/recalbox/share/system/sauvegardes/`. Pour revenir en arrière : copier
+la sauvegarde à la place du script, et redémarrer la borne.
+
+Le dépôt de référence : https://github.com/zucco-tech/arcade-panel-data — le
+dossier `borne/` y contient exactement ces scripts.
