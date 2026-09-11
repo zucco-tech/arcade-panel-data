@@ -1,0 +1,7 @@
+# Rien de lourd ni de protege dans ce depot : ni roms, ni BIOS, ni coeurs.
+*.zip
+*.7z
+*.chd
+*.iso
+*.so
+*.tmp

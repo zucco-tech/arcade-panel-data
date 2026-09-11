@@ -1,0 +1,6030 @@
+fbneo         7760 roms,  1973 a traiter
+1973 jeu(x) au total
+[1/1973] fbneo/1941r1
+  APPRIS 0x0D58  [consommation non confirmee]
+[2/1973] fbneo/1941u
+  APPRIS 0x0D58  [consommation non confirmee]
+[3/1973] fbneo/1942
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x0011
+[4/1973] fbneo/1942a
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x0011
+[5/1973] fbneo/1942abl
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x0011
+[6/1973] fbneo/1942b
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x0011
+[7/1973] fbneo/1942w
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x0011
+[8/1973] fbneo/1943
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x0312
+[9/1973] fbneo/1943b
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x0312
+[10/1973] fbneo/1943j
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x0312
+[11/1973] fbneo/1943ja
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x0312
+[12/1973] fbneo/1943kai
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x0312
+[13/1973] fbneo/1943u
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x0312
+[14/1973] fbneo/1944
+
+arret demande, tout est sauve.
+
+13 appris, 0 difficiles, 0 echecs, en 4 min
+fbneo         7760 roms,  1960 a traiter
+1960 jeu(x) au total
+[1/1960] fbneo/1944
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[2/1960] fbneo/1944d
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[3/1960] fbneo/1944j
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[4/1960] fbneo/1945kiii
+  APPRIS 0x309C
+[5/1960] fbneo/19xx
+  APPRIS 0x4D14
+[6/1960] fbneo/19xxa
+  APPRIS 0x4D14
+[7/1960] fbneo/19xxb
+  APPRIS 0x4D14
+[8/1960] fbneo/19xxd
+  APPRIS 0x4D14  [consommation non confirmee]
+[9/1960] fbneo/19xxh
+  APPRIS 0x4D14
+[10/1960] fbneo/19xxj
+  APPRIS 0x4D14
+[11/1960] fbneo/19xxjr1
+  APPRIS 0x4D14
+[12/1960] fbneo/20pacgal
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x03F2 (+1 miroir)
+[13/1960] fbneo/20pacgalr1
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x03F2 (+2 miroir)
+[14/1960] fbneo/20pacgalr2
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x03F2 (+2 miroir)
+[15/1960] fbneo/20pacgalr4
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x03F2 (+1 miroir)
+[16/1960] fbneo/3in1semi
+  APPRIS 0x3A36
+[17/1960] fbneo/3stooges
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x1149 (+3 miroir)  [consommation non confirmee]
+[18/1960] fbneo/3wonders
+  APPRIS 0x0D58
+[19/1960] fbneo/3wondersh
+  APPRIS 0x0D58
+[20/1960] fbneo/3wondersu
+  APPRIS 0x0D58
+[21/1960] fbneo/3x3puzzl
+  APPRIS 0x1C8E  [consommation non confirmee]
+[22/1960] fbneo/4dwarrio
+  APPRIS 0x0028
+[23/1960] fbneo/4in1boot
+  APPRIS 0x9FB6
+[24/1960] fbneo/600
+  APPRIS 0x0002
+[25/1960] fbneo/64street
+  APPRIS 0xB6AC
+[26/1960] fbneo/64streetj
+  APPRIS 0xB6AC
+[27/1960] fbneo/800fath
+  APPRIS 0x0002
+[28/1960] fbneo/8ballact
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[29/1960] fbneo/8bpm
+  piste sans effet, recherche complete
+  piece 1 : 9 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x0000 (+5 miroir)  [consommation non confirmee]
+[30/1960] fbneo/99lstwar
+  APPRIS 0x0001
+[31/1960] fbneo/99lstwara
+  APPRIS 0x0001
+[32/1960] fbneo/99lstwark
+  APPRIS 0x0001
+[33/1960] fbneo/abscam
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x066E
+[34/1960] fbneo/aceattac
+  APPRIS 0x2001
+[35/1960] fbneo/aceattaca
+  APPRIS 0x2001
+[36/1960] fbneo/acrobatm
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x097F
+[37/1960] fbneo/actfancr
+  APPRIS 0x0010
+[38/1960] fbneo/actfancr1
+  APPRIS 0x0010
+[39/1960] fbneo/actfancrj
+  APPRIS 0x0010
+[40/1960] fbneo/actionhw
+  APPRIS 0x1008  [consommation non confirmee]
+[41/1960] fbneo/ad2083
+  APPRIS 0x0002
+[42/1960] fbneo/aeroboto
+  APPRIS 0x01AC
+[43/1960] fbneo/afighter
+  APPRIS 0x0001
+[44/1960] fbneo/agallet
+  APPRIS 0x01CC  [consommation non confirmee]
+[45/1960] fbneo/agalleth
+  APPRIS 0x01CC  [consommation non confirmee]
+[46/1960] fbneo/agalletj
+  APPRIS 0x01CC  [consommation non confirmee]
+[47/1960] fbneo/agalletk
+  APPRIS 0x01CC  [consommation non confirmee]
+[48/1960] fbneo/agallett
+  APPRIS 0x01CC  [consommation non confirmee]
+[49/1960] fbneo/agalletu
+  APPRIS 0x01CC  [consommation non confirmee]
+[50/1960] fbneo/agentx1
+  piste sans effet, recherche complete
+  piece 1 : 346 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x00A4
+[51/1960] fbneo/agentx2
+  APPRIS 0x00AD
+[52/1960] fbneo/agentx3
+  APPRIS 0x00B2
+[53/1960] fbneo/agentx4
+  APPRIS 0x00B3
+[54/1960] fbneo/agress
+  APPRIS 0x002E
+[55/1960] fbneo/agressb
+
+arret demande, tout est sauve.
+
+50 appris, 4 difficiles, 0 echecs, en 16 min
+fbneo         7760 roms,  1910 a traiter
+1910 jeu(x) au total
+[1/1910] fbneo/1944
+  le jeu ne s'anime pas, il n'encaissera pas de piece
+  difficile : jeu inanime (essai 1, on reessaiera)
+[2/1910] fbneo/1944d
+
+arret demande, tout est sauve.
+
+0 appris, 1 difficiles, 0 echecs, en 1 min
+fbneo         7760 roms,  1910 a traiter
+1910 jeu(x) au total
+[1/1910] fbneo/1944
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 2)
+[2/1910] fbneo/1944d
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[3/1910] fbneo/1944j
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[4/1910] fbneo/8bpm
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x0000 (+5 miroir)  [consommation non confirmee]
+[5/1910] fbneo/agressb
+  APPRIS 0x002E
+[6/1910] fbneo/airattck
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x9802
+[7/1910] fbneo/airattcka
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x9802
+[8/1910] fbneo/airbustr
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x54D5 (+1 miroir)
+[9/1910] fbneo/airbustrb
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x5000 (+2 miroir)
+[10/1910] fbneo/airbustrj
+  piste sans effet, recherche complete
+  piece 1 : 8 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x5164 (+2 miroir)
+[11/1910] fbneo/airduel
+  piste sans effet, recherche complete
+  piece 1 : 36 candidat(s)
+  piece 2 : 7 candidat(s)
+  APPRIS 0x13C28 (+1 miroir)
+[12/1910] fbneo/airwolf
+  APPRIS 0x0001
+[13/1910] fbneo/airwolfa
+
+arret demande, tout est sauve.
+
+9 appris, 3 difficiles, 0 echecs, en 3 min
+fbneo         7760 roms,  1903 a traiter
+1903 jeu(x) au total
+[1/1903] fbneo/1944
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[2/1903] fbneo/1944d
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[3/1903] fbneo/1944j
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[4/1903] fbneo/3stooges
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x1747 (+1 miroir)
+[5/1903] fbneo/8bpm
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 6 candidat(s)
+  6 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[6/1903] fbneo/airwolfa
+  APPRIS 0x0001
+[7/1903] fbneo/ajax
+  APPRIS 0x008C (+1 miroir)
+[8/1903] fbneo/ajaxj
+  APPRIS 0x008C (+1 miroir)
+[9/1903] fbneo/akiss
+  APPRIS 0x50A2
+[10/1903] fbneo/akkanvdr
+  APPRIS 0xFFCA
+[11/1903] fbneo/alexkidd
+  APPRIS 0x3001
+[12/1903] fbneo/alexkidd1
+  APPRIS 0x3001
+[13/1903] fbneo/alibaba
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x066E (+1 miroir)
+[14/1903] fbneo/alibabab
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x066E (+2 miroir)
+[15/1903] fbneo/aliencha
+  APPRIS 0xC7BC
+[16/1903] fbneo/alienchac
+  APPRIS 0xC7B8
+[17/1903] fbneo/aliens
+  APPRIS 0x0802
+[18/1903] fbneo/aliens2
+  APPRIS 0x0802
+[19/1903] fbneo/aliens3
+  APPRIS 0x0802
+[20/1903] fbneo/aliensa
+  APPRIS 0x0802
+[21/1903] fbneo/aliensj
+  APPRIS 0x0802
+[22/1903] fbneo/aliensj2
+  APPRIS 0x0802
+[23/1903] fbneo/aliensu
+  APPRIS 0x0802
+[24/1903] fbneo/aliensyn
+  APPRIS 0x0001
+[25/1903] fbneo/aliensyn2
+  APPRIS 0x0001
+[26/1903] fbneo/aliensyn3
+  APPRIS 0x0001
+[27/1903] fbneo/aliensyn5
+  APPRIS 0x0001
+[28/1903] fbneo/aliensyn7
+  APPRIS 0x0001
+[29/1903] fbneo/aliensynj
+  APPRIS 0x0001
+[30/1903] fbneo/aliensynjo
+  APPRIS 0x0001
+[31/1903] fbneo/alpha1v
+  APPRIS 0x0207
+[32/1903] fbneo/alphamis
+  piste sans effet, recherche complete
+  piece 1 : 12 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x4776 (+1 miroir)
+[33/1903] fbneo/alphaxz
+  APPRIS 0x0238
+[34/1903] fbneo/alpine
+  APPRIS 0x0099
+[35/1903] fbneo/alpinea
+  APPRIS 0x0099
+[36/1903] fbneo/altbeast
+  APPRIS 0x3001
+[37/1903] fbneo/altbeast2
+  APPRIS 0x3001
+[38/1903] fbneo/altbeast4
+  APPRIS 0x3001
+[39/1903] fbneo/altbeast5
+  APPRIS 0x3001
+[40/1903] fbneo/altbeast6
+  piste sans effet, recherche complete
+  piece 1 : 91 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x302D  [consommation non confirmee]
+[41/1903] fbneo/altbeastj
+  APPRIS 0x3001
+[42/1903] fbneo/altbeastj1
+  APPRIS 0x3001
+[43/1903] fbneo/altbeastj3
+  APPRIS 0x3001
+[44/1903] fbneo/ambush
+  APPRIS 0x004C
+[45/1903] fbneo/ambushh
+  APPRIS 0x004C
+[46/1903] fbneo/ambushj
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[47/1903] fbneo/ambushv
+  APPRIS 0x004C
+[48/1903] fbneo/amidar
+  APPRIS 0x0002
+[49/1903] fbneo/amidar1
+  APPRIS 0x0002
+[50/1903] fbneo/amidarb
+  APPRIS 0x0002
+[51/1903] fbneo/amidaro
+  APPRIS 0x0002
+[52/1903] fbneo/amidars
+  APPRIS 0x0002
+[53/1903] fbneo/amidaru
+  APPRIS 0x0002
+[54/1903] fbneo/amigo
+  APPRIS 0x0002
+[55/1903] fbneo/anteater
+  APPRIS 0x00EE
+[56/1903] fbneo/anteaterg
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x00EE
+[57/1903] fbneo/anteateruk
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x00EE
+[58/1903] fbneo/aoh
+  piste sans effet, recherche complete
+  piece 1 : 180 candidat(s)
+  piece 2 : 7 candidat(s)
+  APPRIS 0x28E73E (+1 miroir)
+[59/1903] fbneo/aquajack
+  APPRIS 0x0048  [consommation non confirmee]
+[60/1903] fbneo/aquajackj
+  APPRIS 0x0048  [consommation non confirmee]
+[61/1903] fbneo/aquajacku
+  APPRIS 0x0048  [consommation non confirmee]
+[62/1903] fbneo/aquarium
+  APPRIS 0x8BF6
+[63/1903] fbneo/arabian
+  APPRIS 0x0340
+[64/1903] fbneo/arabiana
+  APPRIS 0x0340
+[65/1903] fbneo/arabianm
+  APPRIS 0xDC2A
+[66/1903] fbneo/arabianmj
+  APPRIS 0xDC2A
+[67/1903] fbneo/arabianmu
+  APPRIS 0xDC2A
+[68/1903] fbneo/arcadecl
+  piste sans effet, recherche complete
+  piece 1 : 50 candidat(s)
+  piece 2 : 9 candidat(s)
+  APPRIS 0x20AC9 (+4 miroir)
+[69/1903] fbneo/archrivl
+  APPRIS 0x1E1D  [consommation non confirmee]
+[70/1903] fbneo/area88
+  APPRIS 0x0FFF
+[71/1903] fbneo/area88r
+  APPRIS 0x0FFF
+[72/1903] fbneo/argus
+  APPRIS 0x0021
+[73/1903] fbneo/argusg
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x2439  [consommation non confirmee]
+[74/1903] fbneo/arian
+  piste sans effet, recherche complete
+  piece 1 : 11 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x4776 (+1 miroir)
+[75/1903] fbneo/ark1ball
+  APPRIS 0x0432  [consommation non confirmee]
+[76/1903] fbneo/arkangc2
+  APPRIS 0x0432
+[77/1903] fbneo/arkanoid
+  APPRIS 0x0432
+[78/1903] fbneo/arkanoidj
+  APPRIS 0x0432  [consommation non confirmee]
+[79/1903] fbneo/arkanoidjb
+  APPRIS 0x0432  [consommation non confirmee]
+[80/1903] fbneo/arkanoidu
+  APPRIS 0x0432
+[81/1903] fbneo/arkanoiduo
+  APPRIS 0x0432
+[82/1903] fbneo/arkarea
+  APPRIS 0x0004
+[83/1903] fbneo/arkatayt
+  APPRIS 0x0432
+[84/1903] fbneo/arkatour
+  APPRIS 0x0432
+[85/1903] fbneo/arkbloc2
+  APPRIS 0x0432
+[86/1903] fbneo/arkblock
+  APPRIS 0x0432
+[87/1903] fbneo/arkgcbl
+  APPRIS 0x0432
+[88/1903] fbneo/arkgcbla
+  APPRIS 0x0432
+[89/1903] fbneo/arkretrn
+  APPRIS 0x0260
+[90/1903] fbneo/arktayt2
+  APPRIS 0x0432
+[91/1903] fbneo/armchmp2
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[92/1903] fbneo/armchmp2o
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[93/1903] fbneo/armedf
+  piste sans effet, recherche complete
+  piece 1 : 8 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x63B8 (+3 miroir)
+[94/1903] fbneo/armedff
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x63B8 (+3 miroir)
+[95/1903] fbneo/armorcar
+  APPRIS 0x0112
+[96/1903] fbneo/armorcar2
+  APPRIS 0x0112
+[97/1903] fbneo/armwrest
+  APPRIS 0x07C9  [consommation non confirmee]
+[98/1903] fbneo/ashnojoe
+  piste sans effet, recherche complete
+  piece 1 : 10 candidat(s)
+  piece 2 : 7 candidat(s)
+  APPRIS 0x9294 (+2 miroir)
+[99/1903] fbneo/ashura
+  APPRIS 0x0858
+[100/1903] fbneo/ashuraj
+  APPRIS 0x0858
+[101/1903] fbneo/ashurau
+  APPRIS 0x0858
+[102/1903] fbneo/asideral
+  APPRIS 0x0002
+[103/1903] fbneo/aso
+  piste sans effet, recherche complete
+  piece 1 : 11 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x4774 (+1 miroir)
+[104/1903] fbneo/assault
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[105/1903] fbneo/assaultj
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[106/1903] fbneo/assaultp
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[107/1903] fbneo/astdelux
+  APPRIS 0x008C
+[108/1903] fbneo/astdelux1
+  APPRIS 0x0093
+[109/1903] fbneo/astdelux2
+  APPRIS 0x0093
+[110/1903] fbneo/asterix
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[111/1903] fbneo/asterixaad
+  piste sans effet, recherche complete
+  piece 1 : 33 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[112/1903] fbneo/asterixeaa
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[113/1903] fbneo/asterixeac
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[114/1903] fbneo/asterixj
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x8E81  [consommation non confirmee]
+[115/1903] fbneo/asterock
+  APPRIS 0x006F
+[116/1903] fbneo/asteroid
+  APPRIS 0x0070
+[117/1903] fbneo/asteroid1
+  APPRIS 0x006F
+[118/1903] fbneo/asteroid2
+  APPRIS 0x0070
+[119/1903] fbneo/astrians
+  APPRIS 0x0002
+[120/1903] fbneo/astrofl
+  APPRIS 0x0000
+[121/1903] fbneo/astyanax
+  APPRIS 0x883E
+[122/1903] fbneo/asuka
+  APPRIS 0x3612  [consommation non confirmee]
+[123/1903] fbneo/asukaj
+  APPRIS 0x3612  [consommation non confirmee]
+[124/1903] fbneo/atehate
+  APPRIS 0x6028
+[125/1903] fbneo/atetris
+  piste sans effet, recherche complete
+  piece 1 : 13 candidat(s)
+  piece 2 : 9 candidat(s)
+  APPRIS 0x1051 (+4 miroir)
+[126/1903] fbneo/atetrisa
+  piste sans effet, recherche complete
+  piece 1 : 10 candidat(s)
+  piece 2 : 10 candidat(s)
+  APPRIS 0x1051 (+4 miroir)
+[127/1903] fbneo/atetrisb
+  piste sans effet, recherche complete
+  piece 1 : 13 candidat(s)
+  piece 2 : 10 candidat(s)
+  APPRIS 0x1051 (+4 miroir)
+[128/1903] fbneo/atetrisb2
+  piste sans effet, recherche complete
+  piece 1 : 13 candidat(s)
+  piece 2 : 10 candidat(s)
+  APPRIS 0x1051 (+4 miroir)
+[129/1903] fbneo/atetrisc
+  piste sans effet, recherche complete
+  piece 1 : 11 candidat(s)
+  piece 2 : 9 candidat(s)
+  APPRIS 0x0600 (+5 miroir)
+[130/1903] fbneo/atetrisc2
+  piste sans effet, recherche complete
+  piece 1 : 13 candidat(s)
+  piece 2 : 10 candidat(s)
+  APPRIS 0x0600 (+5 miroir)
+[131/1903] fbneo/athena
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x47F1 (+1 miroir)
+[132/1903] fbneo/atlantis
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[133/1903] fbneo/atlantis2
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[134/1903] fbneo/atlantisb
+  APPRIS 0x0032
+[135/1903] fbneo/atomicp
+  APPRIS 0x1AFE (+1 miroir)
+[136/1903] fbneo/aurail
+  APPRIS 0x3FA7
+[137/1903] fbneo/aurail1
+  APPRIS 0x3FA7
+[138/1903] fbneo/aurailj
+  APPRIS 0x3FA7
+[139/1903] fbneo/avengers
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  3 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[140/1903] fbneo/avengrgs
+  piste sans effet, recherche complete
+  piece 1 : 43 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x0F98 (+2 miroir)
+[141/1903] fbneo/avengrgsj
+  piste sans effet, recherche complete
+  piece 1 : 220 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x0F98 (+2 miroir)
+[142/1903] fbneo/avspirit
+  APPRIS 0x8F8A
+[143/1903] fbneo/aztarac
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[144/1903] fbneo/azurian
+  APPRIS 0x00B0
+[145/1903] fbneo/backfirt
+  APPRIS 0x0018  [consommation non confirmee]
+[146/1903] fbneo/baddudes
+  APPRIS 0x28C0
+[147/1903] fbneo/badlands
+  piste sans effet, recherche complete
+  piece 1 : 13 candidat(s)
+  piece 2 : 10 candidat(s)
+  10 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[148/1903] fbneo/bagman
+  APPRIS 0x0000
+[149/1903] fbneo/bagmanm2
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[150/1903] fbneo/bagmans
+  APPRIS 0x0000
+[151/1903] fbneo/bagnard
+  APPRIS 0x0000
+[152/1903] fbneo/bagnarda
+  APPRIS 0x0000
+[153/1903] fbneo/bakubrkr
+  APPRIS 0x0083
+[154/1903] fbneo/balcube
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[155/1903] fbneo/ballboy
+  APPRIS 0x0194
+[156/1903] fbneo/ballbros
+  APPRIS 0x201A  [consommation non confirmee]
+[157/1903] fbneo/baluba
+  APPRIS 0x0018
+[158/1903] fbneo/banbam
+  APPRIS 0x0058
+[159/1903] fbneo/bangball
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[160/1903] fbneo/batcir
+  APPRIS 0x5862
+[161/1903] fbneo/batcira
+  APPRIS 0x5862  [consommation non confirmee]
+[162/1903] fbneo/batcird
+  APPRIS 0x5862  [consommation non confirmee]
+[163/1903] fbneo/batcirj
+  APPRIS 0x5862
+[164/1903] fbneo/batlball
+  piste sans effet, recherche complete
+  piece 1 : 12 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x8A04B  [consommation non confirmee]
+[165/1903] fbneo/batlballa
+  piste sans effet, recherche complete
+  piece 1 : 11 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x8A04B  [consommation non confirmee]
+[166/1903] fbneo/batlballu
+  piste sans effet, recherche complete
+  piece 1 : 12 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x8A04B  [consommation non confirmee]
+[167/1903] fbneo/batlbubl
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[168/1903] fbneo/batman2
+  APPRIS 0x028F
+[169/1903] fbneo/batsugun
+  APPRIS 0x0E84
+[170/1903] fbneo/batsuguna
+  APPRIS 0x0E84
+[171/1903] fbneo/batsugunsp
+  APPRIS 0x0E84
+[172/1903] fbneo/battlnts
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x1982 (+1 miroir)
+[173/1903] fbneo/battlntsj
+  piste sans effet, recherche complete
+  piece 1 : 26 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x1982 (+1 miroir)
+[174/1903] fbneo/bayroute
+  APPRIS 0x017E
+[175/1903] fbneo/bayroute1
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[176/1903] fbneo/bayroutej
+  APPRIS 0x017E
+[177/1903] fbneo/bcrusher
+  APPRIS 0x0000
+[178/1903] fbneo/bcstry
+  piste sans effet, recherche complete
+  piece 1 : 8 candidat(s)
+  piece 2 : 8 candidat(s)
+  APPRIS 0x0208 (+5 miroir)
+[179/1903] fbneo/bcstrya
+  piste sans effet, recherche complete
+  piece 1 : 9 candidat(s)
+  piece 2 : 8 candidat(s)
+  APPRIS 0x0208 (+5 miroir)
+[180/1903] fbneo/berabohm
+  piste sans effet, recherche complete
+  piece 1 : 13 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x905E
+[181/1903] fbneo/berlwall
+  APPRIS 0x0021
+[182/1903] fbneo/berlwallt
+  APPRIS 0x0021
+[183/1903] fbneo/bermudat
+  piste sans effet, recherche complete
+  piece 1 : 15 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x43CA (+1 miroir)
+[184/1903] fbneo/bermudata
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x43CA
+[185/1903] fbneo/bermudatj
+  piste sans effet, recherche complete
+  piece 1 : 12 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x43CA (+1 miroir)
+[186/1903] fbneo/bigbang
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x980C
+[187/1903] fbneo/bigkarnk
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[188/1903] fbneo/bigtwin
+  APPRIS 0x0010
+[189/1903] fbneo/billiard
+  APPRIS 0x0002
+[190/1903] fbneo/birdiy
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x041D
+[191/1903] fbneo/bishi
+  APPRIS 0x0452
+[192/1903] fbneo/bjtwin
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x9802
+[193/1903] fbneo/bjtwina
+  piste sans effet, recherche complete
+  piece 1 : 9 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x9802
+[194/1903] fbneo/bkrtmaq
+  piste sans effet, recherche complete
+  piece 1 : 23981 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[195/1903] fbneo/blackt96
+  APPRIS 0x3E81
+[196/1903] fbneo/blandia
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x100ABE
+[197/1903] fbneo/blandiap
+  APPRIS 0x0ABE  [consommation non confirmee]
+[198/1903] fbneo/blaster
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[199/1903] fbneo/blastoff
+  piste sans effet, recherche complete
+  piece 1 : 9 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x9001 (+1 miroir)
+[200/1903] fbneo/blazeon
+  APPRIS 0x01E1
+[201/1903] fbneo/blazer
+  piste sans effet, recherche complete
+  piece 1 : 11 candidat(s)
+  piece 2 : 8 candidat(s)
+  APPRIS 0xA16F (+2 miroir)
+[202/1903] fbneo/blkbustr
+  APPRIS 0x2006
+[203/1903] fbneo/blkheart
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x9818
+[204/1903] fbneo/blkheartj
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x9818
+[205/1903] fbneo/blmbycar
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x2EDF
+[206/1903] fbneo/blmbycaru
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x2EDF
+[207/1903] fbneo/blockcar
+  APPRIS 0x004A (+1 miroir)
+[208/1903] fbneo/blocken
+  piste sans effet, recherche complete
+  piece 1 : 104 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[209/1903] fbneo/blockgal
+  piste sans effet, recherche complete
+  piece 1 : 31 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[210/1903] fbneo/blockhl
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x0885
+[211/1903] fbneo/blockout
+  APPRIS 0x1F24
+[212/1903] fbneo/blockout2
+  APPRIS 0x1F22
+[213/1903] fbneo/blockoutj
+  APPRIS 0x1F22
+[214/1903] fbneo/bloodbro
+  APPRIS 0x002C
+[215/1903] fbneo/bloodstm
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[216/1903] fbneo/bloodwar
+  APPRIS 0x5F27
+[217/1903] fbneo/bloxeed
+  APPRIS 0x3001
+[218/1903] fbneo/bloxeedc
+  APPRIS 0xF001  [consommation non confirmee]
+[219/1903] fbneo/bloxeedu
+  APPRIS 0xF001  [consommation non confirmee]
+[220/1903] fbneo/blstroid
+  piste sans effet, recherche complete
+  piece 1 : 40 candidat(s)
+  piece 2 : 13 candidat(s)
+  APPRIS 0x21D5 (+2 miroir)
+[221/1903] fbneo/blstroid2
+  piste sans effet, recherche complete
+  piece 1 : 46 candidat(s)
+  piece 2 : 10 candidat(s)
+  APPRIS 0x3888
+[222/1903] fbneo/blstroid3
+  piste sans effet, recherche complete
+  piece 1 : 58 candidat(s)
+  piece 2 : 13 candidat(s)
+  APPRIS 0x2355
+[223/1903] fbneo/blstroidg
+  piste sans effet, recherche complete
+  piece 1 : 46 candidat(s)
+  piece 2 : 15 candidat(s)
+  APPRIS 0x208D (+3 miroir)
+[224/1903] fbneo/blstroidh
+  piste sans effet, recherche complete
+  piece 1 : 50 candidat(s)
+  piece 2 : 8 candidat(s)
+  APPRIS 0x37F7
+[225/1903] fbneo/blswhstl
+  APPRIS 0x0024
+[226/1903] fbneo/bluehawk
+  APPRIS 0x0903
+[227/1903] fbneo/bluehawkn
+  APPRIS 0x0903
+[228/1903] fbneo/blueprnt
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x07DB (+1 miroir)
+[229/1903] fbneo/blueprntj
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x07DB (+1 miroir)
+[230/1903] fbneo/bmaster
+  piste sans effet, recherche complete
+  piece 1 : 262 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[231/1903] fbneo/bnzabros
+  piste sans effet, recherche complete
+  piece 1 : 475 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[232/1903] fbneo/bnzabrosj
+  piste sans effet, recherche complete
+  piece 1 : 282 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[233/1903] fbneo/boblbobl
+  piste sans effet, recherche complete
+  piece 1 : 8 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x1EBA (+2 miroir)
+[234/1903] fbneo/bodyslam
+  APPRIS 0x0001
+[235/1903] fbneo/bomber
+  APPRIS 0x0002
+[236/1903] fbneo/bombjack
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x0FEA  [consommation non confirmee]
+[237/1903] fbneo/bombjack2
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[238/1903] fbneo/bombjackt
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[239/1903] fbneo/bombkick
+  APPRIS 0x000A
+[240/1903] fbneo/bombkicka
+  APPRIS 0x000A
+[241/1903] fbneo/bombrman
+  piste sans effet, recherche complete
+  piece 1 : 15 candidat(s)
+  piece 2 : 8 candidat(s)
+  APPRIS 0x3E94 (+2 miroir)
+[242/1903] fbneo/bonkadv
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x0002 (+1 miroir)  [consommation non confirmee]
+[243/1903] fbneo/bonzeadv
+  APPRIS 0x37B6
+[244/1903] fbneo/bonzeadvo
+  APPRIS 0x37B6
+[245/1903] fbneo/bonzeadvu
+  APPRIS 0x37B6
+[246/1903] fbneo/boogwing
+  APPRIS 0x8044
+[247/1903] fbneo/boogwinga
+  APPRIS 0x8044
+[248/1903] fbneo/borench
+  APPRIS 0xF02F
+[249/1903] fbneo/botanic
+  APPRIS 0x0004
+[250/1903] fbneo/bouldash
+  APPRIS 0x2112  [consommation non confirmee]
+[251/1903] fbneo/bouldashj
+  APPRIS 0x2112  [consommation non confirmee]
+[252/1903] fbneo/bradley
+  APPRIS 0x000E  [consommation non confirmee]
+[253/1903] fbneo/brix
+  APPRIS 0x1010
+[254/1903] fbneo/brkthru
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[255/1903] fbneo/brkthruj
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x0FBA (+1 miroir)
+[256/1903] fbneo/bronx
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x1991
+[257/1903] fbneo/bshark
+  APPRIS 0x793E  [consommation non confirmee]
+[258/1903] fbneo/bsharkj
+  APPRIS 0x793E  [consommation non confirmee]
+[259/1903] fbneo/bsharkjjs
+  APPRIS 0x793E
+[260/1903] fbneo/bsharku
+  APPRIS 0x793E  [consommation non confirmee]
+[261/1903] fbneo/bssoccer
+  APPRIS 0x0070  [consommation non confirmee]
+[262/1903] fbneo/btlfield
+  APPRIS 0x0004  [consommation non confirmee]
+[263/1903] fbneo/btlfieldb
+  APPRIS 0x0004  [consommation non confirmee]
+[264/1903] fbneo/btlkroad
+  APPRIS 0x1A08
+[265/1903] fbneo/btoads
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x3410A
+[266/1903] fbneo/bub68705
+  piste sans effet, recherche complete
+  piece 1 : 9 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x1EBA (+1 miroir)
+[267/1903] fbneo/bubbles
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[268/1903] fbneo/bubblesp
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[269/1903] fbneo/bubblesr
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[270/1903] fbneo/bublbobl
+  piste sans effet, recherche complete
+  piece 1 : 8 candidat(s)
+  piece 2 : 7 candidat(s)
+  APPRIS 0x1EBA (+1 miroir)
+[271/1903] fbneo/bublbobl1
+  piste sans effet, recherche complete
+  piece 1 : 8 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x1EBA (+1 miroir)
+[272/1903] fbneo/bublboblr
+  piste sans effet, recherche complete
+  piece 1 : 9 candidat(s)
+  piece 2 : 7 candidat(s)
+  APPRIS 0x1EBA (+1 miroir)
+[273/1903] fbneo/bublboblr1
+  piste sans effet, recherche complete
+  piece 1 : 8 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x1EBA (+1 miroir)
+[274/1903] fbneo/bucaner
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x066E
+[275/1903] fbneo/buccanrs
+  APPRIS 0x0112
+[276/1903] fbneo/buccanrsa
+  APPRIS 0x0112
+[277/1903] fbneo/buckrog
+  piste sans effet, recherche complete
+  piece 1 : 84 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x003E
+[278/1903] fbneo/buckrogn
+  piste sans effet, recherche complete
+  piece 1 : 87 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x003E
+[279/1903] fbneo/bucky
+  APPRIS 0x0050
+[280/1903] fbneo/buckyaa
+  APPRIS 0x0050
+[281/1903] fbneo/buggychl
+  APPRIS 0x0005
+[282/1903] fbneo/buggychlt
+  APPRIS 0x0005
+[283/1903] fbneo/bullet
+  APPRIS 0x2C01
+[284/1903] fbneo/bullfgt
+  APPRIS 0x0030
+[285/1903] fbneo/buraiken
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x2123
+[286/1903] fbneo/burglarx
+  APPRIS 0x081E
+[287/1903] fbneo/butasan
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x27F7  [consommation non confirmee]
+[288/1903] fbneo/buzzard
+  APPRIS 0x0002
+[289/1903] fbneo/bwidow
+  APPRIS 0x008D
+[290/1903] fbneo/bwings
+  piste sans effet, recherche complete
+  piece 1 : 8 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x83DD (+1 miroir)
+[291/1903] fbneo/bwingsa
+  piste sans effet, recherche complete
+  piece 1 : 12 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x83DD (+1 miroir)
+[292/1903] fbneo/bwingso
+  piste sans effet, recherche complete
+  piece 1 : 10 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x83DD (+1 miroir)
+[293/1903] fbneo/bygone
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x0CFE
+[294/1903] fbneo/bzone
+  APPRIS 0x000E
+[295/1903] fbneo/bzonec
+  APPRIS 0x000E
+[296/1903] fbneo/cabal
+  APPRIS 0x0029
+[297/1903] fbneo/cabala
+  APPRIS 0x0029
+[298/1903] fbneo/cabalus
+  APPRIS 0x0029
+[299/1903] fbneo/cabalus2
+  APPRIS 0x0029
+[300/1903] fbneo/cachat
+  APPRIS 0x8E02
+[301/1903] fbneo/cactus
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x9802 (+1 miroir)
+[302/1903] fbneo/cadash
+  APPRIS 0x31CC
+[303/1903] fbneo/cadashf
+  APPRIS 0x31CC
+[304/1903] fbneo/cadashg
+  APPRIS 0x31CC
+[305/1903] fbneo/cadashi
+  APPRIS 0x31CC
+[306/1903] fbneo/cadashj
+  APPRIS 0x31CC
+[307/1903] fbneo/cadashu
+  APPRIS 0x31CC
+[308/1903] fbneo/cairblad
+  APPRIS 0x0068
+[309/1903] fbneo/calibr50
+  APPRIS 0x0F38
+[310/1903] fbneo/calipso
+  APPRIS 0x01CA  [consommation non confirmee]
+[311/1903] fbneo/calorie
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 7 candidat(s)
+  APPRIS 0x089D (+5 miroir)
+[312/1903] fbneo/calorieb
+  piste sans effet, recherche complete
+  piece 1 : 16 candidat(s)
+  piece 2 : 7 candidat(s)
+  APPRIS 0x089D (+5 miroir)
+[313/1903] fbneo/cameltry
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[314/1903] fbneo/cameltrya
+  APPRIS 0x2332
+[315/1903] fbneo/cameltryau
+  APPRIS 0x2332
+[316/1903] fbneo/cameltryj
+  APPRIS 0x2332
+[317/1903] fbneo/candance
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x26BA (+2 miroir)
+[318/1903] fbneo/cannball
+  piste sans effet, recherche complete
+  piece 1 : 26 candidat(s)
+  piece 2 : 4 candidat(s)
+  4 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[319/1903] fbneo/cannballv
+  piste sans effet, recherche complete
+  piece 1 : 11 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[320/1903] fbneo/capbowl
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[321/1903] fbneo/capbowl2
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[322/1903] fbneo/capbowl3
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x0192 (+1 miroir)  [consommation non confirmee]
+[323/1903] fbneo/capbowl4
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x001F (+1 miroir)
+[324/1903] fbneo/capitol
+  APPRIS 0x038F
+[325/1903] fbneo/captaven
+  APPRIS 0x78D8
+[326/1903] fbneo/captavena
+  APPRIS 0x78D8
+[327/1903] fbneo/captavene
+  APPRIS 0x78D8
+[328/1903] fbneo/captavenj
+  APPRIS 0x78D8
+[329/1903] fbneo/captavenu
+  APPRIS 0x78D8
+[330/1903] fbneo/captavenua
+  APPRIS 0x78D8
+[331/1903] fbneo/captavenuu
+  APPRIS 0x78D8
+[332/1903] fbneo/carjmbre
+  piste sans effet, recherche complete
+  piece 1 : 35 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[333/1903] fbneo/castfant
+  APPRIS 0x000A
+[334/1903] fbneo/catacomb
+  APPRIS 0x001B
+[335/1903] fbneo/catch22
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[336/1903] fbneo/catt
+  APPRIS 0x1008
+[337/1903] fbneo/cavelon
+  APPRIS 0x0303
+[338/1903] fbneo/cawing
+  APPRIS 0x82AA  [consommation non confirmee]
+[339/1903] fbneo/cawingb2
+  APPRIS 0x82AA  [consommation non confirmee]
+[340/1903] fbneo/cawingbl
+  APPRIS 0x82AA  [consommation non confirmee]
+[341/1903] fbneo/cawingj
+  APPRIS 0x82AA  [consommation non confirmee]
+[342/1903] fbneo/cawingr1
+  APPRIS 0x82AA  [consommation non confirmee]
+[343/1903] fbneo/cawingu
+  APPRIS 0x82AA  [consommation non confirmee]
+[344/1903] fbneo/cbnj
+  APPRIS 0x0004
+[345/1903] fbneo/cburnrub
+  APPRIS 0x0004
+[346/1903] fbneo/cburnrub2
+  APPRIS 0x0004
+[347/1903] fbneo/ccastles
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x1094 (+2 miroir)
+[348/1903] fbneo/ccastles1
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x1010 (+1 miroir)
+[349/1903] fbneo/ccastles2
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x1093 (+2 miroir)
+[350/1903] fbneo/ccastles3
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x1094 (+2 miroir)
+[351/1903] fbneo/ccastlesf
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x1094 (+2 miroir)
+[352/1903] fbneo/ccastlesg
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x1094 (+2 miroir)
+[353/1903] fbneo/ccastlesj
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x1094 (+2 miroir)
+[354/1903] fbneo/ccastlesp
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x1094 (+2 miroir)
+[355/1903] fbneo/cdiscon1
+  APPRIS 0x0004
+[356/1903] fbneo/cfghtice
+  APPRIS 0x00BC
+[357/1903] fbneo/cgangpzl
+  APPRIS 0x10FC
+[358/1903] fbneo/cgangpzlj
+  APPRIS 0x10FC  [consommation non confirmee]
+[359/1903] fbneo/chameleo
+  APPRIS 0x002E
+[360/1903] fbneo/changes
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x000F (+1 miroir)
+[361/1903] fbneo/changesa
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x0BBD
+[362/1903] fbneo/charlien
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x21BA (+1 miroir)
+[363/1903] fbneo/chelnov
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x3FFB  [consommation non confirmee]
+[364/1903] fbneo/chelnovj
+  APPRIS 0x0043
+[365/1903] fbneo/chelnovu
+  APPRIS 0x0043
+[366/1903] fbneo/cheyenne
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x2158
+[367/1903] fbneo/chikij
+  APPRIS 0x0F3E  [consommation non confirmee]
+[368/1903] fbneo/chinatwn
+  APPRIS 0x000A
+[369/1903] fbneo/chinhero
+  piste sans effet, recherche complete
+  piece 1 : 9 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x0002 (+1 miroir)
+[370/1903] fbneo/chinhero2
+  APPRIS 0x0002
+[371/1903] fbneo/chinherot
+  piste sans effet, recherche complete
+  piece 1 : 9 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x0002 (+1 miroir)
+[372/1903] fbneo/choko
+  APPRIS 0x809F  [consommation non confirmee]
+[373/1903] fbneo/chopper
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[374/1903] fbneo/choppera
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[375/1903] fbneo/chopperb
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[376/1903] fbneo/chqflag
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[377/1903] fbneo/chqflagj
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[378/1903] fbneo/circusc
+  APPRIS 0x0002 (+1 miroir)  [consommation non confirmee]
+[379/1903] fbneo/citybomb
+  piste sans effet, recherche complete
+  piece 1 : 150 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[380/1903] fbneo/citybombj
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x02FF (+1 miroir)  [consommation non confirmee]
+[381/1903] fbneo/citycon
+  APPRIS 0x001A
+[382/1903] fbneo/citycona
+  APPRIS 0x001A
+[383/1903] fbneo/ckong
+  APPRIS 0x0001
+[384/1903] fbneo/ckongg
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[385/1903] fbneo/ckongmc
+  APPRIS 0x0001  [consommation non confirmee]
+[386/1903] fbneo/ckongpt2
+  APPRIS 0x0001
+[387/1903] fbneo/ckongpt2a
+  APPRIS 0x0001
+[388/1903] fbneo/ckongpt2b
+  APPRIS 0x0001
+[389/1903] fbneo/ckongpt2j
+  APPRIS 0x0001
+[390/1903] fbneo/ckongpt2jeu
+  APPRIS 0x0001
+[391/1903] fbneo/ckongs
+  APPRIS 0x0001
+[392/1903] fbneo/clapapa
+  APPRIS 0x0004
+[393/1903] fbneo/clapapa2
+  APPRIS 0x0004
+[394/1903] fbneo/clbowl
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[395/1903] fbneo/cleopatr
+  APPRIS 0xF9BE
+[396/1903] fbneo/cloak
+  APPRIS 0x00B3
+[397/1903] fbneo/cloakfr
+  APPRIS 0x00B3
+[398/1903] fbneo/cloakgr
+  APPRIS 0x00B3
+[399/1903] fbneo/cloaksp
+  APPRIS 0x00B3
+[400/1903] fbneo/clocknch
+  APPRIS 0x0004
+[401/1903] fbneo/cltchitr
+  APPRIS 0x2001
+[402/1903] fbneo/cltchitrj
+  APPRIS 0x2001
+[403/1903] fbneo/cmissnx
+  APPRIS 0x0017  [consommation non confirmee]
+[404/1903] fbneo/cnightst
+  APPRIS 0x0004
+[405/1903] fbneo/cnightst2
+  APPRIS 0x0004
+[406/1903] fbneo/cobracom
+  APPRIS 0x0149
+[407/1903] fbneo/cobracomj
+  APPRIS 0x0148
+[408/1903] fbneo/colony7
+  piste sans effet, recherche complete
+  piece 1 : 12 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0xE212
+[409/1903] fbneo/colony7a
+  piste sans effet, recherche complete
+  piece 1 : 12 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0xE212
+[410/1903] fbneo/colt
+  piste sans effet, recherche complete
+  piece 1 : 9 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x077E (+1 miroir)
+[411/1903] fbneo/column2j
+  APPRIS 0xFCC0  [consommation non confirmee]
+[412/1903] fbneo/columns
+  APPRIS 0xFCC0
+[413/1903] fbneo/columns2
+  APPRIS 0xFCC0  [consommation non confirmee]
+[414/1903] fbneo/columnsj
+  APPRIS 0xFCC0
+[415/1903] fbneo/columnsu
+  APPRIS 0xFCC0
+[416/1903] fbneo/commando
+  APPRIS 0x0030  [consommation non confirmee]
+[417/1903] fbneo/commandob
+  APPRIS 0x0030  [consommation non confirmee]
+[418/1903] fbneo/commandob2
+  APPRIS 0x0030  [consommation non confirmee]
+[419/1903] fbneo/commandoj
+  APPRIS 0x0030  [consommation non confirmee]
+[420/1903] fbneo/commandou
+  APPRIS 0x0030  [consommation non confirmee]
+[421/1903] fbneo/commandw
+  APPRIS 0x812A  [consommation non confirmee]
+[422/1903] fbneo/commsega
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x03F6 (+2 miroir)
+[423/1903] fbneo/condor
+  APPRIS 0x038F
+[424/1903] fbneo/contcirc
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 6 candidat(s)
+  6 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[425/1903] fbneo/contcircj
+  piste sans effet, recherche complete
+  piece 1 : 8 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x18572
+[426/1903] fbneo/contcircu
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 6 candidat(s)
+  6 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[427/1903] fbneo/contcircua
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x18572
+[428/1903] fbneo/contra
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x001A (+1 miroir)
+[429/1903] fbneo/contra1
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x001A (+1 miroir)
+[430/1903] fbneo/contrab
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x001A (+1 miroir)
+[431/1903] fbneo/contrabj1
+  APPRIS 0x001A (+1 miroir)
+[432/1903] fbneo/contraj
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x001A (+1 miroir)
+[433/1903] fbneo/cookbib2
+  APPRIS 0x0474 (+1 miroir)  [consommation non confirmee]
+[434/1903] fbneo/coolmini
+  APPRIS 0xD3326
+[435/1903] fbneo/cotton
+  APPRIS 0x00FC
+[436/1903] fbneo/cottonj
+  APPRIS 0x00FC
+[437/1903] fbneo/cottonu
+  APPRIS 0x00FC
+[438/1903] fbneo/countrun
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[439/1903] fbneo/countrunb
+  APPRIS 0x0220
+[440/1903] fbneo/cppicf
+  APPRIS 0x0001
+[441/1903] fbneo/cppicf2
+  APPRIS 0x0001
+[442/1903] fbneo/cptennis
+  piste sans effet, recherche complete
+  piece 1 : 256 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x00D1
+[443/1903] fbneo/crazyblk
+  APPRIS 0x2006
+[444/1903] fbneo/crazycop
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x0886
+[445/1903] fbneo/crkdown
+  piste sans effet, recherche complete
+  piece 1 : 275 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[446/1903] fbneo/crkdownj
+  piste sans effet, recherche complete
+  piece 1 : 368 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[447/1903] fbneo/crkdownu
+  piste sans effet, recherche complete
+  piece 1 : 255 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[448/1903] fbneo/crockman
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x066E
+[449/1903] fbneo/croquis
+  piste sans effet, recherche complete
+  piece 1 : 13 candidat(s)
+  piece 2 : 8 candidat(s)
+  APPRIS 0x15FA (+3 miroir)
+[450/1903] fbneo/crospang
+  APPRIS 0x8818
+[451/1903] fbneo/crossbld
+  piste sans effet, recherche complete
+  piece 1 : 404 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[452/1903] fbneo/cruisin
+  APPRIS 0x001A
+[453/1903] fbneo/crush
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x041E (+1 miroir)
+[454/1903] fbneo/crush2
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x041E (+1 miroir)
+[455/1903] fbneo/crush3
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[456/1903] fbneo/crush4
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x041E (+1 miroir)
+[457/1903] fbneo/crushbl
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x041E (+1 miroir)
+[458/1903] fbneo/crushbl2
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x041E (+1 miroir)
+[459/1903] fbneo/crushbl3
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x041E (+1 miroir)
+[460/1903] fbneo/crushs
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x041E (+1 miroir)
+[461/1903] fbneo/crzrally
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x1244  [consommation non confirmee]
+[462/1903] fbneo/crzrallya
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x1244  [consommation non confirmee]
+[463/1903] fbneo/crzrallyg
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x1244  [consommation non confirmee]
+[464/1903] fbneo/csclub
+  APPRIS 0x8AE8
+[465/1903] fbneo/csclub1
+  APPRIS 0x8AE8
+[466/1903] fbneo/csclub1d
+  APPRIS 0x8AE8
+[467/1903] fbneo/cscluba
+  APPRIS 0x8AE8
+[468/1903] fbneo/csclubh
+  APPRIS 0x8AE8
+[469/1903] fbneo/csclubj
+  APPRIS 0x8AE8
+[470/1903] fbneo/cscrtry
+  APPRIS 0x0004
+[471/1903] fbneo/cscrtry2
+  APPRIS 0x0004
+[472/1903] fbneo/csuperas
+  APPRIS 0x004C
+[473/1903] fbneo/csweetht
+  APPRIS 0x0004
+[474/1903] fbneo/cterrani
+  APPRIS 0x0013
+[475/1903] fbneo/ctornado
+  APPRIS 0x0018
+[476/1903] fbneo/ctribe
+  piste sans effet, recherche complete
+  piece 1 : 14 candidat(s)
+  piece 2 : 9 candidat(s)
+  APPRIS 0x0802 (+6 miroir)
+[477/1903] fbneo/ctribeb
+  piste sans effet, recherche complete
+  piece 1 : 11 candidat(s)
+  piece 2 : 10 candidat(s)
+  APPRIS 0x0802 (+6 miroir)
+[478/1903] fbneo/ctribeb2
+  piste sans effet, recherche complete
+  piece 1 : 11 candidat(s)
+  piece 2 : 11 candidat(s)
+  APPRIS 0x0802 (+6 miroir)
+[479/1903] fbneo/ctribej
+  piste sans effet, recherche complete
+  piece 1 : 11 candidat(s)
+  piece 2 : 9 candidat(s)
+  APPRIS 0x0802 (+6 miroir)
+[480/1903] fbneo/ctrpllrp
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x066E
+[481/1903] fbneo/cubybop
+  APPRIS 0x8240
+[482/1903] fbneo/cuebrick
+  APPRIS 0x1110 (+1 miroir)
+[483/1903] fbneo/cuebrickj
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[484/1903] fbneo/cworld
+  APPRIS 0x0008
+[485/1903] fbneo/cworld2j
+  APPRIS 0x0EE2  [consommation non confirmee]
+[486/1903] fbneo/cybattlr
+  APPRIS 0xD100
+[487/1903] fbneo/cybertnk
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x10181
+[488/1903] fbneo/cybots
+  APPRIS 0x80B7  [consommation non confirmee]
+[489/1903] fbneo/cybotsj
+  APPRIS 0x80B7
+[490/1903] fbneo/cybotsu
+  APPRIS 0x80B7  [consommation non confirmee]
+[491/1903] fbneo/cybotsud
+  APPRIS 0x80B7  [consommation non confirmee]
+[492/1903] fbneo/cyclshtg
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[493/1903] fbneo/daikaiju
+  APPRIS 0x0013
+[494/1903] fbneo/dairesya
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x1B1A (+1 miroir)
+[495/1903] fbneo/daisenpu
+  APPRIS 0x00F2  [consommation non confirmee]
+[496/1903] fbneo/daitorid
+  piste sans effet, recherche complete
+  piece 1 : 1043 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[497/1903] fbneo/dambustr
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x10EE
+[498/1903] fbneo/dambustra
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x10EE
+[499/1903] fbneo/dambustruk
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x0182 (+1 miroir)  [consommation non confirmee]
+[500/1903] fbneo/dankuga
+  APPRIS 0xE174
+[501/1903] fbneo/darius2
+  APPRIS 0x1FD8
+[502/1903] fbneo/darius2d
+  APPRIS 0x9DEC
+[503/1903] fbneo/darius2do
+  APPRIS 0x9DEC
+[504/1903] fbneo/dariusg
+  APPRIS 0x0090
+[505/1903] fbneo/dariusgj
+  APPRIS 0x0090
+[506/1903] fbneo/dariusgu
+  APPRIS 0x0090
+[507/1903] fbneo/dariusgx
+  APPRIS 0x0090
+[508/1903] fbneo/darkedge
+  APPRIS 0xF1E0
+[509/1903] fbneo/darkedgej
+  APPRIS 0xF1E0  [consommation non confirmee]
+[510/1903] fbneo/darkmist
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x0500
+[511/1903] fbneo/darkplnt
+  APPRIS 0x00B2  [consommation non confirmee]
+[512/1903] fbneo/darkseal2
+  APPRIS 0x0027
+[513/1903] fbneo/darwin
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x0FA1 (+1 miroir)
+[514/1903] fbneo/dblaxle
+  piste sans effet, recherche complete
+  piece 1 : 8 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x1FD0 (+3 miroir)
+[515/1903] fbneo/dblaxleu
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[516/1903] fbneo/dblewing
+  APPRIS 0x3C1E
+[517/1903] fbneo/dbreed
+  piste sans effet, recherche complete
+  piece 1 : 25 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[518/1903] fbneo/dbreedm72
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x145B4 (+2 miroir)
+[519/1903] fbneo/dcclub
+  piste sans effet, recherche complete
+  piece 1 : 535 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[520/1903] fbneo/dcclubfd
+  piste sans effet, recherche complete
+  piece 1 : 179 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[521/1903] fbneo/dcclubj
+  piste sans effet, recherche complete
+  piece 1 : 547 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[522/1903] fbneo/ddayjlc
+  APPRIS 0x03F9
+[523/1903] fbneo/ddayjlca
+  APPRIS 0x03F9
+[524/1903] fbneo/ddcrew
+  APPRIS 0x0001
+[525/1903] fbneo/ddcrew1
+  APPRIS 0x0001
+[526/1903] fbneo/ddcrew2
+  APPRIS 0x0001
+[527/1903] fbneo/ddcrewj
+  APPRIS 0x0001
+[528/1903] fbneo/ddcrewj2
+  APPRIS 0x0001
+[529/1903] fbneo/ddcrewu
+  APPRIS 0x0001
+[530/1903] fbneo/ddpdoj
+  APPRIS 0x394B
+[531/1903] fbneo/ddpdoja
+  APPRIS 0x394B
+[532/1903] fbneo/ddpdojb
+  APPRIS 0x394B
+[533/1903] fbneo/ddpdojblk
+  APPRIS 0x395B  [consommation non confirmee]
+[534/1903] fbneo/deerhunt
+  APPRIS 0x9ABE
+[535/1903] fbneo/deerhunta
+  APPRIS 0x9ABE
+[536/1903] fbneo/deerhuntb
+  APPRIS 0x9ABE
+[537/1903] fbneo/deerhuntc
+  APPRIS 0x9ABE
+[538/1903] fbneo/deerhuntd
+  APPRIS 0x9ABE
+[539/1903] fbneo/deerhunte
+  APPRIS 0x9ABC
+[540/1903] fbneo/defcmnd
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[541/1903] fbneo/defence
+  piste sans effet, recherche complete
+  piece 1 : 321 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[542/1903] fbneo/defender
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[543/1903] fbneo/defenderb
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[544/1903] fbneo/defenderg
+  piste sans effet, recherche complete
+  piece 1 : 38 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[545/1903] fbneo/defenderw
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[546/1903] fbneo/defense
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 3 candidat(s)
+  3 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[547/1903] fbneo/desertbr
+  APPRIS 0x3405
+[548/1903] fbneo/desertbrj
+  APPRIS 0x3405  [consommation non confirmee]
+[549/1903] fbneo/detatwin
+  piste sans effet, recherche complete
+  piece 1 : 10 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x0024
+[550/1903] fbneo/dfeveron
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[551/1903] fbneo/dharma
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[552/1903] fbneo/dharmak
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[553/1903] fbneo/dietgo
+  APPRIS 0x0065
+[554/1903] fbneo/dietgoe
+  APPRIS 0x0065
+[555/1903] fbneo/dietgoj
+  APPRIS 0x0065
+[556/1903] fbneo/dietgou
+  APPRIS 0x0065
+[557/1903] fbneo/dirtfoxj
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[558/1903] fbneo/discoboy
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x308C (+1 miroir)
+[559/1903] fbneo/dkingjr
+  APPRIS 0x0001
+[560/1903] fbneo/dkong
+  APPRIS 0x0001
+[561/1903] fbneo/dkong3
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x0004 (+1 miroir)
+[562/1903] fbneo/dkong3b
+  APPRIS 0x0BF1
+[563/1903] fbneo/dkong3j
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x0004 (+1 miroir)
+[564/1903] fbneo/dkongf
+  APPRIS 0x0001
+[565/1903] fbneo/dkongj
+  APPRIS 0x0001
+[566/1903] fbneo/dkongjnrj
+  APPRIS 0x0001
+[567/1903] fbneo/dkongjo
+  APPRIS 0x0001
+[568/1903] fbneo/dkongjo1
+  APPRIS 0x0001
+[569/1903] fbneo/dkongjr
+  APPRIS 0x0001
+[570/1903] fbneo/dkongjrb
+  APPRIS 0x0001
+[571/1903] fbneo/dkongjrj
+  APPRIS 0x0001
+[572/1903] fbneo/dkongjrm
+  APPRIS 0x0001
+[573/1903] fbneo/dkongo
+  APPRIS 0x0001
+[574/1903] fbneo/dkongx
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[575/1903] fbneo/dkongx11
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[576/1903] fbneo/dland
+  piste sans effet, recherche complete
+  piece 1 : 10 candidat(s)
+  piece 2 : 9 candidat(s)
+  APPRIS 0x1EBA (+3 miroir)
+[577/1903] fbneo/dleague
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 7 candidat(s)
+  APPRIS 0x055A (+1 miroir)
+[578/1903] fbneo/dogosokb
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x5C5C (+1 miroir)
+[579/1903] fbneo/dogosoke
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x5C5C (+1 miroir)
+[580/1903] fbneo/dondokod
+  APPRIS 0x28C6
+[581/1903] fbneo/dondokodj
+  APPRIS 0x28C6  [consommation non confirmee]
+[582/1903] fbneo/dondokodu
+  APPRIS 0x28C6
+[583/1903] fbneo/donpachi
+  APPRIS 0x139A
+[584/1903] fbneo/donpachihk
+  APPRIS 0x139A
+[585/1903] fbneo/donpachij
+  APPRIS 0x139A
+[586/1903] fbneo/donpachikr
+  APPRIS 0x139A
+[587/1903] fbneo/dorunrun
+  APPRIS 0x000F
+[588/1903] fbneo/dorunrun2
+  APPRIS 0x000F
+[589/1903] fbneo/dorunrunc
+  APPRIS 0x000F
+[590/1903] fbneo/dorunrunca
+  APPRIS 0x000F
+[591/1903] fbneo/dowild
+  APPRIS 0x0012
+[592/1903] fbneo/dquizgo
+  piste sans effet, recherche complete
+  piece 1 : 9 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x47FA (+4 miroir)
+[593/1903] fbneo/drgnbowl
+  APPRIS 0x2F14
+[594/1903] fbneo/drgninja
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x28BE (+2 miroir)
+[595/1903] fbneo/drgninjab
+  APPRIS 0x28BE
+[596/1903] fbneo/drifto94
+  APPRIS 0x2026
+[597/1903] fbneo/driftout
+  APPRIS 0x0836  [consommation non confirmee]
+[598/1903] fbneo/driftoutj
+  APPRIS 0x0836  [consommation non confirmee]
+[599/1903] fbneo/driveout
+  APPRIS 0x0836  [consommation non confirmee]
+[600/1903] fbneo/drivfrcb
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 6 candidat(s)
+  6 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[601/1903] fbneo/drivfrcg
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 6 candidat(s)
+  6 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[602/1903] fbneo/drivfrcp
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 7 candidat(s)
+  7 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[603/1903] fbneo/drivfrct
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 6 candidat(s)
+  6 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[604/1903] fbneo/dsoccr94
+  piste sans effet, recherche complete
+  piece 1 : 64 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[605/1903] fbneo/dsoccr94j
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[606/1903] fbneo/dspirit
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x90F3 (+1 miroir)
+[607/1903] fbneo/dumpmtmt
+  APPRIS 0x0001
+[608/1903] fbneo/dungeonm
+  APPRIS 0x0206
+[609/1903] fbneo/dungeonmu
+  APPRIS 0x0206
+[610/1903] fbneo/dunkshot
+  APPRIS 0x0001  [consommation non confirmee]
+[611/1903] fbneo/dw2001
+  APPRIS 0x15D5F  [consommation non confirmee]
+[612/1903] fbneo/dwpc
+  le jeu ne s'anime pas, il n'encaissera pas de piece
+  difficile : jeu inanime (essai 1, on reessaiera)
+[613/1903] fbneo/dyger
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x0309 (+1 miroir)  [consommation non confirmee]
+[614/1903] fbneo/dygera
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x0309 (+1 miroir)  [consommation non confirmee]
+[615/1903] fbneo/dynagear
+  APPRIS 0x0044
+[616/1903] fbneo/dynamski
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x2E22 (+2 miroir)
+[617/1903] fbneo/earthjkr
+  APPRIS 0x094B
+[618/1903] fbneo/ecofghtr
+  APPRIS 0x02E9  [consommation non confirmee]
+[619/1903] fbneo/ecofghtra
+  APPRIS 0x02E9  [consommation non confirmee]
+[620/1903] fbneo/ecofghtrd
+  APPRIS 0x02E9
+[621/1903] fbneo/ecofghtrh
+  APPRIS 0x02E9  [consommation non confirmee]
+[622/1903] fbneo/ecofghtru
+  APPRIS 0x02EB  [consommation non confirmee]
+[623/1903] fbneo/ecofghtru1
+  APPRIS 0x02E9  [consommation non confirmee]
+[624/1903] fbneo/edrandy
+  APPRIS 0x000D
+[625/1903] fbneo/edrandy1
+  APPRIS 0x000D
+[626/1903] fbneo/edrandy2
+  APPRIS 0x000D
+[627/1903] fbneo/edrandyj
+  APPRIS 0x000D
+[628/1903] fbneo/ejanhs
+  piste sans effet, recherche complete
+  piece 1 : 13 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x8A04B  [consommation non confirmee]
+[629/1903] fbneo/emeralda
+  APPRIS 0x7F46
+[630/1903] fbneo/emeraldaj
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[631/1903] fbneo/emeraldaja
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[632/1903] fbneo/empcity
+  piste sans effet, recherche complete
+  piece 1 : 22 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x1A00  [consommation non confirmee]
+[633/1903] fbneo/empcityj
+  piste sans effet, recherche complete
+  piece 1 : 22 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x1A00  [consommation non confirmee]
+[634/1903] fbneo/empcityu
+  piste sans effet, recherche complete
+  piece 1 : 21 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x1A00  [consommation non confirmee]
+[635/1903] fbneo/endurobl
+  APPRIS 0x0053
+[636/1903] fbneo/enduror
+  APPRIS 0x0053
+[637/1903] fbneo/enduror1
+  APPRIS 0x0053
+[638/1903] fbneo/eprom
+  APPRIS 0x3F54 (+1 miroir)  [consommation non confirmee]
+[639/1903] fbneo/esckids
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x0855
+[640/1903] fbneo/esckidsj
+  piste sans effet, recherche complete
+  piece 1 : 8 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x085C
+[641/1903] fbneo/espgal
+  APPRIS 0x11E9
+[642/1903] fbneo/espial
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x0002 (+1 miroir)
+[643/1903] fbneo/espialu
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x0002 (+1 miroir)
+[644/1903] fbneo/esprade
+  APPRIS 0x1226
+[645/1903] fbneo/espradej
+  APPRIS 0x1226
+[646/1903] fbneo/espradejo
+  APPRIS 0x1226
+[647/1903] fbneo/eswat
+  APPRIS 0x007D
+[648/1903] fbneo/eswatbl
+  APPRIS 0x007D
+[649/1903] fbneo/eswatj
+  APPRIS 0x007D
+[650/1903] fbneo/eswatu
+  APPRIS 0x007D
+[651/1903] fbneo/eto
+  APPRIS 0x0989
+[652/1903] fbneo/evilston
+  APPRIS 0x82B4
+[653/1903] fbneo/excelsr
+  APPRIS 0x183B
+[654/1903] fbneo/exctleag
+  APPRIS 0x2001
+[655/1903] fbneo/exerion
+  APPRIS 0x0001
+[656/1903] fbneo/exerionb
+  APPRIS 0x0001
+[657/1903] fbneo/exeriont
+  APPRIS 0x0001
+[658/1903] fbneo/exerizer
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[659/1903] fbneo/exerizerb
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[660/1903] fbneo/exodus
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[661/1903] fbneo/explbrkr
+  APPRIS 0x0083
+[662/1903] fbneo/explorer
+  APPRIS 0x0002
+[663/1903] fbneo/extdwnhl
+  APPRIS 0x009C
+[664/1903] fbneo/fa
+  piste sans effet, recherche complete
+  piece 1 : 10774 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0xD7E78
+[665/1903] fbneo/falcon
+  APPRIS 0x038F
+[666/1903] fbneo/falconz
+  APPRIS 0x038F
+[667/1903] fbneo/fantasia
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[668/1903] fbneo/fantasiaa
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[669/1903] fbneo/fantland
+  APPRIS 0x3A58
+[670/1903] fbneo/fantlanda
+  APPRIS 0x3A64
+[671/1903] fbneo/fantsia2
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[672/1903] fbneo/fantsia2a
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[673/1903] fbneo/fantsy95
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[674/1903] fbneo/fantzn2
+  APPRIS 0x2000
+[675/1903] fbneo/fantzn2x
+  APPRIS 0x3A690
+[676/1903] fbneo/fantzn2xp
+  APPRIS 0x35414
+[677/1903] fbneo/farmer
+  APPRIS 0x0068
+[678/1903] fbneo/fcombat
+  APPRIS 0x0001
+[679/1903] fbneo/feversos
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[680/1903] fbneo/fghtatck
+  APPRIS 0x1042
+[681/1903] fbneo/fghthist
+  APPRIS 0x0184
+[682/1903] fbneo/fghthista
+  APPRIS 0x0184
+[683/1903] fbneo/fghthistj
+  APPRIS 0x0184  [consommation non confirmee]
+[684/1903] fbneo/fghthistu
+  APPRIS 0x0184
+[685/1903] fbneo/fightrol
+  APPRIS 0x0000
+[686/1903] fbneo/finalb
+  APPRIS 0x1088
+[687/1903] fbneo/finalbj
+  APPRIS 0x1088  [consommation non confirmee]
+[688/1903] fbneo/finalbu
+  APPRIS 0x1088
+[689/1903] fbneo/finalizr
+  APPRIS 0x1B02
+[690/1903] fbneo/finalizrb
+  APPRIS 0x1B02
+[691/1903] fbneo/finalttr
+  APPRIS 0x0014
+[692/1903] fbneo/finehour
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[693/1903] fbneo/firebarr
+  piste sans effet, recherche complete
+  piece 1 : 15 candidat(s)
+  piece 2 : 9 candidat(s)
+  9 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[694/1903] fbneo/firebeas
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x4814
+[695/1903] fbneo/fitter
+  APPRIS 0x0022
+[696/1903] fbneo/fitterbl
+  APPRIS 0x0022
+[697/1903] fbneo/fixeight
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[698/1903] fbneo/fixeighta
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[699/1903] fbneo/fixeightat
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[700/1903] fbneo/fixeighth
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[701/1903] fbneo/fixeightht
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[702/1903] fbneo/fixeightj
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[703/1903] fbneo/fixeightjt
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[704/1903] fbneo/fixeightk
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[705/1903] fbneo/fixeightkt
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[706/1903] fbneo/fixeightt
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[707/1903] fbneo/fixeighttw
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[708/1903] fbneo/fixeighttwt
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[709/1903] fbneo/fixeightu
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[710/1903] fbneo/fixeightut
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[711/1903] fbneo/fjbuster
+  APPRIS 0x63E8  [consommation non confirmee]
+[712/1903] fbneo/flashgal
+  APPRIS 0x0001
+[713/1903] fbneo/flashgala
+  APPRIS 0x0001
+[714/1903] fbneo/flstory
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x0082 (+2 miroir)
+[715/1903] fbneo/flytiger
+  APPRIS 0x0903
+[716/1903] fbneo/fncywld
+  APPRIS 0x8025
+[717/1903] fbneo/forcebrk
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x0FBA (+1 miroir)
+[718/1903] fbneo/formatz
+  APPRIS 0x01AC
+[719/1903] fbneo/friskyt
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x0134 (+2 miroir)
+[720/1903] fbneo/friskyta
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x0134
+[721/1903] fbneo/fsoccer
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[722/1903] fbneo/fsoccerb
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[723/1903] fbneo/fsoccerj
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[724/1903] fbneo/fstarfrc
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x8126A (+1 miroir)
+[725/1903] fbneo/fstarfrcj
+  piste sans effet, recherche complete
+  piece 1 : 279 candidat(s)
+  piece 2 : 11 candidat(s)
+  APPRIS 0x8126A (+1 miroir)
+[726/1903] fbneo/fullthrl
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x2C822
+[727/1903] fbneo/funkyjet
+  APPRIS 0x3868
+[728/1903] fbneo/funkyjetj
+  APPRIS 0x3868
+[729/1903] fbneo/fx
+  APPRIS 0x0001
+[730/1903] fbneo/gaia
+  APPRIS 0x257C
+[731/1903] fbneo/gaiapols
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[732/1903] fbneo/gaiapolsj
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[733/1903] fbneo/gaiapolsu
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[734/1903] fbneo/gaiden
+  APPRIS 0x2F14  [consommation non confirmee]
+[735/1903] fbneo/galap1
+  APPRIS 0x0002
+[736/1903] fbneo/galap4
+  APPRIS 0x0002
+[737/1903] fbneo/galapx
+  APPRIS 0x0002
+[738/1903] fbneo/galastrm
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x45EE (+1 miroir)
+[739/1903] fbneo/galaxbsf
+  APPRIS 0x0002
+[740/1903] fbneo/galaxian
+  APPRIS 0x0002
+[741/1903] fbneo/galaxiana
+  APPRIS 0x0002
+[742/1903] fbneo/galaxianm
+  APPRIS 0x0002
+[743/1903] fbneo/galaxianmo
+  APPRIS 0x0002
+[744/1903] fbneo/galaxiant
+  APPRIS 0x0002
+[745/1903] fbneo/galemp
+  APPRIS 0x0002
+[746/1903] fbneo/galhustl
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[747/1903] fbneo/galmedes
+  APPRIS 0x0970
+[748/1903] fbneo/galpanic
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x4D065 (+3 miroir)
+[749/1903] fbneo/galpanica
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x4D065 (+3 miroir)
+[750/1903] fbneo/galsnew
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[751/1903] fbneo/galsnewj
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[752/1903] fbneo/galsnewk
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[753/1903] fbneo/galspnbl
+  APPRIS 0x0038
+[754/1903] fbneo/galturbo
+  APPRIS 0x0002
+[755/1903] fbneo/gangonta
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x4AD6
+[756/1903] fbneo/gardia
+  APPRIS 0x0028
+[757/1903] fbneo/gardiab
+  APPRIS 0x0028
+[758/1903] fbneo/garyoret
+  APPRIS 0x12FD
+[759/1903] fbneo/gbusters
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x0886
+[760/1903] fbneo/gbustersa
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x0816 (+1 miroir)
+[761/1903] fbneo/gdfs
+  piste sans effet, recherche complete
+  piece 1 : 183 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[762/1903] fbneo/genix
+  APPRIS 0xB49C
+[763/1903] fbneo/geostorm
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[764/1903] fbneo/getstarj
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x5003 (+2 miroir)
+[765/1903] fbneo/gfire2
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 5 candidat(s)
+  5 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[766/1903] fbneo/ggroundj
+  piste sans effet, recherche complete
+  piece 1 : 186 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[767/1903] fbneo/gigandes
+  APPRIS 0x001E
+[768/1903] fbneo/gigandesa
+  APPRIS 0x001E
+[769/1903] fbneo/gijoe
+  APPRIS 0x0062
+[770/1903] fbneo/gijoej
+  APPRIS 0x0062
+[771/1903] fbneo/gijoeu
+  APPRIS 0x0062
+[772/1903] fbneo/ginkun
+  APPRIS 0x046C (+1 miroir)  [consommation non confirmee]
+[773/1903] fbneo/glass
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[774/1903] fbneo/glass10
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[775/1903] fbneo/gloc
+  APPRIS 0xFD01  [consommation non confirmee]
+[776/1903] fbneo/glocr360
+  APPRIS 0xFD01  [consommation non confirmee]
+[777/1903] fbneo/gogold
+  APPRIS 0x230C  [consommation non confirmee]
+[778/1903] fbneo/gogomile
+  APPRIS 0x3440
+[779/1903] fbneo/goldmedl
+  APPRIS 0x0210
+[780/1903] fbneo/goldmedla
+  APPRIS 0x0210
+[781/1903] fbneo/goldmedlb
+  APPRIS 0x0210
+[782/1903] fbneo/gpgolf
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x000F
+[783/1903] fbneo/gprider
+  piste sans effet, recherche complete
+  piece 1 : 15 candidat(s)
+  piece 2 : 8 candidat(s)
+  APPRIS 0x18CC4 (+3 miroir)
+[784/1903] fbneo/gpriderj
+  piste sans effet, recherche complete
+  piece 1 : 14 candidat(s)
+  piece 2 : 8 candidat(s)
+  APPRIS 0x18CC4 (+3 miroir)
+[785/1903] fbneo/gprideru
+  piste sans effet, recherche complete
+  piece 1 : 17 candidat(s)
+  piece 2 : 10 candidat(s)
+  APPRIS 0x18CC4 (+3 miroir)
+[786/1903] fbneo/grainbow
+  piste sans effet, recherche complete
+  piece 1 : 12 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x32D0 (+4 miroir)
+[787/1903] fbneo/gravitar
+  APPRIS 0x00D6
+[788/1903] fbneo/gravitar2
+  APPRIS 0x00D6
+[789/1903] fbneo/grdians
+  APPRIS 0x14F0  [consommation non confirmee]
+[790/1903] fbneo/gridlee
+  APPRIS 0x042C
+[791/1903] fbneo/griffon
+  APPRIS 0x038F  [consommation non confirmee]
+[792/1903] fbneo/grindstm
+  APPRIS 0x03B2
+[793/1903] fbneo/grindstma
+  APPRIS 0x03B2
+[794/1903] fbneo/groundfx
+  piste sans effet, recherche complete
+  piece 1 : 119 candidat(s)
+  piece 2 : 16 candidat(s)
+  APPRIS 0x423FF
+[795/1903] fbneo/gryzor
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x001A (+1 miroir)
+[796/1903] fbneo/gryzor1
+  APPRIS 0x001A (+1 miroir)
+[797/1903] fbneo/gseeker
+  APPRIS 0xAEE4
+[798/1903] fbneo/gseekerj
+  APPRIS 0xAEE4
+[799/1903] fbneo/gseekeru
+  APPRIS 0xAEE4
+[800/1903] fbneo/gstream
+  APPRIS 0x87BD2
+[801/1903] fbneo/gstrik2
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[802/1903] fbneo/gteikoku
+  APPRIS 0x0002
+[803/1903] fbneo/gtg
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x0370 (+1 miroir)
+[804/1903] fbneo/gtg2
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x07F6  [consommation non confirmee]
+[805/1903] fbneo/gtg2j
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  4 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[806/1903] fbneo/gtg2t
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[807/1903] fbneo/gtmr
+  APPRIS 0x2CF3
+[808/1903] fbneo/gtmra
+  APPRIS 0x2CF3
+[809/1903] fbneo/gtmre
+  APPRIS 0x34F9
+[810/1903] fbneo/gtmrusa
+  APPRIS 0x34F9
+[811/1903] fbneo/guiness
+  APPRIS 0x0067
+[812/1903] fbneo/gulfstrm
+  APPRIS 0x0607
+[813/1903] fbneo/gulfstrmm
+  APPRIS 0x0607
+[814/1903] fbneo/gunball
+  APPRIS 0xA1B0
+[815/1903] fbneo/gunbuletj
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[816/1903] fbneo/gunbuletw
+  APPRIS 0x004C
+[817/1903] fbneo/gunbustr
+  piste sans effet, recherche complete
+  piece 1 : 17 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x410DC3 (+2 miroir)
+[818/1903] fbneo/gundamex
+  APPRIS 0x34EE
+[819/1903] fbneo/gundhara
+  APPRIS 0xA630
+[820/1903] fbneo/gundl94
+  APPRIS 0x0503
+[821/1903] fbneo/gunforc2
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  3 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[822/1903] fbneo/gunhohki
+  piste sans effet, recherche complete
+  piece 1 : 25 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x256D9 (+2 miroir)
+[823/1903] fbneo/gunlock
+  APPRIS 0x2264
+[824/1903] fbneo/gunmast
+  APPRIS 0x0047 (+1 miroir)
+[825/1903] fbneo/gunnail
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x980C
+[826/1903] fbneo/gutsn
+  piste sans effet, recherche complete
+  piece 1 : 14 candidat(s)
+  piece 2 : 9 candidat(s)
+  APPRIS 0xAD257 (+4 miroir)
+[827/1903] fbneo/guwange
+  APPRIS 0x1010
+[828/1903] fbneo/guwanges
+  APPRIS 0x101A
+[829/1903] fbneo/gyrodine
+  APPRIS 0x0002
+[830/1903] fbneo/gyrodinet
+  APPRIS 0x0002
+[831/1903] fbneo/hachamf
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[832/1903] fbneo/halleysc
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x2425 (+1 miroir)
+[833/1903] fbneo/hangly
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x066E
+[834/1903] fbneo/hangly2
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x066E
+[835/1903] fbneo/hangly3
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x066E
+[836/1903] fbneo/hangon
+  APPRIS 0xC053
+[837/1903] fbneo/hangon1
+  APPRIS 0xC053
+[838/1903] fbneo/hangonjr
+  APPRIS 0x0000
+[839/1903] fbneo/harddunk
+  APPRIS 0xFC44
+[840/1903] fbneo/harddunkj
+  APPRIS 0xFC44
+[841/1903] fbneo/hardhea2
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[842/1903] fbneo/hardhead
+  piste sans effet, recherche complete
+  piece 1 : 13 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x8040
+[843/1903] fbneo/hardheadb
+  piste sans effet, recherche complete
+  piece 1 : 9 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x8040
+[844/1903] fbneo/hasamu
+  piste sans effet, recherche complete
+  piece 1 : 12 candidat(s)
+  piece 2 : 9 candidat(s)
+  APPRIS 0x35D0 (+1 miroir)
+[845/1903] fbneo/hatris
+  APPRIS 0x0211
+[846/1903] fbneo/hatrisj
+  APPRIS 0x0211
+[847/1903] fbneo/hcrash
+  piste sans effet, recherche complete
+  piece 1 : 25 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x0F77
+[848/1903] fbneo/hcrashc
+  piste sans effet, recherche complete
+  piece 1 : 24 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x0F77
+[849/1903] fbneo/heberpop
+  piste sans effet, recherche complete
+  piece 1 : 148 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[850/1903] fbneo/hedpanic
+  APPRIS 0xA8C2  [consommation non confirmee]
+[851/1903] fbneo/hedpanicf
+  APPRIS 0xA8C2  [consommation non confirmee]
+[852/1903] fbneo/hellfire
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 3 candidat(s)
+  3 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[853/1903] fbneo/hellfire1
+  piste sans effet, recherche complete
+  piece 1 : 8 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x2232 (+1 miroir)  [consommation non confirmee]
+[854/1903] fbneo/herbiedk
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x1650 (+1 miroir)
+[855/1903] fbneo/hero
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[856/1903] fbneo/herodk
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x15BE (+1 miroir)
+[857/1903] fbneo/herodku
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x15BE (+1 miroir)
+[858/1903] fbneo/hexion
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x27F8 (+3 miroir)
+[859/1903] fbneo/hiryuken
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[860/1903] fbneo/hncholms
+  piste sans effet, recherche complete
+  piece 1 : 30 candidat(s)
+  piece 2 : 27 candidat(s)
+  APPRIS 0x027C (+21 miroir)
+[861/1903] fbneo/holeland
+  APPRIS 0x0094
+[862/1903] fbneo/hotchase
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0xE400  [consommation non confirmee]
+[863/1903] fbneo/hotdogst
+  APPRIS 0x10A8
+[864/1903] fbneo/hotpinbl
+  APPRIS 0x0038
+[865/1903] fbneo/hotshock
+  APPRIS 0x0002
+[866/1903] fbneo/hotshockb
+  APPRIS 0x0002
+[867/1903] fbneo/hrdtimes
+  APPRIS 0x002C
+[868/1903] fbneo/hrdtimesa
+  APPRIS 0x002C
+[869/1903] fbneo/hsf2
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x0979  [consommation non confirmee]
+[870/1903] fbneo/hsf2a
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[871/1903] fbneo/hsf2d
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x048E  [consommation non confirmee]
+[872/1903] fbneo/hsf2j
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[873/1903] fbneo/htchctch
+  piste sans effet, recherche complete
+  piece 1 : 92 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x0208 (+1 miroir)
+[874/1903] fbneo/hunchbak
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[875/1903] fbneo/hunchbkg
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 6 candidat(s)
+  6 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[876/1903] fbneo/hunchbks
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x005B (+4 miroir)
+[877/1903] fbneo/huncholy
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[878/1903] fbneo/hustler
+  APPRIS 0x0002
+[879/1903] fbneo/hustlerb
+  APPRIS 0x0002
+[880/1903] fbneo/ichir
+  APPRIS 0xFC19
+[881/1903] fbneo/ichirj
+  APPRIS 0xFC19  [consommation non confirmee]
+[882/1903] fbneo/ichirjbl
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[883/1903] fbneo/ichirk
+  APPRIS 0xFC19
+[884/1903] fbneo/igmo
+  APPRIS 0x78A6 (+1 miroir)  [consommation non confirmee]
+[885/1903] fbneo/ikki
+  APPRIS 0x0068
+[886/1903] fbneo/imgfight
+  piste sans effet, recherche complete
+  piece 1 : 187 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x29ABA
+[887/1903] fbneo/imgfightj
+  piste sans effet, recherche complete
+  piece 1 : 153 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[888/1903] fbneo/insector
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x2134  [consommation non confirmee]
+[889/1903] fbneo/ironhors
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x1B1A (+1 miroir)
+[890/1903] fbneo/ixion
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[891/1903] fbneo/janjans2
+  APPRIS 0x0014
+[892/1903] fbneo/jchan
+  APPRIS 0x0AF9
+[893/1903] fbneo/jchan2
+  APPRIS 0x0BC1
+[894/1903] fbneo/jigkmgri
+  APPRIS 0x37B6  [consommation non confirmee]
+[895/1903] fbneo/jin
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0xE315 (+2 miroir)
+[896/1903] fbneo/jitsupro
+  APPRIS 0x3572
+[897/1903] fbneo/jjparad2
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0xA0985 (+1 miroir)  [consommation non confirmee]
+[898/1903] fbneo/jjparads
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0xA0995 (+1 miroir)  [consommation non confirmee]
+[899/1903] fbneo/jjsquawk
+  APPRIS 0x0042
+[900/1903] fbneo/jjsquawkb
+  APPRIS 0x0042
+[901/1903] fbneo/jjsquawkb2
+  APPRIS 0x0042
+[902/1903] fbneo/joemacr
+  piste sans effet, recherche complete
+  piece 1 : 14 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x18A4 (+2 miroir)
+[903/1903] fbneo/joemacra
+  piste sans effet, recherche complete
+  piece 1 : 14 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x18A4 (+2 miroir)
+[904/1903] fbneo/jojo
+  piste sans effet, recherche complete
+  piece 1 : 10 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x11D80 (+1 miroir)  [consommation non confirmee]
+[905/1903] fbneo/jojoa
+  piste sans effet, recherche complete
+  piece 1 : 8 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x6B853
+[906/1903] fbneo/jojoba
+  piste sans effet, recherche complete
+  piece 1 : 9 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x16178 (+1 miroir)  [consommation non confirmee]
+[907/1903] fbneo/jojoban
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x713AB
+[908/1903] fbneo/jojobaner1
+  piste sans effet, recherche complete
+  piece 1 : 8 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x16178 (+1 miroir)  [consommation non confirmee]
+[909/1903] fbneo/jojobanr1
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x713AB
+[910/1903] fbneo/jojobar1
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x16178 (+1 miroir)  [consommation non confirmee]
+[911/1903] fbneo/jojoj
+  piste sans effet, recherche complete
+  piece 1 : 9 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x6B853
+[912/1903] fbneo/jojojr1
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x6B853
+[913/1903] fbneo/jojojr2
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x68CAF
+[914/1903] fbneo/jojon
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x6B853
+[915/1903] fbneo/jojonr1
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x6B853
+[916/1903] fbneo/jojonr2
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x68CAF
+[917/1903] fbneo/jojor1
+  piste sans effet, recherche complete
+  piece 1 : 8 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x11D80 (+1 miroir)  [consommation non confirmee]
+[918/1903] fbneo/jojor2
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x11D68 (+1 miroir)  [consommation non confirmee]
+[919/1903] fbneo/jollyjgr
+  APPRIS 0x058D
+[920/1903] fbneo/joyman
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x066E
+[921/1903] fbneo/jrking
+  APPRIS 0x0001
+[922/1903] fbneo/jrpacman
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x0E7E
+[923/1903] fbneo/jumpkids
+  APPRIS 0x0023
+[924/1903] fbneo/jumppop
+  APPRIS 0x0023
+[925/1903] fbneo/jumppope
+  APPRIS 0x0023
+[926/1903] fbneo/jumpshot
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 5 candidat(s)
+  5 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[927/1903] fbneo/jumpshotp
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 5 candidat(s)
+  5 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[928/1903] fbneo/kaitei
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x1003
+[929/1903] fbneo/kaitein
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x000F (+1 miroir)
+[930/1903] fbneo/kamakazi3
+  APPRIS 0x0002
+[931/1903] fbneo/karianx
+  piste sans effet, recherche complete
+  piece 1 : 41 candidat(s)
+  piece 2 : 7 candidat(s)
+  APPRIS 0x15DE (+5 miroir)
+[932/1903] fbneo/kbash
+  APPRIS 0x0022  [consommation non confirmee]
+[933/1903] fbneo/kbash2
+  APPRIS 0x0022
+[934/1903] fbneo/keithlcy
+  APPRIS 0x002F
+[935/1903] fbneo/kengo
+  piste sans effet, recherche complete
+  piece 1 : 14 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x0F55 (+1 miroir)
+[936/1903] fbneo/ket
+  APPRIS 0x1161
+[937/1903] fbneo/keta
+  APPRIS 0x1161
+[938/1903] fbneo/ketb
+  APPRIS 0x1161
+[939/1903] fbneo/kickboy
+  piste sans effet, recherche complete
+  piece 1 : 10 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x1063
+[940/1903] fbneo/kicknrun
+  APPRIS 0x2809
+[941/1903] fbneo/kicknrunu
+  APPRIS 0x2809
+[942/1903] fbneo/kikstart
+  APPRIS 0x016D
+[943/1903] fbneo/kingdmgp
+  APPRIS 0x041C  [consommation non confirmee]
+[944/1903] fbneo/kirameki
+  APPRIS 0x7C7E  [consommation non confirmee]
+[945/1903] fbneo/kittenk
+  APPRIS 0x01DD
+[946/1903] fbneo/kncljoe
+  APPRIS 0x0000
+[947/1903] fbneo/kncljoea
+  APPRIS 0x0000
+[948/1903] fbneo/kngtmare
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x247C  [consommation non confirmee]
+[949/1903] fbneo/knockout
+  APPRIS 0x0002
+[950/1903] fbneo/kong
+  APPRIS 0x0273  [consommation non confirmee]
+[951/1903] fbneo/korokoro
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x001A (+1 miroir)
+[952/1903] fbneo/korosuke
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x041E (+1 miroir)
+[953/1903] fbneo/koshien
+  APPRIS 0x00A0  [consommation non confirmee]
+[954/1903] fbneo/krzybowl
+  APPRIS 0x2476
+[955/1903] fbneo/ktiger2
+  APPRIS 0x06CA
+[956/1903] fbneo/kungfut
+  piste sans effet, recherche complete
+  piece 1 : 14 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[957/1903] fbneo/kungfuta
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x07FD (+1 miroir)
+[958/1903] fbneo/kurikint
+  APPRIS 0x8187
+[959/1903] fbneo/kurikinta
+  APPRIS 0x8B63
+[960/1903] fbneo/kurikintj
+  APPRIS 0x8187
+[961/1903] fbneo/kurikintu
+  APPRIS 0x8187
+[962/1903] fbneo/kyros
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x580E (+1 miroir)
+[963/1903] fbneo/kyrosj
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x580E (+1 miroir)
+[964/1903] fbneo/kyustrkr
+  APPRIS 0x201A  [consommation non confirmee]
+[965/1903] fbneo/labyrunr
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x0B02
+[966/1903] fbneo/labyrunrk
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x0B02
+[967/1903] fbneo/ladykill
+  piste sans effet, recherche complete
+  piece 1 : 10 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[968/1903] fbneo/ladymstr
+  APPRIS 0x0000
+[969/1903] fbneo/lagirl
+  APPRIS 0x8240
+[970/1903] fbneo/landmakr
+  APPRIS 0x0090
+[971/1903] fbneo/lastday
+  APPRIS 0x0059
+[972/1903] fbneo/lastdaya
+  APPRIS 0x0059
+[973/1903] fbneo/lastfort
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x3456
+[974/1903] fbneo/lastforte
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x3456
+[975/1903] fbneo/lastfortg
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x3456  [consommation non confirmee]
+[976/1903] fbneo/lastfortk
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[977/1903] fbneo/lastsurv
+  piste sans effet, recherche complete
+  piece 1 : 45 candidat(s)
+  piece 2 : 6 candidat(s)
+  6 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[978/1903] fbneo/ldrun
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x0D52 (+1 miroir)
+[979/1903] fbneo/ldrun2
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x0D52 (+1 miroir)
+[980/1903] fbneo/ldrun3
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x0D52 (+1 miroir)
+[981/1903] fbneo/ldrun3j
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x0D52 (+1 miroir)
+[982/1903] fbneo/ldrun4
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  3 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[983/1903] fbneo/ldruna
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x0D52 (+1 miroir)
+[984/1903] fbneo/leaguemn
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[985/1903] fbneo/legend
+  APPRIS 0x0001
+[986/1903] fbneo/legionna
+  piste sans effet, recherche complete
+  piece 1 : 12 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x32A8 (+2 miroir)
+[987/1903] fbneo/legionnau
+  piste sans effet, recherche complete
+  piece 1 : 53 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x32A8 (+2 miroir)
+[988/1903] fbneo/legofair
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[989/1903] fbneo/lemmings
+  piste sans effet, recherche complete
+  piece 1 : 14 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0xA4A9
+[990/1903] fbneo/lethalen
+  APPRIS 0x0030  [consommation non confirmee]
+[991/1903] fbneo/lethaleneab
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x0030
+[992/1903] fbneo/lethaleneae
+  APPRIS 0x0030
+[993/1903] fbneo/lethalenua
+  APPRIS 0x0030  [consommation non confirmee]
+[994/1903] fbneo/lethalenux
+  APPRIS 0x0030  [consommation non confirmee]
+[995/1903] fbneo/lghost
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[996/1903] fbneo/lghostu
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[997/1903] fbneo/lightbr
+  APPRIS 0x0206
+[998/1903] fbneo/lightbrj
+  APPRIS 0x0206
+[999/1903] fbneo/livequiz
+  piste sans effet, recherche complete
+  piece 1 : 242 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x2FCA2 (+1 miroir)
+[1000/1903] fbneo/logicpr2
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x2FCC (+1 miroir)
+[1001/1903] fbneo/logicpro
+  piste sans effet, recherche complete
+  piece 1 : 109 candidat(s)
+  piece 2 : 8 candidat(s)
+  APPRIS 0x15FA (+2 miroir)
+[1002/1903] fbneo/looper
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x0BBD
+[1003/1903] fbneo/loverboy
+  APPRIS 0x0002  [consommation non confirmee]
+[1004/1903] fbneo/lsasquad
+  APPRIS 0x05FB
+[1005/1903] fbneo/lunarba1
+  le jeu ne s'anime pas, il n'encaissera pas de piece
+  difficile : jeu inanime (essai 1, on reessaiera)
+[1006/1903] fbneo/lunarbat
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x00DF
+[1007/1903] fbneo/lvgirl94
+  APPRIS 0x179D
+[1008/1903] fbneo/lwings
+  APPRIS 0x0030
+[1009/1903] fbneo/lwingsb
+  APPRIS 0x0030
+[1010/1903] fbneo/lwingsj
+  APPRIS 0x0030
+[1011/1903] fbneo/m660
+  APPRIS 0x0238
+[1012/1903] fbneo/m660b
+  APPRIS 0x0238
+[1013/1903] fbneo/m660j
+  APPRIS 0x0238
+[1014/1903] fbneo/macross
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x9802
+[1015/1903] fbneo/macross2
+  piste sans effet, recherche complete
+  piece 1 : 14 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x980C (+3 miroir)
+[1016/1903] fbneo/macrossp
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x35FB0
+[1017/1903] fbneo/magerror
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x344A  [consommation non confirmee]
+[1018/1903] fbneo/magicbub
+  APPRIS 0x000A
+[1019/1903] fbneo/magicbuba
+  APPRIS 0x000A
+[1020/1903] fbneo/magix
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x1746 (+1 miroir)
+[1021/1903] fbneo/magmax
+  APPRIS 0x0CD5
+[1022/1903] fbneo/mahoudai
+  APPRIS 0x0392
+[1023/1903] fbneo/maketrax
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x041E (+1 miroir)
+[1024/1903] fbneo/maketrxb
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x041E (+1 miroir)
+[1025/1903] fbneo/maniacsp
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 5 candidat(s)
+  5 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1026/1903] fbneo/marineb
+  APPRIS 0x0002
+[1027/1903] fbneo/mariner
+  APPRIS 0x0002
+[1028/1903] fbneo/markham
+  APPRIS 0x0067
+[1029/1903] fbneo/masterw
+  APPRIS 0x0709
+[1030/1903] fbneo/masterwj
+  APPRIS 0x0709
+[1031/1903] fbneo/masterwu
+  APPRIS 0x0709
+[1032/1903] fbneo/mastkin
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x2143
+[1033/1903] fbneo/mayday
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0xE237
+[1034/1903] fbneo/maydaya
+  piste sans effet, recherche complete
+  piece 1 : 11 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0xE237
+[1035/1903] fbneo/maydayb
+  piste sans effet, recherche complete
+  piece 1 : 12 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0xE237
+[1036/1903] fbneo/mazinger
+  APPRIS 0x00A1
+[1037/1903] fbneo/mazingerj
+  APPRIS 0x00A1
+[1038/1903] fbneo/mbrush
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x041E (+1 miroir)
+[1039/1903] fbneo/mcatadv
+  APPRIS 0x1008
+[1040/1903] fbneo/mcatadvj
+  APPRIS 0x1008
+[1041/1903] fbneo/mchampdx
+  APPRIS 0xA8C2  [consommation non confirmee]
+[1042/1903] fbneo/mchampdxa
+  APPRIS 0xA8C2  [consommation non confirmee]
+[1043/1903] fbneo/megablst
+  APPRIS 0x30F6
+[1044/1903] fbneo/megablstj
+  APPRIS 0x30F6
+[1045/1903] fbneo/megablstu
+  APPRIS 0x30F6
+[1046/1903] fbneo/megazone
+  APPRIS 0x1B1D
+[1047/1903] fbneo/megazonea
+  APPRIS 0x1B1D
+[1048/1903] fbneo/megazoneb
+  APPRIS 0x1B1D
+[1049/1903] fbneo/megazonei
+  APPRIS 0x1B1D
+[1050/1903] fbneo/metamrph
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0xFFFF  [consommation non confirmee]
+[1051/1903] fbneo/metamrphj
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1052/1903] fbneo/metamrphu
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1053/1903] fbneo/meteorho
+  APPRIS 0x006F
+[1054/1903] fbneo/meteorts
+  APPRIS 0x006F
+[1055/1903] fbneo/metlclsh
+  APPRIS 0x0011
+[1056/1903] fbneo/metlsavr
+  APPRIS 0x020C
+[1057/1903] fbneo/metmqstr
+  piste sans effet, recherche complete
+  piece 1 : 11 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x3A081 (+3 miroir)
+[1058/1903] fbneo/mexico86
+  APPRIS 0x2809
+[1059/1903] fbneo/mgcrystl
+  APPRIS 0x017C
+[1060/1903] fbneo/mgcrystlj
+  APPRIS 0x017C  [consommation non confirmee]
+[1061/1903] fbneo/mgcrystlo
+  APPRIS 0x017C
+[1062/1903] fbneo/mightguy
+  APPRIS 0x0000
+[1063/1903] fbneo/mikie
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1064/1903] fbneo/mikiehs
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x190C  [consommation non confirmee]
+[1065/1903] fbneo/mikiej
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x190C  [consommation non confirmee]
+[1066/1903] fbneo/mimonkey
+  APPRIS 0x04A0
+[1067/1903] fbneo/mimonsco
+  APPRIS 0x04A0
+[1068/1903] fbneo/mimonscr
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x00A0
+[1069/1903] fbneo/minivadr
+  APPRIS 0x01DB  [consommation non confirmee]
+[1070/1903] fbneo/misncrft
+  piste sans effet, recherche complete
+  piece 1 : 61 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x75116
+[1071/1903] fbneo/missb2
+  piste sans effet, recherche complete
+  piece 1 : 9 candidat(s)
+  piece 2 : 8 candidat(s)
+  APPRIS 0x36BA (+1 miroir)
+[1072/1903] fbneo/missmw96
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1073/1903] fbneo/missw96
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1074/1903] fbneo/mjgtaste
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0xDBF21
+[1075/1903] fbneo/mmatrix
+  APPRIS 0x49A2  [consommation non confirmee]
+[1076/1903] fbneo/mmatrixd
+  APPRIS 0x49A2  [consommation non confirmee]
+[1077/1903] fbneo/mmatrixj
+  APPRIS 0x49A2
+[1078/1903] fbneo/moegonta
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  3 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1079/1903] fbneo/mofflott
+  APPRIS 0x0A99  [consommation non confirmee]
+[1080/1903] fbneo/momoko
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x010B (+2 miroir)
+[1081/1903] fbneo/monkelf
+  APPRIS 0x8F8A
+[1082/1903] fbneo/moonal2
+  APPRIS 0x0002
+[1083/1903] fbneo/moonal2b
+  APPRIS 0x0002
+[1084/1903] fbneo/moonaln
+  APPRIS 0x0002
+[1085/1903] fbneo/mouser
+  APPRIS 0x0001
+[1086/1903] fbneo/mouserc
+  APPRIS 0x0001
+[1087/1903] fbneo/mrdo
+  APPRIS 0x0006
+[1088/1903] fbneo/mrdofix
+  APPRIS 0x0006
+[1089/1903] fbneo/mrdot
+  APPRIS 0x0006
+[1090/1903] fbneo/mrdoy
+  APPRIS 0x0006
+[1091/1903] fbneo/mrdu
+  APPRIS 0x0006
+[1092/1903] fbneo/mrjong
+  APPRIS 0x2006
+[1093/1903] fbneo/mrlo
+  APPRIS 0x0006
+[1094/1903] fbneo/mschamp
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x066E
+[1095/1903] fbneo/mschamps
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x066E
+[1096/1903] fbneo/msgogo
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x42C1A (+1 miroir)  [consommation non confirmee]
+[1097/1903] fbneo/msheartb
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x066E
+[1098/1903] fbneo/msisaac
+  APPRIS 0x0463
+[1099/1903] fbneo/mslider
+  APPRIS 0x0018
+[1100/1903] fbneo/mspacmab
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x066E
+[1101/1903] fbneo/mspacman
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x066E
+[1102/1903] fbneo/mspacmat
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x066E
+[1103/1903] fbneo/mspacmbe
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x066E
+[1104/1903] fbneo/mspacmnf
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x066E
+[1105/1903] fbneo/mspacpls
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x066E
+[1106/1903] fbneo/mspuzzle
+  APPRIS 0x0828  [consommation non confirmee]
+[1107/1903] fbneo/mstworld
+  APPRIS 0x1CE2 (+1 miroir)
+[1108/1903] fbneo/mtwins
+  APPRIS 0x0F3E  [consommation non confirmee]
+[1109/1903] fbneo/mugsmash
+  APPRIS 0x01A4
+[1110/1903] fbneo/multchmp
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1111/1903] fbneo/multchmpk
+  APPRIS 0xA8C2  [consommation non confirmee]
+[1112/1903] fbneo/mustache
+  APPRIS 0x0064
+[1113/1903] fbneo/mvp
+  APPRIS 0x2001
+[1114/1903] fbneo/mvpj
+  APPRIS 0x2001
+[1115/1903] fbneo/mwarr
+  APPRIS 0x25A0  [consommation non confirmee]
+[1116/1903] fbneo/myangel
+  APPRIS 0x0000
+[1117/1903] fbneo/myangel2
+  APPRIS 0x0000
+[1118/1903] fbneo/mysticri
+  piste sans effet, recherche complete
+  piece 1 : 39202 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1119/1903] fbneo/mysticrib
+  piste sans effet, recherche complete
+  piece 1 : 34 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x25024
+[1120/1903] fbneo/naname
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0xC043  [consommation non confirmee]
+[1121/1903] fbneo/nastar
+  APPRIS 0x04D8
+[1122/1903] fbneo/nastarw
+  APPRIS 0x04D8
+[1123/1903] fbneo/natodef
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x0352  [consommation non confirmee]
+[1124/1903] fbneo/nbbatman
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x21C33  [consommation non confirmee]
+[1125/1903] fbneo/nebulray
+  piste sans effet, recherche complete
+  piece 1 : 687 candidat(s)
+  piece 2 : 68 candidat(s)
+  APPRIS 0x10C57 (+54 miroir)
+[1126/1903] fbneo/nebulrayj
+  piste sans effet, recherche complete
+  piece 1 : 709 candidat(s)
+  piece 2 : 64 candidat(s)
+  APPRIS 0x10C4F (+49 miroir)
+[1127/1903] fbneo/neobattl
+  APPRIS 0x0690
+[1128/1903] fbneo/netwars
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x0002 (+1 miroir)
+[1129/1903] fbneo/newfant
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1130/1903] fbneo/newpuc2
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x066E
+[1131/1903] fbneo/newpuc2b
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x066E
+[1132/1903] fbneo/newpuckx
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x066E
+[1133/1903] fbneo/nextfase
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1134/1903] fbneo/nightstr
+  APPRIS 0x9C58
+[1135/1903] fbneo/nightstrj
+  APPRIS 0x9C58
+[1136/1903] fbneo/nightstru
+  APPRIS 0x9C58
+[1137/1903] fbneo/ninclown
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1138/1903] fbneo/ninjaw
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1139/1903] fbneo/ninjawj
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1140/1903] fbneo/ninjawu
+  piste sans effet, recherche complete
+  piece 1 : 912 candidat(s)
+  piece 2 : 3 candidat(s)
+  3 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1141/1903] fbneo/nitrobal
+  APPRIS 0xA1B0
+[1142/1903] fbneo/nmaster
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x3A081 (+3 miroir)
+[1143/1903] fbneo/nmg5
+  APPRIS 0x90C2
+[1144/1903] fbneo/nmg5e
+  APPRIS 0x90C2
+[1145/1903] fbneo/nmouse
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x066E
+[1146/1903] fbneo/nmouseb
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x066E
+[1147/1903] fbneo/nob
+  APPRIS 0x000E
+[1148/1903] fbneo/nobb
+  APPRIS 0x000E
+[1149/1903] fbneo/nost
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1150/1903] fbneo/nostj
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1151/1903] fbneo/nostk
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1152/1903] fbneo/nouryoku
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x80C6 (+3 miroir)
+[1153/1903] fbneo/nsub
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x1381
+[1154/1903] fbneo/nwarr
+  piste sans effet, recherche complete
+  piece 1 : 17 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x8261  [consommation non confirmee]
+[1155/1903] fbneo/nwarra
+  piste sans effet, recherche complete
+  piece 1 : 15 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x8261  [consommation non confirmee]
+[1156/1903] fbneo/nwarrb
+  piste sans effet, recherche complete
+  piece 1 : 15 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x8261  [consommation non confirmee]
+[1157/1903] fbneo/nwarrh
+  piste sans effet, recherche complete
+  piece 1 : 51 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x81B3
+[1158/1903] fbneo/nwarru
+  piste sans effet, recherche complete
+  piece 1 : 15 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x8261  [consommation non confirmee]
+[1159/1903] fbneo/nwarrud
+  piste sans effet, recherche complete
+  piece 1 : 17 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x8261  [consommation non confirmee]
+[1160/1903] fbneo/nyanpani
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1161/1903] fbneo/nycaptor
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x077E (+1 miroir)
+[1162/1903] fbneo/ohmygod
+  piste sans effet, recherche complete
+  piece 1 : 73 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0xC043 (+3 miroir)
+[1163/1903] fbneo/oisipuzl
+  APPRIS 0xB330
+[1164/1903] fbneo/omega
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x00C0 (+1 miroir)
+[1165/1903] fbneo/omegaf
+  APPRIS 0x16E7
+[1166/1903] fbneo/omegafs
+  APPRIS 0x16E7
+[1167/1903] fbneo/opaopa
+  APPRIS 0x0237
+[1168/1903] fbneo/opwolf3
+  APPRIS 0x22B6
+[1169/1903] fbneo/opwolf3u
+  APPRIS 0x22B6  [consommation non confirmee]
+[1170/1903] fbneo/orbs
+  APPRIS 0x1D0A
+[1171/1903] fbneo/osman
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x26BA (+1 miroir)
+[1172/1903] fbneo/othunder
+  APPRIS 0x26F0
+[1173/1903] fbneo/othunderj
+  APPRIS 0x26F0
+[1174/1903] fbneo/othunderu
+  APPRIS 0x26F0
+[1175/1903] fbneo/outfxies
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x10128
+[1176/1903] fbneo/outfxiesj
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x10128
+[1177/1903] fbneo/ozon1
+  APPRIS 0x0002
+[1178/1903] fbneo/pacgal
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x066E
+[1179/1903] fbneo/pacheart
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x066E
+[1180/1903] fbneo/pacman
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x066E
+[1181/1903] fbneo/pacmanbl
+  APPRIS 0x026E
+[1182/1903] fbneo/pacmanbla
+  APPRIS 0x026E
+[1183/1903] fbneo/pacmanf
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x066E
+[1184/1903] fbneo/pacmod
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x066E
+[1185/1903] fbneo/pacplus
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x066E
+[1186/1903] fbneo/paddle2
+  APPRIS 0x0432
+[1187/1903] fbneo/paintrlr
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x041E (+1 miroir)
+[1188/1903] fbneo/pajaroes
+  APPRIS 0x0002
+[1189/1903] fbneo/palamed
+  APPRIS 0x880D
+[1190/1903] fbneo/pandoras
+  APPRIS 0x0025
+[1191/1903] fbneo/pangpang
+  APPRIS 0x0023
+[1192/1903] fbneo/pangpoms
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1193/1903] fbneo/pangpomsm
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1194/1903] fbneo/pass
+  APPRIS 0x0014
+[1195/1903] fbneo/pbancho
+  APPRIS 0x0002
+[1196/1903] fbneo/pbillian
+  piste sans effet, recherche complete
+  piece 1 : 123 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1197/1903] fbneo/pbobble2
+  APPRIS 0x0090
+[1198/1903] fbneo/pbobble2j
+  APPRIS 0x0090
+[1199/1903] fbneo/pbobble2o
+  APPRIS 0x0090
+[1200/1903] fbneo/pbobble2u
+  APPRIS 0x0090  [consommation non confirmee]
+[1201/1903] fbneo/pbobble2x
+  APPRIS 0x0090
+[1202/1903] fbneo/pbobble3
+  APPRIS 0x5BE0
+[1203/1903] fbneo/pbobble3j
+  APPRIS 0x5BE0
+[1204/1903] fbneo/pbobble3u
+  APPRIS 0x5BE0
+[1205/1903] fbneo/pbobble4
+  APPRIS 0x59E0
+[1206/1903] fbneo/pbobble4j
+  APPRIS 0x59E0
+[1207/1903] fbneo/pbobble4u
+  APPRIS 0x59E0
+[1208/1903] fbneo/pclubys
+  APPRIS 0xCE74
+[1209/1903] fbneo/pclubysa
+  APPRIS 0xCE74
+[1210/1903] fbneo/pdrift
+  APPRIS 0xE853  [consommation non confirmee]
+[1211/1903] fbneo/pdrifta
+  APPRIS 0xE853  [consommation non confirmee]
+[1212/1903] fbneo/pdrifte
+  APPRIS 0xE853  [consommation non confirmee]
+[1213/1903] fbneo/pdriftj
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1214/1903] fbneo/peggle
+  piste sans effet, recherche complete
+  piece 1 : 14 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1215/1903] fbneo/pegglet
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1216/1903] fbneo/perestro
+  APPRIS 0x1807
+[1217/1903] fbneo/perestrof
+  APPRIS 0x1807
+[1218/1903] fbneo/perfrman
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x5003
+[1219/1903] fbneo/perfrmanu
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x5003
+[1220/1903] fbneo/pettanp
+  APPRIS 0x0058
+[1221/1903] fbneo/phoenix
+  APPRIS 0x038F
+[1222/1903] fbneo/phoenix3
+  APPRIS 0x038F
+[1223/1903] fbneo/phoenixa
+  APPRIS 0x038F  [consommation non confirmee]
+[1224/1903] fbneo/phoenixb
+  APPRIS 0x038F  [consommation non confirmee]
+[1225/1903] fbneo/phoenixc
+  APPRIS 0x038F
+[1226/1903] fbneo/phoenixj
+  APPRIS 0x038F
+[1227/1903] fbneo/phoenixt
+  APPRIS 0x038F
+[1228/1903] fbneo/phoenxp2
+  APPRIS 0x028F
+[1229/1903] fbneo/pipedrm
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x063C  [consommation non confirmee]
+[1230/1903] fbneo/pipedrmj
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x063C  [consommation non confirmee]
+[1231/1903] fbneo/pipedrmu
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1232/1903] fbneo/pipibibs
+  APPRIS 0x0570
+[1233/1903] fbneo/pipibibsa
+  APPRIS 0x0570
+[1234/1903] fbneo/pipibibsp
+  APPRIS 0x0570
+[1235/1903] fbneo/piranha
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x066E
+[1236/1903] fbneo/piranhah
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x066E
+[1237/1903] fbneo/piranhao
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x066E
+[1238/1903] fbneo/pitnrun
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1239/1903] fbneo/pitnruna
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1240/1903] fbneo/pktgaldx
+  APPRIS 0x4045
+[1241/1903] fbneo/pktgaldxj
+  APPRIS 0x4045
+[1242/1903] fbneo/pleiadbl
+  APPRIS 0x038F
+[1243/1903] fbneo/pleiadce
+  APPRIS 0x038F
+[1244/1903] fbneo/pleiads
+  APPRIS 0x038F
+[1245/1903] fbneo/plgirls
+  APPRIS 0x8240
+[1246/1903] fbneo/plgirls2
+  APPRIS 0x8032
+[1247/1903] fbneo/poitto
+  APPRIS 0x2045
+[1248/1903] fbneo/pollux
+  APPRIS 0x0036
+[1249/1903] fbneo/polluxa
+  APPRIS 0x0036
+[1250/1903] fbneo/polluxa2
+  APPRIS 0x0036
+[1251/1903] fbneo/pop_hh
+  piste sans effet, recherche complete
+  piece 1 : 9 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x8040
+[1252/1903] fbneo/popeye
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x0D5D
+[1253/1903] fbneo/popeyebl
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1254/1903] fbneo/popeyef
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x0D5D
+[1255/1903] fbneo/popeyeman
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x066E
+[1256/1903] fbneo/popeyeu
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x0C7C (+1 miroir)
+[1257/1903] fbneo/popnpop
+  APPRIS 0x0264
+[1258/1903] fbneo/popnpopj
+  APPRIS 0x0264
+[1259/1903] fbneo/popnpopu
+  APPRIS 0x0264
+[1260/1903] fbneo/porky
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x00A8
+[1261/1903] fbneo/potopoto
+  APPRIS 0xECBC
+[1262/1903] fbneo/powerbal
+  APPRIS 0x8230
+[1263/1903] fbneo/primella
+  APPRIS 0x0503
+[1264/1903] fbneo/prmtmfgt
+  APPRIS 0x13001
+[1265/1903] fbneo/prmtmfgto
+  APPRIS 0x13001
+[1266/1903] fbneo/progear
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1267/1903] fbneo/progeara
+  APPRIS 0x2388  [consommation non confirmee]
+[1268/1903] fbneo/progearj
+  APPRIS 0x2388  [consommation non confirmee]
+[1269/1903] fbneo/progearjbl
+  APPRIS 0x2388  [consommation non confirmee]
+[1270/1903] fbneo/progearjd
+  piste sans effet, recherche complete
+  piece 1 : 21 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x03B6  [consommation non confirmee]
+[1271/1903] fbneo/progearud
+  piste sans effet, recherche complete
+  piece 1 : 16 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1272/1903] fbneo/progress
+  APPRIS 0x0083
+[1273/1903] fbneo/prtytime
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x4AD6
+[1274/1903] fbneo/pturn
+  APPRIS 0x0000
+[1275/1903] fbneo/puchicar
+  APPRIS 0x026A
+[1276/1903] fbneo/puchicarj
+  APPRIS 0x026A
+[1277/1903] fbneo/puckman
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x066E
+[1278/1903] fbneo/puckmana
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x066E
+[1279/1903] fbneo/puckmanf
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x066E
+[1280/1903] fbneo/puckmanh
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x066E
+[1281/1903] fbneo/puckmod
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x066E
+[1282/1903] fbneo/pururun
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x68825 (+1 miroir)
+[1283/1903] fbneo/pushman
+  APPRIS 0x0C03
+[1284/1903] fbneo/pushmana
+  APPRIS 0x0C03
+[1285/1903] fbneo/pushmans
+  APPRIS 0x0C03
+[1286/1903] fbneo/pushmant
+  APPRIS 0x0C03
+[1287/1903] fbneo/puyo
+  APPRIS 0xFCD8
+[1288/1903] fbneo/puyobl
+  APPRIS 0xFCD8
+[1289/1903] fbneo/puyoj
+  APPRIS 0xFCD8  [consommation non confirmee]
+[1290/1903] fbneo/puyoja
+  APPRIS 0xFCD8  [consommation non confirmee]
+[1291/1903] fbneo/puyopuy2
+  APPRIS 0x4820
+[1292/1903] fbneo/puzzlekg
+  piste sans effet, recherche complete
+  piece 1 : 968 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x12B78E (+3 miroir)
+[1293/1903] fbneo/puzzli
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1294/1903] fbneo/puzznic
+  APPRIS 0x8B82
+[1295/1903] fbneo/pwheelsj
+  APPRIS 0x1FF8  [consommation non confirmee]
+[1296/1903] fbneo/pzlbreak
+  APPRIS 0x2294
+[1297/1903] fbneo/pzloop2j
+  APPRIS 0x80B1  [consommation non confirmee]
+[1298/1903] fbneo/pzloop2jr1
+  APPRIS 0x80B1  [consommation non confirmee]
+[1299/1903] fbneo/qgakumon
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  3 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1300/1903] fbneo/qjinsei
+  APPRIS 0xD228
+[1301/1903] fbneo/qndream
+  APPRIS 0x8D66
+[1302/1903] fbneo/qrouka
+  APPRIS 0x040D
+[1303/1903] fbneo/qsangoku
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x004F (+1 miroir)  [consommation non confirmee]
+[1304/1903] fbneo/qsww
+  piste sans effet, recherche complete
+  piece 1 : 43 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1305/1903] fbneo/qtheater
+  APPRIS 0x56D8
+[1306/1903] fbneo/qtono1
+  APPRIS 0x07E4
+[1307/1903] fbneo/quartet2
+  APPRIS 0x0001  [consommation non confirmee]
+[1308/1903] fbneo/quartet2a
+  APPRIS 0x0001  [consommation non confirmee]
+[1309/1903] fbneo/quester
+  piste sans effet, recherche complete
+  piece 1 : 8 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x814C (+2 miroir)
+[1310/1903] fbneo/quiz18k
+  APPRIS 0x2EF6
+[1311/1903] fbneo/quizhuhu
+  APPRIS 0x006A
+[1312/1903] fbneo/quizmoon
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x1FAA2 (+2 miroir)
+[1313/1903] fbneo/quiztou
+  piste sans effet, recherche complete
+  piece 1 : 10249 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x0FD5  [consommation non confirmee]
+[1314/1903] fbneo/qzchikyu
+  APPRIS 0x3DCE
+[1315/1903] fbneo/qzkklgy2
+  piste sans effet, recherche complete
+  piece 1 : 107 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x0240 (+2 miroir)
+[1316/1903] fbneo/qzkklogy
+  piste sans effet, recherche complete
+  piece 1 : 377 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x03C0 (+2 miroir)
+[1317/1903] fbneo/qzquest
+  APPRIS 0x72FC  [consommation non confirmee]
+[1318/1903] fbneo/raccoon
+  piste sans effet, recherche complete
+  piece 1 : 2088 candidat(s)
+  piece 2 : 33 candidat(s)
+  APPRIS 0x1466E2 (+22 miroir)
+[1319/1903] fbneo/rachero
+  piste sans effet, recherche complete
+  piece 1 : 9 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x18DC4 (+1 miroir)
+[1320/1903] fbneo/racingb
+  piste sans effet, recherche complete
+  piece 1 : 19 candidat(s)
+  piece 2 : 9 candidat(s)
+  APPRIS 0x181D2 (+3 miroir)
+[1321/1903] fbneo/raflesia
+  APPRIS 0x0028
+[1322/1903] fbneo/ragtime
+  APPRIS 0x804F  [consommation non confirmee]
+[1323/1903] fbneo/ragtimea
+  APPRIS 0x804F  [consommation non confirmee]
+[1324/1903] fbneo/raiders5
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1325/1903] fbneo/raiders5t
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1326/1903] fbneo/raiga
+  APPRIS 0x0047  [consommation non confirmee]
+[1327/1903] fbneo/raphero
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x980C (+2 miroir)
+[1328/1903] fbneo/rastsag2
+  APPRIS 0x04D8  [consommation non confirmee]
+[1329/1903] fbneo/rayforce
+  APPRIS 0x2264
+[1330/1903] fbneo/rayforcej
+  APPRIS 0x2264
+[1331/1903] fbneo/rbtapper
+  piste sans effet, recherche complete
+  piece 1 : 8 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x08D2 (+2 miroir)
+[1332/1903] fbneo/rdft
+  APPRIS 0x29B7E
+[1333/1903] fbneo/rdft2
+  piste sans effet, recherche complete
+  piece 1 : 11 candidat(s)
+  piece 2 : 4 candidat(s)
+  4 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1334/1903] fbneo/rdft22kc
+  APPRIS 0x28290
+[1335/1903] fbneo/rdft2a
+  piste sans effet, recherche complete
+  piece 1 : 10 candidat(s)
+  piece 2 : 5 candidat(s)
+  5 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1336/1903] fbneo/rdft2j
+  piste sans effet, recherche complete
+  piece 1 : 11 candidat(s)
+  piece 2 : 4 candidat(s)
+  4 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1337/1903] fbneo/rdft2t
+  piste sans effet, recherche complete
+  piece 1 : 11 candidat(s)
+  piece 2 : 4 candidat(s)
+  4 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1338/1903] fbneo/rdft2u
+  piste sans effet, recherche complete
+  piece 1 : 8 candidat(s)
+  piece 2 : 4 candidat(s)
+  4 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1339/1903] fbneo/rdft2us
+  APPRIS 0x28290
+[1340/1903] fbneo/rdfta
+  APPRIS 0x29B7E
+[1341/1903] fbneo/rdftau
+  APPRIS 0x29B7E
+[1342/1903] fbneo/rdftit
+  APPRIS 0x29B7E
+[1343/1903] fbneo/rdftj
+  APPRIS 0x29B7E
+[1344/1903] fbneo/rdftu
+  APPRIS 0x29B7E
+[1345/1903] fbneo/reaktor
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x194B
+[1346/1903] fbneo/recalh
+  APPRIS 0x09A0
+[1347/1903] fbneo/recordbr
+  APPRIS 0x230C
+[1348/1903] fbneo/redearth
+  piste sans effet, recherche complete
+  piece 1 : 57 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x0A13
+[1349/1903] fbneo/redearthr1
+  piste sans effet, recherche complete
+  piece 1 : 13 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x0A13
+[1350/1903] fbneo/redufo
+  APPRIS 0x0002
+[1351/1903] fbneo/redufob
+  APPRIS 0x0002
+[1352/1903] fbneo/rezon
+  APPRIS 0x1C40
+[1353/1903] fbneo/rfjet
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x8A04B  [consommation non confirmee]
+[1354/1903] fbneo/rfjet2kc
+  APPRIS 0x28930
+[1355/1903] fbneo/rfjeta
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x8A04B  [consommation non confirmee]
+[1356/1903] fbneo/rfjetj
+  piste sans effet, recherche complete
+  piece 1 : 8 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x8A04B  [consommation non confirmee]
+[1357/1903] fbneo/rfjetu
+  piste sans effet, recherche complete
+  piece 1 : 8 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x8A04B  [consommation non confirmee]
+[1358/1903] fbneo/ridingf
+  APPRIS 0x812C  [consommation non confirmee]
+[1359/1903] fbneo/ridingfj
+  APPRIS 0x812C  [consommation non confirmee]
+[1360/1903] fbneo/ridingfu
+  APPRIS 0x812C  [consommation non confirmee]
+[1361/1903] fbneo/ridleofp
+  APPRIS 0x0003
+[1362/1903] fbneo/ringdest
+  APPRIS 0x726F
+[1363/1903] fbneo/ringdesta
+  APPRIS 0x726F
+[1364/1903] fbneo/ringdstd
+  APPRIS 0x726F  [consommation non confirmee]
+[1365/1903] fbneo/ringrage
+  APPRIS 0xAB8C
+[1366/1903] fbneo/ringragej
+  APPRIS 0xAB8C
+[1367/1903] fbneo/ringrageu
+  APPRIS 0xAB8C
+[1368/1903] fbneo/riot
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1369/1903] fbneo/robocop
+  APPRIS 0x0DC4
+[1370/1903] fbneo/robocop2
+  APPRIS 0x0049
+[1371/1903] fbneo/robocop2j
+  APPRIS 0x0049
+[1372/1903] fbneo/robocop2u
+  APPRIS 0x0049
+[1373/1903] fbneo/robocopb
+  APPRIS 0x0DC4
+[1374/1903] fbneo/robocopj
+  APPRIS 0x0DC4
+[1375/1903] fbneo/robocopu
+  APPRIS 0x0DC4
+[1376/1903] fbneo/robocopu0
+  APPRIS 0x0DC4
+[1377/1903] fbneo/robocopw
+  APPRIS 0x0DC4
+[1378/1903] fbneo/robokid
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x19F9  [consommation non confirmee]
+[1379/1903] fbneo/robokidj
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x1A15
+[1380/1903] fbneo/robokidj2
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1381/1903] fbneo/rockn
+  APPRIS 0x0018  [consommation non confirmee]
+[1382/1903] fbneo/rockna
+  APPRIS 0x0018  [consommation non confirmee]
+[1383/1903] fbneo/rocktris
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x16C8 (+2 miroir)
+[1384/1903] fbneo/rohga
+  APPRIS 0x0017
+[1385/1903] fbneo/rohga1
+  APPRIS 0x0017
+[1386/1903] fbneo/rohga2
+  APPRIS 0x0017
+[1387/1903] fbneo/rohgah
+  APPRIS 0x0017
+[1388/1903] fbneo/rohgau
+  APPRIS 0x0017
+[1389/1903] fbneo/rollace
+  APPRIS 0x0000
+[1390/1903] fbneo/rollace2
+  APPRIS 0x0000
+[1391/1903] fbneo/roughrac
+  piste sans effet, recherche complete
+  piece 1 : 25 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1392/1903] fbneo/roundup
+  APPRIS 0x0022
+[1393/1903] fbneo/rranger
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x1BFE (+2 miroir)
+[1394/1903] fbneo/rshark
+  APPRIS 0x0020
+[1395/1903] fbneo/rtypeleo
+  piste sans effet, recherche complete
+  piece 1 : 26 candidat(s)
+  piece 2 : 8 candidat(s)
+  APPRIS 0x2C90 (+1 miroir)
+[1396/1903] fbneo/rtypeleoj
+  piste sans effet, recherche complete
+  piece 1 : 8 candidat(s)
+  piece 2 : 6 candidat(s)
+  6 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1397/1903] fbneo/rundeep
+  APPRIS 0x0233
+[1398/1903] fbneo/ryorioh
+  APPRIS 0x0016
+[1399/1903] fbneo/ryujin
+  APPRIS 0x0115
+[1400/1903] fbneo/ryukendn
+  APPRIS 0x2F14  [consommation non confirmee]
+[1401/1903] fbneo/ryukendna
+  APPRIS 0x2F14  [consommation non confirmee]
+[1402/1903] fbneo/ryukyu
+  APPRIS 0x3884
+[1403/1903] fbneo/s1945
+  APPRIS 0x58A6
+[1404/1903] fbneo/s1945a
+  APPRIS 0x58A6
+[1405/1903] fbneo/s1945ii
+  piste sans effet, recherche complete
+  piece 1 : 82 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x3C5BD
+[1406/1903] fbneo/s1945j
+  APPRIS 0x58A6
+[1407/1903] fbneo/s1945k
+  APPRIS 0x58A6
+[1408/1903] fbneo/sabotenb
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x9802 (+1 miroir)
+[1409/1903] fbneo/sabotenba
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x9802 (+1 miroir)
+[1410/1903] fbneo/sadari
+  APPRIS 0x0503
+[1411/1903] fbneo/sailormn
+  APPRIS 0x835E  [consommation non confirmee]
+[1412/1903] fbneo/sailormnh
+  APPRIS 0x835E  [consommation non confirmee]
+[1413/1903] fbneo/sailormnj
+  APPRIS 0x835E  [consommation non confirmee]
+[1414/1903] fbneo/sailormnk
+  APPRIS 0x835E  [consommation non confirmee]
+[1415/1903] fbneo/sailormno
+  APPRIS 0x835E  [consommation non confirmee]
+[1416/1903] fbneo/sailormnoh
+  APPRIS 0x835E  [consommation non confirmee]
+[1417/1903] fbneo/sailormnoj
+  APPRIS 0x835E  [consommation non confirmee]
+[1418/1903] fbneo/sailormnok
+  APPRIS 0x835E  [consommation non confirmee]
+[1419/1903] fbneo/sailormnot
+  APPRIS 0x835E  [consommation non confirmee]
+[1420/1903] fbneo/sailormnou
+  piste sans effet, recherche complete
+  piece 1 : 10 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x835E  [consommation non confirmee]
+[1421/1903] fbneo/sailormnt
+  APPRIS 0x835E  [consommation non confirmee]
+[1422/1903] fbneo/sailormnu
+  APPRIS 0x835E  [consommation non confirmee]
+[1423/1903] fbneo/sandscrp
+  piste sans effet, recherche complete
+  piece 1 : 10 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x2000 (+1 miroir)
+[1424/1903] fbneo/sandscrpa
+  piste sans effet, recherche complete
+  piece 1 : 36 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x2000 (+1 miroir)
+[1425/1903] fbneo/sandscrpb
+  piste sans effet, recherche complete
+  piece 1 : 12 candidat(s)
+  piece 2 : 8 candidat(s)
+  APPRIS 0x2000 (+5 miroir)
+[1426/1903] fbneo/sbagman
+  APPRIS 0x0000  [consommation non confirmee]
+[1427/1903] fbneo/sbagmans
+  APPRIS 0x0000  [consommation non confirmee]
+[1428/1903] fbneo/sbm
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1429/1903] fbneo/scessjoe
+  piste sans effet, recherche complete
+  piece 1 : 10 candidat(s)
+  piece 2 : 7 candidat(s)
+  APPRIS 0x9294 (+2 miroir)
+[1430/1903] fbneo/schmeisr
+  APPRIS 0x06A6
+[1431/1903] fbneo/sci
+  APPRIS 0x1649  [consommation non confirmee]
+[1432/1903] fbneo/scia
+  APPRIS 0x1649  [consommation non confirmee]
+[1433/1903] fbneo/scij
+  APPRIS 0x1649  [consommation non confirmee]
+[1434/1903] fbneo/scin
+  APPRIS 0x1649  [consommation non confirmee]
+[1435/1903] fbneo/sciu
+  APPRIS 0x1649  [consommation non confirmee]
+[1436/1903] fbneo/scramb2
+  APPRIS 0x0002
+[1437/1903] fbneo/scramblb
+  APPRIS 0x0002
+[1438/1903] fbneo/scramble
+  APPRIS 0x0002
+[1439/1903] fbneo/scramblebb
+  APPRIS 0x0002
+[1440/1903] fbneo/scramblebf
+  APPRIS 0x0002
+[1441/1903] fbneo/scrambles
+  APPRIS 0x0002
+[1442/1903] fbneo/screwloo
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x0074
+[1443/1903] fbneo/scudhamm
+  APPRIS 0xC85A  [consommation non confirmee]
+[1444/1903] fbneo/sdi
+  APPRIS 0x060C
+[1445/1903] fbneo/sdib
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 3 candidat(s)
+  3 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1446/1903] fbneo/sdibl
+  APPRIS 0x060C
+[1447/1903] fbneo/secretag
+  APPRIS 0x201A
+[1448/1903] fbneo/sectionz
+  APPRIS 0x0030
+[1449/1903] fbneo/sectionza
+  APPRIS 0x0030
+[1450/1903] fbneo/selfeena
+  APPRIS 0x0166
+[1451/1903] fbneo/senkyu
+  piste sans effet, recherche complete
+  piece 1 : 16 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x8A04B  [consommation non confirmee]
+[1452/1903] fbneo/senkyua
+  piste sans effet, recherche complete
+  piece 1 : 12 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x8A04B  [consommation non confirmee]
+[1453/1903] fbneo/sfiii
+  piste sans effet, recherche complete
+  piece 1 : 32 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x718B
+[1454/1903] fbneo/sfiii2
+  piste sans effet, recherche complete
+  piece 1 : 14 candidat(s)
+  piece 2 : 3 candidat(s)
+  3 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1455/1903] fbneo/sfiii2j
+  piste sans effet, recherche complete
+  piece 1 : 15 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x852B
+[1456/1903] fbneo/sfiii2n
+  piste sans effet, recherche complete
+  piece 1 : 17 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x852B
+[1457/1903] fbneo/sfiii3
+  piste sans effet, recherche complete
+  piece 1 : 23 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x7CEB (+1 miroir)  [consommation non confirmee]
+[1458/1903] fbneo/sfiii3n
+  piste sans effet, recherche complete
+  piece 1 : 13 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x7CE3
+[1459/1903] fbneo/sfiii3nr1
+  piste sans effet, recherche complete
+  piece 1 : 11 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x7CE3
+[1460/1903] fbneo/sfiii3r1
+  piste sans effet, recherche complete
+  piece 1 : 23 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x7CEB (+1 miroir)  [consommation non confirmee]
+[1461/1903] fbneo/sfiii3u
+  piste sans effet, recherche complete
+  piece 1 : 23 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x7CEB (+1 miroir)  [consommation non confirmee]
+[1462/1903] fbneo/sfiii3ur1
+  piste sans effet, recherche complete
+  piece 1 : 23 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x7CEB (+1 miroir)  [consommation non confirmee]
+[1463/1903] fbneo/sfiiih
+  piste sans effet, recherche complete
+  piece 1 : 21 candidat(s)
+  piece 2 : 7 candidat(s)
+  APPRIS 0x718B (+1 miroir)
+[1464/1903] fbneo/sfiiij
+  piste sans effet, recherche complete
+  piece 1 : 20 candidat(s)
+  piece 2 : 7 candidat(s)
+  APPRIS 0x718B (+1 miroir)
+[1465/1903] fbneo/sfiiin
+  piste sans effet, recherche complete
+  piece 1 : 31 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x718B
+[1466/1903] fbneo/sformula
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x1948 (+1 miroir)
+[1467/1903] fbneo/sfp
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x194C
+[1468/1903] fbneo/sgladiat
+  piste sans effet, recherche complete
+  piece 1 : 11 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x41AF (+1 miroir)
+[1469/1903] fbneo/shadfrce
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1470/1903] fbneo/shadfrcej
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1471/1903] fbneo/shadoww
+  APPRIS 0x2F14  [consommation non confirmee]
+[1472/1903] fbneo/shadowwa
+  APPRIS 0x2F14  [consommation non confirmee]
+[1473/1903] fbneo/shangkid
+  APPRIS 0x0002
+[1474/1903] fbneo/shangon
+  piste sans effet, recherche complete
+  piece 1 : 12 candidat(s)
+  piece 2 : 4 candidat(s)
+  4 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1475/1903] fbneo/shangon1
+  piste sans effet, recherche complete
+  piece 1 : 15 candidat(s)
+  piece 2 : 4 candidat(s)
+  4 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1476/1903] fbneo/shangon2
+  piste sans effet, recherche complete
+  piece 1 : 15 candidat(s)
+  piece 2 : 4 candidat(s)
+  4 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1477/1903] fbneo/shangon3
+  piste sans effet, recherche complete
+  piece 1 : 13 candidat(s)
+  piece 2 : 5 candidat(s)
+  5 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1478/1903] fbneo/shangonle
+  piste sans effet, recherche complete
+  piece 1 : 13 candidat(s)
+  piece 2 : 5 candidat(s)
+  5 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1479/1903] fbneo/shinfz
+  APPRIS 0xA690  [consommation non confirmee]
+[1480/1903] fbneo/shippumd
+  APPRIS 0x041C  [consommation non confirmee]
+[1481/1903] fbneo/shogwarr
+  APPRIS 0x63E8
+[1482/1903] fbneo/shogwarru
+  piste sans effet, recherche complete
+  piece 1 : 8 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x63E8
+[1483/1903] fbneo/shtngmst
+  piste sans effet, recherche complete
+  piece 1 : 185 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1484/1903] fbneo/sidearms
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x3E37
+[1485/1903] fbneo/sidearmsj
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x3E37
+[1486/1903] fbneo/silkroad
+  APPRIS 0x003D  [consommation non confirmee]
+[1487/1903] fbneo/silvmil
+  APPRIS 0x0B64
+[1488/1903] fbneo/sinvasn
+  APPRIS 0x0030  [consommation non confirmee]
+[1489/1903] fbneo/sinvasnb
+  APPRIS 0x0030  [consommation non confirmee]
+[1490/1903] fbneo/sjryuko
+  APPRIS 0x20E1  [consommation non confirmee]
+[1491/1903] fbneo/sjryuko1
+  APPRIS 0x20E1  [consommation non confirmee]
+[1492/1903] fbneo/skyadvnt
+  APPRIS 0x0004
+[1493/1903] fbneo/skyadvntj
+  APPRIS 0x0004
+[1494/1903] fbneo/skyadvntu
+  APPRIS 0x0004
+[1495/1903] fbneo/skyalert
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x2201
+[1496/1903] fbneo/skyarmy
+  APPRIS 0x00F4
+[1497/1903] fbneo/skyfox
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x0052 (+1 miroir)
+[1498/1903] fbneo/skylancr
+  APPRIS 0x0000
+[1499/1903] fbneo/skylancre
+  APPRIS 0x0000
+[1500/1903] fbneo/skyraidr
+  APPRIS 0x0002
+[1501/1903] fbneo/skyskipr
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x0C75 (+1 miroir)
+[1502/1903] fbneo/skysmash
+  APPRIS 0x006C  [consommation non confirmee]
+[1503/1903] fbneo/skysoldr
+  APPRIS 0x0004
+[1504/1903] fbneo/skywolf
+  APPRIS 0x0001
+[1505/1903] fbneo/skywolf2
+  APPRIS 0x0001
+[1506/1903] fbneo/skywolf3
+  le jeu ne s'anime pas, il n'encaissera pas de piece
+  difficile : jeu inanime (essai 1, on reessaiera)
+[1507/1903] fbneo/slipstrm
+  le jeu ne s'anime pas, il n'encaissera pas de piece
+  difficile : jeu inanime (essai 1, on reessaiera)
+[1508/1903] fbneo/slipstrmh
+  APPRIS 0x3918
+[1509/1903] fbneo/slither
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1510/1903] fbneo/slithera
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1511/1903] fbneo/slyspy
+  APPRIS 0x201A
+[1512/1903] fbneo/slyspy2
+  APPRIS 0x201A
+[1513/1903] fbneo/smbomb
+  APPRIS 0x726F
+[1514/1903] fbneo/smbombr1
+  APPRIS 0x726F
+[1515/1903] fbneo/snapper
+  APPRIS 0x30D1  [consommation non confirmee]
+[1516/1903] fbneo/snowbro3
+  APPRIS 0x0194
+[1517/1903] fbneo/snowbros
+  APPRIS 0x0194
+[1518/1903] fbneo/snowbrosa
+  APPRIS 0x0194
+[1519/1903] fbneo/snowbrosb
+  APPRIS 0x0194
+[1520/1903] fbneo/snowbrosc
+  APPRIS 0x0194
+[1521/1903] fbneo/snowbrosd
+  APPRIS 0x0194
+[1522/1903] fbneo/snowbrosj
+  APPRIS 0x0194  [consommation non confirmee]
+[1523/1903] fbneo/sokonuke
+  APPRIS 0x7FB4
+[1524/1903] fbneo/sonicbom
+  APPRIS 0x0041
+[1525/1903] fbneo/sonson
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1526/1903] fbneo/sonsonj
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x00C9
+[1527/1903] fbneo/sos
+  APPRIS 0x005F
+[1528/1903] fbneo/sotsugyo
+  APPRIS 0x0056
+[1529/1903] fbneo/spacbat2
+  APPRIS 0x0002
+[1530/1903] fbneo/spacbatt
+  APPRIS 0x0002
+[1531/1903] fbneo/spacecr
+  APPRIS 0x0195
+[1532/1903] fbneo/spacedx
+  APPRIS 0x2444  [consommation non confirmee]
+[1533/1903] fbneo/spacedxj
+  APPRIS 0x2444  [consommation non confirmee]
+[1534/1903] fbneo/spacedxo
+  APPRIS 0x2442  [consommation non confirmee]
+[1535/1903] fbneo/spacegun
+  piste sans effet, recherche complete
+  piece 1 : 18 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x01B8 (+1 miroir)
+[1536/1903] fbneo/spacempr
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1537/1903] fbneo/spatter
+  APPRIS 0x00E0
+[1538/1903] fbneo/spcinv95
+  APPRIS 0xFFCA
+[1539/1903] fbneo/spcinv95u
+  APPRIS 0xFFCA
+[1540/1903] fbneo/spcinvdj
+  APPRIS 0x0306  [consommation non confirmee]
+[1541/1903] fbneo/spcpostn
+  APPRIS 0x03E2
+[1542/1903] fbneo/spf2t
+  APPRIS 0x8077  [consommation non confirmee]
+[1543/1903] fbneo/spf2ta
+  APPRIS 0x8077  [consommation non confirmee]
+[1544/1903] fbneo/spf2td
+  piste sans effet, recherche complete
+  piece 1 : 12 candidat(s)
+  piece 2 : 4 candidat(s)
+  4 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1545/1903] fbneo/spf2th
+  APPRIS 0x8077  [consommation non confirmee]
+[1546/1903] fbneo/spf2xj
+  APPRIS 0x8077  [consommation non confirmee]
+[1547/1903] fbneo/spf2xjd
+  piste sans effet, recherche complete
+  piece 1 : 12 candidat(s)
+  piece 2 : 6 candidat(s)
+  6 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1548/1903] fbneo/spiero
+  APPRIS 0x000F
+[1549/1903] fbneo/spinlbrk
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 3 candidat(s)
+  3 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1550/1903] fbneo/spinlbrkj
+  APPRIS 0x0F86  [consommation non confirmee]
+[1551/1903] fbneo/spinlbrku
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  4 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1552/1903] fbneo/sprglbpg
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x07E6
+[1553/1903] fbneo/sprglobp
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  4 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1554/1903] fbneo/spy
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x1815 (+2 miroir)
+[1555/1903] fbneo/spyhunt
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1556/1903] fbneo/spyhuntp
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x2E0C (+1 miroir)
+[1557/1903] fbneo/spyu
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x1815 (+1 miroir)
+[1558/1903] fbneo/sqix
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1559/1903] fbneo/sqixb2
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1560/1903] fbneo/sqixr1
+  piste sans effet, recherche complete
+  piece 1 : 19 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1561/1903] fbneo/sqixu
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1562/1903] fbneo/squash
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0xA4AC (+1 miroir)
+[1563/1903] fbneo/sraider
+  APPRIS 0x0006
+[1564/1903] fbneo/sranger
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x1BFE (+2 miroir)
+[1565/1903] fbneo/srangerb
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x1BFE (+1 miroir)
+[1566/1903] fbneo/srangerw
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x1BFE (+2 miroir)
+[1567/1903] fbneo/srdarwin
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x10E3
+[1568/1903] fbneo/srdarwinj
+  APPRIS 0x10EB
+[1569/1903] fbneo/srdmissn
+  APPRIS 0x0001
+[1570/1903] fbneo/ssanchan
+  APPRIS 0x00E0  [consommation non confirmee]
+[1571/1903] fbneo/ssi
+  APPRIS 0x0096
+[1572/1903] fbneo/ssmissin
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x9802 (+1 miroir)
+[1573/1903] fbneo/sspiritj
+  piste sans effet, recherche complete
+  piece 1 : 58 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x78001
+[1574/1903] fbneo/sspirits
+  APPRIS 0x8001  [consommation non confirmee]
+[1575/1903] fbneo/sspirtfc
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1576/1903] fbneo/sstingry
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x5804 (+1 miroir)
+[1577/1903] fbneo/sstriker
+  APPRIS 0x0392
+[1578/1903] fbneo/starfght
+  APPRIS 0x0002
+[1579/1903] fbneo/starfigh
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x1CD6 (+1 miroir)
+[1580/1903] fbneo/startrkd
+  piste sans effet, recherche complete
+  piece 1 : 26 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1581/1903] fbneo/stfight
+  piste sans effet, recherche complete
+  piece 1 : 18 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x1A00  [consommation non confirmee]
+[1582/1903] fbneo/stfighta
+  piste sans effet, recherche complete
+  piece 1 : 18 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x1A00  [consommation non confirmee]
+[1583/1903] fbneo/stinger
+  APPRIS 0x00AC
+[1584/1903] fbneo/stinger2
+  APPRIS 0x00AC
+[1585/1903] fbneo/stkclmns
+  APPRIS 0xFC01
+[1586/1903] fbneo/stkclmnsj
+  APPRIS 0xFC01  [consommation non confirmee]
+[1587/1903] fbneo/stlforce
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x1F475
+[1588/1903] fbneo/stoneage
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x3F04
+[1589/1903] fbneo/storming
+  APPRIS 0x05FB
+[1590/1903] fbneo/stratof
+  APPRIS 0x0047  [consommation non confirmee]
+[1591/1903] fbneo/strfbomb
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1592/1903] fbneo/strkfgtr
+  APPRIS 0xF401
+[1593/1903] fbneo/strnskil
+  APPRIS 0x0067
+[1594/1903] fbneo/sub
+  APPRIS 0x0010
+[1595/1903] fbneo/sunaq
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x0013  [consommation non confirmee]
+[1596/1903] fbneo/superbar
+  APPRIS 0x021A
+[1597/1903] fbneo/superchs
+  APPRIS 0x0145
+[1598/1903] fbneo/superchsj
+  APPRIS 0x0145
+[1599/1903] fbneo/superchsu
+  APPRIS 0x0145
+[1600/1903] fbneo/superg
+  APPRIS 0x0002
+[1601/1903] fbneo/superx
+  APPRIS 0x0060
+[1602/1903] fbneo/superxm
+  APPRIS 0x0060
+[1603/1903] fbneo/supmodel
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1604/1903] fbneo/suprglob
+  piste sans effet, recherche complete
+  piece 1 : 39 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x058F
+[1605/1903] fbneo/suprleag
+  APPRIS 0x2001
+[1606/1903] fbneo/suprridr
+  APPRIS 0x0083
+[1607/1903] fbneo/suprtrio
+  APPRIS 0x5386  [consommation non confirmee]
+[1608/1903] fbneo/sutapper
+  piste sans effet, recherche complete
+  piece 1 : 17 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x08D2
+[1609/1903] fbneo/swarm
+  APPRIS 0x0002
+[1610/1903] fbneo/swatpolc
+  APPRIS 0x835A
+[1611/1903] fbneo/swcourt
+  APPRIS 0x140A
+[1612/1903] fbneo/swcourtj
+  piste sans effet, recherche complete
+  piece 1 : 16614 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x0FD5  [consommation non confirmee]
+[1613/1903] fbneo/sws
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1614/1903] fbneo/sws92
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1615/1903] fbneo/sws92g
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1616/1903] fbneo/sws93
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1617/1903] fbneo/sws96
+  piste sans effet, recherche complete
+  piece 1 : 20 candidat(s)
+  piece 2 : 15 candidat(s)
+  APPRIS 0x0398 (+2 miroir)
+[1618/1903] fbneo/sws97
+  piste sans effet, recherche complete
+  piece 1 : 17 candidat(s)
+  piece 2 : 14 candidat(s)
+  APPRIS 0x0398 (+1 miroir)
+[1619/1903] fbneo/sxyreact
+  APPRIS 0x0068
+[1620/1903] fbneo/syvalion
+  APPRIS 0x2900  [consommation non confirmee]
+[1621/1903] fbneo/tail2nos
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x1948 (+1 miroir)
+[1622/1903] fbneo/tangtang
+  APPRIS 0xA8C2  [consommation non confirmee]
+[1623/1903] fbneo/tantr
+  APPRIS 0xFC19  [consommation non confirmee]
+[1624/1903] fbneo/tantrbl
+  APPRIS 0xFC19  [consommation non confirmee]
+[1625/1903] fbneo/tantrbl2
+  APPRIS 0xFC19  [consommation non confirmee]
+[1626/1903] fbneo/tantrbl3
+  APPRIS 0xFC19  [consommation non confirmee]
+[1627/1903] fbneo/tantrkor
+  APPRIS 0xFC19
+[1628/1903] fbneo/tapper
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x08D2 (+3 miroir)
+[1629/1903] fbneo/tappera
+  piste sans effet, recherche complete
+  piece 1 : 13 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x08D2
+[1630/1903] fbneo/tazmani2
+  APPRIS 0x00EE
+[1631/1903] fbneo/tazmania
+  APPRIS 0x00EE
+[1632/1903] fbneo/tazzmang
+  APPRIS 0x00EE
+[1633/1903] fbneo/tcobra2
+  APPRIS 0x06CA
+[1634/1903] fbneo/tcobra2u
+  APPRIS 0x06CA
+[1635/1903] fbneo/tdfever
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1636/1903] fbneo/tdfever2
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1637/1903] fbneo/tdfeverj
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1638/1903] fbneo/tdragon
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x9802
+[1639/1903] fbneo/tdragon1
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x9802 (+1 miroir)
+[1640/1903] fbneo/tdragon2
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x980C
+[1641/1903] fbneo/tdragon2a
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x980C
+[1642/1903] fbneo/tdragonb
+  piste sans effet, recherche complete
+  piece 1 : 11 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x9802 (+1 miroir)
+[1643/1903] fbneo/teddybb
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x080E  [consommation non confirmee]
+[1644/1903] fbneo/teddybbo
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x0802 (+1 miroir)  [consommation non confirmee]
+[1645/1903] fbneo/tekipaki
+  APPRIS 0x0054  [consommation non confirmee]
+[1646/1903] fbneo/teljan
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0xA2FB5 (+1 miroir)  [consommation non confirmee]
+[1647/1903] fbneo/tempest
+  APPRIS 0x0006
+[1648/1903] fbneo/tempest1
+  APPRIS 0x0006
+[1649/1903] fbneo/tempest2
+  APPRIS 0x0006
+[1650/1903] fbneo/tempest3
+  APPRIS 0x0006
+[1651/1903] fbneo/temptube
+  APPRIS 0x0006
+[1652/1903] fbneo/tengai
+  APPRIS 0x95D8
+[1653/1903] fbneo/tengaij
+  APPRIS 0x95D8
+[1654/1903] fbneo/tetrisp
+  APPRIS 0xC010  [consommation non confirmee]
+[1655/1903] fbneo/tetrisp2
+  piste sans effet, recherche complete
+  piece 1 : 22 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x401C (+1 miroir)
+[1656/1903] fbneo/tetrisp2j
+  piste sans effet, recherche complete
+  piece 1 : 10 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x401C (+1 miroir)
+[1657/1903] fbneo/tetrisse
+  APPRIS 0x0040  [consommation non confirmee]
+[1658/1903] fbneo/tfrceac
+  APPRIS 0x8203
+[1659/1903] fbneo/tfrceacb
+  APPRIS 0x8203
+[1660/1903] fbneo/tfrceacj
+  APPRIS 0x8203  [consommation non confirmee]
+[1661/1903] fbneo/tgm2
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  4 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1662/1903] fbneo/tgm2p
+  piste sans effet, recherche complete
+  piece 1 : 8 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x94961 (+1 miroir)  [consommation non confirmee]
+[1663/1903] fbneo/thedeep
+  APPRIS 0x0233
+[1664/1903] fbneo/theend
+  APPRIS 0x0002
+[1665/1903] fbneo/theends
+  APPRIS 0x0002
+[1666/1903] fbneo/theglob
+  3 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1667/1903] fbneo/theglob2
+  APPRIS 0x7D64 (+1 miroir)  [consommation non confirmee]
+[1668/1903] fbneo/theglob3
+  APPRIS 0x7BD0 (+1 miroir)  [consommation non confirmee]
+[1669/1903] fbneo/theglobp
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  4 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1670/1903] fbneo/thehand
+  APPRIS 0x000A
+[1671/1903] fbneo/theroes
+  APPRIS 0x257C
+[1672/1903] fbneo/thetogyu
+  APPRIS 0x0030
+[1673/1903] fbneo/thief
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x0296  [consommation non confirmee]
+[1674/1903] fbneo/thndrbld
+  piste sans effet, recherche complete
+  piece 1 : 8 candidat(s)
+  piece 2 : 7 candidat(s)
+  APPRIS 0x18A60 (+2 miroir)
+[1675/1903] fbneo/thndrbld1
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 7 candidat(s)
+  APPRIS 0x18A60 (+2 miroir)
+[1676/1903] fbneo/thoop
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0xC7C8 (+1 miroir)
+[1677/1903] fbneo/thunderj
+  piste sans effet, recherche complete
+  piece 1 : 16 candidat(s)
+  piece 2 : 7 candidat(s)
+  7 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1678/1903] fbneo/thunderl
+  APPRIS 0x021A
+[1679/1903] fbneo/thunderx
+  piste sans effet, recherche complete
+  piece 1 : 14 candidat(s)
+  piece 2 : 11 candidat(s)
+  APPRIS 0x0886
+[1680/1903] fbneo/thunderxa
+  piste sans effet, recherche complete
+  piece 1 : 11 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x0886
+[1681/1903] fbneo/thunderxb
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x0886
+[1682/1903] fbneo/thunderxj
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x0886
+[1683/1903] fbneo/thundfox
+  APPRIS 0x3B6C
+[1684/1903] fbneo/thundfoxj
+  APPRIS 0x3B6C  [consommation non confirmee]
+[1685/1903] fbneo/thundfoxu
+  APPRIS 0x3B6C  [consommation non confirmee]
+[1686/1903] fbneo/timelimt
+  APPRIS 0x0083
+[1687/1903] fbneo/timesold
+  APPRIS 0x0004  [consommation non confirmee]
+[1688/1903] fbneo/timesold1
+  APPRIS 0x0004  [consommation non confirmee]
+[1689/1903] fbneo/tiptop
+  APPRIS 0x0012
+[1690/1903] fbneo/tkdensho
+  APPRIS 0x1C3E
+[1691/1903] fbneo/tkdenshoa
+  APPRIS 0x1C3E
+[1692/1903] fbneo/toobin
+  piste sans effet, recherche complete
+  piece 1 : 15 candidat(s)
+  piece 2 : 8 candidat(s)
+  8 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1693/1903] fbneo/toobin1
+  piste sans effet, recherche complete
+  piece 1 : 18 candidat(s)
+  piece 2 : 9 candidat(s)
+  9 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1694/1903] fbneo/toobin2
+  piste sans effet, recherche complete
+  piece 1 : 18 candidat(s)
+  piece 2 : 9 candidat(s)
+  APPRIS 0xE6BA
+[1695/1903] fbneo/toobin2e
+  piste sans effet, recherche complete
+  piece 1 : 70 candidat(s)
+  piece 2 : 5 candidat(s)
+  5 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1696/1903] fbneo/toobine
+  piste sans effet, recherche complete
+  piece 1 : 20 candidat(s)
+  piece 2 : 8 candidat(s)
+  8 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1697/1903] fbneo/toobing
+  piste sans effet, recherche complete
+  piece 1 : 15 candidat(s)
+  piece 2 : 8 candidat(s)
+  8 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1698/1903] fbneo/toppyrap
+  APPRIS 0x2474
+[1699/1903] fbneo/topspeed
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x2C822
+[1700/1903] fbneo/topspeedu
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x2C822
+[1701/1903] fbneo/toride2g
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1702/1903] fbneo/toride2gg
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1703/1903] fbneo/toride2j
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1704/1903] fbneo/tornado1
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1705/1903] fbneo/toryumon
+  APPRIS 0x3E00  [consommation non confirmee]
+[1706/1903] fbneo/toutrun
+  piste sans effet, recherche complete
+  piece 1 : 11 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x8053 (+1 miroir)
+[1707/1903] fbneo/toutrun1
+  piste sans effet, recherche complete
+  piece 1 : 9 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x8053 (+1 miroir)
+[1708/1903] fbneo/toutrun3
+  piste sans effet, recherche complete
+  piece 1 : 16 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x8053 (+1 miroir)
+[1709/1903] fbneo/toypop
+  APPRIS 0x0ABD
+[1710/1903] fbneo/tp2m32
+  APPRIS 0xC454
+[1711/1903] fbneo/transfrm
+  APPRIS 0x0000
+[1712/1903] fbneo/trckydoc
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x0310  [consommation non confirmee]
+[1713/1903] fbneo/trckydoca
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x0310  [consommation non confirmee]
+[1714/1903] fbneo/tricktrp
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x0B02
+[1715/1903] fbneo/triplep
+  APPRIS 0x0002
+[1716/1903] fbneo/trojan
+  APPRIS 0x0030
+[1717/1903] fbneo/trojana
+  APPRIS 0x0030
+[1718/1903] fbneo/trojanj
+  APPRIS 0x0030
+[1719/1903] fbneo/trojanr
+  APPRIS 0x0030
+[1720/1903] fbneo/trophyh
+  APPRIS 0xFF95
+[1721/1903] fbneo/trstar
+  APPRIS 0x13001
+[1722/1903] fbneo/trstarj
+  APPRIS 0x13001
+[1723/1903] fbneo/trstaro
+  APPRIS 0x13001
+[1724/1903] fbneo/trstaroj
+  APPRIS 0x13001
+[1725/1903] fbneo/truxton2
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1726/1903] fbneo/trvmstr
+  APPRIS 0x0058  [consommation non confirmee]
+[1727/1903] fbneo/trvmstra
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1728/1903] fbneo/trvmstrb
+  APPRIS 0x0058  [consommation non confirmee]
+[1729/1903] fbneo/trvmstrc
+  APPRIS 0x0058  [consommation non confirmee]
+[1730/1903] fbneo/tstrike
+  APPRIS 0x0C02
+[1731/1903] fbneo/tstrikea
+  APPRIS 0x0C02
+[1732/1903] fbneo/tturf
+  APPRIS 0x009D
+[1733/1903] fbneo/tturfu
+  APPRIS 0x009D  [consommation non confirmee]
+[1734/1903] fbneo/tubeit
+  APPRIS 0x8E02
+[1735/1903] fbneo/tumbleb
+  APPRIS 0x0023
+[1736/1903] fbneo/tumbleb2
+  APPRIS 0x0023
+[1737/1903] fbneo/tumblep
+  APPRIS 0x0023
+[1738/1903] fbneo/tumblepj
+  APPRIS 0x0023
+[1739/1903] fbneo/turkhunt
+  APPRIS 0x9BB6  [consommation non confirmee]
+[1740/1903] fbneo/twinadv
+  APPRIS 0x0068  [consommation non confirmee]
+[1741/1903] fbneo/twinadvk
+  APPRIS 0x0068  [consommation non confirmee]
+[1742/1903] fbneo/twinbrat
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x91CA (+2 miroir)
+[1743/1903] fbneo/twinbrata
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x9416 (+2 miroir)
+[1744/1903] fbneo/twineag2
+  piste sans effet, recherche complete
+  piece 1 : 23 candidat(s)
+  piece 2 : 10 candidat(s)
+  APPRIS 0x3E2A9 (+4 miroir)
+[1745/1903] fbneo/twinfalc
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x0763 (+1 miroir)
+[1746/1903] fbneo/twinhawk
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x00EA  [consommation non confirmee]
+[1747/1903] fbneo/twinhawku
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x00EA  [consommation non confirmee]
+[1748/1903] fbneo/twinqix
+  APPRIS 0x0222
+[1749/1903] fbneo/twinsqua
+  APPRIS 0x0001
+[1750/1903] fbneo/twocrude
+  APPRIS 0x0033
+[1751/1903] fbneo/tylz
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x249D  [consommation non confirmee]
+[1752/1903] fbneo/typhoon
+  APPRIS 0x008C (+1 miroir)
+[1753/1903] fbneo/uecology
+  APPRIS 0x02E9  [consommation non confirmee]
+[1754/1903] fbneo/ufosensi
+  APPRIS 0x0018
+[1755/1903] fbneo/ultennis
+  APPRIS 0x101E  [consommation non confirmee]
+[1756/1903] fbneo/ultennisj
+  APPRIS 0x101E  [consommation non confirmee]
+[1757/1903] fbneo/ultrax
+  piste sans effet, recherche complete
+  piece 1 : 16 candidat(s)
+  piece 2 : 9 candidat(s)
+  APPRIS 0x3E264 (+4 miroir)
+[1758/1903] fbneo/umanclub
+  APPRIS 0x0690
+[1759/1903] fbneo/unclepoo
+  APPRIS 0x1443
+[1760/1903] fbneo/undrfire
+  piste sans effet, recherche complete
+  piece 1 : 9 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x24A54
+[1761/1903] fbneo/undrfirej
+  piste sans effet, recherche complete
+  piece 1 : 10 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x24A54 (+1 miroir)
+[1762/1903] fbneo/undrfireu
+  piste sans effet, recherche complete
+  piece 1 : 10 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x24A54
+[1763/1903] fbneo/uniwars
+  APPRIS 0x0002
+[1764/1903] fbneo/unsquad
+  APPRIS 0x0FFF
+[1765/1903] fbneo/uopoko
+  APPRIS 0x0194  [consommation non confirmee]
+[1766/1903] fbneo/uopokoj
+  APPRIS 0x0194  [consommation non confirmee]
+[1767/1903] fbneo/usclssic
+  APPRIS 0x0F12
+[1768/1903] fbneo/valtric
+  APPRIS 0x0018
+[1769/1903] fbneo/vamphalf
+  APPRIS 0x54E02
+[1770/1903] fbneo/vamphalfk
+  APPRIS 0x54C92
+[1771/1903] fbneo/vandyke
+  piste sans effet, recherche complete
+  piece 1 : 157 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1772/1903] fbneo/vandykeb
+  piste sans effet, recherche complete
+  piece 1 : 96 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1773/1903] fbneo/vandykejal
+  piste sans effet, recherche complete
+  piece 1 : 93 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1774/1903] fbneo/vandykejal2
+  piste sans effet, recherche complete
+  piece 1 : 93 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1775/1903] fbneo/vangrd2
+  piste sans effet, recherche complete
+  piece 1 : 9 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x5C51 (+2 miroir)
+[1776/1903] fbneo/vasara
+  APPRIS 0x2E9C
+[1777/1903] fbneo/vasara2
+  APPRIS 0x58CC
+[1778/1903] fbneo/vasara2a
+  APPRIS 0x58CC
+[1779/1903] fbneo/vautour
+  APPRIS 0x038F
+[1780/1903] fbneo/vautourz
+  APPRIS 0x038F
+[1781/1903] fbneo/vfive
+  APPRIS 0x03B2
+[1782/1903] fbneo/vhuntj
+  piste sans effet, recherche complete
+  piece 1 : 51 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x81B3
+[1783/1903] fbneo/vhuntjr1
+  piste sans effet, recherche complete
+  piece 1 : 17 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x8261  [consommation non confirmee]
+[1784/1903] fbneo/vhuntjr1s
+  piste sans effet, recherche complete
+  piece 1 : 50 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x81B3
+[1785/1903] fbneo/vhuntjr2
+  piste sans effet, recherche complete
+  piece 1 : 15 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x8261  [consommation non confirmee]
+[1786/1903] fbneo/victnine
+  piste sans effet, recherche complete
+  piece 1 : 9 candidat(s)
+  piece 2 : 8 candidat(s)
+  APPRIS 0x11EF
+[1787/1903] fbneo/victroad
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x5C5C (+1 miroir)
+[1788/1903] fbneo/vidvince
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x181A (+1 miroir)  [consommation non confirmee]
+[1789/1903] fbneo/vimana
+  piste sans effet, recherche complete
+  piece 1 : 29 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x19002
+[1790/1903] fbneo/vimanaj
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x014B (+1 miroir)  [consommation non confirmee]
+[1791/1903] fbneo/vimanan
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x19002
+[1792/1903] fbneo/vindctr2
+  piste sans effet, recherche complete
+  piece 1 : 10 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x2FED
+[1793/1903] fbneo/vindctr2r1
+  piste sans effet, recherche complete
+  piece 1 : 7 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x2FED
+[1794/1903] fbneo/vindctr2r2
+  piste sans effet, recherche complete
+  piece 1 : 13 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x2FED
+[1795/1903] fbneo/viofight
+  APPRIS 0x013C
+[1796/1903] fbneo/viofightj
+  APPRIS 0x013C  [consommation non confirmee]
+[1797/1903] fbneo/viofightu
+  APPRIS 0x013C  [consommation non confirmee]
+[1798/1903] fbneo/viprp1
+  piste sans effet, recherche complete
+  piece 1 : 16 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x3FE83
+[1799/1903] fbneo/viprp1hk
+  piste sans effet, recherche complete
+  piece 1 : 9 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x8A04B  [consommation non confirmee]
+[1800/1903] fbneo/viprp1j
+  piste sans effet, recherche complete
+  piece 1 : 14 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x3FE83
+[1801/1903] fbneo/viprp1oj
+  piste sans effet, recherche complete
+  piece 1 : 17 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x3FE9B
+[1802/1903] fbneo/viprp1ot
+  piste sans effet, recherche complete
+  piece 1 : 10 candidat(s)
+  piece 2 : 1 candidat(s)
+  APPRIS 0x8A04B  [consommation non confirmee]
+[1803/1903] fbneo/viprp1s
+  piste sans effet, recherche complete
+  piece 1 : 15 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x3FE9B
+[1804/1903] fbneo/viprp1u
+  piste sans effet, recherche complete
+  piece 1 : 14 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x3FE83
+[1805/1903] fbneo/vmetal
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x0E00
+[1806/1903] fbneo/vmetaln
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x0E00
+[1807/1903] fbneo/volfied
+  APPRIS 0x0026
+[1808/1903] fbneo/volfiedj
+  APPRIS 0x0026
+[1809/1903] fbneo/volfiedu
+  APPRIS 0x0026
+[1810/1903] fbneo/vpool
+  APPRIS 0x0002
+[1811/1903] fbneo/vs10yard
+  APPRIS 0x0019
+[1812/1903] fbneo/vs10yardj
+  APPRIS 0x0019
+[1813/1903] fbneo/vs10yardu
+  APPRIS 0x0019
+[1814/1903] fbneo/vshoot
+  piste sans effet, recherche complete
+  piece 1 : 11 candidat(s)
+  piece 2 : 7 candidat(s)
+  APPRIS 0x1A6CA (+1 miroir)
+[1815/1903] fbneo/vsslalom
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1816/1903] fbneo/vssoccer
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1817/1903] fbneo/vstetris
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1818/1903] fbneo/wacko
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x08D2 (+1 miroir)
+[1819/1903] fbneo/warlords
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1820/1903] fbneo/warofbug
+  APPRIS 0x0006
+[1821/1903] fbneo/warofbugu
+  APPRIS 0x0006
+[1822/1903] fbneo/warriorb
+  APPRIS 0x00B8
+[1823/1903] fbneo/warzard
+  piste sans effet, recherche complete
+  piece 1 : 56 candidat(s)
+  piece 2 : 4 candidat(s)
+  APPRIS 0x0A13
+[1824/1903] fbneo/warzardr1
+  piste sans effet, recherche complete
+  piece 1 : 17 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x0A13
+[1825/1903] fbneo/watrball
+  piste sans effet, recherche complete
+  piece 1 : 8 candidat(s)
+  piece 2 : 7 candidat(s)
+  APPRIS 0x2A71 (+3 miroir)
+[1826/1903] fbneo/wb3
+  APPRIS 0x08A7
+[1827/1903] fbneo/wb31
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1828/1903] fbneo/wb32
+  APPRIS 0x08A7
+[1829/1903] fbneo/wb33
+  APPRIS 0x08A7
+[1830/1903] fbneo/wb34
+  APPRIS 0x08A7
+[1831/1903] fbneo/wb35
+  piste sans effet, recherche complete
+  piece 1 : 2 candidat(s)
+  APPRIS 0x3E44 (+1 miroir)  [consommation non confirmee]
+[1832/1903] fbneo/wbeachvl
+  APPRIS 0x3CCA
+[1833/1903] fbneo/wcbowl
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1834/1903] fbneo/wcbowl12
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1835/1903] fbneo/wcbowl13
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1836/1903] fbneo/wcbowl15
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1837/1903] fbneo/wcbowl161
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1838/1903] fbneo/wcbowl165
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1839/1903] fbneo/wecleman
+  piste sans effet, recherche complete
+  piece 1 : 57 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x2031 (+1 miroir)
+[1840/1903] fbneo/welltris
+  APPRIS 0x003B
+[1841/1903] fbneo/welltrisj
+  APPRIS 0x003B
+[1842/1903] fbneo/wfortune
+  piste sans effet, recherche complete
+  piece 1 : 15 candidat(s)
+  piece 2 : 3 candidat(s)
+  APPRIS 0x02B5
+[1843/1903] fbneo/wfortunea
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x0016
+[1844/1903] fbneo/whizz
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x0763 (+1 miroir)
+[1845/1903] fbneo/wiggie
+  APPRIS 0x021A
+[1846/1903] fbneo/willow
+  APPRIS 0x82A2 (+1 miroir)
+[1847/1903] fbneo/willowj
+  APPRIS 0x82A3  [consommation non confirmee]
+[1848/1903] fbneo/wintbob
+  APPRIS 0x0194
+[1849/1903] fbneo/wits
+  APPRIS 0x160C
+[1850/1903] fbneo/wiz
+  APPRIS 0x0003
+[1851/1903] fbneo/wizdfire
+  APPRIS 0x0027
+[1852/1903] fbneo/wizdfireu
+  APPRIS 0x0027
+[1853/1903] fbneo/wizt
+  APPRIS 0x0003
+[1854/1903] fbneo/wizta
+  APPRIS 0x0003
+[1855/1903] fbneo/wizwarz
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x24B3  [consommation non confirmee]
+[1856/1903] fbneo/wizzquiz
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1857/1903] fbneo/wizzquiza
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1858/1903] fbneo/wmatch
+  APPRIS 0x00A8
+[1859/1903] fbneo/wndrplnt
+  APPRIS 0x0043
+[1860/1903] fbneo/wolffang
+  APPRIS 0x0017
+[1861/1903] fbneo/wonder3
+  APPRIS 0x0D58
+[1862/1903] fbneo/wondstck
+  APPRIS 0xC7B0
+[1863/1903] fbneo/woodpeca
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x066E
+[1864/1903] fbneo/woodpeck
+  piste sans effet, recherche complete
+  piece 1 : 3 candidat(s)
+  APPRIS 0x066E
+[1865/1903] fbneo/worldwar
+  piste sans effet, recherche complete
+  piece 1 : 4 candidat(s)
+  APPRIS 0x43CA
+[1866/1903] fbneo/wownfant
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1867/1903] fbneo/wrofaero
+  piste sans effet, recherche complete
+  piece 1 : 13 candidat(s)
+  piece 2 : 6 candidat(s)
+  APPRIS 0x100690 (+2 miroir)
+[1868/1903] fbneo/ws
+  piste sans effet, recherche complete
+  piece 1 : 12 candidat(s)
+  piece 2 : 11 candidat(s)
+  APPRIS 0x77ED (+5 miroir)
+[1869/1903] fbneo/ws89
+  piste sans effet, recherche complete
+  piece 1 : 11 candidat(s)
+  piece 2 : 11 candidat(s)
+  APPRIS 0x77ED (+5 miroir)
+[1870/1903] fbneo/ws90
+  piste sans effet, recherche complete
+  piece 1 : 13 candidat(s)
+  piece 2 : 11 candidat(s)
+  APPRIS 0x77ED (+5 miroir)
+[1871/1903] fbneo/wschamp
+  APPRIS 0x9BA2
+[1872/1903] fbneo/wschampa
+  APPRIS 0x9BA2
+[1873/1903] fbneo/wwfsstar
+  APPRIS 0x0016
+[1874/1903] fbneo/wwfsstarj
+  APPRIS 0x0016
+[1875/1903] fbneo/wwfwfest
+  APPRIS 0x004E
+[1876/1903] fbneo/wwfwfestj
+  APPRIS 0x004E
+[1877/1903] fbneo/wyvernwg
+  APPRIS 0xB5FE6  [consommation non confirmee]
+[1878/1903] fbneo/xexex
+  piste sans effet, recherche complete
+  piece 1 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1879/1903] fbneo/xexexa
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x1A77C  [consommation non confirmee]
+[1880/1903] fbneo/xexexj
+  piste sans effet, recherche complete
+  piece 1 : 1 candidat(s)
+  APPRIS 0x1A77C  [consommation non confirmee]
+[1881/1903] fbneo/xmultiplm72
+  piste sans effet, recherche complete
+  piece 1 : 152 candidat(s)
+  piece 2 : 0 candidat(s)
+  difficile : aucun candidat (essai 1, on reessaiera)
+[1882/1903] fbneo/xorworld
+  piste sans effet, recherche complete
+  piece 1 : 6 candidat(s)
+  piece 2 : 3 candidat(s)
+  3 candidats, aucun confirme par le START : trop mince
+  difficile : candidats non confirmes (essai 1, on reessaiera)
+[1883/1903] fbneo/xxmissio
+  piste sans effet, recherche complete
+  piece 1 : 22 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x089F (+2 miroir)
+[1884/1903] fbneo/yankeedo
+  APPRIS 0x0006
+[1885/1903] fbneo/yesnoj
+  APPRIS 0x08B6  [consommation non confirmee]
+[1886/1903] fbneo/youjyudn
+  piste sans effet, recherche complete
+  piece 1 : 5 candidat(s)
+  piece 2 : 5 candidat(s)
+  APPRIS 0x1284C (+1 miroir)
+[1887/1903] fbneo/yuyugogo
+  APPRIS 0x0181
+[1888/1903] fbneo/zaviga
+  piste sans effet, recherche complete
+  piece 1 : 39 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x83DD (+1 miroir)
+[1889/1903] fbneo/zavigaj
+  piste sans effet, recherche complete
+  piece 1 : 37 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x83DD (+1 miroir)
+[1890/1903] fbneo/zero
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1891/1903] fbneo/zero2
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1892/1903] fbneo/zeropnt
+  APPRIS 0x0010
+[1893/1903] fbneo/zeropnt2
+  APPRIS 0x108C
+[1894/1903] fbneo/zeropnta
+  APPRIS 0x0010
+[1895/1903] fbneo/zeropntj
+  APPRIS 0x0010
+[1896/1903] fbneo/zerotime
+  APPRIS 0x0002
+[1897/1903] fbneo/zerozone
+  APPRIS 0x179D
+[1898/1903] fbneo/zingzip
+  APPRIS 0x2892
+[1899/1903] fbneo/zipzap
+  ce core n'expose pas sa RAM
+  difficile : RAM non lisible (essai 1)
+[1900/1903] fbneo/zoom909
+  piste sans effet, recherche complete
+  piece 1 : 88 candidat(s)
+  piece 2 : 2 candidat(s)
+  APPRIS 0x0000
+[1901/1903] fbneo/zunkyou
+  APPRIS 0xFA67
+[1902/1903] fbneo/zzyzzyxx
+  APPRIS 0x1010
+[1903/1903] fbneo/zzyzzyxx2
+  APPRIS 0x1010
+
+1617 appris, 286 difficiles, 0 echecs, en 555 min
