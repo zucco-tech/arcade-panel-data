@@ -32,6 +32,7 @@ Aucune dependance : uniquement la bibliotheque standard.
 
 import argparse
 import glob
+import subprocess
 import json
 import os
 import signal
@@ -44,6 +45,28 @@ from clavier_virtuel import ClavierVirtuel      # noqa: E402
 
 PORT_RA = 55355          # commandes RetroArch
 PORT_ES = 1337           # commandes EmulationStation
+
+# Sur une machine dediee il n y a pas de frontend : le releveur lance
+# RetroArch lui-meme. Deux details appris a la dure sur Ubuntu :
+#
+#   * sans bus D-Bus, RetroArch avorte des qu il cherche GameMode. Il faut
+#     l envelopper dans dbus-run-session.
+#   * la version 1.18 livree par Ubuntu n expose pas la RAM a READ_CORE_RAM.
+#     Il faut la 1.22.2 officielle.
+RETROARCH = "/opt/retroarch.AppImage"
+DOSSIER_COEURS = "/opt/coeurs"
+COEURS = {
+    "fbneo": "fbneo_libretro.so",
+    "fba": "fbneo_libretro.so",
+    "neogeo": "fbneo_libretro.so",
+    "neogeocd": "fbneo_libretro.so",
+    "naomi": "flycast_libretro.so",
+    "naomigd": "flycast_libretro.so",
+    "naomi2": "flycast_libretro.so",
+    "atomiswave": "flycast_libretro.so",
+    "mame0278": "mame_libretro.so",
+    "mame": "mame_libretro.so",
+}
 MORCEAU = 16384          # maximum accepte par RetroArch en une commande
 
 ATTENTE_LANCEMENT = 90.0  # un Neo Geo met du temps a demarrer
@@ -76,8 +99,10 @@ class Interruption(Exception):
 
 
 class Borne:
-    def __init__(self, hote, rapide_voulue=False):
+    def __init__(self, hote, rapide_voulue=False, direct=False):
         self.hote = hote
+        self.direct = direct         # on lance RetroArch soi-meme
+        self.processus = None
         self.taille = None
         self.rapide = False              # etat courant de l'avance rapide
         self.rapide_voulue = rapide_voulue
@@ -122,6 +147,9 @@ class Borne:
 
     def quitter(self):
         self._udp(PORT_RA, "QUIT", attendre_reponse=False)
+        if self.direct:
+            time.sleep(1.0)
+            self.arreter_processus()
 
     def avance_rapide(self, actif):
         """Bascule l'avance rapide de RetroArch.
@@ -167,11 +195,40 @@ class Borne:
     # -- EmulationStation
 
     def lancer(self, systeme, chemin_rom):
-        # EmulationStation compare le CHEMIN COMPLET de la rom, pas son nom
-        # de fichier : verifie dans FolderData::LookupGame, et constate sur
-        # la borne (un nom seul repond "Couldn't find game").
-        self._udp(PORT_ES, "START|%s|%s" % (systeme, chemin_rom),
-                  attendre_reponse=False)
+        """Demarre un jeu, par le frontend ou directement selon le mode."""
+        if not self.direct:
+            # EmulationStation compare le CHEMIN COMPLET de la rom, pas son
+            # nom de fichier : verifie dans FolderData::LookupGame, et
+            # constate sur la borne (un nom seul repond "Couldn't find game").
+            self._udp(PORT_ES, "START|%s|%s" % (systeme, chemin_rom),
+                      attendre_reponse=False)
+            return
+        coeur = COEURS.get(systeme)
+        if coeur is None:
+            return
+        self.arreter_processus()
+        env = dict(os.environ)
+        env.update({"HOME": "/root", "XDG_RUNTIME_DIR": "/run/user/0"})
+        self.processus = subprocess.Popen(
+            ["dbus-run-session", "--", RETROARCH,
+             "--config", "/root/.config/retroarch/retroarch.cfg",
+             "-L", os.path.join(DOSSIER_COEURS, coeur), chemin_rom],
+            env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+            start_new_session=True)
+
+    def arreter_processus(self):
+        """Coupe le RetroArch qu on a lance, s il en reste un."""
+        if self.processus is None:
+            return
+        try:
+            self.processus.terminate()
+            self.processus.wait(timeout=8)
+        except (OSError, subprocess.TimeoutExpired):
+            try:
+                self.processus.kill()
+            except OSError:
+                pass
+        self.processus = None
 
 
 def attendre_vivant(borne, arret, delai=ATTENTE_VIVANT):
@@ -434,6 +491,9 @@ def main():
                         help="ne traiter que les jeux deja documentes (rapide et sur)")
     parser.add_argument("--essai", action="store_true",
                         help="montrer la liste sans rien lancer")
+    parser.add_argument("--direct", action="store_true",
+                        help="lancer RetroArch soi-meme, sans EmulationStation "
+                             "(machine dediee)")
     parser.add_argument("--rapide", action="store_true",
                         help="avance rapide pendant le releve : inutile sur un "
                              "Raspberry deja a sa limite, x5,8 sur un PC")
@@ -480,7 +540,7 @@ def main():
     if not liste:
         return
 
-    borne = Borne(args.borne, args.rapide)
+    borne = Borne(args.borne, args.rapide, args.direct)
     if borne.jeu():
         raise SystemExit("Une partie est en cours — je ne demarre pas. "
                          "Reviens quand la borne est libre.")
@@ -551,6 +611,7 @@ def main():
         try:
             borne.avance_rapide(False)   # ne pas laisser la borne en accelere
             borne.quitter()
+            borne.arreter_processus()
         except OSError:
             pass
 
