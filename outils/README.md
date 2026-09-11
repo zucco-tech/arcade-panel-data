@@ -10,7 +10,14 @@ uniquement, aucune dépendance.
 | `importer-boutons.py` | construit la base des boutons |
 | `capture-credits.py` | mesure un seul jeu, à la main |
 | `verifier-borne.py` | contrôle les trois inconnues avant un balayage |
-| `clavier_virtuel.py` | le clavier `uinput` qui insère les pièces |
+| `clavier_virtuel.py` | le clavier `uinput` qui insère les pièces, pour les deux joueurs |
+| `clavier_xtest.py` | variante XTEST, qui n'existe que dans un serveur X donné |
+| `balayage-continu.py` | enchaîne les systèmes, jour et nuit, sans surveillance |
+| `complement-joueur2.py` | ajoute l'adresse du joueur 2 aux fiches déjà mesurées |
+| `capture_fenetre.py` | photographie l'écran du jeu quand il ne réagit pas |
+| `fenetre_x.py` | place une fenêtre sur un moniteur choisi |
+| `suivre-boutons.sh` | tient la base des boutons à jour pendant le relevé |
+| `demarrer.sh` | lance tout en une commande |
 
 ## Comment le releveur travaille
 
@@ -32,6 +39,17 @@ Ils viennent tous d'un vrai problème rencontré :
 - base sauvée après **chaque** jeu — une coupure ne perd rien
 - rien n'est écrit quand la preuve est trop mince : le jeu est réessayé
 - arrêt automatique après 8 échecs d'affilée
+- jamais de `GET_STATUS` : cette commande fait segfauter RetroArch avec FBNeo
+  (mesuré : deux morts sur deux, quand `READ_CORE_RAM` répond douze fois sur
+  douze). Pour savoir si un jeu tourne, on lit sa RAM.
+- un refus de ROM est reconnu en quelques secondes au lieu d'attendre six
+  minutes : FBNeo dit lui-même « marked as not working » ou réclame des
+  fichiers manquants
+- un jeu figé est d'abord sorti de pause avant d'être déclaré inanimé — un
+  RetroArch en pause fige sa RAM et ferait condamner un jeu parfaitement sain
+- tout le groupe de processus est tué à la fermeture : viser le fils direct
+  laissait RetroArch orphelin, et un seul orphelin fait échouer tous les
+  lancements suivants
 
 ## `tests/`
 

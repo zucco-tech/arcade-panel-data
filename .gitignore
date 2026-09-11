@@ -5,3 +5,5 @@
 *.iso
 *.so
 *.tmp
+__pycache__/
+*.pyc

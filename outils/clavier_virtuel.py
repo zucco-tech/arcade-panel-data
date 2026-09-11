@@ -32,6 +32,23 @@ SYN_REPORT = 0
 KEY_ENTER = 28          # START joueur 1
 KEY_RIGHTSHIFT = 54     # SELECT joueur 1 = piece
 
+# Le joueur 2 a ses propres touches, cablees dans retroarch.cfg :
+#   input_player2_start = "2"   input_player2_select = "6"
+# Sans elles, impossible de savoir si un jeu tient DEUX compteurs de credits
+# separes — ce qui est le cas des jeux a deux postes, ou chacun alimente le
+# sien tant que personne n a appuye sur START.
+KEY_2 = 3               # START joueur 2
+KEY_6 = 7               # SELECT joueur 2 = piece joueur 2
+
+# Les huit entrees de chaque poste, cablees dans retroarch.cfg. Elles servent
+# quand un jeu n encaisse PAS sa piece sur SELECT : flippers, jeux de tir,
+# certains japonais. Sans elles, ces jeux restent introuvables.
+#
+#   joueur 1 : a=x  b=z  x=s  y=a  l=q  r=w
+#   joueur 2 : a=g  b=f  x=t  y=r  l=e  r=y
+BOUTONS_J1 = {"a": 45, "b": 44, "x": 31, "y": 30, "l": 16, "r": 17}
+BOUTONS_J2 = {"a": 34, "b": 33, "x": 20, "y": 19, "l": 18, "r": 21}
+
 # _IO('U', 1) et _IO('U', 2) ; _IOW('U', 100|101, int)
 UI_DEV_CREATE = 0x5501
 UI_DEV_DESTROY = 0x5502
@@ -45,7 +62,10 @@ EVENEMENT = struct.Struct("llHHi")      # struct input_event
 class ClavierVirtuel:
     """A utiliser dans un with : le peripherique est detruit quoi qu'il arrive."""
 
-    def __init__(self, nom="clavier-credits", touches=(KEY_ENTER, KEY_RIGHTSHIFT)):
+    def __init__(self, nom="clavier-credits", touches=None):
+        if touches is None:
+            touches = ((KEY_ENTER, KEY_RIGHTSHIFT, KEY_2, KEY_6)
+                       + tuple(BOUTONS_J1.values()) + tuple(BOUTONS_J2.values()))
         self.nom = nom
         self.touches = touches
         self.fd = None
@@ -94,6 +114,25 @@ class ClavierVirtuel:
 
     def start(self):
         self.appuyer(KEY_ENTER)
+
+    def piece_j2(self):
+        self.appuyer(KEY_6)
+
+    def start_j2(self):
+        self.appuyer(KEY_2)
+
+    def bouton(self, nom, joueur=1):
+        """Un bouton du panneau, par son nom RetroPad : a, b, x, y, l, r."""
+        table = BOUTONS_J1 if joueur == 1 else BOUTONS_J2
+        code = table.get(nom)
+        if code is not None:
+            self.appuyer(code)
+
+    def entrees_possibles(self, joueur=1):
+        """Tout ce qui peut encaisser une piece, dans l ordre du plus probable."""
+        table = BOUTONS_J1 if joueur == 1 else BOUTONS_J2
+        depart = [("select", KEY_RIGHTSHIFT if joueur == 1 else KEY_6)]
+        return depart + [(n, c) for n, c in sorted(table.items())]
 
 
 if __name__ == "__main__":

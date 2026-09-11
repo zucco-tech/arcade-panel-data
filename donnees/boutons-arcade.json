@@ -1,5 +1,12 @@
 {
   "absents": {
+    "1942c64": "sans donnees",
+    "1943b2": "sans donnees",
+    "1943jaha": "sans donnees",
+    "2020bbcd": "sans donnees",
+    "3countba": "sans donnees",
+    "3wondersha": "sans donnees",
+    "aa": "sans donnees",
     "abscam": "sans donnees",
     "bucaner": "sans donnees",
     "bullet": "sans donnees",
@@ -243,6 +250,14 @@
       "nom": "1943: Midway Kaisen (Japan)",
       "nombre": 2
     },
+    "1943jah": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "1943: Midway Kaisen (Japan, no protection hack)",
+      "nombre": 2
+    },
     "1943kai": {
       "boutons": {
         "BUTTON1": {
@@ -260,6 +275,14 @@
       "nom": "1943 Kai: Midway Kaisen (Japan)",
       "nombre": 2
     },
+    "1943mii": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "1943: The Battle of Midway Mark II (US)",
+      "nombre": 2
+    },
     "1943u": {
       "boutons": {},
       "commandes": "joystick (8-way)",
@@ -268,12 +291,36 @@
       "nom": "1943: The Battle of Midway (US, Rev C)",
       "nombre": 2
     },
+    "1943ua": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "1943: The Battle of Midway (US)",
+      "nombre": 2
+    },
     "1945kiii": {
       "boutons": {},
       "commandes": "joystick (8-way)",
       "joueurs": 2,
       "mode": "2P sim",
       "nom": "1945k III (newer, OPCX2 PCB)",
+      "nombre": 4
+    },
+    "1945kiiin": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "1945k III (newer, OPCX1 PCB)",
+      "nombre": 4
+    },
+    "1945kiiio": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "1945k III (older, OPCX1 PCB)",
       "nombre": 4
     },
     "19xx": {
@@ -299,6 +346,14 @@
       "joueurs": 2,
       "mode": "2P sim",
       "nom": "19XX: The War Against Destiny (Asia 960104)",
+      "nombre": 2
+    },
+    "19xxar1": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "19XX: The War Against Destiny (Asia 951207)",
       "nombre": 2
     },
     "19xxb": {
@@ -341,12 +396,44 @@
       "nom": "19XX: The War Against Destiny (Japan 951225)",
       "nombre": 2
     },
+    "19xxjr2": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "19XX: The War Against Destiny (Japan 951207)",
+      "nombre": 2
+    },
+    "19xxu": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "19XX: The War Against Destiny (USA 951207)",
+      "nombre": 2
+    },
+    "2020bbh": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "2020 Super Baseball (set 3)",
+      "nombre": 4
+    },
     "20pacgal": {
       "boutons": {},
       "commandes": "joystick (8-way)",
       "joueurs": 2,
       "mode": "2P alt",
       "nom": "Ms. Pac-Man/Galaga - 20th Anniversary Class of 1981 Reunion (V1.08)",
+      "nombre": 1
+    },
+    "20pacgalr0": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Ms. Pac-Man/Galaga - 20th Anniversary Class of 1981 Reunion (V1.00)",
       "nombre": 1
     },
     "20pacgalr1": {
@@ -365,12 +452,28 @@
       "nom": "Ms. Pac-Man/Galaga - 20th Anniversary Class of 1981 Reunion (V1.02)",
       "nombre": 1
     },
+    "20pacgalr3": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Ms. Pac-Man/Galaga - 20th Anniversary Class of 1981 Reunion (V1.03)",
+      "nombre": 1
+    },
     "20pacgalr4": {
       "boutons": {},
       "commandes": "joystick (8-way)",
       "joueurs": 2,
       "mode": "2P alt",
       "nom": "Ms. Pac-Man/Galaga - 20th Anniversary Class of 1981 Reunion (V1.04)",
+      "nombre": 1
+    },
+    "25pacmano": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Pac-Man - 25th Anniversary Edition (Rev 2.00)",
       "nombre": 1
     },
     "3in1semi": {
@@ -394,6 +497,14 @@
       "nom": "The Three Stooges In Brides Is Brides (set 1)",
       "nombre": 1
     },
+    "3stoogesa": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 3,
+      "mode": "3P sim",
+      "nom": "The Three Stooges In Brides Is Brides (set 2)",
+      "nombre": 1
+    },
     "3wonders": {
       "boutons": {
         "BUTTON1": {
@@ -413,6 +524,14 @@
       "joueurs": 2,
       "mode": "2P sim",
       "nom": "Three Wonders (World 910520)",
+      "nombre": 3
+    },
+    "3wondersb": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Three Wonders (bootleg)",
       "nombre": 3
     },
     "3wondersh": {
@@ -439,6 +558,14 @@
       "nom": "3X3 Puzzle (Enterprise)",
       "nombre": 2
     },
+    "3x3puzzla": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "1P",
+      "nom": "3X3 Puzzle (Normal)",
+      "nombre": 2
+    },
     "4dwarrio": {
       "boutons": {
         "BUTTON1": {
@@ -454,6 +581,31 @@
       "joueurs": 2,
       "mode": "2P alt",
       "nom": "4-D Warriors (315-5162)",
+      "nombre": 2
+    },
+    "4enraya": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": null,
+          "fonction": "Down"
+        },
+        "BUTTON2": {
+          "couleur": null,
+          "fonction": "Shot"
+        }
+      },
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "4 En Raya (set 1)",
+      "nombre": 2
+    },
+    "4enrayaa": {
+      "boutons": {},
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "4 En Raya (set 2)",
       "nombre": 2
     },
     "4in1boot": {
@@ -497,6 +649,14 @@
       "nom": "64th. Street: A Detective Story (Japan, set 1)",
       "nombre": 2
     },
+    "7toitsu": {
+      "boutons": {},
+      "commandes": "mahjong",
+      "joueurs": 2,
+      "mode": "1P",
+      "nom": "Chi-Toitsu",
+      "nombre": 20
+    },
     "800fath": {
       "boutons": {
         "BUTTON1": {
@@ -514,6 +674,35 @@
       "nom": "800 Fathoms",
       "nombre": 2
     },
+    "800fatha": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "800 Fathoms (older)",
+      "nombre": 2
+    },
+    "88games": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": null,
+          "fonction": "Run"
+        },
+        "BUTTON2": {
+          "couleur": null,
+          "fonction": "Jump"
+        },
+        "BUTTON3": {
+          "couleur": null,
+          "fonction": "Run"
+        }
+      },
+      "commandes": "only_buttons",
+      "joueurs": 4,
+      "mode": "4P alt / 2P sim",
+      "nom": "'88 Games",
+      "nombre": 3
+    },
     "99lstwar": {
       "boutons": {},
       "commandes": "joystick (8-way)",
@@ -530,12 +719,89 @@
       "nom": "'99: The Last War (set 2)",
       "nombre": 2
     },
+    "99lstwarb": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "'99: The Last War (bootleg)",
+      "nombre": 2
+    },
     "99lstwark": {
       "boutons": {},
       "commandes": "joystick (8-way)",
       "joueurs": 2,
       "mode": "2P alt",
       "nom": "'99: The Last War (Kyugo)",
+      "nombre": 2
+    },
+    "abcop": {
+      "boutons": {},
+      "commandes": "paddle,pedal",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "A.B. Cop (World) (FD1094 317-0169b)",
+      "nombre": 1
+    },
+    "abcopd": {
+      "boutons": {},
+      "commandes": "paddle,pedal",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "A.B. Cop (World) (bootleg of FD1094 317-0169b set)",
+      "nombre": 1
+    },
+    "abcopj": {
+      "boutons": {},
+      "commandes": "paddle,pedal",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "A.B. Cop (Japan) (FD1094 317-0169b)",
+      "nombre": 1
+    },
+    "abcopjd": {
+      "boutons": {},
+      "commandes": "paddle,pedal",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "A.B. Cop (Japan) (bootleg of FD1094 317-0169b set)",
+      "nombre": 1
+    },
+    "ablast": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Hong Tian Lei (A-Blast) (Japan)",
+      "nombre": 2
+    },
+    "aburner2": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "Fire"
+        },
+        "BUTTON2": {
+          "couleur": "Red",
+          "fonction": "Vulcan"
+        },
+        "BUTTON3": {
+          "couleur": "Red",
+          "fonction": "Unknown"
+        }
+      },
+      "commandes": "joystick (analog)",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "After Burner II (VER 2.00, deluxe/upright)",
+      "nombre": 2
+    },
+    "aburner2g": {
+      "boutons": {},
+      "commandes": "joystick (analog)",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "After Burner II (German, VER 2.01, deluxe/upright)",
       "nombre": 2
     },
     "aceattac": {
@@ -553,6 +819,14 @@
       "mode": "2P sim",
       "nom": "Ace Attacker (Japan, System 16A, FD1094 317-0060)",
       "nombre": 1
+    },
+    "acitya": {
+      "boutons": {},
+      "commandes": "only_buttons",
+      "joueurs": 1,
+      "mode": "2P alt",
+      "nom": "Atlantic City Action",
+      "nombre": 6
     },
     "acrobatm": {
       "boutons": {
@@ -596,6 +870,14 @@
       "nom": "Act-Fancer Cybernetick Hyper Weapon (World revision 1)",
       "nombre": 2
     },
+    "actfancr2": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Act-Fancer Cybernetick Hyper Weapon (World revision 2)",
+      "nombre": 2
+    },
     "actfancrj": {
       "boutons": {},
       "commandes": "joystick (8-way)",
@@ -628,6 +910,55 @@
       "nom": "Aeroboto",
       "nombre": 2
     },
+    "aerofgt": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "Fire"
+        },
+        "BUTTON2": {
+          "couleur": "Orange",
+          "fonction": "Bomb"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Aero Fighters (World / USA + Canada / Korea / Hong Kong / Taiwan) (newer hardware)",
+      "nombre": 2
+    },
+    "aerofgtb": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Aero Fighters (Taiwan / Japan, set 1)",
+      "nombre": 2
+    },
+    "aerofgtc": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Aero Fighters (Taiwan / Japan, set 2)",
+      "nombre": 2
+    },
+    "aerolitol": {
+      "boutons": {},
+      "commandes": "only_buttons",
+      "joueurs": 1,
+      "mode": "2P alt",
+      "nom": "Aerolitos Espaciales (Spanish bootleg of Asteroids)",
+      "nombre": 5
+    },
+    "aerolitos": {
+      "boutons": {},
+      "commandes": "only_buttons",
+      "joueurs": 1,
+      "mode": "2P alt",
+      "nom": "Aerolitos (Spanish bootleg of Asteroids)",
+      "nombre": 5
+    },
     "afighter": {
       "boutons": {},
       "commandes": "joystick (8-way)",
@@ -636,12 +967,124 @@
       "nom": "Action Fighter (FD1089A 317-0018)",
       "nombre": 3
     },
+    "afightera": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Action Fighter (unprotected)",
+      "nombre": 3
+    },
+    "afighterb": {
+      "boutons": {},
+      "commandes": "paddle,pedal",
+      "joueurs": 1,
+      "mode": "2P alt",
+      "nom": "Action Fighter (unprotected, analog controls)",
+      "nombre": 4
+    },
+    "afighterc": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Action Fighter (FD1089B 317-unknown)",
+      "nombre": 3
+    },
+    "afighterd": {
+      "boutons": {},
+      "commandes": "paddle,pedal",
+      "joueurs": 1,
+      "mode": "2P alt",
+      "nom": "Action Fighter (FD1089B 317-unknown, analog controls)",
+      "nombre": 4
+    },
+    "afightere": {
+      "boutons": {},
+      "commandes": "paddle,pedal",
+      "joueurs": 1,
+      "mode": "2P alt",
+      "nom": "Action Fighter (System 16B, unprotected, analog controls)",
+      "nombre": 4
+    },
+    "afighterf": {
+      "boutons": {},
+      "commandes": "paddle,pedal",
+      "joueurs": 1,
+      "mode": "2P alt",
+      "nom": "Action Fighter (System 16B, FD1089B 317-unknown, analog controls)",
+      "nombre": 4
+    },
+    "afighterg": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Action Fighter (System 16B, FD1089B 317-unknown)",
+      "nombre": 3
+    },
+    "afighterh": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Action Fighter (System 16B, FD1089A 317-0018)",
+      "nombre": 3
+    },
     "agallet": {
       "boutons": {},
       "commandes": "joystick (8-way)",
       "joueurs": 2,
       "mode": "2P sim",
       "nom": "Air Gallet (Europe)",
+      "nombre": 3
+    },
+    "agalleta": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Air Gallet (older, Europe)",
+      "nombre": 3
+    },
+    "agalletah": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Air Gallet (older, Hong Kong)",
+      "nombre": 3
+    },
+    "agalletaj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Akuu Gallet (older, Japan)",
+      "nombre": 3
+    },
+    "agalletak": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Air Gallet (older, Korea)",
+      "nombre": 3
+    },
+    "agalletat": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Air Gallet (older, Taiwan)",
+      "nombre": 3
+    },
+    "agalletau": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Air Gallet (older, USA)",
       "nombre": 3
     },
     "agalleth": {
@@ -732,6 +1175,14 @@
       "nom": "Agress - Missile Daisenryaku (English bootleg)",
       "nombre": 3
     },
+    "airass": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Air Assault (World)",
+      "nombre": 3
+    },
     "airattck": {
       "boutons": {},
       "commandes": "joystick (8-way)",
@@ -806,6 +1257,30 @@
       "nom": "Air Duel (World, M82 hardware)",
       "nombre": 4
     },
+    "airdueljm72": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Air Duel (Japan, M72 hardware)",
+      "nombre": 4
+    },
+    "airduelm72": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Air Duel (World, M72 hardware)",
+      "nombre": 4
+    },
+    "airduelu": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Air Duel (US location test, M82 hardware)",
+      "nombre": 4
+    },
     "airwolf": {
       "boutons": {
         "BUTTON1": {
@@ -860,6 +1335,14 @@
       "nom": "Ajax (Japan)",
       "nombre": 3
     },
+    "akazukin": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Akazukin (Japan)",
+      "nombre": 2
+    },
     "akiss": {
       "boutons": {},
       "commandes": "mahjong",
@@ -868,6 +1351,14 @@
       "nom": "Mahjong Angel Kiss (ver 1.0, 92047-01 version)",
       "nombre": 19
     },
+    "akkaarrh": {
+      "boutons": {},
+      "commandes": "trackball",
+      "joueurs": 1,
+      "mode": "2P alt",
+      "nom": "Akka Arrh (prototype)",
+      "nombre": 3
+    },
     "akkanvdr": {
       "boutons": {},
       "commandes": "joystick (8-way),dial",
@@ -875,6 +1366,30 @@
       "mode": "2P sim",
       "nom": "Akkanvader (Ver 2.5J 1995/06/14)",
       "nombre": 4
+    },
+    "akumajou": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Akuma-Jou Dracula (Japan version P)",
+      "nombre": 2
+    },
+    "akumajoun": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Akuma-Jou Dracula (Japan version N)",
+      "nombre": 2
+    },
+    "alcon": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Alcon (US)",
+      "nombre": 2
     },
     "alexkidd": {
       "boutons": {
@@ -926,6 +1441,14 @@
       "nom": "Mustafa and 40 Thieves (bootleg)",
       "nombre": 1
     },
+    "alien3u": {
+      "boutons": {},
+      "commandes": "joystick (analog)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Alien3: The Gun (US, Rev A)",
+      "nombre": 2
+    },
     "aliencha": {
       "boutons": {},
       "commandes": "joystick (8-way)",
@@ -975,6 +1498,14 @@
       "nom": "Aliens (World set 3)",
       "nombre": 2
     },
+    "aliens4": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Aliens (World set 4)",
+      "nombre": 2
+    },
     "aliensa": {
       "boutons": {},
       "commandes": "joystick (8-way)",
@@ -982,6 +1513,14 @@
       "mode": "2P sim",
       "nom": "Aliens (Asia)",
       "nombre": 2
+    },
+    "aliensec": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Alien Sector",
+      "nombre": 1
     },
     "aliensj": {
       "boutons": {},
@@ -1068,6 +1607,46 @@
       "nom": "Alien Syndrome (set 1, Japan, old, System 16A, FD1089A 317-0033)",
       "nombre": 3
     },
+    "aligator": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Alligator Hunt (World, protected, checksum 2B34128B)",
+      "nombre": 3
+    },
+    "aligators": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Alligator Hunt (Spain, protected, checksum 2B34128B)",
+      "nombre": 3
+    },
+    "aligatorun": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Alligator Hunt (unprotected, checksum F9C6891D)",
+      "nombre": 3
+    },
+    "aligatoruna": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Alligator Hunt (unprotected, checksum 25A83609)",
+      "nombre": 3
+    },
+    "alinvade": {
+      "boutons": {},
+      "commandes": "joystick (2-way)",
+      "joueurs": 1,
+      "mode": "2P alt",
+      "nom": "Alien Invaders",
+      "nombre": 1
+    },
     "alpha1v": {
       "boutons": {},
       "commandes": "joystick (8-way)",
@@ -1076,6 +1655,31 @@
       "nom": "Alpha One (Vision Electronics)",
       "nombre": 2
     },
+    "alpham2": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "Yellow",
+          "fonction": null
+        },
+        "BUTTON3": {
+          "couleur": "Green",
+          "fonction": null
+        },
+        "BUTTON4": {
+          "couleur": "Blue",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Alpha Mission II / ASO II - Last Guardian (NGM-007 ~ NGH-007)",
+      "nombre": 4
+    },
     "alphamis": {
       "boutons": {},
       "commandes": "joystick (8-way)",
@@ -1083,6 +1687,14 @@
       "mode": "2P alt",
       "nom": "Alpha Mission",
       "nombre": 3
+    },
+    "alphaonea": {
+      "boutons": {},
+      "commandes": "dial",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Alpha One (prototype, 5 lives)",
+      "nombre": 1
     },
     "alphaxz": {
       "boutons": {},
@@ -1156,6 +1768,14 @@
       "joueurs": 2,
       "mode": "2P sim",
       "nom": "Altered Beast (set 5) (FD1094 317-0069)",
+      "nombre": 3
+    },
+    "altbeast5d": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Altered Beast (set 5) (bootleg of FD1094 317-0069 set)",
       "nombre": 3
     },
     "altbeast6": {

@@ -100,6 +100,31 @@ Source : métadonnées MAME publiées par [arcade-database](https://adb.arcadeit
 
 ---
 
+### Les champs ajoutés en septembre 2026
+
+| champ | ce qu'il dit |
+|---|---|
+| `credits.entree_piece` | quel bouton encaisse la pièce. `select` le plus souvent, mais des flippers et des jeux de tir utilisent `a`, `b`, `x`, `y`, `l` ou `r` |
+| `credits.adresse_j2` | le compteur du **joueur 2**, quand il en a un à lui |
+| `credits.compteur_commun` | vrai quand les deux monnayeurs alimentent le **même** octet |
+
+Ces trois champs servent à éclairer juste un panneau à deux postes :
+
+```
+adresse_j2 renseignée     deux compteurs séparés
+                          le START du joueur 2 ne clignote que si LUI a payé
+
+compteur_commun = true    une seule cagnotte alimentée par les deux monnayeurs
+                          on ne peut pas savoir qui a payé :
+                          BOUTON DU JOUEUR 2 ÉTEINT
+
+aucun des deux            un seul monnayeur : panneau 2 éteint
+```
+
+Voir `COMMENT-CA-MARCHE.md` pour le détail complet, et `REGLES-APPRISES.md`
+pour ce que les mesures ont appris — y compris les impasses, pour qu'on n'y
+retourne pas.
+
 ## Comment les adresses ont été mesurées
 
 RetroArch expose la mémoire de la machine émulée par son interface réseau

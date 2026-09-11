@@ -55,6 +55,7 @@ PORT_ES = 1337           # commandes EmulationStation
 #     Il faut la 1.22.2 officielle.
 RETROARCH = "/opt/retroarch.AppImage"
 DOSSIER_COEURS = "/opt/coeurs"
+JOURNAUX_RA = "/mnt/recalbox/journaux"
 # Le nom que RetroArch annonce pour chaque coeur, pour savoir avant de
 # lancer si un jeu a deja ete mesure. Il est reverifie a l execution.
 COEURS_NOMMES = {
@@ -65,11 +66,20 @@ COEURS_NOMMES = {
     "mame0278": "MAME", "mame": "MAME",
 }
 
+# fbneo_rb.so est le coeur EXTRAIT DE L IMAGE RECALBOX x86_64, donc le meme
+# FBNeo que celui du Pi de la borne, compile pour ce processeur.
+#
+# C est le seul qui convienne, pour deux raisons mesurees :
+#   * il accepte les romsets d ici, la ou les compilations libretro recentes
+#     les refusent (aburner : CHARGE contre « romset refuse ») — FBNeo a
+#     change ses definitions de sets entre-temps, et les roms datent de 2025 ;
+#   * il donne les memes adresses que la borne : pzloop2 compte ses credits
+#     en 0x0450, valeur mesuree a la main sur le Pi avec de vraies pieces.
 COEURS = {
-    "fbneo": "fbneo_libretro.so",
-    "fba": "fbneo_libretro.so",
-    "neogeo": "fbneo_libretro.so",
-    "neogeocd": "fbneo_libretro.so",
+    "fbneo": "fbneo_rb.so",
+    "fba": "fbneo_rb.so",
+    "neogeo": "fbneo_rb.so",
+    "neogeocd": "fbneo_rb.so",
     "naomi": "flycast_libretro.so",
     "naomigd": "flycast_libretro.so",
     "naomi2": "flycast_libretro.so",
@@ -101,7 +111,22 @@ ECHECS_MAX = 8            # au-dela, quelque chose ne va pas : on s'arrete
 # piece n'a pas ete encaissee. On ne condamne un jeu qu'apres deux tentatives,
 # sauf quand la cause est sans appel (le core n'expose pas sa RAM).
 ESSAIS_AVANT_ABANDON = 2
-SANS_APPEL = ("RAM non lisible",)
+# RetroArch rate parfois son demarrage : il meurt dans la seconde, toujours au
+# meme endroit (segfault a la lecture d un pointeur nul). Mesure sur cette
+# machine : environ un lancement sur cinq. Rien en aval ne peut le rattraper,
+# mais relancer suffit — et sur six mille jeux sans surveillance, il le faut.
+ESSAIS_LANCEMENT = 4
+# Un RetroArch vivant qui n expose toujours pas de RAM apres ce delai affiche
+# un ecran d erreur. On ne l attend pas plus longtemps, mais on ne le
+# condamne pas non plus : il sera simplement reessaye.
+ATTENTE_ECRAN_ERREUR = 35.0
+# Au-dela de ce delai, un journal sans « Romset name: » ne peut plus etre un
+# retard d ecriture : le set est vraiment inconnu de ce coeur.
+DELAI_ROMSET_INCONNU = 25.0
+SANS_APPEL = ("RAM non lisible",
+              "jeu non supporte par ce coeur",
+              "romset incomplet pour cette version",
+              "romset inconnu de ce coeur")
 
 
 class Interruption(Exception):
@@ -116,6 +141,19 @@ class Borne:
         self.taille = None
         self.rapide = False              # etat courant de l'avance rapide
         self.rapide_voulue = rapide_voulue
+        self.port = PORT_RA              # propre a cette instance
+        self.affichage = None            # serveur X ou lancer RetroArch
+        self.jeu_lance = None            # ce qu on a demande a RetroArch
+        self.coeur_lance = None
+        self.coeur_nomme = None          # nom observe, quand l appelant le sait
+
+    def port_ra(self):
+        """Le port de commande de CETTE instance.
+
+        Avec plusieurs RetroArch ouverts en meme temps, un seul peut ecouter
+        sur 55355 : chacun a donc le sien.
+        """
+        return self.port
 
     def _udp(self, port, texte, attendre_reponse=True, timeout=0.6):
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -133,17 +171,25 @@ class Borne:
     # -- RetroArch
 
     def jeu(self):
-        reponse = self._udp(PORT_RA, "GET_STATUS")
-        if not reponse or "PLAYING" not in reponse:
+        """Le jeu en cours, et sous quel coeur.
+
+        Surtout PAS par GET_STATUS : cette commande fait segfauter
+        RetroArch 1.22.2 avec fbneo_recalbox.so, a tous les coups et en une
+        seconde (mesure : deux morts sur deux, pendant que READ_CORE_RAM et
+        VERSION repondent six fois sur six). Comme l outil l appelait toutes
+        les demi-secondes pour savoir si le jeu avait demarre, il tuait
+        systematiquement le jeu qu il venait de lancer.
+
+        On se rabat sur ce qui repond : si la RAM du coeur se lit, c est que
+        le jeu tourne. Et ce jeu, on sait lequel c est — c est nous qui
+        l avons lance.
+        """
+        if self.lire(0, 1) is None:
             return None
-        try:
-            champs = reponse.split(None, 2)[2].split(",")
-            return champs[1].strip(), champs[0].strip()
-        except IndexError:
-            return None
+        return (self.jeu_lance or "inconnu"), self.coeur_lance
 
     def lire(self, adresse, n):
-        reponse = self._udp(PORT_RA, "READ_CORE_RAM %x %d" % (adresse, n))
+        reponse = self._udp(self.port, "READ_CORE_RAM %x %d" % (adresse, n))
         if not reponse:
             return None
         parties = reponse.split()
@@ -156,7 +202,7 @@ class Borne:
         return octets if len(octets) == n else None
 
     def quitter(self):
-        self._udp(PORT_RA, "QUIT", attendre_reponse=False)
+        self._udp(self.port, "QUIT", attendre_reponse=False)
         if self.direct:
             time.sleep(1.0)
             self.arreter_processus()
@@ -171,7 +217,7 @@ class Borne:
         """
         if actif == self.rapide:
             return
-        self._udp(PORT_RA, "FAST_FORWARD", attendre_reponse=False)
+        self._udp(self.port, "FAST_FORWARD", attendre_reponse=False)
         self.rapide = actif
         time.sleep(0.3)
 
@@ -212,33 +258,131 @@ class Borne:
             # constate sur la borne (un nom seul repond "Couldn't find game").
             self._udp(PORT_ES, "START|%s|%s" % (systeme, chemin_rom),
                       attendre_reponse=False)
+            self.jeu_lance = os.path.basename(chemin_rom).rsplit(".", 1)[0]
+            self.coeur_lance = self.coeur_nomme or COEURS_NOMMES.get(systeme)
             return
         coeur = COEURS.get(systeme)
         if coeur is None:
             return
+        self.jeu_lance = os.path.basename(chemin_rom).rsplit(".", 1)[0]
+        self.coeur_lance = self.coeur_nomme or COEURS_NOMMES.get(systeme)
         self.arreter_processus()
+        self.oublier_les_restes()      # aucun rescape ne doit trainer
         env = dict(os.environ)
         env.update({"HOME": "/root", "XDG_RUNTIME_DIR": "/run/user/0"})
+        if self.affichage:
+            env["DISPLAY"] = self.affichage
+            env.pop("WAYLAND_DISPLAY", None)
         self.processus = subprocess.Popen(
-            ["dbus-run-session", "--", RETROARCH,
-             "--config", "/root/.config/retroarch/retroarch.cfg",
+            ["dbus-run-session", "--", RETROARCH, "--verbose",
+             "--config", "/root/.config/retroarch/retroarch.cfg"]
+            + self._surcharge() + [
              "-L", os.path.join(DOSSIER_COEURS, coeur), chemin_rom],
-            env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
-            start_new_session=True)
+            env=env, stdout=self._journal_retroarch(),
+            stderr=subprocess.STDOUT, start_new_session=True)
+
+    def _surcharge(self):
+        """Les reglages propres a cette instance, dans un fichier a part.
+
+        Le port de commande d abord : RetroArch le lit dans sa config, pas
+        sur la ligne de commande, et deux instances ne peuvent pas ecouter
+        au meme endroit.
+
+        Puis, quand on tourne dans un serveur X imbrique, le plein ecran est
+        desactive : il reclame l extension XFree86-VidMode, absente de
+        Xephyr, qui tombe alors avec le serveur. Inutile de toute facon, la
+        fenetre occupe deja tout le serveur imbrique.
+        """
+        if self.port == PORT_RA and not self.affichage:
+            return []                      # instance unique : rien a changer
+        chemin = os.path.join(JOURNAUX_RA, "retroarch-%d.cfg" % self.port)
+        try:
+            os.makedirs(JOURNAUX_RA, exist_ok=True)
+            with open(chemin, "w") as fh:
+                fh.write('network_cmd_enable = "true"\n')
+                fh.write('network_cmd_port = "%d"\n' % self.port)
+                if self.affichage:
+                    fh.write('video_fullscreen = "false"\n')
+                    fh.write('video_windowed_fullscreen = "false"\n')
+                    fh.write('video_window_save_positions = "false"\n')
+        except OSError:
+            return []
+        return ["--appendconfig", chemin]
+
+    @staticmethod
+    def _journal_retroarch():
+        """Ou ecrire ce que RetroArch raconte.
+
+        Jeter sa sortie dans /dev/null rendait tout diagnostic impossible :
+        quand il refuse de demarrer, la raison est la et nulle part ailleurs.
+        On garde le dernier lancement, ecrase a chaque fois — ce qui compte
+        c est celui qui vient d echouer.
+        """
+        try:
+            os.makedirs(JOURNAUX_RA, exist_ok=True)
+            return open(os.path.join(JOURNAUX_RA, "retroarch.log"), "w")
+        except OSError:
+            return subprocess.DEVNULL
 
     def arreter_processus(self):
-        """Coupe le RetroArch qu on a lance, s il en reste un."""
+        """Coupe le RetroArch qu on a lance, s il en reste un.
+
+        On tue tout le GROUPE, pas le fils direct : celui-ci est
+        dbus-run-session, et le terminer laissait RetroArch vivant, reattache
+        a systemd. Or un seul RetroArch orphelin fait segfauter le lancement
+        suivant — les deux se disputent le contexte graphique et le port 55355.
+        Un raté suffisait alors a bloquer tout le reste du balayage.
+        """
         if self.processus is None:
             return
         try:
-            self.processus.terminate()
-            self.processus.wait(timeout=8)
-        except (OSError, subprocess.TimeoutExpired):
+            groupe = os.getpgid(self.processus.pid)
+        except OSError:
+            groupe = None
+        for coup in (signal.SIGTERM, signal.SIGKILL):
+            if groupe is None:
+                break
             try:
-                self.processus.kill()
+                os.killpg(groupe, coup)
+            except OSError:
+                break
+            try:
+                self.processus.wait(timeout=8)
+                break
+            except subprocess.TimeoutExpired:
+                continue
+        try:
+            self.processus.kill()
+        except OSError:
+            pass
+        self.processus = None
+        self.oublier_les_restes()
+
+    @staticmethod
+    def oublier_les_restes():
+        """Tue les RetroArch qui ne sont plus a personne.
+
+        Ceinture et bretelles : un processus reattache a systemd n est plus
+        dans notre groupe et survivrait au nettoyage ci-dessus. Sur une
+        machine dediee au releve, aucun RetroArch ne doit tourner en dehors
+        de celui qu on pilote.
+        """
+        try:
+            sortie = subprocess.run(["pgrep", "-f", RETROARCH],
+                                    capture_output=True, text=True).stdout
+        except OSError:
+            return
+        for ligne in sortie.split():
+            try:
+                pid = int(ligne)
+            except ValueError:
+                continue
+            if pid == os.getpid():
+                continue
+            try:
+                os.kill(pid, signal.SIGKILL)
             except OSError:
                 pass
-        self.processus = None
 
 
 def attendre_vivant(borne, arret, delai=ATTENTE_VIVANT):
@@ -262,6 +406,20 @@ def attendre_vivant(borne, arret, delai=ATTENTE_VIVANT):
                 return True
         precedent = bloc
         time.sleep(1.0)
+
+    # Rien n a bouge. Avant de condamner le jeu, verifier qu il n est pas
+    # simplement EN PAUSE : constate a l ecran, RetroArch affiche « En
+    # pause » et la RAM se fige. Un jeu classe « inanime » sur une pause est
+    # un jeu perdu pour rien.
+    borne._udp(borne.port, "PAUSE_TOGGLE", attendre_reponse=False)
+    time.sleep(1.5)
+    precedent = borne.photo()
+    time.sleep(1.5)
+    bloc = borne.photo()
+    if bloc is not None and precedent is not None:
+        if sum(1 for a, b in zip(bloc, precedent) if a != b) >= REMUE_MINIMUM:
+            time.sleep(REPOS_APRES_VIVANT)
+            return True
     return False
 
 
@@ -277,9 +435,139 @@ def patienter(condition, delai, arret, pas=0.5):
     return None
 
 
+def ouvrir_clavier(affichage):
+    """Le clavier qui convient au mode de fonctionnement.
+
+    Avec un serveur X a soi (--affichage), on injecte par XTEST : les touches
+    n existent que dans ce serveur, donc ni le bureau de l utilisateur ni les
+    autres instances ne les voient. C est ce qui rend le travail en parallele
+    possible, et ce qui empeche un Entree d atterrir dans un terminal.
+
+    Sans affichage dedie, on garde le clavier uinput historique.
+    """
+    if affichage:
+        from clavier_xtest import ClavierXTest
+        return ClavierXTest(affichage)
+    return ClavierVirtuel("clavier-credits")
+
+
+def romset_inconnu():
+    """Vrai si FBNeo ne connait pas du tout ce set.
+
+    Son message « Romset is unknown » ne s ecrit QUE sur l ecran, jamais dans
+    le journal. Mais un set inconnu ne produit qu une seule ligne FBNeo — le
+    reglage de frequence — et n annonce jamais de « Romset name: », qu un jeu
+    normal ecrit dans les deux premieres secondes.
+
+    A n appeler qu apres un delai confortable : le journal est sur le NAS et
+    arrive en retard. Interroge a huit secondes, ce controle avait produit 23
+    faux positifs sur 20 jeux. A vingt-cinq secondes, le doute n existe plus.
+    """
+    chemin = os.path.join(JOURNAUX_RA, "retroarch.log")
+    try:
+        with open(chemin, "rb") as fh:
+            texte = fh.read().decode("utf-8", "replace")
+    except OSError:
+        return False
+    return "[FBNeo]" in texte and "Romset name" not in texte
+
+
+def refus_fbneo():
+    """Ce que FBNeo vient de dire, quand il refuse une rom.
+
+    Sans ca, un jeu refuse coute six minutes : FBNeo affiche son ecran
+    d erreur et RESTE OUVERT, alors l outil attend quatre-vingt-dix secondes
+    qu il demarre, quatre fois de suite. Le message est dans le journal des
+    la premiere seconde ; il suffit de le lire.
+
+    Renvoie la raison, ou None si la rom n a pas ete refusee.
+    """
+    chemin = os.path.join(JOURNAUX_RA, "retroarch.log")
+    try:
+        with open(chemin, "rb") as fh:
+            texte = fh.read().decode("utf-8", "replace")
+    except OSError:
+        return None
+    # On ne se fie qu a des messages EXPLICITES. Deduire un refus de
+    # l ABSENCE de « Romset name: » a produit 23 faux positifs sur 20 jeux :
+    # le journal est ecrit sur le NAS et arrive en retard, donc un jeu
+    # parfaitement sain paraissait inconnu. Un silence ne prouve rien.
+    if "marked as not working" in texte:
+        return "jeu non supporte par ce coeur"
+    # Attention : l ecran d erreur dit « is missing », mais le JOURNAL, lui,
+    # ecrit « ROM at index N with name X and CRC Y is required ». Chercher le
+    # texte de l ecran ne detectait donc jamais rien.
+    if "is required" in texte or "missing files for THIS VERSION" in texte:
+        return "romset incomplet pour cette version"
+    return None
+
+
+def lancer_avec_reprises(borne, systeme, jeu, chemin, arret, journal):
+    """Lance le jeu et attend qu il tourne vraiment, en reessayant.
+
+    On ne se contente pas d attendre : si le processus est deja mort, inutile
+    de patienter quatre-vingt-dix secondes pour rien, on relance tout de
+    suite. Renvoie le couple (jeu, coeur) annonce par RetroArch, ou None.
+    """
+    ecran_erreur = False
+    for essai in range(1, ESSAIS_LANCEMENT + 1):
+        arret()
+        borne.lancer(systeme, chemin)
+        fin = time.time() + ATTENTE_LANCEMENT
+        depart = time.time()
+        en_cours = None
+        while time.time() < fin:
+            arret()
+            en_cours = borne.jeu()
+            if en_cours and en_cours[0] == jeu:
+                return en_cours
+            mort = (borne.direct and borne.processus is not None
+                    and borne.processus.poll() is not None)
+            if mort:
+                break          # inutile d attendre un processus disparu
+            # FBNeo qui refuse une rom affiche son erreur et RESTE ouvert :
+            # sans ce controle, on l attendrait quatre-vingt-dix secondes,
+            # quatre fois de suite, pour un jeu qui ne demarrera jamais.
+            if time.time() - depart > 12.0:
+                refus = refus_fbneo()
+                if refus:
+                    borne.arreter_processus()
+                    return refus
+            if time.time() - depart > DELAI_ROMSET_INCONNU and romset_inconnu():
+                borne.arreter_processus()
+                return "romset inconnu de ce coeur"
+            # RetroArch vivant mais muet au-dela de ce delai : c est un ecran
+            # d erreur. Inutile d attendre les quatre-vingt-dix secondes.
+            if time.time() - depart > ATTENTE_ECRAN_ERREUR:
+                ecran_erreur = True
+                break
+            time.sleep(0.5)
+        refus = refus_fbneo()
+        if refus:
+            journal("  %s — inutile d insister" % refus)
+            borne.arreter_processus()
+            return refus                 # une chaine : refus net, pas un jeu
+        # RetroArch ouvert mais muet : c est un ecran d erreur, pas un
+        # demarrage lent. Deux essais suffisent — quatre font deux minutes
+        # de fenetres qui clignotent pour rien.
+        if ecran_erreur and essai >= 2:
+            borne.arreter_processus()
+            return None
+        if essai < ESSAIS_LANCEMENT:
+            journal("  demarrage rate (%s), tentative %d sur %d"
+                    % (en_cours[0] if en_cours else "rien mesure",
+                       essai + 1, ESSAIS_LANCEMENT))
+            borne.arreter_processus()
+            time.sleep(2.0)
+    return None
+
+
 def base_charger(chemin):
     with open(chemin) as fh:
-        return json.load(fh)
+        base = json.load(fh)
+    if migrer_par_coeur(base):
+        base_ecrire(chemin, base)
+    return base
 
 
 def base_ecrire(chemin, base):
@@ -314,6 +602,51 @@ def cle(coeur, jeu):
     mesures faites sous deux coeurs doivent cohabiter, pas s ecraser.
     """
     return "%s/%s" % (normaliser_coeur(coeur), jeu)
+
+
+def migrer_par_coeur(base):
+    """Reindexe une base ecrite par systeme vers un index par coeur.
+
+    Les premieres fiches portaient `fbneo/1942`. C est le coeur qui decide de
+    la disposition memoire, d ou `finalburn-neo/1942`. Chaque fiche sait sous
+    quel coeur elle a ete mesuree ; les ecartes ne notent que leur systeme,
+    dont le coeur se deduit.
+
+    Sans cette conversion, `deja_fait` cherche `finalburn-neo/1942` dans une
+    base qui ne contient que `fbneo/1942` : les releves deviennent invisibles
+    et seraient tous refaits.
+
+    Renvoie vrai si quelque chose a bouge ; a l appelant d ecrire la base.
+    """
+    change = False
+    for section in ("jeux", "difficiles"):
+        anciennes = base.get(section)
+        if not anciennes:
+            continue
+        nouvelles = {}
+        for ancienne, fiche in sorted(anciennes.items()):
+            prefixe, _, jeu = ancienne.partition("/")
+            coeur = (fiche.get("core")
+                     or COEURS_NOMMES.get(fiche.get("systeme") or prefixe))
+            if not jeu or not coeur:
+                # Coeur indeterminable : mieux vaut laisser la cle en place
+                # que de ranger la fiche sous "inconnu".
+                nouvelles[ancienne] = fiche
+                continue
+            fiche.setdefault("core", coeur)
+            neuve = cle(coeur, jeu)
+            if neuve != ancienne:
+                change = True
+            # Deux systemes qui partagent un coeur — fbneo et neogeo — se
+            # rejoignent ici. On garde celle qui porte une adresse.
+            gardee = nouvelles.get(neuve)
+            if (gardee is not None
+                    and (gardee.get("credits") or {}).get("adresse")
+                    and not (fiche.get("credits") or {}).get("adresse")):
+                continue
+            nouvelles[neuve] = fiche
+        base[section] = nouvelles
+    return change
 
 
 def deja_fait(base, coeur, jeu, reessayer=False):
@@ -371,6 +704,124 @@ def candidats_piste(piste, taille):
     return {a for a in candidats if a < taille}
 
 
+def photographier_echec(jeu, raison):
+    """Garde une image du jeu qui vient d echouer, pour comprendre apres.
+
+    On ne garde qu une image par jeu et par raison, et rien si le dossier
+    devient trop gros : six mille jeux feraient vite des giga-octets.
+    """
+    dossier = os.path.join(JOURNAUX_RA, "echecs")
+    try:
+        os.makedirs(dossier, exist_ok=True)
+        if len(os.listdir(dossier)) > 300:
+            return
+    except OSError:
+        return
+    propre = "".join(c if c.isalnum() else "-" for c in raison)[:28]
+    chemin = os.path.join(dossier, "%s_%s.png" % (jeu, propre))
+    if os.path.exists(chemin):
+        return
+    try:
+        from capture_fenetre import photographier
+        photographier(chemin)
+    except Exception:
+        pass
+
+
+def chercher_avec(borne, appuyer, arret, essais=3, assez=4):
+    """Cherche l octet qui monte de 1 a chaque appui sur UNE entree donnee.
+
+    Le meme principe que pour la piece, mais applicable a n importe quel
+    bouton du panneau. Sert au repli : tous les jeux n encaissent pas leur
+    piece sur SELECT — les flippers, des jeux de tir, certains japonais ont
+    le monnayeur ailleurs. Tant qu on n essaie que SELECT, ces jeux-la sont
+    perdus alors qu ils marchent tres bien.
+
+    Renvoie l ensemble des candidats, vide si cette entree ne fait rien.
+    """
+    candidats = None
+    avant = borne.photo()
+    if avant is None:
+        return set()
+    for _ in range(essais):
+        arret()
+        appuyer()
+        time.sleep(1.2)
+        apres = borne.photo()
+        if apres is None or len(apres) != len(avant):
+            return set()
+        montes = {a for a in range(len(apres))
+                  if apres[a] == (avant[a] + 1) & 0xFF and avant[a] < 0x99}
+        candidats = montes if candidats is None else candidats & montes
+        avant = apres
+        if not candidats:
+            return set()
+        if len(candidats) <= assez:
+            break
+    return candidats or set()
+
+
+def repli_autres_entrees(borne, clavier, joueur, arret, journal):
+    """Quand SELECT ne donne rien, on essaie les autres boutons du poste.
+
+    Renvoie (nom de l entree, candidats) ou (None, set()).
+    """
+    for nom, code in clavier.entrees_possibles(joueur):
+        if nom == "select":
+            continue                    # deja essaye, c est pour ca qu on est la
+        arret()
+        trouves = chercher_avec(borne, lambda c=code: clavier.appuyer(c), arret,
+                                essais=2, assez=4)
+        if trouves:
+            journal("  la piece passe par « %s » (joueur %d) : %d candidat(s)"
+                    % (nom, joueur, len(trouves)))
+            return nom, trouves
+    return None, set()
+
+
+PIECES_J2 = 3               # autant que pour le joueur 1
+ASSEZ_J2 = 2
+
+
+def chercher_joueur2(borne, clavier, arret, journal):
+    """L adresse du compteur de credits du JOUEUR 2, ou None.
+
+    Sur une borne a deux postes, chacun alimente SON compteur tant que
+    personne n a appuye sur START. Sans cette seconde adresse, le demon des
+    LED ne peut pas savoir que le joueur 2 a paye, et son bouton START ne
+    clignote pas — il reste devant une borne muette alors qu il a mis sa
+    piece.
+
+    On ne devine pas cette adresse a cote de celle du joueur 1 : mesure
+    faite, une seule piece joueur 2 fait monter 288 octets sur pzloop2 et 181
+    sur bloodwar. Un jeu qui tourne remue des dizaines de compteurs internes.
+    Il faut donc la meme methode que pour le joueur 1 — plusieurs pieces, et
+    on ne garde que ce qui monte de 1 a chaque fois — puis START joueur 2
+    pour confirmer que c est bien un solde et non un total encaisse.
+    """
+    candidats = None
+    avant = borne.photo()
+    if avant is None:
+        return set()
+    for n in range(1, PIECES_J2 + 1):
+        arret()
+        clavier.piece_j2()
+        time.sleep(1.5)
+        apres = borne.photo()
+        if apres is None or len(apres) != len(avant):
+            return set()
+        montes = {a for a in range(len(apres))
+                  if apres[a] == (avant[a] + 1) & 0xFF and avant[a] < 0x99}
+        candidats = montes if candidats is None else candidats & montes
+        avant = apres
+        if not candidats:
+            return set()
+        if len(candidats) <= ASSEZ_J2:
+            break
+
+    return candidats
+
+
 def traiter(borne, clavier, base, systeme, jeu, arret, journal):
     """Releve un jeu. Renvoie 'appris', 'difficile' ou 'echec'."""
     borne.taille = None
@@ -413,6 +864,7 @@ def traiter(borne, clavier, base, systeme, jeu, arret, journal):
             return "echec"
 
     pieces = 0
+    entree_piece = "select"
     for _ in range(PIECES_MAX):
         arret()
         clavier.piece()
@@ -449,12 +901,31 @@ def traiter(borne, clavier, base, systeme, jeu, arret, journal):
         avant = apres
         journal("  piece %d : %d candidat(s)" % (pieces, len(candidats)))
         if not candidats:
+            # SELECT n encaisse pas : ce jeu a peut-etre son monnayeur sur un
+            # autre bouton. On les essaie tous avant de le condamner.
+            entree, trouves = repli_autres_entrees(borne, clavier, 1, arret, journal)
+            if trouves:
+                candidats, par_piste = trouves, False
+                entree_piece = entree
+                break
             return "difficile", "aucun candidat"
         if len(candidats) <= ASSEZ:
             break
 
     if not candidats:
         return "difficile", "compteur introuvable"
+
+    # Les pieces du JOUEUR 2 avant tout START : sur une vraie borne, les deux
+    # joueurs alimentent leur compteur pendant l ecran d attente, et c est
+    # seulement ensuite que l un appuie sur START. Chercher le second
+    # compteur une fois la partie lancee ne marche pas — mesure faite, zero
+    # trouve sur trois jeux.
+    candidats_j2 = chercher_joueur2(borne, clavier, arret, journal)
+    avant_start_j2 = {}
+    for a in sorted(candidats_j2):
+        o = borne.lire(a, 1)
+        if o is not None:
+            avant_start_j2[a] = o[0]
 
     # START consomme un credit : le solde baisse, un total de pieces non.
     avant_start = {}
@@ -480,6 +951,28 @@ def traiter(borne, clavier, base, systeme, jeu, arret, journal):
         surs = candidats        # une ou deux adresses, insertion verifiee
     retenues = sorted(surs)
     adresse = retenues[0]
+
+    # START joueur 2 : son compteur a lui doit redescendre.
+    adresse_j2, j2_confirme = None, False
+    if candidats_j2:
+        arret()
+        clavier.start_j2()
+        time.sleep(2.0)
+        baissiers_j2 = [a for a, v in avant_start_j2.items()
+                        if (borne.lire(a, 1) or [v])[0] < v]
+        if baissiers_j2:
+            adresse_j2, j2_confirme = sorted(baissiers_j2)[0], True
+        elif len(candidats_j2) == 1:
+            adresse_j2 = sorted(candidats_j2)[0]
+
+    # Meme octet pour les deux joueurs : ce n est pas un second compteur,
+    # c est une cagnotte COMMUNE, ou les deux monnayeurs alimentent le meme
+    # solde. Le noter comme « adresse du joueur 2 » ferait croire au demon
+    # que chaque poste a son credit, et il eclairerait faux.
+    compteur_commun = adresse_j2 is not None and adresse_j2 == adresse
+    if compteur_commun:
+        adresse_j2, j2_confirme = None, False
+
     base.setdefault("jeux", {})[cle(en_cours[1], jeu)] = {
         "jeu": jeu,
         "nom": jeu,
@@ -494,15 +987,23 @@ def traiter(borne, clavier, base, systeme, jeu, arret, journal):
             "verifie_insertion": True,
             "verifie_consommation": adresse in baissiers,
             "pieces_observees": pieces,
+            "entree_piece": entree_piece,
+            "compteur_commun": compteur_commun,
+            "adresse_j2": adresse_j2,
+            "adresse_j2_hex": None if adresse_j2 is None else "0x%04X" % adresse_j2,
+            "j2_verifie_consommation": j2_confirme,
         },
         "releve": {"le": time.strftime("%Y-%m-%d"),
                    "methode": "piste confirmee" if par_piste else "balayage nocturne",
                    "par": "nuit-credits.py"},
     }
-    journal("  APPRIS 0x%04X%s%s" % (
+    journal("  APPRIS 0x%04X%s%s%s" % (
         adresse,
         " (+%d miroir)" % len(retenues[1:]) if len(retenues) > 1 else "",
-        "" if adresse in baissiers else "  [consommation non confirmee]"))
+        "" if adresse in baissiers else "  [consommation non confirmee]",
+        ("  J2 en 0x%04X" % adresse_j2) if adresse_j2 is not None
+        else ("  [cagnotte commune aux deux joueurs]" if compteur_commun
+              else "  [pas de second compteur]")))
     return "appris"
 
 
@@ -529,7 +1030,31 @@ def main():
                         help="reprendre aussi les jeux classes difficiles")
     parser.add_argument("--arret", default="/tmp/arret-nuit",
                         help="creer ce fichier arrete proprement")
+    parser.add_argument("--port", type=int, default=PORT_RA,
+                        help="port de commande de CETTE instance "
+                             "(55355 par defaut ; un par instance)")
+    parser.add_argument("--affichage", default=None,
+                        help="serveur X ou lancer RetroArch, par exemple :10 "
+                             "(un Xephyr par instance). Active du meme coup "
+                             "le clavier XTEST, qui n existe que pour lui.")
+    parser.add_argument("--part", default=None,
+                        help="N/M : ne traiter que la part N sur M de la "
+                             "liste, pour repartir le travail sans doublon")
+    parser.add_argument("--coeur-nomme", default=None,
+                        help="le nom que ce coeur annonce reellement ici, "
+                             "quand l appelant l a observe")
     args = parser.parse_args()
+
+    def nom_coeur(systeme):
+        """Le nom que le coeur de ce systeme annonce sur cette machine.
+
+        COEURS_NOMMES dit ce qu on attend. Mais le meme fbneo_libretro.so
+        s annonce « FinalBurn Neo » sur la borne et « fb_alpha » ici, et ce
+        sont deux dispositions memoire distinctes : filtrer sur le nom
+        attendu ferait sauter des jeux jamais mesures sous le coeur d ici.
+        Quand l appelant a vu le vrai nom, il le passe.
+        """
+        return args.coeur_nomme or COEURS_NOMMES.get(systeme)
 
     base = base_charger(args.base)
     pistes = base.get("pistes", {})
@@ -546,13 +1071,22 @@ def main():
         retenus = 0
         for rom in roms:
             jeu = rom.rsplit(".", 1)[0]
-            if deja_fait(base, COEURS_NOMMES.get(systeme), jeu, args.reessayer):
+            if deja_fait(base, nom_coeur(systeme), jeu, args.reessayer):
                 continue
             if args.pistes_seulement and jeu not in pistes:
                 continue
             liste.append((systeme, jeu, os.path.join(dossier, rom)))
             retenus += 1
         print("%-12s %5d roms, %5d a traiter" % (systeme, len(roms), retenus))
+    if args.part:
+        # « 2/3 » : un jeu sur trois, en commencant par le deuxieme. Les
+        # parts sont disjointes et couvrent tout, sans se concerter.
+        n_part, _, m_part = args.part.partition("/")
+        n_part, m_part = int(n_part), int(m_part)
+        if not 1 <= n_part <= m_part:
+            raise SystemExit("--part attend N/M avec 1 <= N <= M")
+        liste = liste[n_part - 1::m_part]
+        print("part %d sur %d : %d jeu(x)" % (n_part, m_part, len(liste)))
     if args.limite:
         liste = liste[:args.limite]
 
@@ -569,6 +1103,9 @@ def main():
         return
 
     borne = Borne(args.borne, args.rapide, args.direct)
+    borne.coeur_nomme = args.coeur_nomme
+    borne.port = args.port
+    borne.affichage = args.affichage
     if borne.jeu():
         raise SystemExit("Une partie est en cours — je ne demarre pas. "
                          "Reviens quand la borne est libre.")
@@ -592,14 +1129,24 @@ def main():
         print(msg, flush=True)
 
     try:
-        with ClavierVirtuel("clavier-credits") as clavier:
+        with ouvrir_clavier(args.affichage) as clavier:
             for n, (systeme, jeu, chemin) in enumerate(liste, 1):
                 arret()
                 print("[%d/%d] %s/%s" % (n, len(liste), systeme, jeu), flush=True)
-                borne.lancer(systeme, chemin)
                 try:
-                    resultat = traiter(borne, clavier, base, systeme, jeu,
-                                       arret, journal)
+                    demarrage = lancer_avec_reprises(borne, systeme, jeu,
+                                                     chemin, arret, journal)
+                    if isinstance(demarrage, str):
+                        resultat = ("difficile", demarrage)
+                    elif demarrage is None:
+                        # On l ENREGISTRE, sinon le meme jeu bloque repasse en
+                        # premier a chaque relance et mange une minute a
+                        # chaque fois. Un echec non note est un echec repete.
+                        journal("  RetroArch n a pas demarre, on le note")
+                        resultat = ("difficile", "ne demarre pas")
+                    else:
+                        resultat = traiter(borne, clavier, base, systeme, jeu,
+                                           arret, journal)
                 except Interruption:
                     raise
                 except OSError as err:
@@ -608,8 +1155,13 @@ def main():
 
                 if isinstance(resultat, tuple):
                     resultat, raison = resultat
+                    # Une image du jeu au moment de l echec : elle dit souvent
+                    # ce que la memoire ne dit pas — un ecran d attente qui ne
+                    # vient jamais, un message d erreur, un monnayeur qui
+                    # reclame autre chose.
+                    photographier_echec(jeu, raison)
                     essais = noter_difficulte(base, jeu, systeme, raison,
-                                              COEURS_NOMMES.get(systeme))
+                                              nom_coeur(systeme))
                     definitif = (raison in SANS_APPEL
                                  or essais >= ESSAIS_AVANT_ABANDON)
                     journal("  difficile : %s (essai %d%s)"
