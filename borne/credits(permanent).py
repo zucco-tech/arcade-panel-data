@@ -52,6 +52,7 @@ import time
 # --- Configuration -------------------------------------------------------
 
 BASE = "/recalbox/share/system/credits-arcade.json"
+BASE_BOUTONS = "/recalbox/share/system/boutons-arcade.json"
 
 # Version du format de la base. Une base plus ancienne est convertie a la
 # volee au demarrage : aucun releve n'est perdu.
@@ -81,6 +82,37 @@ LEDS_START = ("/sys/class/leds/aio_p1_select_1",
               "/sys/class/leds/aio_p1_select_2")
 LEDS_START_P2 = ("/sys/class/leds/aio_p2_select_1",
                  "/sys/class/leds/aio_p2_select_2")
+
+# Les huit boutons de jeu de chaque joueur, dans l ordre ou le module les
+# nomme. On n allume que ceux dont le jeu se sert.
+LEDS_JEU = {
+    1: [("/sys/class/leds/aio_p1_b%d_1" % n, "/sys/class/leds/aio_p1_b%d_2" % n)
+        for n in range(1, 9)],
+    2: [("/sys/class/leds/aio_p2_b%d_1" % n, "/sys/class/leds/aio_p2_b%d_2" % n)
+        for n in range(1, 9)],
+}
+
+# Correspondance entre le bouton logique du jeu (BUTTON1, BUTTON2...) et la
+# LED physique. Reprise de recalbox_allinone_rgb.sh, qui range le panneau
+# ainsi :
+#
+#     rangee haute : LED 1 2 3   ->  boutons 3 4 5
+#     rangee basse : LED 4 5 6   ->  boutons 1 2 6
+#
+# Si l ordre ne correspond pas a ton panneau, c est la seule ligne a changer.
+ORDRE_BOUTONS = [3, 4, 5, 1, 2, 6, 7, 8]
+
+# Couleurs nommees par la base des boutons, telles qu elles sont ecrites sur
+# les vraies bornes. Le materiel attend du G R B, la fonction couleur() s en
+# charge.
+TEINTES = {
+    "red": (0xFF, 0x00, 0x00), "blue": (0x00, 0x00, 0xFF),
+    "green": (0x00, 0xFF, 0x00), "yellow": (0xFF, 0xFF, 0x00),
+    "white": (0xFF, 0xFF, 0xFF), "black": (0x20, 0x20, 0x20),
+    "orange": (0xFF, 0x60, 0x00), "purple": (0x80, 0x00, 0xFF),
+    "pink": (0xFF, 0x40, 0x80), "cyan": (0x00, 0xFF, 0xFF),
+    "grey": (0x60, 0x60, 0x60), "gray": (0x60, 0x60, 0x60),
+}
 
 # Ordre des composantes attendu par le materiel.
 #
@@ -305,6 +337,92 @@ class Lampe:
         self.eteinte = False
         self._ecrire("brightness", str(PLEIN))
         self._rendre_couleur()
+
+
+class Panneau:
+    """Les huit boutons de jeu d un joueur.
+
+    A l entree d un jeu on n allume que ceux dont il se sert, dans leur
+    couleur d origine quand on la connait, et on eteint les autres. A la
+    sortie, tout est rendu tel que la carte l avait laisse.
+    """
+
+    def __init__(self, joueur):
+        self.joueur = joueur
+        self.boutons = []
+        for paire in LEDS_JEU.get(joueur, []):
+            chemins = [c for c in paire if os.path.isdir(c)]
+            self.boutons.append(chemins)
+        self.origine = {}          # chemin -> couleur posee par la carte
+        self.actif = False
+        presents = sum(1 for b in self.boutons if b)
+        if not presents:
+            journal("boutons du joueur %d introuvables" % joueur)
+
+    def _ecrire(self, chemin, fichier, valeur):
+        try:
+            with open(os.path.join(chemin, fichier), "w") as fh:
+                fh.write(valeur)
+        except IOError as err:
+            journal("%s/%s : %s" % (chemin, fichier, err))
+
+    def _memoriser(self, chemin):
+        if chemin in self.origine:
+            return
+        try:
+            with open(os.path.join(chemin, "multi_intensity")) as fh:
+                self.origine[chemin] = fh.read().strip()
+        except IOError:
+            pass
+
+    def appliquer(self, fiche, allume=True):
+        """Eclaire le panneau selon la fiche du jeu.
+
+        allume=False eteint tout : c est ce qu on fait au panneau du joueur 2
+        quand le jeu est solo.
+        """
+        nombre = (fiche or {}).get("nombre")
+        couleurs = (fiche or {}).get("boutons") or {}
+        self.actif = True
+        for position, chemins in enumerate(self.boutons):
+            if not chemins:
+                continue
+            numero = ORDRE_BOUTONS[position] if position < len(ORDRE_BOUTONS) else position + 1
+            utilise = allume and nombre is not None and numero <= nombre
+            for chemin in chemins:
+                self._memoriser(chemin)
+                if not utilise:
+                    self._ecrire(chemin, "brightness", "0")
+                    continue
+                self._ecrire(chemin, "brightness", str(PLEIN))
+                teinte = (couleurs.get("BUTTON%d" % numero) or {}).get("couleur")
+                rvb = TEINTES.get((teinte or "").strip().lower())
+                if rvb:
+                    self._ecrire(chemin, "multi_intensity", couleur(*rvb))
+
+    def rendre(self):
+        """Remet le panneau tel que la carte l avait laisse."""
+        if not self.actif:
+            return
+        self.actif = False
+        for chemins in self.boutons:
+            for chemin in chemins:
+                self._ecrire(chemin, "brightness", str(PLEIN))
+                if chemin in self.origine:
+                    self._ecrire(chemin, "multi_intensity", self.origine[chemin])
+        self.origine.clear()
+
+
+def charger_boutons():
+    """La base des boutons. Absente : on n eclaire simplement rien."""
+    try:
+        with open(BASE_BOUTONS) as fh:
+            return json.load(fh).get("jeux", {})
+    except (IOError, OSError):
+        return {}
+    except ValueError as err:
+        journal("base des boutons illisible : %s" % err)
+        return {}
 
 
 # --- Manettes ------------------------------------------------------------
@@ -835,11 +953,14 @@ def main():
     piece = Lampe("piece", LEDS_PIECE, COULEUR_PIECE)
     start = Lampe("start", LEDS_START, COULEUR_START)
     start2 = Lampe("start J2", LEDS_START_P2, COULEUR_START)
+    panneaux = {1: Panneau(1), 2: Panneau(2)}
+    boutons = charger_boutons()
     pads = ouvrir_pads()
     apprenti = Apprenti(base)
 
-    journal("demarrage — %d jeu(x) connu(s), %d+%d+%d LED, %d pad(s)"
-            % (len(base.get("jeux", {})), len(piece.chemins),
+    journal("demarrage — %d jeu(x) connu(s), %d avec boutons, %d+%d+%d LED, "
+            "%d pad(s)"
+            % (len(base.get("jeux", {})), len(boutons), len(piece.chemins),
                len(start.chemins), len(start2.chemins), len(pads)))
 
     def rendre(*_):
@@ -847,6 +968,8 @@ def main():
         piece.repos()
         start.repos()
         start2.repos()
+        for p in panneaux.values():
+            p.rendre()
         sys.exit(0)
 
     signal.signal(signal.SIGTERM, rendre)
@@ -917,6 +1040,8 @@ def main():
                 elif action in ("endgame", "enddemo", "stop", "shutdown", "reboot"):
                     en_jeu = False
                     resolu, adresse, credits, lance = False, None, None, False
+                    for panneau in panneaux.values():
+                        panneau.rendre()
                     apprenti.oublier()
 
             # Nom du jeu, cherche une seule fois par partie.
@@ -933,6 +1058,15 @@ def main():
                     journal("%s/%s : %s" % (systeme, nom,
                                             "0x%04X" % adresse if adresse
                                             else "inconnu, j'apprends"))
+                    # Le panneau : seuls les boutons utiles, dans leurs
+                    # couleurs. Le joueur 2 reste noir sur un jeu solo.
+                    fiche_boutons = boutons.get(nom)
+                    if fiche_boutons:
+                        panneaux[1].appliquer(fiche_boutons)
+                        panneaux[2].appliquer(fiche_boutons, allume=multi)
+                        journal("%s : %s bouton(s)%s" % (
+                            nom, fiche_boutons.get("nombre"),
+                            "" if multi else ", joueur 2 eteint"))
 
             # Jeu connu : un octet, trois fois par seconde.
             elif en_jeu and adresse is not None and maintenant >= prochain_sondage:
@@ -994,6 +1128,8 @@ def main():
         piece.repos()
         start.repos()
         start2.repos()
+        for panneau in panneaux.values():
+            panneau.rendre()
 
 
 if __name__ == "__main__":
