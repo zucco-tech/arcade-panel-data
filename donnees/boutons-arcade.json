@@ -8,6 +8,11 @@
     "3wondersha": "sans donnees",
     "aa": "sans donnees",
     "abscam": "sans donnees",
+    "aliensu2": "sans donnees",
+    "angelkds": "sans donnees",
+    "aof2bh": "sans donnees",
+    "aof3bh": "sans donnees",
+    "ark1balla": "sans donnees",
     "bucaner": "sans donnees",
     "bullet": "sans donnees",
     "bwidow": "sans donnees",
@@ -1449,6 +1454,22 @@
       "nom": "Alien3: The Gun (US, Rev A)",
       "nombre": 2
     },
+    "alienar": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Alien Arena",
+      "nombre": 2
+    },
+    "alienaru": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Alien Arena (with Stargate sound)",
+      "nombre": 2
+    },
     "aliencha": {
       "boutons": {},
       "commandes": "joystick (8-way)",
@@ -1680,6 +1701,14 @@
       "nom": "Alpha Mission II / ASO II - Last Guardian (NGM-007 ~ NGH-007)",
       "nombre": 4
     },
+    "alpham2p": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Alpha Mission II / ASO II - Last Guardian (prototype)",
+      "nombre": 4
+    },
     "alphamis": {
       "boutons": {},
       "commandes": "joystick (8-way)",
@@ -1810,6 +1839,47 @@
       "nom": "Juuouki (set 3, Japan) (FD1094 317-0068)",
       "nombre": 3
     },
+    "altbeastj3d": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Juuouki (set 3, Japan) (bootleg of FD1094 317-0068 set)",
+      "nombre": 3
+    },
+    "amatelas": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Sei Senshi Amatelass",
+      "nombre": 2
+    },
+    "amazon": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": null,
+          "fonction": "Fire"
+        },
+        "BUTTON2": {
+          "couleur": null,
+          "fonction": "Bomb"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Soldier Girl Amazon",
+      "nombre": 2
+    },
+    "amazont": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Soldier Girl Amazon (Tecfri license)",
+      "nombre": 2
+    },
     "ambush": {
       "boutons": {},
       "commandes": "joystick (8-way)",
@@ -1824,6 +1894,14 @@
       "joueurs": 2,
       "mode": "2P alt",
       "nom": "Ambush (hack?)",
+      "nombre": 2
+    },
+    "ambushj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Ambush (Japan)",
       "nombre": 2
     },
     "ambushv": {
@@ -1895,6 +1973,68 @@
       "nom": "Amigo (bootleg of Amidar, set 1)",
       "nombre": 1
     },
+    "amspdwy": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Black",
+          "fonction": "Accelerate"
+        }
+      },
+      "commandes": "dial",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "American Speedway (set 1)",
+      "nombre": 1
+    },
+    "amspdwya": {
+      "boutons": {},
+      "commandes": "dial",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "American Speedway (set 2)",
+      "nombre": 1
+    },
+    "androdun": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "Yellow",
+          "fonction": null
+        },
+        "BUTTON3": {
+          "couleur": "Green",
+          "fonction": null
+        },
+        "BUTTON4": {
+          "couleur": "Blue",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Andro Dunos (NGM-049 ~ NGH-049)",
+      "nombre": 4
+    },
+    "androidp": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Android (prototype, later build)",
+      "nombre": 3
+    },
+    "androidpo": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Android (prototype, early build)",
+      "nombre": 3
+    },
     "anteater": {
       "boutons": {
         "BUTTON1": {
@@ -1924,6 +2064,122 @@
       "nom": "The Anteater (UK)",
       "nombre": 1
     },
+    "aodk": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "Yellow",
+          "fonction": null
+        },
+        "BUTTON3": {
+          "couleur": "Green",
+          "fonction": null
+        },
+        "BUTTON4": {
+          "couleur": "Blue",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Aggressors of Dark Kombat / Tsuukai GANGAN Koushinkyoku (ADM-008 ~ ADH-008)",
+      "nombre": 4
+    },
+    "aof": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "Yellow",
+          "fonction": null
+        },
+        "BUTTON3": {
+          "couleur": "Green",
+          "fonction": null
+        },
+        "BUTTON4": {
+          "couleur": "Blue",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Art of Fighting / Ryuuko no Ken (NGM-044 ~ NGH-044)",
+      "nombre": 4
+    },
+    "aof2": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "Yellow",
+          "fonction": null
+        },
+        "BUTTON3": {
+          "couleur": "Green",
+          "fonction": null
+        },
+        "BUTTON4": {
+          "couleur": "Blue",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Art of Fighting 2 / Ryuuko no Ken 2 (NGM-056)",
+      "nombre": 4
+    },
+    "aof2a": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Art of Fighting 2 / Ryuuko no Ken 2 (NGH-056)",
+      "nombre": 4
+    },
+    "aof3": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "Yellow",
+          "fonction": null
+        },
+        "BUTTON3": {
+          "couleur": "Green",
+          "fonction": null
+        },
+        "BUTTON4": {
+          "couleur": "Blue",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Art of Fighting 3 - The Path of the Warrior / Art of Fighting - Ryuuko no Ken Gaiden",
+      "nombre": 4
+    },
+    "aof3k": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Art of Fighting 3 - The Path of the Warrior (Korean release)",
+      "nombre": 4
+    },
     "aoh": {
       "boutons": {},
       "commandes": "joystick (8-way)",
@@ -1931,6 +2187,22 @@
       "mode": "2P sim",
       "nom": "Age Of Heroes - Silkroad 2 (v0.63 - 2001/02/07)",
       "nombre": 4
+    },
+    "aponow": {
+      "boutons": {},
+      "commandes": "double joystick (8-way)",
+      "joueurs": 1,
+      "mode": "2P alt",
+      "nom": "Apocaljpse Now (bootleg of Rescue)",
+      "nombre": 1
+    },
+    "appoooh": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Appoooh",
+      "nombre": 3
     },
     "aquajack": {
       "boutons": {
@@ -1988,6 +2260,38 @@
       "joueurs": 2,
       "mode": "2P sim",
       "nom": "Aquarium (US)",
+      "nombre": 2
+    },
+    "aquariumj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Aquarium (Japan)",
+      "nombre": 2
+    },
+    "arabfgt": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 4,
+      "mode": "4P sim",
+      "nom": "Arabian Fight (World)",
+      "nombre": 2
+    },
+    "arabfgtj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 4,
+      "mode": "4P sim",
+      "nom": "Arabian Fight (Japan)",
+      "nombre": 2
+    },
+    "arabfgtu": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 4,
+      "mode": "4P sim",
+      "nom": "Arabian Fight (US)",
       "nombre": 2
     },
     "arabian": {
@@ -2052,6 +2356,31 @@
       "nom": "Arabian Magic (Ver 1.0A 1992/07/06)",
       "nombre": 4
     },
+    "aracnis": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 1,
+      "mode": "2P alt",
+      "nom": "Aracnis (bootleg of Scorpion on Moon Cresta hardware, set 1)",
+      "nombre": 2
+    },
+    "arbalest": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": null,
+          "fonction": "Fire"
+        },
+        "BUTTON2": {
+          "couleur": null,
+          "fonction": "Special"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Arbalester",
+      "nombre": 2
+    },
     "arcadecl": {
       "boutons": {
         "BUTTON1": {
@@ -2071,6 +2400,14 @@
       "joueurs": 2,
       "mode": "2P sim",
       "nom": "Arcade Classics (prototype)",
+      "nombre": 3
+    },
+    "arcadian": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Arcadia (NMK)",
       "nombre": 3
     },
     "archrivl": {
@@ -2105,6 +2442,22 @@
       "mode": "2P sim",
       "nom": "Area 88 (Japan Resale Ver.)",
       "nombre": 3
+    },
+    "arescuej": {
+      "boutons": {},
+      "commandes": "joystick (analog)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Air Rescue (Japan)",
+      "nombre": 2
+    },
+    "arescueu": {
+      "boutons": {},
+      "commandes": "joystick (analog)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Air Rescue (US)",
+      "nombre": 2
     },
     "argus": {
       "boutons": {
@@ -2147,6 +2500,14 @@
       "nom": "Arkanoid (bootleg with MCU, harder)",
       "nombre": 1
     },
+    "arkangc": {
+      "boutons": {},
+      "commandes": "dial",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Arkanoid (Game Corporation bootleg, set 1)",
+      "nombre": 1
+    },
     "arkangc2": {
       "boutons": {},
       "commandes": "dial",
@@ -2182,6 +2543,22 @@
       "joueurs": 2,
       "mode": "2P alt",
       "nom": "Arkanoid (Japan, older)",
+      "nombre": 1
+    },
+    "arkanoidjbl": {
+      "boutons": {},
+      "commandes": "dial",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Arkanoid (bootleg with MCU, set 1)",
+      "nombre": 1
+    },
+    "arkanoidjbl2": {
+      "boutons": {},
+      "commandes": "dial",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Arkanoid (bootleg with MCU, set 2)",
       "nombre": 1
     },
     "arkanoidu": {
@@ -2263,6 +2640,43 @@
       "joueurs": 2,
       "mode": "2P alt",
       "nom": "Arkanoid (bootleg on Block hardware, set 2)",
+      "nombre": 1
+    },
+    "arknoid2": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "Fire"
+        }
+      },
+      "commandes": "dial",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Arkanoid: Revenge of DOH (World)",
+      "nombre": 1
+    },
+    "arknoid2b": {
+      "boutons": {},
+      "commandes": "dial",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Arkanoid: Revenge of DOH (Japan bootleg)",
+      "nombre": 1
+    },
+    "arknoid2j": {
+      "boutons": {},
+      "commandes": "dial",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Arkanoid: Revenge of DOH (Japan)",
+      "nombre": 1
+    },
+    "arknoid2u": {
+      "boutons": {},
+      "commandes": "dial",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Arkanoid: Revenge of DOH (US)",
       "nombre": 1
     },
     "arkretrn": {
@@ -2582,6 +2996,14 @@
       "mode": "2P sim",
       "nom": "Asuka & Asuka (Japan, rev 1)",
       "nombre": 2
+    },
+    "asurabld": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Asura Blade - Sword of Dynasty (Japan)",
+      "nombre": 3
     },
     "atehate": {
       "boutons": {
@@ -2906,6 +3328,31 @@
       "nom": "BanBam",
       "nombre": 1
     },
+    "bangbead": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "Yellow",
+          "fonction": null
+        },
+        "BUTTON3": {
+          "couleur": "Green",
+          "fonction": null
+        },
+        "BUTTON4": {
+          "couleur": "Blue",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Bang Bead",
+      "nombre": 4
+    },
     "batcir": {
       "boutons": {
         "BUTTON1": {
@@ -3058,6 +3505,14 @@
       "nom": "Bay Route (set 2, Japan) (FD1094 317-0115)",
       "nombre": 3
     },
+    "bbbxing": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Best Bout Boxing (ver 1.3)",
+      "nombre": 5
+    },
     "bcrusher": {
       "boutons": {},
       "commandes": "joystick (8-way)",
@@ -3164,6 +3619,23 @@
       "nom": "Big Bang (9th Nov. 1993, set 1)",
       "nombre": 3
     },
+    "bigkarnk": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": null,
+          "fonction": "Shot"
+        },
+        "BUTTON2": {
+          "couleur": null,
+          "fonction": "Jump"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Big Karnak (ver. 1.0, checksum 1e38c94)",
+      "nombre": 2
+    },
     "bigtwin": {
       "boutons": {
         "BUTTON1": {
@@ -3185,6 +3657,23 @@
       "nom": "The Billiards (bootleg of Video Hustler)",
       "nombre": 1
     },
+    "biomtoy": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": null,
+          "fonction": "Fire"
+        },
+        "BUTTON2": {
+          "couleur": null,
+          "fonction": "Jump"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "1P",
+      "nom": "Biomechanical Toy (ver. 1.0.1885, checksum 69f5e032)",
+      "nombre": 2
+    },
     "birdiy": {
       "boutons": {},
       "commandes": "joystick (4-way)",
@@ -3200,6 +3689,31 @@
       "mode": "3P sim",
       "nom": "Bishi Bashi Champ Mini Game Senshuken (ver JAA, 3 Players)",
       "nombre": 3
+    },
+    "bjourney": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "Yellow",
+          "fonction": null
+        },
+        "BUTTON3": {
+          "couleur": "Green",
+          "fonction": null
+        },
+        "BUTTON4": {
+          "couleur": "Blue",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Blue's Journey / Raguy (ALM-001 ~ ALH-001)",
+      "nombre": 4
     },
     "bjtwin": {
       "boutons": {},

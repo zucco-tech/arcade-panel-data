@@ -56,7 +56,7 @@ BASE_BOUTONS = "/recalbox/share/system/boutons-arcade.json"
 
 # Version du format de la base. Une base plus ancienne est convertie a la
 # volee au demarrage : aucun releve n'est perdu.
-SCHEMA = 4
+SCHEMA = 3
 OUTIL = "credits(permanent).py"
 
 # Le journal est sur le partage, et non dans /tmp, pour rester lisible depuis
@@ -82,6 +82,10 @@ LEDS_START = ("/sys/class/leds/aio_p1_select_1",
               "/sys/class/leds/aio_p1_select_2")
 LEDS_START_P2 = ("/sys/class/leds/aio_p2_select_1",
                  "/sys/class/leds/aio_p2_select_2")
+# Meme inversion que pour le joueur 1 : les LED nommees "start" eclairent
+# le bouton PIECE.
+LEDS_PIECE_P2 = ("/sys/class/leds/aio_p2_start_1",
+                 "/sys/class/leds/aio_p2_start_2")
 
 # Les huit boutons de jeu de chaque joueur, dans l ordre ou le module les
 # nomme. On n allume que ceux dont le jeu se sert.
@@ -329,6 +333,17 @@ class Lampe:
             self.eteinte = not self.eteinte
             self._ecrire("brightness", "0" if self.eteinte else str(PLEIN))
 
+    def eteindre(self):
+        """Noir : ce poste ne sert pas sur ce jeu.
+
+        Sur un jeu a un seul joueur, laisser START et PIECE du joueur 2
+        allumes invite a payer pour un poste qui ne jouera pas. On les
+        eteint, et repos() les rendra a la sortie du jeu.
+        """
+        self.active = True
+        self.eteinte = True
+        self._ecrire("brightness", "0")
+
     def repos(self):
         """Rend le bouton exactement tel que la carte l'avait laisse."""
         if not self.active:
@@ -479,7 +494,7 @@ def appuis(fd):
 
 # --- Frontend et base ----------------------------------------------------
 
-def jeu_multijoueur(base, coeur, nom):
+def jeu_multijoueur(base, systeme, nom):
     """Le jeu accepte-t-il un deuxieme joueur ?
 
     C'est la seule chose observable : on ne compte pas les joueurs, on
@@ -488,7 +503,7 @@ def jeu_multijoueur(base, coeur, nom):
 
     Ce constat prime sur le scrapeur, dont la metadonnee est souvent fausse.
     """
-    fiche = (base.get("jeux") or {}).get(cle(coeur, nom)) or {}
+    fiche = (base.get("jeux") or {}).get(cle(systeme, nom)) or {}
     connu = (fiche.get("joueurs") or {}).get("joueur2_accepte")
     if connu is not None:
         return connu
@@ -496,9 +511,9 @@ def jeu_multijoueur(base, coeur, nom):
     return bool(nombres) and max(nombres) >= 2
 
 
-def noter_joueurs(base, coeur, nom, accepte):
+def noter_joueurs(base, systeme, nom, accepte):
     """Retient ce qu'on vient de constater, sans toucher au reste de la fiche."""
-    fiche = base.setdefault("jeux", {}).setdefault(cle(coeur, nom), {})
+    fiche = base.setdefault("jeux", {}).setdefault(cle(systeme, nom), {})
     if (fiche.get("joueurs") or {}).get("joueur2_accepte") == accepte:
         return
     fiche["joueurs"] = {
@@ -543,53 +558,41 @@ def base_neuve():
         },
         "jeux": {},
         "difficiles": {},
-        "cles_lisez_moi": ("Les fiches sont indexees \"coeur/jeu\" : le meme "
-                           "set sous deux coeurs differents n a pas la meme "
-                           "adresse de credits. Les pistes, "
+        "cles_lisez_moi": ("Les fiches sont indexees \"systeme/jeu\" : le meme "
+                           "set peut tourner sous plusieurs coeurs, qui ne "
+                           "rangent pas leur RAM de la meme facon. Les pistes, "
                            "elles, sont indexees par le seul nom du set : une "
                            "adresse de cheat vise le processeur emule et ne "
                            "depend pas du coeur."),
     }
 
 
-def normaliser_coeur(nom):
-    """Un identifiant court et stable pour un coeur.
+def cle(systeme, jeu):
+    """Un jeu est identifie par son systeme ET son nom.
 
-    RetroArch annonce son coeur en toutes lettres — "FinalBurn Neo",
-    "fb_alpha", "MAME 2003-Plus" — et l orthographe varie d une version a
-    l autre. On en tire une cle lisible et constante.
+    Le meme set existe sous plusieurs systemes — fbneo et mame par exemple —
+    et chaque coeur range sa RAM a sa facon. Indexer sur le seul nom ferait
+    silencieusement ecraser une fiche par l'autre, et le clignotement
+    deviendrait faux sans que rien ne le signale.
     """
-    propre = "".join(c if c.isalnum() else "-" for c in (nom or "inconnu").lower())
-    while "--" in propre:
-        propre = propre.replace("--", "-")
-    return propre.strip("-") or "inconnu"
-
-
-def cle(coeur, jeu):
-    """Un jeu est identifie par son COEUR et son nom.
-
-    C est le coeur, pas le systeme, qui decide de la disposition memoire :
-    le meme set sous FinalBurn Neo et sous MAME n a pas la meme adresse de
-    credits. Indexer sur le systeme ferait cohabiter deux mesures
-    incompatibles sous une meme cle, et le clignotement deviendrait faux
-    sans que rien ne le signale.
-
-    A l inverse, un set present dans plusieurs listes — fbneo et neogeo par
-    exemple — mais tournant sous le meme coeur n est mesure qu une fois.
-    """
-    return "%s/%s" % (normaliser_coeur(coeur), jeu)
+    return "%s/%s" % (systeme or "?", jeu)
 
 
 def fiche_de(base, systeme, jeu, core=None):
-    """La fiche d un jeu pour le coeur qui tourne.
-
-    On accepte encore les anciennes cles, par systeme ou nues, pour ne
-    perdre aucun releve d avant le changement de format.
-    """
+    """La fiche d'un jeu, si elle correspond bien au coeur qui tourne."""
     jeux = base.get("jeux") or {}
-    return (jeux.get(cle(core, jeu))
-            or jeux.get("%s/%s" % (systeme or "?", jeu))
-            or jeux.get(jeu))
+    # Une base ancienne peut avoir garde une cle nue, faute de systeme connu
+    # au moment de la conversion : on l'accepte encore.
+    fiche = jeux.get(cle(systeme, jeu)) or jeux.get(jeu)
+    if not fiche:
+        return None
+    # Un jeu relance sous un autre coeur n'a plus la meme disposition
+    # memoire : mieux vaut reapprendre que clignoter faux.
+    if core and fiche.get("core") and fiche["core"] != core:
+        journal("%s : releve sous %s, or %s tourne — je reapprends"
+                % (jeu, fiche["core"], core))
+        return None
+    return fiche
 
 
 def convertir(base):
@@ -603,14 +606,14 @@ def convertir(base):
         neuve["pistes_lisez_moi"] = base["pistes_lisez_moi"]
     # Les difficultes suivent la meme cle que les fiches.
     for nom, dur in (base.get("difficiles") or {}).items():
-        neuve["difficiles"][cle(dur.get("core"), nom.split("/")[-1])
-                            if dur.get("core") else nom] = dur
+        neuve["difficiles"][cle(dur.get("systeme"), nom) if "/" not in nom
+                            else nom] = dur
     for nom, ancienne in (base.get("jeux") or {}).items():
         if "credits" in ancienne:                  # deja au bon format interne
             ancienne.setdefault("jeu", nom.split("/")[-1])
-            coeur = ancienne.get("core")
-            jeu = nom.split("/")[-1]
-            neuve["jeux"][cle(coeur, jeu) if coeur else jeu] = ancienne
+            systeme = ancienne.get("systeme")
+            neuve["jeux"][nom if "/" in nom or not systeme
+                          else cle(systeme, nom)] = ancienne
             continue
         fiche = {}
         if "adresse" in ancienne:
@@ -637,11 +640,9 @@ def convertir(base):
         fiche["releve"] = {"le": ancienne.get("appris_le") or ancienne.get("releve_le"),
                            "methode": "apprentissage", "par": OUTIL}
         fiche.setdefault("jeu", nom.split("/")[-1])
-        # Chaque fiche sait sous quel coeur elle a ete mesuree : c est
-        # lui qui decide desormais de sa place.
-        coeur = ancienne.get("core") or fiche.get("core")
-        jeu = nom.split("/")[-1]
-        neuve["jeux"][cle(coeur, jeu) if coeur else jeu] = fiche
+        systeme = ancienne.get("systeme") or fiche.get("systeme")
+        neuve["jeux"][nom if "/" in nom or not systeme
+                      else cle(systeme, nom)] = fiche
     journal("base convertie au format %d (%d jeu(x))" % (SCHEMA, len(neuve["jeux"])))
     return neuve
 
@@ -788,7 +789,7 @@ class Apprenti:
 
     @property
     def cle(self):
-        return cle(self.core, self.jeu)
+        return cle(self.systeme, self.jeu)
 
     def a_apprendre(self):
         return (self.jeu is not None
@@ -982,6 +983,8 @@ def main():
     piece = Lampe("piece", LEDS_PIECE, COULEUR_PIECE)
     start = Lampe("start", LEDS_START, COULEUR_START)
     start2 = Lampe("start J2", LEDS_START_P2, COULEUR_START)
+    piece2 = Lampe("piece J2", LEDS_PIECE_P2, COULEUR_PIECE)
+    deuxieme = True                # tant qu on ne sait pas, on n eteint rien
     panneaux = {1: Panneau(1), 2: Panneau(2)}
     boutons = charger_boutons()
     pads = ouvrir_pads()
@@ -1082,7 +1085,7 @@ def main():
                     systeme = champ_etat("SystemId").lower()
                     core = core_en_cours()
                     apprenti.nouveau_jeu(nom, systeme, core)
-                    multi = jeu_multijoueur(base, core, nom)
+                    multi = jeu_multijoueur(base, systeme, nom)
                     adresse = adresse_de(fiche_de(base, systeme, nom, core))
                     journal("%s/%s : %s" % (systeme, nom,
                                             "0x%04X" % adresse if adresse
@@ -1121,11 +1124,11 @@ def main():
                     instant, avant = essai_j2
                     if nouveau < avant:
                         multi = True
-                        noter_joueurs(base, apprenti.core, apprenti.jeu, True)
+                        noter_joueurs(base, apprenti.systeme, apprenti.jeu, True)
                         essai_j2 = None
                     elif maintenant - instant > VERDICT_J2:
                         multi = False        # le jeu a refuse le joueur 2
-                        noter_joueurs(base, apprenti.core, apprenti.jeu, False)
+                        noter_joueurs(base, apprenti.systeme, apprenti.jeu, False)
                         essai_j2 = None
                 credits = nouveau
 
@@ -1153,15 +1156,23 @@ def main():
 
             # Joueur 2 : sur un jeu multi, tant qu'il reste du credit et
             # qu'il n'a pas pris sa place, son bouton start l'appelle.
-            if (en_jeu and lance and multi and not p2_engage and credits
+            if en_jeu and not deuxieme:
+                # Poste 2 inutile sur ce jeu : START et PIECE noirs, comme
+                # ses boutons de jeu.
+                start2.eteindre()
+                piece2.eteindre()
+            elif (en_jeu and lance and multi and not p2_engage and credits
                     and maintenant - depuis_lance > DELAI_J2):
+                piece2.repos()
                 start2.clignoter(maintenant)
             else:
                 start2.repos()
+                piece2.repos()
     finally:
         piece.repos()
         start.repos()
         start2.repos()
+        piece2.repos()
         for panneau in panneaux.values():
             panneau.rendre()
 
