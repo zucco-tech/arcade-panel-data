@@ -15,7 +15,10 @@
 OPT="/root/.config/retroarch/config/FinalBurn Neo/FinalBurn Neo.opt"
 JOURNAL=/mnt/recalbox/journaux/surveillance.log
 VIGNETTES=/mnt/recalbox/journaux/veille
-SYSTEMES="fbneo fba neogeo neogeocd naomi naomigd naomi2 atomiswave"
+# Pas de « fba » : ce systeme n existe pas sur la borne (223 roms d epoque
+# FB Alpha, jamais lancees, refusees a 82 % par FBNeo). Les mesurer ne
+# servirait a rien et remplit l ecran d erreurs.
+SYSTEMES="fbneo neogeo neogeocd naomi naomigd naomi2 atomiswave"
 mkdir -p "$VIGNETTES"
 
 note() { echo "$(date '+%Y-%m-%d %H:%M:%S')  $1" >> "$JOURNAL"; }

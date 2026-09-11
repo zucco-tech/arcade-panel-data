@@ -31,7 +31,8 @@ ARRET = "/tmp/arret-nuit"
 
 # L ordre compte : on commence par ce qu on maitrise, on garde pour la fin
 # les coeurs dont on ignore s ils exposent leur memoire.
-SYSTEMES = ["fbneo", "fba", "neogeo", "neogeocd",
+# Pas de « fba » : systeme absent de la borne, roms jamais lancees.
+SYSTEMES = ["fbneo", "neogeo", "neogeocd",
             "naomi", "naomigd", "naomi2", "atomiswave"]
 
 # Ces systemes partagent fbneo_libretro.so : le nom observe au controle du
