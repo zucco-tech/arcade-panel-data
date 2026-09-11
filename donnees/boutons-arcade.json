@@ -48,7 +48,33 @@
     "nmouse": "sans donnees",
     "nmouseb": "sans donnees",
     "pacgal": "sans donnees",
-    "pacheart": "sans donnees"
+    "pacheart": "sans donnees",
+    "pacman": "sans donnees",
+    "pacmanbl": "sans donnees",
+    "pacmanbla": "sans donnees",
+    "pacmanf": "sans donnees",
+    "pacmod": "sans donnees",
+    "pacplus": "sans donnees",
+    "paintrlr": "sans donnees",
+    "piranha": "sans donnees",
+    "piranhah": "sans donnees",
+    "piranhao": "sans donnees",
+    "popeyeman": "sans donnees",
+    "puckman": "sans donnees",
+    "puckmana": "sans donnees",
+    "puckmanf": "sans donnees",
+    "puckmanh": "sans donnees",
+    "puckmod": "sans donnees",
+    "rachero": "sans donnees",
+    "sfp": "sans donnees",
+    "thief": "sans donnees",
+    "wacko": "sans donnees"
+  },
+  "couverture": {
+    "jeux_avec_couleurs_detaillees": 266,
+    "jeux_avec_nombre_de_boutons": 1623,
+    "jeux_sans_donnees": 69,
+    "remarque": "Le nombre de boutons est connu pour presque tous les jeux ; la couleur et la fonction de chaque bouton ne le sont que pour une minorite, ceux dont le panneau a ete documente."
   },
   "description": "Pour chaque jeu arcade : combien de boutons il utilise, la couleur d'origine de chacun sur la borne, et sa fonction. Les boutons sont nommes logiquement (BUTTON1, BUTTON2...) : la correspondance vers les LED d'une carte donnee appartient au programme qui les allume, pas a ces donnees.",
   "format": "recalbox-arcade-boutons",
@@ -9901,6 +9927,5702 @@
       "joueurs": 2,
       "mode": "2P alt",
       "nom": "Ozon I",
+      "nombre": 1
+    },
+    "paddle2": {
+      "boutons": {},
+      "commandes": "dial",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Paddle 2 (bootleg on Block hardware)",
+      "nombre": 1
+    },
+    "pajaroes": {
+      "boutons": {},
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Pajaro del Espacio (Spanish bootleg of UniWar S)",
+      "nombre": 1
+    },
+    "palamed": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Palamedes (US)",
+      "nombre": 2
+    },
+    "pandoras": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "Jump"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Pandora's Palace",
+      "nombre": 1
+    },
+    "pangpang": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Pang Pang",
+      "nombre": 2
+    },
+    "pass": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Pass",
+      "nombre": 2
+    },
+    "pbancho": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Gyakuten!! Puzzle Bancho (Japan, set 1)",
+      "nombre": 1
+    },
+    "pbobble2": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": null,
+          "fonction": "Fire"
+        },
+        "BUTTON2": {
+          "couleur": null,
+          "fonction": "NA"
+        },
+        "BUTTON3": {
+          "couleur": null,
+          "fonction": "NA"
+        },
+        "BUTTON4": {
+          "couleur": null,
+          "fonction": "NA"
+        }
+      },
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Puzzle Bobble 2 (Ver 2.3O 1995/07/31)",
+      "nombre": 4
+    },
+    "pbobble2j": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Puzzle Bobble 2 (Ver 2.2J 1995/07/20)",
+      "nombre": 4
+    },
+    "pbobble2o": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Puzzle Bobble 2 (Ver 2.2O 1995/07/20)",
+      "nombre": 4
+    },
+    "pbobble2u": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Bust-A-Move Again (Ver 2.3A 1995/07/31)",
+      "nombre": 4
+    },
+    "pbobble2x": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Puzzle Bobble 2X (Ver 2.2J 1995/11/11)",
+      "nombre": 4
+    },
+    "pbobble3": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": null,
+          "fonction": "Shoot"
+        },
+        "BUTTON2": {
+          "couleur": null,
+          "fonction": "NA"
+        },
+        "BUTTON3": {
+          "couleur": null,
+          "fonction": "NA"
+        },
+        "BUTTON4": {
+          "couleur": null,
+          "fonction": "NA"
+        }
+      },
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Puzzle Bobble 3 (Ver 2.1O 1996/09/27)",
+      "nombre": 4
+    },
+    "pbobble3j": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Puzzle Bobble 3 (Ver 2.1J 1996/09/27)",
+      "nombre": 4
+    },
+    "pbobble3u": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Puzzle Bobble 3 (Ver 2.1A 1996/09/27)",
+      "nombre": 4
+    },
+    "pbobble4": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Puzzle Bobble 4 (Ver 2.04O 1997/12/19)",
+      "nombre": 4
+    },
+    "pbobble4j": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Puzzle Bobble 4 (Ver 2.04J 1997/12/19)",
+      "nombre": 4
+    },
+    "pbobble4u": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Puzzle Bobble 4 (Ver 2.04A 1997/12/19)",
+      "nombre": 4
+    },
+    "pclubys": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Puzzle Club (Yun Sung, set 1)",
+      "nombre": 3
+    },
+    "pclubysa": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Puzzle Club (Yun Sung, set 2)",
+      "nombre": 3
+    },
+    "pdrift": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Black",
+          "fonction": "High / Low"
+        }
+      },
+      "commandes": "paddle,pedal",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Power Drift (World, Rev A)",
+      "nombre": 1
+    },
+    "pdrifta": {
+      "boutons": {},
+      "commandes": "paddle,pedal",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Power Drift (World)",
+      "nombre": 1
+    },
+    "pdrifte": {
+      "boutons": {},
+      "commandes": "paddle,pedal",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Power Drift (World, earlier)",
+      "nombre": 1
+    },
+    "perestro": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Perestroika Girls",
+      "nombre": 2
+    },
+    "perestrof": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Perestroika Girls (Fuuki license)",
+      "nombre": 2
+    },
+    "perfrman": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Performan (Japan)",
+      "nombre": 2
+    },
+    "perfrmanu": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Performan (US)",
+      "nombre": 2
+    },
+    "pettanp": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Pettan Pyuu (Japan)",
+      "nombre": 1
+    },
+    "phoenix": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Orange",
+          "fonction": "Fire"
+        },
+        "BUTTON2": {
+          "couleur": "Lime",
+          "fonction": "Force Field"
+        }
+      },
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Phoenix (Amstar, set 1)",
+      "nombre": 2
+    },
+    "phoenix3": {
+      "boutons": {},
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Phoenix (T.P.N. bootleg)",
+      "nombre": 2
+    },
+    "phoenixa": {
+      "boutons": {},
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Phoenix (Centuri, set 1)",
+      "nombre": 2
+    },
+    "phoenixb": {
+      "boutons": {},
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Phoenix (Centuri, set 2)",
+      "nombre": 2
+    },
+    "phoenixc": {
+      "boutons": {},
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Phoenix (Irecsa / G.G.I. Corporation)",
+      "nombre": 2
+    },
+    "phoenixj": {
+      "boutons": {},
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Phoenix (Taito Japan)",
+      "nombre": 2
+    },
+    "phoenixt": {
+      "boutons": {},
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Phoenix (Taito)",
+      "nombre": 2
+    },
+    "phoenxp2": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Phoenix Part 2",
+      "nombre": 1
+    },
+    "pipedrm": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Pipe Dream (World)",
+      "nombre": 2
+    },
+    "pipedrmj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Pipe Dream (Japan)",
+      "nombre": 2
+    },
+    "pipibibs": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Pipi & Bibis / Whoopee!! (Z80 sound cpu, set 1)",
+      "nombre": 2
+    },
+    "pipibibsa": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Pipi & Bibis / Whoopee!! (Z80 sound cpu, set 2)",
+      "nombre": 2
+    },
+    "pipibibsp": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Pipi & Bibis / Whoopee!! (prototype)",
+      "nombre": 2
+    },
+    "pktgaldx": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Pocket Gal Deluxe (Europe v3.00)",
+      "nombre": 3
+    },
+    "pktgaldxj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Pocket Gal Deluxe (Japan v3.00)",
+      "nombre": 3
+    },
+    "pleiadbl": {
+      "boutons": {},
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Pleiads (bootleg set 1)",
+      "nombre": 2
+    },
+    "pleiadce": {
+      "boutons": {},
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Pleiads (Centuri)",
+      "nombre": 2
+    },
+    "pleiads": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "Fire"
+        },
+        "BUTTON2": {
+          "couleur": "Red",
+          "fonction": "Warp"
+        }
+      },
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Pleiads (Tehkan)",
+      "nombre": 1
+    },
+    "plgirls": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Play Girls",
+      "nombre": 2
+    },
+    "plgirls2": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "1P",
+      "nom": "Play Girls 2 (Europe)",
+      "nombre": 2
+    },
+    "poitto": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Poitto! (Japan revision D)",
+      "nombre": 1
+    },
+    "pollux": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Pollux (set 1)",
+      "nombre": 2
+    },
+    "polluxa": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Pollux (set 2)",
+      "nombre": 2
+    },
+    "polluxa2": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Pollux (set 3)",
+      "nombre": 2
+    },
+    "pop_hh": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Popper (bootleg of Hard Head)",
+      "nombre": 2
+    },
+    "popeye": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "White",
+          "fonction": "Punch"
+        }
+      },
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Popeye (revision D)",
+      "nombre": 1
+    },
+    "popeyef": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Popeye (revision F)",
+      "nombre": 1
+    },
+    "popeyeu": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Popeye (revision D not protected)",
+      "nombre": 1
+    },
+    "popnpop": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Pop'n Pop (Ver 2.07O 1998/02/09)",
+      "nombre": 4
+    },
+    "popnpopj": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Pop'n Pop (Ver 2.07J 1998/02/09)",
+      "nombre": 4
+    },
+    "popnpopu": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Pop'n Pop (Ver 2.07A 1998/02/09)",
+      "nombre": 4
+    },
+    "porky": {
+      "boutons": {},
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Porky",
+      "nombre": 2
+    },
+    "potopoto": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Poto Poto (Japan, Rev A)",
+      "nombre": 1
+    },
+    "powerbal": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Power Balls",
+      "nombre": 2
+    },
+    "primella": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Primella (Japan, NTC license)",
+      "nombre": 2
+    },
+    "prmtmfgt": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Prime Time Fighter (Ver 2.1A 1993/05/21) (New Version)",
+      "nombre": 4
+    },
+    "prmtmfgto": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Prime Time Fighter (Ver 2.1A 1993/05/21) (Old Version)",
+      "nombre": 4
+    },
+    "progeara": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Progear (Asia 010117)",
+      "nombre": 3
+    },
+    "progearj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Progear no Arashi (Japan 010117)",
+      "nombre": 3
+    },
+    "progearjbl": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Progear no Arashi (Japan 010117) (decrypted bootleg)",
+      "nombre": 3
+    },
+    "progearjd": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Progear no Arashi (Japan 010117 Phoenix Edition) (bootleg)",
+      "nombre": 3
+    },
+    "progress": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 1,
+      "mode": "2P alt",
+      "nom": "Progress",
+      "nombre": 3
+    },
+    "prtytime": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "1P",
+      "nom": "Party Time: Gonta the Diver II / Ganbare! Gonta!! 2 (World Release)",
+      "nombre": 3
+    },
+    "pturn": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Parallel Turn",
+      "nombre": 3
+    },
+    "puchicar": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Puchi Carat (Ver 2.02O 1997/10/29)",
+      "nombre": 4
+    },
+    "puchicarj": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Puchi Carat (Ver 2.02J 1997/10/29)",
+      "nombre": 4
+    },
+    "pururun": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Pururun (Japan set 1)",
+      "nombre": 2
+    },
+    "pushman": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Yellow",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Pushman (Korea, set 1)",
+      "nombre": 3
+    },
+    "pushmana": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Pushman (Korea, set 2)",
+      "nombre": 3
+    },
+    "pushmans": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Pushman (American Sammy license)",
+      "nombre": 3
+    },
+    "pushmant": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Pushman (Top Tronic license)",
+      "nombre": 3
+    },
+    "puyo": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Puyo Puyo (World)",
+      "nombre": 1
+    },
+    "puyobl": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Puyo Puyo (World, bootleg)",
+      "nombre": 1
+    },
+    "puyoj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Puyo Puyo (Japan, Rev B)",
+      "nombre": 1
+    },
+    "puyoja": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Puyo Puyo (Japan, Rev A)",
+      "nombre": 1
+    },
+    "puyopuy2": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Puyo Puyo 2 (Japan)",
+      "nombre": 2
+    },
+    "puzzlekg": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Puzzle King (Dance & Puzzle)",
+      "nombre": 2
+    },
+    "puzznic": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Puzznic (World)",
+      "nombre": 2
+    },
+    "pwheelsj": {
+      "boutons": {},
+      "commandes": "paddle",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Power Wheels (Japan, Rev 2, Linkable)",
+      "nombre": 5
+    },
+    "pzlbreak": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Puzzle Break (set 1)",
+      "nombre": 3
+    },
+    "pzloop2": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Puzz Loop 2 (Europe 010302)",
+      "nombre": 1
+    },
+    "pzloop2j": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Puzz Loop 2 (Japan 010226)",
+      "nombre": 1
+    },
+    "pzloop2jr1": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Puzz Loop 2 (Japan 010205)",
+      "nombre": 1
+    },
+    "qjinsei": {
+      "boutons": {},
+      "commandes": "only_buttons",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Quiz Jinsei Gekijoh (Japan)",
+      "nombre": 5
+    },
+    "qndream": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Yellow",
+          "fonction": "1"
+        },
+        "BUTTON2": {
+          "couleur": "Blue",
+          "fonction": "2"
+        },
+        "BUTTON3": {
+          "couleur": "Green",
+          "fonction": "3"
+        },
+        "BUTTON4": {
+          "couleur": "Red",
+          "fonction": "4"
+        }
+      },
+      "commandes": "only_buttons",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Quiz Nanairo Dreams: Nijiirochou no Kiseki (Japan 960826)",
+      "nombre": 4
+    },
+    "qrouka": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Quiz Rouka Ni Tattenasai (Japan, ROM Based)",
+      "nombre": 1
+    },
+    "qsangoku": {
+      "boutons": {},
+      "commandes": "only_buttons",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Quiz Sangokushi (Japan)",
+      "nombre": 4
+    },
+    "qtheater": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Quiz Theater - 3tsu no Monogatari (Ver 2.3J 1994/11/10)",
+      "nombre": 4
+    },
+    "qtono1": {
+      "boutons": {},
+      "commandes": "only_buttons",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Quiz Tonosama no Yabou (Japan)",
+      "nombre": 4
+    },
+    "quartet2": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Quartet 2 (8751 317-0010)",
+      "nombre": 3
+    },
+    "quartet2a": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Quartet 2 (unprotected)",
+      "nombre": 3
+    },
+    "quester": {
+      "boutons": {},
+      "commandes": "dial",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Quester (Japan)",
+      "nombre": 1
+    },
+    "quiz18k": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Miyasu Nonki no Quiz 18-Kin",
+      "nombre": 3
+    },
+    "quizhuhu": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Moriguchi Hiroko no Quiz de Hyuu!Hyuu! (Ver 2.2J 1995/05/25)",
+      "nombre": 4
+    },
+    "quizmoon": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Quiz Bishoujo Senshi Sailor Moon - Chiryoku Tairyoku Toki no Un",
+      "nombre": 4
+    },
+    "quiztou": {
+      "boutons": {},
+      "commandes": "only_buttons",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Nettou! Gekitou! Quiztou!! (Japan)",
+      "nombre": 4
+    },
+    "qzchikyu": {
+      "boutons": {},
+      "commandes": "only_buttons",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Quiz Chikyu Bouei Gun (Japan)",
+      "nombre": 5
+    },
+    "qzkklgy2": {
+      "boutons": {},
+      "commandes": "only_buttons",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Quiz Kokology 2",
+      "nombre": 4
+    },
+    "qzkklogy": {
+      "boutons": {},
+      "commandes": "only_buttons",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Quiz Kokology",
+      "nombre": 5
+    },
+    "qzquest": {
+      "boutons": {},
+      "commandes": "only_buttons",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Quiz Quest - Hime to Yuusha no Monogatari (Japan)",
+      "nombre": 5
+    },
+    "raccoon": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Raccoon World",
+      "nombre": 2
+    },
+    "racingb": {
+      "boutons": {},
+      "commandes": "dial,paddle",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Racing Beat (World)",
+      "nombre": 4
+    },
+    "raflesia": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Rafflesia (315-5162)",
+      "nombre": 2
+    },
+    "ragtime": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "The Great Ragtime Show (Japan v1.5, 92.12.07)",
+      "nombre": 3
+    },
+    "ragtimea": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "The Great Ragtime Show (Japan v1.3, 92.11.26)",
+      "nombre": 3
+    },
+    "raiga": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Raiga - Strato Fighter (Japan, set 1)",
+      "nombre": 2
+    },
+    "raphero": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Rapid Hero (NMK)",
+      "nombre": 3
+    },
+    "rastsag2": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Rastan Saga 2 (Japan)",
+      "nombre": 2
+    },
+    "rayforce": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "RayForce (Ver 2.3A 1994/01/20)",
+      "nombre": 4
+    },
+    "rayforcej": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "RayForce (Ver 2.3J 1994/01/20)",
+      "nombre": 4
+    },
+    "rbtapper": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Tapper (Root Beer)",
+      "nombre": 1
+    },
+    "rdft": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "Blue",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Raiden Fighters (Germany)",
+      "nombre": 3
+    },
+    "rdft22kc": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Raiden Fighters 2 - Operation Hell Dive 2000 (China, SYS386I)",
+      "nombre": 2
+    },
+    "rdft2us": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Raiden Fighters 2 - Operation Hell Dive (US, single board)",
+      "nombre": 2
+    },
+    "rdfta": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Raiden Fighters (Austria)",
+      "nombre": 3
+    },
+    "rdftau": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Raiden Fighters (Australia)",
+      "nombre": 3
+    },
+    "rdftit": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Raiden Fighters (Italy)",
+      "nombre": 3
+    },
+    "rdftj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Raiden Fighters (Japan, earlier)",
+      "nombre": 3
+    },
+    "rdftu": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Raiden Fighters (US, earlier)",
+      "nombre": 3
+    },
+    "reaktor": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 1,
+      "mode": "2P alt",
+      "nom": "Reaktor (Track & Field conversion)",
+      "nombre": 1
+    },
+    "recalh": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P alt",
+      "nom": "Recalhorn (Ver 1.42J 1994/5/11, prototype)",
+      "nombre": 4
+    },
+    "recordbr": {
+      "boutons": {},
+      "commandes": "only_buttons",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Recordbreaker (World)",
+      "nombre": 3
+    },
+    "redearth": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Red Earth (Europe 961121)",
+      "nombre": 6
+    },
+    "redearthr1": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Red Earth (Europe 961023)",
+      "nombre": 6
+    },
+    "redufo": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": null,
+          "fonction": "Shoot"
+        }
+      },
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Defend the Terra Attack on the Red UFO",
+      "nombre": 1
+    },
+    "redufob": {
+      "boutons": {},
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Defend the Terra Attack on the Red UFO (bootleg, set 1)",
+      "nombre": 1
+    },
+    "rezon": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Rezon",
+      "nombre": 3
+    },
+    "rfjet": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "Blue",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Raiden Fighters Jet (Germany)",
+      "nombre": 2
+    },
+    "rfjet2kc": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Raiden Fighters Jet 2000 (China, SYS386I)",
+      "nombre": 2
+    },
+    "rfjeta": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Raiden Fighters Jet (Korea)",
+      "nombre": 2
+    },
+    "rfjetj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Raiden Fighters Jet (Japan)",
+      "nombre": 2
+    },
+    "rfjetu": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Raiden Fighters Jet (US)",
+      "nombre": 2
+    },
+    "ridingf": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Riding Fight (Ver 1.0O)",
+      "nombre": 4
+    },
+    "ridingfj": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Riding Fight (Ver 1.0J)",
+      "nombre": 4
+    },
+    "ridingfu": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Riding Fight (Ver 1.0A)",
+      "nombre": 4
+    },
+    "ridleofp": {
+      "boutons": {},
+      "commandes": "dial",
+      "joueurs": 2,
+      "mode": "1P",
+      "nom": "Riddle of Pythagoras (Japan)",
+      "nombre": 2
+    },
+    "ringdest": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "Lime",
+          "fonction": null
+        },
+        "BUTTON3": {
+          "couleur": "Cyan",
+          "fonction": null
+        },
+        "BUTTON4": {
+          "couleur": "Red",
+          "fonction": null
+        },
+        "BUTTON5": {
+          "couleur": "Lime",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Ring of Destruction: Slammasters II (Europe 940902)",
+      "nombre": 6
+    },
+    "ringdesta": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Ring of Destruction: Slammasters II (Asia 940831)",
+      "nombre": 6
+    },
+    "ringdstd": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Ring of Destruction: Slammasters II (Europe 940902 Phoenix Edition) (bootleg)",
+      "nombre": 6
+    },
+    "ringrage": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "4P sim",
+      "nom": "Ring Rage (Ver 2.3O 1992/08/09)",
+      "nombre": 4
+    },
+    "ringragej": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "4P sim",
+      "nom": "Ring Rage (Ver 2.3J 1992/08/09)",
+      "nombre": 4
+    },
+    "ringrageu": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "4P sim",
+      "nom": "Ring Rage (Ver 2.3A 1992/08/09)",
+      "nombre": 4
+    },
+    "robocop": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "Shoot/Punch"
+        },
+        "BUTTON2": {
+          "couleur": "Blue",
+          "fonction": "Jump"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Robocop (World, revision 4)",
+      "nombre": 2
+    },
+    "robocop2": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "Shoot Left"
+        },
+        "BUTTON2": {
+          "couleur": "Red",
+          "fonction": "Shoot Right"
+        },
+        "BUTTON3": {
+          "couleur": "Blue",
+          "fonction": "Jump"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Robocop 2 (Euro/Asia v0.10)",
+      "nombre": 3
+    },
+    "robocop2j": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Robocop 2 (Japan v0.11)",
+      "nombre": 3
+    },
+    "robocop2u": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Robocop 2 (US v0.10)",
+      "nombre": 3
+    },
+    "robocopb": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Robocop (World bootleg)",
+      "nombre": 2
+    },
+    "robocopj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Robocop (Japan)",
+      "nombre": 2
+    },
+    "robocopu": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Robocop (US, revision 1)",
+      "nombre": 2
+    },
+    "robocopu0": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Robocop (US, revision 0)",
+      "nombre": 2
+    },
+    "robocopw": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Robocop (World, revision 3)",
+      "nombre": 2
+    },
+    "robokid": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": null,
+          "fonction": "Fire"
+        },
+        "BUTTON2": {
+          "couleur": null,
+          "fonction": "Weapon Select"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Atomic Robo-kid (World, Type-2)",
+      "nombre": 2
+    },
+    "robokidj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Atomic Robo-kid (Japan, Type-2, set 1)",
+      "nombre": 2
+    },
+    "rockn": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Rock'n Tread (Japan)",
+      "nombre": 2
+    },
+    "rockna": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Rock'n Tread (Japan, alternate)",
+      "nombre": 2
+    },
+    "rocktris": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Rock Tris",
+      "nombre": 2
+    },
+    "rohga": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Rohga: Armor Force (Asia/Europe v5.0)",
+      "nombre": 3
+    },
+    "rohga1": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Rohga: Armor Force (Asia/Europe v3.0 set 1)",
+      "nombre": 3
+    },
+    "rohga2": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Rohga: Armor Force (Asia/Europe v3.0 set 2)",
+      "nombre": 3
+    },
+    "rohgah": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Rohga: Armor Force (Hong Kong v3.0)",
+      "nombre": 3
+    },
+    "rohgau": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Rohga: Armor Force (US v1.0)",
+      "nombre": 3
+    },
+    "rollace": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Roller Aces (set 1)",
+      "nombre": 2
+    },
+    "rollace2": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Roller Aces (set 2)",
+      "nombre": 2
+    },
+    "roundup": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "Cube Color Select"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Round-Up",
+      "nombre": 1
+    },
+    "rranger": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Orange",
+          "fonction": "Jump"
+        },
+        "BUTTON2": {
+          "couleur": "Orange",
+          "fonction": "Shoot"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Rough Ranger (v2.0)",
+      "nombre": 2
+    },
+    "rshark": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "R-Shark (set 1)",
+      "nombre": 4
+    },
+    "rtypeleo": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "R-Type Leo (World)",
+      "nombre": 2
+    },
+    "rundeep": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Run Deep",
+      "nombre": 2
+    },
+    "ryorioh": {
+      "boutons": {},
+      "commandes": "only_buttons",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Gourmet Battle Quiz Ryohrioh CooKing (Japan)",
+      "nombre": 4
+    },
+    "ryujin": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Ryu Jin (Japan, ET910000B PCB)",
+      "nombre": 3
+    },
+    "ryukendn": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Ninja Ryukenden (Japan, set 1)",
+      "nombre": 3
+    },
+    "ryukendna": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Ninja Ryukenden (Japan, set 2)",
+      "nombre": 3
+    },
+    "ryukyu": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "RyuKyu (Rev A, Japan) (FD1094 317-5023A)",
+      "nombre": 2
+    },
+    "s1945": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "Shoot"
+        },
+        "BUTTON2": {
+          "couleur": "Blue",
+          "fonction": "Bomb"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Strikers 1945 (World)",
+      "nombre": 3
+    },
+    "s1945a": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Strikers 1945 (Japan / World)",
+      "nombre": 3
+    },
+    "s1945ii": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Blue",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "Red",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Strikers 1945 II",
+      "nombre": 2
+    },
+    "s1945j": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Strikers 1945 (Japan)",
+      "nombre": 3
+    },
+    "s1945k": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Strikers 1945 (Korea)",
+      "nombre": 3
+    },
+    "sabotenb": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Saboten Bombers (set 1)",
+      "nombre": 2
+    },
+    "sabotenba": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Saboten Bombers (set 2)",
+      "nombre": 2
+    },
+    "sadari": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Sadari (Japan, NTC license)",
+      "nombre": 3
+    },
+    "sailormn": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Bishoujo Senshi Sailor Moon (Version 95/03/22B, Japan)",
+      "nombre": 3
+    },
+    "sailormnh": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Bishoujo Senshi Sailor Moon (Version 95/03/22B, Hong Kong)",
+      "nombre": 3
+    },
+    "sailormnj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Bishoujo Senshi Sailor Moon (Version 95/03/22B, Japan)",
+      "nombre": 3
+    },
+    "sailormnk": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Pretty Soldier Sailor Moon (Version 95/03/22B, Korea)",
+      "nombre": 3
+    },
+    "sailormno": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Pretty Soldier Sailor Moon (Version 95/03/21, Europe)",
+      "nombre": 3
+    },
+    "sailormnoh": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Bishoujo Senshi Sailor Moon (Version 95/03/21, Hong Kong)",
+      "nombre": 3
+    },
+    "sailormnoj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Bishoujo Senshi Sailor Moon (Version 95/03/21, Japan)",
+      "nombre": 3
+    },
+    "sailormnok": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Pretty Soldier Sailor Moon (Version 95/03/21, Korea)",
+      "nombre": 3
+    },
+    "sailormnot": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Bishoujo Senshi Sailor Moon (Version 95/03/21, Taiwan)",
+      "nombre": 3
+    },
+    "sailormnou": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Pretty Soldier Sailor Moon (Version 95/03/21, USA)",
+      "nombre": 3
+    },
+    "sailormnt": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Bishoujo Senshi Sailor Moon (Version 95/03/22B, Taiwan)",
+      "nombre": 3
+    },
+    "sailormnu": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Pretty Soldier Sailor Moon (Version 95/03/22B, USA)",
+      "nombre": 3
+    },
+    "sandscrp": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Sand Scorpion",
+      "nombre": 2
+    },
+    "sandscrpa": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Sand Scorpion (Earlier)",
+      "nombre": 2
+    },
+    "sandscrpb": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Kuai Da Shizi Huangdi (China?, Revised Hardware)",
+      "nombre": 2
+    },
+    "sbagman": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "Action"
+        }
+      },
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Super Bagman (version 5)",
+      "nombre": 2
+    },
+    "sbagmans": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Super Bagman (Stern Electronics)",
+      "nombre": 2
+    },
+    "scessjoe": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Success Joe (World)",
+      "nombre": 2
+    },
+    "schmeisr": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Schmeiser Robo (Japan)",
+      "nombre": 3
+    },
+    "sci": {
+      "boutons": {},
+      "commandes": "paddle",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Special Criminal Investigation (World set 1)",
+      "nombre": 5
+    },
+    "scia": {
+      "boutons": {},
+      "commandes": "paddle",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Special Criminal Investigation (World set 2)",
+      "nombre": 5
+    },
+    "scij": {
+      "boutons": {},
+      "commandes": "paddle",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Special Criminal Investigation (Japan)",
+      "nombre": 5
+    },
+    "scin": {
+      "boutons": {},
+      "commandes": "paddle",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Super Special Criminal Investigation (Negro Torino hack)",
+      "nombre": 5
+    },
+    "sciu": {
+      "boutons": {},
+      "commandes": "paddle",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Special Criminal Investigation (US)",
+      "nombre": 5
+    },
+    "scramb2": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Scramble (bootleg, set 1)",
+      "nombre": 2
+    },
+    "scramblb": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Scramble (bootleg on Galaxian hardware)",
+      "nombre": 2
+    },
+    "scramble": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "White",
+          "fonction": "Laser"
+        },
+        "BUTTON2": {
+          "couleur": "White",
+          "fonction": "Bombs"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Scramble",
+      "nombre": 2
+    },
+    "scramblebb": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Scramble (bootleg?)",
+      "nombre": 2
+    },
+    "scramblebf": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Scramble (Karateco, French bootleg)",
+      "nombre": 2
+    },
+    "scrambles": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Scramble (Stern Electronics, set 1)",
+      "nombre": 2
+    },
+    "screwloo": {
+      "boutons": {},
+      "commandes": "double joystick (8-way)",
+      "joueurs": 1,
+      "mode": "2P alt",
+      "nom": "Screw Loose (prototype)",
+      "nombre": 2
+    },
+    "scudhamm": {
+      "boutons": {},
+      "commandes": "dial",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Scud Hammer (Japan, ver 1.4)",
+      "nombre": 4
+    },
+    "sdi": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Lime",
+          "fonction": "Fire"
+        }
+      },
+      "commandes": "joystick (8-way),trackball",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "SDI - Strategic Defense Initiative (Japan, newer, System 16A, FD1089B 317-0027)",
+      "nombre": 1
+    },
+    "sdibl": {
+      "boutons": {},
+      "commandes": "joystick (8-way),trackball",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "SDI - Strategic Defense Initiative (bootleg, original hardware)",
+      "nombre": 1
+    },
+    "secretag": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Secret Agent (World, revision 3)",
+      "nombre": 2
+    },
+    "sectionz": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Section Z (US)",
+      "nombre": 2
+    },
+    "sectionza": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Section Z (Japan, rev. A)",
+      "nombre": 2
+    },
+    "selfeena": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Sel Feena",
+      "nombre": 3
+    },
+    "senkyu": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "Green",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Senkyu (Japan, newer)",
+      "nombre": 3
+    },
+    "senkyua": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Senkyu (Japan, earlier)",
+      "nombre": 3
+    },
+    "sfiii": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Blue",
+          "fonction": "Jab Punch"
+        },
+        "BUTTON2": {
+          "couleur": "Yellow",
+          "fonction": "Strong Punch"
+        },
+        "BUTTON3": {
+          "couleur": "Red",
+          "fonction": "Fierce Punch"
+        },
+        "BUTTON4": {
+          "couleur": "Blue",
+          "fonction": "Short Kick"
+        },
+        "BUTTON5": {
+          "couleur": "Yellow",
+          "fonction": "Strong Kick"
+        },
+        "BUTTON6": {
+          "couleur": "Red",
+          "fonction": "Roundhouse Kick"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Street Fighter III: New Generation (Europe 970204)",
+      "nombre": 6
+    },
+    "sfiii2j": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Street Fighter III 2nd Impact: Giant Attack (Japan 970930)",
+      "nombre": 6
+    },
+    "sfiii2n": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Street Fighter III 2nd Impact: Giant Attack (Asia 970930, NO CD)",
+      "nombre": 6
+    },
+    "sfiii3": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Green",
+          "fonction": "Jab Punch"
+        },
+        "BUTTON2": {
+          "couleur": "Blue",
+          "fonction": "Strong Punch"
+        },
+        "BUTTON3": {
+          "couleur": "Red",
+          "fonction": "Fierce Punch"
+        },
+        "BUTTON4": {
+          "couleur": "Green",
+          "fonction": "Short Kick"
+        },
+        "BUTTON5": {
+          "couleur": "Blue",
+          "fonction": "Strong Kick"
+        },
+        "BUTTON6": {
+          "couleur": "Red",
+          "fonction": "Roundhouse Kick"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Street Fighter III 3rd Strike: Fight for the Future (Europe 990608)",
+      "nombre": 6
+    },
+    "sfiii3n": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Street Fighter III 3rd Strike: Fight for the Future (Japan 990608, NO CD)",
+      "nombre": 6
+    },
+    "sfiii3nr1": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Street Fighter III 3rd Strike: Fight for the Future (Japan 990512, NO CD)",
+      "nombre": 6
+    },
+    "sfiii3r1": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Street Fighter III 3rd Strike: Fight for the Future (Europe 990512)",
+      "nombre": 6
+    },
+    "sfiii3u": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Street Fighter III 3rd Strike: Fight for the Future (USA 990608)",
+      "nombre": 6
+    },
+    "sfiii3ur1": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Street Fighter III 3rd Strike: Fight for the Future (USA 990512)",
+      "nombre": 6
+    },
+    "sfiiih": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Street Fighter III: New Generation (Hispanic 970204)",
+      "nombre": 6
+    },
+    "sfiiij": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Street Fighter III: New Generation (Japan 970204)",
+      "nombre": 6
+    },
+    "sfiiin": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Street Fighter III: New Generation (Asia 970204, NO CD, BIOS set 1)",
+      "nombre": 6
+    },
+    "sformula": {
+      "boutons": {},
+      "commandes": "joystick (2-way),joystick (analog)",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Super Formula (Japan, set 1)",
+      "nombre": 2
+    },
+    "sgladiat": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Gladiator 1984",
+      "nombre": 2
+    },
+    "shadoww": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "White",
+          "fonction": "Attack"
+        },
+        "BUTTON2": {
+          "couleur": "White",
+          "fonction": "Jump"
+        },
+        "BUTTON3": {
+          "couleur": "Red",
+          "fonction": "Grab"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Shadow Warriors (World, set 1)",
+      "nombre": 3
+    },
+    "shadowwa": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Shadow Warriors (World, set 2)",
+      "nombre": 3
+    },
+    "shangkid": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "White",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "White",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Shanghai Kid",
+      "nombre": 2
+    },
+    "shinfz": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Shinobi / FZ-2006 (Korean System 16 bootleg) (ISG Selection Master Type 2006)",
+      "nombre": 3
+    },
+    "shippumd": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Shippu Mahou Daisakusen (Japan)",
+      "nombre": 3
+    },
+    "shogwarr": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Shogun Warriors (World)",
+      "nombre": 4
+    },
+    "shogwarru": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Shogun Warriors (US)",
+      "nombre": 4
+    },
+    "sidearms": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "White",
+          "fonction": "Fire Left"
+        },
+        "BUTTON2": {
+          "couleur": "Blue",
+          "fonction": "Fire Right"
+        },
+        "BUTTON3": {
+          "couleur": "Red",
+          "fonction": "Power"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Hyper Dyne Side Arms (World, 861129)",
+      "nombre": 3
+    },
+    "sidearmsj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Hyper Dyne Side Arms (Japan, 861128)",
+      "nombre": 3
+    },
+    "silkroad": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "The Legend of Silkroad",
+      "nombre": 3
+    },
+    "silvmil": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Silver Millennium",
+      "nombre": 3
+    },
+    "sinvasn": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Space Invasion (Europe)",
+      "nombre": 2
+    },
+    "sinvasnb": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Space Invasion (bootleg)",
+      "nombre": 2
+    },
+    "sjryuko": {
+      "boutons": {},
+      "commandes": "mahjong",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Sukeban Jansi Ryuko (set 2, System 16B, FD1089B 317-5021)",
+      "nombre": 23
+    },
+    "sjryuko1": {
+      "boutons": {},
+      "commandes": "mahjong",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Sukeban Jansi Ryuko (set 1, System 16A, FD1089B 317-5021)",
+      "nombre": 23
+    },
+    "skyadvnt": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Cyan",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "Lime",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Sky Adventure (World)",
+      "nombre": 3
+    },
+    "skyadvntj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Sky Adventure (Japan)",
+      "nombre": 3
+    },
+    "skyadvntu": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Sky Adventure (US)",
+      "nombre": 3
+    },
+    "skyalert": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Sky Alert",
+      "nombre": 2
+    },
+    "skyarmy": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Sky Army",
+      "nombre": 2
+    },
+    "skyfox": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 1,
+      "mode": "2P alt",
+      "nom": "Sky Fox",
+      "nombre": 2
+    },
+    "skylancr": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Sky Lancer",
+      "nombre": 1
+    },
+    "skylancre": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Sky Lancer (Esco Trading Co license)",
+      "nombre": 1
+    },
+    "skyraidr": {
+      "boutons": {},
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Sky Raider (bootleg of UniWar S)",
+      "nombre": 1
+    },
+    "skyskipr": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Sky Skipper",
+      "nombre": 2
+    },
+    "skysmash": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Sky Smasher",
+      "nombre": 2
+    },
+    "skysoldr": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Blue",
+          "fonction": "Cannon"
+        },
+        "BUTTON2": {
+          "couleur": "White",
+          "fonction": "Missle"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Sky Soldiers (US)",
+      "nombre": 2
+    },
+    "skywolf": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Sky Wolf (set 1)",
+      "nombre": 2
+    },
+    "skywolf2": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Sky Wolf (set 2)",
+      "nombre": 2
+    },
+    "slipstrmh": {
+      "boutons": {},
+      "commandes": "paddle,pedal",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Slip Stream (Hispanic 950515)",
+      "nombre": 1
+    },
+    "slyspy": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "Shoot"
+        },
+        "BUTTON2": {
+          "couleur": "Blue",
+          "fonction": "Jump"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Sly Spy (US, revision 4)",
+      "nombre": 2
+    },
+    "slyspy2": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Sly Spy (US, revision 2)",
+      "nombre": 2
+    },
+    "smbomb": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Super Muscle Bomber: The International Blowout (Japan 940831)",
+      "nombre": 6
+    },
+    "smbombr1": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Super Muscle Bomber: The International Blowout (Japan 940808)",
+      "nombre": 6
+    },
+    "snapper": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Snapper (Korea)",
+      "nombre": 3
+    },
+    "snowbro3": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Snow Brothers 3 - Magical Adventure",
+      "nombre": 3
+    },
+    "snowbros": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Blue",
+          "fonction": "Shoot and Kick Snowball"
+        },
+        "BUTTON2": {
+          "couleur": "Blue",
+          "fonction": "Jump"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Snow Bros. - Nick & Tom (set 1)",
+      "nombre": 3
+    },
+    "snowbrosa": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Snow Bros. - Nick & Tom (set 2)",
+      "nombre": 3
+    },
+    "snowbrosb": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Snow Bros. - Nick & Tom (set 3)",
+      "nombre": 3
+    },
+    "snowbrosc": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Snow Bros. - Nick & Tom (set 4)",
+      "nombre": 3
+    },
+    "snowbrosd": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Snow Bros. - Nick & Tom (Dooyong license)",
+      "nombre": 3
+    },
+    "snowbrosj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Snow Bros. - Nick & Tom (Japan)",
+      "nombre": 3
+    },
+    "sokonuke": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Sokonuke Taisen Game (Japan)",
+      "nombre": 1
+    },
+    "sonicbom": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Sonic Boom (FD1094 317-0053)",
+      "nombre": 3
+    },
+    "sonsonj": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Son Son (Japan)",
+      "nombre": 1
+    },
+    "sos": {
+      "boutons": {},
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "SOS",
+      "nombre": 1
+    },
+    "sotsugyo": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Sotsugyo Shousho (Japan)",
+      "nombre": 3
+    },
+    "spacbat2": {
+      "boutons": {},
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Space Battle (bootleg set 2)",
+      "nombre": 1
+    },
+    "spacbatt": {
+      "boutons": {},
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Space Battle (bootleg set 1)",
+      "nombre": 1
+    },
+    "spacecr": {
+      "boutons": {},
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Space Cruiser",
+      "nombre": 2
+    },
+    "spacedx": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "Fire"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Space Invaders DX (US, v2.1)",
+      "nombre": 3
+    },
+    "spacedxj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Space Invaders DX (Japan, v2.1)",
+      "nombre": 3
+    },
+    "spacedxo": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Space Invaders DX (Japan, v2.0)",
+      "nombre": 3
+    },
+    "spacegun": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": null,
+          "fonction": "Trigger"
+        },
+        "BUTTON2": {
+          "couleur": null,
+          "fonction": "Bomb Select"
+        },
+        "BUTTON3": {
+          "couleur": null,
+          "fonction": "Back Up"
+        }
+      },
+      "commandes": "joystick (analog)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Space Gun (World)",
+      "nombre": 3
+    },
+    "spatter": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Spatter (315-5096)",
+      "nombre": 2
+    },
+    "spcinv95": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Space Invaders '95: The Attack Of Lunar Loonies (Ver 2.5O 1995/06/14)",
+      "nombre": 4
+    },
+    "spcinv95u": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Space Invaders '95: The Attack Of Lunar Loonies (Ver 2.5A 1995/06/14)",
+      "nombre": 4
+    },
+    "spcinvdj": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Space Invaders DX (Ver 2.6J 1994/09/14) (F3 Version)",
+      "nombre": 4
+    },
+    "spcpostn": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Space Position (Japan)",
+      "nombre": 2
+    },
+    "spf2t": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Super Puzzle Fighter II Turbo (Europe 960529)",
+      "nombre": 2
+    },
+    "spf2ta": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Super Puzzle Fighter II Turbo (Asia 960529)",
+      "nombre": 2
+    },
+    "spf2th": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Super Puzzle Fighter II Turbo (Hispanic 960531)",
+      "nombre": 2
+    },
+    "spf2xj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Super Puzzle Fighter II X (Japan 960531)",
+      "nombre": 2
+    },
+    "spiero": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Super Pierrot (Japan)",
+      "nombre": 2
+    },
+    "spinlbrkj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Spinal Breakers (Japan)",
+      "nombre": 3
+    },
+    "sprglbpg": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Super Glob (Pac-Man hardware, German bootleg)",
+      "nombre": 2
+    },
+    "spy": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Yellow",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "White",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "S.P.Y.: Special Project Y. (World ver. N)",
+      "nombre": 2
+    },
+    "spyhuntp": {
+      "boutons": {},
+      "commandes": "paddle,pedal",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Spy Hunter (Playtronic license)",
+      "nombre": 5
+    },
+    "spyu": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "S.P.Y.: Special Project Y. (US ver. M)",
+      "nombre": 2
+    },
+    "squash": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Squash (World, ver. 1.0, checksum 015aef61)",
+      "nombre": 2
+    },
+    "sraider": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Space Raider",
+      "nombre": 1
+    },
+    "sranger": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Super Ranger (v2.0)",
+      "nombre": 2
+    },
+    "srangerb": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Super Ranger (older, bootleg)",
+      "nombre": 2
+    },
+    "srangerw": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Super Ranger (older, WDK license)",
+      "nombre": 2
+    },
+    "srdarwin": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "SRD: Super Real Darwin (World)",
+      "nombre": 2
+    },
+    "srdarwinj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "SRD: Super Real Darwin (Japan)",
+      "nombre": 2
+    },
+    "srdmissn": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "S.R.D. Mission",
+      "nombre": 2
+    },
+    "ssanchan": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Sanrin San Chan (Japan, 315-5096)",
+      "nombre": 2
+    },
+    "ssi": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "Red",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Super Space Invaders '91 (World, revised code, Rev 1)",
+      "nombre": 2
+    },
+    "ssmissin": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "S.S. Mission",
+      "nombre": 2
+    },
+    "sspiritj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Scramble Spirits (Japan, Floppy DS3-5000-02-REV-A Based)",
+      "nombre": 3
+    },
+    "sspirits": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "White",
+          "fonction": null
+        },
+        "BUTTON3": {
+          "couleur": "White",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Scramble Spirits (World, Floppy Based)",
+      "nombre": 3
+    },
+    "sstingry": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Super Stingray (Japan)",
+      "nombre": 2
+    },
+    "sstriker": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Sorcer Striker",
+      "nombre": 3
+    },
+    "starfght": {
+      "boutons": {},
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Star Fighter",
+      "nombre": 1
+    },
+    "starfigh": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Star Fighter (v1)",
+      "nombre": 2
+    },
+    "stfight": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Street Fight (Germany)",
+      "nombre": 2
+    },
+    "stfighta": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Street Fight (bootleg?)",
+      "nombre": 2
+    },
+    "stinger": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Stinger",
+      "nombre": 2
+    },
+    "stinger2": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Stinger (prototype?)",
+      "nombre": 2
+    },
+    "stkclmns": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Stack Columns (World)",
+      "nombre": 2
+    },
+    "stkclmnsj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Stack Columns (Japan)",
+      "nombre": 2
+    },
+    "stlforce": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Steel Force",
+      "nombre": 3
+    },
+    "stoneage": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Stoneage (bootleg of Caveman Ninja)",
+      "nombre": 2
+    },
+    "storming": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Storming Party / Riku Kai Kuu Saizensen (set 1)",
+      "nombre": 2
+    },
+    "stratof": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Blue",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "Red",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Raiga - Strato Fighter (US)",
+      "nombre": 2
+    },
+    "strkfgtr": {
+      "boutons": {},
+      "commandes": "joystick (analog)",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Strike Fighter (World)",
+      "nombre": 3
+    },
+    "strnskil": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Strength & Skill",
+      "nombre": 2
+    },
+    "sub": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Submarine (Sigma)",
+      "nombre": 2
+    },
+    "sunaq": {
+      "boutons": {},
+      "commandes": "only_buttons",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "SunA Quiz 6000 Academy (940620-6)",
+      "nombre": 4
+    },
+    "superbar": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Super Bar",
+      "nombre": 2
+    },
+    "superchs": {
+      "boutons": {},
+      "commandes": "paddle,pedal",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Super Chase - Criminal Termination (World)",
+      "nombre": 3
+    },
+    "superchsj": {
+      "boutons": {},
+      "commandes": "paddle,pedal",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Super Chase - Criminal Termination (Japan)",
+      "nombre": 3
+    },
+    "superchsu": {
+      "boutons": {},
+      "commandes": "paddle,pedal",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Super Chase - Criminal Termination (US)",
+      "nombre": 3
+    },
+    "superg": {
+      "boutons": {},
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Super Galaxians (hack of 'Galaxian (Namco set 2)')",
+      "nombre": 1
+    },
+    "superx": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Super-X (NTC)",
+      "nombre": 4
+    },
+    "superxm": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Super-X (Mitchell)",
+      "nombre": 4
+    },
+    "suprglob": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "White",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "White",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 1,
+      "mode": "2P alt",
+      "nom": "Super Glob",
+      "nombre": 2
+    },
+    "suprleag": {
+      "boutons": {},
+      "commandes": "positional,trackball",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Super League (FD1094 317-0045)",
+      "nombre": 3
+    },
+    "suprridr": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "White",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Super Rider",
+      "nombre": 2
+    },
+    "suprtrio": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Super Trio",
+      "nombre": 3
+    },
+    "sutapper": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Tapper (Suntory)",
+      "nombre": 1
+    },
+    "swarm": {
+      "boutons": {},
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Swarm (bootleg?)",
+      "nombre": 1
+    },
+    "swatpolc": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "SWAT Police",
+      "nombre": 3
+    },
+    "swcourt": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 4,
+      "mode": "4P sim",
+      "nom": "Super World Court (World)",
+      "nombre": 3
+    },
+    "swcourtj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 4,
+      "mode": "4P sim",
+      "nom": "Super World Court (Japan)",
+      "nombre": 3
+    },
+    "sws96": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Super World Stadium '96 (Japan)",
+      "nombre": 3
+    },
+    "sws97": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Super World Stadium '97 (Japan)",
+      "nombre": 3
+    },
+    "sxyreact": {
+      "boutons": {},
+      "commandes": "joystick (8-way),paddle",
+      "joueurs": 2,
+      "mode": "1P",
+      "nom": "Pachinko Sexy Reaction (Japan)",
+      "nombre": 3
+    },
+    "syvalion": {
+      "boutons": {},
+      "commandes": "trackball",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Syvalion (Japan)",
+      "nombre": 1
+    },
+    "tail2nos": {
+      "boutons": {},
+      "commandes": "joystick (2-way),joystick (analog)",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Tail to Nose - Great Championship / Super Formula",
+      "nombre": 2
+    },
+    "tangtang": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Tang Tang (ver. 0526, 26/05/2000, set 1)",
+      "nombre": 2
+    },
+    "tantr": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Puzzle & Action: Tant-R (Japan)",
+      "nombre": 1
+    },
+    "tantrbl": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Puzzle & Action: Tant-R (Japan) (bootleg set 1)",
+      "nombre": 1
+    },
+    "tantrbl2": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Puzzle & Action: Tant-R (Japan) (bootleg set 2)",
+      "nombre": 1
+    },
+    "tantrbl3": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Puzzle & Action: Tant-R (Japan) (bootleg set 3)",
+      "nombre": 1
+    },
+    "tantrkor": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Puzzle & Action: Tant-R (Korea)",
+      "nombre": 1
+    },
+    "tapper": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": null,
+          "fonction": "Pour / Serve"
+        }
+      },
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Tapper (Budweiser, 1/27/84)",
+      "nombre": 1
+    },
+    "tappera": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Tapper (Budweiser, 1/12/84)",
+      "nombre": 1
+    },
+    "tazmani2": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Tazz-Mania (set 2, alt hardware)",
+      "nombre": 2
+    },
+    "tazmania": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "Fire"
+        },
+        "BUTTON2": {
+          "couleur": "White",
+          "fonction": "Zapper"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Tazz-Mania (set 1)",
+      "nombre": 2
+    },
+    "tazzmang": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Tazz-Mania (bootleg on Galaxian hardware)",
+      "nombre": 1
+    },
+    "tcobra2": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Twin Cobra II (Ver 2.1O 1995/11/30)",
+      "nombre": 4
+    },
+    "tcobra2u": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Twin Cobra II (Ver 2.1A 1995/11/30)",
+      "nombre": 4
+    },
+    "tdragon": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Thunder Dragon (8th Jan. 1992, unprotected)",
+      "nombre": 2
+    },
+    "tdragon1": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Thunder Dragon (4th Jun. 1991, protected)",
+      "nombre": 2
+    },
+    "tdragon2": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Thunder Dragon 2 (9th Nov. 1993)",
+      "nombre": 3
+    },
+    "tdragon2a": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Thunder Dragon 2 (1st Oct. 1993)",
+      "nombre": 3
+    },
+    "tdragonb": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Thunder Dragon (bootleg with Raiden sounds, encrypted)",
+      "nombre": 2
+    },
+    "teddybb": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "TeddyBoy Blues (315-5115, New Ver.)",
+      "nombre": 2
+    },
+    "teddybbo": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "TeddyBoy Blues (315-5115, Old Ver.)",
+      "nombre": 2
+    },
+    "tekipaki": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Teki Paki",
+      "nombre": 2
+    },
+    "teljan": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Tel Jan",
+      "nombre": 2
+    },
+    "tempest": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Black",
+          "fonction": "Fire"
+        },
+        "BUTTON2": {
+          "couleur": "Black",
+          "fonction": "Super Zapper"
+        }
+      },
+      "commandes": "dial",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Tempest (rev 3, Revised Hardware)",
+      "nombre": 2
+    },
+    "tempest1": {
+      "boutons": {},
+      "commandes": "dial",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Tempest (rev 1)",
+      "nombre": 2
+    },
+    "tempest2": {
+      "boutons": {},
+      "commandes": "dial",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Tempest (rev 2)",
+      "nombre": 2
+    },
+    "tempest3": {
+      "boutons": {},
+      "commandes": "dial",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Tempest (rev 3)",
+      "nombre": 2
+    },
+    "temptube": {
+      "boutons": {},
+      "commandes": "dial",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Tempest Tubes",
+      "nombre": 2
+    },
+    "tengai": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": null,
+          "fonction": "Fire"
+        },
+        "BUTTON2": {
+          "couleur": null,
+          "fonction": "Bomb"
+        },
+        "BUTTON3": {
+          "couleur": null,
+          "fonction": "??"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Tengai (World)",
+      "nombre": 3
+    },
+    "tengaij": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Sengoku Blade: Sengoku Ace Episode II (Japan) / Tengai (World)",
+      "nombre": 3
+    },
+    "tetrisp": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Green",
+          "fonction": "Rotate"
+        },
+        "BUTTON2": {
+          "couleur": "Green",
+          "fonction": "Rotate"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Tetris Plus (ver 1.0)",
+      "nombre": 5
+    },
+    "tetrisp2": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Green",
+          "fonction": "Rotate Clockwise"
+        },
+        "BUTTON2": {
+          "couleur": "Green",
+          "fonction": "Rotate Anti Clockwise"
+        },
+        "BUTTON3": {
+          "couleur": "Green",
+          "fonction": "Bomb"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Tetris Plus 2 (World, V2.8)",
+      "nombre": 3
+    },
+    "tetrisp2j": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Tetris Plus 2 (Japan, V2.2)",
+      "nombre": 3
+    },
+    "tetrisse": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Tetris (Japan, System E)",
+      "nombre": 2
+    },
+    "tfrceac": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "1P",
+      "nom": "Thunder Force AC",
+      "nombre": 3
+    },
+    "tfrceacb": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "1P",
+      "nom": "Thunder Force AC (bootleg)",
+      "nombre": 3
+    },
+    "tfrceacj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "1P",
+      "nom": "Thunder Force AC (Japan)",
+      "nombre": 3
+    },
+    "tgm2p": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Tetris: The Absolute - The Grand Master 2 Plus",
+      "nombre": 3
+    },
+    "thedeep": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "The Deep (Japan)",
+      "nombre": 2
+    },
+    "theend": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "Fire"
+        }
+      },
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "The End",
+      "nombre": 2
+    },
+    "theends": {
+      "boutons": {},
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "The End (Stern Electronics)",
+      "nombre": 2
+    },
+    "theglob2": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 1,
+      "mode": "2P alt",
+      "nom": "The Glob (earlier)",
+      "nombre": 2
+    },
+    "theglob3": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 1,
+      "mode": "2P alt",
+      "nom": "The Glob (set 3)",
+      "nombre": 2
+    },
+    "thehand": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "The Hand",
+      "nombre": 3
+    },
+    "theroes": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Thunder Heroes (set 1)",
+      "nombre": 4
+    },
+    "thetogyu": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "The Togyu (315-5065, Japan)",
+      "nombre": 2
+    },
+    "thndrbld": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": null,
+          "fonction": "Fire"
+        },
+        "BUTTON2": {
+          "couleur": null,
+          "fonction": "Grenade"
+        }
+      },
+      "commandes": "joystick (analog)",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Thunder Blade (upright) (FD1094 317-0056)",
+      "nombre": 2
+    },
+    "thndrbld1": {
+      "boutons": {},
+      "commandes": "joystick (analog)",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Thunder Blade (deluxe/standing) (unprotected)",
+      "nombre": 2
+    },
+    "thoop": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Thunder Hoop (ver. 1, checksum 02a09f7d)",
+      "nombre": 2
+    },
+    "thunderl": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Thunder & Lightning (set 1)",
+      "nombre": 2
+    },
+    "thunderx": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Blue",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "Blue",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Thunder Cross (set 1)",
+      "nombre": 2
+    },
+    "thunderxa": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Thunder Cross (set 2)",
+      "nombre": 2
+    },
+    "thunderxb": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Thunder Cross (set 3)",
+      "nombre": 2
+    },
+    "thunderxj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Thunder Cross (Japan)",
+      "nombre": 2
+    },
+    "thundfox": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "Attack"
+        },
+        "BUTTON2": {
+          "couleur": "Blue",
+          "fonction": "Jump"
+        },
+        "BUTTON3": {
+          "couleur": "White",
+          "fonction": "Weapon"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Thunder Fox (World, rev 1)",
+      "nombre": 3
+    },
+    "thundfoxj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Thunder Fox (Japan, rev 1)",
+      "nombre": 3
+    },
+    "thundfoxu": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Thunder Fox (US, rev 1)",
+      "nombre": 3
+    },
+    "timelimt": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 1,
+      "mode": "2P alt",
+      "nom": "Time Limit",
+      "nombre": 1
+    },
+    "timesold": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "Fire"
+        },
+        "BUTTON2": {
+          "couleur": "Orange",
+          "fonction": "Hyper Weapon"
+        }
+      },
+      "commandes": "joystick (8-way),positional",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Time Soldiers (US Rev 3)",
+      "nombre": 2
+    },
+    "timesold1": {
+      "boutons": {},
+      "commandes": "joystick (8-way),positional",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Time Soldiers (US Rev 1)",
+      "nombre": 2
+    },
+    "tiptop": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Tip Top (3 board stack)",
+      "nombre": 1
+    },
+    "tkdensho": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Toukidenshou - Angel Eyes (VER. 960614)",
+      "nombre": 4
+    },
+    "tkdenshoa": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Toukidenshou - Angel Eyes (VER. 960427)",
+      "nombre": 4
+    },
+    "toobin2": {
+      "boutons": {},
+      "commandes": "only_buttons",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Toobin' (rev 2)",
+      "nombre": 5
+    },
+    "toppyrap": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Toppy & Rappy",
+      "nombre": 3
+    },
+    "topspeed": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Black",
+          "fonction": "Accelerate"
+        },
+        "BUTTON2": {
+          "couleur": "Black",
+          "fonction": "Brake"
+        },
+        "BUTTON3": {
+          "couleur": "Red",
+          "fonction": "Nitro"
+        },
+        "BUTTON4": {
+          "couleur": "Black",
+          "fonction": "Hi / Lo"
+        }
+      },
+      "commandes": "dial,paddle,pedal",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Top Speed (World, rev 1)",
+      "nombre": 4
+    },
+    "topspeedu": {
+      "boutons": {},
+      "commandes": "dial,paddle,pedal",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Top Speed (US)",
+      "nombre": 4
+    },
+    "toryumon": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Toryumon",
+      "nombre": 3
+    },
+    "toutrun": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": null,
+          "fonction": "High / Low"
+        },
+        "BUTTON2": {
+          "couleur": null,
+          "fonction": "Turbo"
+        }
+      },
+      "commandes": "paddle,pedal",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Turbo Out Run (Out Run upgrade) (FD1094 317-0118)",
+      "nombre": 2
+    },
+    "toutrun1": {
+      "boutons": {},
+      "commandes": "paddle,pedal",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Turbo Out Run (deluxe cockpit) (FD1094 317-0109)",
+      "nombre": 2
+    },
+    "toutrun3": {
+      "boutons": {},
+      "commandes": "paddle,pedal",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Turbo Out Run (cockpit) (FD1094 317-0107)",
+      "nombre": 2
+    },
+    "toypop": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Yellow",
+          "fonction": "Shoot"
+        }
+      },
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Toypop",
+      "nombre": 1
+    },
+    "tp2m32": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Tetris Plus 2 (ver 1.0, MegaSystem 32 Version)",
+      "nombre": 5
+    },
+    "transfrm": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 1,
+      "mode": "2P alt",
+      "nom": "Transformer",
+      "nombre": 2
+    },
+    "trckydoc": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Tricky Doc (set 1)",
+      "nombre": 2
+    },
+    "trckydoca": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Tricky Doc (set 2)",
+      "nombre": 2
+    },
+    "tricktrp": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Trick Trap (World?)",
+      "nombre": 2
+    },
+    "triplep": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Triple Punch (set 1)",
+      "nombre": 1
+    },
+    "trojan": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "Blue",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Trojan (US set 1)",
+      "nombre": 2
+    },
+    "trojana": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Trojan (US set 2)",
+      "nombre": 2
+    },
+    "trojanj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Tatakai no Banka (Japan)",
+      "nombre": 2
+    },
+    "trojanr": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Trojan (Romstar, set 1)",
+      "nombre": 2
+    },
+    "trophyh": {
+      "boutons": {},
+      "commandes": "lightgun",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Trophy Hunting - Bear & Moose V1.00",
+      "nombre": 2
+    },
+    "trstar": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Cyan",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "Cyan",
+          "fonction": null
+        },
+        "BUTTON3": {
+          "couleur": "Cyan",
+          "fonction": null
+        },
+        "BUTTON4": {
+          "couleur": "Cyan",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Top Ranking Stars (Ver 2.1O 1993/05/21) (New Version)",
+      "nombre": 4
+    },
+    "trstarj": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Top Ranking Stars (Ver 2.1J 1993/05/21) (New Version)",
+      "nombre": 4
+    },
+    "trstaro": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Top Ranking Stars (Ver 2.1O 1993/05/21) (Old Version)",
+      "nombre": 4
+    },
+    "trstaroj": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Top Ranking Stars (Ver 2.1J 1993/05/21) (Old Version)",
+      "nombre": 4
+    },
+    "trvmstr": {
+      "boutons": {},
+      "commandes": "only_buttons",
+      "joueurs": 2,
+      "mode": "4P alt",
+      "nom": "Trivia Master (set 1)",
+      "nombre": 4
+    },
+    "trvmstrb": {
+      "boutons": {},
+      "commandes": "only_buttons",
+      "joueurs": 2,
+      "mode": "4P alt",
+      "nom": "Trivia Master (set 3)",
+      "nombre": 4
+    },
+    "trvmstrc": {
+      "boutons": {},
+      "commandes": "only_buttons",
+      "joueurs": 2,
+      "mode": "4P alt",
+      "nom": "Trivia Master (set 4)",
+      "nombre": 4
+    },
+    "tstrike": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Thunder Strike (set 1)",
+      "nombre": 3
+    },
+    "tstrikea": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Thunder Strike (set 2, older)",
+      "nombre": 3
+    },
+    "tturf": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "White",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "Red",
+          "fonction": null
+        },
+        "BUTTON3": {
+          "couleur": "Blue",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Tough Turf (set 2, Japan) (8751 317-0104)",
+      "nombre": 3
+    },
+    "tturfu": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Tough Turf (set 1, US) (8751 317-0099)",
+      "nombre": 3
+    },
+    "tubeit": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Tube-It",
+      "nombre": 2
+    },
+    "tumbleb": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Tumble Pop (bootleg)",
+      "nombre": 2
+    },
+    "tumbleb2": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Tumble Pop (bootleg with PIC)",
+      "nombre": 2
+    },
+    "tumblep": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "Blue",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Tumble Pop (World)",
+      "nombre": 2
+    },
+    "tumblepj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Tumble Pop (Japan)",
+      "nombre": 2
+    },
+    "turkhunt": {
+      "boutons": {},
+      "commandes": "lightgun",
+      "joueurs": 1,
+      "mode": "2P alt",
+      "nom": "Turkey Hunting USA V1.00",
+      "nombre": 2
+    },
+    "twinadv": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Twin Adventure (World)",
+      "nombre": 3
+    },
+    "twinadvk": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Twin Adventure (Korea)",
+      "nombre": 3
+    },
+    "twinbrat": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Twin Brats (set 1)",
+      "nombre": 3
+    },
+    "twinbrata": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Twin Brats (set 2)",
+      "nombre": 3
+    },
+    "twineag2": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "Fire"
+        },
+        "BUTTON2": {
+          "couleur": "Blue",
+          "fonction": "Bomb"
+        },
+        "BUTTON3": {
+          "couleur": "Yellow",
+          "fonction": "Special"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Twin Eagle II - The Rescue Mission",
+      "nombre": 3
+    },
+    "twinfalc": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Twin Falcons",
+      "nombre": 2
+    },
+    "twinhawk": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Twin Hawk (World)",
+      "nombre": 2
+    },
+    "twinhawku": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Twin Hawk (US)",
+      "nombre": 2
+    },
+    "twinqix": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Twin Qix (Ver 1.0A 1995/01/17, prototype)",
+      "nombre": 4
+    },
+    "twinsqua": {
+      "boutons": {},
+      "commandes": "dial",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Twin Squash",
+      "nombre": 1
+    },
+    "twocrude": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Two Crude (US FT revision 1)",
+      "nombre": 3
+    },
+    "tylz": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 1,
+      "mode": "2P alt",
+      "nom": "Tylz (prototype)",
+      "nombre": 1
+    },
+    "typhoon": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Typhoon",
+      "nombre": 3
+    },
+    "uecology": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Ultimate Ecology (Japan 931203)",
+      "nombre": 3
+    },
+    "ufosensi": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Ufo Senshi Yohko Chan (MC-8123, 317-0064)",
+      "nombre": 3
+    },
+    "ultennis": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Ultimate Tennis",
+      "nombre": 3
+    },
+    "ultennisj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Ultimate Tennis (v 1.4, Japan)",
+      "nombre": 3
+    },
+    "ultrax": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Ultra X Weapons / Ultra Keibitai",
+      "nombre": 3
+    },
+    "umanclub": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Ultraman Club - Tatakae! Ultraman Kyoudai!!",
+      "nombre": 2
+    },
+    "unclepoo": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Uncle Poo",
+      "nombre": 2
+    },
+    "undrfire": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Cyan",
+          "fonction": "Fire"
+        },
+        "BUTTON2": {
+          "couleur": "Cyan",
+          "fonction": "Bomb"
+        }
+      },
+      "commandes": "lightgun",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Under Fire (World)",
+      "nombre": 3
+    },
+    "undrfirej": {
+      "boutons": {},
+      "commandes": "lightgun",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Under Fire (Japan)",
+      "nombre": 3
+    },
+    "undrfireu": {
+      "boutons": {},
+      "commandes": "lightgun",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Under Fire (US)",
+      "nombre": 3
+    },
+    "uniwars": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "Firing Button"
+        }
+      },
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "UniWar S",
+      "nombre": 1
+    },
+    "unsquad": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "Fire"
+        },
+        "BUTTON2": {
+          "couleur": "Blue",
+          "fonction": "Special Weapon"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "U.N. Squadron (USA)",
+      "nombre": 3
+    },
+    "uopoko": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Puzzle Uo Poko (World)",
+      "nombre": 3
+    },
+    "uopokoj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Puzzle Uo Poko (Japan)",
+      "nombre": 3
+    },
+    "usclssic": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Yellow",
+          "fonction": "Select Club"
+        }
+      },
+      "commandes": "trackball",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "U.S. Classic",
+      "nombre": 1
+    },
+    "valtric": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Valtric",
+      "nombre": 2
+    },
+    "vamphalf": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Vamf x1/2 (Europe, version 1.1.0908)",
+      "nombre": 4
+    },
+    "vamphalfk": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Vamp x1/2 (Korea, version 1.1.0908)",
+      "nombre": 4
+    },
+    "vangrd2": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "White",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "White",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Vanguard II",
+      "nombre": 2
+    },
+    "vasara": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Vasara",
+      "nombre": 3
+    },
+    "vasara2": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Vasara 2 (set 1)",
+      "nombre": 3
+    },
+    "vasara2a": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Vasara 2 (set 2)",
+      "nombre": 3
+    },
+    "vautour": {
+      "boutons": {},
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Vautour (bootleg of Phoenix) (8085A CPU)",
+      "nombre": 2
+    },
+    "vautourz": {
+      "boutons": {},
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Vautour (bootleg of Phoenix) (Z80 CPU)",
+      "nombre": 2
+    },
+    "vfive": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "V-Five (Japan)",
+      "nombre": 2
+    },
+    "vhuntj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Vampire Hunter: Darkstalkers' Revenge (Japan 950316)",
+      "nombre": 6
+    },
+    "vhuntjr1": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Vampire Hunter: Darkstalkers' Revenge (Japan 950307)",
+      "nombre": 6
+    },
+    "vhuntjr1s": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Vampire Hunter: Darkstalkers' Revenge (Japan 950307 stop version)",
+      "nombre": 6
+    },
+    "vhuntjr2": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Vampire Hunter: Darkstalkers' Revenge (Japan 950302)",
+      "nombre": 6
+    },
+    "victnine": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Victorious Nine",
+      "nombre": 6
+    },
+    "victroad": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Yellow",
+          "fonction": "Fire"
+        },
+        "BUTTON2": {
+          "couleur": "Yellow",
+          "fonction": "Grenade"
+        }
+      },
+      "commandes": "joystick (8-way),positional",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Victory Road",
+      "nombre": 2
+    },
+    "vidvince": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Video Vince and the Game Factory (prototype)",
+      "nombre": 2
+    },
+    "vimana": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": null,
+          "fonction": "Shoot"
+        },
+        "BUTTON2": {
+          "couleur": null,
+          "fonction": "Circle Bomb"
+        },
+        "BUTTON3": {
+          "couleur": null,
+          "fonction": "??"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Vimana (World, rev A)",
+      "nombre": 2
+    },
+    "vimanaj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Vimana (Japan)",
+      "nombre": 2
+    },
+    "vimanan": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Vimana (World)",
+      "nombre": 2
+    },
+    "vindctr2": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "special"
+        },
+        "BUTTON2": {
+          "couleur": "Red",
+          "fonction": "rotate left"
+        },
+        "BUTTON3": {
+          "couleur": "Red",
+          "fonction": "fire"
+        },
+        "BUTTON4": {
+          "couleur": "Red",
+          "fonction": "rotate right"
+        }
+      },
+      "commandes": "vertical double joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Vindicators Part II (rev 3)",
+      "nombre": 4
+    },
+    "vindctr2r1": {
+      "boutons": {},
+      "commandes": "vertical double joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Vindicators Part II (rev 1)",
+      "nombre": 4
+    },
+    "vindctr2r2": {
+      "boutons": {},
+      "commandes": "vertical double joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Vindicators Part II (rev 2)",
+      "nombre": 4
+    },
+    "viofight": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "Punch"
+        },
+        "BUTTON2": {
+          "couleur": "White",
+          "fonction": "Jump"
+        },
+        "BUTTON3": {
+          "couleur": "Blue",
+          "fonction": "Kick"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Violence Fight (World)",
+      "nombre": 3
+    },
+    "viofightj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Violence Fight (Japan)",
+      "nombre": 3
+    },
+    "viofightu": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Violence Fight (US)",
+      "nombre": 3
+    },
+    "viprp1": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Blue",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "Blue",
+          "fonction": null
+        },
+        "BUTTON3": {
+          "couleur": "Blue",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Viper Phase 1 (New Version, World)",
+      "nombre": 3
+    },
+    "viprp1hk": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Viper Phase 1 (Hong Kong)",
+      "nombre": 3
+    },
+    "viprp1j": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Viper Phase 1 (New Version, Japan)",
+      "nombre": 3
+    },
+    "viprp1oj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Viper Phase 1 (Japan)",
+      "nombre": 3
+    },
+    "viprp1ot": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Viper Phase 1 (Germany)",
+      "nombre": 3
+    },
+    "viprp1s": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Viper Phase 1 (New Version, Switzerland)",
+      "nombre": 3
+    },
+    "viprp1u": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Viper Phase 1 (New Version, US set 1)",
+      "nombre": 3
+    },
+    "vmetal": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Varia Metal",
+      "nombre": 3
+    },
+    "vmetaln": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Varia Metal (New Ways Trading Co.)",
+      "nombre": 3
+    },
+    "volfied": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Volfied (World, rev 1)",
+      "nombre": 1
+    },
+    "volfiedj": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Volfied (Japan, rev 1)",
+      "nombre": 1
+    },
+    "volfiedu": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Volfied (US, rev 1)",
+      "nombre": 1
+    },
+    "vpool": {
+      "boutons": {},
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Video Pool (bootleg on Moon Cresta hardware)",
+      "nombre": 1
+    },
+    "vs10yard": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Vs 10-Yard Fight (World, 11/05/84)",
+      "nombre": 2
+    },
+    "vs10yardj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Vs 10-Yard Fight (Japan)",
+      "nombre": 2
+    },
+    "vs10yardu": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Vs 10-Yard Fight (US, Taito license)",
+      "nombre": 2
+    },
+    "vshoot": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 4,
+      "mode": "4P sim",
+      "nom": "J-League Soccer V-Shoot (Japan)",
+      "nombre": 3
+    },
+    "warofbug": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "War of the Bugs or Monsterous Manouvers in a Mushroom Maze",
+      "nombre": 1
+    },
+    "warofbugu": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "War of the Bugs or Monsterous Manouvers in a Mushroom Maze (US)",
+      "nombre": 1
+    },
+    "warriorb": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "Red",
+          "fonction": null
+        },
+        "BUTTON3": {
+          "couleur": "Black",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Warrior Blade - Rastan Saga Episode III (Japan)",
+      "nombre": 3
+    },
+    "warzard": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Warzard (Japan 961121)",
+      "nombre": 6
+    },
+    "warzardr1": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Warzard (Japan 961023)",
+      "nombre": 6
+    },
+    "watrball": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "1P",
+      "nom": "Water Balls",
+      "nombre": 2
+    },
+    "wb3": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Wonder Boy III - Monster Lair (set 6, World, System 16B) (8751 317-0098)",
+      "nombre": 3
+    },
+    "wb32": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Wonder Boy III - Monster Lair (set 2, Japan, System 16B) (FD1094 317-0085)",
+      "nombre": 3
+    },
+    "wb33": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Wonder Boy III - Monster Lair (set 3, World, System 16B) (FD1094 317-0089)",
+      "nombre": 3
+    },
+    "wb34": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Wonder Boy III - Monster Lair (set 4, Japan, System 16B) (FD1094 317-0087)",
+      "nombre": 3
+    },
+    "wb35": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Wonder Boy III - Monster Lair (set 5, Japan, System 16A) (FD1089A 317-0086)",
+      "nombre": 3
+    },
+    "wbeachvl": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": null,
+          "fonction": "Hit"
+        },
+        "BUTTON2": {
+          "couleur": null,
+          "fonction": "Jump"
+        },
+        "BUTTON3": {
+          "couleur": null,
+          "fonction": "Unknown"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 4,
+      "mode": "4P sim",
+      "nom": "World Beach Volley (set 1, PIC16C57 audio CPU)",
+      "nombre": 3
+    },
+    "wecleman": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Black",
+          "fonction": "Accelerate"
+        },
+        "BUTTON2": {
+          "couleur": "Black",
+          "fonction": "Brake"
+        },
+        "BUTTON3": {
+          "couleur": "Black",
+          "fonction": "Low Gear"
+        },
+        "BUTTON4": {
+          "couleur": "Black",
+          "fonction": "High Gear"
+        }
+      },
+      "commandes": "paddle,pedal",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "WEC Le Mans 24 (v2.01)",
+      "nombre": 2
+    },
+    "welltris": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Welltris (World?, 2 players)",
+      "nombre": 2
+    },
+    "welltrisj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Welltris (Japan, 2 players)",
+      "nombre": 2
+    },
+    "wfortune": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "Select"
+        }
+      },
+      "commandes": "dial,only_buttons",
+      "joueurs": 3,
+      "mode": "3P alt",
+      "nom": "Wheel Of Fortune (set 1)",
+      "nombre": 1
+    },
+    "wfortunea": {
+      "boutons": {},
+      "commandes": "dial,only_buttons",
+      "joueurs": 3,
+      "mode": "3P alt",
+      "nom": "Wheel Of Fortune (set 2)",
+      "nombre": 1
+    },
+    "whizz": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Whizz",
+      "nombre": 2
+    },
+    "wiggie": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Wiggie Waggie",
+      "nombre": 2
+    },
+    "willow": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "Attack"
+        },
+        "BUTTON2": {
+          "couleur": "Blue",
+          "fonction": "Jump"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Willow (World)",
+      "nombre": 3
+    },
+    "willowj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Willow (Japan)",
+      "nombre": 3
+    },
+    "wintbob": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "The Winter Bobble (bootleg of Snow Bros.)",
+      "nombre": 3
+    },
+    "wits": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 4,
+      "mode": "2P sim",
+      "nom": "Wit's (Japan)",
+      "nombre": 2
+    },
+    "wiz": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Wiz",
+      "nombre": 2
+    },
+    "wizdfire": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "Attack"
+        },
+        "BUTTON2": {
+          "couleur": "Blue",
+          "fonction": "Magic"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Wizard Fire (Over Sea v2.1)",
+      "nombre": 2
+    },
+    "wizdfireu": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Wizard Fire (US v1.1)",
+      "nombre": 2
+    },
+    "wizt": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Wiz (Taito, set 1)",
+      "nombre": 2
+    },
+    "wizta": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Wiz (Taito, set 2)",
+      "nombre": 2
+    },
+    "wizwarz": {
+      "boutons": {},
+      "commandes": "joystick (8-way),dial",
+      "joueurs": 1,
+      "mode": "2P alt",
+      "nom": "Wiz Warz (prototype)",
+      "nombre": 1
+    },
+    "wmatch": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": null
+        }
+      },
+      "commandes": "double joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Water Match (315-5064)",
+      "nombre": 1
+    },
+    "wndrplnt": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Wonder Planet (Japan)",
+      "nombre": 2
+    },
+    "wolffang": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Wolf Fang: Kuuga 2001 (Japan)",
+      "nombre": 3
+    },
+    "wonder3": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Wonder 3 (Japan 910520)",
+      "nombre": 3
+    },
+    "wondstck": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Wonder Stick (set 1)",
+      "nombre": 2
+    },
+    "woodpeca": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Woodpecker (set 2)",
+      "nombre": 1
+    },
+    "woodpeck": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Woodpecker (set 1)",
+      "nombre": 1
+    },
+    "worldwar": {
+      "boutons": {},
+      "commandes": "joystick (8-way),positional",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "World Wars (World?)",
+      "nombre": 2
+    },
+    "wrofaero": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "War of Aero - Project MEIOU",
+      "nombre": 3
+    },
+    "ws": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Pro Yakyuu World Stadium (Japan)",
+      "nombre": 3
+    },
+    "ws89": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Pro Yakyuu World Stadium '89 (Japan)",
+      "nombre": 3
+    },
+    "ws90": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Pro Yakyuu World Stadium '90 (Japan)",
+      "nombre": 3
+    },
+    "wschamp": {
+      "boutons": {},
+      "commandes": "lightgun",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Wing Shooting Championship V2.00",
+      "nombre": 2
+    },
+    "wschampa": {
+      "boutons": {},
+      "commandes": "lightgun",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Wing Shooting Championship V1.01",
+      "nombre": 2
+    },
+    "wwfsstar": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "A"
+        },
+        "BUTTON2": {
+          "couleur": "Red",
+          "fonction": "B"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "WWF Superstars (Europe)",
+      "nombre": 2
+    },
+    "wwfsstarj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "WWF Superstars (Japan)",
+      "nombre": 2
+    },
+    "wwfwfest": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "A"
+        },
+        "BUTTON2": {
+          "couleur": "Red",
+          "fonction": "B"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 4,
+      "mode": "4P sim",
+      "nom": "WWF WrestleFest (World)",
+      "nombre": 2
+    },
+    "wwfwfestj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 4,
+      "mode": "4P sim",
+      "nom": "WWF WrestleFest (Japan)",
+      "nombre": 2
+    },
+    "wyvernwg": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Wyvern Wings (set 1)",
+      "nombre": 4
+    },
+    "xexexa": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Xexex (ver AAA)",
+      "nombre": 2
+    },
+    "xexexj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Xexex (ver JAA)",
+      "nombre": 2
+    },
+    "xxmissio": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": null
+        },
+        "BUTTON2": {
+          "couleur": "White",
+          "fonction": null
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "XX Mission",
+      "nombre": 2
+    },
+    "yankeedo": {
+      "boutons": {},
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Yankee DO!",
+      "nombre": 1
+    },
+    "yesnoj": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Yellow",
+          "fonction": "Yes"
+        },
+        "BUTTON2": {
+          "couleur": "Black",
+          "fonction": "No"
+        }
+      },
+      "commandes": "only_buttons",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Yes/No Sinri Tokimeki Chart",
+      "nombre": 2
+    },
+    "youjyudn": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Youjyuden (Japan)",
+      "nombre": 2
+    },
+    "yuyugogo": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": null,
+          "fonction": "1"
+        },
+        "BUTTON2": {
+          "couleur": null,
+          "fonction": "2"
+        },
+        "BUTTON3": {
+          "couleur": null,
+          "fonction": "3"
+        },
+        "BUTTON4": {
+          "couleur": null,
+          "fonction": "4"
+        },
+        "BUTTON5": {
+          "couleur": null,
+          "fonction": "??"
+        }
+      },
+      "commandes": "only_buttons",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Yuuyu no Quiz de GO!GO! (Japan)",
+      "nombre": 5
+    },
+    "zaviga": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Zaviga",
+      "nombre": 2
+    },
+    "zavigaj": {
+      "boutons": {},
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Zaviga (Japan)",
+      "nombre": 2
+    },
+    "zeropnt": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "Fire"
+        }
+      },
+      "commandes": "lightgun",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Zero Point (set 1)",
+      "nombre": 1
+    },
+    "zeropnt2": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "Fire"
+        }
+      },
+      "commandes": "lightgun",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Zero Point 2",
+      "nombre": 1
+    },
+    "zeropnta": {
+      "boutons": {},
+      "commandes": "lightgun",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Zero Point (set 2)",
+      "nombre": 1
+    },
+    "zeropntj": {
+      "boutons": {},
+      "commandes": "lightgun",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Zero Point (Japan)",
+      "nombre": 1
+    },
+    "zerotime": {
+      "boutons": {},
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Zero Time (Petaco S.A.)",
+      "nombre": 1
+    },
+    "zerozone": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": null,
+          "fonction": "Rotate"
+        }
+      },
+      "commandes": "joystick (4-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Zero Zone",
+      "nombre": 3
+    },
+    "zingzip": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": null,
+          "fonction": "Fire"
+        },
+        "BUTTON2": {
+          "couleur": null,
+          "fonction": "Bomb"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Zing Zing Zip (World) / Zhen Zhen Ji Pao (China?)",
+      "nombre": 2
+    },
+    "zoom909": {
+      "boutons": {},
+      "commandes": "joystick (8-way),pedal",
+      "joueurs": 1,
+      "mode": "1P",
+      "nom": "Zoom 909",
+      "nombre": 3
+    },
+    "zunkyou": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": null,
+          "fonction": "Attack"
+        },
+        "BUTTON2": {
+          "couleur": null,
+          "fonction": "Special Attack"
+        }
+      },
+      "commandes": "joystick (8-way)",
+      "joueurs": 2,
+      "mode": "2P sim",
+      "nom": "Zunzunkyou no Yabou (Japan)",
+      "nombre": 2
+    },
+    "zzyzzyxx": {
+      "boutons": {
+        "BUTTON1": {
+          "couleur": "Red",
+          "fonction": "Make Brick"
+        }
+      },
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Zzyzzyxx (set 1)",
+      "nombre": 1
+    },
+    "zzyzzyxx2": {
+      "boutons": {},
+      "commandes": "joystick (2-way)",
+      "joueurs": 2,
+      "mode": "2P alt",
+      "nom": "Zzyzzyxx (set 2)",
       "nombre": 1
     }
   },

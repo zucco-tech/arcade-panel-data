@@ -28,7 +28,7 @@ So we measured them. On a real cabinet, by inserting real coins.
 
 ## Datasets
 
-### `data/credits-arcade.json`
+### `donnees/credits-arcade.json`
 
 | | |
 |---|---|
@@ -61,7 +61,7 @@ lays out memory its own way. Keying on the name alone would silently
 overwrite one with the other. Each entry also records its `core`; if a game
 later runs under a different one, the address is ignored and re-learned.
 
-### `data/boutons-arcade.json`
+### `donnees/boutons-arcade.json`
 
 Per game: how many buttons it uses, each button's original colour on the
 cabinet, and what it does.
@@ -82,6 +82,17 @@ Buttons are named **logically** — `BUTTON1`, `BUTTON2` — never as physical
 LEDs. Mapping them to a particular board's wiring belongs to whatever drives
 the lights, not to the data. A different panel, a different board: the data
 stays correct.
+
+| | |
+|---|---|
+| games with a button count | **1623** |
+| of those, with per-button colour and function | 266 |
+| games with no data | 69 |
+
+The **number** of buttons is known for nearly every game measured; each
+button's **colour** only for those whose original panel was documented.
+Enough to light only the useful buttons everywhere, and to reproduce the
+period-correct panel on a subset.
 
 Source: MAME metadata published by [arcade-database](https://adb.arcadeitalia.net).
 
@@ -154,12 +165,12 @@ which never moves. The measured `0x0011` tracks credits exactly.
 
 | | |
 |---|---|
-| `tools/nuit-credits.py` | unattended sweep of a whole library |
-| `tools/importer-cheats.py` | import leads from FBNeo and MAME cheat sets |
-| `tools/importer-boutons.py` | build the button dataset |
-| `tools/capture-credits.py` | measure one game by hand |
-| `tools/verifier-borne.py` | pre-flight check before a sweep |
-| `tools/clavier_virtuel.py` | virtual keyboard (`uinput`) used to insert coins |
+| `outils/nuit-credits.py` | unattended sweep of a whole library |
+| `outils/importer-cheats.py` | import leads from FBNeo and MAME cheat sets |
+| `outils/importer-boutons.py` | build the button dataset |
+| `outils/capture-credits.py` | measure one game by hand |
+| `outils/verifier-borne.py` | pre-flight check before a sweep |
+| `outils/clavier_virtuel.py` | virtual keyboard (`uinput`) used to insert coins |
 
 Python 3, standard library only. No dependencies.
 
@@ -178,7 +189,7 @@ reconfiguration of the real controllers.
 ### Tests
 
 ```bash
-cd tools/tests && python3 test_base.py
+cd outils/tests && python3 test_base.py
 ```
 
 Eight suites, run against a simulated RetroArch — **no hardware needed**.
@@ -188,9 +199,9 @@ restoration. They have caught real defects: a RAM size measured but never
 stored, an entry claiming a discovery method it had not used, games condemned
 on a single unlucky attempt.
 
-## `cabinet/` — the only hardware-specific part
+## `borne/` — the only hardware-specific part
 
-`cabinet/credits(permanent).py` is an EmulationStation permanent script that
+`borne/credits(permanent).py` is an EmulationStation permanent script that
 drives the LEDs of an **AllInOne board (digipcb.tech)** on Recalbox. It reads
 the datasets and blinks accordingly; it also learns any game the sweep
 missed, the first time you play it.

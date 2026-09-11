@@ -29,7 +29,7 @@ Alors on les a mesurées. Sur une vraie borne, avec de vraies pièces.
 
 ## Les données
 
-### `data/credits-arcade.json`
+### `donnees/credits-arcade.json`
 
 | | |
 |---|---|
@@ -63,7 +63,7 @@ silencieusement écraser l'une par l'autre. Chaque fiche note aussi son
 `core` : si le jeu revient sous un autre, l'adresse est ignorée et
 réapprise.
 
-### `data/boutons-arcade.json`
+### `donnees/boutons-arcade.json`
 
 Par jeu : combien de boutons il utilise, la couleur d'origine de chacun sur
 la borne, et sa fonction.
@@ -84,6 +84,17 @@ Les boutons sont nommés **logiquement** — `BUTTON1`, `BUTTON2` — jamais en
 LED physiques. La correspondance vers le câblage d'une carte donnée
 appartient à ce qui allume les lampes, pas aux données. Un autre panneau, une
 autre carte : les données restent justes.
+
+| | |
+|---|---|
+| jeux avec le nombre de boutons | **1623** |
+| dont couleur et fonction de chaque bouton | 266 |
+| jeux sans donnees | 69 |
+
+Le **nombre** de boutons est connu pour presque tous les jeux relevés ; la
+**couleur** de chacun ne l'est que pour ceux dont le panneau d'origine a été
+documenté. De quoi n'allumer que les boutons utiles partout, et reproduire
+le panneau d'époque sur une partie d'entre eux.
 
 Source : métadonnées MAME publiées par [arcade-database](https://adb.arcadeitalia.net).
 
@@ -158,12 +169,12 @@ pas près.
 
 | | |
 |---|---|
-| `tools/nuit-credits.py` | balayage d'une logithèque entière, sans surveillance |
-| `tools/importer-cheats.py` | importe les pistes des cheats FBNeo et MAME |
-| `tools/importer-boutons.py` | construit la base des boutons |
-| `tools/capture-credits.py` | mesure un jeu à la main |
-| `tools/verifier-borne.py` | contrôle avant un balayage |
-| `tools/clavier_virtuel.py` | clavier virtuel (`uinput`) qui insère les pièces |
+| `outils/nuit-credits.py` | balayage d'une logithèque entière, sans surveillance |
+| `outils/importer-cheats.py` | importe les pistes des cheats FBNeo et MAME |
+| `outils/importer-boutons.py` | construit la base des boutons |
+| `outils/capture-credits.py` | mesure un jeu à la main |
+| `outils/verifier-borne.py` | contrôle avant un balayage |
+| `outils/clavier_virtuel.py` | clavier virtuel (`uinput`) qui insère les pièces |
 
 Python 3, bibliothèque standard uniquement. Aucune dépendance.
 
@@ -182,7 +193,7 @@ SELECT, c'est-à-dire la pièce — sans reconfigurer les manettes réelles.
 ### Les tests
 
 ```bash
-cd tools/tests && python3 test_base.py
+cd outils/tests && python3 test_base.py
 ```
 
 Huit suites, contre un RetroArch simulé — **aucun matériel nécessaire**.
@@ -193,9 +204,9 @@ attrapé de vrais défauts : une taille de RAM mesurée mais jamais conservée,
 une fiche qui s'attribuait une méthode qu'elle n'avait pas employée, des jeux
 condamnés sur une seule tentative malchanceuse.
 
-## `cabinet/` — la seule partie liée à un matériel
+## `borne/` — la seule partie liée à un matériel
 
-`cabinet/credits(permanent).py` est un script permanent d'EmulationStation
+`borne/credits(permanent).py` est un script permanent d'EmulationStation
 qui pilote les LED d'une **carte AllInOne (digipcb.tech)** sous Recalbox. Il
 lit les données et fait clignoter en conséquence ; il apprend aussi tout jeu
 que le balayage aurait manqué, la première fois qu'on y joue.
