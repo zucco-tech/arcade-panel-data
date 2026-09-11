@@ -37,6 +37,7 @@ Aucune dependance : uniquement la bibliotheque standard.
 
 import json
 import os
+import re
 import time
 
 ETAT = "/tmp/es_state.inf"
@@ -77,6 +78,53 @@ PALETTE_DEFAUT = {
     5: ["blue", "yellow", "red", "blue", "yellow"],
     6: ["blue", "yellow", "red", "blue", "yellow", "red"],
 }
+
+
+# Ce que chaque console utilise comme boutons, pour les systemes qui n ont
+# pas de fiche arcade. Le nombre est celui des boutons d action de la manette
+# d origine, dans la limite des six du panneau. Les couleurs ne sont donnees
+# que quand elles sont emblematiques et certaines ; sinon la palette
+# d origine par nombre de boutons s applique.
+BOUTONS_PAR_SYSTEME = {
+    "nes": (2, None),            "fds": (2, None),
+    "snes": (6, ["red", "yellow", "blue", "green", "white", "white"]),
+    "megadrive": (3, None),      "sg1000": (2, None),
+    "mastersystem": (2, None),   "gamegear": (2, None),
+    "pcengine": (2, None),       "supergrafx": (2, None),
+    "neogeo": (4, ["red", "yellow", "green", "blue"]),
+    "neogeocd": (4, ["red", "yellow", "green", "blue"]),
+    "gb": (2, None),             "gbc": (2, None),
+    "gba": (4, None),
+    "n64": (6, None),            "psx": (6, None),
+    "saturn": (6, None),         "dreamcast": (6, None),
+    "atari2600": (1, None),      "atari7800": (2, None),
+    "colecovision": (2, None),   "vectrex": (4, None),
+    "amiga600": (2, None),       "amiga1200": (2, None),
+    "c64": (1, None),            "amstradcpc": (2, None),
+}
+
+
+def fiche_de_systeme(systeme):
+    """Une fiche minimale batie depuis la table, ou None."""
+    entree = BOUTONS_PAR_SYSTEME.get(systeme or "")
+    if not entree:
+        return None
+    nombre, palette = entree
+    couleurs = {}
+    if palette:
+        for i, teinte in enumerate(palette[:nombre], 1):
+            couleurs["BUTTON%d" % i] = {"couleur": teinte}
+    return {"nombre": nombre, "boutons": couleurs}
+
+
+def joueurs_depuis(etat):
+    """Le champ Players de EmulationStation : « 1 », « 2 », « 1-2 », « 1-4 »…
+    Vrai si un second joueur peut jouer. None si le champ est absent."""
+    texte = (etat or {}).get("Players") or ""
+    nombres = [int(x) for x in re.findall(r"\d+", texte)]
+    if not nombres:
+        return None
+    return max(nombres) >= 2
 
 
 def teinte_par_defaut(nombre, numero):
@@ -243,32 +291,43 @@ def main():
                 p.dernier = None       # on ne sait plus ce qu il y a dessus
             continue
 
+        systeme = etat.get("SystemId") or ""
         chemin = etat.get("GamePath") or ""
         jeu = os.path.basename(chemin).rsplit(".", 1)[0] if chemin else ""
-        if not jeu or etat.get("IsFolder") == "1":
-            for p in panneaux.values():
-                p.rendre()
-            dernier_jeu = None
-            continue
+        if etat.get("IsFolder") == "1":
+            jeu = ""
 
-        fiche = boutons.get(jeu)
+        # D abord la fiche arcade du jeu ; sinon ce que le systeme utilise ;
+        # sinon on rend le panneau a la carte.
+        fiche = boutons.get(jeu) if jeu else None
+        origine = "fiche"
         if not fiche or not fiche.get("nombre"):
+            fiche = fiche_de_systeme(systeme)
+            origine = "systeme %s" % systeme
+        if not fiche:
             for p in panneaux.values():
                 p.rendre()
-            if jeu != dernier_jeu:
-                journal("%s : pas de fiche, panneau au repos" % jeu)
-            dernier_jeu = jeu
+            if (jeu or systeme) != dernier_jeu:
+                journal("%s : rien de connu, panneau au repos" % (jeu or systeme))
+            dernier_jeu = jeu or systeme
             continue
 
         nombre = int(fiche["nombre"])
         couleurs = fiche.get("boutons") or {}
-        deuxieme = int(fiche.get("joueurs") or 1) >= 2
+        # Le second poste : la fiche arcade le sait ; pour une console,
+        # EmulationStation dit combien de joueurs ; sans rien, on l allume.
+        if origine == "fiche":
+            deuxieme = int(fiche.get("joueurs") or 1) >= 2
+        else:
+            constat = joueurs_depuis(etat) if jeu else None
+            deuxieme = True if constat is None else constat
+        jeu = jeu or systeme
         panneaux[1].appliquer(nombre, couleurs)
         panneaux[2].appliquer(nombre, couleurs, allume=deuxieme)
         if jeu != dernier_jeu:
-            journal("%s : %d bouton(s), %d couleur(s), joueur 2 %s"
+            journal("%s : %d bouton(s), %d couleur(s), joueur 2 %s [%s]"
                     % (jeu, nombre, sum(1 for v in couleurs.values() if v.get("couleur")),
-                       "allume" if deuxieme else "eteint"))
+                       "allume" if deuxieme else "eteint", origine))
         dernier_jeu = jeu
 
 
