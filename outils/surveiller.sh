@@ -71,6 +71,26 @@ photographier('$VIGNETTES/$(date +%H%M%S).png', titre='releve credits')
         note "systeme $sys termine"
     done
     [ -f /tmp/arret-nuit ] && break
+    # Tous les systemes faits : on reprend les ecartes recuperables, une fois
+    # par systeme. Sans cette passe, un jeu classe « difficile » ne serait
+    # jamais retente — or la plupart le sont pour une raison passagere
+    # (jeu pas encore pret, piece encaissee trop tot).
+    for sys in $SYSTEMES; do
+        [ -f /tmp/arret-nuit ] && break
+        [ -d "/mnt/roms/$sys" ] || continue
+        verifier_diagnostic
+        note "reprise des ecartes : $sys"
+        DISPLAY=:0 nohup python3 -u /mnt/recalbox/outils/nuit-credits.py \
+            --direct --rapide --reessayer --roms /mnt/roms --systeme "$sys" \
+            --base /mnt/recalbox/donnees/credits-arcade.json \
+            --arret /tmp/arret-nuit --coeur-nomme "FinalBurn Neo" \
+            > /mnt/recalbox/journaux/$sys-reprise-$(date +%Y%m%d-%H%M).log 2>&1 &
+        sleep 30
+        while pgrep -f "nuit-credits" >/dev/null 2>&1; do
+            [ -f /tmp/arret-nuit ] && break
+            verifier_diagnostic; sleep 60
+        done
+    done
     note "tous les systemes faits, nouvelle passe dans 15 min"
     i=0
     while [ $i -lt 900 ] && [ ! -f /tmp/arret-nuit ]; do sleep 10; i=$((i + 10)); done
