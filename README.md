@@ -1,42 +1,43 @@
 # arcade-panel-data
 
-*[Version française : LISEZ-MOI.md](LISEZ-MOI.md)*
+*[English version](README.en.md)*
 
-Machine-measured data for driving an illuminated arcade control panel:
-**where each game keeps its credit counter in memory**, and **which buttons
-each game actually uses**, with their original cabinet colours.
+Données mesurées à la machine pour piloter un panneau de commande lumineux :
+**où chaque jeu range son compteur de crédits en mémoire**, et **quels
+boutons chaque jeu utilise vraiment**, avec les couleurs d'origine de la
+borne.
 
-Two datasets, one purpose — making a home cabinet behave like a real one:
-the coin button blinks when credits run out, the start button takes over
-when a credit is available, and only the buttons the game actually uses
-light up, in the colours of the original panel.
+Deux jeux de données, un seul but — qu'une borne de salon se comporte comme
+une vraie : le bouton pièce clignote quand il n'y a plus de crédit, le start
+prend le relais dès qu'il y en a un, et seuls les boutons que le jeu utilise
+s'allument, dans les couleurs du panneau d'époque.
 
 ---
 
-## Why this exists
+## Pourquoi ça existe
 
-A credit counter is not something Recalbox, RetroArch or any frontend knows
-about. It lives in the emulated machine's RAM, at an address that differs
-for every game, and **nobody had published those addresses**.
+Le nombre de crédits n'est connu ni de Recalbox, ni de RetroArch, ni d'aucun
+frontend. C'est une variable en RAM de la machine émulée, à une adresse
+différente pour chaque jeu, et **personne n'avait publié ces adresses**.
 
-The cheat databases come close — an "Infinite Credits" cheat points at
-exactly that byte — but they cover a minority of games, and many popular
-titles (Street Fighter II, Metal Slug, Cadillacs & Dinosaurs) have no credit
-cheat at all.
+Les bases de cheats s'en approchent — un cheat « Infinite Credits » désigne
+exactement cet octet — mais elles ne couvrent qu'une minorité de jeux, et les
+grands titres n'y sont pas : ni Street Fighter II, ni Metal Slug, ni
+Cadillacs & Dinosaurs.
 
-So we measured them. On a real cabinet, by inserting real coins.
+Alors on les a mesurées. Sur une vraie borne, avec de vraies pièces.
 
-## Datasets
+## Les données
 
 ### `data/credits-arcade.json`
 
 | | |
 |---|---|
-| games with a measured address | **1692** |
-| leads imported from cheat databases | 2646 |
-| games that resisted | 287 |
+| jeux avec une adresse mesurée | **1692** |
+| pistes importées des bases de cheats | 2646 |
+| jeux récalcitrants | 287 |
 
-Each entry records what was verified, not what was assumed:
+Chaque fiche note ce qui a été **vérifié**, pas ce qui a été supposé :
 
 ```json
 "fbneo/1942": {
@@ -47,24 +48,25 @@ Each entry records what was verified, not what was assumed:
   "credits": {
     "adresse": 17, "adresse_hex": "0x0011", "octets": 1,
     "miroirs": [],
-    "verifie_insertion": true,      // the byte went up when a coin went in
-    "verifie_consommation": true,   // and down when START consumed a credit
+    "verifie_insertion": true,      // l octet est monte quand une piece est entree
+    "verifie_consommation": true,   // et descendu quand START a consomme un credit
     "pieces_observees": 2
   },
   "releve": { "le": "2026-09-11", "methode": "balayage nocturne" }
 }
 ```
 
-**Entries are keyed `system/game`, never by game name alone.** The same ROM
-set runs under different cores — `fbneo/1942` and `mame/1942` — and each core
-lays out memory its own way. Keying on the name alone would silently
-overwrite one with the other. Each entry also records its `core`; if a game
-later runs under a different one, the address is ignored and re-learned.
+**Les fiches sont indexées `systeme/jeu`, jamais par le seul nom du jeu.** Le
+même set tourne sous plusieurs cœurs — `fbneo/1942` et `mame/1942` — et
+chacun range sa mémoire à sa façon. Indexer sur le nom seul ferait
+silencieusement écraser l'une par l'autre. Chaque fiche note aussi son
+`core` : si le jeu revient sous un autre, l'adresse est ignorée et
+réapprise.
 
 ### `data/boutons-arcade.json`
 
-Per game: how many buttons it uses, each button's original colour on the
-cabinet, and what it does.
+Par jeu : combien de boutons il utilise, la couleur d'origine de chacun sur
+la borne, et sa fonction.
 
 ```json
 "1942": {
@@ -78,139 +80,144 @@ cabinet, and what it does.
 }
 ```
 
-Buttons are named **logically** — `BUTTON1`, `BUTTON2` — never as physical
-LEDs. Mapping them to a particular board's wiring belongs to whatever drives
-the lights, not to the data. A different panel, a different board: the data
-stays correct.
+Les boutons sont nommés **logiquement** — `BUTTON1`, `BUTTON2` — jamais en
+LED physiques. La correspondance vers le câblage d'une carte donnée
+appartient à ce qui allume les lampes, pas aux données. Un autre panneau, une
+autre carte : les données restent justes.
 
-Source: MAME metadata published by [arcade-database](https://adb.arcadeitalia.net).
+Source : métadonnées MAME publiées par [arcade-database](https://adb.arcadeitalia.net).
 
 ---
 
-## How the addresses were measured
+## Comment les adresses ont été mesurées
 
-RetroArch exposes the emulated machine's memory over its network command
-interface (UDP 55355, `network_cmd_enable`). A credit counter has a
-signature no other byte shares: it goes **up by exactly one** when a coin is
-inserted, and **down** when START consumes one.
+RetroArch expose la mémoire de la machine émulée par son interface réseau
+(UDP 55355, `network_cmd_enable`). Un compteur de crédits a une signature
+qu'aucun autre octet ne partage : il **monte de exactement un** quand une
+pièce entre, et **descend** quand START en consomme un.
 
-1. photograph the whole RAM
-2. insert a coin
-3. photograph again, keep the bytes that went up by exactly 1
-4. repeat — two or three coins leave a single candidate
-5. press START: the surviving byte must go **down**
+1. photographier toute la RAM
+2. insérer une pièce
+3. rephotographier, garder les octets montés de exactement 1
+4. recommencer — deux ou trois pièces ne laissent qu'un candidat
+5. appuyer sur START : l'octet survivant doit **descendre**
 
-Step 5 is what separates a credit balance from a total-coins counter, and it
-is why entries carry `verifie_consommation`. When the evidence is thinner
-than that, no entry is written at all — the game goes to `difficiles` and is
-retried later. **An unmeasured game is better than a wrong address.**
+L'étape 5 est celle qui distingue un solde de crédits d'un total de pièces
+encaissées, et c'est pourquoi les fiches portent `verifie_consommation`.
+Quand la preuve est plus mince que ça, aucune fiche n'est écrite : le jeu
+part dans `difficiles` et sera repris plus tard. **Un jeu non mesuré vaut
+mieux qu'une adresse fausse.**
 
-Games with a lead from a cheat database skip the photographs entirely: two
-candidate addresses, settled by the first coin.
+Les jeux ayant une piste issue d'une base de cheats sautent les photos : deux
+adresses candidates, tranchées dès la première pièce.
 
-### Findings worth knowing
+### Ce qu'il fallait découvrir
 
-Four measurements shaped every tool here:
+Quatre mesures ont façonné tous les outils de ce dépôt :
 
-- **`READ_CORE_MEMORY` does not work with FBNeo** — it answers
-  `no memory map defined`. Only `READ_CORE_RAM`, which reads system RAM flat
-  from zero, is usable.
-- **RetroArch polls its command socket once per frame.** A command costs one
-  frame — 16.7 ms at 60 Hz — *regardless of its size*. Reading 1 byte costs
-  as much as reading 16 KB, so read big.
-- **16 KB is the largest single read.** A full 64 KB RAM snapshot is
-  therefore 4 commands, about 68 ms.
-- **Cheat addresses need translating.** They are given in the emulated CPU's
-  address space, where RAM starts high — `0xFF0000` on a 68000 CPS board,
-  `0xE000` on a Z80 board — while `READ_CORE_RAM` reads from zero. Masking
-  the low bits recovers the offset, and 68000 games need an extra `XOR 1`
-  because FBNeo stores big-endian RAM byte-swapped on a little-endian host.
-  Verified on `pzloop2`: the cheat says `0xFF80B0`, the counter is at
-  `0x80B1`.
+- **`READ_CORE_MEMORY` ne fonctionne pas avec FBNeo** — il répond
+  `no memory map defined`. Seul `READ_CORE_RAM`, qui lit la RAM système à
+  plat depuis zéro, est utilisable.
+- **RetroArch ne lit sa socket qu'une fois par image.** Une commande coûte
+  une frame — 16,7 ms à 60 Hz — *quelle que soit sa taille*. Lire 1 octet
+  coûte autant que lire 16 Ko : autant lire gros.
+- **16 Ko est la plus grosse lecture possible.** Une photo complète de 64 Ko
+  tient donc en 4 commandes, environ 68 ms.
+- **Les adresses de cheats demandent une traduction.** Elles sont données
+  dans l'espace du processeur émulé, où la RAM commence haut — `0xFF0000`
+  sur une carte 68000 CPS, `0xE000` sur une carte Z80 — alors que
+  `READ_CORE_RAM` lit depuis zéro. Masquer les bits bas retrouve le
+  décalage, et les jeux 68000 demandent un `XOR 1` de plus, FBNeo rangeant
+  la RAM gros-boutiste octets inversés sur un hôte petit-boutiste. Vérifié
+  sur `pzloop2` : le cheat annonce `0xFF80B0`, le compteur est en `0x80B1`.
 
-## How good is the data
+## Ce que valent ces données
 
-Arcade ROM sets come in families — a parent and its regional variants. Every
-member of a family runs the same code, so **every member must report the same
-address**. That gives a free audit, with no game to re-run:
+Les sets arcade vont par familles — un parent et ses variantes régionales.
+Tous exécutent le même code, donc **tous doivent donner la même adresse**.
+D'où un audit gratuit, sans relancer un seul jeu :
 
 ```
-394 clone families measured
-326 agree exactly          (82.7 %)
- 68 disagree
+394 familles de clones mesurees
+326 s accordent exactement      (82,7 %)
+ 68 en desaccord
 ```
 
-The disagreements are almost all explainable rather than wrong: bootlegs
-(`pacmanbl` against 24 consistent `puckman` clones), successive hardware
-revisions (`cloak` and its four `agentx` versions), or the same address in a
-differently sized RAM window (`blandia` at `0x100ABE`, `blandiap` at
-`0x0ABE`).
+Les désaccords s'expliquent presque tous au lieu d'être des erreurs : des
+bootlegs (`pacmanbl` contre 24 clones `puckman` cohérents), des révisions
+matérielles successives (`cloak` et ses quatre versions `agentx`), ou la même
+adresse dans une fenêtre de RAM de taille différente (`blandia` en
+`0x100ABE`, `blandiap` en `0x0ABE`).
 
-One address was also verified by hand against the published cheat databases,
-and **the measurement won**: MAME's cheat for `1942` points at `0x0018`,
-which never moves. The measured `0x0011` tracks credits exactly.
+Une adresse a aussi été vérifiée à la main contre les bases de cheats
+publiées, et **c'est la mesure qui a eu raison** : le cheat MAME de `1942`
+désigne `0x0018`, qui ne bouge jamais. Le `0x0011` mesuré suit les crédits au
+pas près.
 
-## Tools
+## Les outils
 
 | | |
 |---|---|
-| `tools/nuit-credits.py` | unattended sweep of a whole library |
-| `tools/importer-cheats.py` | import leads from FBNeo and MAME cheat sets |
-| `tools/importer-boutons.py` | build the button dataset |
-| `tools/capture-credits.py` | measure one game by hand |
-| `tools/verifier-borne.py` | pre-flight check before a sweep |
-| `tools/clavier_virtuel.py` | virtual keyboard (`uinput`) used to insert coins |
+| `tools/nuit-credits.py` | balayage d'une logithèque entière, sans surveillance |
+| `tools/importer-cheats.py` | importe les pistes des cheats FBNeo et MAME |
+| `tools/importer-boutons.py` | construit la base des boutons |
+| `tools/capture-credits.py` | mesure un jeu à la main |
+| `tools/verifier-borne.py` | contrôle avant un balayage |
+| `tools/clavier_virtuel.py` | clavier virtuel (`uinput`) qui insère les pièces |
 
-Python 3, standard library only. No dependencies.
+Python 3, bibliothèque standard uniquement. Aucune dépendance.
 
-The sweep drives a real cabinet: EmulationStation launches each game
-(`START|system|/full/rom/path` over UDP 1337 — the path must be complete,
-not just the filename), a virtual keyboard inserts coins, memory is compared,
-`QUIT` hands control back, next game. 1903 games took 9 h 15 on a Raspberry
-Pi 5, with no failures.
+Le balayage pilote une vraie borne : EmulationStation lance chaque jeu
+(`START|systeme|/chemin/complet/de/la/rom` en UDP 1337 — le chemin doit être
+complet, pas seulement le nom du fichier), un clavier virtuel insère les
+pièces, la mémoire est comparée, `QUIT` rend la main, jeu suivant. 1903 jeux
+ont pris 9 h 15 sur un Raspberry Pi 5, sans un seul échec technique.
 
-A keyboard rather than a virtual gamepad, deliberately: RetroArch assigns
-gamepads to ports in discovery order, so a virtual pad would land on player 3
-and be ignored. The keyboard is bound to player 1 by default — Enter for
-START, Right Shift for SELECT, which is the coin — and needs no
-reconfiguration of the real controllers.
+Un clavier plutôt qu'une manette virtuelle, délibérément : RetroArch attribue
+les manettes aux ports dans l'ordre où il les découvre, donc une manette
+virtuelle serait le joueur 3 et le jeu l'ignorerait. Le clavier, lui, est
+câblé sur le joueur 1 par défaut — Entrée pour START, Shift droit pour
+SELECT, c'est-à-dire la pièce — sans reconfigurer les manettes réelles.
 
-### Tests
+### Les tests
 
 ```bash
 cd tools/tests && python3 test_base.py
 ```
 
-Eight suites, run against a simulated RetroArch — **no hardware needed**.
-They cover learning end to end, mirrored counters, schema migration, the
-three panel states, player 2, clone collisions across cores, and colour
-restoration. They have caught real defects: a RAM size measured but never
-stored, an entry claiming a discovery method it had not used, games condemned
-on a single unlucky attempt.
+Huit suites, contre un RetroArch simulé — **aucun matériel nécessaire**.
+Elles couvrent l'apprentissage de bout en bout, les compteurs en miroir, la
+conversion de format, les trois états du panneau, le joueur 2, la collision
+d'un même set entre deux cœurs, et la restitution des couleurs. Elles ont
+attrapé de vrais défauts : une taille de RAM mesurée mais jamais conservée,
+une fiche qui s'attribuait une méthode qu'elle n'avait pas employée, des jeux
+condamnés sur une seule tentative malchanceuse.
 
-## `cabinet/` — the only hardware-specific part
+## `cabinet/` — la seule partie liée à un matériel
 
-`cabinet/credits(permanent).py` is an EmulationStation permanent script that
-drives the LEDs of an **AllInOne board (digipcb.tech)** on Recalbox. It reads
-the datasets and blinks accordingly; it also learns any game the sweep
-missed, the first time you play it.
+`cabinet/credits(permanent).py` est un script permanent d'EmulationStation
+qui pilote les LED d'une **carte AllInOne (digipcb.tech)** sous Recalbox. Il
+lit les données et fait clignoter en conséquence ; il apprend aussi tout jeu
+que le balayage aurait manqué, la première fois qu'on y joue.
 
-It writes only to `brightness`, and to `multi_intensity` solely for the
-duration of a blink — reading the board's own colour first and restoring it
-after, and never overwriting a colour the board has repainted in the
-meantime. Recalbox's own files are neither modified nor replaced.
+Il n'écrit que dans `brightness`, et dans `multi_intensity` seulement le
+temps d'un clignotement — en relisant d'abord la couleur posée par la carte
+pour la remettre ensuite, et sans jamais écraser une couleur que la carte
+aurait repeinte entre-temps. Les fichiers de Recalbox ne sont ni modifiés ni
+remplacés.
 
-Two quirks of the prototype board it was written against, both configurable
-at the top of the file and **not encoded in the datasets**:
+Deux particularités de la carte prototype pour laquelle il a été écrit, toutes
+deux réglables en tête de fichier et **absentes des données** :
 
-- the driver's `start` and `select` LEDs are crossed relative to the panel
-- WS2812B LEDs expect **green, red, blue** order, while the driver declares
-  red, green, blue — writing pure red lights green
+- les LED `start` et `select` du driver sont croisées par rapport au panneau
+- les WS2812B attendent l'ordre **vert, rouge, bleu** alors que le driver les
+  déclare rouge, vert, bleu — écrire du rouge franc allume du vert
 
-## Limitations
+## Limites
 
-- Arcade only. On a console, the button count is a property of the pad, not
-  the game.
-- A core that does not expose its RAM cannot be measured — 97 games here.
-- Some counters are BCD or two bytes wide and escape the method.
-- Button metadata is MAME-derived: a handful of games have none.
+- Arcade uniquement. Sur console, le nombre de boutons dépend de la manette,
+  pas du jeu.
+- Un cœur qui n'expose pas sa RAM ne peut pas être mesuré — 97 jeux ici.
+- Certains compteurs sont en BCD ou sur deux octets et échappent à la méthode.
+- Les métadonnées de boutons viennent de MAME : une poignée de jeux n'en ont
+  pas.
