@@ -413,6 +413,21 @@ class Panneau:
         self.origine.clear()
 
 
+def joueurs_simultanes(fiche_boutons):
+    """Le second panneau doit-il s allumer ?
+
+    La base des boutons distingue "2P sim" de "2P alt" : simultane ou a tour
+    de role. Sur un jeu en alterne, un seul joueur agit a la fois — allumer
+    les deux panneaux donnerait a croire qu on peut jouer ensemble.
+    """
+    mode = ((fiche_boutons or {}).get("mode") or "").lower()
+    if "alt" in mode:
+        return False
+    if "sim" in mode:
+        return True
+    return None            # pas d avis : on s en remet au constat sur la borne
+
+
 def charger_boutons():
     """La base des boutons. Absente : on n eclaire simplement rien."""
     try:
@@ -1062,11 +1077,16 @@ def main():
                     # couleurs. Le joueur 2 reste noir sur un jeu solo.
                     fiche_boutons = boutons.get(nom)
                     if fiche_boutons:
+                        # Le mode du jeu prime : en alterne, le panneau du
+                        # joueur 2 reste noir meme si le jeu est "a deux".
+                        simultane = joueurs_simultanes(fiche_boutons)
+                        deuxieme = multi if simultane is None else simultane
                         panneaux[1].appliquer(fiche_boutons)
-                        panneaux[2].appliquer(fiche_boutons, allume=multi)
-                        journal("%s : %s bouton(s)%s" % (
+                        panneaux[2].appliquer(fiche_boutons, allume=deuxieme)
+                        journal("%s : %s bouton(s), %s%s" % (
                             nom, fiche_boutons.get("nombre"),
-                            "" if multi else ", joueur 2 eteint"))
+                            fiche_boutons.get("mode") or "mode inconnu",
+                            "" if deuxieme else " — joueur 2 eteint"))
 
             # Jeu connu : un octet, trois fois par seconde.
             elif en_jeu and adresse is not None and maintenant >= prochain_sondage:

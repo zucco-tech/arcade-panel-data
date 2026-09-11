@@ -51,9 +51,11 @@ json.dump({"version": 3, "jeux": {"fbneo/duo": {"jeu": "duo", "systeme": "fbneo"
            "core": "FinalBurn Neo", "credits": {"adresse": ADRESSE}}},
            "pistes": {}, "difficiles": {}}, open(BASE, "w"))
 json.dump({"jeux": {
-    "duo":  {"nombre": 2, "boutons": {"BUTTON1": {"couleur": "Blue", "fonction": "Attack"},
-                                      "BUTTON2": {"couleur": "Black", "fonction": "Jump"}}},
-    "solo": {"nombre": 3, "boutons": {}}}}, open(BOUTONS, "w"))
+    "duo":  {"nombre": 2, "mode": "2P sim",
+             "boutons": {"BUTTON1": {"couleur": "Blue", "fonction": "Attack"},
+                         "BUTTON2": {"couleur": "Black", "fonction": "Jump"}}},
+    "alterne": {"nombre": 2, "mode": "2P alt", "boutons": {}},
+    "solo": {"nombre": 3, "mode": "1P", "boutons": {}}}}, open(BOUTONS, "w"))
 
 ra = FauxRetroArch(PORT_RA, adresse_credits=ADRESSE, jeu="duo"); ra.start()
 cp.BASE, cp.BASE_BOUTONS = BASE, BOUTONS
@@ -86,6 +88,16 @@ couleur_b1 = lu(cp.LEDS_JEU[1][3][0], "multi_intensity")
 verifier("le bouton 1 est bleu", couleur_b1 == cp.couleur(0x00, 0x00, 0xFF), couleur_b1)
 verifier("le panneau du joueur 2 est allume aussi",
          etat_boutons(2) == attendu, str(etat_boutons(2)))
+
+print("\n--- jeu a deux mais en alterne ---")
+etat("endgame"); time.sleep(1.2)
+ra.jeu = "alterne"; ra.ram[ADRESSE] = 0
+json.dump({"version": 3, "jeux": {"fbneo/alterne": {"jeu": "alterne", "systeme": "fbneo",
+           "core": "FinalBurn Neo", "credits": {"adresse": ADRESSE}}},
+           "pistes": {}, "difficiles": {}}, open(BASE, "w"))
+etat("rungame", joueurs="1-2"); time.sleep(3.0)
+verifier("joueur 2 eteint malgre un jeu a deux",
+         set(etat_boutons(2)) == {"0"}, str(etat_boutons(2)))
 
 print("\n--- meme jeu declare solo ---")
 etat("endgame"); time.sleep(1.2)
