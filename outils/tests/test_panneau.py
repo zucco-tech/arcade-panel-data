@@ -47,7 +47,7 @@ cp.LEDS_PIECE, cp.LEDS_START, cp.LEDS_START_P2 = lampe("pc"), lampe("s1"), lampe
 lec, ecr = os.pipe()
 ETAT = os.path.join(R, "es.inf"); BASE = os.path.join(R, "base.json")
 BOUTONS = os.path.join(R, "boutons.json")
-json.dump({"version": 3, "jeux": {"fbneo/duo": {"jeu": "duo", "systeme": "fbneo",
+json.dump({"version": 3, "jeux": {"finalburn-neo/duo": {"jeu": "duo", "systeme": "fbneo",
            "core": "FinalBurn Neo", "credits": {"adresse": ADRESSE}}},
            "pistes": {}, "difficiles": {}}, open(BASE, "w"))
 json.dump({"jeux": {
@@ -92,7 +92,7 @@ verifier("le panneau du joueur 2 est allume aussi",
 print("\n--- jeu a deux mais en alterne ---")
 etat("endgame"); time.sleep(1.2)
 ra.jeu = "alterne"; ra.ram[ADRESSE] = 0
-json.dump({"version": 3, "jeux": {"fbneo/alterne": {"jeu": "alterne", "systeme": "fbneo",
+json.dump({"version": 3, "jeux": {"finalburn-neo/alterne": {"jeu": "alterne", "systeme": "fbneo",
            "core": "FinalBurn Neo", "credits": {"adresse": ADRESSE}}},
            "pistes": {}, "difficiles": {}}, open(BASE, "w"))
 etat("rungame", joueurs="1-2"); time.sleep(3.0)
@@ -102,7 +102,7 @@ verifier("joueur 2 eteint malgre un jeu a deux",
 print("\n--- meme jeu declare solo ---")
 etat("endgame"); time.sleep(1.2)
 ra.jeu = "solo"; ra.ram[ADRESSE] = 0
-json.dump({"version": 3, "jeux": {"fbneo/solo": {"jeu": "solo", "systeme": "fbneo",
+json.dump({"version": 3, "jeux": {"finalburn-neo/solo": {"jeu": "solo", "systeme": "fbneo",
            "core": "FinalBurn Neo", "credits": {"adresse": ADRESSE}}},
            "pistes": {}, "difficiles": {}}, open(BASE, "w"))
 etat("rungame", joueurs="1"); time.sleep(3.0)

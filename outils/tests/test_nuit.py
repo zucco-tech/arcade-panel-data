@@ -4,24 +4,10 @@ import os
 import importlib.util, json, os, socket, sys, threading, time
 sys.path.insert(0, "/tmp/claude-1000/test")
 from faux_retroarch import FauxRetroArch
-def _trouver(fichier):
-    """Retrouve un script du projet, quelle que soit la disposition.
-
-    Le depot separe le demon de la borne (borne/) des outils de releve
-    (outils/), mais tout peut aussi vivre a plat. On cherche donc dans les
-    endroits plausibles plutot que de figer un chemin.
-    """
-    ici = os.path.dirname(os.path.abspath(__file__))
-    racines = [os.environ.get("ARCADE_CREDITS"),
-               os.path.dirname(ici),                       # outils/
-               os.path.join(os.path.dirname(ici), "..", "borne"),
-               os.path.dirname(os.path.dirname(ici)),      # racine du depot
-               ici]
-    for racine in racines:
-        if racine and os.path.exists(os.path.join(racine, fichier)):
-            return os.path.join(racine, fichier)
-    raise SystemExit("introuvable : %s" % fichier)
-spec = importlib.util.spec_from_file_location("nuit", _trouver("nuit-credits.py"))
+# Les scripts sont dans le dossier parent de celui-ci : la suite doit
+# tourner partout ou le projet est copie, pas seulement chez son auteur.
+W = os.environ.get("ARCADE_CREDITS") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+spec = importlib.util.spec_from_file_location("nuit", os.path.join(W, "nuit-credits.py"))
 nuit = importlib.util.module_from_spec(spec); spec.loader.exec_module(nuit)
 
 R = "/tmp/claude-1000/test/nuit"; os.system("rm -rf " + R); os.makedirs(R + "/roms/fbneo")

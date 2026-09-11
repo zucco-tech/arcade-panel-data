@@ -55,6 +55,16 @@ PORT_ES = 1337           # commandes EmulationStation
 #     Il faut la 1.22.2 officielle.
 RETROARCH = "/opt/retroarch.AppImage"
 DOSSIER_COEURS = "/opt/coeurs"
+# Le nom que RetroArch annonce pour chaque coeur, pour savoir avant de
+# lancer si un jeu a deja ete mesure. Il est reverifie a l execution.
+COEURS_NOMMES = {
+    "fbneo": "FinalBurn Neo", "fba": "FinalBurn Neo",
+    "neogeo": "FinalBurn Neo", "neogeocd": "FinalBurn Neo",
+    "naomi": "Flycast", "naomigd": "Flycast", "naomi2": "Flycast",
+    "atomiswave": "Flycast",
+    "mame0278": "MAME", "mame": "MAME",
+}
+
 COEURS = {
     "fbneo": "fbneo_libretro.so",
     "fba": "fbneo_libretro.so",
@@ -283,18 +293,35 @@ def base_ecrire(chemin, base):
     os.replace(provisoire, chemin)          # remplacement atomique
 
 
-def cle(systeme, jeu):
-    """Un jeu est identifie par son systeme ET son nom : le meme set peut
-    tourner sous plusieurs coeurs, qui ne rangent pas leur RAM pareil."""
-    return "%s/%s" % (systeme or "?", jeu)
+def normaliser_coeur(nom):
+    """Un identifiant court et stable pour un coeur.
+
+    RetroArch annonce le sien en toutes lettres — "FinalBurn Neo",
+    "fb_alpha", "MAME 2003-Plus" — et l orthographe varie d une version a
+    l autre. On en tire une cle lisible et constante.
+    """
+    propre = "".join(c if c.isalnum() else "-" for c in (nom or "inconnu").lower())
+    while "--" in propre:
+        propre = propre.replace("--", "-")
+    return propre.strip("-") or "inconnu"
 
 
-def deja_fait(base, systeme, jeu, reessayer=False):
-    """Vrai si ce jeu n'a plus rien a nous apprendre."""
-    fiche = (base.get("jeux") or {}).get(cle(systeme, jeu)) or {}
+def cle(coeur, jeu):
+    """Un jeu est identifie par son COEUR et son nom.
+
+    C est le coeur qui decide de la disposition memoire : le meme set sous
+    FinalBurn Neo et sous MAME n a pas la meme adresse de credits. Deux
+    mesures faites sous deux coeurs doivent cohabiter, pas s ecraser.
+    """
+    return "%s/%s" % (normaliser_coeur(coeur), jeu)
+
+
+def deja_fait(base, coeur, jeu, reessayer=False):
+    """Vrai si ce jeu n'a plus rien a nous apprendre, pour ce coeur."""
+    fiche = (base.get("jeux") or {}).get(cle(coeur, jeu)) or {}
     if (fiche.get("credits") or {}).get("adresse"):
         return True
-    dur = (base.get("difficiles") or {}).get(cle(systeme, jeu))
+    dur = (base.get("difficiles") or {}).get(cle(coeur, jeu))
     if not dur:
         return False
     if dur.get("raison") in SANS_APPEL:
@@ -304,19 +331,20 @@ def deja_fait(base, systeme, jeu, reessayer=False):
     return dur.get("essais", 1) >= ESSAIS_AVANT_ABANDON
 
 
-def noter_difficulte(base, jeu, systeme, raison):
+def noter_difficulte(base, jeu, systeme, raison, coeur=None):
     """Compte les tentatives : un jeu n'est ecarte qu'apres deux echecs."""
     durs = base.setdefault("difficiles", {})
-    ancien = durs.get(cle(systeme, jeu)) or {}
-    durs[cle(systeme, jeu)] = {
+    ancien = durs.get(cle(coeur, jeu)) or {}
+    durs[cle(coeur, jeu)] = {
         "jeu": jeu,
         "systeme": systeme,
+        "core": coeur,
         "raison": raison,
         "essais": ancien.get("essais", 0) + 1,
         "vu_le": time.strftime("%Y-%m-%d"),
         "par": "nuit-credits.py",
     }
-    return durs[cle(systeme, jeu)]["essais"]
+    return durs[cle(coeur, jeu)]["essais"]
 
 
 def candidats_piste(piste, taille):
@@ -452,7 +480,7 @@ def traiter(borne, clavier, base, systeme, jeu, arret, journal):
         surs = candidats        # une ou deux adresses, insertion verifiee
     retenues = sorted(surs)
     adresse = retenues[0]
-    base.setdefault("jeux", {})[cle(systeme, jeu)] = {
+    base.setdefault("jeux", {})[cle(en_cours[1], jeu)] = {
         "jeu": jeu,
         "nom": jeu,
         "systeme": systeme,
@@ -518,7 +546,7 @@ def main():
         retenus = 0
         for rom in roms:
             jeu = rom.rsplit(".", 1)[0]
-            if deja_fait(base, systeme, jeu, args.reessayer):
+            if deja_fait(base, COEURS_NOMMES.get(systeme), jeu, args.reessayer):
                 continue
             if args.pistes_seulement and jeu not in pistes:
                 continue
@@ -580,7 +608,8 @@ def main():
 
                 if isinstance(resultat, tuple):
                     resultat, raison = resultat
-                    essais = noter_difficulte(base, jeu, systeme, raison)
+                    essais = noter_difficulte(base, jeu, systeme, raison,
+                                              COEURS_NOMMES.get(systeme))
                     definitif = (raison in SANS_APPEL
                                  or essais >= ESSAIS_AVANT_ABANDON)
                     journal("  difficile : %s (essai %d%s)"

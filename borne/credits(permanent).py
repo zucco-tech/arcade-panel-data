@@ -56,7 +56,7 @@ BASE_BOUTONS = "/recalbox/share/system/boutons-arcade.json"
 
 # Version du format de la base. Une base plus ancienne est convertie a la
 # volee au demarrage : aucun releve n'est perdu.
-SCHEMA = 3
+SCHEMA = 4
 OUTIL = "credits(permanent).py"
 
 # Le journal est sur le partage, et non dans /tmp, pour rester lisible depuis
@@ -479,7 +479,7 @@ def appuis(fd):
 
 # --- Frontend et base ----------------------------------------------------
 
-def jeu_multijoueur(base, systeme, nom):
+def jeu_multijoueur(base, coeur, nom):
     """Le jeu accepte-t-il un deuxieme joueur ?
 
     C'est la seule chose observable : on ne compte pas les joueurs, on
@@ -488,7 +488,7 @@ def jeu_multijoueur(base, systeme, nom):
 
     Ce constat prime sur le scrapeur, dont la metadonnee est souvent fausse.
     """
-    fiche = (base.get("jeux") or {}).get(cle(systeme, nom)) or {}
+    fiche = (base.get("jeux") or {}).get(cle(coeur, nom)) or {}
     connu = (fiche.get("joueurs") or {}).get("joueur2_accepte")
     if connu is not None:
         return connu
@@ -496,9 +496,9 @@ def jeu_multijoueur(base, systeme, nom):
     return bool(nombres) and max(nombres) >= 2
 
 
-def noter_joueurs(base, systeme, nom, accepte):
+def noter_joueurs(base, coeur, nom, accepte):
     """Retient ce qu'on vient de constater, sans toucher au reste de la fiche."""
-    fiche = base.setdefault("jeux", {}).setdefault(cle(systeme, nom), {})
+    fiche = base.setdefault("jeux", {}).setdefault(cle(coeur, nom), {})
     if (fiche.get("joueurs") or {}).get("joueur2_accepte") == accepte:
         return
     fiche["joueurs"] = {
@@ -543,41 +543,53 @@ def base_neuve():
         },
         "jeux": {},
         "difficiles": {},
-        "cles_lisez_moi": ("Les fiches sont indexees \"systeme/jeu\" : le meme "
-                           "set peut tourner sous plusieurs coeurs, qui ne "
-                           "rangent pas leur RAM de la meme facon. Les pistes, "
+        "cles_lisez_moi": ("Les fiches sont indexees \"coeur/jeu\" : le meme "
+                           "set sous deux coeurs differents n a pas la meme "
+                           "adresse de credits. Les pistes, "
                            "elles, sont indexees par le seul nom du set : une "
                            "adresse de cheat vise le processeur emule et ne "
                            "depend pas du coeur."),
     }
 
 
-def cle(systeme, jeu):
-    """Un jeu est identifie par son systeme ET son nom.
+def normaliser_coeur(nom):
+    """Un identifiant court et stable pour un coeur.
 
-    Le meme set existe sous plusieurs systemes — fbneo et mame par exemple —
-    et chaque coeur range sa RAM a sa facon. Indexer sur le seul nom ferait
-    silencieusement ecraser une fiche par l'autre, et le clignotement
-    deviendrait faux sans que rien ne le signale.
+    RetroArch annonce son coeur en toutes lettres — "FinalBurn Neo",
+    "fb_alpha", "MAME 2003-Plus" — et l orthographe varie d une version a
+    l autre. On en tire une cle lisible et constante.
     """
-    return "%s/%s" % (systeme or "?", jeu)
+    propre = "".join(c if c.isalnum() else "-" for c in (nom or "inconnu").lower())
+    while "--" in propre:
+        propre = propre.replace("--", "-")
+    return propre.strip("-") or "inconnu"
+
+
+def cle(coeur, jeu):
+    """Un jeu est identifie par son COEUR et son nom.
+
+    C est le coeur, pas le systeme, qui decide de la disposition memoire :
+    le meme set sous FinalBurn Neo et sous MAME n a pas la meme adresse de
+    credits. Indexer sur le systeme ferait cohabiter deux mesures
+    incompatibles sous une meme cle, et le clignotement deviendrait faux
+    sans que rien ne le signale.
+
+    A l inverse, un set present dans plusieurs listes — fbneo et neogeo par
+    exemple — mais tournant sous le meme coeur n est mesure qu une fois.
+    """
+    return "%s/%s" % (normaliser_coeur(coeur), jeu)
 
 
 def fiche_de(base, systeme, jeu, core=None):
-    """La fiche d'un jeu, si elle correspond bien au coeur qui tourne."""
+    """La fiche d un jeu pour le coeur qui tourne.
+
+    On accepte encore les anciennes cles, par systeme ou nues, pour ne
+    perdre aucun releve d avant le changement de format.
+    """
     jeux = base.get("jeux") or {}
-    # Une base ancienne peut avoir garde une cle nue, faute de systeme connu
-    # au moment de la conversion : on l'accepte encore.
-    fiche = jeux.get(cle(systeme, jeu)) or jeux.get(jeu)
-    if not fiche:
-        return None
-    # Un jeu relance sous un autre coeur n'a plus la meme disposition
-    # memoire : mieux vaut reapprendre que clignoter faux.
-    if core and fiche.get("core") and fiche["core"] != core:
-        journal("%s : releve sous %s, or %s tourne — je reapprends"
-                % (jeu, fiche["core"], core))
-        return None
-    return fiche
+    return (jeux.get(cle(core, jeu))
+            or jeux.get("%s/%s" % (systeme or "?", jeu))
+            or jeux.get(jeu))
 
 
 def convertir(base):
@@ -591,14 +603,14 @@ def convertir(base):
         neuve["pistes_lisez_moi"] = base["pistes_lisez_moi"]
     # Les difficultes suivent la meme cle que les fiches.
     for nom, dur in (base.get("difficiles") or {}).items():
-        neuve["difficiles"][cle(dur.get("systeme"), nom) if "/" not in nom
-                            else nom] = dur
+        neuve["difficiles"][cle(dur.get("core"), nom.split("/")[-1])
+                            if dur.get("core") else nom] = dur
     for nom, ancienne in (base.get("jeux") or {}).items():
         if "credits" in ancienne:                  # deja au bon format interne
             ancienne.setdefault("jeu", nom.split("/")[-1])
-            systeme = ancienne.get("systeme")
-            neuve["jeux"][nom if "/" in nom or not systeme
-                          else cle(systeme, nom)] = ancienne
+            coeur = ancienne.get("core")
+            jeu = nom.split("/")[-1]
+            neuve["jeux"][cle(coeur, jeu) if coeur else jeu] = ancienne
             continue
         fiche = {}
         if "adresse" in ancienne:
@@ -625,9 +637,11 @@ def convertir(base):
         fiche["releve"] = {"le": ancienne.get("appris_le") or ancienne.get("releve_le"),
                            "methode": "apprentissage", "par": OUTIL}
         fiche.setdefault("jeu", nom.split("/")[-1])
-        systeme = ancienne.get("systeme") or fiche.get("systeme")
-        neuve["jeux"][nom if "/" in nom or not systeme
-                      else cle(systeme, nom)] = fiche
+        # Chaque fiche sait sous quel coeur elle a ete mesuree : c est
+        # lui qui decide desormais de sa place.
+        coeur = ancienne.get("core") or fiche.get("core")
+        jeu = nom.split("/")[-1]
+        neuve["jeux"][cle(coeur, jeu) if coeur else jeu] = fiche
     journal("base convertie au format %d (%d jeu(x))" % (SCHEMA, len(neuve["jeux"])))
     return neuve
 
@@ -774,7 +788,7 @@ class Apprenti:
 
     @property
     def cle(self):
-        return cle(self.systeme, self.jeu)
+        return cle(self.core, self.jeu)
 
     def a_apprendre(self):
         return (self.jeu is not None
@@ -1068,7 +1082,7 @@ def main():
                     systeme = champ_etat("SystemId").lower()
                     core = core_en_cours()
                     apprenti.nouveau_jeu(nom, systeme, core)
-                    multi = jeu_multijoueur(base, systeme, nom)
+                    multi = jeu_multijoueur(base, core, nom)
                     adresse = adresse_de(fiche_de(base, systeme, nom, core))
                     journal("%s/%s : %s" % (systeme, nom,
                                             "0x%04X" % adresse if adresse
@@ -1107,11 +1121,11 @@ def main():
                     instant, avant = essai_j2
                     if nouveau < avant:
                         multi = True
-                        noter_joueurs(base, apprenti.systeme, apprenti.jeu, True)
+                        noter_joueurs(base, apprenti.core, apprenti.jeu, True)
                         essai_j2 = None
                     elif maintenant - instant > VERDICT_J2:
                         multi = False        # le jeu a refuse le joueur 2
-                        noter_joueurs(base, apprenti.systeme, apprenti.jeu, False)
+                        noter_joueurs(base, apprenti.core, apprenti.jeu, False)
                         essai_j2 = None
                 credits = nouveau
 
