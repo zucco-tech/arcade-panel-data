@@ -132,6 +132,10 @@ def main():
                    help="base a consulter pour savoir ce qui est deja mesure")
     p.add_argument("--part", default=None, help="« 2/4 » : une part sur quatre")
     p.add_argument("--jeux", nargs="*", default=None)
+    p.add_argument("--arcade", default="/mnt/recalbox/donnees/boutons-arcade.json",
+                   help="ne mesurer que les machines presentes dans cette base : ce sont "
+                        "les jeux d arcade. Les deux tiers de MAME n en sont pas — "
+                        "machines a sous, ordinateurs, mahjong — et n ont pas de credits")
     p.add_argument("--priorite", default="/mnt/roms/fbneo",
                    help="dossier de roms deja couvert par un autre coeur : les jeux "
                         "qui n y sont PAS passent en premier, c est la que MAME sert")
@@ -152,6 +156,13 @@ def main():
         deja |= set(connue.get("difficiles", {}))
     reste = noms if a.jeux else [n for n in noms if "mame/%s" % n not in deja]
     connus = len(noms) - len(reste)
+    # Seulement les jeux d arcade : la base des boutons les connait. Sur
+    # 20601 machines, 6995 en sont ; les 13351 autres n ont ni monnayeur ni
+    # compteur, et coutaient 150 s chacune pour conclure a rien.
+    if a.arcade and not a.jeux and os.path.exists(a.arcade):
+        with open(a.arcade) as fh:
+            arcade = set(json.load(fh).get("jeux", {}))
+        reste = [n for n in reste if n in arcade]
     # D abord ce que l autre coeur ne sait pas faire : c est la que MAME
     # apporte quelque chose. Le reste suivra, dans le meme ordre alphabetique.
     if a.priorite and os.path.isdir(a.priorite):

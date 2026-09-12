@@ -252,3 +252,11 @@ charger ses listes, et le panneau restait noir pendant ce temps.
 La share est en exFAT : le bit executable n existe pas. Sans importance,
 S99custom appelle le fichier par `bash custom.sh start`. Le script ne doit
 donc rien faire quand on lui passe « stop ».
+
+## MAME : ne mesurer que les jeux d arcade
+Sur 20601 machines, 6995 sont des jeux d arcade — ce sont celles que la
+base des boutons connait. Les 13351 autres sont des machines a sous, des
+ordinateurs, du mahjong : pas de monnayeur, pas de compteur, et chacune
+coutait 150 s pour conclure a rien. Le releve MAME se limite donc a la base
+des boutons, et commence par les 310 jeux d arcade que FBNeo ne sait pas
+faire — les seuls ou MAME apporte une fiche que rien d autre ne donne.
