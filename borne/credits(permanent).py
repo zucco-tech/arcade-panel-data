@@ -65,6 +65,13 @@ OUTIL = "credits(permanent).py"
 JOURNAL = "/recalbox/share/system/panneau-arcade/credits.log"
 JOURNAL_MAX = 200 * 1024
 STATE_FILE = "/tmp/es_state.inf"
+# Les couleurs que la carte porte quand personne n y touche. Elles sont
+# publiees par panneau(permanent).py juste avant que la partie commence,
+# depuis la table de Recalbox. On les lit ici plutot que de relire les LED :
+# relire les LED revenait a memoriser les couleurs que l AUTRE programme
+# venait d y poser, et le panneau ressortait de la partie avec les couleurs
+# du jeu precedent. Fichier absent : on retombe sur la relecture des LED.
+COULEURS_CARTE = "/recalbox/share/system/panneau-arcade/couleurs-carte.json"
 
 RA_HOTE = "127.0.0.1"
 RA_PORT = 55355
@@ -251,6 +258,20 @@ def lire(adresse, n):
 
 # --- LED -----------------------------------------------------------------
 
+def couleur_de_carte(chemin_led):
+    """La couleur que la carte porte pour cette LED, telle que publiee par
+    panneau(permanent).py. None si le fichier n existe pas encore."""
+    try:
+        with open(COULEURS_CARTE) as fh:
+            table = json.load(fh)
+    except (IOError, OSError, ValueError):
+        return None
+    rvb = table.get(chemin_led)
+    if not rvb:
+        return None
+    return couleur(*rvb)
+
+
 class Lampe:
     """Un bouton lumineux : deux LED, et la couleur que la carte avait posee.
 
@@ -383,6 +404,10 @@ class Panneau:
 
     def _memoriser(self, chemin):
         if chemin in self.origine:
+            return
+        publiee = couleur_de_carte(chemin)
+        if publiee is not None:
+            self.origine[chemin] = publiee
             return
         try:
             with open(os.path.join(chemin, "multi_intensity")) as fh:

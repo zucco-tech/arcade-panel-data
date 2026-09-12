@@ -126,3 +126,22 @@ monnayeur bloque. A 0,05-0,15 s la piece passe et le compteur monte. La
 duree de la piece est 0,10 s (`ClavierVirtuel.DUREE_PIECE`) ; le START garde
 son quart de seconde. Verifie sur pzloop2 (0x0450), 64street (0xB6AC),
 batrider (0x2401), wh1 (0xFE8B) le 12/09.
+
+## La carte ment sur l ordre de ses couleurs
+`multi_index` annonce « red green blue ». C est faux : les WS2812B de cette
+carte sont cablees **vert, rouge, bleu**. Mesure du 12/09/2026 : ecrire
+« 255 0 0 » sur le bouton 1 et « 0 255 0 » sur le bouton 2 allume le premier
+en VERT et le second en ROUGE. Les deux programmes ecrivent donc dans
+l ordre (vert, rouge, bleu) — constante `ORDRE_MATERIEL = (1, 0, 2)`.
+Avant cette correction, le panneau du menu peignait a l envers tandis que le
+demon des credits peignait juste : un meme jeu changeait de couleur en
+entrant en partie, et la NES sortait rouge au lieu de verte.
+
+## Deux programmes ne peuvent pas memoriser « la couleur d origine » chacun de son cote
+Chacun relisait `multi_intensity` au moment ou il touchait une LED. Celui qui
+lisait en second memorisait donc les couleurs du PREMIER, et les restituait
+en sortant de partie : le panneau revenait avec les couleurs du jeu
+precedent. Il n y a desormais qu une source : `panneau(permanent).py` publie
+les couleurs de la carte (la table Recalbox du systeme) dans
+`panneau-arcade/couleurs-carte.json` juste avant que la partie commence, et
+`credits(permanent).py` les lit de la. Aucune course possible.

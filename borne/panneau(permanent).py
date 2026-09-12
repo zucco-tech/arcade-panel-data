@@ -52,6 +52,12 @@ JOURNAL = "/recalbox/share/system/panneau-arcade/panneau.log"
 # memes couleurs qu a l origine sur les systemes que la table plus bas ne
 # decrit pas.
 PALETTE_RECALBOX = "/recalbox/scripts/recalbox_allinone_rgb.sh"
+# Les couleurs que la carte AURAIT si les scripts d origine tournaient. On
+# les publie ici pour que le demon des credits les reprenne telles quelles a
+# la fin d une partie, au lieu de relire les LED — ce que nous avons pu
+# repeindre entre-temps. Sans cette source unique, chacun memorisait les
+# couleurs de l autre et le panneau revenait faux en sortant d un jeu.
+COULEURS_CARTE = "/recalbox/share/system/panneau-arcade/couleurs-carte.json"
 
 # Meme correspondance que credits(permanent).py, reprise de
 # recalbox_allinone_rgb.sh : la LED n eclaire le bouton ORDRE[n].
@@ -135,8 +141,9 @@ BOUTONS_PAR_SYSTEME = {
 
 def charger_palette_recalbox():
     """Les tableaux « declare -a systeme=("R G B" ...) » du script Recalbox :
-    11 entrees, boutons 1 a 8 puis select, start, hotkey. On garde les six
-    boutons, en (r, v, b)."""
+    11 entrees — boutons 1 a 8, puis select, start, hotkey — rendues en
+    (r, v, b). On les garde toutes : les six premieres servent a eclairer,
+    les trois dernieres a rendre la carte telle que Recalbox la peignait."""
     table = {}
     try:
         with open(PALETTE_RECALBOX) as fh:
@@ -146,7 +153,7 @@ def charger_palette_recalbox():
     for nom, corps in re.findall(r'declare -a (\w+)=\((.*?)\)', texte):
         entrees = re.findall(r'"([^"]*)"', corps)
         boutons = []
-        for e in entrees[:6]:
+        for e in entrees[:11]:
             try:
                 boutons.append(tuple(int(x, 16) for x in e.split()))
             except ValueError:
@@ -168,14 +175,14 @@ def fiche_de_systeme(systeme):
     secours (astrocity), comme le faisait le script d origine."""
     systeme = systeme or ""
     entree = BOUTONS_PAR_SYSTEME.get(systeme)
-    boutons = RECALBOX.get(systeme)
+    boutons = (RECALBOX.get(systeme) or [])[:6] or None
     secours = None
     if not boutons:
         # Le systeme virtuel « arcade », ses sous-categories par
         # constructeur, et tout ce que Recalbox ne nomme pas : les couleurs
         # astrocity, un jeu de couleurs par poste, comme le script d origine.
-        boutons = RECALBOX.get("astrocityp1")
-        secours = RECALBOX.get("astrocityp2")
+        boutons = (RECALBOX.get("astrocityp1") or [])[:6] or None
+        secours = (RECALBOX.get("astrocityp2") or [])[:6] or None
     if boutons:
         allumes = [i for i, rvb in enumerate(boutons, 1) if any(rvb)]
         nombre = entree[0] if entree else (max(allumes) if allumes else 0)
@@ -223,11 +230,58 @@ def lire_fichier(chemin):
         return None
 
 
+# Le materiel MENT sur l ordre de ses composantes. multi_index annonce
+# « red green blue », mais les WS2812B de cette carte sont cablees vert,
+# rouge, bleu. Mesure faite le 12/09/2026 sur la borne : ecrire « 255 0 0 »
+# sur le bouton 1 et « 0 255 0 » sur le bouton 2 allume le premier en VERT
+# et le second en ROUGE (photo a l appui). C est le meme constat que celui
+# deja inscrit dans credits(permanent).py, qui ecrit depuis toujours dans
+# cet ordre : les deux programmes peignent enfin pareil.
+ORDRE_MATERIEL = (1, 0, 2)          # vert, rouge, bleu
+
+
 def couleur_pour(chemin_led, rvb):
-    """La couleur dans l ordre que CETTE led annonce dans multi_index."""
-    index = (lire_fichier(os.path.join(chemin_led, "multi_index")) or "red green blue").split()
-    par_nom = {"red": rvb[0], "green": rvb[1], "blue": rvb[2]}
-    return " ".join(str(par_nom.get(nom, 0)) for nom in index)
+    """La couleur telle que la carte l allume vraiment."""
+    return " ".join(str(rvb[i]) for i in ORDRE_MATERIEL)
+
+
+def couleurs_de_carte(systeme):
+    """Ce que le script Recalbox aurait ecrit dans les LED pour ce systeme.
+
+    On reproduit sa correspondance a l identique : les LED 1 a 8 recoivent
+    les couleurs des boutons 3,4,5,1,2,6,7,8 ; la LED « select » recoit la
+    9e entree, « start » la 10e, et la touche hotkey la 11e. Un systeme
+    absent de sa table prend les couleurs astrocity, un jeu par poste, comme
+    le faisait le script."""
+    connue = RECALBOX.get(systeme or "")
+    rendu = {}
+    for joueur in (1, 2):
+        table = connue or RECALBOX.get("astrocityp%d" % joueur) or []
+        if not table:
+            continue
+        for place, numero in enumerate(ORDRE_BOUTONS + [7, 8], 1):
+            if numero - 1 >= len(table):
+                continue
+            for chemin in _leds("aio_p%d_b%d" % (joueur, place)):
+                rendu[chemin] = table[numero - 1]
+        for decalage, nom in enumerate(("select", "start"), 8):
+            if decalage < len(table):
+                for chemin in _leds("aio_p%d_%s" % (joueur, nom)):
+                    rendu[chemin] = table[decalage]
+        if joueur == 1 and len(table) > 10:
+            for chemin in _leds("aio_hotkey"):
+                rendu[chemin] = table[10]
+    return rendu
+
+
+def publier_couleurs_carte(couleurs):
+    """Ecrit ces couleurs la ou le demon des credits saura les lire."""
+    try:
+        with open(COULEURS_CARTE + ".tmp", "w") as fh:
+            json.dump({c: list(rvb) for c, rvb in couleurs.items()}, fh)
+        os.replace(COULEURS_CARTE + ".tmp", COULEURS_CARTE)
+    except OSError:
+        pass
 
 
 def journal(msg):
@@ -413,6 +467,21 @@ class Panneau:
         if self.dernier not in ("repos", None):
             self.dernier = self.dernier[:2] + (intensite,)
 
+    def poser_carte(self, couleurs):
+        """Repeint le poste comme la carte, et allume tout.
+
+        Appele juste avant qu une partie commence : le demon des credits
+        prend alors la main sur des LED dans leur etat d origine, et
+        retrouvera le meme etat en sortant du jeu."""
+        for chemin, rvb in couleurs.items():
+            if not chemin.startswith("/sys/class/leds/aio_p%d" % self.joueur) and not (
+                    self.joueur == 1 and "hotkey" in chemin):
+                continue
+            self._memoriser(chemin)
+            ecrire(chemin, couleur_pour(chemin, rvb), "multi_intensity")
+            ecrire(chemin, PLEIN)
+        self.dernier = "repos"
+
     def rendre(self):
         """Tout a 255 et couleurs d origine : l etat de repos de la carte."""
         if self.dernier == "repos":
@@ -491,8 +560,11 @@ def main():
             # ne memorise les siennes : sinon il retiendrait nos couleurs
             # comme etant celles de la carte.
             if dernier_jeu is not None:
+                carte = couleurs_de_carte(etat.get("SystemId") or "")
+                publier_couleurs_carte(carte)
                 for p in panneaux.values():
-                    p.rendre()
+                    p.intensite = PLEIN
+                    p.poser_carte(carte) if carte else p.rendre()
             dernier_jeu = None
             for p in panneaux.values():
                 p.dernier = None       # on ne sait plus ce qu il y a dessus
