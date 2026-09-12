@@ -163,11 +163,17 @@ def main():
         with open(a.arcade) as fh:
             arcade = set(json.load(fh).get("jeux", {}))
         reste = [n for n in reste if n in arcade]
-    # D abord ce que l autre coeur ne sait pas faire : c est la que MAME
-    # apporte quelque chose. Le reste suivra, dans le meme ordre alphabetique.
+    # Jamais les BIOS : ce ne sont pas des jeux, et chacun coutait le delai
+    # entier pour conclure a rien (airlbios, awbios...).
+    reste = [n for n in reste if not n.endswith("bios")]
+    # D abord ce que FBNeo couvre aussi : des cartes 2D classiques que MAME
+    # emule vite et bien. Ce que FBNeo ne sait pas faire, c est en general
+    # du Naomi, du Triforce, de la 3D — lent a emuler, souvent en free play,
+    # et cela finissait en « delai depasse » cinq fois sur cinq. On les garde
+    # pour la fin.
     if a.priorite and os.path.isdir(a.priorite):
         couverts = {f.rsplit(".", 1)[0] for f in os.listdir(a.priorite)}
-        reste = [n for n in reste if n not in couverts] + [n for n in reste if n in couverts]
+        reste = [n for n in reste if n in couverts] + [n for n in reste if n not in couverts]
     if a.part:
         rang, total = (int(x) for x in a.part.split("/"))
         reste = reste[rang - 1::total]
