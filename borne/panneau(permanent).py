@@ -85,8 +85,8 @@ PLEIN = "255"
 # l oeil sans toucher au reste.
 JOUR_PRESENT = "255"     # quelqu un navigue, en plein jour
 JOUR_REPOS = "255"       # personne devant, en plein jour
-NUIT_PRESENT = "140"     # quelqu un navigue, le soir
-NUIT_REPOS = "60"        # personne devant, le soir
+NUIT_PRESENT = "77"      # quelqu un navigue, le soir : 30 % de la puissance
+NUIT_REPOS = "38"        # personne devant, le soir : la moitie de ce 30 %
 VEILLE_APRES = 30.0
 
 # Le jour, la piece est claire : un panneau a pleine puissance ne gene
