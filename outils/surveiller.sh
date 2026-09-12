@@ -1,33 +1,32 @@
 #!/bin/sh
-# Fait tourner le releve jour et nuit, et le surveille.
+# Le balayage des credits, jour et nuit, sans surveillance.
 #
-# Le lanceur isole ne traite qu un systeme puis s arrete : c est ce script qui
-# enchaine les systemes et le relance quand il a fini. Il recommence ensuite
-# au debut, pour reprendre les jeux ecartes et ceux ajoutes entre-temps.
+# Deux methodes, dans cet ordre, parce qu elles ne coutent pas la meme chose :
 #
-# Il verifie aussi, toutes les deux minutes, que FBNeo n est pas revenu en
-# mode diagnostic : RetroArch remet « Hold Start » en quittant, et un START
-# maintenu ouvre alors le menu de service, ou le compteur de credits ne veut
-# plus rien dire. Le fichier est fige, mais on ne s en remet pas a ca seul.
+#   1. releve-direct.py  charge le coeur libretro tout seul, sans RetroArch
+#      ni fenetre : environ 8 s par jeu, et le bureau reste utilisable. C est
+#      elle qui fait le gros du travail.
+#   2. nuit-credits.py   lance vraiment le jeu dans RetroArch, en plein
+#      ecran : environ 30 s par jeu, et l ecran est pris. Reservee aux rares
+#      roms que le coeur nu refuse de charger (1,7 % sur 60 jeux mesures).
 #
-# Arret :  touch /tmp/arret-nuit
+# A chaque passe, on verifie que l option de diagnostic de FBNeo est toujours
+# desactivee : RetroArch reecrit son fichier d options en quittant, et
+# « Hold Start » ferait ouvrir le menu de service par notre appui sur START.
+#
+#   sudo sh /mnt/recalbox/outils/surveiller.sh &
+# Arret propre :  touch /tmp/arret-nuit
 
 OPT="/root/.config/retroarch/config/FinalBurn Neo/FinalBurn Neo.opt"
-JOURNAL=/mnt/recalbox/journaux/surveillance.log
-VIGNETTES=/mnt/recalbox/journaux/veille
-# Pas de « fba » : ce systeme n existe pas sur la borne (223 roms d epoque
-# FB Alpha, jamais lancees, refusees a 82 % par FBNeo). Les mesurer ne
-# servirait a rien et remplit l ecran d erreurs.
-# Pas de naomi/naomigd/naomi2/atomiswave : flycast force le FREE PLAY par
-# defaut (reicast_force_freeplay = enabled, sur la borne aussi). Sans piece a
-# encaisser il n y a aucun compteur a mesurer : 73 jeux, 9 h, 0 fiche.
+BASE=/mnt/recalbox/donnees/credits-arcade.json
+JOURNAUX=/mnt/recalbox/journaux
+JOURNAL=$JOURNAUX/surveillance.log
+ARRET=/tmp/arret-nuit
+
+# Pas de « fba » : ce systeme n existe pas sur la borne.
+# Pas de naomi ni atomiswave : flycast les met en FREE PLAY, il n y a aucun
+# compteur a mesurer (voir REGLES-APPRISES.md).
 SYSTEMES="fbneo neogeo neogeocd"
-# Pas d avance rapide (--rapide) : les attentes sont en temps reel, donc
-# l accelere ne fait pas gagner une seconde, mais il etire chaque appui de
-# touche a plusieurs secondes de jeu. Battle Garegga restait bloque sur son
-# test de RAM, World Heroes ne comptait que 2 pieces sur 5 : « aucun
-# candidat » a tort. Sans accelere, les deux donnent leur adresse.
-mkdir -p "$VIGNETTES"
 
 note() { echo "$(date '+%Y-%m-%d %H:%M:%S')  $1" >> "$JOURNAL"; }
 
@@ -40,67 +39,51 @@ verifier_diagnostic() {
     fi
 }
 
+# Attend la fin du programme dont le numero est donne, en rendant la main
+# tout de suite si l arret est demande. Renvoie faux si on s arrete.
+attendre() {
+    while kill -0 "$1" 2>/dev/null; do
+        if [ -f "$ARRET" ]; then kill "$1" 2>/dev/null; return 1; fi
+        sleep 5
+    done
+    return 0
+}
+
 note "=== surveillance demarree ==="
 n=0
-while [ ! -f /tmp/arret-nuit ]; do
+while [ ! -f "$ARRET" ]; do
     for sys in $SYSTEMES; do
-        [ -f /tmp/arret-nuit ] && break
+        [ -f "$ARRET" ] && break
         [ -d "/mnt/roms/$sys" ] || continue
         verifier_diagnostic
-        if ! pgrep -f "nuit-credits" >/dev/null 2>&1; then
-            note "lancement du systeme $sys"
-            DISPLAY=:0 nohup python3 -u /mnt/recalbox/outils/nuit-credits.py \
-                --direct --roms /mnt/roms --systeme "$sys" \
-                --base /mnt/recalbox/donnees/credits-arcade.json \
-                --arret /tmp/arret-nuit --coeur-nomme "FinalBurn Neo" \
-                > /mnt/recalbox/journaux/$sys-$(date +%Y%m%d-%H%M).log 2>&1 &
-            sleep 30
-        fi
-        # on attend que ce systeme soit fini, en surveillant pendant ce temps
-        while pgrep -f "nuit-credits" >/dev/null 2>&1; do
-            [ -f /tmp/arret-nuit ] && break
-            verifier_diagnostic
-            n=$((n + 1))
-            # toutes les 30 min, les nouvelles fiches partent sur la borne
-            if [ $((n % 15)) -eq 0 ]; then
-                sh /mnt/recalbox/outils/deployer-vers-borne.sh
-            fi
-            if [ $((n % 5)) -eq 0 ]; then
-                DISPLAY=:0 python3 -c "
-import sys; sys.path.insert(0,'/mnt/recalbox/outils')
-from capture_fenetre import photographier
-photographier('$VIGNETTES/$(date +%H%M%S).png', titre='releve credits')
-" >/dev/null 2>&1
-                ls -t "$VIGNETTES"/*.png 2>/dev/null | tail -n +61 | xargs -r rm -f
-            fi
-            i=0
-            while [ $i -lt 120 ] && [ ! -f /tmp/arret-nuit ]; do sleep 10; i=$((i + 10)); done
-        done
-        note "systeme $sys termine"
+        note "coeur direct : $sys"
+        python3 -u /mnt/recalbox/outils/releve-direct.py \
+            --systeme "$sys" --roms /mnt/roms --base "$BASE" --arret "$ARRET" \
+            > "$JOURNAUX/direct-$sys-$(date +%Y%m%d-%H%M).log" 2>&1 &
+        attendre $! || break
+        note "coeur direct : $sys termine"
+        n=$((n + 1))
+        [ $((n % 2)) -eq 0 ] && sh /mnt/recalbox/outils/deployer-vers-borne.sh
     done
-    [ -f /tmp/arret-nuit ] && break
-    # Tous les systemes faits : on reprend les ecartes recuperables, une fois
-    # par systeme. Sans cette passe, un jeu classe « difficile » ne serait
-    # jamais retente — or la plupart le sont pour une raison passagere
-    # (jeu pas encore pret, piece encaissee trop tot).
+    [ -f "$ARRET" ] && break
+
+    # Les roms que le coeur nu refuse : RetroArch, lui, sait les charger.
+    # Cette passe prend l ecran, mais seulement pour celles-la.
     for sys in $SYSTEMES; do
-        [ -f /tmp/arret-nuit ] && break
-        [ -d "/mnt/roms/$sys" ] || continue
+        [ -f "$ARRET" ] && break
         verifier_diagnostic
-        note "reprise des ecartes : $sys"
-        DISPLAY=:0 nohup python3 -u /mnt/recalbox/outils/nuit-credits.py \
-            --direct --reessayer --roms /mnt/roms --systeme "$sys" \
-            --base /mnt/recalbox/donnees/credits-arcade.json \
-            --arret /tmp/arret-nuit --coeur-nomme "FinalBurn Neo" \
-            > /mnt/recalbox/journaux/$sys-reprise-$(date +%Y%m%d-%H%M).log 2>&1 &
-        sleep 30
-        while pgrep -f "nuit-credits" >/dev/null 2>&1; do
-            [ -f /tmp/arret-nuit ] && break
-            verifier_diagnostic; sleep 60
-        done
+        note "reprise par RetroArch : $sys"
+        DISPLAY=:0 python3 -u /mnt/recalbox/outils/nuit-credits.py \
+            --direct --reessayer --systeme "$sys" --roms /mnt/roms --base "$BASE" \
+            --arret "$ARRET" --coeur-nomme "FinalBurn Neo" \
+            > "$JOURNAUX/reprise-$sys-$(date +%Y%m%d-%H%M).log" 2>&1 &
+        attendre $! || break
+        note "reprise par RetroArch : $sys termine"
     done
-    note "tous les systemes faits, nouvelle passe dans 15 min"
+
+    sh /mnt/recalbox/outils/deployer-vers-borne.sh
+    note "tour complet termine, nouveau tour dans 15 min"
     i=0
-    while [ $i -lt 900 ] && [ ! -f /tmp/arret-nuit ]; do sleep 10; i=$((i + 10)); done
+    while [ $i -lt 900 ] && [ ! -f "$ARRET" ]; do sleep 10; i=$((i + 10)); done
 done
 note "=== surveillance arretee ==="

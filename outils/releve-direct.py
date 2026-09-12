@@ -75,6 +75,26 @@ DIP_IMPOSES = [
 ]
 
 
+def options_de_retroarch(chemin):
+    """Les options que RetroArch garde pour ce coeur, telles quelles.
+
+    Un coeur charge nu n a aucune option : il prend ses valeurs par defaut,
+    qui ne sont pas forcement celles sous lesquelles la borne tourne. On lui
+    rend donc exactement ce que RetroArch lui rendrait — c est la seule
+    facon d obtenir le meme comportement, et donc les memes adresses."""
+    valeurs = {}
+    try:
+        with open(chemin) as fh:
+            for ligne in fh:
+                if "=" not in ligne or ligne.lstrip().startswith("#"):
+                    continue
+                cle, _, valeur = ligne.partition("=")
+                valeurs[cle.strip()] = valeur.strip().strip('"')
+    except (IOError, OSError):
+        pass
+    return valeurs
+
+
 class Descripteur(ctypes.Structure):
     _fields_ = [("port", ctypes.c_uint), ("device", ctypes.c_uint),
                 ("index", ctypes.c_uint), ("id", ctypes.c_uint),
@@ -93,11 +113,11 @@ class InfoJeu(ctypes.Structure):
 class Coeur:
     """Un coeur libretro charge en memoire, avec un jeu dedans."""
 
-    def __init__(self, chemin_coeur, dossier_systeme):
+    def __init__(self, chemin_coeur, dossier_systeme, options_frontend=None):
         self.dits = []               # ce que le coeur raconte (son journal)
         self.entrees = []            # ce que le jeu declare comme boutons
         self.options = {}            # cle -> libelle;choix|choix|...
-        self.imposees = {}           # ce qu on impose au coeur
+        self.imposees = dict(options_frontend or {})   # ce que RetroArch dirait
         self.appuis = {}             # (port, bouton) -> images restantes
         self._dossier = ctypes.c_char_p(dossier_systeme.encode())
         self._valeurs = {}           # garde les c_char_p en vie
@@ -267,7 +287,7 @@ def chercher_compteur(coeur, joueur, journal):
     return candidats
 
 
-def mesurer(chemin_coeur, chemin_rom, dossier_systeme, bavard):
+def mesurer(chemin_coeur, chemin_rom, dossier_systeme, bavard, options=None):
     """Mesure un jeu. Renvoie la fiche, ou un dictionnaire d erreur."""
     lignes = []
 
@@ -276,7 +296,7 @@ def mesurer(chemin_coeur, chemin_rom, dossier_systeme, bavard):
         if bavard:
             print(message, flush=True)
 
-    coeur = Coeur(chemin_coeur, dossier_systeme)
+    coeur = Coeur(chemin_coeur, dossier_systeme, options)
     if not coeur.charger(chemin_rom):
         # On rapporte ce que le coeur a dit : « romset is unknown », un
         # fichier manquant... C est la difference entre « ca ne marche pas »
@@ -342,10 +362,11 @@ def mesurer(chemin_coeur, chemin_rom, dossier_systeme, bavard):
 def enfant():
     """Mesure un jeu et imprime la fiche en JSON. Le processus est jete
     ensuite : aucun pilote ne peut polluer le suivant."""
-    _, coeur, rom, dossier = sys.argv[1:5]
+    _, coeur, rom, dossier, options_ra = sys.argv[1:6]
     os.dup2(os.open(os.devnull, os.O_WRONLY), 2)      # le coeur bavarde sur stderr
     try:
-        fiche, lignes = mesurer(coeur, rom, dossier, False)
+        fiche, lignes = mesurer(coeur, rom, dossier, False,
+                                options_de_retroarch(options_ra))
     except Exception as souci:                         # un pilote peut planter
         fiche, lignes = {"erreur": "pilote en echec (%s)" % souci}, []
     sys.stdout.write(json.dumps({"fiche": fiche, "lignes": lignes}) + "\n")
@@ -353,11 +374,11 @@ def enfant():
     os._exit(0)
 
 
-def mesurer_isole(chemin_coeur, chemin_rom, dossier_systeme, delai):
+def mesurer_isole(chemin_coeur, chemin_rom, dossier_systeme, delai, options_ra):
     try:
         sortie = subprocess.run(
             [sys.executable, os.path.abspath(__file__), "--enfant",
-             chemin_coeur, chemin_rom, dossier_systeme],
+             chemin_coeur, chemin_rom, dossier_systeme, options_ra],
             capture_output=True, timeout=delai)
     except subprocess.TimeoutExpired:
         return {"erreur": "delai depasse"}, []
@@ -398,6 +419,8 @@ def main():
     p.add_argument("--systeme", default="fbneo")
     p.add_argument("--base", required=True)
     p.add_argument("--systeme-dir", default="/root/.config/retroarch/system")
+    p.add_argument("--options", default="/root/.config/retroarch/config/FinalBurn Neo/FinalBurn Neo.opt",
+                   help="les options que RetroArch garde pour ce coeur")
     p.add_argument("--delai", type=float, default=DELAI_JEU)
     p.add_argument("--limite", type=int, default=0)
     p.add_argument("--jeux", nargs="*", default=None,
@@ -439,7 +462,7 @@ def main():
             continue
         print("[%d/%d] %s/%s" % (n, len(reste), a.systeme, jeu), flush=True)
         parti = time.time()
-        fiche, lignes = mesurer_isole(a.coeur, chemin, a.systeme_dir, a.delai)
+        fiche, lignes = mesurer_isole(a.coeur, chemin, a.systeme_dir, a.delai, a.options)
         for ligne in lignes:
             print(ligne, flush=True)
         cle = "%s/%s" % (prefixe, jeu)
