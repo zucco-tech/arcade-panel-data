@@ -260,3 +260,21 @@ ordinateurs, du mahjong : pas de monnayeur, pas de compteur, et chacune
 coutait 150 s pour conclure a rien. Le releve MAME se limite donc a la base
 des boutons, et commence par les 310 jeux d arcade que FBNeo ne sait pas
 faire — les seuls ou MAME apporte une fiche que rien d autre ne donne.
+
+## MAME : ce que les rates ont appris (nuit du 12 au 13/09)
+Un quart de rates au premier passage, dont de vrais jeux. Quatre causes,
+toutes de notre cote, verifiees une a une en regardant l ecran :
+
+1. **Le mapper memoire.** Sur le System 16 (Altered Beast, Alien
+   Syndrome), tout l espace d adressage passe par un delegue ; lire les
+   zones « ram » a travers lui ne rend pas la RAM reelle. L ecran affichait
+   CREDITS 9 sans qu un octet monte. Les **shares** sont la memoire brute :
+   on les photographie aussi.
+2. **Le plafond de la photo.** Pris dans l ordre du hasard, les shares de
+   tuiles (des centaines de Ko) remplissaient le plafond avant la RAM de
+   travail (quelques Ko). Les petits d abord, plafond a 2 Mo.
+3. **Pas de START.** The Three Stooges n en declare pas : on demarre avec
+   un bouton de jeu. Sans START trouve, on appuie sur le bouton 1 du
+   joueur 1 — ce qu un joueur ferait.
+4. **Le delai fixe avant la premiere piece**, comme sous FBNeo : remplace
+   par l attente que la RAM vive, puis l insistance.

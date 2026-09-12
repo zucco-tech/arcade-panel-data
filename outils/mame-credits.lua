@@ -25,7 +25,7 @@ local ATTENTE_PIECE = 2           -- apres chaque piece
 local ATTENTE_START = 4           -- apres le START
 local PIECES = 4
 local ACCORDS_MIN = 2
-local OCTETS_MAX = 1024 * 1024    -- on ne photographie pas plus que cela
+local OCTETS_MAX = 2 * 1024 * 1024  -- on ne photographie pas plus que cela
 
 local mach = manager.machine
 
@@ -57,11 +57,20 @@ local function zones()
     -- CREDITS 9 s affichait a l ecran sans qu un seul octet monte de 1. Les
     -- shares sont la memoire brute, hors mapper. Un octet vu deux fois ne
     -- gene pas : le START tranche.
+    -- Les petits shares d abord : la RAM de travail fait quelques Ko, les
+    -- memoires de tuiles et les ROM partagees font des centaines de Ko. Sur
+    -- Alien Syndrome, pris dans l ordre du hasard, le plafond etait atteint
+    -- avant que la RAM de travail n y soit — et aucune piece ne comptait.
+    local parts = {}
     for tag, part in pairs(mach.memory.shares) do
-        local taille = part.size
-        if taille > 0 and total < OCTETS_MAX then
+        if part.size > 0 then parts[#parts + 1] = {tag = tag, part = part} end
+    end
+    table.sort(parts, function(a, b) return a.part.size < b.part.size end)
+    for _, p in ipairs(parts) do
+        local taille = p.part.size
+        if total < OCTETS_MAX then
             if total + taille > OCTETS_MAX then taille = OCTETS_MAX - total end
-            liste[#liste + 1] = {debut = 0, taille = taille, part = part, tag = tag}
+            liste[#liste + 1] = {debut = 0, taille = taille, part = p.part, tag = p.tag}
             total = total + taille
         end
     end
@@ -153,6 +162,12 @@ end
 local piece, nom_piece = entree({"Coin 1", "Coin"})
 local piece2 = entree({"Coin 2"})
 local start, nom_start = entree({"1 Player Start", "P1 Start", "Start 1", "Start"})
+-- Pas de START declare ? Des cartes demarrent avec un bouton de jeu (The
+-- Three Stooges n a que Coin 1, Coin 2 et ses boutons). On prend alors le
+-- premier bouton du joueur 1 : c est ce qu un joueur ferait.
+if not start then
+    start, nom_start = entree({"P1 Button 1", "Button 1", "P1 Fire", "Fire 1", "Fire", "P1 Button 2", "Button 2"})
+end
 
 -- On attend que la machine VIVE — que sa RAM bouge — au lieu d un delai
 -- fixe : Altered Beast met plus de douze secondes a demarrer, et une piece
