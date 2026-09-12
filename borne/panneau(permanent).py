@@ -41,8 +41,15 @@ import re
 import time
 
 ETAT = "/tmp/es_state.inf"
-BASE_BOUTONS = "/recalbox/share/system/boutons-arcade.json"
-JOURNAL = "/recalbox/share/system/panneau.log"
+BASE_BOUTONS = "/recalbox/share/system/panneau-arcade/boutons-arcade.json"
+JOURNAL = "/recalbox/share/system/panneau-arcade/panneau.log"
+# La table de couleurs par systeme livree par Recalbox pour ce panneau. Elle
+# servait aux scripts allinone[…].sh, appeles a chaque mouvement dans le
+# menu ; ils sont desactives (un bash par evenement, et deux programmes qui
+# ecrivent les memes LED). On lit leur table ici, une fois, pour rendre les
+# memes couleurs qu a l origine sur les systemes que la table plus bas ne
+# decrit pas.
+PALETTE_RECALBOX = "/recalbox/scripts/recalbox_allinone_rgb.sh"
 
 # Meme correspondance que credits(permanent).py, reprise de
 # recalbox_allinone_rgb.sh : la LED n eclaire le bouton ORDRE[n].
@@ -104,11 +111,46 @@ BOUTONS_PAR_SYSTEME = {
 }
 
 
+def charger_palette_recalbox():
+    """Les tableaux « declare -a systeme=("R G B" ...) » du script Recalbox :
+    11 entrees, boutons 1 a 8 puis select, start, hotkey. On garde les six
+    boutons, en (r, v, b)."""
+    table = {}
+    try:
+        with open(PALETTE_RECALBOX) as fh:
+            texte = fh.read()
+    except (IOError, OSError):
+        return table
+    for nom, corps in re.findall(r'declare -a (\w+)=\((.*?)\)', texte):
+        entrees = re.findall(r'"([^"]*)"', corps)
+        boutons = []
+        for e in entrees[:6]:
+            try:
+                boutons.append(tuple(int(x, 16) for x in e.split()))
+            except ValueError:
+                boutons.append((0, 0, 0))
+        table[nom] = boutons
+    return table
+
+
+RECALBOX = charger_palette_recalbox()
+
+
 def fiche_de_systeme(systeme):
-    """Une fiche minimale batie depuis la table, ou None."""
+    """Une fiche minimale batie depuis la table, ou None.
+
+    Systeme absent de la table : on prend la couleur que Recalbox lui donne ;
+    un bouton noir n est pas utilise, le nombre est le dernier bouton allume."""
     entree = BOUTONS_PAR_SYSTEME.get(systeme or "")
     if not entree:
-        return None
+        boutons = RECALBOX.get(systeme or "")
+        if not boutons:
+            return None
+        allumes = [i for i, rvb in enumerate(boutons, 1) if any(rvb)]
+        if not allumes:
+            return None
+        couleurs = {"BUTTON%d" % i: {"rvb": boutons[i - 1]} for i in allumes}
+        return {"nombre": max(allumes), "boutons": couleurs}
     nombre, palette = entree
     couleurs = {}
     if palette:
@@ -225,9 +267,9 @@ class Panneau:
         for position, chemins in enumerate(self.boutons):
             numero = ORDRE_BOUTONS[position] if position < len(ORDRE_BOUTONS) else position + 1
             utilise = allume and numero <= nombre
-            teinte = ((couleurs.get("BUTTON%d" % numero) or {}).get("couleur")
-                      or teinte_par_defaut(nombre, numero))
-            rvb = TEINTES.get((teinte or "").strip().lower())
+            entree = couleurs.get("BUTTON%d" % numero) or {}
+            teinte = entree.get("couleur") or teinte_par_defaut(nombre, numero)
+            rvb = entree.get("rvb") or TEINTES.get((teinte or "").strip().lower())
             for chemin in chemins:
                 self._memoriser(chemin)
                 if utilise and rvb:
@@ -251,7 +293,8 @@ class Panneau:
 def main():
     boutons = charger_boutons()
     panneaux = {1: Panneau(1), 2: Panneau(2)}
-    journal("demarrage — %d jeu(x) avec boutons" % len(boutons))
+    journal("demarrage — %d jeu(x) avec boutons, %d systeme(s) Recalbox"
+            % (len(boutons), len(RECALBOX)))
     derniere_modif = None
     dernier_jeu = None
     base_vue = 0.0
@@ -326,7 +369,7 @@ def main():
         panneaux[2].appliquer(nombre, couleurs, allume=deuxieme)
         if jeu != dernier_jeu:
             journal("%s : %d bouton(s), %d couleur(s), joueur 2 %s [%s]"
-                    % (jeu, nombre, sum(1 for v in couleurs.values() if v.get("couleur")),
+                    % (jeu, nombre, sum(1 for v in couleurs.values() if v.get("couleur") or v.get("rvb")),
                        "allume" if deuxieme else "eteint", origine))
         dernier_jeu = jeu
 

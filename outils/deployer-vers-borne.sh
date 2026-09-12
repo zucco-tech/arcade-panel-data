@@ -25,13 +25,13 @@ note() { echo "$(date '+%Y-%m-%d %H:%M:%S')  $1" >> "$JOURNAL"; }
 
 python3 /mnt/recalbox/outils/exporter-pour-borne.py --base "$DONNEES/credits-arcade.json" --sortie "$EXPORT" >/dev/null 2>&1 || { note "export impossible"; exit 1; }
 $SSH $BORNE true 2>/dev/null || { note "borne injoignable"; exit 1; }
-setsid -w scp -q -o StrictHostKeyChecking=no "$EXPORT" $BORNE:/recalbox/share/system/credits-arcade.json 2>/dev/null || { note "copie credits echouee"; exit 1; }
-setsid -w scp -q -o StrictHostKeyChecking=no "$DONNEES/boutons-arcade.json" $BORNE:/recalbox/share/system/boutons-arcade.json 2>/dev/null
+setsid -w scp -q -o StrictHostKeyChecking=no "$EXPORT" $BORNE:/recalbox/share/system/panneau-arcade/credits-arcade.json 2>/dev/null || { note "copie credits echouee"; exit 1; }
+setsid -w scp -q -o StrictHostKeyChecking=no "$DONNEES/boutons-arcade.json" $BORNE:/recalbox/share/system/panneau-arcade/boutons-arcade.json 2>/dev/null
 N=$(python3 -c "import json;print(len(json.load(open('$EXPORT'))['jeux']))")
 ETAT=$($SSH $BORNE "grep -E '^State=' /tmp/es_state.inf 2>/dev/null | cut -d= -f2")
 if [ "$ETAT" = "playing" ]; then
     note "$N fiches copiees, partie en cours : le demon relira au prochain passage"
     exit 0
 fi
-$SSH $BORNE "for p in \$(ps -o pid,args | grep 'credits(permanent)' | grep -v grep | awk '{print \$1}'); do kill \$p; done; sleep 2; cd /recalbox/share/userscripts && nohup /usr/bin/python -u '/recalbox/share/userscripts/credits(permanent).py' >> /recalbox/share/system/credits-sortie.log 2>&1 &" 2>/dev/null
+$SSH $BORNE "for p in \$(ps -o pid,args | grep 'credits(permanent)' | grep -v grep | awk '{print \$1}'); do kill \$p; done; sleep 2; cd /recalbox/share/userscripts && nohup /usr/bin/python -u '/recalbox/share/userscripts/credits(permanent).py' >> /recalbox/share/system/panneau-arcade/credits-erreurs.log 2>&1 &" 2>/dev/null
 note "$N fiches copiees, demon redemarre"

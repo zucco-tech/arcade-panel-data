@@ -29,8 +29,8 @@ adresses, jeu par jeu, et les range dans un fichier.
 ## Les deux fichiers
 
 ```
-/recalbox/share/system/credits-arcade.json     ou sont les credits en memoire
-/recalbox/share/system/boutons-arcade.json     combien de boutons, combien de joueurs
+/recalbox/share/system/panneau-arcade/credits-arcade.json     ou sont les credits en memoire
+/recalbox/share/system/panneau-arcade/boutons-arcade.json     combien de boutons, combien de joueurs
 ```
 
 Sur la machine de mesure, ils vivent dans `/mnt/recalbox/donnees/`. On les
@@ -227,8 +227,8 @@ Les jeux non mesurés sont dans `difficiles`, avec leur cause :
 ## Déployer sur la borne
 
 ```
-scp /mnt/recalbox/donnees/credits-arcade.json  root@borne:/recalbox/share/system/
-scp /mnt/recalbox/donnees/boutons-arcade.json  root@borne:/recalbox/share/system/
+scp /mnt/recalbox/donnees/credits-arcade.json  root@borne:/recalbox/share/system/panneau-arcade/
+scp /mnt/recalbox/donnees/boutons-arcade.json  root@borne:/recalbox/share/system/panneau-arcade/
 ```
 
 Les fichiers sont du JSON simple, sans dépendance. Le programme des LED les

@@ -32,9 +32,10 @@ So we measured them. On a real cabinet, by inserting real coins.
 
 | | |
 |---|---|
-| games with a measured address | **1692** |
-| leads imported from cheat databases | 2646 |
-| games that resisted | 287 |
+| games with a **verified** address | **2221** — 1064 by sweep, 1156 cheat leads confirmed with a coin |
+| of those, player 2 counter measured | 132 (+ 6 shared pools) |
+| games set aside, with the reason | 330 |
+| arcade ROMs on the cabinet | 8077 — the sweep runs day and night |
 
 Each entry records what was verified, not what was assumed:
 
@@ -85,9 +86,9 @@ stays correct.
 
 | | |
 |---|---|
-| games with a button count | **1623** |
-| of those, with per-button colour and function | 266 |
-| games with no data | 69 |
+| games with button and player count | **7024** of 8077 |
+| of those, with per-button colour and function | 868 |
+| games with no data | 1053 |
 
 The **number** of buttons is known for nearly every game measured; each
 button's **colour** only for those whose original panel was documented.
@@ -131,6 +132,21 @@ Four measurements shaped every tool here:
   as much as reading 16 KB, so read big.
 - **16 KB is the largest single read.** A full 64 KB RAM snapshot is
   therefore 4 commands, about 68 ms.
+- **Never fast-forward during a sweep.** Waits are wall-clock, so
+  fast-forward saves nothing — but it stretches every key press into
+  seconds of game time. Battle Garegga hung on its RAM test, World Heroes
+  counted 2 coins out of 5.
+- **A coin is a pulse, not a press.** Held 0.25 s, Raizing boards (Batrider)
+  show "COIN ERROR" and refuse every coin after: they watch for a stuck
+  mech. At 0.10 s the coin is accepted everywhere.
+- **`GET_STATUS` crashes RetroArch 1.22 with FBNeo** (segfault). The sweep
+  only uses `READ_CORE_RAM`, `VERSION`, `PAUSE_TOGGLE`, `QUIT`.
+- **FBNeo's `fbneo-diagnostic-input` must be `Disabled`.** On "Hold Start",
+  the sweep's START opens the service menu and the counter means nothing.
+  RetroArch rewrites the option file on exit: it is made immutable.
+- **Naomi and Atomiswave run in FREE PLAY** under flycast (default option,
+  same on the cabinet): no counter to measure. Their buttons and colours
+  are in the button dataset.
 - **Cheat addresses need translating.** They are given in the emulated CPU's
   address space, where RAM starts high — `0xFF0000` on a 68000 CPS board,
   `0xE000` on a Z80 board — while `READ_CORE_RAM` reads from zero. Masking
@@ -165,12 +181,20 @@ which never moves. The measured `0x0011` tracks credits exactly.
 
 | | |
 |---|---|
-| `outils/nuit-credits.py` | unattended sweep of a whole library |
+| `outils/surveiller.sh` | **the entry point**: cycles through systems day and night, retries set-aside games at the end of a cycle, deploys to the cabinet every 30 min, watches the diagnostic option |
+| `outils/nuit-credits.py` | the sweep itself: launches each game, pays, START, finds both players' counters |
+| `outils/balayage-continu.py` | same in Python, with a witness game checked on each core change |
+| `outils/analyser-difficiles.py` | sorts set-aside games by reason |
+| `outils/complement-joueur2.py` | adds the player 2 counter to records lacking it |
+| `outils/exporter-pour-borne.py` | re-indexes the dataset by system (`fbneo/game`), the form the cabinet reads |
+| `outils/deployer-vers-borne.sh` | copies the datasets to the cabinet and restarts the daemon, never mid-game |
 | `outils/importer-cheats.py` | import leads from FBNeo and MAME cheat sets |
-| `outils/importer-boutons.py` | build the button dataset |
+| `outils/importer-boutons.py` | build the button dataset from arcade-database |
 | `outils/capture-credits.py` | measure one game by hand |
 | `outils/verifier-borne.py` | pre-flight check before a sweep |
-| `outils/clavier_virtuel.py` | virtual keyboard (`uinput`) used to insert coins |
+| `outils/clavier_virtuel.py` | virtual keyboard (`uinput`): coin and START for both players |
+| `outils/fenetre_x.py`, `capture_fenetre.py` | fullscreen and screenshots, to **look at** a failure instead of guessing |
+| `outils/demarrer.sh`, `suivre-boutons.sh` | launch and follow-up |
 
 Python 3, standard library only. No dependencies.
 

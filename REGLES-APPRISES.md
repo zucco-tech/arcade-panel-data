@@ -111,3 +111,18 @@ Le jour ou la borne sortira du free play, il faudra d abord passer l option
 a `disabled` sur le PC de releve, puis les remettre dans SYSTEMES.
 Les couleurs et le nombre de boutons, eux, ne dependent pas des credits :
 boutons-arcade.json couvre aussi ces jeux, le panneau les eclaire normalement.
+
+## Jamais d avance rapide pendant le releve
+Les attentes du releve sont en temps reel : l accelere ne fait rien gagner.
+En revanche chaque appui de touche, tenu un quart de seconde reel, devient
+plusieurs secondes de jeu. Battle Garegga restait fige sur son test de RAM,
+World Heroes ne comptait que 2 pieces sur 5, et tout finissait « aucun
+candidat ». Sans accelere, les deux donnent leur adresse du premier coup.
+
+## Une piece est une impulsion, pas un appui
+Armed Police Batrider (Raizing) affiche « COIN ERROR » des qu on tient le
+monnayeur 0,25 s, et refuse toutes les pieces suivantes : la carte guette le
+monnayeur bloque. A 0,05-0,15 s la piece passe et le compteur monte. La
+duree de la piece est 0,10 s (`ClavierVirtuel.DUREE_PIECE`) ; le START garde
+son quart de seconde. Verifie sur pzloop2 (0x0450), 64street (0xB6AC),
+batrider (0x2401), wh1 (0xFE8B) le 12/09.

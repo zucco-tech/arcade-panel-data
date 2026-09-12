@@ -182,7 +182,7 @@ def restant(systeme, coeur):
 def balayer(systeme, coeur, reessayer=False):
     """Un passage complet sur un systeme. Renvoie le code de sortie."""
     commande = [sys.executable, "-u", os.path.join(OUTILS, "nuit-credits.py"),
-                "--direct", "--rapide", "--roms", ROMS,
+                "--direct", "--roms", ROMS,   # jamais --rapide : voir surveiller.sh
                 "--systeme", systeme, "--base", BASE, "--arret", ARRET]
     commande += options_coeur(systeme, coeur)
     if reessayer:

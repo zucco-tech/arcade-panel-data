@@ -33,9 +33,10 @@ Alors on les a mesurées. Sur une vraie borne, avec de vraies pièces.
 
 | | |
 |---|---|
-| jeux avec une adresse mesurée | **1692** |
-| pistes importées des bases de cheats | 2646 |
-| jeux récalcitrants | 287 |
+| jeux avec une adresse **vérifiée** | **2221** — dont 1064 par balayage, 1156 pistes de cheats confirmées à la pièce |
+| dont compteur du joueur 2 mesuré | 132 (+ 6 cagnottes communes) |
+| jeux écartés, avec la raison | 330 |
+| roms arcade de la borne | 8077 — le balayage continue, jour et nuit |
 
 Chaque fiche note ce qui a été **vérifié**, pas ce qui a été supposé :
 
@@ -87,9 +88,9 @@ autre carte : les données restent justes.
 
 | | |
 |---|---|
-| jeux avec le nombre de boutons | **1623** |
-| dont couleur et fonction de chaque bouton | 266 |
-| jeux sans donnees | 69 |
+| jeux avec le nombre de boutons et de joueurs | **7024** sur 8077 |
+| dont couleur et fonction de chaque bouton | 868 |
+| jeux sans donnees | 1053 |
 
 Le **nombre** de boutons est connu pour presque tous les jeux relevés ; la
 **couleur** de chacun ne l'est que pour ceux dont le panneau d'origine a été
@@ -159,6 +160,22 @@ Quatre mesures ont façonné tous les outils de ce dépôt :
   coûte autant que lire 16 Ko : autant lire gros.
 - **16 Ko est la plus grosse lecture possible.** Une photo complète de 64 Ko
   tient donc en 4 commandes, environ 68 ms.
+- **Jamais d'avance rapide pendant le relevé.** Les attentes sont en temps
+  réel, l'accéléré ne fait rien gagner — mais il étire chaque appui de touche
+  à plusieurs secondes de jeu. Battle Garegga restait figé sur son test de
+  RAM, World Heroes ne comptait que 2 pièces sur 5.
+- **Une pièce est une impulsion, pas un appui.** Tenue 0,25 s, la pièce
+  déclenche « COIN ERROR » sur les cartes Raizing (Batrider), qui guettent
+  le monnayeur bloqué. À 0,10 s elle passe partout.
+- **`GET_STATUS` fait planter RetroArch 1.22 avec FBNeo** (segfault). Le
+  relevé n'utilise que `READ_CORE_RAM`, `VERSION`, `PAUSE_TOGGLE`, `QUIT`.
+- **L'option FBNeo `fbneo-diagnostic-input` doit être `Disabled`.** Sur
+  « Hold Start », le START du relevé ouvre le menu de service et le
+  compteur ne veut plus rien dire. RetroArch réécrit le fichier d'options en
+  quittant : il est rendu immuable (`chattr +i`).
+- **Naomi et Atomiswave sont en FREE PLAY** sous flycast (option par défaut,
+  identique sur la borne) : aucun compteur à mesurer. Leurs boutons et
+  couleurs, eux, sont dans la base des boutons.
 - **Les adresses de cheats demandent une traduction.** Elles sont données
   dans l'espace du processeur émulé, où la RAM commence haut — `0xFF0000`
   sur une carte 68000 CPS, `0xE000` sur une carte Z80 — alors que
@@ -194,20 +211,30 @@ pas près.
 
 | | |
 |---|---|
-| `outils/nuit-credits.py` | balayage d'une logithèque entière, sans surveillance |
+| `outils/surveiller.sh` | **le point d'entrée** : enchaîne les systèmes jour et nuit, reprend les écartés en fin de cycle, déploie sur la borne toutes les 30 min, surveille l'option de diagnostic |
+| `outils/nuit-credits.py` | le relevé lui-même : lance chaque jeu, paie, START, cherche le compteur des deux joueurs |
+| `outils/balayage-continu.py` | même chose en Python, avec contrôle d'un jeu témoin au changement de cœur |
+| `outils/analyser-difficiles.py` | trie les écartés par raison, pour savoir quoi reprendre |
+| `outils/complement-joueur2.py` | ajoute le compteur du joueur 2 aux fiches qui n'en ont pas |
+| `outils/exporter-pour-borne.py` | réindexe la base par système (`fbneo/jeu`), la forme que lit la borne |
+| `outils/deployer-vers-borne.sh` | copie les bases sur la borne et redémarre le démon, jamais pendant une partie |
 | `outils/importer-cheats.py` | importe les pistes des cheats FBNeo et MAME |
-| `outils/importer-boutons.py` | construit la base des boutons |
+| `outils/importer-boutons.py` | construit la base des boutons depuis arcade-database |
 | `outils/capture-credits.py` | mesure un jeu à la main |
 | `outils/verifier-borne.py` | contrôle avant un balayage |
-| `outils/clavier_virtuel.py` | clavier virtuel (`uinput`) qui insère les pièces |
+| `outils/clavier_virtuel.py` | clavier virtuel (`uinput`) : pièce et START des deux joueurs |
+| `outils/fenetre_x.py`, `capture_fenetre.py` | plein écran et captures d'écran, pour **regarder** un échec au lieu de le deviner |
+| `outils/demarrer.sh`, `suivre-boutons.sh` | lancement et suivi |
 
 Python 3, bibliothèque standard uniquement. Aucune dépendance.
 
-Le balayage pilote une vraie borne : EmulationStation lance chaque jeu
-(`START|systeme|/chemin/complet/de/la/rom` en UDP 1337 — le chemin doit être
-complet, pas seulement le nom du fichier), un clavier virtuel insère les
-pièces, la mémoire est comparée, `QUIT` rend la main, jeu suivant. 1903 jeux
-ont pris 9 h 15 sur un Raspberry Pi 5, sans un seul échec technique.
+Le balayage tourne sur un PC de relevé (Ubuntu) avec RetroArch et **le cœur
+FBNeo de Recalbox** — extrait de l'image Recalbox x86, pour que les adresses
+soient celles de la borne. Chaque jeu est lancé en plein écran, un clavier
+virtuel paie et appuie sur START pour les deux joueurs, la mémoire est
+comparée, `QUIT` rend la main, jeu suivant. Un premier relevé de 1903 jeux
+avait été fait sur la borne elle-même (Raspberry Pi 5, 9 h 15) en pilotant
+EmulationStation par UDP 1337 ; on ne travaille plus sur la borne.
 
 Un clavier plutôt qu'une manette virtuelle, délibérément : RetroArch attribue
 les manettes aux ports dans l'ordre où il les découvre, donc une manette
@@ -231,10 +258,18 @@ condamnés sur une seule tentative malchanceuse.
 
 ## `borne/` — la seule partie liée à un matériel
 
-`borne/credits(permanent).py` est un script permanent d'EmulationStation
-qui pilote les LED d'une **carte AllInOne (digipcb.tech)** sous Recalbox. Il
-lit les données et fait clignoter en conséquence ; il apprend aussi tout jeu
-que le balayage aurait manqué, la première fois qu'on y joue.
+Deux scripts permanents d'EmulationStation pilotent les LED d'une **carte
+AllInOne (digipcb.tech)** sous Recalbox, jamais en même temps :
+
+| | |
+|---|---|
+| `borne/panneau(permanent).py` | **dans le menu** : éclaire les boutons du jeu survolé, avec ses couleurs d'origine ; pour une console, le nombre de boutons de la manette ; pour un système sans fiche, la table de couleurs de Recalbox |
+| `borne/credits(permanent).py` | **pendant la partie** : lit le compteur en mémoire, fait clignoter PIÈCE puis START, allume les boutons utiles, éteint le poste 2 s'il ne sert pas ou si la cagnotte est commune |
+
+Sur la borne, tout ce qui appartient au panneau tient dans un seul dossier,
+`/recalbox/share/system/panneau-arcade/` (données, journaux, sauvegardes) —
+voir `borne/README.md`. Le démon des crédits apprend aussi tout jeu que le
+balayage aurait manqué, la première fois qu'on y joue.
 
 Il n'écrit que dans `brightness`, et dans `multi_intensity` seulement le
 temps d'un clignotement — en relisant d'abord la couleur posée par la carte
@@ -251,9 +286,10 @@ deux réglables en tête de fichier et **absentes des données** :
 
 ## Limites
 
-- Arcade uniquement. Sur console, le nombre de boutons dépend de la manette,
-  pas du jeu.
-- Un cœur qui n'expose pas sa RAM ne peut pas être mesuré — 97 jeux ici.
+- Les crédits sont mesurés sur l'arcade uniquement. Sur console, le panneau
+  allume le nombre de boutons de la manette d'origine.
+- Naomi et Atomiswave sont en free play sous flycast : pas de compteur.
+- Un cœur qui n'expose pas sa RAM ne peut pas être mesuré.
 - Certains compteurs sont en BCD ou sur deux octets et échappent à la méthode.
 - Les métadonnées de boutons viennent de MAME : une poignée de jeux n'en ont
   pas.

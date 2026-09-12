@@ -64,8 +64,10 @@ class ClavierVirtuel:
 
     def __init__(self, nom="clavier-credits", touches=None):
         if touches is None:
-            touches = ((KEY_ENTER, KEY_RIGHTSHIFT, KEY_2, KEY_6)
-                       + tuple(BOUTONS_J1.values()) + tuple(BOUTONS_J2.values()))
+            # Seulement la piece et le start de chaque joueur. Les boutons
+            # d action servaient au repli, desactive : les declarer ouvrait
+            # des menus de diagnostic sans rien apporter.
+            touches = (KEY_ENTER, KEY_RIGHTSHIFT, KEY_2, KEY_6)
         self.nom = nom
         self.touches = touches
         self.fd = None
@@ -101,7 +103,7 @@ class ClavierVirtuel:
     def _envoyer(self, typ, code, valeur):
         os.write(self.fd, EVENEMENT.pack(0, 0, typ, code, valeur))
 
-    def appuyer(self, touche, duree=0.12):
+    def appuyer(self, touche, duree=0.25):
         """Un appui franc : enfoncement, pause, relachement."""
         self._envoyer(EV_KEY, touche, 1)
         self._envoyer(EV_SYN, SYN_REPORT, 0)
@@ -109,14 +111,20 @@ class ClavierVirtuel:
         self._envoyer(EV_KEY, touche, 0)
         self._envoyer(EV_SYN, SYN_REPORT, 0)
 
+    # Une piece est une IMPULSION, pas un appui. Tenue 0,25 s (15 images),
+    # Armed Police Batrider affiche « COIN ERROR » des la premiere et refuse
+    # les suivantes : les cartes Raizing guettent le monnayeur bloque. A
+    # 0,05-0,15 s la meme piece passe et le compteur monte (banc du 12/09).
+    DUREE_PIECE = 0.10
+
     def piece(self):
-        self.appuyer(KEY_RIGHTSHIFT)
+        self.appuyer(KEY_RIGHTSHIFT, self.DUREE_PIECE)
 
     def start(self):
         self.appuyer(KEY_ENTER)
 
     def piece_j2(self):
-        self.appuyer(KEY_6)
+        self.appuyer(KEY_6, self.DUREE_PIECE)
 
     def start_j2(self):
         self.appuyer(KEY_2)
@@ -130,7 +138,13 @@ class ClavierVirtuel:
 
     def entrees_possibles(self, joueur=1):
         """Tout ce qui peut encaisser une piece, dans l ordre du plus probable."""
-        table = BOUTONS_J1 if joueur == 1 else BOUTONS_J2
+        # Seulement les boutons d ACTION. « l » et « r » sont ecartes : dans
+        # FBNeo, beaucoup de pilotes y placent Service et Test/Diagnostic, et
+        # les essayer fait entrer le jeu en mode service — ou le compteur de
+        # credits ne se comporte pas normalement et l adresse relevee serait
+        # fausse.
+        table = {n: c for n, c in (BOUTONS_J1 if joueur == 1 else BOUTONS_J2).items()
+                 if n in ("a", "b", "x", "y")}
         depart = [("select", KEY_RIGHTSHIFT if joueur == 1 else KEY_6)]
         return depart + [(n, c) for n, c in sorted(table.items())]
 

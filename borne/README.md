@@ -9,7 +9,7 @@ Ce dossier est lu par Recalbox au démarrage. Un script dont le nom contient
 | `credits(permanent).py` | pendant une partie : lit le compteur de crédits en mémoire, fait clignoter PIÈCE ou START, éclaire les boutons utiles, éteint le poste 2 s'il ne sert pas |
 | `panneau(permanent).py` | dans le menu : éclaire les boutons du jeu **survolé**, avec ses couleurs d'origine, avant même de le lancer |
 | `marquee(permanent).py` | affiche le nom du jeu sur le marquee |
-| `allinone[…].sh` | remet les couleurs de la carte aux changements de système |
+| `allinone[…].sh.off` | scripts d'origine Recalbox, **désactivés** : ils lançaient un bash à chaque mouvement du menu et écrivaient les mêmes LED que le panneau. Leur table de couleurs par système est reprise par `panneau(permanent).py`, qui lit `/recalbox/scripts/recalbox_allinone_rgb.sh` au démarrage |
 | `gardefou[…].ash` | garde-fou du frontend |
 
 ## Qui pilote les LED, et quand
@@ -29,9 +29,16 @@ ne reste modifié derrière eux.
 
 ## Les données
 
+Tout ce qui appartient au panneau est dans **un seul dossier** :
+
 ```
-/recalbox/share/system/credits-arcade.json    ou lire les credits, par jeu
-/recalbox/share/system/boutons-arcade.json    combien de boutons, combien de joueurs, couleurs
+/recalbox/share/system/panneau-arcade/
+    credits-arcade.json     ou lire les credits, par jeu
+    boutons-arcade.json     combien de boutons, combien de joueurs, couleurs
+    credits.log             ce que le demon des credits a decide, jeu par jeu
+    panneau.log             ce que le panneau a eclaire au survol
+    credits-erreurs.log     sortie brute du demon (vide si tout va bien)
+    sauvegardes/            copies datees des scripts avant modification
 ```
 
 Elles sont fabriquées sur le PC de relevé et poussées ici toutes les
@@ -40,15 +47,12 @@ démarrage : le déploiement le redémarre, uniquement quand personne ne joue.
 
 ## Les journaux
 
-```
-/recalbox/share/system/credits.log     ce que le demon des credits a decide, jeu par jeu
-/recalbox/share/system/panneau.log     ce que le panneau a eclaire au survol
-```
+Voir le dossier ci-dessus : `credits.log`, `panneau.log`, `credits-erreurs.log`.
 
 ## Les sauvegardes
 
 Chaque modification d'un script d'origine est précédée d'une copie datée
-dans `/recalbox/share/system/sauvegardes/`. Pour revenir en arrière : copier
+dans `/recalbox/share/system/panneau-arcade/sauvegardes/`. Pour revenir en arrière : copier
 la sauvegarde à la place du script, et redémarrer la borne.
 
 Le dépôt de référence : https://github.com/zucco-tech/arcade-panel-data — le

@@ -22,6 +22,11 @@ VIGNETTES=/mnt/recalbox/journaux/veille
 # defaut (reicast_force_freeplay = enabled, sur la borne aussi). Sans piece a
 # encaisser il n y a aucun compteur a mesurer : 73 jeux, 9 h, 0 fiche.
 SYSTEMES="fbneo neogeo neogeocd"
+# Pas d avance rapide (--rapide) : les attentes sont en temps reel, donc
+# l accelere ne fait pas gagner une seconde, mais il etire chaque appui de
+# touche a plusieurs secondes de jeu. Battle Garegga restait bloque sur son
+# test de RAM, World Heroes ne comptait que 2 pieces sur 5 : « aucun
+# candidat » a tort. Sans accelere, les deux donnent leur adresse.
 mkdir -p "$VIGNETTES"
 
 note() { echo "$(date '+%Y-%m-%d %H:%M:%S')  $1" >> "$JOURNAL"; }
@@ -45,7 +50,7 @@ while [ ! -f /tmp/arret-nuit ]; do
         if ! pgrep -f "nuit-credits" >/dev/null 2>&1; then
             note "lancement du systeme $sys"
             DISPLAY=:0 nohup python3 -u /mnt/recalbox/outils/nuit-credits.py \
-                --direct --rapide --roms /mnt/roms --systeme "$sys" \
+                --direct --roms /mnt/roms --systeme "$sys" \
                 --base /mnt/recalbox/donnees/credits-arcade.json \
                 --arret /tmp/arret-nuit --coeur-nomme "FinalBurn Neo" \
                 > /mnt/recalbox/journaux/$sys-$(date +%Y%m%d-%H%M).log 2>&1 &
@@ -84,7 +89,7 @@ photographier('$VIGNETTES/$(date +%H%M%S).png', titre='releve credits')
         verifier_diagnostic
         note "reprise des ecartes : $sys"
         DISPLAY=:0 nohup python3 -u /mnt/recalbox/outils/nuit-credits.py \
-            --direct --rapide --reessayer --roms /mnt/roms --systeme "$sys" \
+            --direct --reessayer --roms /mnt/roms --systeme "$sys" \
             --base /mnt/recalbox/donnees/credits-arcade.json \
             --arret /tmp/arret-nuit --coeur-nomme "FinalBurn Neo" \
             > /mnt/recalbox/journaux/$sys-reprise-$(date +%Y%m%d-%H%M).log 2>&1 &

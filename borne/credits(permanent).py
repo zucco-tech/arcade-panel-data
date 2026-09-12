@@ -51,8 +51,8 @@ import time
 
 # --- Configuration -------------------------------------------------------
 
-BASE = "/recalbox/share/system/credits-arcade.json"
-BASE_BOUTONS = "/recalbox/share/system/boutons-arcade.json"
+BASE = "/recalbox/share/system/panneau-arcade/credits-arcade.json"
+BASE_BOUTONS = "/recalbox/share/system/panneau-arcade/boutons-arcade.json"
 
 # Version du format de la base. Une base plus ancienne est convertie a la
 # volee au demarrage : aucun releve n'est perdu.
@@ -62,7 +62,7 @@ OUTIL = "credits(permanent).py"
 # Le journal est sur le partage, et non dans /tmp, pour rester lisible depuis
 # le reseau sans ouvrir un shell sur la borne. Il est plafonne : sur une carte
 # SD, un fichier qui grossit sans fin finit toujours par poser probleme.
-JOURNAL = "/recalbox/share/system/credits.log"
+JOURNAL = "/recalbox/share/system/panneau-arcade/credits.log"
 JOURNAL_MAX = 200 * 1024
 STATE_FILE = "/tmp/es_state.inf"
 
