@@ -25,7 +25,8 @@ local ATTENTE_PIECE = 2           -- apres chaque piece
 local ATTENTE_START = 4           -- apres le START
 local PIECES = 4
 local ACCORDS_MIN = 2
-local OCTETS_MAX = 2 * 1024 * 1024  -- on ne photographie pas plus que cela
+local OCTETS_MAX = 512 * 1024      -- la RAM de travail fait quelques Ko ; au-dela
+                                  -- ce sont des tuiles, et chaque photo coute
 
 local mach = manager.machine
 
