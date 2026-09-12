@@ -196,13 +196,24 @@ def _(dossier, espace):
     assert lire(dossier, "aio_p1_b4") != "0", "les boutons de jeu doivent rester"
 
 
-@essai("un poste eteint eteint aussi sa piece et son start")
+@essai("un poste eteint eteint aussi sa piece et son start, quand on est devant")
 def _(dossier, espace):
     p = espace["Panneau"](2)
     p.presence(True)
     p.appliquer(2, {}, allume=False)
     assert lire(dossier, "aio_p2_start") == "0"
     assert lire(dossier, "aio_p2_select") == "0"
+
+
+@essai("en mode clip, le start du poste 2 s allume meme sur un jeu solo")
+def _(dossier, espace):
+    p = espace["Panneau"](2)
+    p.presence(True)
+    p.appliquer(1, {}, allume=False)       # jeu a un joueur : poste 2 eteint
+    assert lire(dossier, "aio_p2_select") == "0"
+    p.presence(False)                      # personne devant : mode clip
+    assert lire(dossier, "aio_p2_select") != "0", "le start du poste 2 invite a jouer a deux"
+    assert lire(dossier, "aio_p2_start") == "0", "la piece reste eteinte"
 
 
 @essai("la touche hotkey s eteint des que personne n est devant")

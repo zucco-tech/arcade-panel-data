@@ -594,8 +594,11 @@ class Panneau:
         garde le START des deux postes allume — c est lui qui dit « joue » —
         et l on eteint la PIECE et la touche hotkey, qui ne servent a
         personne tant que personne n est devant. Un geste rallume tout."""
+        # En mode clip, les DEUX starts s allument, meme si le jeu survole
+        # est solo : c est l invitation a jouer a deux. Des que quelqu un est
+        # devant, le poste 2 reprend la regle du jeu — eteint s il ne sert pas.
         for chemin in self.start:
-            ecrire(chemin, self.intensite if allume else "0")
+            ecrire(chemin, self.intensite if (allume or not self.present) else "0")
         for chemin in self.piece:
             ecrire(chemin, self.intensite if (allume and self.present) else "0")
         self._hotkey()
