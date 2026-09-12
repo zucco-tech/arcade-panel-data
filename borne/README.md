@@ -64,6 +64,18 @@ démarrage : le déploiement le redémarre, uniquement quand personne ne joue.
 
 Voir le dossier ci-dessus : `credits.log`, `panneau.log`, `credits-erreurs.log`.
 
+## Au demarrage
+
+`custom.sh` (dans `share/system/`, crochet officiel appele par `S99custom`)
+fait deux choses a chaque allumage :
+
+1. il remet hors service `allinone[systembrowsing].sh` et
+   `allinone[startgameclip].sh`, que `/etc/init.d/S13allinone` **recree a
+   chaque demarrage** — ils repeignent les LED a chaque mouvement de menu et
+   se battraient avec `panneau(permanent).py` ;
+2. il allume le panneau en veilleuse tout de suite, sans attendre
+   EmulationStation, qui met plusieurs minutes a charger ses listes.
+
 ## Les sauvegardes
 
 Chaque modification d'un script d'origine est précédée d'une copie datée

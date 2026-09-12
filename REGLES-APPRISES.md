@@ -236,3 +236,19 @@ chaque piece et redescendus au START.
 **La preuve que les deux methodes disent vrai** : pour 1942, MAME rend
 0xE011 et FBNeo 0x0011. C est le meme octet — la fenetre de RAM exposee par
 FBNeo commence a 0xE000. Deux emulateurs, deux methodes, une seule adresse.
+
+## Les scripts allinone reviennent a chaque demarrage
+`/etc/init.d/S13allinone` les REECRIT au boot quand le module de la carte
+est charge :
+
+    echo 'bash /recalbox/scripts/recalbox_allinone_rgb.sh $6' > "allinone[systembrowsing].sh"
+
+Les renommer une fois ne suffit donc pas : ils reviennent. La parade est le
+crochet officiel `share/system/custom.sh`, appele par `S99custom` — donc
+APRES S13 — qui les remet hors service a chaque allumage. Il en profite pour
+poser les couleurs en veilleuse : EmulationStation met plusieurs minutes a
+charger ses listes, et le panneau restait noir pendant ce temps.
+
+La share est en exFAT : le bit executable n existe pas. Sans importance,
+S99custom appelle le fichier par `bash custom.sh start`. Le script ne doit
+donc rien faire quand on lui passe « stop ».
