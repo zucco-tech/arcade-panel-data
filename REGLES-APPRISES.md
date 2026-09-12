@@ -183,7 +183,7 @@ echec se regarde, il ne se devine pas.
 | neogeo / neogeocd | 124 / 232 | meme coeur |
 | stv | 114 | coeur mednafen_stv ; il lui faut `stvbios.zip` dans le dossier systeme de RetroArch, sinon il refuse tout. Verifie sur cotton2 (compteur 0x0741) |
 | fba | 223 | vieux sets FB Alpha : FBNeo n en accepte qu un sur six, les autres manquent de fichiers et ne se lancent pas davantage sur la borne |
-| mame | 20601 (dossier `mame0278`) | **impossible a mesurer**, voir ci-dessous. Et de toute facon masque sur la borne : `mame.ignore=1` dans recalbox.conf |
+| mame | 20601 (dossier `mame0278`) | mesurable **par Lua a l interieur de MAME**, voir ci-dessous. Environ 25 s par jeu. Masque sur la borne (`mame.ignore=1`) tant que le proprietaire ne l active pas |
 | naomi, naomigd, naomi2, atomiswave | 457 | flycast force le FREE PLAY : aucun compteur a mesurer |
 | model2, model3 | 118 | Recalbox les emule avec des programmes a part, hors libretro : leur memoire n est pas lisible, c est sans issue |
 
@@ -211,3 +211,28 @@ se mesurent tres bien sous FBNeo, qui, lui, expose tout.
 Corollaire pour tout nouveau coeur : demander la memoire APRES quelques
 images. MAME rend un pointeur nul juste apres le chargement, ce qui faisait
 passer pour « refusees » des roms qui tournaient.
+
+## MAME se mesure de l interieur, en Lua
+L API memoire de libretro est inutilisable avec MAME : sur dix jeux tires au
+hasard, neuf demarrent mais un seul rend un pointeur, et il est fige.
+
+La solution est ailleurs. MAME embarque un interpreteur Lua, et comme on lui
+donne sa ligne de commande (fichier `.cmd`), on peut lui faire executer notre
+script : `-autoboot_script outils/mame-credits.lua`. Depuis ce script on a
+
+  - **la carte memoire du pilote** : `space.map.entries` donne le type de
+    chaque zone (`rom`, `ram`, `port`...). On ne photographie que la `ram`.
+    Les « shares » ne suffisent pas : chez Pac-Man ils ne couvrent que la
+    memoire video, et le releve trouvait le chiffre AFFICHE au lieu du
+    compteur ;
+  - **les entrees nommees** : `Coin 1`, `1 Player Start`, et jusqu aux
+    interrupteurs de reglage. Plus besoin de deviner quel bouton encaisse —
+    MAME le dit. Sur Neo Geo c est `:AUDIO_COIN/Coin 1`, ailleurs `:IN0/Coin 1`.
+
+Resultats verifies : pacman 0x4E6E, dkong 0x6001, galaga 0x99B5,
+mslug 0xD00034, sf2ce 0xFF82DA, 1942 0xE011, bublbobl 0xE366 — tous montes a
+chaque piece et redescendus au START.
+
+**La preuve que les deux methodes disent vrai** : pour 1942, MAME rend
+0xE011 et FBNeo 0x0011. C est le meme octet — la fenetre de RAM exposee par
+FBNeo commence a 0xE000. Deux emulateurs, deux methodes, une seule adresse.
