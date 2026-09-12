@@ -151,6 +151,7 @@ def main():
     if not a.reessayer:
         deja |= set(connue.get("difficiles", {}))
     reste = noms if a.jeux else [n for n in noms if "mame/%s" % n not in deja]
+    connus = len(noms) - len(reste)
     # D abord ce que l autre coeur ne sait pas faire : c est la que MAME
     # apporte quelque chose. Le reste suivra, dans le meme ordre alphabetique.
     if a.priorite and os.path.isdir(a.priorite):
@@ -161,8 +162,8 @@ def main():
         reste = reste[rang - 1::total]
     if a.limite:
         reste = reste[:a.limite]
-    print("mame : %d jeu(x) a mesurer (%d deja connus)"
-          % (len(reste), len(noms) - len(reste)), flush=True)
+    print("mame : %d jeu(x) a mesurer dans cette part (%d deja connus en tout)"
+          % (len(reste), connus), flush=True)
 
     appris = ecartes = 0
     debut = time.time()

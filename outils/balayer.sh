@@ -39,8 +39,12 @@ while [ $n -le $COMBIEN ]; do
         # MAME ne se mesure pas par libretro mais par un script Lua execute
         # dans l emulateur (voir releve-mame.py). Meme decoupage en parts,
         # meme repliage.
+        # 150 s par machine : un jeu conclut en 10 a 50 s, et la moitie de
+        # MAME n est pas de l arcade (machines a sous, mahjong, bornes de
+        # test) — celles-la ne concluent jamais, inutile de les attendre
+        # cinq minutes chacune.
         nice -n 10 python3 -u /mnt/recalbox/outils/releve-mame.py \
-            --roms /mnt/roms/mame/mame0278 \
+            --roms /mnt/roms/mame/mame0278 --delai 150 \
             --base "$PARTS/part-$n.json" --reference "$BASE" \
             --part "$n/$COMBIEN" --arret "$ARRET" \
             > "$JOURNAUX/mame-$HORODATE-part$n.log" 2>&1 &
