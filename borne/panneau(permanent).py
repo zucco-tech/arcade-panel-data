@@ -588,15 +588,13 @@ class Panneau:
         self.dernier = voulu
 
     def _annexes(self, allume):
-        """La piece, le start et la touche hotkey.
+        """Les boutons de facade : piece, start et hotkey.
 
-        La piece reste allumee tant que le poste sert : c est l invitation a
-        jouer, comme sur une vraie borne en attract. Le start, lui, ne sert a
-        rien tant que personne n a paye — il s eteint avec la presence, comme
-        la touche hotkey."""
-        for chemin in self.piece:
-            ecrire(chemin, self.intensite if allume else "0")
-        for chemin in self.start:
+        Choix du proprietaire de la borne : ils ne servent a personne quand
+        personne n est devant. Les trois s eteignent donc ensemble en mode
+        clip, et seuls les boutons de jeu restent, tamises. Un geste les
+        rallume tous."""
+        for chemin in self.piece + self.start:
             ecrire(chemin, self.intensite if (allume and self.present) else "0")
         self._hotkey()
 

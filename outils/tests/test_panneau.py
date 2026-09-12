@@ -181,17 +181,19 @@ def _(dossier, espace):
     assert lire(dossier, "aio_p1_b1") == "7", "l allumage a ete touche"
 
 
-@essai("en mode clip, la piece reste allumee mais le start s eteint")
+@essai("en mode clip, les trois boutons de facade s eteignent")
 def _(dossier, espace):
     p = espace["Panneau"](1)
     p.presence(True)
     p.appliquer(2, {})
     assert lire(dossier, "aio_p1_start") != "0", "la piece devrait etre allumee"
     assert lire(dossier, "aio_p1_select") != "0", "le start devrait etre allume"
+    assert lire(dossier, "aio_hotkey") != "0", "HK devrait etre allume"
     p.presence(False)
-    assert lire(dossier, "aio_p1_start") != "0", "la piece doit rester : c est l invitation"
-    assert lire(dossier, "aio_p1_select") == "0", "le start ne sert a rien sans personne"
-    assert lire(dossier, "aio_hotkey") == "0"
+    for nom, quoi in (("aio_p1_start", "la piece"), ("aio_p1_select", "le start"),
+                      ("aio_hotkey", "HK")):
+        assert lire(dossier, nom) == "0", "%s devrait etre eteint en mode clip" % quoi
+    assert lire(dossier, "aio_p1_b4") != "0", "les boutons de jeu doivent rester"
 
 
 @essai("un poste eteint eteint aussi sa piece et son start")
