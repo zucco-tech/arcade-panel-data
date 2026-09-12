@@ -604,6 +604,11 @@ def main():
     manettes_vues = time.time()
     dernier_geste = time.time()
     insister_jusqu = 0.0             # on repeint jusqu a cette heure-la
+    # Pendant une partie, ce programme se TAIT completement. Il ne suffit
+    # pas de ne plus choisir les couleurs : tant qu il ajustait encore
+    # l intensite ou la touche hotkey, ses ecritures se melaient aux
+    # clignotements du demon des credits et cela se voyait a l ecran.
+    en_partie = False
     battement = 0.0
     intensite = None                 # fixee au premier tour
     heures = heures_du_soleil()
@@ -632,15 +637,16 @@ def main():
         if geste(manettes):
             dernier_geste = maintenant
         # Au repos : pleine puissance tant qu il fait jour, tamise la nuit.
-        au_repos = PLEIN if il_fait_jour(maintenant) else INTENSITE_MENU
-        present = maintenant - dernier_geste < VEILLE_APRES
-        for p in panneaux.values():
-            p.presence(present)
-        voulue = PLEIN if present else au_repos
-        if voulue != intensite:
-            intensite = voulue
+        if not en_partie:
+            au_repos = PLEIN if il_fait_jour(maintenant) else INTENSITE_MENU
+            present = maintenant - dernier_geste < VEILLE_APRES
             for p in panneaux.values():
-                p.reveiller(intensite)
+                p.presence(present)
+            voulue = PLEIN if present else au_repos
+            if voulue != intensite:
+                intensite = voulue
+                for p in panneaux.values():
+                    p.reveiller(intensite)
         # La base peut etre mise a jour pendant que la borne tourne.
         try:
             m = os.path.getmtime(BASE_BOUTONS)
@@ -664,7 +670,9 @@ def main():
             dernier_geste = maintenant       # on a navigue : c est un geste
 
         # Partie en cours : le demon des credits est maitre des LED.
-        if etat.get("State") == "playing" or etat.get("Action") == "rungame":
+        en_partie = (etat.get("State") == "playing"
+                     or etat.get("Action") == "rungame")
+        if en_partie:
             # On rend les couleurs d origine AVANT que le demon des credits
             # ne memorise les siennes : sinon il retiendrait nos couleurs
             # comme etant celles de la carte.
@@ -678,6 +686,7 @@ def main():
             dernier_jeu = None
             for p in panneaux.values():
                 p.dernier = None       # on ne sait plus ce qu il y a dessus
+                p.present = True       # pour ne pas toucher HK en revenant
             continue
 
         systeme = etat.get("SystemId") or ""
