@@ -464,7 +464,9 @@ class Panneau:
             if lire_fichier(os.path.join(chemin, "brightness")) not in ("0", None):
                 ecrire(chemin, intensite)
         self._hotkey()
-        if self.dernier not in ("repos", None):
+        # `dernier` vaut 0 quand le poste est eteint, "repos" quand il est
+        # rendu a la carte : seul un triplet porte une intensite.
+        if isinstance(self.dernier, tuple):
             self.dernier = self.dernier[:2] + (intensite,)
 
     def poser_carte(self, couleurs):
