@@ -36,6 +36,7 @@ Aucune dependance : uniquement la bibliotheque standard.
 """
 
 import json
+import math
 import os
 import re
 import select
@@ -77,6 +78,15 @@ PLEIN = "255"
 # defilent tout seuls ne comptent pas comme un geste.
 INTENSITE_MENU = "80"
 VEILLE_APRES = 30.0
+
+# Le jour, la piece est claire : un panneau a pleine puissance ne gene
+# personne. Le soir, c est un sapin de Noel. On tamise donc au repos
+# seulement entre le coucher et le lever du soleil — calcules pour le jour
+# meme, a partir de l horloge de la borne, pour que ce soit juste en
+# decembre comme en juin. Coordonnees a ajuster si la borne demenage.
+LATITUDE = 48.85
+LONGITUDE = 2.35
+CREPUSCULE = 0.5                 # heure de battement autour du lever/coucher
 # En sortant d une partie, le demon des credits rend les couleurs de la
 # carte — un instant APRES que nous ayons repeint celles du jeu survole. Il
 # avait donc le dernier mot et le panneau revenait aux couleurs de la carte.
@@ -293,6 +303,51 @@ def publier_couleurs_carte(couleurs):
         os.replace(COULEURS_CARTE + ".tmp", COULEURS_CARTE)
     except OSError:
         pass
+
+
+def heures_du_soleil(instant=None):
+    """Lever et coucher du soleil, en heures locales, pour aujourd hui.
+
+    Formule classique de l almanach : equation du temps, declinaison du
+    soleil, puis angle horaire. Suffisamment juste pour decider d allumer
+    des lampes — quelques minutes d ecart sont sans consequence. Renvoie
+    None si le calcul n a pas de solution (nuit ou jour polaire)."""
+    instant = instant or time.time()
+    local = time.localtime(instant)
+    jour = local.tm_yday
+    angle = 2 * math.pi / 365.0 * (jour - 1 + (local.tm_hour - 12) / 24.0)
+    equation = 229.18 * (0.000075
+                         + 0.001868 * math.cos(angle) - 0.032077 * math.sin(angle)
+                         - 0.014615 * math.cos(2 * angle) - 0.040849 * math.sin(2 * angle))
+    declinaison = (0.006918
+                   - 0.399912 * math.cos(angle) + 0.070257 * math.sin(angle)
+                   - 0.006758 * math.cos(2 * angle) + 0.000907 * math.sin(2 * angle)
+                   - 0.002697 * math.cos(3 * angle) + 0.001480 * math.sin(3 * angle))
+    latitude = math.radians(LATITUDE)
+    try:
+        horaire = math.acos(
+            math.cos(math.radians(90.833)) / (math.cos(latitude) * math.cos(declinaison))
+            - math.tan(latitude) * math.tan(declinaison))
+    except ValueError:
+        return None
+    horaire = math.degrees(horaire)
+    # Minutes UTC, puis heure locale : l ecart est celui que le systeme applique.
+    decalage = -(time.altzone if local.tm_isdst else time.timezone) / 60.0
+    lever = (720 - 4 * (LONGITUDE + horaire) - equation + decalage) / 60.0
+    coucher = (720 - 4 * (LONGITUDE - horaire) - equation + decalage) / 60.0
+    return lever % 24, coucher % 24
+
+
+def il_fait_jour(instant=None):
+    """Vrai s il fait jour dehors. En cas de doute, on repond oui : mieux
+    vaut un panneau trop clair qu un panneau trop sombre en pleine journee."""
+    heures = heures_du_soleil(instant)
+    if heures is None:
+        return True
+    lever, coucher = heures
+    local = time.localtime(instant or time.time())
+    maintenant = local.tm_hour + local.tm_min / 60.0
+    return lever + CREPUSCULE <= maintenant <= coucher - CREPUSCULE
 
 
 def battre(derniere):
@@ -541,7 +596,12 @@ def main():
     insister_jusqu = 0.0             # on repeint jusqu a cette heure-la
     battement = 0.0
     intensite = None                 # fixee au premier tour
-    journal("%d manette(s) ecoutee(s) pour la veille" % len(manettes))
+    heures = heures_du_soleil()
+    journal("%d manette(s) ecoutee(s) pour la veille ; %s"
+            % (len(manettes),
+               ("soleil aujourd hui : lever %02d:%02d, coucher %02d:%02d"
+                % (int(heures[0]), int(heures[0] % 1 * 60),
+                   int(heures[1]), int(heures[1] % 1 * 60))) if heures else "soleil incalculable"))
 
     while True:
         # Dormir SUR les manettes : un geste rend la main tout de suite,
@@ -561,7 +621,9 @@ def main():
             manettes_vues = maintenant
         if geste(manettes):
             dernier_geste = maintenant
-        voulue = PLEIN if maintenant - dernier_geste < VEILLE_APRES else INTENSITE_MENU
+        # Au repos : pleine puissance tant qu il fait jour, tamise la nuit.
+        au_repos = PLEIN if il_fait_jour(maintenant) else INTENSITE_MENU
+        voulue = PLEIN if maintenant - dernier_geste < VEILLE_APRES else au_repos
         if voulue != intensite:
             intensite = voulue
             for p in panneaux.values():

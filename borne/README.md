@@ -12,6 +12,13 @@ Ce dossier est lu par Recalbox au démarrage. Un script dont le nom contient
 | `allinone[…].sh.off` | scripts d'origine Recalbox, **désactivés** : ils lançaient un bash à chaque mouvement du menu et écrivaient les mêmes LED que le panneau. Leur table de couleurs par système est reprise par `panneau(permanent).py`, qui lit `/recalbox/scripts/recalbox_allinone_rgb.sh` au démarrage |
 | `gardefou[…].ash` | garde-fou du frontend |
 
+Le jour, le panneau reste a pleine puissance : la piece est claire, il ne
+gene personne. La nuit, il se tamise au repos. Le lever et le coucher du
+soleil sont **calcules pour le jour meme** a partir de l'horloge de la borne
+et des coordonnees en tete de `panneau(permanent).py` (`LATITUDE`,
+`LONGITUDE`) — juste en decembre comme en juin, sans horaire fige a
+entretenir.
+
 Dans le menu le panneau **veille** : un geste sur une manette (bouton,
 stick) ou une navigation le rallume à fond, et il se tamise à `INTENSITE_MENU`
 (80 sur 255) après `VEILLE_APRES` secondes (30) sans rien. Les clips vidéo qui
