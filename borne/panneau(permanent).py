@@ -470,19 +470,23 @@ class Panneau:
             self.dernier = self.dernier[:2] + (intensite,)
 
     def poser_carte(self, couleurs):
-        """Repeint le poste comme la carte, et allume tout.
+        """Repeint le poste comme la carte — les COULEURS seulement.
 
-        Appele juste avant qu une partie commence : le demon des credits
-        prend alors la main sur des LED dans leur etat d origine, et
-        retrouvera le meme etat en sortant du jeu."""
+        Appele juste avant qu une partie commence, pour que le demon des
+        credits prenne la main sur des LED aux couleurs d origine et
+        retrouve le meme etat en sortant du jeu.
+
+        On ne touche pas a l allumage : le demon des credits decide dans la
+        seconde quels boutons servent. Allumer tout ici faisait un eclair —
+        tout le panneau s allumait au lancement du jeu avant de revenir aux
+        bonnes couleurs."""
         for chemin, rvb in couleurs.items():
             if not chemin.startswith("/sys/class/leds/aio_p%d" % self.joueur) and not (
                     self.joueur == 1 and "hotkey" in chemin):
                 continue
             self._memoriser(chemin)
             ecrire(chemin, couleur_pour(chemin, rvb), "multi_intensity")
-            ecrire(chemin, PLEIN)
-        self.dernier = "repos"
+        self.dernier = None
 
     def rendre(self):
         """Tout a 255 et couleurs d origine : l etat de repos de la carte."""
