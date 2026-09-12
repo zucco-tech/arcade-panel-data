@@ -162,16 +162,28 @@ def fiche_de_systeme(systeme):
     secours (astrocity), comme le faisait le script d origine."""
     systeme = systeme or ""
     entree = BOUTONS_PAR_SYSTEME.get(systeme)
-    boutons = RECALBOX.get(systeme) or RECALBOX.get("astrocityp1")
+    boutons = RECALBOX.get(systeme)
+    secours = None
+    if not boutons:
+        # Le systeme virtuel « arcade », ses sous-categories par
+        # constructeur, et tout ce que Recalbox ne nomme pas : les couleurs
+        # astrocity, un jeu de couleurs par poste, comme le script d origine.
+        boutons = RECALBOX.get("astrocityp1")
+        secours = RECALBOX.get("astrocityp2")
     if boutons:
         allumes = [i for i, rvb in enumerate(boutons, 1) if any(rvb)]
         nombre = entree[0] if entree else (max(allumes) if allumes else 0)
         if not nombre:
             return None
-        couleurs = {"BUTTON%d" % i: {"rvb": boutons[i - 1]}
+
+        def palette(table):
+            return {"BUTTON%d" % i: {"rvb": table[i - 1]}
                     for i in range(1, nombre + 1)
-                    if i - 1 < len(boutons) and any(boutons[i - 1])}
-        return {"nombre": nombre, "boutons": couleurs}
+                    if i - 1 < len(table) and any(table[i - 1])}
+        fiche = {"nombre": nombre, "boutons": palette(boutons)}
+        if secours:
+            fiche["boutons_j2"] = palette(secours)
+        return fiche
     if not entree:
         return None
     nombre, palette = entree
@@ -486,16 +498,19 @@ def main():
         # EmulationStation dit combien de joueurs. Sans rien de sur, il
         # reste noir : sur console la plupart des jeux sont a un joueur, et
         # une portable n a jamais de second poste.
+        # Sur la liste des systemes (aucun jeu survole), les deux postes
+        # s allument aux couleurs du systeme : c est la vitrine de la borne.
         if origine == "fiche":
             deuxieme = int(fiche.get("joueurs") or 1) >= 2
+        elif not jeu:
+            deuxieme = True
         else:
-            constat = joueurs_depuis(etat) if jeu else None
-            deuxieme = bool(constat)
-        if systeme in PORTABLES:
+            deuxieme = bool(joueurs_depuis(etat))
+        if systeme in PORTABLES and jeu:
             deuxieme = False
         jeu = jeu or systeme
         panneaux[1].appliquer(nombre, couleurs)
-        panneaux[2].appliquer(nombre, couleurs, allume=deuxieme)
+        panneaux[2].appliquer(nombre, fiche.get("boutons_j2") or couleurs, allume=deuxieme)
         if jeu != dernier_jeu:
             journal("%s : %d bouton(s), %d couleur(s), joueur 2 %s [%s]"
                     % (jeu, nombre, sum(1 for v in couleurs.values() if v.get("couleur") or v.get("rvb")),
