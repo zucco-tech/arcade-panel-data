@@ -72,6 +72,12 @@ STATE_FILE = "/tmp/es_state.inf"
 # venait d y poser, et le panneau ressortait de la partie avec les couleurs
 # du jeu precedent. Fichier absent : on retombe sur la relecture des LED.
 COULEURS_CARTE = "/recalbox/share/system/panneau-arcade/couleurs-carte.json"
+# Signe de vie de panneau(permanent).py. S il bat, c est lui qui peindra le
+# menu des la fin de la partie : nous rendons alors l ALLUMAGE seulement, et
+# nous le laissons poser les couleurs. Deux programmes qui repeignent l un
+# apres l autre, cela se voit — un clignotement en sortant du jeu.
+BATTEMENT = "/recalbox/share/system/panneau-arcade/panneau-vivant"
+BATTEMENT_FRAIS = 6.0
 
 RA_HOTE = "127.0.0.1"
 RA_PORT = 55355
@@ -258,6 +264,14 @@ def lire(adresse, n):
 
 # --- LED -----------------------------------------------------------------
 
+def panneau_vivant():
+    """Vrai si panneau(permanent).py a donne signe de vie recemment."""
+    try:
+        return time.time() - os.path.getmtime(BATTEMENT) < BATTEMENT_FRAIS
+    except OSError:
+        return False
+
+
 def couleur_de_carte(chemin_led):
     """La couleur que la carte porte pour cette LED, telle que publiee par
     panneau(permanent).py. None si le fichier n existe pas encore."""
@@ -442,14 +456,19 @@ class Panneau:
                     self._ecrire(chemin, "multi_intensity", couleur(*rvb))
 
     def rendre(self):
-        """Remet le panneau tel que la carte l avait laisse."""
+        """Remet le panneau tel que la carte l avait laisse.
+
+        Si le programme du menu est vivant, on ne rend que l allumage : les
+        couleurs sont son affaire, et les poser ici ne ferait que clignoter
+        avant qu il ne pose les siennes."""
         if not self.actif:
             return
         self.actif = False
+        menu_vivant = panneau_vivant()
         for chemins in self.boutons:
             for chemin in chemins:
                 self._ecrire(chemin, "brightness", str(PLEIN))
-                if chemin in self.origine:
+                if not menu_vivant and chemin in self.origine:
                     self._ecrire(chemin, "multi_intensity", self.origine[chemin])
         self.origine.clear()
 

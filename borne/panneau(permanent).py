@@ -58,6 +58,12 @@ PALETTE_RECALBOX = "/recalbox/scripts/recalbox_allinone_rgb.sh"
 # repeindre entre-temps. Sans cette source unique, chacun memorisait les
 # couleurs de l autre et le panneau revenait faux en sortant d un jeu.
 COULEURS_CARTE = "/recalbox/share/system/panneau-arcade/couleurs-carte.json"
+# Notre signe de vie. Tant qu il est frais, le demon des credits sait que le
+# menu va repeindre lui-meme et ne rend PAS les couleurs de la carte en
+# sortant d une partie : sans cela les deux repeignaient l un apres l autre
+# et le joueur voyait un clignotement.
+BATTEMENT = "/recalbox/share/system/panneau-arcade/panneau-vivant"
+PERIODE_BATTEMENT = 2.0
 
 # Meme correspondance que credits(permanent).py, reprise de
 # recalbox_allinone_rgb.sh : la LED n eclaire le bouton ORDRE[n].
@@ -287,6 +293,20 @@ def publier_couleurs_carte(couleurs):
         os.replace(COULEURS_CARTE + ".tmp", COULEURS_CARTE)
     except OSError:
         pass
+
+
+def battre(derniere):
+    """Touche le fichier de presence, au plus une fois toutes les deux
+    secondes. Renvoie l heure du dernier battement."""
+    maintenant = time.time()
+    if maintenant - derniere < PERIODE_BATTEMENT:
+        return derniere
+    try:
+        with open(BATTEMENT, "w") as fh:
+            fh.write("%d\n" % os.getpid())
+    except OSError:
+        pass
+    return maintenant
 
 
 def journal(msg):
@@ -519,6 +539,7 @@ def main():
     manettes_vues = time.time()
     dernier_geste = time.time()
     insister_jusqu = 0.0             # on repeint jusqu a cette heure-la
+    battement = 0.0
     intensite = None                 # fixee au premier tour
     journal("%d manette(s) ecoutee(s) pour la veille" % len(manettes))
 
@@ -533,6 +554,7 @@ def main():
         else:
             time.sleep(PERIODE)
         maintenant = time.time()
+        battement = battre(battement)
         # Veille : un geste rallume a fond, le silence tamise.
         if not manettes and maintenant - manettes_vues > 10:
             manettes = ouvrir_manettes()
