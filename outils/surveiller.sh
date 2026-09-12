@@ -26,7 +26,13 @@ ARRET=/tmp/arret-nuit
 # Pas de « fba » : ce systeme n existe pas sur la borne.
 # Pas de naomi ni atomiswave : flycast les met en FREE PLAY, il n y a aucun
 # compteur a mesurer (voir REGLES-APPRISES.md).
-SYSTEMES="fbneo neogeo neogeocd"
+# fba : vieux sets FB Alpha, FBNeo n en accepte qu un sur six — les autres
+# ne se lancent pas davantage sur la borne. Ceux qui passent sont mesures.
+# stv : Sega Titan Video, mesure par mednafen_stv (son BIOS est dans le
+# dossier systeme de RetroArch). Verifie sur cotton2.
+# Pas de model2 ni model3 : Recalbox les emule avec des programmes a part,
+# hors libretro, dont la memoire n est pas lisible.
+SYSTEMES="fbneo neogeo neogeocd stv fba"
 # Quatre releves en parallele : la machine a quatre coeurs, et un releve
 # occupe un coeur sans jamais toucher a l ecran. Ils tournent en « nice 10 »
 # pour laisser le bureau devant eux.

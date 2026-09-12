@@ -175,3 +175,14 @@ Le coeur fournit ses images au frontend : le releve direct les garde et sait
 les ecrire en PNG (`enregistrer_image`). C est ainsi qu on a vu Battle
 Garegga afficher encore « ROM RAM CHECK » au moment ou on le payait. Un
 echec se regarde, il ne se devine pas.
+
+## Quels systemes arcade sont mesurables, et lesquels ne le sont pas
+| systeme | roms | comment |
+|---|---|---|
+| fbneo | 7772 | coeur FBNeo, le gros du travail |
+| neogeo / neogeocd | 124 / 232 | meme coeur |
+| stv | 114 | coeur mednafen_stv ; il lui faut `stvbios.zip` dans le dossier systeme de RetroArch, sinon il refuse tout. Verifie sur cotton2 (compteur 0x0741) |
+| fba | 223 | vieux sets FB Alpha : FBNeo n en accepte qu un sur six, les autres manquent de fichiers et ne se lancent pas davantage sur la borne |
+| mame | 22 | le coeur se plaint de « Unknown system » avec notre chargement direct ; a reprendre |
+| naomi, naomigd, naomi2, atomiswave | 457 | flycast force le FREE PLAY : aucun compteur a mesurer |
+| model2, model3 | 118 | Recalbox les emule avec des programmes a part, hors libretro : leur memoire n est pas lisible, c est sans issue |
