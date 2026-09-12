@@ -16,6 +16,11 @@
 #
 # Journal : /recalbox/share/system/panneau-arcade/demarrage.log
 
+# Recalbox passe « start » ou « stop » : on n agit qu au demarrage.
+case "$1" in
+    stop|shutdown|reboot) exit 0 ;;
+esac
+
 N=/recalbox/share/system/panneau-arcade
 U=/recalbox/share/userscripts
 mkdir -p "$N"
