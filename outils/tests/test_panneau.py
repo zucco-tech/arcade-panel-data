@@ -1,120 +1,265 @@
 #!/usr/bin/env python3
-"""Seuls les boutons utiles s allument, dans leurs couleurs, et le joueur 2
-reste noir sur un jeu solo."""
-import importlib.util, os, sys, threading, time, types, json
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from faux_retroarch import FauxRetroArch
+"""Banc d essai du panneau lumineux — sans carte, sans borne, sans ecran.
+
+Chaque demande du proprietaire de la borne est verifiee ici, une par une.
+On fabrique un faux panneau de LED dans un dossier temporaire, on donne au
+programme l etat qu EmulationStation ecrirait, et on lit ce qui a ete
+ecrit dans les fichiers.
+
+    python3 outils/tests/test_panneau.py
+
+Aucune dependance : bibliotheque standard uniquement.
+"""
+
+import importlib.machinery
+import os
+import shutil
+import sys
+import tempfile
+import time
+
+RACINE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+PROGRAMME = os.path.join(RACINE, "depot", "borne", "panneau(permanent).py")
+if not os.path.exists(PROGRAMME):
+    PROGRAMME = os.path.join(RACINE, "outils", "panneau(permanent).py")
+
+BOUTONS = ["aio_p%d_b%d" % (j, n) for j in (1, 2) for n in range(1, 7)]
+ANNEXES = ["aio_p%d_%s" % (j, k) for j in (1, 2) for k in ("start", "select")] + ["aio_hotkey"]
+
+essais = []
 
 
-def _trouver(fichier):
-    ici = os.path.dirname(os.path.abspath(__file__))
-    for racine in (os.environ.get("ARCADE_CREDITS"), os.path.dirname(ici),
-                   os.path.join(os.path.dirname(ici), "..", "borne"),
-                   os.path.dirname(os.path.dirname(ici)), ici):
-        if racine and os.path.exists(os.path.join(racine, fichier)):
-            return os.path.join(racine, fichier)
-    raise SystemExit("introuvable : %s" % fichier)
+def essai(nom):
+    def decorateur(fonction):
+        essais.append((nom, fonction))
+        return fonction
+    return decorateur
 
 
-spec = importlib.util.spec_from_file_location("cp", _trouver("credits(permanent).py"))
-cp = importlib.util.module_from_spec(spec); spec.loader.exec_module(cp)
+def faux_panneau(dossier):
+    """Un panneau de LED en dossiers et fichiers, comme le noyau l expose."""
+    for nom in BOUTONS + ANNEXES:
+        for k in (1, 2):
+            chemin = os.path.join(dossier, "%s_%d" % (nom, k))
+            os.makedirs(chemin, exist_ok=True)
+            with open(os.path.join(chemin, "brightness"), "w") as fh:
+                fh.write("255")
+            with open(os.path.join(chemin, "multi_intensity"), "w") as fh:
+                fh.write("0 0 0")
+            with open(os.path.join(chemin, "multi_index"), "w") as fh:
+                fh.write("red green blue")
 
-R = "/tmp/claude-test-panneau"; os.system("rm -rf " + R); os.makedirs(R)
-PORT_RA, ADRESSE, ORIG = 46300, 0x1234, "170 170 170"
 
-def paires(prefixe):
-    paires_ = []
-    for n in range(1, 9):
-        chemins = []
-        for i in (1, 2):
-            d = os.path.join(R, "%s_b%d_%d" % (prefixe, n, i)); os.makedirs(d)
-            open(os.path.join(d, "brightness"), "w").write("255")
-            open(os.path.join(d, "multi_intensity"), "w").write(ORIG)
-            chemins.append(d)
-        paires_.append(tuple(chemins))
-    return paires_
+def charger(dossier, palette):
+    """Charge le programme avec un faux panneau et une fausse palette."""
+    os.environ["PANNEAU_LEDS"] = dossier
+    source = open(PROGRAMME).read().split("def main():")[0]
+    source = source.replace('PALETTE_RECALBOX = "/recalbox/scripts/recalbox_allinone_rgb.sh"',
+                            'PALETTE_RECALBOX = %r' % palette)
+    espace = {"__name__": "panneau_essai"}
+    exec(compile(source, PROGRAMME, "exec"), espace)
+    return espace
 
-def lampe(nom):
-    c = []
-    for i in (1, 2):
-        d = os.path.join(R, "%s_%d" % (nom, i)); os.makedirs(d)
-        open(os.path.join(d, "brightness"), "w").write("255")
-        open(os.path.join(d, "multi_intensity"), "w").write(ORIG); c.append(d)
-    return tuple(c)
 
-cp.LEDS_JEU = {1: paires("p1"), 2: paires("p2")}
-cp.LEDS_PIECE, cp.LEDS_START, cp.LEDS_START_P2 = lampe("pc"), lampe("s1"), lampe("s2")
-lec, ecr = os.pipe()
-ETAT = os.path.join(R, "es.inf"); BASE = os.path.join(R, "base.json")
-BOUTONS = os.path.join(R, "boutons.json")
-json.dump({"version": 3, "jeux": {"finalburn-neo/duo": {"jeu": "duo", "systeme": "fbneo",
-           "core": "FinalBurn Neo", "credits": {"adresse": ADRESSE}}},
-           "pistes": {}, "difficiles": {}}, open(BASE, "w"))
-json.dump({"jeux": {
-    "duo":  {"nombre": 2, "mode": "2P sim",
-             "boutons": {"BUTTON1": {"couleur": "Blue", "fonction": "Attack"},
-                         "BUTTON2": {"couleur": "Black", "fonction": "Jump"}}},
-    "alterne": {"nombre": 2, "mode": "2P alt", "boutons": {}},
-    "solo": {"nombre": 3, "mode": "1P", "boutons": {}}}}, open(BOUTONS, "w"))
+def palette_factice(chemin):
+    """Deux systemes et le secours, dans la forme du script Recalbox."""
+    with open(chemin, "w") as fh:
+        fh.write('declare -a nes=("0x00 0xFF 0x00" "0x00 0xFF 0x00" "0x00 0x00 0x00" '
+                 '"0x00 0x00 0x00" "0x00 0x00 0x00" "0x00 0x00 0x00" "0x00 0x00 0x00" '
+                 '"0x00 0x00 0x00" "0xAA 0xAA 0xAA" "0xAA 0xAA 0xAA" "0xFF 0xFF 0xFF")\n')
+        fh.write('declare -a gb=("0x00 0xFF 0x00" "0x00 0xFF 0x00" "0x00 0x00 0x00" '
+                 '"0x00 0x00 0x00" "0x00 0x00 0x00" "0x00 0x00 0x00" "0x00 0x00 0x00" '
+                 '"0x00 0x00 0x00" "0xAA 0xAA 0xAA" "0xAA 0xAA 0xAA" "0xFF 0xFF 0xFF")\n')
+        fh.write('declare -a astrocityp1=("0xFF 0x00 0x00" "0xFF 0x00 0x00" "0xFF 0x00 0x00" '
+                 '"0xFF 0x00 0x00" "0xFF 0x00 0x00" "0xFF 0x00 0x00" "0x00 0x00 0x00" '
+                 '"0x00 0x00 0x00" "0xFF 0xFF 0x00" "0xFF 0xFF 0x00" "0x00 0x00 0xFF")\n')
+        fh.write('declare -a astrocityp2=("0x00 0x80 0x80" "0x00 0x80 0x80" "0x00 0x80 0x80" '
+                 '"0x00 0x80 0x80" "0x00 0x80 0x80" "0x00 0x80 0x80" "0x00 0x00 0x00" '
+                 '"0x00 0x00 0x00" "0xFF 0xFF 0x00" "0xFF 0xFF 0x00" "0x00 0x80 0x80")\n')
 
-ra = FauxRetroArch(PORT_RA, adresse_credits=ADRESSE, jeu="duo"); ra.start()
-cp.BASE, cp.BASE_BOUTONS = BASE, BOUTONS
-cp.RA_HOTE, cp.RA_PORT = "127.0.0.1", PORT_RA
-cp.STATE_FILE, cp.JOURNAL = ETAT, os.path.join(R, "log")
-cp.ouvrir_pads = lambda: {lec: "AllInOneP1"}
-cp.signal = types.SimpleNamespace(signal=lambda *a: None, SIGTERM=15)
 
-def etat(action, joueurs="1-2"):
-    with open(ETAT, "w") as fh:
-        fh.write("Action=%s\nSystemId=fbneo\nGame=Duo\nPlayers=%s\n" % (action, joueurs))
-def lu(d, f): return open(os.path.join(d, f)).read().strip()
-def etat_boutons(joueur):
-    return [lu(cp.LEDS_JEU[joueur][n][0], "brightness") for n in range(8)]
+def lire(dossier, nom, fichier="brightness"):
+    with open(os.path.join(dossier, nom + "_1", fichier)) as fh:
+        return fh.read().strip()
 
-echecs = []
-def verifier(t, ok, det=""):
-    print("%-54s %s %s" % (t, "OK" if ok else "ECHEC", det))
-    if not ok: echecs.append(t)
 
-etat("rungame"); ra.ram[ADRESSE] = 0
-threading.Thread(target=cp.main, daemon=True).start(); time.sleep(3.0)
+def allumes(dossier, joueur):
+    """Les numeros LOGIQUES des boutons allumes sur ce poste."""
+    espace_ordre = [3, 4, 5, 1, 2, 6]
+    vus = []
+    for place in range(1, 7):
+        if lire(dossier, "aio_p%d_b%d" % (joueur, place)) != "0":
+            vus.append(espace_ordre[place - 1])
+    return sorted(vus)
 
-print("--- jeu a 2 boutons, jouable a deux ---")
-allumes = etat_boutons(1)
-# ORDRE_BOUTONS = [3,4,5,1,2,6,7,8] : les boutons 1 et 2 sont en position 4 et 5
-attendu = ["0", "0", "0", "255", "255", "0", "0", "0"]
-verifier("seuls les 2 boutons utiles sont allumes", allumes == attendu, str(allumes))
-couleur_b1 = lu(cp.LEDS_JEU[1][3][0], "multi_intensity")
-verifier("le bouton 1 est bleu", couleur_b1 == cp.couleur(0x00, 0x00, 0xFF), couleur_b1)
-verifier("le panneau du joueur 2 est allume aussi",
-         etat_boutons(2) == attendu, str(etat_boutons(2)))
 
-print("\n--- jeu a deux mais en alterne ---")
-etat("endgame"); time.sleep(1.2)
-ra.jeu = "alterne"; ra.ram[ADRESSE] = 0
-json.dump({"version": 3, "jeux": {"finalburn-neo/alterne": {"jeu": "alterne", "systeme": "fbneo",
-           "core": "FinalBurn Neo", "credits": {"adresse": ADRESSE}}},
-           "pistes": {}, "difficiles": {}}, open(BASE, "w"))
-etat("rungame", joueurs="1-2"); time.sleep(3.0)
-verifier("joueur 2 eteint malgre un jeu a deux",
-         set(etat_boutons(2)) == {"0"}, str(etat_boutons(2)))
+# --- les essais ---------------------------------------------------------------
 
-print("\n--- meme jeu declare solo ---")
-etat("endgame"); time.sleep(1.2)
-ra.jeu = "solo"; ra.ram[ADRESSE] = 0
-json.dump({"version": 3, "jeux": {"finalburn-neo/solo": {"jeu": "solo", "systeme": "fbneo",
-           "core": "FinalBurn Neo", "credits": {"adresse": ADRESSE}}},
-           "pistes": {}, "difficiles": {}}, open(BASE, "w"))
-etat("rungame", joueurs="1"); time.sleep(3.0)
-verifier("le joueur 2 est entierement eteint",
-         set(etat_boutons(2)) == {"0"}, str(etat_boutons(2)))
-verifier("le joueur 1 a bien ses 3 boutons",
-         etat_boutons(1).count("255") == 3, str(etat_boutons(1)))
+@essai("un jeu a un joueur n allume que ses boutons, poste 2 eteint")
+def _(dossier, espace):
+    boutons = {"dkong": {"nombre": 1, "joueurs": 1, "boutons": {"BUTTON1": {"couleur": "red"}}}}
+    etat = {"SystemId": "fbneo", "GamePath": "/roms/fbneo/dkong.zip", "Players": "1"}
+    d = espace["decider"](etat, boutons)
+    assert d["nombre"] == 1, d
+    assert d["deuxieme"] is False, d
+    p1, p2 = espace["Panneau"](1), espace["Panneau"](2)
+    p1.appliquer(d["nombre"], d["couleurs"])
+    p2.appliquer(d["nombre"], d["couleurs_j2"], allume=d["deuxieme"])
+    assert allumes(dossier, 1) == [1], allumes(dossier, 1)
+    assert allumes(dossier, 2) == [], allumes(dossier, 2)
 
-print("\n--- sortie du jeu ---")
-etat("endgame"); time.sleep(1.5)
-verifier("tout est rendu allume", set(etat_boutons(1)) == {"255"} and set(etat_boutons(2)) == {"255"})
-verifier("et les couleurs d origine aussi",
-         lu(cp.LEDS_JEU[1][3][0], "multi_intensity") == ORIG)
-ra.stop = True
-print("\n%s" % ("TOUT EST BON" if not echecs else "ECHECS : " + ", ".join(echecs)))
+
+@essai("un jeu a un joueur eteint aussi la piece et le start du poste 2")
+def _(dossier, espace):
+    boutons = {"dkong": {"nombre": 1, "joueurs": 1, "boutons": {}}}
+    etat = {"SystemId": "fbneo", "GamePath": "/roms/fbneo/dkong.zip"}
+    d = espace["decider"](etat, boutons)
+    espace["Panneau"](2).appliquer(d["nombre"], d["couleurs_j2"], allume=d["deuxieme"])
+    assert lire(dossier, "aio_p2_start") == "0"
+    assert lire(dossier, "aio_p2_select") == "0"
+
+
+@essai("un jeu a deux joueurs allume les MEMES boutons des deux cotes")
+def _(dossier, espace):
+    boutons = {"sf2": {"nombre": 6, "joueurs": 2, "boutons": {}}}
+    etat = {"SystemId": "fbneo", "GamePath": "/roms/fbneo/sf2.zip"}
+    d = espace["decider"](etat, boutons)
+    assert d["deuxieme"] is True
+    espace["Panneau"](1).appliquer(d["nombre"], d["couleurs"])
+    espace["Panneau"](2).appliquer(d["nombre"], d["couleurs_j2"], allume=True)
+    assert allumes(dossier, 1) == allumes(dossier, 2) == [1, 2, 3, 4, 5, 6]
+
+
+@essai("une console prend les couleurs de Recalbox (NES = vert)")
+def _(dossier, espace):
+    etat = {"SystemId": "nes", "GamePath": "/roms/nes/mario.nes", "Players": "1-2"}
+    d = espace["decider"](etat, {})
+    assert d["nombre"] == 2, d["nombre"]
+    espace["Panneau"](1).appliquer(d["nombre"], d["couleurs"])
+    # la carte est cablee vert-rouge-bleu : du vert s ecrit « 255 0 0 »
+    assert lire(dossier, "aio_p1_b4", "multi_intensity") == "255 0 0"
+
+
+@essai("une portable laisse le poste 2 eteint meme a deux joueurs annonces")
+def _(dossier, espace):
+    etat = {"SystemId": "gb", "GamePath": "/roms/gb/tetris.gb", "Players": "1-2"}
+    d = espace["decider"](etat, {})
+    assert d["deuxieme"] is False, d
+
+
+@essai("sur la liste des systemes, les deux postes s allument")
+def _(dossier, espace):
+    etat = {"SystemId": "nes", "GamePath": "", "Players": ""}
+    d = espace["decider"](etat, {})
+    assert d["deuxieme"] is True, d
+
+
+@essai("un systeme inconnu de Recalbox prend la couleur de secours, pas le repos")
+def _(dossier, espace):
+    etat = {"SystemId": "arcade-capcom", "GamePath": ""}
+    d = espace["decider"](etat, {})
+    assert d["fiche"] is not None, d
+    assert d["nombre"] == 6, d["nombre"]
+
+
+@essai("les couleurs de la carte sont publiees pour le demon des credits")
+def _(dossier, espace):
+    couleurs = espace["couleurs_de_carte"]("nes")
+    assert couleurs, "aucune couleur de carte"
+    espace["publier_couleurs_carte"](couleurs)
+    assert os.path.exists(espace["COULEURS_CARTE"])
+
+
+@essai("poser la carte ne touche QUE les couleurs, jamais l allumage")
+def _(dossier, espace):
+    for j in (1, 2):
+        for n in range(1, 7):
+            with open(os.path.join(dossier, "aio_p%d_b%d_1" % (j, n), "brightness"), "w") as fh:
+                fh.write("7")
+    p = espace["Panneau"](1)
+    p.poser_carte(espace["couleurs_de_carte"]("nes"))
+    assert lire(dossier, "aio_p1_b1") == "7", "l allumage a ete touche"
+
+
+@essai("la touche hotkey s eteint des que personne n est devant")
+def _(dossier, espace):
+    p = espace["Panneau"](1)
+    p.presence(True)
+    assert lire(dossier, "aio_hotkey") != "0"
+    p.presence(False)
+    assert lire(dossier, "aio_hotkey") == "0"
+
+
+@essai("le jour eclaire plus fort que la nuit, present ou non")
+def _(dossier, espace):
+    jour_present = int(espace["JOUR_PRESENT"])
+    nuit_present = int(espace["NUIT_PRESENT"])
+    nuit_repos = int(espace["NUIT_REPOS"])
+    assert nuit_present < jour_present, "la nuit devrait etre plus douce que le jour"
+    assert nuit_repos < nuit_present, "le repos devrait etre plus doux que la presence"
+
+
+@essai("le soleil se leve et se couche a des heures credibles")
+def _(dossier, espace):
+    ete = espace["heures_du_soleil"](time.mktime((2026, 6, 21, 12, 0, 0, 0, 0, -1)))
+    hiver = espace["heures_du_soleil"](time.mktime((2026, 12, 21, 12, 0, 0, 0, 0, -1)))
+    assert 4 < ete[0] < 7 and 21 < ete[1] < 23, ete
+    assert 7 < hiver[0] < 10 and 16 < hiver[1] < 18, hiver
+    assert espace["il_fait_jour"](time.mktime((2026, 6, 21, 14, 0, 0, 0, 0, -1)))
+    assert not espace["il_fait_jour"](time.mktime((2026, 12, 21, 23, 0, 0, 0, 0, -1)))
+
+
+@essai("changer d intensite ne reecrit pas les couleurs")
+def _(dossier, espace):
+    p = espace["Panneau"](1)
+    p.appliquer(2, {"BUTTON1": {"couleur": "blue"}})
+    avant = lire(dossier, "aio_p1_b4", "multi_intensity")
+    p.reveiller("60")
+    assert lire(dossier, "aio_p1_b4", "multi_intensity") == avant, "la couleur a bouge"
+    assert lire(dossier, "aio_p1_b4") == "60", lire(dossier, "aio_p1_b4")
+
+
+@essai("le reveil supporte les trois etats memorises")
+def _(dossier, espace):
+    p = espace["Panneau"](1)
+    for etat in (None, 0, "repos", (2, (), "255")):
+        p.dernier = etat
+        p.intensite = "255"
+        p.reveiller("80")        # ne doit pas lever d exception
+
+
+@essai("un jeu sans fiche ni systeme connu laisse le panneau au repos")
+def _(dossier, espace):
+    d = espace["decider"]({"SystemId": "", "GamePath": ""}, {})
+    assert d["fiche"] is None and d["nombre"] == 0, d
+
+
+def principal():
+    dossier = tempfile.mkdtemp(prefix="panneau-essai-")
+    palette = os.path.join(dossier, "rgb.sh")
+    palette_factice(palette)
+    rates = 0
+    try:
+        for nom, fonction in essais:
+            faux_panneau(dossier)
+            espace = charger(dossier, palette)
+            espace["COULEURS_CARTE"] = os.path.join(dossier, "couleurs.json")
+            espace["JOURNAL"] = os.path.join(dossier, "panneau.log")
+            espace["BATTEMENT"] = os.path.join(dossier, "vivant")
+            try:
+                fonction(dossier, espace)
+                print("  ok   %s" % nom)
+            except AssertionError as souci:
+                rates += 1
+                print("  RATE %s\n       %s" % (nom, souci))
+            except Exception as souci:            # une erreur de programme
+                rates += 1
+                print("  ERR  %s\n       %s: %s" % (nom, type(souci).__name__, souci))
+    finally:
+        shutil.rmtree(dossier, ignore_errors=True)
+    print("\n%d essai(s), %d rate(s)" % (len(essais), rates))
+    return 1 if rates else 0
+
+
+if __name__ == "__main__":
+    sys.exit(principal())

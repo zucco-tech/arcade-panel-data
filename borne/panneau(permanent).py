@@ -71,12 +71,22 @@ PERIODE_BATTEMENT = 2.0
 #     rangee haute : LED 1 2 3  ->  boutons 3 4 5
 #     rangee basse : LED 4 5 6  ->  boutons 1 2 6
 ORDRE_BOUTONS = [3, 4, 5, 1, 2, 6]
+# La racine des LED. Reglable pour que le banc d essai fabrique un faux
+# panneau dans un dossier temporaire et verifie ce qu on y ecrit.
+RACINE_LEDS = os.environ.get("PANNEAU_LEDS", "/sys/class/leds")
 PLEIN = "255"
-# Dans le menu le panneau VEILLE : un tiers de la puissance suffit a lire
-# quels boutons servent. Un geste sur une manette le reveille a fond, et il
+# Dans le menu le panneau VEILLE : un geste sur une manette le ranime, et il
 # se rendort apres VEILLE_APRES secondes sans rien. Les clips video qui
 # defilent tout seuls ne comptent pas comme un geste.
-INTENSITE_MENU = "80"
+# Quatre niveaux, et pas un de plus : le jour et la nuit, selon que
+# quelqu un est devant la borne ou non. Le jour la piece est claire et le
+# panneau peut rester franc ; la nuit il eclaire la piece entiere, donc on
+# le retient meme quand on joue. Les quatre valeurs sont ici, a regler a
+# l oeil sans toucher au reste.
+JOUR_PRESENT = "255"     # quelqu un navigue, en plein jour
+JOUR_REPOS = "255"       # personne devant, en plein jour
+NUIT_PRESENT = "140"     # quelqu un navigue, le soir
+NUIT_REPOS = "60"        # personne devant, le soir
 VEILLE_APRES = 30.0
 
 # Le jour, la piece est claire : un panneau a pleine puissance ne gene
@@ -195,6 +205,11 @@ def fiche_de_systeme(systeme):
     d origine. Un systeme que Recalbox ne connait pas prend sa couleur de
     secours (astrocity), comme le faisait le script d origine."""
     systeme = systeme or ""
+    if not systeme:
+        # Aucun systeme : on ne devine pas. Le script Recalbox d origine fait
+        # de meme — « if test -z $1; then exit 0 ». Un systeme inconnu, lui,
+        # a droit aux couleurs de secours.
+        return None
     entree = BOUTONS_PAR_SYSTEME.get(systeme)
     boutons = (RECALBOX.get(systeme) or [])[:6] or None
     secours = None
@@ -372,6 +387,50 @@ def journal(msg):
         pass
 
 
+def decider(etat, boutons):
+    """Ce que le panneau doit montrer pour cet etat du frontend.
+
+    Toutes les regles d eclairage sont ici, en un seul endroit, pour qu on
+    puisse les verifier sans carte ni borne : voir outils/tests/test_panneau.py.
+
+    Renvoie le jeu et le systeme reconnus, la fiche retenue, d ou elle
+    vient, le nombre de boutons, leurs couleurs (et celles du poste 2), et
+    si le second poste doit s allumer."""
+    vide = {"nombre": 0, "couleurs": {}, "couleurs_j2": {}, "deuxieme": False}
+    systeme = (etat or {}).get("SystemId") or ""
+    chemin = (etat or {}).get("GamePath") or ""
+    jeu = os.path.basename(chemin).rsplit(".", 1)[0] if chemin else ""
+    if (etat or {}).get("IsFolder") == "1":
+        jeu = ""
+
+    # D abord la fiche arcade du jeu ; sinon ce que le systeme utilise.
+    fiche = boutons.get(jeu) if jeu else None
+    origine = "fiche"
+    if not fiche or not fiche.get("nombre"):
+        fiche = fiche_de_systeme(systeme)
+        origine = "systeme %s%s" % (systeme, "" if systeme in RECALBOX else ", couleur de secours")
+    if not fiche:
+        vide.update({"systeme": systeme, "jeu": jeu, "fiche": None, "origine": origine})
+        return vide
+
+    # Le second poste. La fiche arcade sait combien de joueurs ; pour une
+    # console, EmulationStation le dit, et sans rien de sur il reste noir.
+    # Sur la liste des systemes, les deux postes s allument : c est la
+    # vitrine de la borne. Une portable n a jamais de second poste.
+    if origine == "fiche":
+        deuxieme = int(fiche.get("joueurs") or 1) >= 2
+    elif not jeu:
+        deuxieme = True
+    else:
+        deuxieme = bool(joueurs_depuis(etat))
+    if systeme in PORTABLES and jeu:
+        deuxieme = False
+    return {"systeme": systeme, "jeu": jeu, "fiche": fiche, "origine": origine,
+            "nombre": int(fiche["nombre"]), "couleurs": fiche.get("boutons") or {},
+            "couleurs_j2": fiche.get("boutons_j2") or fiche.get("boutons") or {},
+            "deuxieme": deuxieme}
+
+
 def lire_etat():
     """Le fichier ini plat de EmulationStation, cle=valeur."""
     etat = {}
@@ -401,7 +460,7 @@ def chemins_led(joueur):
     for n in range(1, 7):
         paire = []
         for k in (1, 2):
-            chemin = "/sys/class/leds/aio_p%d_b%d_%d" % (joueur, n, k)
+            chemin = os.path.join(RACINE_LEDS, "aio_p%d_b%d_%d" % (joueur, n, k))
             if os.path.isdir(chemin):
                 paire.append(chemin)
         paires.append(paire)
@@ -418,7 +477,7 @@ def chemins_annexes(joueur):
 
 
 def _leds(nom):
-    return [c for c in ("/sys/class/leds/%s_%d" % (nom, k) for k in (1, 2))
+    return [c for c in (os.path.join(RACINE_LEDS, "%s_%d" % (nom, k)) for k in (1, 2))
             if os.path.isdir(c)]
 
 
@@ -484,7 +543,7 @@ class Panneau:
         self.present = True          # quelqu un est-il devant la borne ?
         self.dernier = None          # ce qu on a applique en dernier
         self.derniers_args = None    # pour re-appliquer a une autre intensite
-        self.intensite = INTENSITE_MENU
+        self.intensite = JOUR_PRESENT
         self.origine = {}            # couleur posee par la carte, par led
 
     def _memoriser(self, chemin):
@@ -527,7 +586,7 @@ class Panneau:
         noire tant que personne n a touche la borne, meme en plein jour ou
         pendant les clips video, ou elle n eclairerait rien d utile."""
         for chemin in self.hotkey:
-            ecrire(chemin, PLEIN if self.present else "0")
+            ecrire(chemin, self.intensite if self.present else "0")
 
     def presence(self, quelqu_un):
         """Dit au poste si quelqu un est devant la borne."""
@@ -571,7 +630,7 @@ class Panneau:
         tout le panneau s allumait au lancement du jeu avant de revenir aux
         bonnes couleurs."""
         for chemin, rvb in couleurs.items():
-            if not chemin.startswith("/sys/class/leds/aio_p%d" % self.joueur) and not (
+            if not os.path.basename(chemin).startswith("aio_p%d" % self.joueur) and not (
                     self.joueur == 1 and "hotkey" in chemin):
                 continue
             self._memoriser(chemin)
@@ -638,11 +697,14 @@ def main():
             dernier_geste = maintenant
         # Au repos : pleine puissance tant qu il fait jour, tamise la nuit.
         if not en_partie:
-            au_repos = PLEIN if il_fait_jour(maintenant) else INTENSITE_MENU
+            jour = il_fait_jour(maintenant)
             present = maintenant - dernier_geste < VEILLE_APRES
             for p in panneaux.values():
                 p.presence(present)
-            voulue = PLEIN if present else au_repos
+            if jour:
+                voulue = JOUR_PRESENT if present else JOUR_REPOS
+            else:
+                voulue = NUIT_PRESENT if present else NUIT_REPOS
             if voulue != intensite:
                 intensite = voulue
                 for p in panneaux.values():
@@ -689,20 +751,10 @@ def main():
                 p.present = True       # pour ne pas toucher HK en revenant
             continue
 
-        systeme = etat.get("SystemId") or ""
-        chemin = etat.get("GamePath") or ""
-        jeu = os.path.basename(chemin).rsplit(".", 1)[0] if chemin else ""
-        if etat.get("IsFolder") == "1":
-            jeu = ""
-
-        # D abord la fiche arcade du jeu ; sinon ce que le systeme utilise ;
-        # sinon on rend le panneau a la carte.
-        fiche = boutons.get(jeu) if jeu else None
-        origine = "fiche"
-        if not fiche or not fiche.get("nombre"):
-            fiche = fiche_de_systeme(systeme)
-            origine = "systeme %s%s" % (systeme, "" if systeme in RECALBOX else ", couleur de secours")
-        if not fiche:
+        decision = decider(etat, boutons)
+        systeme, jeu = decision["systeme"], decision["jeu"]
+        origine = decision["origine"]
+        if not decision["fiche"]:
             for p in panneaux.values():
                 p.rendre()
             if (jeu or systeme) != dernier_jeu:
@@ -710,22 +762,8 @@ def main():
             dernier_jeu = jeu or systeme
             continue
 
-        nombre = int(fiche["nombre"])
-        couleurs = fiche.get("boutons") or {}
-        # Le second poste : la fiche arcade le sait ; pour une console,
-        # EmulationStation dit combien de joueurs. Sans rien de sur, il
-        # reste noir : sur console la plupart des jeux sont a un joueur, et
-        # une portable n a jamais de second poste.
-        # Sur la liste des systemes (aucun jeu survole), les deux postes
-        # s allument aux couleurs du systeme : c est la vitrine de la borne.
-        if origine == "fiche":
-            deuxieme = int(fiche.get("joueurs") or 1) >= 2
-        elif not jeu:
-            deuxieme = True
-        else:
-            deuxieme = bool(joueurs_depuis(etat))
-        if systeme in PORTABLES and jeu:
-            deuxieme = False
+        nombre, couleurs = decision["nombre"], decision["couleurs"]
+        deuxieme = decision["deuxieme"]
         jeu = jeu or systeme
         if maintenant < insister_jusqu:
             # On sort d une partie : on repeint meme si rien n a change,
@@ -733,7 +771,7 @@ def main():
             for p in panneaux.values():
                 p.dernier = None
         panneaux[1].appliquer(nombre, couleurs)
-        panneaux[2].appliquer(nombre, fiche.get("boutons_j2") or couleurs, allume=deuxieme)
+        panneaux[2].appliquer(nombre, decision["couleurs_j2"], allume=deuxieme)
         if jeu != dernier_jeu:
             journal("%s : %d bouton(s), %d couleur(s), joueur 2 %s [%s]"
                     % (jeu, nombre, sum(1 for v in couleurs.values() if v.get("couleur") or v.get("rvb")),
