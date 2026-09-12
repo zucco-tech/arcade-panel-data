@@ -30,12 +30,23 @@ rm -f "$PARTS"/*.json
 
 n=1
 while [ $n -le $COMBIEN ]; do
-    nice -n 10 python3 -u /mnt/recalbox/outils/releve-direct.py \
-        --systeme "$SYSTEME" --roms /mnt/roms \
-        --coeur "$COEUR" --coeur-nomme "$NOM" \
-        --base "$PARTS/part-$n.json" --reference "$BASE" \
-        --part "$n/$COMBIEN" --arret "$ARRET" \
-        > "$JOURNAUX/direct-$SYSTEME-$HORODATE-part$n.log" 2>&1 &
+    if [ "$SYSTEME" = "mame" ]; then
+        # MAME ne se mesure pas par libretro mais par un script Lua execute
+        # dans l emulateur (voir releve-mame.py). Meme decoupage en parts,
+        # meme repliage.
+        nice -n 10 python3 -u /mnt/recalbox/outils/releve-mame.py \
+            --roms /mnt/roms/mame/mame0278 \
+            --base "$PARTS/part-$n.json" --reference "$BASE" \
+            --part "$n/$COMBIEN" --arret "$ARRET" \
+            > "$JOURNAUX/mame-$HORODATE-part$n.log" 2>&1 &
+    else
+        nice -n 10 python3 -u /mnt/recalbox/outils/releve-direct.py \
+            --systeme "$SYSTEME" --roms /mnt/roms \
+            --coeur "$COEUR" --coeur-nomme "$NOM" \
+            --base "$PARTS/part-$n.json" --reference "$BASE" \
+            --part "$n/$COMBIEN" --arret "$ARRET" \
+            > "$JOURNAUX/direct-$SYSTEME-$HORODATE-part$n.log" 2>&1 &
+    fi
     n=$((n + 1))
 done
 wait

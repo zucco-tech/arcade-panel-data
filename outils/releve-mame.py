@@ -111,7 +111,7 @@ def charger_base(chemin):
     if os.path.exists(chemin):
         with open(chemin) as fh:
             return json.load(fh)
-    return {"coeur": "MAME", "jeux": {}, "difficiles": {}}
+    return {"jeux": {}, "difficiles": {}}
 
 
 def ecrire_base(chemin, base):
@@ -132,6 +132,9 @@ def main():
                    help="base a consulter pour savoir ce qui est deja mesure")
     p.add_argument("--part", default=None, help="« 2/4 » : une part sur quatre")
     p.add_argument("--jeux", nargs="*", default=None)
+    p.add_argument("--priorite", default="/mnt/roms/fbneo",
+                   help="dossier de roms deja couvert par un autre coeur : les jeux "
+                        "qui n y sont PAS passent en premier, c est la que MAME sert")
     p.add_argument("--limite", type=int, default=0)
     p.add_argument("--delai", type=float, default=300.0)
     p.add_argument("--arret", default="/tmp/arret-nuit")
@@ -142,7 +145,12 @@ def main():
     noms = a.jeux or sorted(
         f.rsplit(".", 1)[0] for f in os.listdir(a.roms)
         if f.lower().endswith((".zip", ".7z")))
-    reste = noms if a.jeux else [n for n in noms if n not in connue["jeux"]]
+    reste = noms if a.jeux else [n for n in noms if "mame/%s" % n not in connue["jeux"]]
+    # D abord ce que l autre coeur ne sait pas faire : c est la que MAME
+    # apporte quelque chose. Le reste suivra, dans le meme ordre alphabetique.
+    if a.priorite and os.path.isdir(a.priorite):
+        couverts = {f.rsplit(".", 1)[0] for f in os.listdir(a.priorite)}
+        reste = [n for n in reste if n not in couverts] + [n for n in reste if n in couverts]
     if a.part:
         rang, total = (int(x) for x in a.part.split("/"))
         reste = reste[rang - 1::total]
@@ -164,19 +172,36 @@ def main():
         if "erreur" in fiche:
             ecartes += 1
             print("  difficile : %s (%.0f s)" % (fiche["erreur"], duree), flush=True)
-            base["difficiles"][jeu] = {"jeu": jeu, "raison": fiche["erreur"],
-                                       "le": time.strftime("%Y-%m-%d")}
+            base["difficiles"]["mame/" + jeu] = {"jeu": jeu, "systeme": "mame",
+                                                 "raison": fiche["erreur"],
+                                                 "le": time.strftime("%Y-%m-%d")}
         else:
             appris += 1
             print("  APPRIS %s dans %s — %d -> %d au START, %d piece(s) (%.0f s)"
                   % (fiche.get("adresse_hex"), fiche.get("zone"),
                      fiche.get("avant_start", 0), fiche.get("apres_start", 0),
                      fiche.get("accords", 0), duree), flush=True)
-            fiche.update({"systeme": "mame", "core": "MAME",
-                          "releve": {"le": time.strftime("%Y-%m-%d"),
-                                     "methode": "lua dans mame"}})
-            base["jeux"][jeu] = fiche
-            base["difficiles"].pop(jeu, None)
+            # La fiche prend la forme commune a toutes les bases, pour que le
+            # repliage, l export et la borne la lisent comme les autres. Ce
+            # qui est propre a MAME — l adresse est celle du processeur, pas
+            # d une fenetre libretro, et il faudra la lire par Lua — est dit
+            # dans « ram.commande » et « releve.methode ».
+            base["jeux"]["mame/" + jeu] = {
+                "jeu": jeu, "systeme": "mame", "core": "MAME",
+                "ram": {"taille": fiche.get("ram"), "commande": "lua mame",
+                        "zone": fiche.get("zone")},
+                "credits": {
+                    "adresse": fiche["adresse"], "adresse_hex": fiche["adresse_hex"],
+                    "octets": 1, "miroirs": [],
+                    "verifie_insertion": True, "verifie_consommation": True,
+                    "pieces_observees": fiche.get("accords", 0),
+                    "entree_piece": fiche.get("piece"), "entree_start": fiche.get("start"),
+                    "compteur_commun": False, "adresse_j2": None, "adresse_j2_hex": None,
+                    "j2_verifie_consommation": False,
+                },
+                "releve": {"le": time.strftime("%Y-%m-%d"), "methode": "lua dans mame"},
+            }
+            base["difficiles"].pop("mame/" + jeu, None)
         ecrire_base(a.base, base)
     duree = time.time() - debut
     print("%d appris, %d ecartes, en %d min (%.0f s par jeu)"

@@ -32,6 +32,13 @@ def main():
     for cle, fiche in (source.get("jeux") or {}).items():
         jeu = fiche.get("jeu") or cle.split("/", 1)[-1]
         systeme = fiche.get("systeme")
+        # Les fiches MAME donnent une adresse dans l espace du processeur,
+        # que le demon de la borne ne sait pas encore lire (il passe par
+        # READ_CORE_RAM, que MAME ne sert pas). On les garde dans la base,
+        # on ne les exporte pas tant que la lecture par Lua n existe pas
+        # cote borne — sinon le demon tenterait des lectures qui echouent.
+        if (fiche.get("releve") or {}).get("methode") == "lua dans mame":
+            continue
         if not systeme:
             continue
         neuve = "%s/%s" % (systeme, jeu)

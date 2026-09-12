@@ -32,7 +32,10 @@ ARRET=/tmp/arret-nuit
 # dossier systeme de RetroArch). Verifie sur cotton2.
 # Pas de model2 ni model3 : Recalbox les emule avec des programmes a part,
 # hors libretro, dont la memoire n est pas lisible.
-SYSTEMES="fbneo neogeo neogeocd stv fba"
+# mame : 20601 roms, mesurees par Lua dans MAME (~25 s par jeu). En dernier,
+# et d abord celles que FBNeo ne sait pas faire. Le systeme est masque sur
+# la borne (mame.ignore=1) : ces fiches serviront le jour ou il sera active.
+SYSTEMES="fbneo neogeo neogeocd stv fba mame"
 # Quatre releves en parallele : la machine a quatre coeurs, et un releve
 # occupe un coeur sans jamais toucher a l ecran. Ils tournent en « nice 10 »
 # pour laisser le bureau devant eux.
@@ -65,6 +68,7 @@ while [ ! -f "$ARRET" ]; do
     for sys in $SYSTEMES; do
         [ -f "$ARRET" ] && break
         [ -d "/mnt/roms/$sys" ] || continue
+        [ "$sys" = "mame" ] && [ ! -d /mnt/roms/mame/mame0278 ] && continue
         verifier_diagnostic
         note "coeur direct : $sys ($PARALLELE releves en parallele)"
         sh /mnt/recalbox/outils/balayer.sh "$sys" "$PARALLELE" \
