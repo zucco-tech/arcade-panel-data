@@ -725,6 +725,10 @@ def main():
     p.add_argument("--jeux", nargs="*", default=None,
                    help="ne mesurer que ces jeux (essai)")
     p.add_argument("--arret", default="/tmp/arret-nuit")
+    p.add_argument("--reessayer", action="store_true",
+                   help="remesurer aussi les jeux deja ecartes ; sans cela, un ecarte "
+                        "ne repasse pas — la mesure est deterministe, le refaire ne "
+                        "changerait rien, et cela coutait des heures a chaque tour")
     p.add_argument("--sec", action="store_true",
                    help="ne rien ecrire : afficher seulement ce qu on trouverait")
     a = p.parse_args()
@@ -740,7 +744,10 @@ def main():
     if a.jeux:
         reste = list(noms)
     else:
-        reste = [n for n in noms if "%s/%s" % (prefixe, n) not in connue["jeux"]]
+        deja = set(connue["jeux"])
+        if not a.reessayer:
+            deja |= set(connue.get("difficiles", {}))
+        reste = [n for n in noms if "%s/%s" % (prefixe, n) not in deja]
     if a.part:
         rang, total = (int(x) for x in a.part.split("/"))
         reste = reste[rang - 1::total]      # entrelacees : meme difficulte pour tous

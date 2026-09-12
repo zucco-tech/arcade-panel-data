@@ -136,6 +136,8 @@ def main():
                    help="dossier de roms deja couvert par un autre coeur : les jeux "
                         "qui n y sont PAS passent en premier, c est la que MAME sert")
     p.add_argument("--limite", type=int, default=0)
+    p.add_argument("--reessayer", action="store_true",
+                   help="remesurer aussi les jeux deja ecartes")
     p.add_argument("--delai", type=float, default=300.0)
     p.add_argument("--arret", default="/tmp/arret-nuit")
     a = p.parse_args()
@@ -145,7 +147,10 @@ def main():
     noms = a.jeux or sorted(
         f.rsplit(".", 1)[0] for f in os.listdir(a.roms)
         if f.lower().endswith((".zip", ".7z")))
-    reste = noms if a.jeux else [n for n in noms if "mame/%s" % n not in connue["jeux"]]
+    deja = set(connue["jeux"])
+    if not a.reessayer:
+        deja |= set(connue.get("difficiles", {}))
+    reste = noms if a.jeux else [n for n in noms if "mame/%s" % n not in deja]
     # D abord ce que l autre coeur ne sait pas faire : c est la que MAME
     # apporte quelque chose. Le reste suivra, dans le meme ordre alphabetique.
     if a.priorite and os.path.isdir(a.priorite):
