@@ -470,13 +470,18 @@ def chemins_led(joueur):
     return paires
 
 
+# Le nom que le pilote donne aux LED et le cablage du panneau ne concordent
+# pas sur cette borne : les LED appelees « start » eclairent le bouton
+# PIECE, et inversement. C est le meme constat que dans
+# credits(permanent).py ; si un jour la carte change, ces deux lignes sont
+# le seul endroit a echanger.
+LED_PIECE = "aio_p%d_start"
+LED_START = "aio_p%d_select"
+
+
 def chemins_annexes(joueur):
-    """Les LED du poste qui ne sont pas des boutons de jeu : pièce et start,
-    plus la touche hotkey (elle n existe que sur le poste 1). Dans le menu
-    elles suivent la meme intensite que les boutons, et le poste 2 les
-    eteint avec lui."""
-    noms = ["aio_p%d_start" % joueur, "aio_p%d_select" % joueur]
-    return [c for nom in noms for c in _leds(nom)]
+    """Les LED de piece et de start du poste, dans cet ordre."""
+    return _leds(LED_PIECE % joueur), _leds(LED_START % joueur)
 
 
 def _leds(nom):
@@ -539,7 +544,7 @@ class Panneau:
     def __init__(self, joueur):
         self.joueur = joueur
         self.boutons = chemins_led(joueur)
-        self.annexes = chemins_annexes(joueur)
+        self.piece, self.start = chemins_annexes(joueur)
         # La touche hotkey n existe que sur le poste 1. Elle ne sert qu a
         # quelqu un qui est devant la borne : en veille elle s eteint.
         self.hotkey = _leds("aio_hotkey") if joueur == 1 else []
@@ -579,10 +584,21 @@ class Panneau:
                 else:
                     self._rendre_couleur(chemin)
                 ecrire(chemin, self.intensite if utilise else "0")
-        for chemin in self.annexes:
-            ecrire(chemin, self.intensite if allume else "0")
-        self._hotkey()
+        self._annexes(allume)
         self.dernier = voulu
+
+    def _annexes(self, allume):
+        """La piece, le start et la touche hotkey.
+
+        La piece reste allumee tant que le poste sert : c est l invitation a
+        jouer, comme sur une vraie borne en attract. Le start, lui, ne sert a
+        rien tant que personne n a paye — il s eteint avec la presence, comme
+        la touche hotkey."""
+        for chemin in self.piece:
+            ecrire(chemin, self.intensite if allume else "0")
+        for chemin in self.start:
+            ecrire(chemin, self.intensite if (allume and self.present) else "0")
+        self._hotkey()
 
     def _hotkey(self):
         """La touche hotkey ne sert qu a quelqu un qui joue : elle reste
@@ -592,10 +608,14 @@ class Panneau:
             ecrire(chemin, self.intensite if self.present else "0")
 
     def presence(self, quelqu_un):
-        """Dit au poste si quelqu un est devant la borne."""
+        """Dit au poste si quelqu un est devant la borne : le start et la
+        touche hotkey s allument avec lui, la piece reste."""
         if quelqu_un != self.present:
             self.present = quelqu_un
-            self._hotkey()
+            if self.dernier is not None:
+                self._annexes(self.dernier != 0)
+            else:
+                self._hotkey()
 
     def reveiller(self, intensite):
         """Change l intensite de ce qui est deja affiche.
@@ -612,7 +632,7 @@ class Panneau:
             for chemin in chemins:
                 if lire_fichier(os.path.join(chemin, "brightness")) not in ("0", None):
                     ecrire(chemin, intensite)
-        for chemin in self.annexes:
+        for chemin in self.piece + self.start:
             if lire_fichier(os.path.join(chemin, "brightness")) not in ("0", None):
                 ecrire(chemin, intensite)
         self._hotkey()
@@ -648,9 +668,7 @@ class Panneau:
             for chemin in chemins:
                 self._rendre_couleur(chemin)
                 ecrire(chemin, self.intensite)
-        for chemin in self.annexes:
-            ecrire(chemin, self.intensite)
-        self._hotkey()
+        self._annexes(True)
         self.dernier = "repos"
 
 

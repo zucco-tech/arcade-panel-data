@@ -181,6 +181,28 @@ def _(dossier, espace):
     assert lire(dossier, "aio_p1_b1") == "7", "l allumage a ete touche"
 
 
+@essai("en mode clip, la piece reste allumee mais le start s eteint")
+def _(dossier, espace):
+    p = espace["Panneau"](1)
+    p.presence(True)
+    p.appliquer(2, {})
+    assert lire(dossier, "aio_p1_start") != "0", "la piece devrait etre allumee"
+    assert lire(dossier, "aio_p1_select") != "0", "le start devrait etre allume"
+    p.presence(False)
+    assert lire(dossier, "aio_p1_start") != "0", "la piece doit rester : c est l invitation"
+    assert lire(dossier, "aio_p1_select") == "0", "le start ne sert a rien sans personne"
+    assert lire(dossier, "aio_hotkey") == "0"
+
+
+@essai("un poste eteint eteint aussi sa piece et son start")
+def _(dossier, espace):
+    p = espace["Panneau"](2)
+    p.presence(True)
+    p.appliquer(2, {}, allume=False)
+    assert lire(dossier, "aio_p2_start") == "0"
+    assert lire(dossier, "aio_p2_select") == "0"
+
+
 @essai("la touche hotkey s eteint des que personne n est devant")
 def _(dossier, espace):
     p = espace["Panneau"](1)
