@@ -242,6 +242,23 @@ def chemins_led(joueur):
     return paires
 
 
+def chemins_annexes(joueur):
+    """Les LED du poste qui ne sont pas des boutons de jeu : pièce et start,
+    plus la touche hotkey (elle n existe que sur le poste 1). Dans le menu
+    elles suivent la meme intensite que les boutons, et le poste 2 les
+    eteint avec lui."""
+    noms = ["aio_p%d_start" % joueur, "aio_p%d_select" % joueur]
+    if joueur == 1:
+        noms.append("aio_hotkey")
+    chemins = []
+    for nom in noms:
+        for k in (1, 2):
+            chemin = "/sys/class/leds/%s_%d" % (nom, k)
+            if os.path.isdir(chemin):
+                chemins.append(chemin)
+    return chemins
+
+
 def ecrire(chemin, valeur, fichier="brightness"):
     try:
         with open(os.path.join(chemin, fichier), "w") as fh:
@@ -254,6 +271,7 @@ class Panneau:
     def __init__(self, joueur):
         self.joueur = joueur
         self.boutons = chemins_led(joueur)
+        self.annexes = chemins_annexes(joueur)
         self.dernier = None          # ce qu on a applique en dernier
         self.origine = {}            # couleur posee par la carte, par led
 
@@ -286,6 +304,8 @@ class Panneau:
                 else:
                     self._rendre_couleur(chemin)
                 ecrire(chemin, INTENSITE_MENU if utilise else "0")
+        for chemin in self.annexes:
+            ecrire(chemin, INTENSITE_MENU if allume else "0")
         self.dernier = voulu
 
     def rendre(self):
@@ -296,6 +316,8 @@ class Panneau:
             for chemin in chemins:
                 self._rendre_couleur(chemin)
                 ecrire(chemin, PLEIN)
+        for chemin in self.annexes:
+            ecrire(chemin, PLEIN)
         self.dernier = "repos"
 
 
