@@ -590,11 +590,13 @@ class Panneau:
     def _annexes(self, allume):
         """Les boutons de facade : piece, start et hotkey.
 
-        Choix du proprietaire de la borne : ils ne servent a personne quand
-        personne n est devant. Les trois s eteignent donc ensemble en mode
-        clip, et seuls les boutons de jeu restent, tamises. Un geste les
-        rallume tous."""
-        for chemin in self.piece + self.start:
+        Choix du proprietaire de la borne, photo a l appui : en mode clip on
+        garde le START des deux postes allume — c est lui qui dit « joue » —
+        et l on eteint la PIECE et la touche hotkey, qui ne servent a
+        personne tant que personne n est devant. Un geste rallume tout."""
+        for chemin in self.start:
+            ecrire(chemin, self.intensite if allume else "0")
+        for chemin in self.piece:
             ecrire(chemin, self.intensite if (allume and self.present) else "0")
         self._hotkey()
 
