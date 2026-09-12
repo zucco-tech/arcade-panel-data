@@ -271,11 +271,20 @@ class Coeur:
             return False
         self.lib.retro_set_controller_port_device(0, MANETTE)
         self.lib.retro_set_controller_port_device(1, MANETTE)
+        # Certains coeurs n exposent leur memoire qu une fois la machine
+        # demarree : MAME renvoyait un pointeur nul juste apres le
+        # chargement, et le jeu passait pour refuse alors qu il tournait
+        # (« Starting 10-Yard Fight » dans son propre journal). Quelques
+        # images suffisent, et elles ne coutent rien.
         self.lib.retro_get_memory_data.restype = ctypes.c_void_p
         self.lib.retro_get_memory_size.restype = ctypes.c_size_t
-        self.taille = self.lib.retro_get_memory_size(MEMOIRE_SYSTEME)
-        self.adresse = self.lib.retro_get_memory_data(MEMOIRE_SYSTEME)
-        return bool(self.taille and self.adresse)
+        for _ in range(3):
+            self.lib.retro_run()
+            self.taille = self.lib.retro_get_memory_size(MEMOIRE_SYSTEME)
+            self.adresse = self.lib.retro_get_memory_data(MEMOIRE_SYSTEME)
+            if self.taille and self.adresse:
+                return True
+        return False
 
     def images(self, combien):
         """Calcule `combien` images, en decomptant les appuis en cours."""

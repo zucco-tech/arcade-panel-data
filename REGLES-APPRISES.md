@@ -183,6 +183,31 @@ echec se regarde, il ne se devine pas.
 | neogeo / neogeocd | 124 / 232 | meme coeur |
 | stv | 114 | coeur mednafen_stv ; il lui faut `stvbios.zip` dans le dossier systeme de RetroArch, sinon il refuse tout. Verifie sur cotton2 (compteur 0x0741) |
 | fba | 223 | vieux sets FB Alpha : FBNeo n en accepte qu un sur six, les autres manquent de fichiers et ne se lancent pas davantage sur la borne |
-| mame | 22 | le coeur se plaint de « Unknown system » avec notre chargement direct ; a reprendre |
+| mame | 20601 (dossier `mame0278`) | **impossible a mesurer**, voir ci-dessous. Et de toute facon masque sur la borne : `mame.ignore=1` dans recalbox.conf |
 | naomi, naomigd, naomi2, atomiswave | 457 | flycast force le FREE PLAY : aucun compteur a mesurer |
 | model2, model3 | 118 | Recalbox les emule avec des programmes a part, hors libretro : leur memoire n est pas lisible, c est sans issue |
+
+## MAME : la porte s ouvre, mais la piece est vide
+Deux choses distinctes, mesurees le 12/09/2026.
+
+**Comment lui parler.** Le coeur MAME prend le dossier parent du fichier
+pour un nom de machine : une rom dans `roms/mame/` lui fait chercher une
+machine appelee « mame ». Il accepte en revanche un fichier `.cmd`
+contenant une ligne de commande — c est dans ses extensions declarees
+(`cmd|zip|7z`) :
+
+    echo "10yard -rompath /mnt/roms/mame/mame0278" > 10yard.cmd
+
+Ainsi la machine demarre pour de bon ; son propre journal dit « Starting
+10-Yard Fight » et la capture montre le jeu.
+
+**Pourquoi c est sans issue quand meme.** Le coeur n expose pas la memoire
+de travail. Sur cinq jeux essayes : pacman (1008 octets) et dkong (3072)
+rendent un pointeur nul, galaga aussi (64) ; sf2ce et mslug rendent 2048
+octets qui ne changent jamais — c est leur sauvegarde, pas leur RAM. Sans
+memoire lisible, aucun compteur de credits n est mesurable. Les memes jeux
+se mesurent tres bien sous FBNeo, qui, lui, expose tout.
+
+Corollaire pour tout nouveau coeur : demander la memoire APRES quelques
+images. MAME rend un pointeur nul juste apres le chargement, ce qui faisait
+passer pour « refusees » des roms qui tournaient.
