@@ -57,7 +57,16 @@ PALETTE_RECALBOX = "/recalbox/scripts/recalbox_allinone_rgb.sh"
 #     rangee basse : LED 4 5 6  ->  boutons 1 2 6
 ORDRE_BOUTONS = [3, 4, 5, 1, 2, 6]
 PLEIN = "255"
+# Dans le menu on montre, on n eclaire pas : un tiers de la puissance suffit
+# a lire quels boutons servent. La pleine intensite est pour la partie.
+INTENSITE_MENU = "80"
 PERIODE = 0.3                # cadence de lecture du fichier d etat
+
+# Machines a UN joueur par construction : une console portable n a qu un
+# ecran et une manette. Le poste 2 y reste noir quoi qu en dise la fiche.
+PORTABLES = {"gb", "gbc", "gba", "gamegear", "lynx", "ngp", "ngpc", "wswan",
+             "wswanc", "pokemini", "supervision", "megaduck", "nds", "psp",
+             "3ds", "gw", "tic80"}
 
 # Couleurs nommees par la base, telles qu elles sont ecrites sur les bornes.
 TEINTES = {
@@ -276,7 +285,7 @@ class Panneau:
                     ecrire(chemin, couleur_pour(chemin, rvb), "multi_intensity")
                 else:
                     self._rendre_couleur(chemin)
-                ecrire(chemin, PLEIN if utilise else "0")
+                ecrire(chemin, INTENSITE_MENU if utilise else "0")
         self.dernier = voulu
 
     def rendre(self):
@@ -358,12 +367,16 @@ def main():
         nombre = int(fiche["nombre"])
         couleurs = fiche.get("boutons") or {}
         # Le second poste : la fiche arcade le sait ; pour une console,
-        # EmulationStation dit combien de joueurs ; sans rien, on l allume.
+        # EmulationStation dit combien de joueurs. Sans rien de sur, il
+        # reste noir : sur console la plupart des jeux sont a un joueur, et
+        # une portable n a jamais de second poste.
         if origine == "fiche":
             deuxieme = int(fiche.get("joueurs") or 1) >= 2
         else:
             constat = joueurs_depuis(etat) if jeu else None
-            deuxieme = True if constat is None else constat
+            deuxieme = bool(constat)
+        if systeme in PORTABLES:
+            deuxieme = False
         jeu = jeu or systeme
         panneaux[1].appliquer(nombre, couleurs)
         panneaux[2].appliquer(nombre, couleurs, allume=deuxieme)

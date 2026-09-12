@@ -12,6 +12,11 @@ Ce dossier est lu par Recalbox au démarrage. Un script dont le nom contient
 | `allinone[…].sh.off` | scripts d'origine Recalbox, **désactivés** : ils lançaient un bash à chaque mouvement du menu et écrivaient les mêmes LED que le panneau. Leur table de couleurs par système est reprise par `panneau(permanent).py`, qui lit `/recalbox/scripts/recalbox_allinone_rgb.sh` au démarrage |
 | `gardefou[…].ash` | garde-fou du frontend |
 
+Deux réglages en tête de `panneau(permanent).py` : `INTENSITE_MENU` (80 sur
+255 — dans le menu on montre, on n'éclaire pas) et `PORTABLES` (consoles
+portables : le poste 2 y reste noir). Sur console, le poste 2 ne s'allume que
+si EmulationStation annonce plusieurs joueurs ; dans le doute il reste noir.
+
 ## Qui pilote les LED, et quand
 
 Deux scripts écrivent dans les LED, jamais en même temps :
