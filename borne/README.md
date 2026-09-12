@@ -10,7 +10,8 @@ Ce dossier est lu par Recalbox au démarrage. Un script dont le nom contient
 | `panneau(permanent).py` | dans le menu : éclaire les boutons du jeu **survolé**, avec ses couleurs d'origine, avant même de le lancer |
 | `marquee(permanent).py` | affiche le nom du jeu sur le marquee |
 | `allinone[…].sh.off` | scripts d'origine Recalbox, **désactivés** : ils lançaient un bash à chaque mouvement du menu et écrivaient les mêmes LED que le panneau. Leur table de couleurs par système est reprise par `panneau(permanent).py`, qui lit `/recalbox/scripts/recalbox_allinone_rgb.sh` au démarrage |
-| `gardefou[…].ash` | garde-fou du frontend |
+| `gardefou[…].ash` | garde-fou : au demarrage du frontend, au lancement et a la fin de chaque partie, relance celui des trois programmes permanents qui serait mort. Journal dans `panneau-arcade/gardefou.log` |
+| `custom.sh` (dans `share/system/`) | crochet de demarrage : neutralise les scripts allinone que Recalbox recree, et allume le panneau en veilleuse avant EmulationStation |
 
 Le jour, le panneau reste a pleine puissance : la piece est claire, il ne
 gene personne. La nuit, il se tamise au repos. Le lever et le coucher du
