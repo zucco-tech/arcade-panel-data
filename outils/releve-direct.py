@@ -293,6 +293,61 @@ class Coeur:
 
 # --- la mesure elle-meme -------------------------------------------------------
 
+def montes16(avant, apres):
+    """Les compteurs sur DEUX octets qui valent un de plus.
+
+    Certaines cartes comptent les credits sur seize bits — l octet bas
+    seul ne monte alors pas de 1 quand il passe de 255 a 0, et un compteur
+    parfaitement sain restait invisible. On regarde les deux sens
+    d ecriture, petit-boutiste et gros-boutiste, et on renvoie l adresse du
+    couple avec le sens qui convient."""
+    trouves = set()
+    for a in range(len(apres) - 1):
+        for sens, vieux, neuf in (
+                ("pb", avant[a] | (avant[a + 1] << 8), apres[a] | (apres[a + 1] << 8)),
+                ("gb", (avant[a] << 8) | avant[a + 1], (apres[a] << 8) | apres[a + 1])):
+            if neuf == vieux + 1 and vieux < 0x2710:      # 10000 credits, jamais plus
+                trouves.add((a, sens))
+    return trouves
+
+
+def valeur16(photo, adresse, sens):
+    bas, haut = photo[adresse], photo[adresse + 1]
+    return bas | (haut << 8) if sens == "pb" else (bas << 8) | haut
+
+
+def chercher_compteur16(coeur, journal):
+    """Le meme travail que pour un octet, mais sur des couples d octets.
+
+    N est appele qu en dernier recours : c est deux fois plus de comparaisons
+    pour une minorite de cartes."""
+    accords = {}
+    avant = coeur.photo()
+    for _ in range(3):
+        coeur.appuyer(PIECE, 1)
+        coeur.images(IMAGES_APRES_PIECE)
+        apres = coeur.photo()
+        for couple in montes16(avant, apres):
+            accords[couple] = accords.get(couple, 0) + 1
+        avant = apres
+    solides = {c: n for c, n in accords.items() if n >= ACCORDS_MIN}
+    if not solides:
+        return None
+    avant = coeur.photo()
+    for _ in range(STARTS_MAX):
+        coeur.appuyer(START, 1)
+        coeur.images(IMAGES_APRES_START)
+        apres = coeur.photo()
+        for (adresse, sens), nombre in sorted(solides.items(), key=lambda x: -x[1]):
+            if valeur16(apres, adresse, sens) < valeur16(avant, adresse, sens):
+                journal("  compteur sur deux octets en 0x%04X (%s), %d -> %d"
+                        % (adresse, "petit-boutiste" if sens == "pb" else "gros-boutiste",
+                           valeur16(avant, adresse, sens), valeur16(apres, adresse, sens)))
+                return adresse, sens, nombre
+        avant = apres
+    return None
+
+
 def attendre_vivant(coeur, journal):
     """Fait tourner la machine jusqu a ce que sa memoire s anime.
 
@@ -467,7 +522,10 @@ def insister(coeur, accords, journal):
             % INSISTANCE_PIECES)
     for numero in range(1, INSISTANCE_PIECES + 1):
         avant = coeur.photo()
-        coeur.appuyer(PIECE, 1)
+        # On alterne les deux monnayeurs : des cartes n acceptent qu une
+        # piece par fente avant un temps mort, et les deux alimentent le
+        # meme compteur. Alterner double donc les chances d etre encaisse.
+        coeur.appuyer(PIECE, 1 if numero % 2 else 2)
         coeur.images(INSISTANCE_ECART)
         for a in montes_de_un(avant, coeur.photo()):
             accords[a] = accords.get(a, 0) + 1
@@ -524,7 +582,23 @@ def mesurer(chemin_coeur, chemin_rom, dossier_systeme, bavard, options=None):
         elif not descendus and insiste:
             descendus, avant, apres = insiste
         elif not descendus:
-            return {"erreur": "candidats non confirmes", "candidats": len(accords)}, lignes
+            large = chercher_compteur16(coeur, journal)
+            if large is None:
+                return {"erreur": "candidats non confirmes", "candidats": len(accords)}, lignes
+            adresse, sens, _ = large
+            fiche = {
+                "ram": {"taille": coeur.taille, "commande": "coeur direct"},
+                "credits": {
+                    "adresse": adresse, "adresse_hex": "0x%04X" % adresse, "octets": 2,
+                    "sens": sens, "miroirs": [],
+                    "verifie_insertion": True, "verifie_consommation": True,
+                    "entree_piece": "select", "compteur_commun": False,
+                    "adresse_j2": None, "adresse_j2_hex": None,
+                    "j2_verifie_consommation": False,
+                },
+                "dip_imposes": imposes,
+            }
+            return fiche, lignes
     adresse = descendus[0]
     # Un miroir n est pas « un octet qui descend aussi » : c est le MEME
     # compteur vu a une autre adresse, donc il porte la meme valeur avant et
@@ -633,6 +707,12 @@ def main():
                    help="les options que RetroArch garde pour ce coeur")
     p.add_argument("--delai", type=float, default=DELAI_JEU)
     p.add_argument("--limite", type=int, default=0)
+    p.add_argument("--part", default=None,
+                   help="« 2/4 » : ne traiter que la deuxieme part sur quatre. "
+                        "Les parts sont entrelacees, donc de difficulte egale.")
+    p.add_argument("--reference", default=None,
+                   help="base a consulter pour savoir ce qui est deja mesure, "
+                        "quand on ecrit dans un fichier a part")
     p.add_argument("--jeux", nargs="*", default=None,
                    help="ne mesurer que ces jeux (essai)")
     p.add_argument("--arret", default="/tmp/arret-nuit")
@@ -644,13 +724,17 @@ def main():
     noms = a.jeux or sorted(f.rsplit(".", 1)[0] for f in os.listdir(dossier)
                             if f.lower().endswith((".zip", ".7z")))
     base = charger_base(a.base)
+    connue = charger_base(a.reference) if a.reference else base
     prefixe = a.coeur_nomme.lower().replace(" ", "-")
     # Une liste de jeux donnee a la main est toujours mesuree : c est ce qui
     # permet de controler l outil contre des fiches deja connues.
     if a.jeux:
         reste = list(noms)
     else:
-        reste = [n for n in noms if "%s/%s" % (prefixe, n) not in base["jeux"]]
+        reste = [n for n in noms if "%s/%s" % (prefixe, n) not in connue["jeux"]]
+    if a.part:
+        rang, total = (int(x) for x in a.part.split("/"))
+        reste = reste[rang - 1::total]      # entrelacees : meme difficulte pour tous
     if a.limite:
         reste = reste[:a.limite]
     print("%s : %d jeu(x) a mesurer (%d deja connus)"

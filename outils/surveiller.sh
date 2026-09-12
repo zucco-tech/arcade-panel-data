@@ -27,6 +27,10 @@ ARRET=/tmp/arret-nuit
 # Pas de naomi ni atomiswave : flycast les met en FREE PLAY, il n y a aucun
 # compteur a mesurer (voir REGLES-APPRISES.md).
 SYSTEMES="fbneo neogeo neogeocd"
+# Quatre releves en parallele : la machine a quatre coeurs, et un releve
+# occupe un coeur sans jamais toucher a l ecran. Ils tournent en « nice 10 »
+# pour laisser le bureau devant eux.
+PARALLELE=4
 
 note() { echo "$(date '+%Y-%m-%d %H:%M:%S')  $1" >> "$JOURNAL"; }
 
@@ -56,10 +60,9 @@ while [ ! -f "$ARRET" ]; do
         [ -f "$ARRET" ] && break
         [ -d "/mnt/roms/$sys" ] || continue
         verifier_diagnostic
-        note "coeur direct : $sys"
-        python3 -u /mnt/recalbox/outils/releve-direct.py \
-            --systeme "$sys" --roms /mnt/roms --base "$BASE" --arret "$ARRET" \
-            > "$JOURNAUX/direct-$sys-$(date +%Y%m%d-%H%M).log" 2>&1 &
+        note "coeur direct : $sys ($PARALLELE releves en parallele)"
+        sh /mnt/recalbox/outils/balayer.sh "$sys" "$PARALLELE" \
+            > "$JOURNAUX/balayage-$sys-$(date +%Y%m%d-%H%M).log" 2>&1 &
         attendre $! || break
         note "coeur direct : $sys termine"
         n=$((n + 1))
