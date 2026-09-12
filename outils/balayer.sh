@@ -15,8 +15,13 @@ COMBIEN=${2:-4}
 # Chaque systeme a son coeur. Le nom compte autant que le fichier : c est lui
 # qui indexe les fiches, et une meme rom sous deux coeurs n a pas la meme
 # memoire (voir README).
+# Le delai par jeu et le nombre de releves dependent aussi du coeur : la
+# Saturn de Mednafen est lourde — a quatre en parallele sur deux coeurs
+# physiques, un jeu depassait les trois minutes sans avoir fini de
+# demarrer. Deux releves et un quart d heure de marge lui conviennent.
+DELAI=180
 case "$SYSTEME" in
-    stv)  COEUR=/opt/coeurs/mednafen_stv_libretro.so ; NOM="Mednafen ST-V" ;;
+    stv)  COEUR=/opt/coeurs/mednafen_stv_libretro.so ; NOM="Mednafen ST-V" ; COMBIEN=2 ; DELAI=900 ;;
     *)    COEUR=/opt/coeurs/fbneo_rb.so              ; NOM="FinalBurn Neo" ;;
 esac
 BASE=/mnt/recalbox/donnees/credits-arcade.json
@@ -44,7 +49,7 @@ while [ $n -le $COMBIEN ]; do
             --systeme "$SYSTEME" --roms /mnt/roms \
             --coeur "$COEUR" --coeur-nomme "$NOM" \
             --base "$PARTS/part-$n.json" --reference "$BASE" \
-            --part "$n/$COMBIEN" --arret "$ARRET" \
+            --part "$n/$COMBIEN" --arret "$ARRET" --delai "$DELAI" \
             > "$JOURNAUX/direct-$SYSTEME-$HORODATE-part$n.log" 2>&1 &
     fi
     n=$((n + 1))
