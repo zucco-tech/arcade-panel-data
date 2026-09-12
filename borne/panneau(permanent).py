@@ -71,6 +71,11 @@ PLEIN = "255"
 # defilent tout seuls ne comptent pas comme un geste.
 INTENSITE_MENU = "80"
 VEILLE_APRES = 30.0
+# En sortant d une partie, le demon des credits rend les couleurs de la
+# carte — un instant APRES que nous ayons repeint celles du jeu survole. Il
+# avait donc le dernier mot et le panneau revenait aux couleurs de la carte.
+# On repeint pendant ces quelques secondes, jusqu a ce qu il ait fini.
+INSISTER_APRES_JEU = 3.0
 # On n attend pas la fin d un tour de boucle pour reagir : le programme dort
 # SUR les manettes (select), donc un bouton presse le reveille aussitot.
 # Sans cela, le rallumage arrivait avec jusqu a PERIODE de retard.
@@ -513,6 +518,7 @@ def main():
     manettes = ouvrir_manettes()
     manettes_vues = time.time()
     dernier_geste = time.time()
+    insister_jusqu = 0.0             # on repeint jusqu a cette heure-la
     intensite = None                 # fixee au premier tour
     journal("%d manette(s) ecoutee(s) pour la veille" % len(manettes))
 
@@ -550,7 +556,7 @@ def main():
             modif = os.path.getmtime(ETAT)
         except OSError:
             continue
-        if modif == derniere_modif:
+        if modif == derniere_modif and maintenant > insister_jusqu:
             continue
         derniere_modif = modif
 
@@ -565,6 +571,7 @@ def main():
             # On rend les couleurs d origine AVANT que le demon des credits
             # ne memorise les siennes : sinon il retiendrait nos couleurs
             # comme etant celles de la carte.
+            insister_jusqu = maintenant + INSISTER_APRES_JEU
             if dernier_jeu is not None:
                 carte = couleurs_de_carte(etat.get("SystemId") or "")
                 publier_couleurs_carte(carte)
@@ -614,6 +621,11 @@ def main():
         if systeme in PORTABLES and jeu:
             deuxieme = False
         jeu = jeu or systeme
+        if maintenant < insister_jusqu:
+            # On sort d une partie : on repeint meme si rien n a change,
+            # pour reprendre la main sur le demon des credits.
+            for p in panneaux.values():
+                p.dernier = None
         panneaux[1].appliquer(nombre, couleurs)
         panneaux[2].appliquer(nombre, fiche.get("boutons_j2") or couleurs, allume=deuxieme)
         if jeu != dernier_jeu:
