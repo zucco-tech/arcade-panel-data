@@ -38,6 +38,7 @@ Aucune dependance : uniquement la bibliotheque standard.
 import json
 import os
 import re
+import struct
 import time
 
 ETAT = "/tmp/es_state.inf"
@@ -57,9 +58,15 @@ PALETTE_RECALBOX = "/recalbox/scripts/recalbox_allinone_rgb.sh"
 #     rangee basse : LED 4 5 6  ->  boutons 1 2 6
 ORDRE_BOUTONS = [3, 4, 5, 1, 2, 6]
 PLEIN = "255"
-# Dans le menu on montre, on n eclaire pas : un tiers de la puissance suffit
-# a lire quels boutons servent. La pleine intensite est pour la partie.
+# Dans le menu le panneau VEILLE : un tiers de la puissance suffit a lire
+# quels boutons servent. Un geste sur une manette le reveille a fond, et il
+# se rendort apres VEILLE_APRES secondes sans rien. Les clips video qui
+# defilent tout seuls ne comptent pas comme un geste.
 INTENSITE_MENU = "80"
+VEILLE_APRES = 30.0
+AUTOMATIQUES = {"startgameclip", "endgameclip"}
+MANETTES = "AllInOne"        # nom des manettes de la carte dans /proc/bus/input
+FORMAT_EVENEMENT = struct.Struct("llHHi")
 PERIODE = 0.3                # cadence de lecture du fichier d etat
 
 # Machines a UN joueur par construction : une console portable n a qu un
@@ -259,6 +266,49 @@ def chemins_annexes(joueur):
     return chemins
 
 
+def ouvrir_manettes():
+    """Les fichiers d evenements des manettes de la carte, ouverts sans
+    blocage et sans exclusivite : EmulationStation continue de les lire."""
+    fds = []
+    try:
+        with open("/proc/bus/input/devices") as fh:
+            blocs = fh.read().split("\n\n")
+    except (IOError, OSError):
+        return fds
+    for bloc in blocs:
+        if 'Name="%s' % MANETTES not in bloc:
+            continue
+        for nom in re.findall(r"(event\d+)", bloc):
+            try:
+                fds.append(os.open("/dev/input/" + nom, os.O_RDONLY | os.O_NONBLOCK))
+            except OSError:
+                pass
+    return fds
+
+
+def geste(fds):
+    """Vrai si une manette a bouge depuis le dernier passage. Vide la file
+    des evenements ; un fichier mort est ferme et retire."""
+    vu = False
+    for fd in list(fds):
+        while True:
+            try:
+                brut = os.read(fd, FORMAT_EVENEMENT.size * 64)
+            except BlockingIOError:
+                break
+            except OSError:
+                os.close(fd)
+                fds.remove(fd)
+                break
+            if not brut:
+                break
+            for i in range(0, len(brut) - FORMAT_EVENEMENT.size + 1, FORMAT_EVENEMENT.size):
+                typ = FORMAT_EVENEMENT.unpack_from(brut, i)[2]
+                if typ in (1, 3):          # EV_KEY, EV_ABS : bouton ou stick
+                    vu = True
+    return vu
+
+
 def ecrire(chemin, valeur, fichier="brightness"):
     try:
         with open(os.path.join(chemin, fichier), "w") as fh:
@@ -273,6 +323,8 @@ class Panneau:
         self.boutons = chemins_led(joueur)
         self.annexes = chemins_annexes(joueur)
         self.dernier = None          # ce qu on a applique en dernier
+        self.derniers_args = None    # pour re-appliquer a une autre intensite
+        self.intensite = INTENSITE_MENU
         self.origine = {}            # couleur posee par la carte, par led
 
     def _memoriser(self, chemin):
@@ -288,7 +340,8 @@ class Panneau:
     def appliquer(self, nombre, couleurs, allume=True):
         """Allume les `nombre` premiers boutons logiques, eteint le reste,
         et pose la couleur d origine de chacun quand la base la connait."""
-        voulu = (nombre, tuple(sorted(couleurs.items()))) if allume else 0
+        self.derniers_args = (nombre, couleurs, allume)
+        voulu = (nombre, tuple(sorted(couleurs.items())), self.intensite) if allume else 0
         if voulu == self.dernier:
             return
         for position, chemins in enumerate(self.boutons):
@@ -303,10 +356,16 @@ class Panneau:
                     ecrire(chemin, couleur_pour(chemin, rvb), "multi_intensity")
                 else:
                     self._rendre_couleur(chemin)
-                ecrire(chemin, INTENSITE_MENU if utilise else "0")
+                ecrire(chemin, self.intensite if utilise else "0")
         for chemin in self.annexes:
-            ecrire(chemin, INTENSITE_MENU if allume else "0")
+            ecrire(chemin, self.intensite if allume else "0")
         self.dernier = voulu
+
+    def reveiller(self, intensite):
+        """Change l intensite de ce qui est affiche, sans rien recalculer."""
+        self.intensite = intensite
+        if self.derniers_args and self.dernier not in (None, "repos"):
+            self.appliquer(*self.derniers_args)
 
     def rendre(self):
         """Tout a 255 et couleurs d origine : l etat de repos de la carte."""
@@ -329,9 +388,26 @@ def main():
     derniere_modif = None
     dernier_jeu = None
     base_vue = 0.0
+    manettes = ouvrir_manettes()
+    manettes_vues = time.time()
+    dernier_geste = time.time()
+    intensite = PLEIN
+    journal("%d manette(s) ecoutee(s) pour la veille" % len(manettes))
 
     while True:
         time.sleep(PERIODE)
+        maintenant = time.time()
+        # Veille : un geste rallume a fond, le silence tamise.
+        if not manettes and maintenant - manettes_vues > 10:
+            manettes = ouvrir_manettes()
+            manettes_vues = maintenant
+        if geste(manettes):
+            dernier_geste = maintenant
+        voulue = PLEIN if maintenant - dernier_geste < VEILLE_APRES else INTENSITE_MENU
+        if voulue != intensite:
+            intensite = voulue
+            for p in panneaux.values():
+                p.reveiller(intensite)
         # La base peut etre mise a jour pendant que la borne tourne.
         try:
             m = os.path.getmtime(BASE_BOUTONS)
@@ -351,6 +427,8 @@ def main():
         etat = lire_etat()
         if not etat:
             continue
+        if etat.get("Action") not in AUTOMATIQUES:
+            dernier_geste = maintenant       # on a navigue : c est un geste
 
         # Partie en cours : le demon des credits est maitre des LED.
         if etat.get("State") == "playing" or etat.get("Action") == "rungame":
