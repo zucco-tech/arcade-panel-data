@@ -84,7 +84,8 @@ PLEIN = "255"
 # le retient meme quand on joue. Les quatre valeurs sont ici, a regler a
 # l oeil sans toucher au reste.
 JOUR_PRESENT = "255"     # quelqu un navigue, en plein jour
-JOUR_REPOS = "255"       # personne devant, en plein jour
+JOUR_REPOS = "160"       # personne devant, en plein jour : 60 % suffit
+                         # quand la borne se raconte toute seule
 NUIT_PRESENT = "77"      # quelqu un navigue, le soir : 30 % de la puissance
 NUIT_REPOS = "38"        # personne devant, le soir : la moitie de ce 30 %
 VEILLE_APRES = 30.0
