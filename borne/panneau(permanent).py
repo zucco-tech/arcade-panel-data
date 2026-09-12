@@ -153,20 +153,27 @@ RECALBOX = charger_palette_recalbox()
 
 
 def fiche_de_systeme(systeme):
-    """Une fiche minimale batie depuis la table, ou None.
+    """Une fiche minimale pour un systeme sans fiche arcade, ou None.
 
-    Systeme absent de la table : on prend la couleur que Recalbox lui donne ;
-    un bouton noir n est pas utilise, le nombre est le dernier bouton allume."""
-    entree = BOUTONS_PAR_SYSTEME.get(systeme or "")
-    if not entree:
-        boutons = RECALBOX.get(systeme or "")
-        if not boutons:
-            return None
+    Les couleurs sont celles que Recalbox donne a ce systeme (la table du
+    script d origine) : c est ce que le proprietaire a toujours vu. Notre
+    table ne sert qu a borner le NOMBRE de boutons a ceux de la manette
+    d origine. Un systeme que Recalbox ne connait pas prend sa couleur de
+    secours (astrocity), comme le faisait le script d origine."""
+    systeme = systeme or ""
+    entree = BOUTONS_PAR_SYSTEME.get(systeme)
+    boutons = RECALBOX.get(systeme) or RECALBOX.get("astrocityp1")
+    if boutons:
         allumes = [i for i, rvb in enumerate(boutons, 1) if any(rvb)]
-        if not allumes:
+        nombre = entree[0] if entree else (max(allumes) if allumes else 0)
+        if not nombre:
             return None
-        couleurs = {"BUTTON%d" % i: {"rvb": boutons[i - 1]} for i in allumes}
-        return {"nombre": max(allumes), "boutons": couleurs}
+        couleurs = {"BUTTON%d" % i: {"rvb": boutons[i - 1]}
+                    for i in range(1, nombre + 1)
+                    if i - 1 < len(boutons) and any(boutons[i - 1])}
+        return {"nombre": nombre, "boutons": couleurs}
+    if not entree:
+        return None
     nombre, palette = entree
     couleurs = {}
     if palette:
@@ -255,15 +262,12 @@ def chemins_annexes(joueur):
     elles suivent la meme intensite que les boutons, et le poste 2 les
     eteint avec lui."""
     noms = ["aio_p%d_start" % joueur, "aio_p%d_select" % joueur]
-    if joueur == 1:
-        noms.append("aio_hotkey")
-    chemins = []
-    for nom in noms:
-        for k in (1, 2):
-            chemin = "/sys/class/leds/%s_%d" % (nom, k)
-            if os.path.isdir(chemin):
-                chemins.append(chemin)
-    return chemins
+    return [c for nom in noms for c in _leds(nom)]
+
+
+def _leds(nom):
+    return [c for c in ("/sys/class/leds/%s_%d" % (nom, k) for k in (1, 2))
+            if os.path.isdir(c)]
 
 
 def ouvrir_manettes():
@@ -322,6 +326,9 @@ class Panneau:
         self.joueur = joueur
         self.boutons = chemins_led(joueur)
         self.annexes = chemins_annexes(joueur)
+        # La touche hotkey n existe que sur le poste 1. Elle ne sert qu a
+        # quelqu un qui est devant la borne : en veille elle s eteint.
+        self.hotkey = _leds("aio_hotkey") if joueur == 1 else []
         self.dernier = None          # ce qu on a applique en dernier
         self.derniers_args = None    # pour re-appliquer a une autre intensite
         self.intensite = INTENSITE_MENU
@@ -359,12 +366,20 @@ class Panneau:
                 ecrire(chemin, self.intensite if utilise else "0")
         for chemin in self.annexes:
             ecrire(chemin, self.intensite if allume else "0")
+        self._hotkey()
         self.dernier = voulu
+
+    def _hotkey(self):
+        for chemin in self.hotkey:
+            ecrire(chemin, PLEIN if self.intensite == PLEIN else "0")
 
     def reveiller(self, intensite):
         """Change l intensite de ce qui est affiche, sans rien recalculer."""
         self.intensite = intensite
-        if self.derniers_args and self.dernier not in (None, "repos"):
+        if self.dernier == "repos":
+            self.dernier = None
+            self.rendre()
+        elif self.derniers_args and self.dernier is not None:
             self.appliquer(*self.derniers_args)
 
     def rendre(self):
@@ -374,9 +389,10 @@ class Panneau:
         for chemins in self.boutons:
             for chemin in chemins:
                 self._rendre_couleur(chemin)
-                ecrire(chemin, PLEIN)
+                ecrire(chemin, self.intensite)
         for chemin in self.annexes:
-            ecrire(chemin, PLEIN)
+            ecrire(chemin, self.intensite)
+        self._hotkey()
         self.dernier = "repos"
 
 
@@ -391,7 +407,7 @@ def main():
     manettes = ouvrir_manettes()
     manettes_vues = time.time()
     dernier_geste = time.time()
-    intensite = PLEIN
+    intensite = None                 # fixee au premier tour
     journal("%d manette(s) ecoutee(s) pour la veille" % len(manettes))
 
     while True:
@@ -455,7 +471,7 @@ def main():
         origine = "fiche"
         if not fiche or not fiche.get("nombre"):
             fiche = fiche_de_systeme(systeme)
-            origine = "systeme %s" % systeme
+            origine = "systeme %s%s" % (systeme, "" if systeme in RECALBOX else ", couleur de secours")
         if not fiche:
             for p in panneaux.values():
                 p.rendre()
