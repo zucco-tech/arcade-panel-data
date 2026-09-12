@@ -225,10 +225,18 @@ on a single unlucky attempt.
 
 ## `borne/` — the only hardware-specific part
 
-`borne/credits(permanent).py` is an EmulationStation permanent script that
-drives the LEDs of an **AllInOne board (digipcb.tech)** on Recalbox. It reads
-the datasets and blinks accordingly; it also learns any game the sweep
-missed, the first time you play it.
+Two EmulationStation permanent scripts drive the LEDs of an **AllInOne board
+(digipcb.tech)** on Recalbox, never at the same time:
+
+| | |
+|---|---|
+| `borne/panneau(permanent).py` | **in the menu**: lights the buttons of the hovered game with its original colours; for a console, the pad's button count; for a system without a record, Recalbox's own colour table |
+| `borne/credits(permanent).py` | **during play**: reads the counter in RAM, blinks COIN then START, lights the useful buttons, turns player 2 off when unused or when the pool is shared |
+
+On the cabinet everything that belongs to the panel lives in one folder,
+`/recalbox/share/system/panneau-arcade/` (data, logs, backups) — see
+`borne/README.md`. The credits daemon also learns any game the sweep missed,
+the first time you play it.
 
 It writes only to `brightness`, and to `multi_intensity` solely for the
 duration of a blink — reading the board's own colour first and restoring it
@@ -244,8 +252,9 @@ at the top of the file and **not encoded in the datasets**:
 
 ## Limitations
 
-- Arcade only. On a console, the button count is a property of the pad, not
-  the game.
-- A core that does not expose its RAM cannot be measured — 97 games here.
+- Credits are measured on arcade only. On a console, the panel lights the
+  original pad's button count.
+- Naomi and Atomiswave run in free play under flycast: no counter.
+- A core that does not expose its RAM cannot be measured.
 - Some counters are BCD or two bytes wide and escape the method.
 - Button metadata is MAME-derived: a handful of games have none.
