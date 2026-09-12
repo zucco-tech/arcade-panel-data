@@ -84,12 +84,12 @@ PLEIN = "255"
 # le retient meme quand on joue. Les quatre valeurs sont ici, a regler a
 # l oeil sans toucher au reste.
 JOUR_PRESENT = "255"     # quelqu un navigue, en plein jour
-JOUR_REPOS = "100"       # personne devant, en plein jour. L oeil est
-                         # logarithmique : a 160 sur 255 la difference ne se
-                         # voit pas, il faut descendre vers 100 pour qu un
-                         # panneau paraisse vraiment plus doux.
+JOUR_REPOS = "128"       # personne devant, en plein jour : la moitie.
+                         # L oeil est logarithmique — a 160 sur 255 la
+                         # difference ne se voyait pas.
 NUIT_PRESENT = "77"      # quelqu un navigue, le soir : 30 % de la puissance
-NUIT_REPOS = "38"        # personne devant, le soir : la moitie de ce 30 %
+NUIT_REPOS = "77"        # personne devant, le soir : 30 % aussi, la nuit
+                         # est deja assez douce comme cela
 VEILLE_APRES = 30.0
 
 # Le jour, la piece est claire : un panneau a pleine puissance ne gene

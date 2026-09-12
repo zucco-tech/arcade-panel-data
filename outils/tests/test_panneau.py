@@ -195,8 +195,11 @@ def _(dossier, espace):
     jour_present = int(espace["JOUR_PRESENT"])
     nuit_present = int(espace["NUIT_PRESENT"])
     nuit_repos = int(espace["NUIT_REPOS"])
+    jour_repos = int(espace["JOUR_REPOS"])
     assert nuit_present < jour_present, "la nuit devrait etre plus douce que le jour"
-    assert nuit_repos < nuit_present, "le repos devrait etre plus doux que la presence"
+    assert jour_repos < jour_present, "le clip devrait etre plus doux que la presence"
+    assert nuit_repos <= nuit_present, "la nuit au repos ne doit pas depasser la presence"
+    assert nuit_repos < jour_repos, "la nuit devrait rester plus douce que le jour"
 
 
 @essai("le soleil se leve et se couche a des heures credibles")
