@@ -18,7 +18,10 @@ VIGNETTES=/mnt/recalbox/journaux/veille
 # Pas de « fba » : ce systeme n existe pas sur la borne (223 roms d epoque
 # FB Alpha, jamais lancees, refusees a 82 % par FBNeo). Les mesurer ne
 # servirait a rien et remplit l ecran d erreurs.
-SYSTEMES="fbneo neogeo neogeocd naomi naomigd naomi2 atomiswave"
+# Pas de naomi/naomigd/naomi2/atomiswave : flycast force le FREE PLAY par
+# defaut (reicast_force_freeplay = enabled, sur la borne aussi). Sans piece a
+# encaisser il n y a aucun compteur a mesurer : 73 jeux, 9 h, 0 fiche.
+SYSTEMES="fbneo neogeo neogeocd"
 mkdir -p "$VIGNETTES"
 
 note() { echo "$(date '+%Y-%m-%d %H:%M:%S')  $1" >> "$JOURNAL"; }

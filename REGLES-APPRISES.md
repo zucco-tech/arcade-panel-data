@@ -101,3 +101,13 @@ ni l'un ni l'autre       un seul monnayeur, jeu a un poste
 Sans cette distinction, le panneau clignoterait faux une fois sur deux : il
 inviterait le joueur 2 à payer dans un pot commun alors que rien ne lui
 garantit sa place.
+
+## Naomi / Atomiswave : FREE PLAY, donc rien a mesurer
+Flycast force le free play (`reicast_force_freeplay = enabled`, defaut du
+coeur, identique sur la borne). L ecran affiche « FREE PLAY », la piece ne
+change aucun compteur utile, le START ne consomme rien : chaque jeu finit
+« candidats non confirmes » apres 7 minutes. Ces systemes sont hors balayage.
+Le jour ou la borne sortira du free play, il faudra d abord passer l option
+a `disabled` sur le PC de releve, puis les remettre dans SYSTEMES.
+Les couleurs et le nombre de boutons, eux, ne dependent pas des credits :
+boutons-arcade.json couvre aussi ces jeux, le panneau les eclaire normalement.

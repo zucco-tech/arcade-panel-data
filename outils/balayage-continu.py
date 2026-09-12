@@ -32,8 +32,10 @@ ARRET = "/tmp/arret-nuit"
 # L ordre compte : on commence par ce qu on maitrise, on garde pour la fin
 # les coeurs dont on ignore s ils exposent leur memoire.
 # Pas de « fba » : systeme absent de la borne, roms jamais lancees.
-SYSTEMES = ["fbneo", "neogeo", "neogeocd",
-            "naomi", "naomigd", "naomi2", "atomiswave"]
+# Pas de naomi/naomigd/naomi2/atomiswave : flycast met ces jeux en FREE PLAY
+# par defaut (reicast_force_freeplay = enabled, sur la borne aussi). Sans
+# piece a encaisser il n y a aucun compteur a trouver : 73 jeux, 9 h, 0 fiche.
+SYSTEMES = ["fbneo", "neogeo", "neogeocd"]
 
 # Ces systemes partagent fbneo_libretro.so : le nom observe au controle du
 # temoin vaut pour eux tous, et pour eux seuls.
