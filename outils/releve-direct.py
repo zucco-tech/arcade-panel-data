@@ -47,18 +47,37 @@ ENV_GET_LOG_INTERFACE = 27
 ENV_GET_SAVE_DIRECTORY = 31
 
 MEMOIRE_SYSTEME = 2              # RETRO_MEMORY_SYSTEM_RAM
+# Formats d image que le coeur peut demander (RETRO_PIXEL_FORMAT_*).
+FORMATS = {0: "0RGB1555", 1: "XRGB8888", 2: "RGB565"}
 MANETTE = 1                      # RETRO_DEVICE_JOYPAD
 PIECE = 2                        # RETRO_DEVICE_ID_JOYPAD_SELECT
 START = 3                        # RETRO_DEVICE_ID_JOYPAD_START
 
 # --- reglages du releve ------------------------------------------------------
 
-IMAGES_DEMARRAGE = 900           # ~15 s de jeu : le temps de passer les logos
+# On n attend pas une duree fixe, on attend que la machine VIVE. Certaines
+# cartes restent figees tres longtemps pendant leur test de memoire : 1944
+# ne bouge pas une seule fois entre l image 300 et l image 2400, et met une
+# piece a l image 900 revient a la glisser dans une borne eteinte. Mesure du
+# 12/09/2026 : c est ce qui produisait la plupart des « aucun candidat ».
+IMAGES_PAS = 300                 # on regarde la RAM tous les 300 images
+IMAGES_MAX_DEMARRAGE = 9000      # ~2 min 30 de jeu, large pour un Neo Geo
+OCTETS_VIVANT = 20               # au-dela, la machine travaille vraiment
+IMAGES_APRES_VIVANT = 600        # on la laisse arriver a son ecran d attente
+# Quand la premiere tentative echoue, on insiste : une piece toutes les 600
+# images, sur plusieurs minutes de jeu emule. Aucun critere ne dit de facon
+# fiable QUAND une carte est prete — Battle Garegga s agite sur 10 % de sa
+# RAM pendant son test de memoire, 1944 sur 0,1 % une fois en attract — donc
+# plutot que de deviner l instant, on paie regulierement jusqu a ce que ca
+# prenne. Seuls les jeux recalcitrants coutent ce temps-la.
+INSISTANCE_PIECES = 8
+INSISTANCE_ECART = 600
 IMAGES_APPUI = 6                 # une piece est une impulsion, pas un appui
 IMAGES_APRES_PIECE = 120         # ~2 s : le jeu a le temps d encaisser
 IMAGES_APRES_START = 240         # ~4 s : le temps de consommer le credit
 PIECES_MAX = 5
 ASSEZ = 4                        # en dessous de ce nombre de candidats, on tranche
+ACCORDS_MIN = 2                  # un octet doit monter sur au moins deux pieces
 DELAI_JEU = 180.0                # secondes reelles accordees a un jeu
 
 # Les reglages de carte qu on impose quand le jeu les expose. Un jeu en free
@@ -115,6 +134,8 @@ class Coeur:
 
     def __init__(self, chemin_coeur, dossier_systeme, options_frontend=None):
         self.dits = []               # ce que le coeur raconte (son journal)
+        self.image = None            # derniere image calculee, pour la regarder
+        self.format = 0              # format des pixels, annonce par le coeur
         self.entrees = []            # ce que le jeu declare comme boutons
         self.options = {}            # cle -> libelle;choix|choix|...
         self.imposees = dict(options_frontend or {})   # ce que RetroArch dirait
@@ -170,7 +191,10 @@ class Coeur:
         if commande == ENV_GET_CAN_DUPE:
             ctypes.cast(donnees, ctypes.POINTER(ctypes.c_bool))[0] = True
             return True
-        return commande == ENV_SET_PIXEL_FORMAT
+        if commande == ENV_SET_PIXEL_FORMAT:
+            self.format = ctypes.cast(donnees, ctypes.POINTER(ctypes.c_int))[0]
+            return self.format in FORMATS
+        return False
 
     def _noter(self, niveau, texte):
         try:
@@ -179,6 +203,16 @@ class Coeur:
             return
         if ligne:
             self.dits.append(ligne)
+
+    def _voir(self, donnees, largeur, hauteur, pas):
+        """Garde la derniere image. Un jeu qui refuse nos pieces a presque
+        toujours une raison ecrite a l ecran — « FREE PLAY », « COIN ERROR »,
+        un test de memoire. La regarder vaut mieux que la deviner."""
+        if not donnees or not largeur or not hauteur:
+            return
+        taille = pas * hauteur
+        self.image = (bytes((ctypes.c_ubyte * taille).from_address(donnees)),
+                      largeur, hauteur, pas, self.format)
 
     def _etat_bouton(self, port, appareil, index, bouton):
         return 1 if self.appuis.get((port, bouton), 0) > 0 else 0
@@ -197,7 +231,7 @@ class Coeur:
         self._journal_coeur = ctypes.CFUNCTYPE(
             None, ctypes.c_int, ctypes.c_char_p)(self._noter)
         self._garder = [types[0](self._environnement),
-                        types[1](lambda *a: None),
+                        types[1](self._voir),
                         types[2](lambda *a: None),
                         types[3](lambda *a: 0),
                         types[4](lambda: None),
@@ -259,32 +293,191 @@ class Coeur:
 
 # --- la mesure elle-meme -------------------------------------------------------
 
+def attendre_vivant(coeur, journal):
+    """Fait tourner la machine jusqu a ce que sa memoire s anime.
+
+    Renvoie le nombre d images calculees, ou None si elle est restee figee :
+    un jeu qui ne vit pas n encaissera aucune piece, et le dire est plus
+    utile que de chercher un compteur qui ne bougera pas."""
+    avant = coeur.photo()
+    total = 0
+    while total < IMAGES_MAX_DEMARRAGE:
+        coeur.images(IMAGES_PAS)
+        total += IMAGES_PAS
+        apres = coeur.photo()
+        bouge = sum(1 for a in range(len(apres)) if apres[a] != avant[a])
+        avant = apres
+        if bouge > OCTETS_VIVANT and total >= 2 * IMAGES_PAS:
+            coeur.images(IMAGES_APRES_VIVANT)
+            journal("  vivant apres %d images" % total)
+            return total
+    return None
+
+
+def enregistrer_image(coeur, chemin):
+    """Ecrit la derniere image du jeu en PNG. Vrai si l image existe."""
+    if not coeur.image:
+        return False
+    brut, largeur, hauteur, pas, format_ = coeur.image
+    try:
+        from PIL import Image
+    except ImportError:
+        return False
+    pixels = bytearray(largeur * hauteur * 3)
+    for y in range(hauteur):
+        ligne = y * pas
+        for x in range(largeur):
+            if format_ == 1:                      # XRGB8888
+                i = ligne + x * 4
+                r, v, b = brut[i + 2], brut[i + 1], brut[i]
+            else:
+                i = ligne + x * 2
+                mot = brut[i] | (brut[i + 1] << 8)
+                if format_ == 2:                  # RGB565
+                    r = (mot >> 11 & 0x1F) << 3
+                    v = (mot >> 5 & 0x3F) << 2
+                    b = (mot & 0x1F) << 3
+                else:                             # 0RGB1555
+                    r = (mot >> 10 & 0x1F) << 3
+                    v = (mot >> 5 & 0x1F) << 3
+                    b = (mot & 0x1F) << 3
+            j = (y * largeur + x) * 3
+            pixels[j], pixels[j + 1], pixels[j + 2] = r, v, b
+    Image.frombytes("RGB", (largeur, hauteur), bytes(pixels)).save(chemin)
+    return True
+
+
 def montes_de_un(avant, apres):
     """Les octets qui valent exactement un de plus qu avant.
 
-    Le 0x99 ecarte les compteurs BCD satures et les octets qui defilent :
-    un compteur de credits ne depasse jamais cette valeur."""
-    return {a for a in range(len(apres))
-            if apres[a] == (avant[a] + 1) & 0xFF and avant[a] < 0x99}
+    Deux facons de valoir un de plus : en binaire (7 -> 8) et en BCD, ou
+    chaque quartet compte jusqu a 9 (0x09 -> 0x10). Des cartes entieres
+    comptent leurs credits en BCD parce qu elles les affichent directement.
+
+    Le 0x99 ecarte les octets qui defilent : un compteur de credits ne
+    depasse jamais cette valeur."""
+    montes = set()
+    for a in range(len(apres)):
+        vieux, neuf = avant[a], apres[a]
+        if vieux >= 0x99:
+            continue
+        if neuf == (vieux + 1) & 0xFF:
+            montes.add(a)
+        elif vieux & 0x0F == 9 and neuf == vieux + 7:      # 0x09 -> 0x10, BCD
+            montes.add(a)
+    return montes
 
 
 def chercher_compteur(coeur, joueur, journal):
-    """L octet qui monte de 1 a chaque piece de ce joueur, ou None."""
-    candidats = None
+    """Les octets qui se comportent comme un compteur de credits.
+
+    On ne demande pas qu un octet monte a CHAQUE piece : des cartes en
+    avalent une puis ignorent les suivantes (1944 n en accepte qu une), et
+    l exigence stricte jetait alors tout le travail. On compte donc les
+    accords : un octet retenu doit etre monte sur au moins deux pieces. Le
+    tri final, lui, ne pardonne pas — c est le START qui tranche."""
+    accords = {}
     avant = coeur.photo()
     for numero in range(1, PIECES_MAX + 1):
         coeur.appuyer(PIECE, joueur)
         coeur.images(IMAGES_APRES_PIECE)
         apres = coeur.photo()
-        montes = montes_de_un(avant, apres)
-        candidats = montes if candidats is None else candidats & montes
+        for a in montes_de_un(avant, apres):
+            accords[a] = accords.get(a, 0) + 1
         avant = apres
-        journal("  piece %d joueur %d : %d candidat(s)" % (numero, joueur, len(candidats)))
-        if not candidats:
-            return set()
-        if len(candidats) <= ASSEZ:
+        retenus = {a for a, n in accords.items() if n >= ACCORDS_MIN}
+        journal("  piece %d joueur %d : %d octet(s) d accord sur %d vus"
+                % (numero, joueur, len(retenus), len(accords)))
+        if retenus and len(retenus) <= ASSEZ and numero >= ACCORDS_MIN + 1:
             break
-    return candidats
+    # On rend TOUT ce qui est monte au moins une fois, avec son nombre
+    # d accords. Ne garder que le plus fidele etait une erreur : sur Battle
+    # Garegga, l octet le plus fidele est le compteur de pieces encaissees
+    # (il monte encore au START), tandis que le vrai solde de credits etait
+    # dans les dix autres, jetes. C est le START qui doit trancher, pas
+    # nous — lui seul distingue un solde d un total.
+    return accords
+
+
+def verifier_miroirs(coeur, adresse, soupcons):
+    """Garde les octets qui suivent VRAIMENT le compteur.
+
+    Porter la meme valeur ne suffit pas : quand un compteur passe de 1 a 0,
+    des dizaines d octets de jeu en font autant au meme instant. On met donc
+    une piece de plus et on ne garde que ceux qui montent avec lui, et qui
+    restent egaux a lui."""
+    if not soupcons:
+        return []
+    avant = coeur.photo()
+    coeur.appuyer(PIECE, 1)
+    coeur.images(IMAGES_APRES_PIECE)
+    apres = coeur.photo()
+    if apres[adresse] <= avant[adresse]:
+        return []                      # la piece n a pas ete prise : on ne tranche pas
+    return [b for b in soupcons
+            if apres[b] == apres[adresse] and avant[b] == avant[adresse]
+            and apres[b] > avant[b]]
+
+
+STARTS_MAX = 3                   # on insiste : le premier START ne consomme pas toujours
+
+
+def confirmer_au_start(coeur, accords, journal):
+    """Parmi les octets montes, ceux que le START fait DESCENDRE.
+
+    C est la seule preuve qu on tient un solde de credits et non un total de
+    pieces encaissees.
+
+    Deux precautions apprises a la mesure :
+      - le premier START ne consomme pas toujours (le jeu peut etre en train
+        de finir une animation) ; on appuie donc jusqu a trois fois ;
+      - on exige d abord un octet monte a CHAQUE piece. Sans cela, sur Air
+        Gallet un octet de bruit monte une seule fois et descendu au premier
+        START passait devant le vrai compteur, qui n avait pas encore ete
+        consomme."""
+    exigeant = max(accords.values()) if accords else 0
+    faible = None
+    for essai in range(1, STARTS_MAX + 1):
+        avant = coeur.photo()
+        coeur.appuyer(START, 1)
+        coeur.images(IMAGES_APRES_START)
+        apres = coeur.photo()
+        descendus = sorted((a for a in accords if apres[a] < avant[a]),
+                           key=lambda a: (-accords[a], a))
+        forts = [a for a in descendus if accords[a] >= max(ACCORDS_MIN, exigeant)]
+        if forts:
+            journal("  START %d : %s descend (%d -> %d), monte a %d piece(s)"
+                    % (essai, "0x%04X" % forts[0], avant[forts[0]], apres[forts[0]],
+                       accords[forts[0]]))
+            return forts + [a for a in descendus if a not in forts], avant, apres
+        if descendus and faible is None:
+            faible = (descendus, avant, apres)
+    if faible:
+        journal("  START : seul %s descend, monte a %d piece(s) seulement"
+                % ("0x%04X" % faible[0][0], accords[faible[0][0]]))
+        return faible
+    return [], avant, apres
+
+
+def insister(coeur, accords, journal):
+    """Deuxieme chance : on paie regulierement pendant plusieurs minutes.
+
+    Renvoie (descendus, avant, apres) comme confirmer_au_start, ou None."""
+    journal("  rien de confirme : on insiste sur %d pieces"
+            % INSISTANCE_PIECES)
+    for numero in range(1, INSISTANCE_PIECES + 1):
+        avant = coeur.photo()
+        coeur.appuyer(PIECE, 1)
+        coeur.images(INSISTANCE_ECART)
+        for a in montes_de_un(avant, coeur.photo()):
+            accords[a] = accords.get(a, 0) + 1
+        if numero % 2:
+            continue                       # on ne teste le START qu une fois sur deux
+        descendus, avant, apres = confirmer_au_start(coeur, accords, journal)
+        if descendus:
+            journal("  confirme apres %d piece(s) d insistance" % numero)
+            return descendus, avant, apres
+    return None
 
 
 def mesurer(chemin_coeur, chemin_rom, dossier_systeme, bavard, options=None):
@@ -306,34 +499,51 @@ def mesurer(chemin_coeur, chemin_rom, dossier_systeme, bavard, options=None):
     imposes = coeur.choisir_les_dip()
     if imposes:
         journal("  reglages imposes : %s" % ", ".join(sorted(imposes.values())))
-    coeur.images(IMAGES_DEMARRAGE)
+    if attendre_vivant(coeur, journal) is None:
+        return {"erreur": "jeu inanime"}, lignes
 
-    candidats = chercher_compteur(coeur, 1, journal)
-    if not candidats:
+    accords = chercher_compteur(coeur, 1, journal)
+    if not accords:
         return {"erreur": "aucun candidat"}, lignes
 
     # Le START doit FAIRE DESCENDRE le compteur : c est ce qui distingue un
     # solde de credits d un total de pieces encaissees.
-    avant = coeur.photo()
-    coeur.appuyer(START, 1)
-    coeur.images(IMAGES_APRES_START)
-    apres = coeur.photo()
-    descendus = [a for a in sorted(candidats) if apres[a] < avant[a]]
-    if not descendus:
-        return {"erreur": "candidats non confirmes", "candidats": len(candidats)}, lignes
+    def solide(liste):
+        """Un resultat est solide si son octet est monte a plusieurs pieces."""
+        return liste and accords.get(liste[0], 0) >= ACCORDS_MIN
+
+    descendus, avant, apres = confirmer_au_start(coeur, accords, journal)
+    if not solide(descendus):
+        # Rien, ou seulement un octet monte une seule fois : on insiste avant
+        # de s en contenter. Sur Battle Garegga, se contenter du premier
+        # octet venu donnait une adresse fausse alors que la bonne
+        # apparaissait deux pieces plus tard.
+        insiste = insister(coeur, accords, journal)
+        if solide(insiste[0] if insiste else None):
+            descendus, avant, apres = insiste
+        elif not descendus and insiste:
+            descendus, avant, apres = insiste
+        elif not descendus:
+            return {"erreur": "candidats non confirmes", "candidats": len(accords)}, lignes
     adresse = descendus[0]
-    miroirs = [a for a in descendus[1:]]
+    # Un miroir n est pas « un octet qui descend aussi » : c est le MEME
+    # compteur vu a une autre adresse, donc il porte la meme valeur avant et
+    # apres. Sans cette exigence, un jeu en attract donnait quatre-vingt-dix
+    # « miroirs » qui n etaient que des octets de jeu en train de baisser.
+    soupcons = [b for b in descendus[1:]
+                if avant[b] == avant[adresse] and apres[b] == apres[adresse]]
+    miroirs = verifier_miroirs(coeur, adresse, soupcons)
     journal("  APPRIS 0x%04X (%d -> %d)%s"
             % (adresse, avant[adresse], apres[adresse],
                "  miroirs : " + ", ".join("0x%04X" % m for m in miroirs) if miroirs else ""))
 
     # Le joueur 2 : sa piece a lui, et son compteur a lui — ou le meme.
     avant = coeur.photo()
-    candidats_j2 = chercher_compteur(coeur, 2, journal)
+    candidats_j2 = set(chercher_compteur(coeur, 2, journal))
     adresse_j2 = None
     commun = False
     if candidats_j2:
-        if adresse in candidats_j2:
+        if adresse in candidats_j2 or candidats_j2 & set(miroirs):
             commun = True
             journal("  le joueur 2 alimente le MEME compteur")
         else:

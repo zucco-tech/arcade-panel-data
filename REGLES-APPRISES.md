@@ -145,3 +145,33 @@ precedent. Il n y a desormais qu une source : `panneau(permanent).py` publie
 les couleurs de la carte (la table Recalbox du systeme) dans
 `panneau-arcade/couleurs-carte.json` juste avant que la partie commence, et
 `credits(permanent).py` les lit de la. Aucune course possible.
+
+## Chercher un compteur de credits : cinq pieges, tous mesures
+1. **Payer avant que la machine soit vivante.** 1944 reste fige de l image
+   300 a l image 2400 (test de RAM) : une piece glissee la n existe pas.
+   On attend que la memoire s anime, puis on paie.
+2. **Exiger que TOUTES les pieces fassent monter le meme octet.** Des cartes
+   en avalent une puis ignorent les suivantes ; l exigence stricte jetait
+   alors tout. On compte les accords, et le START tranche.
+3. **Ignorer le BCD.** Des cartes comptent en decimal code binaire, ou
+   « un de plus » s ecrit 0x09 -> 0x10. Elles etaient invisibles.
+4. **Conclure sur le premier START.** Il ne consomme pas toujours (animation
+   en cours). Sur Air Gallet, un octet de bruit monte une fois et descendu
+   au premier START passait devant le vrai compteur, qui n avait pas encore
+   ete consomme. On appuie jusqu a trois fois, et on prefere l octet monte
+   a chaque piece.
+5. **Appeler « miroir » tout octet qui descend aussi.** Quand un compteur
+   passe de 1 a 0, des dizaines d octets de jeu en font autant : Battle
+   Garegga rendait quatre-vingt-dix faux miroirs. Un miroir doit le prouver
+   en montant avec le compteur a une piece de verification.
+
+Aucun critere d « ecran pret » ne marche pour tous : Battle Garegga agite
+10 % de sa RAM pendant son test de memoire, 1944 seulement 0,1 % une fois en
+attract. D ou le choix de ne plus deviner l instant, mais de payer
+regulierement jusqu a ce que ca prenne.
+
+## Regarder l ecran sans RetroArch
+Le coeur fournit ses images au frontend : le releve direct les garde et sait
+les ecrire en PNG (`enregistrer_image`). C est ainsi qu on a vu Battle
+Garegga afficher encore « ROM RAM CHECK » au moment ou on le payait. Un
+echec se regarde, il ne se devine pas.
