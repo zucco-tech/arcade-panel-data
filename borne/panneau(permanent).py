@@ -38,6 +38,7 @@ Aucune dependance : uniquement la bibliotheque standard.
 import json
 import os
 import re
+import select
 import struct
 import time
 
@@ -64,10 +65,15 @@ PLEIN = "255"
 # defilent tout seuls ne comptent pas comme un geste.
 INTENSITE_MENU = "80"
 VEILLE_APRES = 30.0
+# On n attend pas la fin d un tour de boucle pour reagir : le programme dort
+# SUR les manettes (select), donc un bouton presse le reveille aussitot.
+# Sans cela, le rallumage arrivait avec jusqu a PERIODE de retard.
 AUTOMATIQUES = {"startgameclip", "endgameclip"}
 MANETTES = "AllInOne"        # nom des manettes de la carte dans /proc/bus/input
 FORMAT_EVENEMENT = struct.Struct("llHHi")
-PERIODE = 0.3                # cadence de lecture du fichier d etat
+PERIODE = 0.1                # cadence de lecture du fichier d etat : trois
+                             # fois plus fine qu avant, pour que le survol
+                             # suive la navigation sans retard visible
 
 # Machines a UN joueur par construction : une console portable n a qu un
 # ecran et une manette. Le poste 2 y reste noir quoi qu en dise la fiche.
@@ -386,13 +392,26 @@ class Panneau:
             ecrire(chemin, PLEIN if self.intensite == PLEIN else "0")
 
     def reveiller(self, intensite):
-        """Change l intensite de ce qui est affiche, sans rien recalculer."""
-        self.intensite = intensite
-        if self.dernier == "repos":
-            self.dernier = None
-            self.rendre()
-        elif self.derniers_args and self.dernier is not None:
-            self.appliquer(*self.derniers_args)
+        """Change l intensite de ce qui est deja affiche.
+
+        Chemin rapide : on ne touche qu a `brightness`, jamais aux couleurs
+        — elles n ont pas change. Une vingtaine d ecritures, quelques
+        millisecondes, et l oeil ne voit aucun delai."""
+        if intensite == self.intensite:
+            return
+        ancienne, self.intensite = self.intensite, intensite
+        if self.dernier is None:
+            return
+        for chemins in self.boutons:
+            for chemin in chemins:
+                if lire_fichier(os.path.join(chemin, "brightness")) not in ("0", None):
+                    ecrire(chemin, intensite)
+        for chemin in self.annexes:
+            if lire_fichier(os.path.join(chemin, "brightness")) not in ("0", None):
+                ecrire(chemin, intensite)
+        self._hotkey()
+        if self.dernier not in ("repos", None):
+            self.dernier = self.dernier[:2] + (intensite,)
 
     def rendre(self):
         """Tout a 255 et couleurs d origine : l etat de repos de la carte."""
@@ -423,7 +442,15 @@ def main():
     journal("%d manette(s) ecoutee(s) pour la veille" % len(manettes))
 
     while True:
-        time.sleep(PERIODE)
+        # Dormir SUR les manettes : un geste rend la main tout de suite,
+        # sinon on se reveille au bout de PERIODE pour relire l etat.
+        if manettes:
+            try:
+                select.select(manettes, [], [], PERIODE)
+            except (OSError, ValueError):
+                manettes = []
+        else:
+            time.sleep(PERIODE)
         maintenant = time.time()
         # Veille : un geste rallume a fond, le silence tamise.
         if not manettes and maintenant - manettes_vues > 10:
