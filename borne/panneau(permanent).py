@@ -481,6 +481,7 @@ class Panneau:
         # La touche hotkey n existe que sur le poste 1. Elle ne sert qu a
         # quelqu un qui est devant la borne : en veille elle s eteint.
         self.hotkey = _leds("aio_hotkey") if joueur == 1 else []
+        self.present = True          # quelqu un est-il devant la borne ?
         self.dernier = None          # ce qu on a applique en dernier
         self.derniers_args = None    # pour re-appliquer a une autre intensite
         self.intensite = INTENSITE_MENU
@@ -522,8 +523,17 @@ class Panneau:
         self.dernier = voulu
 
     def _hotkey(self):
+        """La touche hotkey ne sert qu a quelqu un qui joue : elle reste
+        noire tant que personne n a touche la borne, meme en plein jour ou
+        pendant les clips video, ou elle n eclairerait rien d utile."""
         for chemin in self.hotkey:
-            ecrire(chemin, PLEIN if self.intensite == PLEIN else "0")
+            ecrire(chemin, PLEIN if self.present else "0")
+
+    def presence(self, quelqu_un):
+        """Dit au poste si quelqu un est devant la borne."""
+        if quelqu_un != self.present:
+            self.present = quelqu_un
+            self._hotkey()
 
     def reveiller(self, intensite):
         """Change l intensite de ce qui est deja affiche.
@@ -623,7 +633,10 @@ def main():
             dernier_geste = maintenant
         # Au repos : pleine puissance tant qu il fait jour, tamise la nuit.
         au_repos = PLEIN if il_fait_jour(maintenant) else INTENSITE_MENU
-        voulue = PLEIN if maintenant - dernier_geste < VEILLE_APRES else au_repos
+        present = maintenant - dernier_geste < VEILLE_APRES
+        for p in panneaux.values():
+            p.presence(present)
+        voulue = PLEIN if present else au_repos
         if voulue != intensite:
             intensite = voulue
             for p in panneaux.values():
