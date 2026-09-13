@@ -269,9 +269,14 @@ def lire_rapport_mame(nom):
 
 
 def lire_credits(adresse, core, nom):
-    """Le compteur de credits du jeu en cours, quel que soit le coeur."""
+    """Le compteur de credits du jeu en cours, quel que soit le coeur.
+
+    Sous MAME, on prend le rapport du Lua s il existe ; sinon None, et
+    c est le compte DEDUIT des boutons qui prend le relais (voir la boucle)."""
     if coeur_mame(core):
         return lire_rapport_mame(nom)
+    if adresse is None:
+        return None
     octet = lire(adresse, 1)
     return octet[0] if octet else None
 
@@ -1109,6 +1114,14 @@ def main():
     adresse = None
     credits = None
     core, nom = "", None          # le coeur et le nom du jeu en cours
+    # Comportement de borne SANS lire la memoire : une piece, c est un appui
+    # sur le bouton piece ; une partie, c est un appui sur start. On compte
+    # les uns, on retranche les autres. C est ce qui fait vivre les lampes
+    # sous MAME, dont la memoire n est pas lisible depuis ici. Pas exact au
+    # credit pres (une carte a « 2 pieces = 1 credit » comptera double),
+    # mais fidele a ce qu un joueur voit : il paie, le start l invite ; il
+    # lance, tout s eteint.
+    deduits = 0
     lance = False              # START a ete presse avec du credit : on joue
     multi = False              # le jeu accepte au moins deux joueurs
     p2_engage = False          # le joueur 2 a pris sa place
@@ -1137,6 +1150,13 @@ def main():
                     derniere_activite = maintenant
                     if code not in (CODE_PIECE, CODE_START):
                         continue          # une touche de jeu : juste un signe de vie
+                    if coeur_mame(core):
+                        # Sous MAME, les boutons SONT le compteur.
+                        if code == CODE_PIECE:
+                            deduits += 1
+                        elif deduits > 0:
+                            deduits -= 1
+                            lance, depuis_lance = True, maintenant
                     if code == CODE_START and pads[fd].endswith("P2"):
                         p2_engage = True    # il a rejoint, on cesse de l'appeler
                         if credits:
@@ -1166,6 +1186,7 @@ def main():
                     en_jeu = champ_etat("SystemId").lower() in SYSTEMES
                     resolu, adresse, credits, lance = False, None, None, False
                     core, nom = "", None
+                    deduits = 0
                     p2_engage, essai_j2 = False, None
                     derniere_activite = maintenant
                     apprenti.oublier()
@@ -1206,10 +1227,13 @@ def main():
                             fiche_boutons.get("mode") or "mode inconnu",
                             "" if deuxieme else " — joueur 2 eteint"))
 
-            # Jeu connu : un octet, trois fois par seconde.
-            elif en_jeu and adresse is not None and maintenant >= prochain_sondage:
+            # Jeu connu : un octet, trois fois par seconde. Sous MAME, le
+            # rapport du Lua s il existe, sinon le compte deduit des boutons.
+            elif en_jeu and (adresse is not None or coeur_mame(core)) and maintenant >= prochain_sondage:
                 prochain_sondage = maintenant + SONDAGE
                 nouveau = lire_credits(adresse, core, nom)
+                if nouveau is None and coeur_mame(core):
+                    nouveau = deduits
                 # Un credit qui descend, c'est quelqu'un qui vient de lancer
                 # une partie ou de rejoindre : rien d'autre ne le consomme.
                 # C'est le signal le plus sur dont on dispose.
