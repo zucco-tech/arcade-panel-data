@@ -62,6 +62,18 @@ démarrage : le déploiement le redémarre, uniquement quand personne ne joue.
 
 Voir le dossier ci-dessus : `credits.log`, `panneau.log`, `credits-erreurs.log`.
 
+## MAME : les credits lus de l interieur
+
+MAME ne sert pas `READ_CORE_RAM`. Pour lui, `mame-rapport.lua` (dans
+`panneau-arcade/outils/`) tourne **dans** l emulateur, lance par
+`/recalbox/share/bios/mame/ini/mame.ini` (`autoboot_script`, que le coeur
+lit grace a l option `mame_read_config`). Il cherche la machine dans
+`panneau-arcade/mame-fiches.txt` — une ligne par jeu, produite par le PC de
+releve — et ecrit le nombre de credits dans `/tmp/mame-credits` cinq fois
+par seconde. `credits(permanent).py` lit ce fichier au lieu de la memoire
+quand le coeur est MAME. Sans fiche, le Lua ecrit « inconnu » et le demon
+garde son comportement par defaut.
+
 ## Au demarrage
 
 `custom.sh` (dans `share/system/`, crochet officiel appele par `S99custom`)

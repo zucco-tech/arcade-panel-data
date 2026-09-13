@@ -23,6 +23,9 @@ def main():
     p = argparse.ArgumentParser(description=__doc__.split("\n")[1])
     p.add_argument("--base", required=True)
     p.add_argument("--sortie", required=True)
+    p.add_argument("--fiches-mame", default=None,
+                   help="ecrit aussi la liste que lit mame-rapport.lua sur la borne : "
+                        "une ligne par jeu MAME, « nom adresse zone »")
     args = p.parse_args()
 
     source = json.load(open(args.base))
@@ -32,13 +35,6 @@ def main():
     for cle, fiche in (source.get("jeux") or {}).items():
         jeu = fiche.get("jeu") or cle.split("/", 1)[-1]
         systeme = fiche.get("systeme")
-        # Les fiches MAME donnent une adresse dans l espace du processeur,
-        # que le demon de la borne ne sait pas encore lire (il passe par
-        # READ_CORE_RAM, que MAME ne sert pas). On les garde dans la base,
-        # on ne les exporte pas tant que la lecture par Lua n existe pas
-        # cote borne — sinon le demon tenterait des lectures qui echouent.
-        if (fiche.get("releve") or {}).get("methode") == "lua dans mame":
-            continue
         if not systeme:
             continue
         neuve = "%s/%s" % (systeme, jeu)
@@ -66,6 +62,22 @@ def main():
     with open(provisoire, "w") as fh:
         json.dump(sortie, fh, indent=2, sort_keys=True, ensure_ascii=False)
         fh.write("\n")
+    if args.fiches_mame:
+        # Le Lua de la borne n a pas de lecteur JSON : une ligne par jeu,
+        # « nom adresse zone ». L adresse est un decalage dans le share
+        # quand la zone commence par « : », une adresse du processeur sinon.
+        lignes = []
+        for cle, fiche in sorted(jeux.items()):
+            if fiche.get("systeme") != "mame":
+                continue
+            credits = fiche.get("credits") or {}
+            zone = (fiche.get("ram") or {}).get("zone") or "?"
+            if credits.get("adresse") is None or " " in str(zone):
+                continue
+            lignes.append("%s %d %s" % (fiche["jeu"], credits["adresse"], zone))
+        with open(args.fiches_mame, "w") as liste:
+            liste.write("\n".join(lignes) + "\n")
+        print("%d fiche(s) MAME ecrites pour le Lua de la borne" % len(lignes))
     os.replace(provisoire, args.sortie)
     print("%d fiches ecrites (%d doublons de coeur fusionnes)" % (len(jeux), doublons))
 

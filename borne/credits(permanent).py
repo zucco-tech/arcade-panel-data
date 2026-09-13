@@ -245,6 +245,37 @@ def core_en_cours():
         return ""
 
 
+# MAME ne sert pas READ_CORE_RAM : sa memoire n est pas exposee au frontend.
+# Pour lui, un script Lua tourne DANS l emulateur (mame-rapport.lua, lance
+# par mame.ini) et ecrit le nombre de credits dans ce fichier, cinq fois par
+# seconde : « <jeu> <credits> », ou « <jeu> inconnu » sans fiche.
+RAPPORT_MAME = "/tmp/mame-credits"
+
+
+def coeur_mame(core):
+    return (core or "").lower().startswith("mame")
+
+
+def lire_rapport_mame(nom):
+    """Le nombre de credits rapporte par le Lua pour CE jeu, ou None."""
+    try:
+        with open(RAPPORT_MAME) as fh:
+            jeu, _, valeur = fh.read().strip().partition(" ")
+    except (IOError, OSError):
+        return None
+    if jeu != nom or not valeur.isdigit():
+        return None
+    return int(valeur)
+
+
+def lire_credits(adresse, core, nom):
+    """Le compteur de credits du jeu en cours, quel que soit le coeur."""
+    if coeur_mame(core):
+        return lire_rapport_mame(nom)
+    octet = lire(adresse, 1)
+    return octet[0] if octet else None
+
+
 def lire(adresse, n):
     """n octets de RAM du jeu, ou None si la zone n'est pas lisible."""
     # FBNeo ne publie pas de memory map : READ_CORE_MEMORY repond toujours
@@ -1077,6 +1108,7 @@ def main():
     resolu = False
     adresse = None
     credits = None
+    core, nom = "", None          # le coeur et le nom du jeu en cours
     lance = False              # START a ete presse avec du credit : on joue
     multi = False              # le jeu accepte au moins deux joueurs
     p2_engage = False          # le joueur 2 a pris sa place
@@ -1133,6 +1165,7 @@ def main():
                 if action in ("rungame", "rundemo"):
                     en_jeu = champ_etat("SystemId").lower() in SYSTEMES
                     resolu, adresse, credits, lance = False, None, None, False
+                    core, nom = "", None
                     p2_engage, essai_j2 = False, None
                     derniere_activite = maintenant
                     apprenti.oublier()
@@ -1151,7 +1184,8 @@ def main():
                     resolu = True
                     systeme = champ_etat("SystemId").lower()
                     core = core_en_cours()
-                    apprenti.nouveau_jeu(nom, systeme, core)
+                    if not coeur_mame(core):
+                        apprenti.nouveau_jeu(nom, systeme, core)
                     multi = jeu_multijoueur(base, systeme, nom)
                     adresse = adresse_de(fiche_de(base, systeme, nom, core))
                     journal("%s/%s : %s" % (systeme, nom,
@@ -1175,8 +1209,7 @@ def main():
             # Jeu connu : un octet, trois fois par seconde.
             elif en_jeu and adresse is not None and maintenant >= prochain_sondage:
                 prochain_sondage = maintenant + SONDAGE
-                octet = lire(adresse, 1)
-                nouveau = octet[0] if octet else None
+                nouveau = lire_credits(adresse, core, nom)
                 # Un credit qui descend, c'est quelqu'un qui vient de lancer
                 # une partie ou de rejoindre : rien d'autre ne le consomme.
                 # C'est le signal le plus sur dont on dispose.
@@ -1199,8 +1232,9 @@ def main():
                         essai_j2 = None
                 credits = nouveau
 
-            # Jeu inconnu : on entretient la photo de reference.
-            elif en_jeu and adresse is None:
+            # Jeu inconnu : on entretient la photo de reference. Pas sous
+            # MAME : il n y a rien a photographier par RetroArch.
+            elif en_jeu and adresse is None and not coeur_mame(core):
                 apprenti.rafraichir()
 
             # Les trois etats d'une borne d'arcade. Une lecture ratee

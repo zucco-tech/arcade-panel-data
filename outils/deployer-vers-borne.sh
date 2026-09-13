@@ -19,14 +19,18 @@ INVITE=/mnt/recalbox/outils/.mdp-borne.sh
 export SSH_ASKPASS="$INVITE" SSH_ASKPASS_REQUIRE=force DISPLAY=${DISPLAY:-:0}
 DONNEES=/mnt/recalbox/donnees
 EXPORT=/mnt/recalbox/donnees/pour-borne.json
+FICHES_MAME=/mnt/recalbox/donnees/mame-fiches.txt
+BORNE_MAME=/recalbox/share/system/panneau-arcade
 JOURNAL=/mnt/recalbox/journaux/deploiement.log
 SSH="setsid -w ssh -o ConnectTimeout=8 -o StrictHostKeyChecking=no"
 note() { echo "$(date '+%Y-%m-%d %H:%M:%S')  $1" >> "$JOURNAL"; }
 
-python3 /mnt/recalbox/outils/exporter-pour-borne.py --base "$DONNEES/credits-arcade.json" --sortie "$EXPORT" >/dev/null 2>&1 || { note "export impossible"; exit 1; }
+python3 /mnt/recalbox/outils/exporter-pour-borne.py --base "$DONNEES/credits-arcade.json" --sortie "$EXPORT" --fiches-mame "$FICHES_MAME" >/dev/null 2>&1 || { note "export impossible"; exit 1; }
 $SSH $BORNE true 2>/dev/null || { note "borne injoignable"; exit 1; }
 setsid -w scp -q -o StrictHostKeyChecking=no "$EXPORT" $BORNE:/recalbox/share/system/panneau-arcade/credits-arcade.json 2>/dev/null || { note "copie credits echouee"; exit 1; }
 setsid -w scp -q -o StrictHostKeyChecking=no "$DONNEES/boutons-arcade.json" $BORNE:/recalbox/share/system/panneau-arcade/boutons-arcade.json 2>/dev/null
+# MAME : la liste des adresses que lit le Lua pendant la partie.
+setsid -w scp -q -o StrictHostKeyChecking=no "$FICHES_MAME" $BORNE:$BORNE_MAME/mame-fiches.txt 2>/dev/null
 N=$(python3 -c "import json;print(len(json.load(open('$EXPORT'))['jeux']))")
 ETAT=$($SSH $BORNE "grep -E '^State=' /tmp/es_state.inf 2>/dev/null | cut -d= -f2")
 if [ "$ETAT" = "playing" ]; then
