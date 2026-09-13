@@ -36,7 +36,6 @@ Aucune dependance : uniquement la bibliotheque standard.
 """
 
 import json
-import math
 import os
 import re
 import select
@@ -78,28 +77,15 @@ PLEIN = "255"
 # Dans le menu le panneau VEILLE : un geste sur une manette le ranime, et il
 # se rendort apres VEILLE_APRES secondes sans rien. Les clips video qui
 # defilent tout seuls ne comptent pas comme un geste.
-# Quatre niveaux, et pas un de plus : le jour et la nuit, selon que
-# quelqu un est devant la borne ou non. Le jour la piece est claire et le
-# panneau peut rester franc ; la nuit il eclaire la piece entiere, donc on
-# le retient meme quand on joue. Les quatre valeurs sont ici, a regler a
-# l oeil sans toucher au reste.
-JOUR_PRESENT = "255"     # quelqu un navigue, en plein jour
-JOUR_REPOS = "128"       # personne devant, en plein jour : la moitie.
-                         # L oeil est logarithmique — a 160 sur 255 la
-                         # difference ne se voyait pas.
-NUIT_PRESENT = "77"      # quelqu un navigue, le soir : 30 % de la puissance
-NUIT_REPOS = "77"        # personne devant, le soir : 30 % aussi, la nuit
-                         # est deja assez douce comme cela
+# Deux niveaux, et pas un de plus — choix du proprietaire, qui eteint la
+# borne le soir : plein pot des que quelqu un est devant, la moitie quand
+# elle se raconte toute seule. L oeil est logarithmique : a 160 sur 255 la
+# difference ne se voyait pas, a 128 elle se voit.
+PRESENT = "255"          # quelqu un navigue
+CLIP = "128"             # personne devant depuis VEILLE_APRES secondes
 VEILLE_APRES = 30.0
 
-# Le jour, la piece est claire : un panneau a pleine puissance ne gene
-# personne. Le soir, c est un sapin de Noel. On tamise donc au repos
-# seulement entre le coucher et le lever du soleil — calcules pour le jour
-# meme, a partir de l horloge de la borne, pour que ce soit juste en
-# decembre comme en juin. Coordonnees a ajuster si la borne demenage.
-LATITUDE = 48.85
-LONGITUDE = 2.35
-CREPUSCULE = 0.5                 # heure de battement autour du lever/coucher
+
 # En sortant d une partie, le demon des credits rend les couleurs de la
 # carte — un instant APRES que nous ayons repeint celles du jeu survole. Il
 # avait donc le dernier mot et le panneau revenait aux couleurs de la carte.
@@ -323,51 +309,6 @@ def publier_couleurs_carte(couleurs):
         pass
 
 
-def heures_du_soleil(instant=None):
-    """Lever et coucher du soleil, en heures locales, pour aujourd hui.
-
-    Formule classique de l almanach : equation du temps, declinaison du
-    soleil, puis angle horaire. Suffisamment juste pour decider d allumer
-    des lampes — quelques minutes d ecart sont sans consequence. Renvoie
-    None si le calcul n a pas de solution (nuit ou jour polaire)."""
-    instant = instant or time.time()
-    local = time.localtime(instant)
-    jour = local.tm_yday
-    angle = 2 * math.pi / 365.0 * (jour - 1 + (local.tm_hour - 12) / 24.0)
-    equation = 229.18 * (0.000075
-                         + 0.001868 * math.cos(angle) - 0.032077 * math.sin(angle)
-                         - 0.014615 * math.cos(2 * angle) - 0.040849 * math.sin(2 * angle))
-    declinaison = (0.006918
-                   - 0.399912 * math.cos(angle) + 0.070257 * math.sin(angle)
-                   - 0.006758 * math.cos(2 * angle) + 0.000907 * math.sin(2 * angle)
-                   - 0.002697 * math.cos(3 * angle) + 0.001480 * math.sin(3 * angle))
-    latitude = math.radians(LATITUDE)
-    try:
-        horaire = math.acos(
-            math.cos(math.radians(90.833)) / (math.cos(latitude) * math.cos(declinaison))
-            - math.tan(latitude) * math.tan(declinaison))
-    except ValueError:
-        return None
-    horaire = math.degrees(horaire)
-    # Minutes UTC, puis heure locale : l ecart est celui que le systeme applique.
-    decalage = -(time.altzone if local.tm_isdst else time.timezone) / 60.0
-    lever = (720 - 4 * (LONGITUDE + horaire) - equation + decalage) / 60.0
-    coucher = (720 - 4 * (LONGITUDE - horaire) - equation + decalage) / 60.0
-    return lever % 24, coucher % 24
-
-
-def il_fait_jour(instant=None):
-    """Vrai s il fait jour dehors. En cas de doute, on repond oui : mieux
-    vaut un panneau trop clair qu un panneau trop sombre en pleine journee."""
-    heures = heures_du_soleil(instant)
-    if heures is None:
-        return True
-    lever, coucher = heures
-    local = time.localtime(instant or time.time())
-    maintenant = local.tm_hour + local.tm_min / 60.0
-    return lever + CREPUSCULE <= maintenant <= coucher - CREPUSCULE
-
-
 def battre(derniere):
     """Touche le fichier de presence, au plus une fois toutes les deux
     secondes. Renvoie l heure du dernier battement."""
@@ -551,7 +492,7 @@ class Panneau:
         self.present = True          # quelqu un est-il devant la borne ?
         self.dernier = None          # ce qu on a applique en dernier
         self.derniers_args = None    # pour re-appliquer a une autre intensite
-        self.intensite = JOUR_PRESENT
+        self.intensite = PRESENT
         self.origine = {}            # couleur posee par la carte, par led
 
     def _memoriser(self, chemin):
@@ -694,12 +635,7 @@ def main():
     en_partie = False
     battement = 0.0
     intensite = None                 # fixee au premier tour
-    heures = heures_du_soleil()
-    journal("%d manette(s) ecoutee(s) pour la veille ; %s"
-            % (len(manettes),
-               ("soleil aujourd hui : lever %02d:%02d, coucher %02d:%02d"
-                % (int(heures[0]), int(heures[0] % 1 * 60),
-                   int(heures[1]), int(heures[1] % 1 * 60))) if heures else "soleil incalculable"))
+    journal("%d manette(s) ecoutee(s) pour la veille" % len(manettes))
 
     while True:
         # Dormir SUR les manettes : un geste rend la main tout de suite,
@@ -721,14 +657,10 @@ def main():
             dernier_geste = maintenant
         # Au repos : pleine puissance tant qu il fait jour, tamise la nuit.
         if not en_partie:
-            jour = il_fait_jour(maintenant)
             present = maintenant - dernier_geste < VEILLE_APRES
             for p in panneaux.values():
                 p.presence(present)
-            if jour:
-                voulue = JOUR_PRESENT if present else JOUR_REPOS
-            else:
-                voulue = NUIT_PRESENT if present else NUIT_REPOS
+            voulue = PRESENT if present else CLIP
             if voulue != intensite:
                 intensite = voulue
                 for p in panneaux.values():

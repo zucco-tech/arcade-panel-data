@@ -13,12 +13,9 @@ Ce dossier est lu par Recalbox au démarrage. Un script dont le nom contient
 | `gardefou[…].ash` | garde-fou : au demarrage du frontend, au lancement et a la fin de chaque partie, relance celui des trois programmes permanents qui serait mort. Journal dans `panneau-arcade/gardefou.log` |
 | `custom.sh` (dans `share/system/`) | crochet de demarrage : neutralise les scripts allinone que Recalbox recree, et allume le panneau en veilleuse avant EmulationStation |
 
-Le jour, le panneau reste a pleine puissance : la piece est claire, il ne
-gene personne. La nuit, il se tamise au repos. Le lever et le coucher du
-soleil sont **calcules pour le jour meme** a partir de l'horloge de la borne
-et des coordonnees en tete de `panneau(permanent).py` (`LATITUDE`,
-`LONGITUDE`) — juste en decembre comme en juin, sans horaire fige a
-entretenir.
+Deux niveaux seulement — le proprietaire eteint la borne le soir, le
+jour/nuit n avait pas lieu d etre : `PRESENT` (255) des que quelqu un est
+devant, `CLIP` (128) quand la borne se raconte toute seule.
 
 Dans le menu le panneau **veille** : un geste sur une manette (bouton,
 stick) ou une navigation le rallume à fond, et il se tamise à `INTENSITE_MENU`

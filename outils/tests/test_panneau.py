@@ -225,26 +225,11 @@ def _(dossier, espace):
     assert lire(dossier, "aio_hotkey") == "0"
 
 
-@essai("le jour eclaire plus fort que la nuit, present ou non")
+@essai("le clip est plus doux que la presence, et les deux sont lisibles")
 def _(dossier, espace):
-    jour_present = int(espace["JOUR_PRESENT"])
-    nuit_present = int(espace["NUIT_PRESENT"])
-    nuit_repos = int(espace["NUIT_REPOS"])
-    jour_repos = int(espace["JOUR_REPOS"])
-    assert nuit_present < jour_present, "la nuit devrait etre plus douce que le jour"
-    assert jour_repos < jour_present, "le clip devrait etre plus doux que la presence"
-    assert nuit_repos <= nuit_present, "la nuit au repos ne doit pas depasser la presence"
-    assert nuit_repos < jour_repos, "la nuit devrait rester plus douce que le jour"
-
-
-@essai("le soleil se leve et se couche a des heures credibles")
-def _(dossier, espace):
-    ete = espace["heures_du_soleil"](time.mktime((2026, 6, 21, 12, 0, 0, 0, 0, -1)))
-    hiver = espace["heures_du_soleil"](time.mktime((2026, 12, 21, 12, 0, 0, 0, 0, -1)))
-    assert 4 < ete[0] < 7 and 21 < ete[1] < 23, ete
-    assert 7 < hiver[0] < 10 and 16 < hiver[1] < 18, hiver
-    assert espace["il_fait_jour"](time.mktime((2026, 6, 21, 14, 0, 0, 0, 0, -1)))
-    assert not espace["il_fait_jour"](time.mktime((2026, 12, 21, 23, 0, 0, 0, 0, -1)))
+    present, clip = int(espace["PRESENT"]), int(espace["CLIP"])
+    assert clip < present, "le clip devrait etre plus doux que la presence"
+    assert clip >= 64, "en dessous du quart, on ne lit plus les boutons"
 
 
 @essai("changer d intensite ne reecrit pas les couleurs")
