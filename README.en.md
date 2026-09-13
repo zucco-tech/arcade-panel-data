@@ -230,11 +230,11 @@ Two EmulationStation permanent scripts drive the LEDs of an **AllInOne board
 
 | | |
 |---|---|
-| `borne/panneau(permanent).py` | **in the menu**: lights the buttons of the hovered game with its original colours; for a console, the pad's button count; for a system without a record, Recalbox's own colour table |
-| `borne/credits(permanent).py` | **during play**: reads the counter in RAM, blinks COIN then START, lights the useful buttons, turns player 2 off when unused or when the pool is shared |
+| `borne/share/userscripts/panneau(permanent).py` | **in the menu**: lights the buttons of the hovered game with its original colours; for a console, the pad's button count; for a system without a record, Recalbox's own colour table |
+| `borne/share/userscripts/credits(permanent).py` | **during play**: reads the counter in RAM, blinks COIN then START, lights the useful buttons, turns player 2 off when unused or when the pool is shared |
 
-On the cabinet everything that belongs to the panel lives in one folder,
-`/recalbox/share/system/panneau-arcade/` (data, logs, backups) — see
+`borne/share/` is an exact copy of the cabinet's share: to equip another
+cabinet, copy its content into `/recalbox/share/` and reboot — see
 `borne/README.md`. The credits daemon also learns any game the sweep missed,
 the first time you play it.
 

@@ -263,11 +263,11 @@ AllInOne (digipcb.tech)** sous Recalbox, jamais en même temps :
 
 | | |
 |---|---|
-| `borne/panneau(permanent).py` | **dans le menu** : éclaire les boutons du jeu survolé, avec ses couleurs d'origine ; pour une console, le nombre de boutons de la manette ; pour un système sans fiche, la table de couleurs de Recalbox |
-| `borne/credits(permanent).py` | **pendant la partie** : lit le compteur en mémoire, fait clignoter PIÈCE puis START, allume les boutons utiles, éteint le poste 2 s'il ne sert pas ou si la cagnotte est commune |
+| `borne/share/userscripts/panneau(permanent).py` | **dans le menu** : éclaire les boutons du jeu survolé, avec ses couleurs d'origine ; pour une console, le nombre de boutons de la manette ; pour un système sans fiche, la table de couleurs de Recalbox |
+| `borne/share/userscripts/credits(permanent).py` | **pendant la partie** : lit le compteur en mémoire, fait clignoter PIÈCE puis START, allume les boutons utiles, éteint le poste 2 s'il ne sert pas ou si la cagnotte est commune |
 
-Sur la borne, tout ce qui appartient au panneau tient dans un seul dossier,
-`/recalbox/share/system/panneau-arcade/` (données, journaux, sauvegardes) —
+`borne/share/` est la copie exacte de la share de la borne : pour équiper une
+autre borne, on copie son contenu dans `/recalbox/share/` et on redémarre —
 voir `borne/README.md`. Le démon des crédits apprend aussi tout jeu que le
 balayage aurait manqué, la première fois qu'on y joue.
 

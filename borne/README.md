@@ -1,119 +1,127 @@
-# Les scripts de la borne
+# La borne
 
-Ce dossier est lu par Recalbox au démarrage. Un script dont le nom contient
-`(permanent)` est lancé une fois et laissé tourner ; un nom entre crochets
-`[evenement]` est appelé à chaque événement du frontend.
-
-| script | rôle |
-|---|---|
-| `credits(permanent).py` | pendant une partie : lit le compteur de crédits en mémoire, fait clignoter PIÈCE ou START, éclaire les boutons utiles, éteint le poste 2 s'il ne sert pas |
-| `panneau(permanent).py` | dans le menu : éclaire les boutons du jeu **survolé**, avec ses couleurs d'origine, avant même de le lancer |
-| `marquee(permanent).py` | affiche le nom du jeu sur le marquee |
-| `allinone[…].sh.off` | scripts d'origine Recalbox, **désactivés** : ils lançaient un bash à chaque mouvement du menu et écrivaient les mêmes LED que le panneau. Leur table de couleurs par système est reprise par `panneau(permanent).py`, qui lit `/recalbox/scripts/recalbox_allinone_rgb.sh` au démarrage |
-| `gardefou[…].ash` | garde-fou : au demarrage du frontend, au lancement et a la fin de chaque partie, relance celui des trois programmes permanents qui serait mort. Journal dans `panneau-arcade/gardefou.log` |
-| `custom.sh` (dans `share/system/`) | crochet de demarrage : neutralise les scripts allinone que Recalbox recree, et allume le panneau en veilleuse avant EmulationStation |
-
-Deux niveaux seulement — le proprietaire eteint la borne le soir, le
-jour/nuit n avait pas lieu d etre : `PRESENT` (255) des que quelqu un est
-devant, `CLIP` (128) quand la borne se raconte toute seule.
-
-Dans le menu le panneau **veille** : un geste sur une manette (bouton,
-stick) ou une navigation le rallume à fond, et il se tamise à `INTENSITE_MENU`
-(80 sur 255) après `VEILLE_APRES` secondes (30) sans rien. Les clips vidéo qui
-défilent seuls ne le réveillent pas. Les manettes sont lues sans exclusivité
-(`/dev/input/event*` de la carte) : EmulationStation les voit toujours.
-Autre réglage : `PORTABLES` (consoles portables : le poste 2 y reste noir). Sur console, le poste 2 ne s'allume que
-si EmulationStation annonce plusieurs joueurs ; dans le doute il reste noir.
-
-## Installer sur une autre borne
-
-Il faut : une borne sous Recalbox avec une carte **AllInOne** (le module
-`allinone` charge, `/sys/class/leds/aio_*` present), et ce depot copie sur
-la borne — sur une cle USB, ou dans la share par le reseau. Puis, en root
-sur la borne :
+Ce dossier est **la copie exacte de ce qu'il y a sur la borne**. Rien à
+installer : on copie, on redémarre.
 
 ```
-sh borne/installer.sh
+borne/share/                          →  /recalbox/share/
+    userscripts/
+        credits(permanent).py             pendant une partie : les crédits, PIÈCE et START qui clignotent
+        panneau(permanent).py             dans le menu : les boutons du jeu survolé, dans ses couleurs
+        marquee(permanent).py             le nom du jeu sur le marquee (facultatif)
+        gardefou[start,rungame,endgame].ash   relance un programme permanent qui serait mort
+    system/
+        custom.sh                         crochet de démarrage Recalbox (voir plus bas)
+        panneau-arcade/
+            credits-arcade.json           où lire les crédits, par système et par jeu
+            boutons-arcade.json           combien de boutons, combien de joueurs, couleurs
+            mame-fiches.txt               les adresses MAME, une ligne par jeu
+            relancer.sh                   sh relancer.sh credits|panneau|marquee
+            outils/                       mame-rapport.lua, releve-poli.py : facultatifs, voir plus bas
 ```
 
-Une commande. Il copie trois programmes dans `userscripts/`, cree
-`system/panneau-arcade/` avec les donnees, pose le crochet de demarrage,
-met hors service les scripts allinone d origine et relance. Tout reste
-dans `/recalbox/share` ; le systeme Recalbox n est pas touche. Pour revenir
-en arriere : `sh borne/desinstaller.sh`.
+## Mettre en place sur une borne
 
-Les donnees pretes a l emploi sont dans `donnees/` : `pour-borne.json`
-(les credits, indexes par systeme) et `boutons-arcade.json`. Elles viennent
-du PC de releve ; on peut les remplacer par une version plus recente sans
-rien reinstaller, le demon des credits relit sa base a son redemarrage et
-le panneau recharge les boutons tout seul.
+Il faut une borne sous Recalbox avec une carte **AllInOne** (digipcb.tech) :
+le dossier `/sys/class/leds/` y contient des `aio_p1_b1_1`, `aio_p1_start`…
+
+1. Copier le **contenu** de `borne/share/` dans la share de la borne
+   (`\\RECALBOX\share` depuis Windows, ou une clé USB) : les dossiers
+   `userscripts` et `system` se fondent dans ceux qui existent déjà.
+2. Redémarrer la borne.
+
+C'est tout. Au démarrage, `custom.sh` met hors service les deux scripts
+`allinone[…].sh` d'origine (renommés `.off`) et EmulationStation lance les
+programmes `(permanent)`. Le système Recalbox n'est pas touché : tout est
+dans la share, et pour revenir en arrière on supprime ces fichiers et on
+remet les `.off` à leur nom.
+
+Les journaux disent ce que le panneau fait, jeu par jeu :
+`system/panneau-arcade/panneau.log` (le menu) et `credits.log` (les parties).
+
+## Ce que fait le panneau
+
+**Dans le menu** — `panneau(permanent).py` lit l'état d'EmulationStation
+(`/tmp/es_state.inf`) et écoute les manettes sans les accaparer :
+
+- au survol d'un jeu, seuls les boutons qu'il utilise s'allument, dans ses
+  couleurs d'origine ; pour une console, le nombre de boutons de la
+  manette ; sans fiche, la table de couleurs de Recalbox pour ce système ;
+- le poste 2 reste noir pour un jeu à un joueur ;
+- quelqu'un est devant (un geste sur une manette, une navigation) :
+  `PRESENT` (255, plein), les deux START et la PIÈCE allumés, le HK aussi ;
+- personne depuis `VEILLE_APRES` secondes (30), la borne se raconte toute
+  seule : `CLIP` (128, tamisé), les deux START allumés, PIÈCE et HK éteints.
+  Les clips vidéo ne réveillent pas le panneau, un joueur oui.
+
+**Pendant la partie** — `credits(permanent).py` lit le compteur de crédits
+dans la mémoire du jeu (adresse dans `credits-arcade.json`) : PIÈCE
+clignote tant qu'il n'y a pas de crédit, START prend le relais dès qu'il y
+en a un, puis tout reste fixe. Le panneau du menu se tait ; au retour au
+menu il reprend, après avoir rendu les couleurs. Un jeu absent de la base
+est appris la première fois qu'on y joue.
+
+Réglages, tous en tête de `panneau(permanent).py` : `PRESENT`, `CLIP`,
+`VEILLE_APRES`, `PORTABLES` (consoles portables : poste 2 toujours noir),
+et deux particularités de la carte prototype : `ORDRE_MATERIEL` (les WS2812B
+attendent vert, rouge, bleu) et l'échange `start`/`select` du driver
+(`LED_PIECE`, `LED_START`).
 
 ## Qui pilote les LED, et quand
 
-Deux scripts écrivent dans les LED, jamais en même temps :
+Deux programmes écrivent dans les LED, jamais en même temps :
 
 ```
-menu, jeu survole      panneau(permanent).py
+menu, jeu survolé      panneau(permanent).py
 partie en cours        credits(permanent).py   (panneau se tait)
-retour au menu         panneau reprend, apres avoir rendu les couleurs
+retour au menu         panneau reprend, après avoir rendu les couleurs
 ```
 
-Les deux suivent la même règle : on n'écrit que dans `brightness`, et dans
-`multi_intensity` seulement pour poser la couleur d'origine d'un bouton — la
-couleur posée par la carte est mémorisée avant, et rendue en partant. Rien
-ne reste modifié derrière eux.
+Tous deux n'écrivent que dans `brightness`, et dans `multi_intensity`
+seulement pour poser la couleur d'origine d'un bouton. Le panneau publie
+les couleurs qu'il a posées dans `panneau-arcade/couleurs-carte.json` et le
+démon des crédits les y lit : une seule mémoire, pas de couleur perdue.
 
-## Les données
+## MAME
 
-Tout ce qui appartient au panneau est dans **un seul dossier** :
+Le cœur MAME ne donne pas accès à sa mémoire par RetroArch. Sous MAME, le
+démon des crédits **déduit** donc le compteur des boutons : une pièce
+ajoute un crédit, un START en retire un. Le comportement est le même
+(PIÈCE clignote, puis START), sans lecture exacte.
 
-```
-/recalbox/share/system/panneau-arcade/
-    credits-arcade.json     ou lire les credits, par jeu
-    boutons-arcade.json     combien de boutons, combien de joueurs, couleurs
-    credits.log             ce que le demon des credits a decide, jeu par jeu
-    panneau.log             ce que le panneau a eclaire au survol
-    credits-erreurs.log     sortie brute du demon (vide si tout va bien)
-    sauvegardes/            copies datees des scripts avant modification
-```
+`outils/mame-rapport.lua` sait lire le vrai compteur de l'intérieur de MAME
+(il cherche la machine dans `mame-fiches.txt` et écrit le nombre dans
+`/tmp/mame-credits`), mais Recalbox 10 fixe le dossier des `.ini` de MAME
+dans le système en lecture seule : il n'y a pas de moyen propre de lui
+faire charger ce script. Il est là pour le jour où ce sera possible.
 
-Elles sont fabriquées sur le PC de relevé et poussées ici toutes les
-30 minutes, hors partie. Le démon des crédits ne relit sa base qu'au
-démarrage : le déploiement le redémarre, uniquement quand personne ne joue.
+## Au démarrage
 
-## Les journaux
-
-Voir le dossier ci-dessus : `credits.log`, `panneau.log`, `credits-erreurs.log`.
-
-## MAME : les credits lus de l interieur
-
-MAME ne sert pas `READ_CORE_RAM`. Pour lui, `mame-rapport.lua` (dans
-`panneau-arcade/outils/`) tourne **dans** l emulateur, lance par
-`/recalbox/share/bios/mame/ini/mame.ini` (`autoboot_script`, que le coeur
-lit grace a l option `mame_read_config`). Il cherche la machine dans
-`panneau-arcade/mame-fiches.txt` — une ligne par jeu, produite par le PC de
-releve — et ecrit le nombre de credits dans `/tmp/mame-credits` cinq fois
-par seconde. `credits(permanent).py` lit ce fichier au lieu de la memoire
-quand le coeur est MAME. Sans fiche, le Lua ecrit « inconnu » et le demon
-garde son comportement par defaut.
-
-## Au demarrage
-
-`custom.sh` (dans `share/system/`, crochet officiel appele par `S99custom`)
-fait deux choses a chaque allumage :
+`custom.sh` (dans `share/system/`, crochet officiel appelé par `S99custom`)
+fait deux choses à chaque allumage :
 
 1. il remet hors service `allinone[systembrowsing].sh` et
-   `allinone[startgameclip].sh`, que `/etc/init.d/S13allinone` **recree a
-   chaque demarrage** — ils repeignent les LED a chaque mouvement de menu et
+   `allinone[startgameclip].sh`, que `/etc/init.d/S13allinone` **recrée à
+   chaque démarrage** — ils repeignent les LED à chaque mouvement de menu et
    se battraient avec `panneau(permanent).py` ;
 2. il allume le panneau en veilleuse tout de suite, sans attendre
-   EmulationStation, qui met plusieurs minutes a charger ses listes.
+   EmulationStation, qui met plusieurs minutes à charger ses listes.
 
-## Les sauvegardes
+`gardefou[…].ash` est appelé au démarrage du frontend, au lancement et à la
+fin de chaque partie : il relance celui des programmes permanents qui
+serait mort (journal dans `panneau-arcade/gardefou.log`). Une borne sans
+marquee n'a rien à faire : il ne relance que ce qui est présent.
 
-Chaque modification d'un script d'origine est précédée d'une copie datée
-dans `/recalbox/share/system/panneau-arcade/sauvegardes/`. Pour revenir en arrière : copier
-la sauvegarde à la place du script, et redémarrer la borne.
+## Les données viennent du PC
 
-Le dépôt de référence : https://github.com/zucco-tech/arcade-panel-data — le
-dossier `borne/` y contient exactement ces scripts.
+`credits-arcade.json`, `boutons-arcade.json` et `mame-fiches.txt` sont
+fabriqués sur le PC de relevé (`outils/exporter-pour-borne.py`) et poussés
+sur la borne toutes les 30 minutes, jamais pendant une partie
+(`outils/deployer-vers-borne.sh`, qui met aussi à jour la copie de ce
+dossier). Le démon des crédits ne relit sa base qu'à son démarrage :
+`sh system/panneau-arcade/relancer.sh credits` après avoir remplacé le
+fichier. Le panneau, lui, recharge les boutons tout seul.
+
+`outils/releve-poli.py` mesure les crédits **sur la borne elle-même**, jeu
+par jeu, en pilotant EmulationStation par UDP et sans jamais déranger une
+partie. Il n'est pas lancé : le PC va plus vite.

@@ -25,6 +25,7 @@ vivant() {                      # $1 : morceau de nom cherche dans /proc
 }
 
 relever() {                     # $1 : morceau de nom, $2 : fichier a lancer
+    [ -f "$U/$2" ] || return 0     # une borne sans ce programme : rien a relancer
     vivant "$1" && return 0
     setsid nohup python3 "$U/$2" >> "$N/$1-erreurs.log" 2>&1 &
     echo "$(date "+%Y-%m-%d %H:%M:%S") $2 relance par le garde-fou" >> "$JOURNAL"
