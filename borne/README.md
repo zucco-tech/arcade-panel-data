@@ -25,6 +25,29 @@ défilent seuls ne le réveillent pas. Les manettes sont lues sans exclusivité
 Autre réglage : `PORTABLES` (consoles portables : le poste 2 y reste noir). Sur console, le poste 2 ne s'allume que
 si EmulationStation annonce plusieurs joueurs ; dans le doute il reste noir.
 
+## Installer sur une autre borne
+
+Il faut : une borne sous Recalbox avec une carte **AllInOne** (le module
+`allinone` charge, `/sys/class/leds/aio_*` present), et ce depot copie sur
+la borne — sur une cle USB, ou dans la share par le reseau. Puis, en root
+sur la borne :
+
+```
+sh borne/installer.sh
+```
+
+Une commande. Il copie trois programmes dans `userscripts/`, cree
+`system/panneau-arcade/` avec les donnees, pose le crochet de demarrage,
+met hors service les scripts allinone d origine et relance. Tout reste
+dans `/recalbox/share` ; le systeme Recalbox n est pas touche. Pour revenir
+en arriere : `sh borne/desinstaller.sh`.
+
+Les donnees pretes a l emploi sont dans `donnees/` : `pour-borne.json`
+(les credits, indexes par systeme) et `boutons-arcade.json`. Elles viennent
+du PC de releve ; on peut les remplacer par une version plus recente sans
+rien reinstaller, le demon des credits relit sa base a son redemarrage et
+le panneau recharge les boutons tout seul.
+
 ## Qui pilote les LED, et quand
 
 Deux scripts écrivent dans les LED, jamais en même temps :
