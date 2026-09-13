@@ -27,12 +27,14 @@ def lampe(nom):
 L_PIECE, L_START = lampe("piece"), lampe("start")
 lecture, ecriture = os.pipe()
 ETAT = os.path.join(RACINE, "es_state.inf")
-BASE = os.path.join(RACINE, "base.json")
-json.dump({"version": 1, "jeux": {"testgame": {"adresse": ADRESSE}}},
-          open(BASE, "w"))
+CREDITS = os.path.join(RACINE, "credits"); os.makedirs(CREDITS)
+APPRIS = os.path.join(CREDITS, "appris.json")     # ce que la borne apprend
+json.dump({"jeux": {"testgame": {"credits": {"adresse": ADRESSE}}}}, open(os.path.join(CREDITS, "fbneo.json"), "w"))
 
 ra = FauxRetroArch(PORT_RA, adresse_credits=ADRESSE); ra.start()
-cp.BASE = BASE
+cp.DOSSIER_CREDITS = CREDITS
+cp.INACTIVITE = 6.0                      # 45 s en vrai ; assez long pour que
+                                         # les observations de l etat 3 tiennent dedans
 cp.LEDS_PIECE, cp.LEDS_START = L_PIECE, L_START
 cp.RA_HOTE, cp.RA_PORT = "127.0.0.1", PORT_RA
 cp.STATE_FILE, cp.JOURNAL = ETAT, os.path.join(RACINE, "credits.log")
@@ -84,7 +86,9 @@ verifier("les deux couleurs sont d'origine",
          lu(L_PIECE, "multi_intensity") == ORIGINE and lu(L_START, "multi_intensity") == ORIGINE)
 
 print("\n--- retour a zero : la borne rappelle qu'il faut une piece ---")
-ra.ram[ADRESSE] = 0; time.sleep(1.2)
+# La partie est lancee : la borne ne reclame une piece qu apres INACTIVITE
+# secondes sans un appui — comme une vraie borne en attract.
+ra.ram[ADRESSE] = 0; time.sleep(cp.INACTIVITE + 1.0)
 verifier("le bouton piece reclignote en rouge",
          len(observer(L_PIECE, 2.5)) > 1 and lu(L_PIECE, "multi_intensity") == cp.COULEUR_PIECE)
 

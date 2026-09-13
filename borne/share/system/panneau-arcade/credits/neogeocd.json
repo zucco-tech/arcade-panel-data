@@ -1,0 +1,684 @@
+{
+  "description": "Adresse RAM du compteur de credits de chaque jeu de ce systeme, indexee par nom de set. Se lit par l'interface reseau de RetroArch : READ_CORE_RAM <adresse> 1 en UDP sur le port 55355.",
+  "difficiles": {
+    "azumanga": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "azumanga",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "bdrdown": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "bdrdown",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "cfield": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "cfield",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "chocomk": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "chocomk",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "cleoftp": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "cleoftp",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "confmiss": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "confmiss",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "cvs2": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "cvs2",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "cvsgd": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "cvsgd",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "dragntr": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "dragntr",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "dragntr2": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "dragntr2",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "dragntr3": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "dragntr3",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "dygolf": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "dygolf",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "dygolfp": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "dygolfp",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "ggxx": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "ggxx",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "ggxxac": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "ggxxac",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "ggxxrl": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "ggxxrl",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "ggxxsla": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "ggxxsla",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "gundmgd": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "gundmgd",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "gundmxgd": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "gundmxgd",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "ikaruga": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "ikaruga",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "jingystm": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "jingystm",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "karous": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "karous",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "keyboard": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "keyboard",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "kurucham": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "kurucham",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "lupinsho": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "lupinsho",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "luptype": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "luptype",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "meltyb": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "meltyb",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "meltybld": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "meltybld",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "mj1": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "mj1",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "moeru": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "moeru",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "mok": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "mok",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "monkeyba": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "monkeyba",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "naomigd": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "naomigd",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "ndcfboxa": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "ndcfboxa",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "ngdup23a": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "ngdup23a",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "ngdup23c": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "ngdup23c",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "ngdup23e": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "ngdup23e",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "psyvar2": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "psyvar2",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "puyofev": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "puyofev",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "puyofevp": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "puyofevp",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "quizqgd": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "quizqgd",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "radirgy": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "radirgy",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "senko": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "senko",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "senkoo": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "senkoo",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "senkosp": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "senkosp",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "sfz3ugd": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "sfz3ugd",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "shaktam": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "shaktam",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "shaktamb": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "shaktamb",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "shaktmsp": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "shaktmsp",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "shikgam2": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "shikgam2",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "slashout": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "slashout",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "spkrbtl": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "spkrbtl",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "sprtjam": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "sprtjam",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "ss2005": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "ss2005",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "starseek": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "starseek",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "takoron": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "takoron",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "tetkiwam": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "tetkiwam",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "trgheart": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "trgheart",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "trizeal": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "trizeal",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "undefeat": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "undefeat",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "usagiym": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "usagiym",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "vathlete": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "vathlete",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "vathletep": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "vathletep",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "vtennis2": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "vtennis2",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "vtennisg": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "vtennisg",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "wccf116": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "wccf116",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "wccf1dup": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "wccf1dup",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "wccf212e": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "wccf212e",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "wccf234j": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "wccf234j",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "wccf310j": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "wccf310j",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "wccf322e": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "wccf322e",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "wccf341j": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "wccf341j",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "wccf400j": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "wccf400j",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "wccf420e": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "wccf420e",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    },
+    "wsbbgd": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "wsbbgd",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeocd",
+      "vu_le": "2026-09-11"
+    }
+  },
+  "format": "recalbox-arcade-credits (un fichier par systeme, pour la borne)",
+  "jeux": {},
+  "systeme": "neogeocd",
+  "version": 3
+}

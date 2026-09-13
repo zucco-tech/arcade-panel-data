@@ -216,8 +216,8 @@ pas près.
 | `outils/balayage-continu.py` | même chose en Python, avec contrôle d'un jeu témoin au changement de cœur |
 | `outils/analyser-difficiles.py` | trie les écartés par raison, pour savoir quoi reprendre |
 | `outils/complement-joueur2.py` | ajoute le compteur du joueur 2 aux fiches qui n'en ont pas |
-| `outils/exporter-pour-borne.py` | réindexe la base par système (`fbneo/jeu`), la forme que lit la borne |
-| `outils/deployer-vers-borne.sh` | copie les bases sur la borne et redémarre le démon, jamais pendant une partie |
+| `outils/exporter-pour-borne.py` | découpe la base en un fichier par système (`credits/fbneo.json`…), la forme que lit la borne |
+| `outils/deployer-vers-borne.sh` | met les bases en place sur la borne fichier par fichier, par renommage ; rien à redémarrer |
 | `outils/importer-cheats.py` | importe les pistes des cheats FBNeo et MAME |
 | `outils/importer-boutons.py` | construit la base des boutons depuis arcade-database |
 | `outils/capture-credits.py` | mesure un jeu à la main |

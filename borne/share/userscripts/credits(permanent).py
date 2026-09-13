@@ -20,8 +20,9 @@ Pour trouver cette adresse, on regarde la RAM avant et apres une piece : le
 compteur est l'octet qui monte de exactement 1. Deux ou trois pieces et il ne
 reste qu'un candidat ; un appui sur START tranche la derniere ambiguite,
 puisque le solde redescend quand on le consomme alors qu'un total de pieces
-encaissees, non. La fiche est alors ecrite dans BASE et le jeu est connu
-pour toujours.
+encaissees, non. La fiche est alors ecrite dans credits/appris.json et le
+jeu est connu pour toujours. Les jeux deja releves par le PC sont dans
+credits/<systeme>.json, un fichier par systeme.
 
 Ce que ca coute a la borne :
 
@@ -51,11 +52,21 @@ import time
 
 # --- Configuration -------------------------------------------------------
 
-BASE = "/recalbox/share/system/panneau-arcade/credits-arcade.json"
+# Les credits tiennent dans un dossier, un fichier par systeme :
+#
+#     credits/fbneo.json, mame.json, neogeo.json...   deposes par le PC de
+#     credits/pistes.json                             releve, jamais ecrits ici
+#     credits/appris.json                             ecrit par la borne seule
+#
+# On ne lit que le fichier du systeme du jeu lance, au moment du lancement.
+# Rien n'est garde en memoire pour des milliers de jeux, et un fichier
+# remplace par le PC vaut pour la partie suivante, sans redemarrage.
+DOSSIER_CREDITS = "/recalbox/share/system/panneau-arcade/credits"
+APPRIS = "appris.json"           # ce que la borne a appris elle-meme
+PISTES = "pistes.json"           # adresses de cheats, par nom de set
 BASE_BOUTONS = "/recalbox/share/system/panneau-arcade/boutons-arcade.json"
 
-# Version du format de la base. Une base plus ancienne est convertie a la
-# volee au demarrage : aucun releve n'est perdu.
+# Version du format des fiches, ecrite dans appris.json.
 SCHEMA = 3
 OUTIL = "credits(permanent).py"
 
@@ -606,30 +617,12 @@ def jeu_multijoueur(base, systeme, nom):
 
     Ce constat prime sur le scrapeur, dont la metadonnee est souvent fausse.
     """
-    fiche = (base.get("jeux") or {}).get(cle(systeme, nom)) or {}
+    fiche = base.fiche(systeme, nom) or {}
     connu = (fiche.get("joueurs") or {}).get("joueur2_accepte")
     if connu is not None:
         return connu
     nombres = [int(n) for n in re.findall(r"\d+", champ_etat("Players"))]
     return bool(nombres) and max(nombres) >= 2
-
-
-def noter_joueurs(base, systeme, nom, accepte):
-    """Retient ce qu'on vient de constater, sans toucher au reste de la fiche."""
-    fiche = base.setdefault("jeux", {}).setdefault(cle(systeme, nom), {})
-    if (fiche.get("joueurs") or {}).get("joueur2_accepte") == accepte:
-        return
-    fiche["joueurs"] = {
-        "joueur2_accepte": accepte,
-        "constate": ("le joueur 2 a appuye sur START et un credit a ete "
-                     "consomme" if accepte else
-                     "le joueur 2 a appuye sur START sans qu'aucun credit "
-                     "soit consomme"),
-        "source": "borne",              # constate, pas lu chez le scrapeur
-        "constate_le": time.strftime("%Y-%m-%d"),
-    }
-    ecrire_base(base)
-    journal("%s : joueur 2 %s" % (nom, "accepte" if accepte else "refuse"))
 
 
 def champ_etat(cle):
@@ -643,17 +636,18 @@ def champ_etat(cle):
     return ""
 
 
-def base_neuve():
+def appris_neuf():
     """Squelette documente : le fichier doit se comprendre sans ce script."""
     return {
-        "format": "recalbox-arcade-credits",
+        "format": "recalbox-arcade-credits (appris sur la borne)",
         "version": SCHEMA,
         "description": (
-            "Adresse RAM du compteur de credits de chaque jeu arcade, relevee "
-            "sur la borne. Se lit par l'interface reseau de RetroArch : "
-            "READ_CORE_RAM <adresse> 1 en UDP sur le port 55355. "
-            "READ_CORE_MEMORY ne fonctionne pas avec FBNeo, qui ne publie "
-            "aucune memory map."),
+            "Ce que cette borne a constate elle-meme en jouant : l'adresse "
+            "RAM du compteur de credits d'un jeu absent des fichiers du PC, "
+            "un jeu qui accepte ou refuse le joueur 2, un jeu ou la recherche "
+            "a echoue. Le PC de releve ne touche jamais a ce fichier. "
+            "L'adresse se lit par l'interface reseau de RetroArch : "
+            "READ_CORE_RAM <adresse> 1 en UDP sur le port 55355."),
         "borne": {
             "carte": "AllInOne — digipcb.tech",
             "boutons": {"piece": CODE_PIECE, "start": CODE_START},
@@ -663,10 +657,7 @@ def base_neuve():
         "difficiles": {},
         "cles_lisez_moi": ("Les fiches sont indexees \"systeme/jeu\" : le meme "
                            "set peut tourner sous plusieurs coeurs, qui ne "
-                           "rangent pas leur RAM de la meme facon. Les pistes, "
-                           "elles, sont indexees par le seul nom du set : une "
-                           "adresse de cheat vise le processeur emule et ne "
-                           "depend pas du coeur."),
+                           "rangent pas leur RAM de la meme facon."),
     }
 
 
@@ -681,12 +672,147 @@ def cle(systeme, jeu):
     return "%s/%s" % (systeme or "?", jeu)
 
 
+class Base:
+    """Les credits : un fichier par systeme, plus ce que la borne apprend.
+
+    Le PC de releve depose dans DOSSIER_CREDITS un fichier par systeme
+    (``fbneo.json``, ``mame.json``... les fiches y sont indexees par nom de
+    set) et ``pistes.json`` (les adresses de cheats, indexees par set). La
+    borne n'y ecrit jamais : le PC les remplace tels quels a chaque envoi.
+
+    Ce qu'elle apprend elle-meme — une adresse trouvee en jouant, un jeu qui
+    accepte ou refuse le joueur 2, un jeu ou la recherche a echoue — va dans
+    ``appris.json``, que le PC ne touche pas. Une fiche du PC prime sur une
+    fiche apprise ; le constat sur le joueur 2 prime toujours.
+
+    Un fichier n'est lu qu'au moment ou l'on en a besoin, et relu s'il a
+    change entre-temps. Un seul fichier de systeme est garde en memoire :
+    celui du jeu qui tourne.
+    """
+
+    def __init__(self, dossier):
+        self.dossier = dossier
+        self._cache = {}                 # nom de fichier -> (mtime, contenu)
+        appris = self._lire(APPRIS)
+        # Un fichier appris illisible : on ne l'ecrase surtout pas, il
+        # contient peut-etre des releves recuperables a la main.
+        self.fige = appris is None
+        self.appris = appris or appris_neuf()
+
+    # -- lecture
+
+    def _lire(self, nom):
+        """Le contenu d'un fichier du dossier, relu seulement s'il a change.
+
+        Absent : {}. Illisible : None.
+        """
+        chemin = os.path.join(self.dossier, nom)
+        try:
+            mtime = os.path.getmtime(chemin)
+        except OSError:
+            self._cache.pop(nom, None)
+            return {}
+        if nom in self._cache and self._cache[nom][0] == mtime:
+            return self._cache[nom][1]
+        try:
+            with open(chemin) as fh:
+                contenu = json.load(fh)
+        except (IOError, OSError):
+            return {}
+        except ValueError as err:
+            journal("%s illisible (%s) : je n'y touche pas" % (nom, err))
+            return None
+        self._cache[nom] = (mtime, contenu)
+        return contenu
+
+    def _du_pc(self, nom):
+        """Un fichier depose par le PC : {} s'il manque ou ne se lit pas."""
+        return self._lire(nom) or {}
+
+    def _du_systeme(self, systeme):
+        nom = "%s.json" % (systeme or "?")
+        # Un seul fichier de systeme en memoire a la fois.
+        for autre in [n for n in self._cache if n not in (APPRIS, PISTES, nom)]:
+            del self._cache[autre]
+        return self._du_pc(nom)
+
+    def fiche(self, systeme, jeu):
+        """La fiche d'un jeu : celle du PC, sinon celle apprise ici."""
+        du_pc = (self._du_systeme(systeme).get("jeux") or {}).get(jeu)
+        apprise = (self.appris.get("jeux") or {}).get(cle(systeme, jeu))
+        if du_pc and apprise and apprise.get("joueurs"):
+            return dict(du_pc, joueurs=apprise["joueurs"])
+        return du_pc or apprise
+
+    def piste(self, jeu):
+        """L'adresse suggeree par un pack de cheats, ou None."""
+        return (self._du_pc(PISTES).get("pistes") or {}).get(jeu)
+
+    def difficile(self, systeme, jeu):
+        """Ce qu'on sait d'un jeu recalcitrant : la borne d'abord, puis le PC."""
+        return ((self.appris.get("difficiles") or {}).get(cle(systeme, jeu))
+                or (self._du_systeme(systeme).get("difficiles") or {}).get(jeu)
+                or {})
+
+    def systemes(self):
+        """Les systemes pour lesquels le PC a depose un fichier."""
+        try:
+            noms = os.listdir(self.dossier)
+        except OSError:
+            return []
+        return sorted(n[:-5] for n in noms
+                      if n.endswith(".json") and n not in (APPRIS, PISTES))
+
+    # -- ecriture : uniquement appris.json
+
+    def noter_fiche(self, systeme, jeu, contenu):
+        """Une adresse apprise en jouant."""
+        fiche = self.appris.setdefault("jeux", {}).setdefault(cle(systeme, jeu), {})
+        fiche.update(contenu)
+        self.ecrire()
+
+    def noter_joueurs(self, systeme, jeu, accepte):
+        """Retient ce qu'on vient de constater, sans toucher au reste."""
+        fiche = self.appris.setdefault("jeux", {}).setdefault(cle(systeme, jeu), {})
+        if (fiche.get("joueurs") or {}).get("joueur2_accepte") == accepte:
+            return
+        fiche["joueurs"] = {
+            "joueur2_accepte": accepte,
+            "constate": ("le joueur 2 a appuye sur START et un credit a ete "
+                         "consomme" if accepte else
+                         "le joueur 2 a appuye sur START sans qu'aucun credit "
+                         "soit consomme"),
+            "source": "borne",              # constate, pas lu chez le scrapeur
+            "constate_le": time.strftime("%Y-%m-%d"),
+        }
+        self.ecrire()
+        journal("%s : joueur 2 %s" % (jeu, "accepte" if accepte else "refuse"))
+
+    def noter_difficile(self, systeme, jeu, contenu):
+        """Un echec de recherche, compte pour ne pas condamner trop vite."""
+        self.appris.setdefault("difficiles", {})[cle(systeme, jeu)] = contenu
+        self.ecrire()
+
+    def ecrire(self):
+        if self.fige:
+            return
+        chemin = os.path.join(self.dossier, APPRIS)
+        # Un nom de fichier temporaire propre a ce processus : deux ecrivains
+        # qui partagent le meme ".tmp" laissent une base tronquee.
+        provisoire = "%s.%d.tmp" % (chemin, os.getpid())
+        try:
+            os.makedirs(self.dossier, exist_ok=True)
+            with open(provisoire, "w") as fh:
+                json.dump(self.appris, fh, indent=2, sort_keys=True)
+                fh.write("\n")
+            os.replace(provisoire, chemin)     # remplacement atomique
+        except (IOError, OSError) as err:
+            journal("ecriture de %s impossible : %s" % (APPRIS, err))
+
+
 def fiche_de(base, systeme, jeu, core=None):
     """La fiche d'un jeu, si elle correspond bien au coeur qui tourne."""
-    jeux = base.get("jeux") or {}
-    # Une base ancienne peut avoir garde une cle nue, faute de systeme connu
-    # au moment de la conversion : on l'accepte encore.
-    fiche = jeux.get(cle(systeme, jeu)) or jeux.get(jeu)
+    fiche = base.fiche(systeme, jeu)
     if not fiche:
         return None
     # Un jeu relance sous un autre coeur n'a plus la meme disposition
@@ -698,92 +824,9 @@ def fiche_de(base, systeme, jeu, core=None):
     return fiche
 
 
-def convertir(base):
-    """Amene une base d'un ancien format au format courant."""
-    if base.get("version") == SCHEMA:
-        return base
-    neuve = base_neuve()
-    neuve["pistes"] = base.get("pistes", {})
-    neuve["sources"] = base.get("sources", {})
-    if "pistes_lisez_moi" in base:
-        neuve["pistes_lisez_moi"] = base["pistes_lisez_moi"]
-    # Les difficultes suivent la meme cle que les fiches.
-    for nom, dur in (base.get("difficiles") or {}).items():
-        neuve["difficiles"][cle(dur.get("systeme"), nom) if "/" not in nom
-                            else nom] = dur
-    for nom, ancienne in (base.get("jeux") or {}).items():
-        if "credits" in ancienne:                  # deja au bon format interne
-            ancienne.setdefault("jeu", nom.split("/")[-1])
-            systeme = ancienne.get("systeme")
-            neuve["jeux"][nom if "/" in nom or not systeme
-                          else cle(systeme, nom)] = ancienne
-            continue
-        fiche = {}
-        if "adresse" in ancienne:
-            fiche["credits"] = {
-                "adresse": ancienne["adresse"],
-                "adresse_hex": ancienne.get("adresse_hex",
-                                            "0x%04X" % ancienne["adresse"]),
-                "octets": 1,
-                "miroirs": ancienne.get("miroirs", []),
-                "verifie_insertion": ancienne.get("verifie_insertion"),
-                "verifie_consommation": ancienne.get("verifie_consommation"),
-                "pieces_observees": ancienne.get("pieces_observees"),
-            }
-        if ancienne.get("core"):
-            fiche["core"] = ancienne["core"]
-        if ancienne.get("taille_ram"):
-            fiche["ram"] = {"taille": ancienne["taille_ram"],
-                            "commande": "READ_CORE_RAM"}
-        if "joueurs" in ancienne:
-            fiche["joueurs"] = {
-                "joueur2_accepte": ancienne["joueurs"] >= 2,
-                "source": "borne",
-                "constate_le": ancienne.get("joueurs_constate_le")}
-        fiche["releve"] = {"le": ancienne.get("appris_le") or ancienne.get("releve_le"),
-                           "methode": "apprentissage", "par": OUTIL}
-        fiche.setdefault("jeu", nom.split("/")[-1])
-        systeme = ancienne.get("systeme") or fiche.get("systeme")
-        neuve["jeux"][nom if "/" in nom or not systeme
-                      else cle(systeme, nom)] = fiche
-    journal("base convertie au format %d (%d jeu(x))" % (SCHEMA, len(neuve["jeux"])))
-    return neuve
-
-
-def charger_base():
-    try:
-        with open(BASE) as fh:
-            base = json.load(fh)
-    except (IOError, OSError):
-        return base_neuve()
-    except ValueError as err:
-        journal("base illisible (%s) : je n'y touche pas" % err)
-        return None                      # None = on n'ecrira rien
-    if base.get("version") != SCHEMA:
-        base = convertir(base)
-        ecrire_base(base)
-    return base
-
-
 def adresse_de(fiche):
     """L'adresse du compteur dans une fiche, ou None."""
     return ((fiche or {}).get("credits") or {}).get("adresse")
-
-
-def ecrire_base(base):
-    if base is None:
-        return
-    # Un nom de fichier temporaire propre a ce processus. Deux ecrivains qui
-    # partagent le meme ".tmp" melangent leurs contenus et laissent une base
-    # tronquee — c'est arrive, et ca coute toutes les fiches relevees.
-    provisoire = "%s.%d.tmp" % (BASE, os.getpid())
-    try:
-        with open(provisoire, "w") as fh:
-            json.dump(base, fh, indent=2, sort_keys=True)
-            fh.write("\n")
-        os.replace(provisoire, BASE)     # remplacement atomique
-    except (IOError, OSError) as err:
-        journal("ecriture base impossible : %s" % err)
 
 
 # --- Apprentissage -------------------------------------------------------
@@ -854,7 +897,7 @@ class Apprenti:
         self.core = core
         # Les pistes sont indexees par le seul nom du set : une adresse de
         # cheat vise le processeur emule, pas un coeur en particulier.
-        piste = (self.base.get("pistes") or {}).get(nom)
+        piste = self.base.piste(nom)
         if piste:
             try:
                 self.piste = int(piste["cheat"], 16)
@@ -898,8 +941,8 @@ class Apprenti:
         return (self.jeu is not None
                 and adresse_de(fiche_de(self.base, self.systeme, self.jeu,
                                         self.core)) is None
-                and ((self.base.get("difficiles") or {}).get(self.cle) or {}
-                     ).get("essais", 0) < ESSAIS_AVANT_ABANDON
+                and self.base.difficile(self.systeme, self.jeu
+                                        ).get("essais", 0) < ESSAIS_AVANT_ABANDON
                 and self.pieces < MAX_PIECES)
 
     def rafraichir(self):
@@ -1027,8 +1070,7 @@ class Apprenti:
     def conclure(self):
         retenues = sorted(self.candidats)
         adresse = retenues[0]
-        fiche = self.base.setdefault("jeux", {}).setdefault(self.cle, {})
-        fiche.update({
+        self.base.noter_fiche(self.systeme, self.jeu, {
             "jeu": self.jeu,
             "nom": champ_etat("Game") or self.jeu,
             "systeme": self.systeme,
@@ -1050,7 +1092,6 @@ class Apprenti:
                                    else "apprentissage"),
                        "par": OUTIL},
         })
-        ecrire_base(self.base)
         journal("%s : APPRIS 0x%04X%s apres %d piece(s)"
                 % (self.jeu, adresse,
                    " (+%d miroir(s))" % len(retenues[1:]) if len(retenues) > 1 else "",
@@ -1061,9 +1102,8 @@ class Apprenti:
     def abandonner(self, raison):
         # Un echec peut etre passager. On compte les tentatives plutot que de
         # condamner un jeu sur une seule partie malchanceuse.
-        durs = self.base.setdefault("difficiles", {})
-        ancien = durs.get(self.cle) or {}
-        durs[self.cle] = {
+        ancien = self.base.difficile(self.systeme, self.jeu)
+        self.base.noter_difficile(self.systeme, self.jeu, {
             "jeu": self.jeu,
             "nom": champ_etat("Game") or self.jeu,
             "systeme": self.systeme,
@@ -1072,17 +1112,14 @@ class Apprenti:
             "essais": ancien.get("essais", 0) + 1,
             "pieces_observees": self.pieces,
             "vu_le": time.strftime("%Y-%m-%d"),
-        }
-        ecrire_base(self.base)
+        })
         self.photo = None
 
 
 # --- Boucle principale ---------------------------------------------------
 
 def main():
-    base = charger_base()
-    if base is None:                       # base corrompue : on ne clignote
-        base = {"version": 1, "jeux": {}}   # pas au hasard, et on n'ecrit rien
+    base = Base(DOSSIER_CREDITS)
     piece = Lampe("piece", LEDS_PIECE, COULEUR_PIECE)
     start = Lampe("start", LEDS_START, COULEUR_START)
     start2 = Lampe("start J2", LEDS_START_P2, COULEUR_START)
@@ -1093,10 +1130,12 @@ def main():
     pads = ouvrir_pads()
     apprenti = Apprenti(base)
 
-    journal("demarrage — %d jeu(x) connu(s), %d avec boutons, %d+%d+%d LED, "
-            "%d pad(s)"
-            % (len(base.get("jeux", {})), len(boutons), len(piece.chemins),
-               len(start.chemins), len(start2.chemins), len(pads)))
+    journal("demarrage — credits pour %s (%d appris ici), %d jeux avec "
+            "boutons, %d+%d+%d LED, %d pad(s)"
+            % (", ".join(base.systemes()) or "aucun systeme",
+               len(base.appris.get("jeux", {})), len(boutons),
+               len(piece.chemins), len(start.chemins), len(start2.chemins),
+               len(pads)))
 
     def rendre(*_):
         """Les boutons doivent repartir allumes et de leur couleur."""
@@ -1248,11 +1287,11 @@ def main():
                     instant, avant = essai_j2
                     if nouveau < avant:
                         multi = True
-                        noter_joueurs(base, apprenti.systeme, apprenti.jeu, True)
+                        base.noter_joueurs(apprenti.systeme, apprenti.jeu, True)
                         essai_j2 = None
                     elif maintenant - instant > VERDICT_J2:
                         multi = False        # le jeu a refuse le joueur 2
-                        noter_joueurs(base, apprenti.systeme, apprenti.jeu, False)
+                        base.noter_joueurs(apprenti.systeme, apprenti.jeu, False)
                         essai_j2 = None
                 credits = nouveau
 

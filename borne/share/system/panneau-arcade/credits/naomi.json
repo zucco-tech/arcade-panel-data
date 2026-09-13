@@ -1,0 +1,506 @@
+{
+  "description": "Adresse RAM du compteur de credits de chaque jeu de ce systeme, indexee par nom de set. Se lit par l'interface reseau de RetroArch : READ_CORE_RAM <adresse> 1 en UDP sur le port 55355.",
+  "difficiles": {
+    "airlbios": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "airlbios",
+      "par": "nuit-credits.py",
+      "raison": "ne demarre pas",
+      "systeme": "naomi",
+      "vu_le": "2026-09-11"
+    },
+    "f355": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "f355",
+      "par": "nuit-credits.py",
+      "raison": "ne demarre pas",
+      "systeme": "naomi",
+      "vu_le": "2026-09-12"
+    },
+    "f355bios": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "f355bios",
+      "par": "nuit-credits.py",
+      "raison": "ne demarre pas",
+      "systeme": "naomi",
+      "vu_le": "2026-09-12"
+    },
+    "f355dlx": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "f355dlx",
+      "par": "nuit-credits.py",
+      "raison": "ne demarre pas",
+      "systeme": "naomi",
+      "vu_le": "2026-09-12"
+    },
+    "f355p": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "f355p",
+      "par": "nuit-credits.py",
+      "raison": "ne demarre pas",
+      "systeme": "naomi",
+      "vu_le": "2026-09-12"
+    },
+    "f355twin": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "f355twin",
+      "par": "nuit-credits.py",
+      "raison": "ne demarre pas",
+      "systeme": "naomi",
+      "vu_le": "2026-09-12"
+    },
+    "f355twinp": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "f355twinp",
+      "par": "nuit-credits.py",
+      "raison": "ne demarre pas",
+      "systeme": "naomi",
+      "vu_le": "2026-09-12"
+    },
+    "f355twn2": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "f355twn2",
+      "par": "nuit-credits.py",
+      "raison": "ne demarre pas",
+      "systeme": "naomi",
+      "vu_le": "2026-09-12"
+    },
+    "hod2bios": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "hod2bios",
+      "par": "nuit-credits.py",
+      "raison": "ne demarre pas",
+      "systeme": "naomi",
+      "vu_le": "2026-09-12"
+    }
+  },
+  "format": "recalbox-arcade-credits (un fichier par systeme, pour la borne)",
+  "jeux": {
+    "18wheelr": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 6072135,
+        "adresse_hex": "0x5CA747",
+        "adresse_j2": 13164847,
+        "adresse_j2_hex": "0xC8E12F",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [
+          "0x5CA75B",
+          "0x5CD4A5",
+          "0x5CD4B9"
+        ],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "18wheelr",
+      "nom": "18wheelr",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 16777216
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "naomi"
+    },
+    "18wheelro": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 6074733,
+        "adresse_hex": "0x5CB16D",
+        "adresse_j2": 13165423,
+        "adresse_j2_hex": "0xC8E36F",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [
+          "0x5CB181"
+        ],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "18wheelro",
+      "nom": "18wheelro",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 16777216
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "naomi"
+    },
+    "18wheelrt": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 6074733,
+        "adresse_hex": "0x5CB16D",
+        "adresse_j2": 13165039,
+        "adresse_j2_hex": "0xC8E1EF",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [
+          "0x5CB181"
+        ],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "18wheelrt",
+      "nom": "18wheelrt",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 16777216
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "naomi"
+    },
+    "18wheels": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 6073159,
+        "adresse_hex": "0x5CAB47",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x5CAB5B",
+          "0x5CD8A5",
+          "0x5CD8B9"
+        ],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "18wheels",
+      "nom": "18wheels",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 16777216
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "naomi"
+    },
+    "18wheelu": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 6073639,
+        "adresse_hex": "0x5CAD27",
+        "adresse_j2": 13164847,
+        "adresse_j2_hex": "0xC8E12F",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [
+          "0x5CDA95",
+          "0x5CDAA9"
+        ],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "18wheelu",
+      "nom": "18wheelu",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 16777216
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "naomi"
+    },
+    "alienfnt": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 2257266,
+        "adresse_hex": "0x227172",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "alienfnt",
+      "nom": "alienfnt",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 16777216
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "naomi"
+    },
+    "alienfnta": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 2287550,
+        "adresse_hex": "0x22E7BE",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "alienfnta",
+      "nom": "alienfnta",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 16777216
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "naomi"
+    },
+    "alpilot": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 1387760,
+        "adresse_hex": "0x152CF0",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x152D00"
+        ],
+        "octets": 1,
+        "pieces_observees": 3,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "alpilot",
+      "nom": "alpilot",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 16777216
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "naomi"
+    },
+    "alpilotj": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 1387456,
+        "adresse_hex": "0x152BC0",
+        "adresse_j2": 2067356,
+        "adresse_j2_hex": "0x1F8B9C",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [
+          "0x152BD0"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "alpilotj",
+      "nom": "alpilotj",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 16777216
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "naomi"
+    },
+    "hotd2": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 1334828,
+        "adresse_hex": "0x145E2C",
+        "adresse_j2": 12681843,
+        "adresse_j2_hex": "0xC18273",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x3D0B80",
+          "0x9D4510",
+          "0x9D45DC",
+          "0x9D4608"
+        ],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "hotd2",
+      "nom": "hotd2",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 16777216
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "naomi"
+    },
+    "hotd2e": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 1334828,
+        "adresse_hex": "0x145E2C",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x3D0B80",
+          "0x9D4510",
+          "0x9D45DC",
+          "0x9D4608"
+        ],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "hotd2e",
+      "nom": "hotd2e",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 16777216
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "naomi"
+    },
+    "hotd2o": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 1334764,
+        "adresse_hex": "0x145DEC",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x3D0B40",
+          "0x9D44D0",
+          "0x9D459C",
+          "0x9D45C8"
+        ],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "hotd2o",
+      "nom": "hotd2o",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 16777216
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "naomi"
+    },
+    "hotd2p": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 1259140,
+        "adresse_hex": "0x133684",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x3BE1B8",
+          "0x9C1238",
+          "0x9C12DC"
+        ],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "hotd2p",
+      "nom": "hotd2p",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 16777216
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "naomi"
+    }
+  },
+  "systeme": "naomi",
+  "version": 3
+}

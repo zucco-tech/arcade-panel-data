@@ -21,11 +21,13 @@ def lampe(n):
     return tuple(c)
 PIECE, ST1, ST2 = lampe("piece"), lampe("start1"), lampe("start2")
 p1_l, p1_e = os.pipe(); p2_l, p2_e = os.pipe()
-ETAT, BASE = os.path.join(R, "es.inf"), os.path.join(R, "base.json")
-json.dump({"version": 1, "jeux": {"deuxjoueurs": {"adresse": ADRESSE},
-                                  "solo": {"adresse": ADRESSE}}}, open(BASE, "w"))
+ETAT = os.path.join(R, "es.inf")
+CREDITS = os.path.join(R, "credits"); os.makedirs(CREDITS)
+APPRIS = os.path.join(CREDITS, "appris.json")     # ce que la borne apprend
+json.dump({"jeux": {"deuxjoueurs": {"credits": {"adresse": ADRESSE}},
+                    "solo": {"credits": {"adresse": ADRESSE}}}}, open(os.path.join(CREDITS, "fbneo.json"), "w"))
 ra = FauxRetroArch(PORT_RA, adresse_credits=ADRESSE, jeu="deuxjoueurs"); ra.start()
-cp.BASE = BASE
+cp.DOSSIER_CREDITS = CREDITS
 cp.LEDS_PIECE, cp.LEDS_START, cp.LEDS_START_P2 = PIECE, ST1, ST2
 cp.RA_HOTE, cp.RA_PORT = "127.0.0.1", PORT_RA
 cp.STATE_FILE, cp.JOURNAL = ETAT, os.path.join(R, "log")
@@ -71,7 +73,7 @@ verifier("start J2 clignote", len(observer(ST2, 2.0, jouer=True)) > 1)
 print("\n--- le J2 appuie et le jeu consomme : 2 joueurs constate ---")
 appui(p2_e, cp.CODE_START); time.sleep(0.4); ra.credits(-1); time.sleep(1.5)
 verifier("start J2 s'arrete", observer(ST2, 1.5, jouer=True) == {"255"})
-fiche = json.load(open(BASE))["jeux"]["fbneo/deuxjoueurs"]
+fiche = json.load(open(APPRIS))["jeux"]["fbneo/deuxjoueurs"]
 verifier("la base note : joueur 2 accepte", (fiche.get("joueurs") or {}).get("joueur2_accepte") is True, str(fiche.get("joueurs")))
 
 print("\n--- autre jeu, annonce 2 joueurs par le scrapeur, mais solo ---")
@@ -82,7 +84,7 @@ appui(p1_e, cp.CODE_START); ra.credits(-1); time.sleep(cp.DELAI_J2 + 1.0)
 verifier("le J2 est appele (le scrapeur dit 2)", len(observer(ST2, 2.0, jouer=True)) > 1)
 print("    le joueur 2 appuie... le jeu ne consomme rien")
 appui(p2_e, cp.CODE_START); time.sleep(cp.VERDICT_J2 + 1.5)
-fiche = json.load(open(BASE))["jeux"]["fbneo/solo"]
+fiche = json.load(open(APPRIS))["jeux"]["fbneo/solo"]
 verifier("la base corrige : joueur 2 refuse", (fiche.get("joueurs") or {}).get("joueur2_accepte") is False, str(fiche.get("joueurs")))
 verifier("le J2 n'est plus appele", observer(ST2, 2.0, jouer=True) == {"255"})
 

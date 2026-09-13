@@ -21,10 +21,12 @@ def lampe(nom):
     return tuple(c)
 L_PIECE, L_START = lampe("piece"), lampe("start")
 lecture, ecriture = os.pipe()
-ETAT, BASE = os.path.join(RACINE, "es.inf"), os.path.join(RACINE, "base.json")
-json.dump({"version": 1, "jeux": {"testgame": {"adresse": ADRESSE}}}, open(BASE, "w"))
+ETAT = os.path.join(RACINE, "es.inf")
+CREDITS = os.path.join(RACINE, "credits"); os.makedirs(CREDITS)
+APPRIS = os.path.join(CREDITS, "appris.json")     # ce que la borne apprend
+json.dump({"jeux": {"testgame": {"credits": {"adresse": ADRESSE}}}}, open(os.path.join(CREDITS, "fbneo.json"), "w"))
 ra = FauxRetroArch(PORT_RA, adresse_credits=ADRESSE); ra.start()
-cp.BASE, cp.LEDS_PIECE, cp.LEDS_START = BASE, L_PIECE, L_START
+cp.DOSSIER_CREDITS, cp.LEDS_PIECE, cp.LEDS_START = CREDITS, L_PIECE, L_START
 cp.RA_HOTE, cp.RA_PORT = "127.0.0.1", PORT_RA
 cp.STATE_FILE, cp.JOURNAL = ETAT, os.path.join(RACINE, "log")
 cp.ouvrir_pads = lambda: {lecture: "AllInOneP1"}

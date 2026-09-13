@@ -29,12 +29,14 @@ adresses, jeu par jeu, et les range dans un fichier.
 ## Les deux fichiers
 
 ```
-/recalbox/share/system/panneau-arcade/credits-arcade.json     ou sont les credits en memoire
-/recalbox/share/system/panneau-arcade/boutons-arcade.json     combien de boutons, combien de joueurs
+/mnt/recalbox/donnees/credits-arcade.json     ou sont les credits en memoire (la base, sur le PC)
+/mnt/recalbox/donnees/boutons-arcade.json     combien de boutons, combien de joueurs
 ```
 
-Sur la machine de mesure, ils vivent dans `/mnt/recalbox/donnees/`. On les
-copie tels quels sur la borne.
+Sur la borne, les crédits sont découpés en **un fichier par système**,
+`system/panneau-arcade/credits/fbneo.json`, `mame.json`… (fiches indexées
+par nom de set), plus `pistes.json`. Le démon ne charge que le fichier du
+système du jeu lancé. Les boutons restent un seul fichier, copié tel quel.
 
 ---
 
@@ -147,7 +149,7 @@ les deux cohabitent.
 ### Ce qu'il fait, en boucle
 
 1. il demande à RetroArch quel jeu tourne
-2. il cherche sa fiche dans `credits-arcade.json`
+2. il cherche sa fiche dans `credits/<système>.json`, sinon dans `credits/appris.json`
 3. il lit l'octet des crédits, trois fois par seconde, par
    `READ_CORE_RAM` sur le port UDP 55355
 4. il allume ou éteint les LED selon la règle ci-dessous
@@ -227,12 +229,13 @@ Les jeux non mesurés sont dans `difficiles`, avec leur cause :
 ## Déployer sur la borne
 
 ```
-scp /mnt/recalbox/donnees/credits-arcade.json  root@borne:/recalbox/share/system/panneau-arcade/
+python3 outils/exporter-pour-borne.py --base donnees/credits-arcade.json --dossier /tmp/credits
+scp /tmp/credits/*.json                        root@borne:/recalbox/share/system/panneau-arcade/credits/
 scp /mnt/recalbox/donnees/boutons-arcade.json  root@borne:/recalbox/share/system/panneau-arcade/
 ```
 
-Les fichiers sont du JSON simple, sans dépendance. Le programme des LED les
-relit au démarrage ; il suffit de redémarrer la borne, ou le script, pour
-que les nouveaux jeux soient pris en compte.
+Les fichiers sont du JSON simple, sans dépendance. Le programme des LED lit
+le fichier du système au lancement de chaque jeu : les nouveaux jeux sont
+pris en compte à la partie suivante, sans rien redémarrer.
 
 Le dépôt : https://github.com/zucco-tech/arcade-panel-data

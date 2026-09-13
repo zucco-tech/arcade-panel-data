@@ -186,8 +186,8 @@ which never moves. The measured `0x0011` tracks credits exactly.
 | `outils/balayage-continu.py` | same in Python, with a witness game checked on each core change |
 | `outils/analyser-difficiles.py` | sorts set-aside games by reason |
 | `outils/complement-joueur2.py` | adds the player 2 counter to records lacking it |
-| `outils/exporter-pour-borne.py` | re-indexes the dataset by system (`fbneo/game`), the form the cabinet reads |
-| `outils/deployer-vers-borne.sh` | copies the datasets to the cabinet and restarts the daemon, never mid-game |
+| `outils/exporter-pour-borne.py` | splits the dataset into one file per system (`credits/fbneo.json`…), the form the cabinet reads |
+| `outils/deployer-vers-borne.sh` | puts the datasets in place on the cabinet file by file, by rename; nothing to restart |
 | `outils/importer-cheats.py` | import leads from FBNeo and MAME cheat sets |
 | `outils/importer-boutons.py` | build the button dataset from arcade-database |
 | `outils/capture-credits.py` | measure one game by hand |

@@ -13,11 +13,12 @@ borne/share/                          →  /recalbox/share/
     system/
         custom.sh                         crochet de démarrage Recalbox (voir plus bas)
         panneau-arcade/
-            credits-arcade.json           où lire les crédits, par système et par jeu
+            credits/
+                fbneo.json, mame.json…    où lire les crédits, un fichier par système
+                pistes.json               les adresses de cheats, par nom de set
+                appris.json               ce que la borne a appris elle-même (créé par elle)
             boutons-arcade.json           combien de boutons, combien de joueurs, couleurs
-            mame-fiches.txt               les adresses MAME, une ligne par jeu
             relancer.sh                   sh relancer.sh credits|panneau|marquee
-            outils/                       mame-rapport.lua, releve-poli.py : facultatifs, voir plus bas
 ```
 
 ## Mettre en place sur une borne
@@ -66,7 +67,7 @@ s'allument. Les journaux disent ce que le panneau fait, jeu par jeu :
   Les clips vidéo ne réveillent pas le panneau, un joueur oui.
 
 **Pendant la partie** — `credits(permanent).py` lit le compteur de crédits
-dans la mémoire du jeu (adresse dans `credits-arcade.json`) : PIÈCE
+dans la mémoire du jeu (adresse dans `credits/<système>.json`) : PIÈCE
 clignote tant qu'il n'y a pas de crédit, START prend le relais dès qu'il y
 en a un, puis tout reste fixe. Le panneau du menu se tait ; au retour au
 menu il reprend, après avoir rendu les couleurs. Un jeu absent de la base
@@ -100,11 +101,12 @@ démon des crédits **déduit** donc le compteur des boutons : une pièce
 ajoute un crédit, un START en retire un. Le comportement est le même
 (PIÈCE clignote, puis START), sans lecture exacte.
 
-`outils/mame-rapport.lua` sait lire le vrai compteur de l'intérieur de MAME
-(il cherche la machine dans `mame-fiches.txt` et écrit le nombre dans
-`/tmp/mame-credits`), mais Recalbox 10 fixe le dossier des `.ini` de MAME
-dans le système en lecture seule : il n'y a pas de moyen propre de lui
-faire charger ce script. Il est là pour le jour où ce sera possible.
+Le dépôt garde, côté PC, `outils/mame-rapport.lua` : il sait lire le vrai
+compteur de l'intérieur de MAME (avec la liste que produit
+`exporter-pour-borne.py --fiches-mame`), mais Recalbox 10 fixe le dossier
+des `.ini` de MAME dans le système en lecture seule et il n'y a pas de
+moyen propre de lui faire charger ce script. Il n'est pas sur la borne ;
+il attend le jour où ce sera possible.
 
 ## Au démarrage
 
@@ -123,16 +125,34 @@ fin de chaque partie : il relance celui des programmes permanents qui
 serait mort (journal dans `panneau-arcade/gardefou.log`). Une borne sans
 marquee n'a rien à faire : il ne relance que ce qui est présent.
 
-## Les données viennent du PC
+## Les données
 
-`credits-arcade.json`, `boutons-arcade.json` et `mame-fiches.txt` sont
-fabriqués sur le PC de relevé (`outils/exporter-pour-borne.py`) et poussés
-sur la borne toutes les 30 minutes, jamais pendant une partie
-(`outils/deployer-vers-borne.sh`, qui met aussi à jour la copie de ce
-dossier). Le démon des crédits ne relit sa base qu'à son démarrage :
-`sh system/panneau-arcade/relancer.sh credits` après avoir remplacé le
-fichier. Le panneau, lui, recharge les boutons tout seul.
+Les crédits tiennent dans `system/panneau-arcade/credits/`, **un fichier par
+système** : `fbneo.json`, `mame.json`, `neogeo.json`… Chacun contient les
+fiches de ce système, indexées par nom de set, et ses jeux écartés. À côté,
+`pistes.json` : les adresses de cheats « crédits infinis », par nom de set,
+là où chercher en premier quand un jeu est inconnu.
 
-`outils/releve-poli.py` mesure les crédits **sur la borne elle-même**, jeu
-par jeu, en pilotant EmulationStation par UDP et sans jamais déranger une
-partie. Il n'est pas lancé : le PC va plus vite.
+Le démon ne lit que le fichier du système du jeu lancé, au moment du
+lancement. Rien n'est gardé en mémoire pour des milliers de jeux, et un
+fichier remplacé est pris en compte à la partie suivante : **rien à
+redémarrer** quand on met les données à jour.
+
+Ces fichiers viennent du PC de relevé (`outils/exporter-pour-borne.py`),
+qui les pousse sur la borne toutes les 30 minutes par renommage, fichier
+par fichier (`outils/deployer-vers-borne.sh`, qui met aussi à jour la copie
+de ce dossier). La borne n'y écrit jamais.
+
+Ce qu'elle apprend elle-même va dans `credits/appris.json`, qu'elle crée à
+la première occasion et que le PC ne touche pas : l'adresse d'un jeu absent
+des fichiers du PC, trouvée en jouant ; un jeu qui a accepté ou refusé le
+joueur 2 ; un jeu où la recherche a échoué. Une fiche du PC prime sur une
+fiche apprise ; le constat sur le joueur 2 prime toujours.
+
+`boutons-arcade.json` reste un seul fichier : il est indexé par nom de set,
+parce que `1942` a les mêmes boutons sous FBNeo, MAME ou Neo Geo.
+
+Côté PC aussi, `outils/releve-poli.py` sait mesurer les crédits **sur la
+borne elle-même**, jeu par jeu, en pilotant EmulationStation par UDP et
+sans jamais déranger une partie. Il n'est pas sur la borne : le PC de
+relevé va plus vite.

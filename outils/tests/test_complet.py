@@ -27,10 +27,11 @@ for nom in ("aio_p1_x_1", "aio_p1_x_2"):
 
 lecture, ecriture = os.pipe()
 ETAT = os.path.join(RACINE, "es_state.inf")
-BASE = os.path.join(RACINE, "credits-arcade.json")     # volontairement absent
+CREDITS = os.path.join(RACINE, "credits")               # volontairement vide :
+APPRIS = os.path.join(CREDITS, "appris.json")           # le PC n a rien envoye
 
 ra = FauxRetroArch(PORT_RA, adresse_credits=ADRESSE); ra.start()
-cp.BASE = BASE
+cp.DOSSIER_CREDITS = CREDITS
 cp.LEDS_PIECE, cp.LEDS_START = tuple(leds), tuple(leds2)
 cp.RA_HOTE, cp.RA_PORT = "127.0.0.1", PORT_RA
 cp.STATE_FILE, cp.JOURNAL = ETAT, os.path.join(RACINE, "credits.log")
@@ -59,20 +60,20 @@ print("--- partie 1 : le jeu est inconnu, le script doit apprendre ---")
 etat("rungame"); ra.ram[ADRESSE] = 0
 threading.Thread(target=cp.main, daemon=True).start()
 time.sleep(3.0)                      # resolution du jeu + photo de reference
-verifier("base absente au depart : rien n'est invente", not os.path.exists(BASE))
+verifier("base absente au depart : rien n'est invente", not os.path.exists(APPRIS))
 verifier("jeu inconnu : la LED ne clignote pas", set(observer(1.5)) == {"255"})
 
 t0 = time.time()
 for tour in range(8):
     ra.bruit(400); time.sleep(1.3)
     ra.credits(+1); appui(cp.CODE_PIECE); time.sleep(1.6)
-    base = json.load(open(BASE)) if os.path.exists(BASE) else {"jeux": {}}
+    base = json.load(open(APPRIS)) if os.path.exists(APPRIS) else {"jeux": {}}
     if "fbneo/testgame" in base.get("jeux", {}): break
     ra.credits(-1); appui(cp.CODE_START); time.sleep(1.2)
     ra.credits(+1)                    # on remet le credit consomme pour la suite
 duree = time.time() - t0
 
-base = json.load(open(BASE)) if os.path.exists(BASE) else {"jeux": {}}
+base = json.load(open(APPRIS)) if os.path.exists(APPRIS) else {"jeux": {}}
 fiche = base.get("jeux", {}).get("fbneo/testgame")
 verifier("le jeu a ete appris", fiche is not None, "en %.0f s" % duree)
 if fiche:

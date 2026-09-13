@@ -1,0 +1,3819 @@
+{
+  "description": "Adresse RAM du compteur de credits de chaque jeu de ce systeme, indexee par nom de set. Se lit par l'interface reseau de RetroArch : READ_CORE_RAM <adresse> 1 en UDP sur le port 55355.",
+  "difficiles": {
+    "avengers": {
+      "jeu": "avengers",
+      "le": "2026-09-12",
+      "raison": "rom refusee ([FBNeo] Using ROM with known crc 0x5052fa9d and name tbb_1bpr.1e from archive /mnt/roms/neogeo/avengers | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
+      "systeme": "neogeo"
+    },
+    "bloodstm": {
+      "jeu": "bloodstm",
+      "le": "2026-09-12",
+      "raison": "rom refusee ([FBNeo] Driver bloodstm was successfully started : game's full name is Blood Storm (v2.22) | [FBNeo] Unknown device type for port 0, forcing \"Classic\" instead |)",
+      "systeme": "neogeo"
+    },
+    "gg-bios": {
+      "jeu": "gg-bios",
+      "le": "2026-09-12",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeo"
+    },
+    "ironclad": {
+      "jeu": "ironclad",
+      "le": "2026-09-12",
+      "raison": "rom refusee ([FBNeo] Using ROM with known crc 0x5a86cff2 and name 000-lo.lo from archive /mnt/roms/neogeo/neogeo | DIPSWITCH Neo Geo Mode selected => NeoSystem: 0x%02x. | [F)",
+      "systeme": "neogeo"
+    },
+    "neogeo": {
+      "jeu": "neogeo",
+      "le": "2026-09-12",
+      "raison": "rom refusee (Setting system dir to /root/.config/retroarch/system | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe gi)",
+      "systeme": "neogeo"
+    },
+    "sftm": {
+      "jeu": "sftm",
+      "le": "2026-09-12",
+      "raison": "rom refusee ([FBNeo] Driver sftm was successfully started : game's full name is Street Fighter: The Movie (v1.12) | [FBNeo] Unknown device type for port 0, forcing \"Classic\")",
+      "systeme": "neogeo"
+    },
+    "tws96": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "tws96",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeo",
+      "vu_le": "2026-09-11"
+    },
+    "uni-bios-32": {
+      "jeu": "uni-bios-32",
+      "le": "2026-09-12",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeo"
+    },
+    "uni-bioscd-32": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
+      "jeu": "uni-bioscd-32",
+      "par": "nuit-credits.py",
+      "raison": "romset inconnu de ce coeur",
+      "systeme": "neogeo",
+      "vu_le": "2026-09-11"
+    }
+  },
+  "format": "recalbox-arcade-credits (un fichier par systeme, pour la borne)",
+  "jeux": {
+    "aof3": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 789,
+        "adresse_hex": "0x0315",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x0415",
+          "0x0C15",
+          "0xF28E"
+        ],
+        "octets": 1,
+        "pieces_observees": 4,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "aof3",
+      "nom": "aof3",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "asurabld": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 30890,
+        "adresse_hex": "0x78AA",
+        "adresse_j2": 70523,
+        "adresse_j2_hex": "0x1137B",
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [
+          "0x796C",
+          "0x4D40E",
+          "0x4F40E",
+          "0x5140E"
+        ],
+        "octets": 1,
+        "pieces_observees": 4,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "asurabld",
+      "nom": "asurabld",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 332836
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "bangbead": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 1051,
+        "adresse_hex": "0x041B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x04FA"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "bangbead",
+      "nom": "bangbead",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "bbbxing": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 520,
+        "adresse_hex": "0x0208",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xA9120"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "bbbxing",
+      "nom": "bbbxing",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 1041664
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "bigkarnk": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 34940,
+        "adresse_hex": "0x887C",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xA471"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "bigkarnk",
+      "nom": "bigkarnk",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 90121
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "biomtoy": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 55494,
+        "adresse_hex": "0xD8C6",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "biomtoy",
+      "nom": "biomtoy",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 90121
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "bjourney": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": 1281,
+        "adresse_j2_hex": "0x0501",
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "bjourney",
+      "nom": "bjourney",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "blzntrnd": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 409277,
+        "adresse_hex": "0x63EBD",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "blzntrnd",
+      "nom": "blzntrnd",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 428116
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "bstars": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "bstars",
+      "nom": "bstars",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "crsword": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 24581,
+        "adresse_hex": "0x6005",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "crsword",
+      "nom": "crsword",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "ctomaday": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 4801,
+        "adresse_hex": "0x12C1",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x1356"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "ctomaday",
+      "nom": "ctomaday",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "cyberlip": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "cyberlip",
+      "nom": "cyberlip",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "dbz": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 26012,
+        "adresse_hex": "0x659C",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "dbz",
+      "nom": "dbz",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 182276
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "dbz2": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 30784,
+        "adresse_hex": "0x7840",
+        "adresse_j2": 16517,
+        "adresse_j2_hex": "0x4085",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "dbz2",
+      "nom": "dbz2",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 182276
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "dbzvrvs": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 61920,
+        "adresse_hex": "0xF1E0",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x4B2AE",
+          "0x91F42",
+          "0x91F82"
+        ],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "dbzvrvs",
+      "nom": "dbzvrvs",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 667648
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "doubledr": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 8760,
+        "adresse_hex": "0x2238",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x223A",
+          "0x223C",
+          "0x223E",
+          "0x5AC0",
+          "0x5AC1"
+        ],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "doubledr",
+      "nom": "doubledr",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "eightman": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "eightman",
+      "nom": "eightman",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "fatfursp": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "fatfursp",
+      "nom": "fatfursp",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "fatfury1": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 37976,
+        "adresse_hex": "0x9458",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xFE8B"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "fatfury1",
+      "nom": "fatfury1",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "fatfury3": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "fatfury3",
+      "nom": "fatfury3",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "fbfrenzy": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 52607,
+        "adresse_hex": "0xCD7F",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xFE8B"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "fbfrenzy",
+      "nom": "fbfrenzy",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "flipshot": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 9243,
+        "adresse_hex": "0x241B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x32AF",
+          "0xFE8B"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "flipshot",
+      "nom": "flipshot",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "fround": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 49318,
+        "adresse_hex": "0xC0A6",
+        "adresse_j2": 602469,
+        "adresse_j2_hex": "0x93165",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "fround",
+      "nom": "fround",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 606227
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "galaxyfg": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 4653,
+        "adresse_hex": "0x122D",
+        "adresse_j2": 23126,
+        "adresse_j2_hex": "0x5A56",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [
+          "0x1857",
+          "0x5AC6"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "galaxyfg",
+      "nom": "galaxyfg",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "ganryu": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 1025,
+        "adresse_hex": "0x0401",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x0458",
+          "0x945D",
+          "0x94EB"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "ganryu",
+      "nom": "ganryu",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "garou": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": 62144,
+        "adresse_j2_hex": "0xF2C0",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 3,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "garou",
+      "nom": "garou",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "ghostlop": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 62141,
+        "adresse_hex": "0xF2BD",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "ghostlop",
+      "nom": "ghostlop",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "goalx3": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 7,
+        "adresse_hex": "0x0007",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xFE8B"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "goalx3",
+      "nom": "goalx3",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "gpilots": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 64943,
+        "adresse_hex": "0xFDAF",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xFDB1",
+          "0xFEC4"
+        ],
+        "octets": 1,
+        "pieces_observees": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "gpilots",
+      "nom": "gpilots",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "gururin": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "gururin",
+      "nom": "gururin",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "holo": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 597853,
+        "adresse_hex": "0x91F5D",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x91FBD"
+        ],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "holo",
+      "nom": "holo",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 667648
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "jockeygp": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 23147,
+        "adresse_hex": "0x5A6B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "jockeygp",
+      "nom": "jockeygp",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "joyjoy": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 62180,
+        "adresse_hex": "0xF2E4",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xF2F7",
+          "0xFDAF",
+          "0xFEC4"
+        ],
+        "octets": 1,
+        "pieces_observees": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "joyjoy",
+      "nom": "joyjoy",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "kabukikl": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "kabukikl",
+      "nom": "kabukikl",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "kaiserkn": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 57630,
+        "adresse_hex": "0xE11E",
+        "adresse_j2": 294954,
+        "adresse_j2_hex": "0x4802A",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [
+          "0xE174",
+          "0x64104"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "kaiserkn",
+      "nom": "kaiserkn",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 4821252
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "karnovr": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 4103,
+        "adresse_hex": "0x1007",
+        "adresse_j2": 27521,
+        "adresse_j2_hex": "0x6B81",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "karnovr",
+      "nom": "karnovr",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "kf2k2mp2": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": 42951,
+        "adresse_j2_hex": "0xA7C7",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "kf2k2mp2",
+      "nom": "kf2k2mp2",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "kf2k5uni": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": 42951,
+        "adresse_j2_hex": "0xA7C7",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "kf2k5uni",
+      "nom": "kf2k5uni",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "kof2000": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "kof2000",
+      "nom": "kof2000",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "kof2001": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 139,
+        "adresse_hex": "0x008B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xFE8B"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "kof2001",
+      "nom": "kof2001",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "kof2003": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 30723,
+        "adresse_hex": "0x7803",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xFE8B"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "kof2003",
+      "nom": "kof2003",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "kof94": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 135,
+        "adresse_hex": "0x0087",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xFE8B"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "kof94",
+      "nom": "kof94",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "kof96": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "kof96",
+      "nom": "kof96",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "kof97": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 155,
+        "adresse_hex": "0x009B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xFE8B"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "kof97",
+      "nom": "kof97",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "kof98": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 143,
+        "adresse_hex": "0x008F",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xFE8B"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "kof98",
+      "nom": "kof98",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "kotm": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 2,
+        "adresse_hex": "0x0002",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x0012"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "kotm",
+      "nom": "kotm",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "kotm2": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "kotm2",
+      "nom": "kotm2",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "lastblad": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 34803,
+        "adresse_hex": "0x87F3",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xF2DA",
+          "0xF2DE",
+          "0xFE8B"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "lastblad",
+      "nom": "lastblad",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "lbowling": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 99,
+        "adresse_hex": "0x0063",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xFE8B"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "lbowling",
+      "nom": "lbowling",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "legendos": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 421,
+        "adresse_hex": "0x01A5",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "legendos",
+      "nom": "legendos",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "lresort": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "lresort",
+      "nom": "lresort",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "magdrop2": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 77,
+        "adresse_hex": "0x004D",
+        "adresse_j2": 107,
+        "adresse_j2_hex": "0x006B",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [
+          "0x004F",
+          "0x0207"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "magdrop2",
+      "nom": "magdrop2",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "magdrop3": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 81,
+        "adresse_hex": "0x0051",
+        "adresse_j2": 62083,
+        "adresse_j2_hex": "0xF283",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [
+          "0x0053",
+          "0x0207"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "magdrop3",
+      "nom": "magdrop3",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "maglord": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 62108,
+        "adresse_hex": "0xF29C",
+        "adresse_j2": 65163,
+        "adresse_j2_hex": "0xFE8B",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "maglord",
+      "nom": "maglord",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "matrim": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 62137,
+        "adresse_hex": "0xF2B9",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "matrim",
+      "nom": "matrim",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "mk3": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 25889,
+        "adresse_hex": "0x6521",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x17B652"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "mk3",
+      "nom": "mk3",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 2359420
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "msgundam": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 7936,
+        "adresse_hex": "0x1F00",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x3E90",
+          "0x3E92"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "msgundam",
+      "nom": "msgundam",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 1423392
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "mslug2": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 6017,
+        "adresse_hex": "0x1781",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "mslug2",
+      "nom": "mslug2",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "mslug3": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 510,
+        "adresse_hex": "0x01FE",
+        "adresse_j2": 23,
+        "adresse_j2_hex": "0x0017",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [
+          "0x01FF"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "mslug3",
+      "nom": "mslug3",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "mslug4": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 2494,
+        "adresse_hex": "0x09BE",
+        "adresse_j2": 15,
+        "adresse_j2_hex": "0x000F",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [
+          "0x09BF"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "mslug4",
+      "nom": "mslug4",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "mslug5": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 2402,
+        "adresse_hex": "0x0962",
+        "adresse_j2": 15,
+        "adresse_j2_hex": "0x000F",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [
+          "0x0963",
+          "0xF2E1"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "mslug5",
+      "nom": "mslug5",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "mslugx": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 6273,
+        "adresse_hex": "0x1881",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x1931"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "mslugx",
+      "nom": "mslugx",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "mutantf": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 32850,
+        "adresse_hex": "0x8052",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "mutantf",
+      "nom": "mutantf",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 59394
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "mutnat": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 8757,
+        "adresse_hex": "0x2235",
+        "adresse_j2": 11392,
+        "adresse_j2_hex": "0x2C80",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [
+          "0xB8A8"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "mutnat",
+      "nom": "mutnat",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "ncommand": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 62145,
+        "adresse_hex": "0xF2C1",
+        "adresse_j2": 65163,
+        "adresse_j2_hex": "0xFE8B",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "ncommand",
+      "nom": "ncommand",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "neobombe": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "neobombe",
+      "nom": "neobombe",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "neocup98": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": 21033,
+        "adresse_j2_hex": "0x5229",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "neocup98",
+      "nom": "neocup98",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "neodrift": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 1049,
+        "adresse_hex": "0x0419",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x043C"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "neodrift",
+      "nom": "neodrift",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "ninjamas": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": 49475,
+        "adresse_j2_hex": "0xC143",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "ninjamas",
+      "nom": "ninjamas",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "nitd": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 23573,
+        "adresse_hex": "0x5C15",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xFE8B"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "nitd",
+      "nom": "nitd",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "overtop": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": 33283,
+        "adresse_j2_hex": "0x8203",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "overtop",
+      "nom": "overtop",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "panicbom": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 85,
+        "adresse_hex": "0x0055",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xFE8B"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "panicbom",
+      "nom": "panicbom",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "pbobbl2n": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 12340,
+        "adresse_hex": "0x3034",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xEE09"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "pbobbl2n",
+      "nom": "pbobbl2n",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "pbobblen": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 8640,
+        "adresse_hex": "0x21C0",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x21C1",
+          "0x5AD9"
+        ],
+        "octets": 1,
+        "pieces_observees": 3,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "pbobblen",
+      "nom": "pbobblen",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "pitfight": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 68482,
+        "adresse_hex": "0x10B82",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "pitfight",
+      "nom": "pitfight",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 68608
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "popbounc": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 20443,
+        "adresse_hex": "0x4FDB",
+        "adresse_j2": 62155,
+        "adresse_j2_hex": "0xF2CB",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [
+          "0xF2A2"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "popbounc",
+      "nom": "popbounc",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "poundfor": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 166978,
+        "adresse_hex": "0x28C42",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "poundfor",
+      "nom": "poundfor",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 188432
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "powerins": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 30842,
+        "adresse_hex": "0x787A",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x17E49",
+          "0x17F0E",
+          "0x17F6F",
+          "0x17F91"
+        ],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "powerins",
+      "nom": "powerins",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 98312
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "preisle2": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "preisle2",
+      "nom": "preisle2",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "ragnagrd": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "ragnagrd",
+      "nom": "ragnagrd",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "rbff1": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "rbff1",
+      "nom": "rbff1",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "rbff2": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 16789,
+        "adresse_hex": "0x4195",
+        "adresse_j2": 62169,
+        "adresse_j2_hex": "0xF2D9",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [
+          "0xFE8B"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "rbff2",
+      "nom": "rbff2",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "rbffspec": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "rbffspec",
+      "nom": "rbffspec",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "ridhero": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 15315,
+        "adresse_hex": "0x3BD3",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "ridhero",
+      "nom": "ridhero",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "roboarmy": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 24779,
+        "adresse_hex": "0x60CB",
+        "adresse_j2": 64920,
+        "adresse_j2_hex": "0xFD98",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [
+          "0xFE8B"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "roboarmy",
+      "nom": "roboarmy",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "rotd": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 62181,
+        "adresse_hex": "0xF2E5",
+        "adresse_j2": 65163,
+        "adresse_j2_hex": "0xFE8B",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xFE8B"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "rotd",
+      "nom": "rotd",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "s1945p": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "s1945p",
+      "nom": "s1945p",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "samsh5sp": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 32994,
+        "adresse_hex": "0x80E2",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x80E3"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "samsh5sp",
+      "nom": "samsh5sp",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "samsho2": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 4552,
+        "adresse_hex": "0x11C8",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "samsho2",
+      "nom": "samsho2",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "samsho3": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 4674,
+        "adresse_hex": "0x1242",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "samsho3",
+      "nom": "samsho3",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "samsho4": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 32994,
+        "adresse_hex": "0x80E2",
+        "adresse_j2": 1107,
+        "adresse_j2_hex": "0x0453",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [
+          "0x80E3"
+        ],
+        "octets": 1,
+        "pieces_observees": 3,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "samsho4",
+      "nom": "samsho4",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "samsho5": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 32994,
+        "adresse_hex": "0x80E2",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x80E3"
+        ],
+        "octets": 1,
+        "pieces_observees": 3,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "samsho5",
+      "nom": "samsho5",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "savagere": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 32775,
+        "adresse_hex": "0x8007",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xFE8B"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "savagere",
+      "nom": "savagere",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "sdfight": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 16162,
+        "adresse_hex": "0x3F22",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x5C8C"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "sdfight",
+      "nom": "sdfight",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 96272
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "sdodgeb": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "sdodgeb",
+      "nom": "sdodgeb",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "sengoku": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "sengoku",
+      "nom": "sengoku",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "sengoku2": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 135,
+        "adresse_hex": "0x0087",
+        "adresse_j2": 12459,
+        "adresse_j2_hex": "0x30AB",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [
+          "0x0199",
+          "0xFE8B"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "sengoku2",
+      "nom": "sengoku2",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "sf": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 7772,
+        "adresse_hex": "0x1E5C",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "sf",
+      "nom": "sf",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 40960
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "shocktr2": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "shocktr2",
+      "nom": "shocktr2",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "sonic": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 62483,
+        "adresse_hex": "0xF413",
+        "adresse_j2": 61509,
+        "adresse_j2_hex": "0xF045",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x91F2F",
+          "0x91F6F"
+        ],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "sonic",
+      "nom": "sonic",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 667648
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "sonicwi2": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "sonicwi2",
+      "nom": "sonicwi2",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "sonicwi3": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "sonicwi3",
+      "nom": "sonicwi3",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "spinmast": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 81,
+        "adresse_hex": "0x0051",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xA261",
+          "0xF2BD"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "spinmast",
+      "nom": "spinmast",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "spnchout": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 14479,
+        "adresse_hex": "0x388F",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 1,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "spnchout",
+      "nom": "spnchout",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 16451
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "ssideki": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 64945,
+        "adresse_hex": "0xFDB1",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xFE8B"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "ssideki",
+      "nom": "ssideki",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "ssideki2": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "ssideki2",
+      "nom": "ssideki2",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "ssideki3": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "ssideki3",
+      "nom": "ssideki3",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "ssideki4": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": 22917,
+        "adresse_j2_hex": "0x5985",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "ssideki4",
+      "nom": "ssideki4",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "ssoldier": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 69683,
+        "adresse_hex": "0x11033",
+        "adresse_j2": 76521,
+        "adresse_j2_hex": "0x12AE9",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 3,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "ssoldier",
+      "nom": "ssoldier",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 155688
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "stakwin": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 5,
+        "adresse_hex": "0x0005",
+        "adresse_j2": 2981,
+        "adresse_j2_hex": "0x0BA5",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xFE8B"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "stakwin",
+      "nom": "stakwin",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "stakwin2": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 895,
+        "adresse_hex": "0x037F",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "stakwin2",
+      "nom": "stakwin2",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "superspy": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "superspy",
+      "nom": "superspy",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "survarts": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 4628,
+        "adresse_hex": "0x1214",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xDC61",
+          "0xDC6D"
+        ],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "survarts",
+      "nom": "survarts",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 921858
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "svc": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 139,
+        "adresse_hex": "0x008B",
+        "adresse_j2": 65163,
+        "adresse_j2_hex": "0xFE8B",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [
+          "0x0A8B",
+          "0x0F8B"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "svc",
+      "nom": "svc",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "svcsplus": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 139,
+        "adresse_hex": "0x008B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x0A8B",
+          "0x0F8B",
+          "0xFE8B"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "svcsplus",
+      "nom": "svcsplus",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "tmnt": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 16531,
+        "adresse_hex": "0x4093",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x40D3",
+          "0x4153"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "tmnt",
+      "nom": "tmnt",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 22528
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "tophuntr": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 62146,
+        "adresse_hex": "0xF2C2",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xF2DE"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "tophuntr",
+      "nom": "tophuntr",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "tpgolf": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": 99,
+        "adresse_j2_hex": "0x0063",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "tpgolf",
+      "nom": "tpgolf",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "trally": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "trally",
+      "nom": "trally",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "turfmast": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "turfmast",
+      "nom": "turfmast",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "viewpoin": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 32925,
+        "adresse_hex": "0x809D",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "viewpoin",
+      "nom": "viewpoin",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "wakuwak7": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 25652,
+        "adresse_hex": "0x6434",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x6573",
+          "0xF2F7"
+        ],
+        "octets": 1,
+        "pieces_observees": 3,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "wakuwak7",
+      "nom": "wakuwak7",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-11",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "wh1": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "wh1",
+      "nom": "wh1",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    },
+    "wh2": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "wh2",
+      "nom": "wh2",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "neogeo"
+    }
+  },
+  "systeme": "neogeo",
+  "version": 3
+}

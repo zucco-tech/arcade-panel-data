@@ -1,0 +1,2006 @@
+{
+  "description": "Adresse RAM du compteur de credits de chaque jeu de ce systeme, indexee par nom de set. Se lit par l'interface reseau de RetroArch : READ_CORE_RAM <adresse> 1 en UDP sur le port 55355.",
+  "difficiles": {
+    "decathlto": {
+      "jeu": "decathlto",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "dnmtdeka": {
+      "jeu": "dnmtdeka",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "magzun": {
+      "jeu": "magzun",
+      "le": "2026-09-12",
+      "raison": "aucun candidat",
+      "systeme": "stv"
+    },
+    "micrombc": {
+      "jeu": "micrombc",
+      "le": "2026-09-12",
+      "raison": "candidats non confirmes",
+      "systeme": "stv"
+    },
+    "nameclub": {
+      "jeu": "nameclub",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "nclubdis": {
+      "jeu": "nclubdis",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "nclubv2": {
+      "jeu": "nclubv2",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "nclubv3": {
+      "jeu": "nclubv3",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "nclubv4": {
+      "jeu": "nclubv4",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "pclb2elk": {
+      "jeu": "pclb2elk",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "pclove": {
+      "jeu": "pclove",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "pclove2": {
+      "jeu": "pclove2",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "pclub2": {
+      "jeu": "pclub2",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "pclub26w": {
+      "jeu": "pclub26w",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "pclub26wa": {
+      "jeu": "pclub26wa",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "pclub27s": {
+      "jeu": "pclub27s",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "pclub2fc": {
+      "jeu": "pclub2fc",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "pclub2kc": {
+      "jeu": "pclub2kc",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "pclub2pe": {
+      "jeu": "pclub2pe",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "pclub2pf": {
+      "jeu": "pclub2pf",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "pclub2v3": {
+      "jeu": "pclub2v3",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "pclub2wb": {
+      "jeu": "pclub2wb",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "pclubol": {
+      "jeu": "pclubol",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "pclubor": {
+      "jeu": "pclubor",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "pclubpok": {
+      "jeu": "pclubpok",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "pclubyo2": {
+      "jeu": "pclubyo2",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "pcpooh2": {
+      "jeu": "pcpooh2",
+      "le": "2026-09-12",
+      "raison": "aucun candidat",
+      "systeme": "stv"
+    },
+    "pcpooh3": {
+      "jeu": "pcpooh3",
+      "le": "2026-09-12",
+      "raison": "aucun candidat",
+      "systeme": "stv"
+    },
+    "prc28su": {
+      "jeu": "prc28su",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "prc297wi": {
+      "jeu": "prc297wi",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "prc297wia": {
+      "jeu": "prc297wia",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "prc298au": {
+      "jeu": "prc298au",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "prc298sp": {
+      "jeu": "prc298sp",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "prc298su": {
+      "jeu": "prc298su",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "sackids": {
+      "jeu": "sackids",
+      "le": "2026-09-12",
+      "raison": "aucun candidat",
+      "systeme": "stv"
+    },
+    "stvbios": {
+      "jeu": "stvbios",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "tatacot": {
+      "jeu": "tatacot",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "twsoc98": {
+      "jeu": "twsoc98",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    },
+    "yattrmnp": {
+      "jeu": "yattrmnp",
+      "le": "2026-09-12",
+      "raison": "aucun candidat",
+      "systeme": "stv"
+    },
+    "znpwfvt": {
+      "jeu": "znpwfvt",
+      "le": "2026-09-12",
+      "raison": "rom refusee (%s | %s | %s)",
+      "systeme": "stv"
+    }
+  },
+  "format": "recalbox-arcade-credits (un fichier par systeme, pour la borne)",
+  "jeux": {
+    "astrass": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x95BB5",
+          "0x95BC8"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "astrass",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "bakubaku": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x831E0",
+          "0x83402"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "bakubaku",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "batmanfr": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x2EA05",
+          "0x4A190"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "batmanfr",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "choroqhr": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 240355,
+        "adresse_hex": "0x3AAE3",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "choroqhr",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "colmns97": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x31C62"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "colmns97",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "cotton2": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x4E989",
+          "0x4E9A2",
+          "0x4E9A4"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "cotton2",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "cottonbm": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x43829",
+          "0x4382D"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "cottonbm",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "critcrsh": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x310C0"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "critcrsh",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "danchih": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x46D9E",
+          "0x46DCC"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "danchih",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "danchiq": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x4E47D",
+          "0x4E4A8"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "danchiq",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "decathlt": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x12A69"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "decathlt",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "dfeverg": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1045420,
+        "adresse_hex": "0xFF3AC",
+        "adresse_j2": 1857,
+        "adresse_j2_hex": "0x0741",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "dfeverg",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "diehard": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x987D9"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "diehard",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "ejihon": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xE71B0",
+          "0xFFDE2"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "ejihon",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "elandore": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x89FDD"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "elandore",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "fanzonem": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 353382,
+        "adresse_hex": "0x56466",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "fanzonem",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "ffreveng": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x5DDED"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "ffreveng",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "fhboxers": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x90C01"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "fhboxers",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "findlove": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x6397C",
+          "0x68D41"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "findlove",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "finlarch": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x5BA0F"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "finlarch",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "gaxeduel": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "gaxeduel",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "grdforce": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x1F0F9",
+          "0x1F112",
+          "0x1F114"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "grdforce",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "groovef": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xDAD68"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "groovef",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "hanagumi": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x834D"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "hanagumi",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "introdon": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x9CBED",
+          "0x9E9F9"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "introdon",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "kiwames": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 684738,
+        "adresse_hex": "0xA72C2",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "kiwames",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "maruchan": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x235BF"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "maruchan",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "mausuke": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x22751"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "mausuke",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "myfairld": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xC821",
+          "0x12415"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "myfairld",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "othellos": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x48765",
+          "0x4877E",
+          "0x48780"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "othellos",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "patocar": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 235138,
+        "adresse_hex": "0x39682",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "patocar",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "pblbeach": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x5B5F1"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "pblbeach",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "pckobe99": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 170542,
+        "adresse_hex": "0x29A2E",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "pckobe99",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "prc29au": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1045236,
+        "adresse_hex": "0xFF2F4",
+        "adresse_j2": 1857,
+        "adresse_j2_hex": "0x0741",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "prc29au",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "prc2ksu": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1045284,
+        "adresse_hex": "0xFF324",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "prc2ksu",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "prikura": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x15A5E",
+          "0xEFDAA"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "prikura",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "puyosun": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x8F74E",
+          "0xAEE95"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "puyosun",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "rsgun": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xEBC1",
+          "0xF3A6"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "rsgun",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "sandor": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "sandor",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "sanjeon": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x8F32E"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "sanjeon",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "sasissu": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x8F32E"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "sasissu",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "seabass": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x3DDAF"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "seabass",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "shanhigw": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x932EF",
+          "0x93305"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "shanhigw",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "shienryu": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xACBCB"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "shienryu",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "skychal": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 786539,
+        "adresse_hex": "0xC006B",
+        "adresse_j2": 1857,
+        "adresse_j2_hex": "0x0741",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "skychal",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "smleague": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x5C06F",
+          "0x5C083"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "smleague",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "sokyugrt": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x8DBC5"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "sokyugrt",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "sss": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "sss",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "stress": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 216598,
+        "adresse_hex": "0x34E16",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "stress",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "suikoenb": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x850D8"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "suikoenb",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "supgoal": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 750136,
+        "adresse_hex": "0xB7238",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "supgoal",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "techbowl": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 939983,
+        "adresse_hex": "0xE57CF",
+        "adresse_j2": 1857,
+        "adresse_j2_hex": "0x0741",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "techbowl",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "thunt": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "thunt",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "thuntk": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "thuntk",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "twcup98": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x764DD",
+          "0x792A0"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "twcup98",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "vfkids": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xB0301",
+          "0xB0321"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "vfkids",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "vfremix": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x74A04"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "vfremix",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "vmahjong": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1048294,
+        "adresse_hex": "0xFFEE6",
+        "adresse_j2": 1857,
+        "adresse_j2_hex": "0x0741",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "vmahjong",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "wasafari": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 143656,
+        "adresse_hex": "0x23128",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x2312A"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "wasafari",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "winterht": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0xBA5A9"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "winterht",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "znpwfv": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 1857,
+        "adresse_hex": "0x0741",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x1A775"
+        ],
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "znpwfv",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-12",
+        "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    }
+  },
+  "systeme": "stv",
+  "version": 3
+}

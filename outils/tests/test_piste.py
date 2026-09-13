@@ -23,13 +23,15 @@ def lampe(n):
     return tuple(c)
 P, S1, S2 = lampe("p"), lampe("s1"), lampe("s2")
 lec, ecr = os.pipe()
-ETAT, BASE = os.path.join(R, "es.inf"), os.path.join(R, "base.json")
-json.dump({"format": "recalbox-arcade-credits", "version": 2, "jeux": {},
-           "pistes": {"jeupiste": {"cheat": CHEAT, "source": "FBNeo-cheats"},
-                      "jeufausse": {"cheat": "0xFF1000", "source": "FBNeo-cheats"}},
-           "difficiles": {}}, open(BASE, "w"))
+ETAT = os.path.join(R, "es.inf")
+CREDITS = os.path.join(R, "credits"); os.makedirs(CREDITS)
+APPRIS = os.path.join(CREDITS, "appris.json")
+# Les pistes viennent du PC, dans leur propre fichier.
+json.dump({"pistes": {"jeupiste": {"cheat": CHEAT, "source": "FBNeo-cheats"},
+                      "jeufausse": {"cheat": "0xFF1000", "source": "FBNeo-cheats"}}},
+          open(os.path.join(CREDITS, "pistes.json"), "w"))
 ra = FauxRetroArch(PORT_RA, adresse_credits=ADRESSE, jeu="jeupiste"); ra.start()
-cp.BASE, cp.LEDS_PIECE, cp.LEDS_START, cp.LEDS_START_P2 = BASE, P, S1, S2
+cp.DOSSIER_CREDITS, cp.LEDS_PIECE, cp.LEDS_START, cp.LEDS_START_P2 = CREDITS, P, S1, S2
 cp.RA_HOTE, cp.RA_PORT = "127.0.0.1", PORT_RA
 cp.STATE_FILE, cp.JOURNAL = ETAT, os.path.join(R, "log")
 cp.ouvrir_pads = lambda: {lec: "AllInOneP1"}
@@ -47,7 +49,7 @@ avant = ra.commandes
 ra.credits(+1); appui(cp.CODE_PIECE); time.sleep(2.0)
 cout = ra.commandes - avant
 
-fiche = json.load(open(BASE))["jeux"].get("fbneo/jeupiste")
+fiche = json.load(open(APPRIS))["jeux"].get("fbneo/jeupiste")
 verifier("appris des la 1re piece", fiche is not None)
 if fiche:
     verifier("bonne adresse", fiche["credits"]["adresse"] == ADRESSE,
@@ -68,9 +70,9 @@ time.sleep(2.5)
 for tour in range(6):
     ra.bruit(300); time.sleep(1.2)
     ra.credits(+1); appui(cp.CODE_PIECE); time.sleep(1.6)
-    if "fbneo/jeufausse" in json.load(open(BASE))["jeux"]: break
+    if "fbneo/jeufausse" in json.load(open(APPRIS))["jeux"]: break
     ra.credits(-1); appui(cp.CODE_START); time.sleep(1.2); ra.credits(+1)
-f2 = json.load(open(BASE))["jeux"].get("fbneo/jeufausse")
+f2 = json.load(open(APPRIS))["jeux"].get("fbneo/jeufausse")
 verifier("le jeu est quand meme appris", f2 is not None)
 if f2:
     verifier("adresse reelle trouvee", f2["credits"]["adresse"] == 0x2222,

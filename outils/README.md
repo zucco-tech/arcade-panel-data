@@ -10,6 +10,8 @@ uniquement, aucune dépendance.
 | `importer-boutons.py` | construit la base des boutons |
 | `capture-credits.py` | mesure un seul jeu, à la main |
 | `verifier-borne.py` | contrôle les trois inconnues avant un balayage |
+| `releve-poli.py` | mesure les crédits sur la borne elle-même, jeu par jeu, sans déranger une partie — pas déployé, le PC va plus vite |
+| `mame-rapport.lua` | lit le vrai compteur de l'intérieur de MAME (avec `exporter-pour-borne.py --fiches-mame`) — pas déployé, Recalbox 10 ne laisse pas charger le script |
 | `clavier_virtuel.py` | le clavier `uinput` qui insère les pièces, pour les deux joueurs |
 | `clavier_xtest.py` | variante XTEST, qui n'existe que dans un serveur X donné |
 | `balayage-continu.py` | enchaîne les systèmes, jour et nuit, sans surveillance |
