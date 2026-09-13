@@ -6,7 +6,11 @@
 #   1. releve-direct.py  charge le coeur libretro tout seul, sans RetroArch
 #      ni fenetre : environ 8 s par jeu, et le bureau reste utilisable. C est
 #      elle qui fait le gros du travail.
-#   2. nuit-credits.py   lance vraiment le jeu dans RetroArch, en plein
+#   2. la reprise acharnee (ACHARNE=1 balayer.sh) : les memes releveurs,
+#      sur les seuls ecartes ou le jeu tournait vraiment, avec plus de
+#      temps, plus de pieces et d autres facons de demarrer. Une image de
+#      l ecran est gardee pour chaque echec (journaux/images/).
+#   3. nuit-credits.py   lance vraiment le jeu dans RetroArch, en plein
 #      ecran : environ 30 s par jeu, et l ecran est pris. Reservee aux rares
 #      roms que le coeur nu refuse de charger (1,7 % sur 60 jeux mesures).
 #
@@ -77,6 +81,21 @@ while [ ! -f "$ARRET" ]; do
         note "coeur direct : $sys termine"
         n=$((n + 1))
         [ $((n % 2)) -eq 0 ] && sh /mnt/recalbox/outils/deployer-vers-borne.sh
+    done
+    [ -f "$ARRET" ] && break
+
+    # Les ecartes ou le jeu tournait : on s acharne, avec les memes regles.
+    for sys in $SYSTEMES; do
+        [ -f "$ARRET" ] && break
+        [ -d "/mnt/roms/$sys" ] || continue
+        [ "$sys" = "mame" ] && [ ! -d /mnt/roms/mame/mame0278 ] && continue
+        verifier_diagnostic
+        note "reprise acharnee : $sys"
+        ACHARNE=1 sh /mnt/recalbox/outils/balayer.sh "$sys" "$PARALLELE" \
+            > "$JOURNAUX/balayage-acharne-$sys-$(date +%Y%m%d-%H%M).log" 2>&1 &
+        attendre $! || break
+        note "reprise acharnee : $sys termine"
+        sh /mnt/recalbox/outils/deployer-vers-borne.sh
     done
     [ -f "$ARRET" ] && break
 

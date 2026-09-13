@@ -212,7 +212,7 @@ pas près.
 | | |
 |---|---|
 | `outils/surveiller.sh` | **le point d'entrée** : enchaîne les systèmes jour et nuit, reprend les écartés en fin de cycle, déploie sur la borne toutes les 30 min |
-| `outils/balayer.sh` | un système, en quatre relevés parallèles, puis `fusionner-parts.py` |
+| `outils/balayer.sh` | un système, en quatre relevés parallèles, puis `fusionner-parts.py` ; `ACHARNE=1` reprend les écartés avec plus de temps, plus de pièces et d'autres façons de démarrer |
 | `outils/releve-direct.py` | le relevé lui-même : charge le cœur libretro sans RetroArch ni écran, paie, START, cherche le compteur, vérifie les miroirs |
 | `outils/releve-mame.py`, `mame-credits.lua` | même chose pour MAME, mesuré à l'intérieur de l'émulateur |
 | `outils/nuit-credits.py` | la reprise par RetroArch, pour les rares roms que le cœur nu refuse |

@@ -37,7 +37,11 @@ DOSSIER_SYSTEME = "/root/.config/retroarch/system"
 # Le Lua attend environ trente secondes de jeu ; a la vitesse ou MAME tourne
 # sans image ni son, cela demande quelques milliers d images.
 IMAGES = 5400
+IMAGES_ACHARNE = 16200         # trois fois plus : le Lua attend et insiste davantage
 IMAGES_PAS = 300
+RAISONS_ACHARNE = ("delai depasse", "jeu inanime", "aucun candidat",
+                   "candidats non confirmes", "aucune RAM declaree",
+                   "pas de monnayeur declare", "MAME n a rien rendu")
 OPTIONS = {
     "mame_softlists_enable": "disabled",   # sinon le dossier devient la machine
     "mame_softlists_auto_media": "disabled",
@@ -66,14 +70,25 @@ def enfant():
                  % (jeu, dossier_roms, LUA))
         commande = fh.name
     os.environ["MAME_SORTIE"] = sortie
+    acharne = os.environ.get("MAME_ACHARNE") == "1"     # lu aussi par le Lua
     coeur = rd.Coeur(COEUR, DOSSIER_SYSTEME, OPTIONS)
     coeur.charger(commande)          # MAME demarre meme quand il repond « faux »
     fait = 0
-    while fait < IMAGES:
+    while fait < (IMAGES_ACHARNE if acharne else IMAGES):
         coeur.images(IMAGES_PAS)
         fait += IMAGES_PAS
         if os.path.exists(sortie):   # le Lua a conclu : inutile d insister
             break
+    if not os.path.exists(sortie):
+        # Le Lua n a rien ecrit : MAME a refuse la machine, ou n a jamais
+        # lance le script. Ce que MAME a dit est la seule explication
+        # disponible — « missing files », « not supported »... — on la garde.
+        dit = " | ".join(coeur.dits[-3:]) if coeur.dits else "sans explication"
+        try:
+            with open(sortie, "w") as fh:
+                json.dump({"jeu": jeu, "erreur": "MAME n a rien rendu (%s)" % dit[:160]}, fh)
+        except OSError:
+            pass
     try:
         os.unlink(commande)
     except OSError:
@@ -142,9 +157,20 @@ def main():
     p.add_argument("--limite", type=int, default=0)
     p.add_argument("--reessayer", action="store_true",
                    help="remesurer aussi les jeux deja ecartes")
+    p.add_argument("--raisons", default=None,
+                   help="avec --reessayer : ne reprendre que les ecartes dont la raison "
+                        "commence par un de ces mots, separes par des virgules")
+    p.add_argument("--acharne", action="store_true",
+                   help="le Lua attend plus, paie plus, essaie d autres facons de demarrer "
+                        "et d autres zones de memoire ; sous-entend --reessayer")
     p.add_argument("--delai", type=float, default=300.0)
     p.add_argument("--arret", default="/tmp/arret-nuit")
     a = p.parse_args()
+    if a.acharne:
+        a.reessayer = True
+        os.environ["MAME_ACHARNE"] = "1"             # herite par l enfant et son Lua
+        if a.raisons is None:
+            a.raisons = ",".join(RAISONS_ACHARNE)
 
     base = charger_base(a.base)
     connue = charger_base(a.reference) if a.reference else base
@@ -152,8 +178,15 @@ def main():
         f.rsplit(".", 1)[0] for f in os.listdir(a.roms)
         if f.lower().endswith((".zip", ".7z")))
     deja = set(connue["jeux"])
+    durs = connue.get("difficiles", {})
     if not a.reessayer:
-        deja |= set(connue.get("difficiles", {}))
+        deja |= set(durs)
+    elif a.raisons:
+        # On ne reprend que les ecartes qui en valent la peine.
+        motifs = tuple(m.strip() for m in a.raisons.split(",") if m.strip())
+        deja |= {c for c, d in durs.items()
+                 if not str(d.get("raison", "")).startswith(motifs)}
+        deja |= {"mame/%s" % n for n in noms if "mame/%s" % n not in durs}
     reste = noms if a.jeux else [n for n in noms if "mame/%s" % n not in deja]
     connus = len(noms) - len(reste)
     # Seulement les jeux d arcade : la base des boutons les connait. Sur
@@ -216,14 +249,18 @@ def main():
                 "credits": {
                     "adresse": fiche["adresse"], "adresse_hex": fiche["adresse_hex"],
                     "octets": 1, "miroirs": [],
-                    "verifie_insertion": True, "verifie_consommation": True,
+                    "verifie_insertion": True,
+                    "verifie_consommation": fiche.get("consommation", True),
                     "pieces_observees": fiche.get("accords", 0),
                     "entree_piece": fiche.get("piece"), "entree_start": fiche.get("start"),
                     "compteur_commun": False, "adresse_j2": None, "adresse_j2_hex": None,
                     "j2_verifie_consommation": False,
                 },
-                "releve": {"le": time.strftime("%Y-%m-%d"), "methode": "lua dans mame"},
+                "releve": {"le": time.strftime("%Y-%m-%d"),
+                           "methode": "lua dans mame, acharne" if a.acharne else "lua dans mame"},
             }
+            if fiche.get("note"):
+                base["jeux"]["mame/" + jeu]["credits"]["note"] = fiche["note"]
             base["difficiles"].pop("mame/" + jeu, None)
         ecrire_base(a.base, base)
     duree = time.time() - debut

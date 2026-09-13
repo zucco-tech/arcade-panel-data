@@ -76,9 +76,49 @@ IMAGES_APPUI = 6                 # une piece est une impulsion, pas un appui
 IMAGES_APRES_PIECE = 120         # ~2 s : le jeu a le temps d encaisser
 IMAGES_APRES_START = 240         # ~4 s : le temps de consommer le credit
 PIECES_MAX = 5
+STARTS_MAX = 3                   # on insiste : le premier START ne consomme pas toujours
 ASSEZ = 4                        # en dessous de ce nombre de candidats, on tranche
 ACCORDS_MIN = 2                  # un octet doit monter sur au moins deux pieces
 DELAI_JEU = 180.0                # secondes reelles accordees a un jeu
+
+# --- le mode acharne (--acharne) : pour les jeux deja ecartes ------------------
+#
+# La mesure ordinaire est deterministe : la refaire a l identique ne change
+# rien. Ce mode ne change pas les regles — une piece fait monter de un, un
+# START fait descendre — il donne plus de temps, plus de pieces et plus de
+# facons d appuyer, et garde une image de l ecran quand ca echoue quand
+# meme, pour qu on puisse regarder au lieu de deviner. Il est deux a cinq
+# fois plus lent : reserve a la reprise des ecartes.
+ACHARNE = False
+ACHARNE_IMAGES_MAX_DEMARRAGE = 27000     # ~7 min 30 de jeu emule
+ACHARNE_STIMULATION = 1200               # sans vie depuis tant d images, on appuie
+ACHARNE_PIECES_MAX = 8
+ACHARNE_IMAGES_APRES_PIECE = 240         # des cartes encaissent lentement
+ACHARNE_STARTS_MAX = 5
+ACHARNE_IMAGES_START = 30                # un START tenu une demi-seconde
+ACHARNE_IMAGES_APRES_START = 600
+ACHARNE_INSISTANCE_PIECES = 16
+ACHARNE_ATTENTE_ATTRACT = 1800           # ~30 s de plus avant de repayer
+ACHARNE_ACCORDS_SEUL = 3                 # un octet fidele a 3 pieces, seul de sa classe
+BOUTON_1 = 0                             # RETRO_DEVICE_ID_JOYPAD_B : bouton 1 sur FBNeo
+ECHEANCE = None                          # heure limite du jeu en cours (mode acharne)
+MARGE_ECHEANCE = 30.0                    # on rend la main avant que le parent ne tue
+DOSSIER_IMAGES = "/mnt/recalbox/journaux/images"
+RAISONS_ACHARNE = ("delai depasse", "jeu inanime", "aucun candidat",
+                   "candidats non confirmes")
+
+
+def acharner():
+    """Passe en mode acharne : memes regles, plus de temps et de moyens."""
+    global ACHARNE, IMAGES_MAX_DEMARRAGE, PIECES_MAX, IMAGES_APRES_PIECE
+    global STARTS_MAX, IMAGES_APRES_START, INSISTANCE_PIECES
+    ACHARNE = True
+    IMAGES_MAX_DEMARRAGE = ACHARNE_IMAGES_MAX_DEMARRAGE
+    PIECES_MAX = ACHARNE_PIECES_MAX
+    IMAGES_APRES_PIECE = ACHARNE_IMAGES_APRES_PIECE
+    STARTS_MAX = ACHARNE_STARTS_MAX
+    IMAGES_APRES_START = ACHARNE_IMAGES_APRES_START
+    INSISTANCE_PIECES = ACHARNE_INSISTANCE_PIECES
 
 # Les reglages de carte qu on impose quand le jeu les expose. Un jeu en free
 # play n encaisse rien : sans ca, il n y a aucun compteur a trouver.
@@ -366,6 +406,12 @@ def attendre_vivant(coeur, journal):
     avant = coeur.photo()
     total = 0
     while total < IMAGES_MAX_DEMARRAGE:
+        # Un jeu lourd peut ne pas atteindre la vie dans le temps imparti :
+        # on le dit nous-memes, avec l image de l ecran, plutot que de nous
+        # faire tuer par le parent sans un mot.
+        if ECHEANCE is not None and time.time() > ECHEANCE:
+            journal("  trop lent : pas encore vivant apres %d images" % total)
+            return "lent"
         coeur.images(IMAGES_PAS)
         total += IMAGES_PAS
         apres = coeur.photo()
@@ -375,6 +421,14 @@ def attendre_vivant(coeur, journal):
             coeur.images(IMAGES_APRES_VIVANT)
             journal("  vivant apres %d images" % total)
             return total
+        # Des cartes attendent un appui pour sortir de leur ecran d erreur
+        # ou de calibrage. Jamais de piece ici : c est le START et le bouton
+        # 1 qu un joueur essaierait devant une borne qui ne repond pas.
+        if ACHARNE and total % ACHARNE_STIMULATION == 0:
+            coeur.appuyer(START, 1, ACHARNE_IMAGES_START)
+            coeur.images(60)
+            coeur.appuyer(BOUTON_1, 1, ACHARNE_IMAGES_START)
+            coeur.images(60)
     return None
 
 
@@ -483,7 +537,15 @@ def verifier_miroirs(coeur, adresse, soupcons):
             and apres[b] > avant[b]]
 
 
-STARTS_MAX = 3                   # on insiste : le premier START ne consomme pas toujours
+def consomme(vieux, neuf):
+    """Vrai si le passage de vieux a neuf ressemble a un credit consomme :
+    un de moins, deux de moins (les demarrages a deux joueurs), ou un de
+    moins en BCD (0x10 -> 0x09). Un octet qui tombe de 144 a 0 n est pas un
+    solde de credits, c est une animation qui recommence."""
+    if vieux >= 0x99 or neuf >= vieux:
+        return False
+    ecart = vieux - neuf
+    return ecart in (1, 2) or (ecart == 7 and vieux & 0x0F == 0)
 
 
 def confirmer_au_start(coeur, accords, journal):
@@ -501,12 +563,26 @@ def confirmer_au_start(coeur, accords, journal):
         consomme."""
     exigeant = max(accords.values()) if accords else 0
     faible = None
-    for essai in range(1, STARTS_MAX + 1):
+    # Les facons de demarrer une partie, dans l ordre ou un joueur les
+    # essaierait : le START du joueur 1 ; puis, en mode acharne, celui du
+    # joueur 2, le bouton 1 (des cartes demarrent avec), et un double appui
+    # sur START (les ecrans de choix 1 joueur / 2 joueurs).
+    essais = [(START, 1, IMAGES_APPUI)] * STARTS_MAX
+    if ACHARNE:
+        essais = ([(START, 1, ACHARNE_IMAGES_START)] * STARTS_MAX
+                  + [(START, 2, ACHARNE_IMAGES_START), (BOUTON_1, 1, ACHARNE_IMAGES_START),
+                     ("double", 1, ACHARNE_IMAGES_START)])
+    for essai, (bouton, joueur, tenue) in enumerate(essais, 1):
         avant = coeur.photo()
-        coeur.appuyer(START, 1)
+        if bouton == "double":
+            coeur.appuyer(START, joueur, tenue)
+            coeur.images(tenue + 30)
+            coeur.appuyer(START, joueur, tenue)
+        else:
+            coeur.appuyer(bouton, joueur, tenue)
         coeur.images(IMAGES_APRES_START)
         apres = coeur.photo()
-        descendus = sorted((a for a in accords if apres[a] < avant[a]),
+        descendus = sorted((a for a in accords if consomme(avant[a], apres[a])),
                            key=lambda a: (-accords[a], a))
         forts = [a for a in descendus if accords[a] >= max(ACCORDS_MIN, exigeant)]
         if forts:
@@ -517,8 +593,11 @@ def confirmer_au_start(coeur, accords, journal):
         if descendus and faible is None:
             faible = (descendus, avant, apres)
     if faible:
-        journal("  START : seul %s descend, monte a %d piece(s) seulement"
-                % ("0x%04X" % faible[0][0], accords[faible[0][0]]))
+        descendus, avant, apres = faible
+        journal("  START : %s descend (%s), monte a %d piece(s) seulement"
+                % (", ".join("0x%04X" % a for a in descendus),
+                   ", ".join("%d -> %d" % (avant[a], apres[a]) for a in descendus),
+                   accords[descendus[0]]))
         return faible
     return [], avant, apres
 
@@ -557,6 +636,23 @@ def mesurer(chemin_coeur, chemin_rom, dossier_systeme, bavard, options=None):
             print(message, flush=True)
 
     coeur = Coeur(chemin_coeur, dossier_systeme, options)
+
+    def echec(raison, **detail):
+        """Un ecart, avec l image de l ecran en mode acharne : ce que le jeu
+        affichait a ce moment-la dit souvent pourquoi (« FREE PLAY », un
+        test de memoire, un ecran de calibrage)."""
+        if ACHARNE:
+            systeme = os.path.basename(os.path.dirname(chemin_rom))
+            jeu = os.path.basename(chemin_rom).rsplit(".", 1)[0]
+            dossier = os.path.join(DOSSIER_IMAGES, systeme)
+            try:
+                os.makedirs(dossier, exist_ok=True)
+                if enregistrer_image(coeur, os.path.join(dossier, "%s.png" % jeu)):
+                    journal("  image de l ecran gardee dans %s/%s.png" % (dossier, jeu))
+            except Exception:                            # une image en moins, pas un echec en plus
+                pass
+        return dict({"erreur": raison}, **detail), lignes
+
     if not coeur.charger(chemin_rom):
         # On rapporte ce que le coeur a dit : « romset is unknown », un
         # fichier manquant... C est la difference entre « ca ne marche pas »
@@ -566,18 +662,46 @@ def mesurer(chemin_coeur, chemin_rom, dossier_systeme, bavard, options=None):
     imposes = coeur.choisir_les_dip()
     if imposes:
         journal("  reglages imposes : %s" % ", ".join(sorted(imposes.values())))
-    if attendre_vivant(coeur, journal) is None:
-        return {"erreur": "jeu inanime"}, lignes
+    vie = attendre_vivant(coeur, journal)
+    if vie is None:
+        return echec("jeu inanime")
+    if vie == "lent":
+        return echec("delai depasse (encore au demarrage)")
 
     accords = chercher_compteur(coeur, 1, journal)
+    if not accords and ACHARNE:
+        # Rien n a monte : la carte n etait peut-etre pas encore en attract,
+        # ou n accepte que l autre monnayeur. On lui laisse du temps, puis
+        # on paie par le joueur 2 ; et si rien ne monte d un octet, on
+        # cherche un compteur sur deux octets.
+        journal("  aucun octet monte : on attend l attract, puis le monnayeur 2")
+        coeur.images(ACHARNE_ATTENTE_ATTRACT)
+        accords = chercher_compteur(coeur, 2, journal)
+        if not accords:
+            large = chercher_compteur16(coeur, journal)
+            if large is not None:
+                adresse, sens, _ = large
+                return fiche_deux_octets(coeur, adresse, sens, imposes), lignes
     if not accords:
-        return {"erreur": "aucun candidat"}, lignes
+        return echec("aucun candidat")
 
     # Le START doit FAIRE DESCENDRE le compteur : c est ce qui distingue un
     # solde de credits d un total de pieces encaissees.
     def solide(liste):
         """Un resultat est solide si son octet est monte a plusieurs pieces."""
         return liste and accords.get(liste[0], 0) >= ACCORDS_MIN
+
+    def credible(resultat):
+        """Une preuve faible qu on accepte quand meme : UN seul octet est
+        descendu comme un credit consomme, et il valait un petit nombre
+        avant — 1 -> 0, pas 34 -> 33 (un compte a rebours d attract, vu sur
+        1944) ni 144 -> 0 (une animation). C est le cas des cartes qui n
+        acceptent qu une piece a la fois : l octet ne peut pas monter deux
+        fois de suite, mais il monte, et le START le vide."""
+        if not resultat or not resultat[0]:
+            return False
+        descendus, avant, _ = resultat
+        return len(descendus) == 1 and avant[descendus[0]] <= 9
 
     descendus, avant, apres = confirmer_au_start(coeur, accords, journal)
     if not solide(descendus):
@@ -588,26 +712,28 @@ def mesurer(chemin_coeur, chemin_rom, dossier_systeme, bavard, options=None):
         insiste = insister(coeur, accords, journal)
         if solide(insiste[0] if insiste else None):
             descendus, avant, apres = insiste
-        elif not descendus and insiste:
+        elif not descendus and insiste and credible(insiste):
             descendus, avant, apres = insiste
-        elif not descendus:
+        elif not descendus or not credible((descendus, avant, apres)):
             large = chercher_compteur16(coeur, journal)
-            if large is None:
-                return {"erreur": "candidats non confirmes", "candidats": len(accords)}, lignes
-            adresse, sens, _ = large
-            fiche = {
-                "ram": {"taille": coeur.taille, "commande": "coeur direct"},
-                "credits": {
-                    "adresse": adresse, "adresse_hex": "0x%04X" % adresse, "octets": 2,
-                    "sens": sens, "miroirs": [],
-                    "verifie_insertion": True, "verifie_consommation": True,
-                    "entree_piece": "select", "compteur_commun": False,
-                    "adresse_j2": None, "adresse_j2_hex": None,
-                    "j2_verifie_consommation": False,
-                },
-                "dip_imposes": imposes,
-            }
-            return fiche, lignes
+            if large is not None:
+                adresse, sens, _ = large
+                return fiche_deux_octets(coeur, adresse, sens, imposes), lignes
+            seul = fidele_et_seul(accords)
+            if ACHARNE and seul is not None:
+                # Aucun START n a jamais fait descendre quoi que ce soit, mais
+                # UN octet, seul de sa classe, est monte a chaque piece. C est
+                # le compteur de credits d un jeu que le START ne demarre pas
+                # comme on l attend — ou un total de pieces encaissees. On le
+                # garde, en le disant : la borne clignotera juste a la piece,
+                # et la fiche porte la marque de ce qui n a pas ete prouve.
+                journal("  APPRIS SANS PREUVE DE CONSOMMATION 0x%04X, monte a %d piece(s)"
+                        % (seul, accords[seul]))
+                return fiche_un_octet(coeur, seul, [], None, False, imposes,
+                                      note="aucun START n a fait descendre ce compteur : "
+                                           "c est peut-etre un total de pieces, ou un jeu "
+                                           "qui demarre autrement"), lignes
+            return echec("candidats non confirmes", candidats=len(accords))
     adresse = descendus[0]
     # Un miroir n est pas « un octet qui descend aussi » : c est le MEME
     # compteur vu a une autre adresse, donc il porte la meme valeur avant et
@@ -633,21 +759,55 @@ def mesurer(chemin_coeur, chemin_rom, dossier_systeme, bavard, options=None):
             adresse_j2 = sorted(candidats_j2)[0]
             journal("  joueur 2 en 0x%04X" % adresse_j2)
 
+    return fiche_un_octet(coeur, adresse, miroirs, adresse_j2, commun, imposes), lignes
+
+
+def fidele_et_seul(accords):
+    """L octet monte au plus grand nombre de pieces, s il est seul a ce
+    niveau et que ce niveau vaut quelque chose. Sinon None."""
+    if not accords:
+        return None
+    haut = max(accords.values())
+    fideles = [a for a, n in accords.items() if n == haut]
+    if haut >= ACHARNE_ACCORDS_SEUL and len(fideles) == 1:
+        return fideles[0]
+    return None
+
+
+def fiche_un_octet(coeur, adresse, miroirs, adresse_j2, commun, imposes,
+                   consommation=True, note=None):
     fiche = {
         "ram": {"taille": coeur.taille, "commande": "coeur direct"},
         "credits": {
             "adresse": adresse, "adresse_hex": "0x%04X" % adresse, "octets": 1,
             "miroirs": ["0x%04X" % m for m in miroirs],
-            "verifie_insertion": True, "verifie_consommation": True,
+            "verifie_insertion": True, "verifie_consommation": consommation,
             "entree_piece": "select",
-            "compteur_commun": commun,
+            "compteur_commun": bool(commun),
             "adresse_j2": adresse_j2,
             "adresse_j2_hex": ("0x%04X" % adresse_j2) if adresse_j2 is not None else None,
             "j2_verifie_consommation": False,
         },
         "dip_imposes": imposes,
     }
-    return fiche, lignes
+    if note:
+        fiche["credits"]["note"] = note
+    return fiche
+
+
+def fiche_deux_octets(coeur, adresse, sens, imposes):
+    return {
+        "ram": {"taille": coeur.taille, "commande": "coeur direct"},
+        "credits": {
+            "adresse": adresse, "adresse_hex": "0x%04X" % adresse, "octets": 2,
+            "sens": sens, "miroirs": [],
+            "verifie_insertion": True, "verifie_consommation": True,
+            "entree_piece": "select", "compteur_commun": False,
+            "adresse_j2": None, "adresse_j2_hex": None,
+            "j2_verifie_consommation": False,
+        },
+        "dip_imposes": imposes,
+    }
 
 
 # --- un jeu par processus ------------------------------------------------------
@@ -656,6 +816,11 @@ def enfant():
     """Mesure un jeu et imprime la fiche en JSON. Le processus est jete
     ensuite : aucun pilote ne peut polluer le suivant."""
     _, coeur, rom, dossier, options_ra = sys.argv[1:6]
+    if os.environ.get("RELEVE_ACHARNE") == "1":
+        acharner()
+    if os.environ.get("RELEVE_DELAI"):
+        global ECHEANCE
+        ECHEANCE = time.time() + float(os.environ["RELEVE_DELAI"]) - MARGE_ECHEANCE
     os.dup2(os.open(os.devnull, os.O_WRONLY), 2)      # le coeur bavarde sur stderr
     try:
         fiche, lignes = mesurer(coeur, rom, dossier, False,
@@ -729,9 +894,22 @@ def main():
                    help="remesurer aussi les jeux deja ecartes ; sans cela, un ecarte "
                         "ne repasse pas — la mesure est deterministe, le refaire ne "
                         "changerait rien, et cela coutait des heures a chaque tour")
+    p.add_argument("--raisons", default=None,
+                   help="avec --reessayer : ne reprendre que les ecartes dont la raison "
+                        "commence par un de ces mots, separes par des virgules")
+    p.add_argument("--acharne", action="store_true",
+                   help="plus de temps, plus de pieces, d autres facons de demarrer, et une "
+                        "image de l ecran a chaque echec ; sous-entend --reessayer et, sans "
+                        "--raisons, les seuls ecartes ou le jeu tournait vraiment")
     p.add_argument("--sec", action="store_true",
                    help="ne rien ecrire : afficher seulement ce qu on trouverait")
     a = p.parse_args()
+    if a.acharne:
+        a.reessayer = True
+        os.environ["RELEVE_ACHARNE"] = "1"           # herite par chaque enfant
+        os.environ["RELEVE_DELAI"] = str(a.delai)
+        if a.raisons is None:
+            a.raisons = ",".join(RAISONS_ACHARNE)
 
     dossier = os.path.join(a.roms, a.systeme)
     noms = a.jeux or sorted(f.rsplit(".", 1)[0] for f in os.listdir(dossier)
@@ -745,8 +923,17 @@ def main():
         reste = list(noms)
     else:
         deja = set(connue["jeux"])
+        durs = connue.get("difficiles", {})
         if not a.reessayer:
-            deja |= set(connue.get("difficiles", {}))
+            deja |= set(durs)
+        elif a.raisons:
+            # On ne reprend que les ecartes qui en valent la peine : une rom
+            # refusee par le coeur le sera encore, quel que soit l effort.
+            motifs = tuple(m.strip() for m in a.raisons.split(",") if m.strip())
+            deja |= {c for c, d in durs.items()
+                     if not str(d.get("raison", "")).startswith(motifs)}
+            deja |= {"%s/%s" % (prefixe, n) for n in noms
+                     if "%s/%s" % (prefixe, n) not in durs}    # jamais ecartes : rien a reprendre
         reste = [n for n in noms if "%s/%s" % (prefixe, n) not in deja]
     if a.part:
         rang, total = (int(x) for x in a.part.split("/"))
@@ -789,7 +976,8 @@ def main():
             if not a.sec:
                 fiche.update({"jeu": jeu, "systeme": a.systeme, "core": a.coeur_nomme,
                               "releve": {"le": time.strftime("%Y-%m-%d"),
-                                         "methode": "coeur direct"}})
+                                         "methode": ("coeur direct, acharne" if a.acharne
+                                                     else "coeur direct")}})
                 base["jeux"][cle] = fiche
                 base["difficiles"].pop(cle, None)
         if not a.sec:

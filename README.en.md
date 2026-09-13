@@ -182,7 +182,7 @@ which never moves. The measured `0x0011` tracks credits exactly.
 | | |
 |---|---|
 | `outils/surveiller.sh` | **the entry point**: cycles through systems day and night, retries set-aside games at the end of a cycle, deploys to the cabinet every 30 min |
-| `outils/balayer.sh` | one system, four sweeps in parallel, then `fusionner-parts.py` |
+| `outils/balayer.sh` | one system, four sweeps in parallel, then `fusionner-parts.py`; `ACHARNE=1` retries set-aside games with more time, more coins and other ways to start |
 | `outils/releve-direct.py` | the sweep itself: loads the libretro core with no RetroArch and no screen, pays, START, finds the counter, checks mirrors |
 | `outils/releve-mame.py`, `mame-credits.lua` | the same for MAME, measured inside the emulator |
 | `outils/nuit-credits.py` | the RetroArch fallback, for the few roms the bare core refuses |

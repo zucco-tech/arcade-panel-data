@@ -11,6 +11,7 @@ surveiller.sh                 le point d'entrée : enchaîne les systèmes, jour
        ├─ releve-direct.py    charge le cœur libretro tout seul, sans RetroArch ni écran
        ├─ releve-mame.py      pour MAME : mesure DANS l'émulateur, par mame-credits.lua
        └─ fusionner-parts.py  replie les quatre parts dans la base
+  └─ ACHARNE=1 balayer.sh     la reprise acharnée : les écartés où le jeu tournait, avec plus de moyens
   └─ nuit-credits.py          reprise par RetroArch des rares roms que le cœur nu refuse
   └─ deployer-vers-borne.sh   toutes les 30 min : exporter-pour-borne.py, puis la borne
 ```
@@ -18,7 +19,7 @@ surveiller.sh                 le point d'entrée : enchaîne les systèmes, jour
 | | |
 |---|---|
 | `surveiller.sh` | **le point d'entrée** : enchaîne les systèmes, reprend les écartés en fin de cycle, déploie sur la borne toutes les 30 min |
-| `balayer.sh` | balaye un système avec plusieurs relevés en parallèle, puis replie |
+| `balayer.sh` | balaye un système avec plusieurs relevés en parallèle, puis replie ; `ACHARNE=1` lance la reprise acharnée des écartés |
 | `releve-direct.py` | le relevé lui-même : charge le cœur libretro directement, attend que la RAM vive, paie, START, cherche le compteur, vérifie les miroirs |
 | `releve-mame.py`, `mame-credits.lua` | même chose pour MAME, dont la mémoire n'est pas lisible par libretro : le Lua cherche dans l'émulateur |
 | `fusionner-parts.py` | replie les parts d'un balayage parallèle dans la base principale |
@@ -34,6 +35,35 @@ surveiller.sh                 le point d'entrée : enchaîne les systèmes, jour
 | `analyser-difficiles.py` | explique pourquoi des jeux ont résisté, et lesquels valent d'être repris |
 | `releve-poli.py` | mesure sur la borne elle-même, jeu par jeu, sans déranger une partie — pas déployé, le PC va plus vite |
 | `mame-rapport.lua` | lit le vrai compteur de l'intérieur de MAME sur la borne — pas déployé, Recalbox 10 ne laisse pas charger le script |
+
+## La reprise acharnée
+
+La mesure ordinaire est déterministe : refaire un écarté à l'identique ne
+change rien. La reprise acharnée (`--acharne` des deux releveurs) ne change
+pas les règles, elle donne plus de moyens, et seulement aux écartés où le
+jeu tournait vraiment (délai dépassé, jeu inanimé, aucun candidat,
+candidats non confirmés — jamais une rom refusée par le cœur) :
+
+- cinq fois plus de temps par jeu, et une attente de vie trois fois plus
+  longue, pendant laquelle on appuie sur START et le bouton 1 : des cartes
+  attendent un appui pour sortir d'un écran d'erreur ou de calibrage ;
+- plus de pièces, encaissées plus lentement, par les deux monnayeurs ;
+  rien ne monte : on attend l'attract, puis on cherche sur deux octets ;
+- d'autres façons de démarrer : START tenu une demi-seconde, START du
+  joueur 2, bouton 1, double appui sur START ;
+- sous MAME : d'autres zones de mémoire quand le pilote n'en déclare
+  aucune « ram » (les zones servies par un délégué ou une banque), un crédit
+  de service quand il n'y a pas de monnayeur nommé, et la raison exacte de
+  MAME quand il refuse une machine ;
+- si aucun START n'a jamais rien fait descendre mais qu'un octet, seul de
+  sa classe, est monté à chaque pièce, la fiche est écrite **en le disant**
+  (`verifie_consommation: false`, avec une note) : la borne clignotera à
+  la pièce, et personne ne prendra une supposition pour une preuve ;
+- une image de l'écran du jeu est gardée pour chaque échec, dans
+  `journaux/images/<système>/<jeu>.png` : ce que le jeu affichait dit
+  souvent pourquoi.
+
+`surveiller.sh` l'enchaîne après les systèmes, à chaque tour.
 
 ## Comment le relevé travaille
 

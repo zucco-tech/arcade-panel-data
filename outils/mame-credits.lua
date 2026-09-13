@@ -28,6 +28,20 @@ local ACCORDS_MIN = 2
 local OCTETS_MAX = 512 * 1024      -- la RAM de travail fait quelques Ko ; au-dela
                                   -- ce sont des tuiles, et chaque photo coute
 
+-- Le mode acharne (MAME_ACHARNE=1, pose par releve-mame.py --acharne) : memes
+-- regles, plus de temps, plus de pieces, d autres facons de demarrer, d autres
+-- zones de memoire. Reserve a la reprise des jeux deja ecartes.
+local ACHARNE = os.getenv("MAME_ACHARNE") == "1"
+if ACHARNE then
+    ATTENTE_DEMARRAGE = 180
+    INSISTANCE = 12
+    ATTENTE_START = 6
+    PIECES = 6
+end
+local TENUE_START = ACHARNE and 0.5 or 0.1     -- un START tenu une demi-seconde
+local ZONE_SECOURS_MAX = 64 * 1024             -- une zone de secours ne depasse pas ca
+local ACCORDS_SEUL = 3                         -- un octet fidele a 3 pieces, seul de sa classe
+
 local mach = manager.machine
 
 -- Les zones de RAM du processeur, telles que le PILOTE les declare.
@@ -52,6 +66,23 @@ local function zones()
         end
     end)
     if not ok then liste, total = {}, 0 end
+    -- Rien de declare « ram » : en mode acharne, on prend les zones que le
+    -- pilote sert par un delegue ou une banque, pourvu qu elles soient
+    -- petites. La RAM de travail de ces cartes passe par la (System 16 et
+    -- ses mappers) ; les grandes zones sont des tuiles ou des ROM.
+    if ACHARNE and #liste == 0 then
+        pcall(function()
+            for _, e in ipairs(espace.map.entries) do
+                local genre = tostring(e.read.handlertype)
+                local taille = e.address_end - e.address_start + 1
+                if (genre == "delegate" or genre == "bank") and taille <= ZONE_SECOURS_MAX
+                   and total + taille <= OCTETS_MAX then
+                    liste[#liste + 1] = {debut = e.address_start, taille = taille, espace = espace}
+                    total = total + taille
+                end
+            end
+        end)
+    end
     -- ET les shares, toujours. Sur le System 16 d Altered Beast, tout
     -- l espace passe par un delegue (le mapper memoire) : lire les zones
     -- « ram » a travers l espace renvoie autre chose que la RAM reelle, et
@@ -130,10 +161,10 @@ local function entree(motifs)
     return nil, nil
 end
 
-local function appuyer(champ, secondes)
+local function appuyer(champ, secondes, tenue)
     if not champ then return end
     champ:set_value(1)
-    emu.wait(0.1)
+    emu.wait(tenue or 0.1)
     champ:set_value(0)
     emu.wait(secondes)
 end
@@ -162,6 +193,11 @@ end
 
 local piece, nom_piece = entree({"Coin 1", "Coin"})
 local piece2 = entree({"Coin 2"})
+-- Pas de monnayeur nomme ? En mode acharne, un credit de service en tient
+-- lieu : c est ce que fait un exploitant pour tester sa carte.
+if ACHARNE and not piece then
+    piece, nom_piece = entree({"Coin A", "Coin 3", "Service 1", "Service", "Service Credit"})
+end
 local start, nom_start = entree({"1 Player Start", "P1 Start", "Start 1", "Start"})
 -- Pas de START declare ? Des cartes demarrent avec un bouton de jeu (The
 -- Three Stooges n a que Coin 1, Coin 2 et ses boutons). On prend alors le
@@ -192,6 +228,11 @@ local function attendre_vivant()
             emu.wait(4)
             return attendu
         end
+        -- Une machine qui ne bouge pas attend peut-etre un appui : ecran
+        -- d erreur, de calibrage. Jamais de piece ici.
+        if ACHARNE and attendu % 20 == 0 then
+            appuyer(start, 1, TENUE_START)
+        end
     end
     return nil
 end
@@ -217,10 +258,18 @@ end
 
 -- Le START doit faire DESCENDRE : c est ce qui distingue un solde de
 -- credits d un simple total de pieces encaissees.
+-- Les facons de demarrer, dans l ordre ou un joueur les essaierait : le
+-- START ; en mode acharne, aussi le START du joueur 2 et le bouton 1.
+local demarrages = {start, start, start}
+if ACHARNE then
+    local start2 = entree({"2 Players Start", "P2 Start", "Start 2"})
+    local bouton1 = entree({"P1 Button 1", "Button 1", "P1 Fire", "Fire 1", "Fire"})
+    demarrages = {start, start, start, start2, bouton1}
+end
 local meilleur, preuve = nil, nil
-for essai = 1, 3 do
+for _, entree_start in ipairs(demarrages) do
     local avant_start = photo(liste)
-    appuyer(start, ATTENTE_START)
+    appuyer(entree_start, ATTENTE_START, TENUE_START)
     local apres_start = photo(liste)
     local candidat = nil
     for _, c in pairs(accords) do
@@ -250,7 +299,7 @@ if meilleur == nil and (piece or piece2) then
         end
         if n % 2 == 0 then
             local avant_start = photo(liste)
-            appuyer(start, ATTENTE_START)
+            appuyer(start, ATTENTE_START, TENUE_START)
             local apres_start = photo(liste)
             for _, c in pairs(accords) do
                 local vieux = avant_start[c.zone][c.adresse]
@@ -263,6 +312,21 @@ if meilleur == nil and (piece or piece2) then
             end
             if meilleur then break end
         end
+    end
+end
+
+-- Toujours rien de consomme : en mode acharne, si UN octet, seul de sa
+-- classe, est monte a chaque piece, on le garde en le disant. C est le
+-- compteur d un jeu que le START ne demarre pas comme on l attend — ou un
+-- total de pieces encaissees. La fiche porte la marque de ce qui n a pas
+-- ete prouve.
+local sans_preuve = false
+if meilleur == nil and ACHARNE then
+    local haut, fideles, seul = 0, 0, nil
+    for _, c in pairs(accords) do if c.fois > haut then haut = c.fois end end
+    for _, c in pairs(accords) do if c.fois == haut then fideles = fideles + 1; seul = c end end
+    if haut >= ACCORDS_SEUL and fideles == 1 then
+        meilleur, sans_preuve = seul, true
     end
 end
 
@@ -289,4 +353,6 @@ ecrire('{"jeu": ' .. texte(mach.system.name)
        .. ', "ram": ' .. total
        .. ', "piece": ' .. texte(nom_piece)
        .. ', "start": ' .. texte(nom_start or "?")
+       .. ', "consommation": ' .. (sans_preuve and "false" or "true")
+       .. (sans_preuve and ', "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement"' or "")
        .. '}')
