@@ -1,7 +1,7 @@
 # La borne
 
-Ce dossier est **la copie exacte de ce qu'il y a sur la borne**. Rien à
-installer : on copie, on redémarre.
+Ce dossier est **la copie exacte de ce qu'il y a sur la borne**, aux mêmes
+emplacements. Rien à installer : on copie six fichiers, on redémarre.
 
 ```
 borne/share/                          →  /recalbox/share/
@@ -25,18 +25,29 @@ borne/share/                          →  /recalbox/share/
 Il faut une borne sous Recalbox avec une carte **AllInOne** (digipcb.tech) :
 le dossier `/sys/class/leds/` y contient des `aio_p1_b1_1`, `aio_p1_start`…
 
-1. Copier le **contenu** de `borne/share/` dans la share de la borne
-   (`\\RECALBOX\share` depuis Windows, ou une clé USB) : les dossiers
-   `userscripts` et `system` se fondent dans ceux qui existent déjà.
-2. Redémarrer la borne.
+Six fichiers à copier dans la share de la borne (`\\RECALBOX\share` sur le
+réseau, ou la clé USB qui la porte), puis redémarrer :
 
-C'est tout. Au démarrage, `custom.sh` met hors service les deux scripts
-`allinone[…].sh` d'origine (renommés `.off`) et EmulationStation lance les
-programmes `(permanent)`. Le système Recalbox n'est pas touché : tout est
-dans la share, et pour revenir en arrière on supprime ces fichiers et on
-remet les `.off` à leur nom.
+| à copier | dans |
+|---|---|
+| `userscripts/credits(permanent).py` | `share\userscripts\` |
+| `userscripts/panneau(permanent).py` | `share\userscripts\` |
+| `userscripts/gardefou[start,rungame,endgame].ash` | `share\userscripts\` |
+| `userscripts/marquee(permanent).py` | `share\userscripts\` — facultatif, seulement s'il y a un marquee |
+| `system/custom.sh` | `share\system\` |
+| `system/panneau-arcade/` (le dossier entier) | `share\system\` |
 
-Les journaux disent ce que le panneau fait, jeu par jeu :
+**Rien d'autre n'est touché.** On ajoute ces fichiers, on n'en remplace
+aucun : les roms, les bios, les sauvegardes et tout le reste de la share
+restent tels quels. Aucun fichier du système Recalbox n'est modifié.
+
+Au redémarrage, `custom.sh` met hors service les deux scripts
+`allinone[…].sh` d'origine (renommés `.off`, pas supprimés) et
+EmulationStation lance les programmes `(permanent)`. Pour revenir en
+arrière : supprimer ces six fichiers et remettre les `.off` à leur nom.
+
+Pour vérifier que ça tourne : survoler un jeu dans le menu, ses boutons
+s'allument. Les journaux disent ce que le panneau fait, jeu par jeu :
 `system/panneau-arcade/panneau.log` (le menu) et `credits.log` (les parties).
 
 ## Ce que fait le panneau
