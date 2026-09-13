@@ -44,7 +44,7 @@ import time
 
 ETAT = "/tmp/es_state.inf"
 BASE_BOUTONS = "/recalbox/share/system/panneau-arcade/boutons-arcade.json"
-JOURNAL = "/recalbox/share/system/panneau-arcade/panneau.log"
+JOURNAL = "/recalbox/share/system/panneau-arcade/journaux/panneau.log"
 # La table de couleurs par systeme livree par Recalbox pour ce panneau. Elle
 # servait aux scripts allinone[…].sh, appeles a chaque mouvement dans le
 # menu ; ils sont desactives (un bash par evenement, et deux programmes qui
@@ -57,12 +57,12 @@ PALETTE_RECALBOX = "/recalbox/scripts/recalbox_allinone_rgb.sh"
 # la fin d une partie, au lieu de relire les LED — ce que nous avons pu
 # repeindre entre-temps. Sans cette source unique, chacun memorisait les
 # couleurs de l autre et le panneau revenait faux en sortant d un jeu.
-COULEURS_CARTE = "/recalbox/share/system/panneau-arcade/couleurs-carte.json"
+COULEURS_CARTE = "/recalbox/share/system/panneau-arcade/etat/couleurs-carte.json"
 # Notre signe de vie. Tant qu il est frais, le demon des credits sait que le
 # menu va repeindre lui-meme et ne rend PAS les couleurs de la carte en
 # sortant d une partie : sans cela les deux repeignaient l un apres l autre
 # et le joueur voyait un clignotement.
-BATTEMENT = "/recalbox/share/system/panneau-arcade/panneau-vivant"
+BATTEMENT = "/recalbox/share/system/panneau-arcade/etat/panneau-vivant"
 PERIODE_BATTEMENT = 2.0
 
 # Meme correspondance que credits(permanent).py, reprise de
@@ -321,6 +321,15 @@ def battre(derniere):
     except OSError:
         pass
     return maintenant
+
+
+def preparer_dossiers():
+    """Les sous-dossiers ou l'on ecrit, s'ils manquent (premiere installation)."""
+    for chemin in (JOURNAL, COULEURS_CARTE):
+        try:
+            os.makedirs(os.path.dirname(chemin), exist_ok=True)
+        except OSError:
+            pass
 
 
 def journal(msg):
@@ -617,6 +626,7 @@ class Panneau:
 
 
 def main():
+    preparer_dossiers()
     boutons = charger_boutons()
     panneaux = {1: Panneau(1), 2: Panneau(2)}
     journal("demarrage — %d jeu(x) avec boutons, %d systeme(s) Recalbox"

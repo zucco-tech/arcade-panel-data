@@ -19,6 +19,8 @@ borne/share/                          →  /recalbox/share/
                 appris.json               ce que la borne a appris elle-même (créé par elle)
             boutons-arcade.json           combien de boutons, combien de joueurs, couleurs
             relancer.sh                   sh relancer.sh credits|panneau|marquee
+            journaux/                     ce que les programmes ont fait, jeu par jeu (créé par eux)
+            etat/                         couleurs posées, signe de vie du panneau (créé par eux)
 ```
 
 ## Mettre en place sur une borne
@@ -49,7 +51,7 @@ arrière : supprimer ces six fichiers et remettre les `.off` à leur nom.
 
 Pour vérifier que ça tourne : survoler un jeu dans le menu, ses boutons
 s'allument. Les journaux disent ce que le panneau fait, jeu par jeu :
-`system/panneau-arcade/panneau.log` (le menu) et `credits.log` (les parties).
+`system/panneau-arcade/journaux/panneau.log` (le menu) et `credits.log` (les parties).
 
 ## Ce que fait le panneau
 
@@ -91,7 +93,7 @@ retour au menu         panneau reprend, après avoir rendu les couleurs
 
 Tous deux n'écrivent que dans `brightness`, et dans `multi_intensity`
 seulement pour poser la couleur d'origine d'un bouton. Le panneau publie
-les couleurs qu'il a posées dans `panneau-arcade/couleurs-carte.json` et le
+les couleurs qu'il a posées dans `panneau-arcade/etat/couleurs-carte.json` et le
 démon des crédits les y lit : une seule mémoire, pas de couleur perdue.
 
 ## MAME
@@ -122,7 +124,7 @@ fait deux choses à chaque allumage :
 
 `gardefou[…].ash` est appelé au démarrage du frontend, au lancement et à la
 fin de chaque partie : il relance celui des programmes permanents qui
-serait mort (journal dans `panneau-arcade/gardefou.log`). Une borne sans
+serait mort (journal dans `panneau-arcade/journaux/gardefou.log`). Une borne sans
 marquee n'a rien à faire : il ne relance que ce qui est présent.
 
 ## Les données

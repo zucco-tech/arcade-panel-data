@@ -11,7 +11,7 @@
 # navigation.
 U=/recalbox/share/userscripts
 N=/recalbox/share/system/panneau-arcade
-JOURNAL=$N/gardefou.log
+JOURNAL=$N/journaux/gardefou.log
 
 vivant() {                      # $1 : morceau de nom cherche dans /proc
     for p in /proc/[0-9]*; do
@@ -27,11 +27,11 @@ vivant() {                      # $1 : morceau de nom cherche dans /proc
 relever() {                     # $1 : morceau de nom, $2 : fichier a lancer
     [ -f "$U/$2" ] || return 0     # une borne sans ce programme : rien a relancer
     vivant "$1" && return 0
-    setsid nohup python3 "$U/$2" >> "$N/$1-erreurs.log" 2>&1 &
+    setsid nohup python3 "$U/$2" >> "$N/journaux/$1-erreurs.log" 2>&1 &
     echo "$(date "+%Y-%m-%d %H:%M:%S") $2 relance par le garde-fou" >> "$JOURNAL"
 }
 
-mkdir -p "$N"
+mkdir -p "$N/journaux" "$N/etat"
 relever "marquee" "marquee(permanent).py"
 relever "panneau" "panneau(permanent).py"
 relever "credits" "credits(permanent).py"

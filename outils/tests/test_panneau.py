@@ -18,10 +18,9 @@ import sys
 import tempfile
 import time
 
+# Le programme est dans borne/share/userscripts/, la copie exacte de la borne.
 RACINE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-PROGRAMME = os.path.join(RACINE, "depot", "borne", "panneau(permanent).py")
-if not os.path.exists(PROGRAMME):
-    PROGRAMME = os.path.join(RACINE, "outils", "panneau(permanent).py")
+PROGRAMME = os.path.join(RACINE, "borne", "share", "userscripts", "panneau(permanent).py")
 
 BOUTONS = ["aio_p%d_b%d" % (j, n) for j in (1, 2) for n in range(1, 7)]
 ANNEXES = ["aio_p%d_%s" % (j, k) for j in (1, 2) for k in ("start", "select")] + ["aio_hotkey"]

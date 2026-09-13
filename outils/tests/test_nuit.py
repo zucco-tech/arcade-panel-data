@@ -4,9 +4,11 @@ import os
 import importlib.util, json, os, socket, sys, threading, time
 sys.path.insert(0, "/tmp/claude-1000/test")
 from faux_retroarch import FauxRetroArch
-# Les scripts sont dans le dossier parent de celui-ci : la suite doit
-# tourner partout ou le projet est copie, pas seulement chez son auteur.
-W = os.environ.get("ARCADE_CREDITS") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Les programmes de la borne sont dans borne/share/userscripts/ : la suite doit
+# tourner partout ou le depot est copie, pas seulement chez son auteur.
+W = os.environ.get("ARCADE_CREDITS") or os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+    "borne", "share", "userscripts")
 spec = importlib.util.spec_from_file_location("nuit", os.path.join(W, "nuit-credits.py"))
 nuit = importlib.util.module_from_spec(spec); spec.loader.exec_module(nuit)
 

@@ -73,7 +73,7 @@ OUTIL = "credits(permanent).py"
 # Le journal est sur le partage, et non dans /tmp, pour rester lisible depuis
 # le reseau sans ouvrir un shell sur la borne. Il est plafonne : sur une carte
 # SD, un fichier qui grossit sans fin finit toujours par poser probleme.
-JOURNAL = "/recalbox/share/system/panneau-arcade/credits.log"
+JOURNAL = "/recalbox/share/system/panneau-arcade/journaux/credits.log"
 JOURNAL_MAX = 200 * 1024
 STATE_FILE = "/tmp/es_state.inf"
 # Les couleurs que la carte porte quand personne n y touche. Elles sont
@@ -82,12 +82,12 @@ STATE_FILE = "/tmp/es_state.inf"
 # relire les LED revenait a memoriser les couleurs que l AUTRE programme
 # venait d y poser, et le panneau ressortait de la partie avec les couleurs
 # du jeu precedent. Fichier absent : on retombe sur la relecture des LED.
-COULEURS_CARTE = "/recalbox/share/system/panneau-arcade/couleurs-carte.json"
+COULEURS_CARTE = "/recalbox/share/system/panneau-arcade/etat/couleurs-carte.json"
 # Signe de vie de panneau(permanent).py. S il bat, c est lui qui peindra le
 # menu des la fin de la partie : nous rendons alors l ALLUMAGE seulement, et
 # nous le laissons poser les couleurs. Deux programmes qui repeignent l un
 # apres l autre, cela se voit — un clignotement en sortant du jeu.
-BATTEMENT = "/recalbox/share/system/panneau-arcade/panneau-vivant"
+BATTEMENT = "/recalbox/share/system/panneau-arcade/etat/panneau-vivant"
 BATTEMENT_FRAIS = 6.0
 
 RA_HOTE = "127.0.0.1"
@@ -204,6 +204,15 @@ EV_KEY = 0x01
 
 SYSTEMES = ("fbneo", "neogeo", "neogeocd", "mame", "naomi", "naomigd",
             "atomiswave", "arcade")
+
+
+def preparer_dossiers():
+    """Les sous-dossiers ou l'on ecrit, s'ils manquent (premiere installation)."""
+    for chemin in (JOURNAL, COULEURS_CARTE, DOSSIER_CREDITS + "/x"):
+        try:
+            os.makedirs(os.path.dirname(chemin), exist_ok=True)
+        except OSError:
+            pass
 
 
 def journal(msg):
@@ -1119,6 +1128,7 @@ class Apprenti:
 # --- Boucle principale ---------------------------------------------------
 
 def main():
+    preparer_dossiers()
     base = Base(DOSSIER_CREDITS)
     piece = Lampe("piece", LEDS_PIECE, COULEUR_PIECE)
     start = Lampe("start", LEDS_START, COULEUR_START)

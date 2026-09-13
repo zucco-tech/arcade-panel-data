@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Le script ne doit jamais ecraser une couleur posee par la carte AllInOne."""
 import importlib.util, os, sys
-# Les scripts sont dans le dossier parent de celui-ci : la suite doit
-# tourner partout ou le projet est copie, pas seulement chez son auteur.
-W = os.environ.get("ARCADE_CREDITS") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Les programmes de la borne sont dans borne/share/userscripts/ : la suite doit
+# tourner partout ou le depot est copie, pas seulement chez son auteur.
+W = os.environ.get("ARCADE_CREDITS") or os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+    "borne", "share", "userscripts")
 spec = importlib.util.spec_from_file_location("cp", os.path.join(W, "credits(permanent).py"))
 cp = importlib.util.module_from_spec(spec); spec.loader.exec_module(cp)
 

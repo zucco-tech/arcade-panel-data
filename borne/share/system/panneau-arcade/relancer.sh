@@ -11,6 +11,7 @@ NOM=$1
 U=/recalbox/share/userscripts
 N=/recalbox/share/system/panneau-arcade
 PROGRAMME="$U/$NOM(permanent).py"
+mkdir -p "$N/journaux" "$N/etat"
 [ -f "$PROGRAMME" ] || { echo "inconnu : $NOM"; exit 1; }
 
 for p in /proc/[0-9]*; do
@@ -23,7 +24,7 @@ for p in /proc/[0-9]*; do
     fi
 done
 sleep 2
-cd "$U" && setsid nohup /usr/bin/python -u "$PROGRAMME" >> "$N/$NOM-erreurs.log" 2>&1 &
+cd "$U" && setsid nohup /usr/bin/python -u "$PROGRAMME" >> "$N/journaux/$NOM-erreurs.log" 2>&1 &
 sleep 3
 vivants=0
 for p in /proc/[0-9]*; do

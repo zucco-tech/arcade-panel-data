@@ -14,7 +14,7 @@
 #      du panneau d arcade, en veilleuse : la borne a l air vivante des
 #      l allumage, et le programme prendra le relais.
 #
-# Journal : /recalbox/share/system/panneau-arcade/demarrage.log
+# Journal : /recalbox/share/system/panneau-arcade/journaux/demarrage.log
 
 # Recalbox passe « start » ou « stop » : on n agit qu au demarrage.
 case "$1" in
@@ -23,13 +23,13 @@ esac
 
 N=/recalbox/share/system/panneau-arcade
 U=/recalbox/share/userscripts
-mkdir -p "$N"
-echo "$(date "+%Y-%m-%d %H:%M:%S") demarrage" >> "$N/demarrage.log"
+mkdir -p "$N/journaux" "$N/etat"
+echo "$(date "+%Y-%m-%d %H:%M:%S") demarrage" >> "$N/journaux/demarrage.log"
 
 for f in "allinone[startgameclip].sh" "allinone[systembrowsing].sh"; do
     if [ -f "$U/$f" ]; then
         mv -f "$U/$f" "$U/$f.off"
-        echo "$(date "+%H:%M:%S") $f remis hors service" >> "$N/demarrage.log"
+        echo "$(date "+%H:%M:%S") $f remis hors service" >> "$N/journaux/demarrage.log"
     fi
 done
 
