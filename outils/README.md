@@ -1,66 +1,77 @@
 # Les outils
 
-Tout ce qui a servi à fabriquer les données. Python 3, bibliothèque standard
-uniquement, aucune dépendance.
+Tout ce qui fabrique les données, sur le PC de relevé. Python 3,
+bibliothèque standard uniquement, aucune dépendance.
+
+## La chaîne, du balayage à la borne
+
+```
+surveiller.sh                 le point d'entrée : enchaîne les systèmes, jour et nuit
+  └─ balayer.sh               un système, en quatre relevés parallèles
+       ├─ releve-direct.py    charge le cœur libretro tout seul, sans RetroArch ni écran
+       ├─ releve-mame.py      pour MAME : mesure DANS l'émulateur, par mame-credits.lua
+       └─ fusionner-parts.py  replie les quatre parts dans la base
+  └─ nuit-credits.py          reprise par RetroArch des rares roms que le cœur nu refuse
+  └─ deployer-vers-borne.sh   toutes les 30 min : exporter-pour-borne.py, puis la borne
+```
 
 | | |
 |---|---|
-| `nuit-credits.py` | le releveur : enchaîne une logithèque entière sans surveillance |
+| `surveiller.sh` | **le point d'entrée** : enchaîne les systèmes, reprend les écartés en fin de cycle, déploie sur la borne toutes les 30 min |
+| `balayer.sh` | balaye un système avec plusieurs relevés en parallèle, puis replie |
+| `releve-direct.py` | le relevé lui-même : charge le cœur libretro directement, attend que la RAM vive, paie, START, cherche le compteur, vérifie les miroirs |
+| `releve-mame.py`, `mame-credits.lua` | même chose pour MAME, dont la mémoire n'est pas lisible par libretro : le Lua cherche dans l'émulateur |
+| `fusionner-parts.py` | replie les parts d'un balayage parallèle dans la base principale |
+| `nuit-credits.py` | le relevé par RetroArch, en plein écran : réservé aux roms que le cœur nu refuse (`--reessayer`) |
+| `clavier_virtuel.py`, `clavier_xtest.py` | les claviers virtuels de `nuit-credits.py` : `uinput`, ou XTEST sur un serveur X précis |
+| `fenetre_x.py`, `capture_fenetre.py` | pour `nuit-credits.py` : plein écran sur un moniteur choisi, et photo du jeu quand il ne réagit pas |
+| `exporter-pour-borne.py` | découpe la base en un fichier par système, la forme que lit la borne |
+| `deployer-vers-borne.sh` | met les fichiers en place sur la borne, par renommage, sans rien redémarrer ; tient à jour la copie `borne/share/` du dépôt |
 | `importer-cheats.py` | tire des pistes des bases de cheats FBNeo et MAME |
-| `importer-boutons.py` | construit la base des boutons |
-| `capture-credits.py` | mesure un seul jeu, à la main |
-| `verifier-borne.py` | contrôle les trois inconnues avant un balayage |
-| `releve-poli.py` | mesure les crédits sur la borne elle-même, jeu par jeu, sans déranger une partie — pas déployé, le PC va plus vite |
-| `mame-rapport.lua` | lit le vrai compteur de l'intérieur de MAME (avec `exporter-pour-borne.py --fiches-mame`) — pas déployé, Recalbox 10 ne laisse pas charger le script |
-| `clavier_virtuel.py` | le clavier `uinput` qui insère les pièces, pour les deux joueurs |
-| `clavier_xtest.py` | variante XTEST, qui n'existe que dans un serveur X donné |
-| `balayage-continu.py` | enchaîne les systèmes, jour et nuit, sans surveillance |
-| `complement-joueur2.py` | ajoute l'adresse du joueur 2 aux fiches déjà mesurées |
-| `capture_fenetre.py` | photographie l'écran du jeu quand il ne réagit pas |
-| `fenetre_x.py` | place une fenêtre sur un moniteur choisi |
-| `suivre-boutons.sh` | tient la base des boutons à jour pendant le relevé |
-| `demarrer.sh` | lance tout en une commande |
+| `importer-boutons.py`, `suivre-boutons.sh` | construit la base des boutons depuis arcade-database, et la tient à jour |
+| `relever-entrees.py` | ce que chaque jeu déclare comme entrées, demandé au cœur lui-même |
+| `complement-joueur2.py` | ajoute l'adresse du compteur du joueur 2 aux fiches déjà mesurées |
+| `analyser-difficiles.py` | explique pourquoi des jeux ont résisté, et lesquels valent d'être repris |
+| `releve-poli.py` | mesure sur la borne elle-même, jeu par jeu, sans déranger une partie — pas déployé, le PC va plus vite |
+| `mame-rapport.lua` | lit le vrai compteur de l'intérieur de MAME sur la borne — pas déployé, Recalbox 10 ne laisse pas charger le script |
 
-## Comment le releveur travaille
+## Comment le relevé travaille
 
-Il lance un jeu, attend que sa RAM s'anime — signe qu'il tourne vraiment et
-qu'il acceptera une pièce —, insère des pièces par le clavier virtuel,
-compare la mémoire avant et après, puis passe au suivant.
-
-Deux modes : par **EmulationStation** (`START|systeme|chemin` en UDP 1337) sur
-une borne Recalbox, ou **directement** (`--direct`) sur une machine dédiée qui
-n'a pas de frontend.
+Il charge le cœur, attend que la RAM s'anime — signe que le jeu tourne
+vraiment et acceptera une pièce —, insère des pièces, compare la mémoire
+avant et après, fait consommer un crédit par START pour trancher, vérifie
+les miroirs avec une pièce de plus, puis passe au suivant. Sans preuve
+suffisante, rien n'est écrit : le jeu est réessayé au tour suivant.
 
 ## Les garde-fous
 
 Ils viennent tous d'un vrai problème rencontré :
 
-- refus de démarrer si une partie est déjà en cours
-- jamais d'appui clavier hors d'un jeu, sinon `Entrée` validerait dans le menu
-- clavier virtuel détruit à la sortie, y compris sur Ctrl-C
-- base sauvée après **chaque** jeu — une coupure ne perd rien
-- rien n'est écrit quand la preuve est trop mince : le jeu est réessayé
-- arrêt automatique après 8 échecs d'affilée
-- jamais de `GET_STATUS` : cette commande fait segfauter RetroArch avec FBNeo
-  (mesuré : deux morts sur deux, quand `READ_CORE_RAM` répond douze fois sur
-  douze). Pour savoir si un jeu tourne, on lit sa RAM.
-- un refus de ROM est reconnu en quelques secondes au lieu d'attendre six
-  minutes : FBNeo dit lui-même « marked as not working » ou réclame des
-  fichiers manquants
-- un jeu figé est d'abord sorti de pause avant d'être déclaré inanimé — un
-  RetroArch en pause fige sa RAM et ferait condamner un jeu parfaitement sain
-- tout le groupe de processus est tué à la fermeture : viser le fils direct
-  laissait RetroArch orphelin, et un seul orphelin fait échouer tous les
-  lancements suivants
+- l'attente que la RAM vive, plutôt qu'un délai fixe : un jeu lent n'est
+  plus condamné, un jeu rapide ne fait plus attendre
+- un octet ne compte que s'il est monté à **chaque** pièce, en binaire ou en
+  BCD (`0x09` → `0x10`)
+- START doit faire redescendre le compteur, jusqu'à trois appuis : un total
+  de pièces encaissées monte sans jamais redescendre
+- les miroirs sont vérifiés avec une pièce de plus, pas supposés
+- DIP forcés : pas de free play, pas de service, une pièce un crédit
+- jamais d'accéléré ni de pièce trop brève : certaines cartes refusent
+  (`COIN ERROR` sur Batrider)
+- pas de `GET_STATUS` par RetroArch : cette commande fait segfauter FBNeo
+- tout le groupe de processus est tué à la fermeture : un orphelin fait
+  échouer tous les lancements suivants
 
 ## `tests/`
 
-Huit suites contre un RetroArch simulé — **aucun matériel nécessaire**.
+Contre un RetroArch simulé, **aucun matériel nécessaire**. Les programmes
+de la borne sont pris dans `borne/share/userscripts/`.
 
 ```bash
-cd tests && python3 test_base.py
+cd tests && python3 test_partie.py       # une partie : pièce, START, plus rien ne clignote
+python3 test_panneau.py                  # les règles d'éclairage du menu
 ```
 
-Elles ont attrapé de vrais défauts : une taille de RAM mesurée mais jamais
-conservée, une fiche qui s'attribuait une méthode qu'elle n'avait pas
-employée, des jeux condamnés sur une seule tentative malchanceuse.
+`test_partie`, `test_j2`, `test_base`, `test_piste`, `test_complet`,
+`test_collision`, `test_arcade`, `test_borne`, `test_couleur` visent le démon
+des crédits ; `test_panneau` le panneau du menu ; `test_nuit` le relevé par
+RetroArch.

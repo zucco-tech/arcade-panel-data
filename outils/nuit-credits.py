@@ -99,7 +99,10 @@ ATTENTE_VIVANT = 60.0
 REMUE_MINIMUM = 16        # octets qui changent en une seconde
 REPOS_APRES_VIVANT = 3.0
 ATTENTE_ARRET = 25.0
-PIECES_MAX = 4
+# Cinq pieces plutot que quatre : « aucun candidat » est de loin la premiere
+# cause d echec (87 sur 376 jeux), et une piece de plus coute deux secondes
+# alors qu un jeu perdu coute tout.
+PIECES_MAX = 5
 ASSEZ = 4
 # Sans confirmation par le START, on n'accepte qu'une preuve etroite : une ou
 # deux adresses, pas davantage. Ecrire une fiche sur six candidats dont aucun
@@ -761,11 +764,47 @@ def chercher_avec(borne, appuyer, arret, essais=3, assez=4):
     return candidats or set()
 
 
+def est_neogeo():
+    """Vrai si le jeu en cours est un Neo Geo.
+
+    Un jeu Neo Geo charge toujours son BIOS depuis neogeo.zip ; le journal de
+    RetroArch le montre. C est la seule facon fiable de le savoir depuis ici.
+    """
+    chemin = os.path.join(JOURNAUX_RA, "retroarch.log")
+    try:
+        with open(chemin, "rb") as fh:
+            texte = fh.read().decode("utf-8", "replace")
+    except OSError:
+        return False
+    return "neogeo" in texte.lower()
+
+
 def repli_autres_entrees(borne, clavier, joueur, arret, journal):
     """Quand SELECT ne donne rien, on essaie les autres boutons du poste.
 
     Renvoie (nom de l entree, candidats) ou (None, set()).
     """
+    # DESACTIVE. Essayer les autres boutons ouvrait des menus de service sur
+    # plusieurs systemes — constate a l ecran sur Neo Geo (« NEO-GEO MVS
+    # SYSTEM : HARDWARE TEST / SOFT DIP / BOOK KEEPING ») et signale
+    # ailleurs. Dans ces menus le compteur de credits ne veut plus rien dire,
+    # et l adresse relevee serait fausse.
+    #
+    # Le repli trouvait le monnayeur sur environ un jeu sur dix. Ce n est pas
+    # assez pour risquer d ecrire de fausses adresses sur les autres. Les
+    # jeux dont le monnayeur n est pas sur SELECT partent en « difficile » et
+    # seront traites autrement.
+    if True:
+        return None, set()
+
+    # JAMAIS sur Neo Geo. Le monnayeur y est toujours sur SELECT — c est un
+    # systeme standardise — et appuyer sur les autres boutons ouvre le menu
+    # « NEO-GEO MVS SYSTEM : HARDWARE TEST / SOFT DIP / BOOK KEEPING ».
+    # Dans ce menu le compteur de credits ne se comporte plus normalement, et
+    # l adresse relevee serait fausse. Constate a l ecran.
+    if est_neogeo():
+        journal("  Neo Geo : pas de repli, le monnayeur est sur SELECT")
+        return None, set()
     for nom, code in clavier.entrees_possibles(joueur):
         if nom == "select":
             continue                    # deja essaye, c est pour ca qu on est la
@@ -954,10 +993,13 @@ def traiter(borne, clavier, base, systeme, jeu, arret, journal):
 
     # START joueur 2 : son compteur a lui doit redescendre.
     adresse_j2, j2_confirme = None, False
+    # START joueur 2 TOUJOURS, meme sans candidat : sur beaucoup de jeux
+    # c est cet appui qui fait entrer le second joueur, et sans lui son
+    # credit n est jamais consomme — donc jamais confirmable.
+    arret()
+    clavier.start_j2()
+    time.sleep(2.0)
     if candidats_j2:
-        arret()
-        clavier.start_j2()
-        time.sleep(2.0)
         baissiers_j2 = [a for a, v in avant_start_j2.items()
                         if (borne.lire(a, 1) or [v])[0] < v]
         if baissiers_j2:

@@ -34,6 +34,17 @@ import time
 KEY_ENTREE = 36
 KEY_SHIFT_DROIT = 62
 
+# Joueur 2, cable dans retroarch.cfg : start = « 2 », piece = « 6 ».
+KEY_2 = 11
+KEY_6 = 15
+
+# Les six boutons de chaque poste. Memes touches que le clavier uinput, en
+# codes X (codes evdev + 8) :
+#   joueur 1 : a=x  b=z  x=s  y=a  l=q  r=w
+#   joueur 2 : a=g  b=f  x=t  y=r  l=e  r=y
+BOUTONS_J1 = {"a": 53, "b": 52, "x": 39, "y": 38, "l": 24, "r": 25}
+BOUTONS_J2 = {"a": 42, "b": 41, "x": 28, "y": 27, "l": 26, "r": 29}
+
 
 class ClavierXTest:
     """A utiliser dans un with : la connexion est fermee quoi qu il arrive."""
@@ -65,7 +76,7 @@ class ClavierXTest:
                 pass
             self.d = None
 
-    def appuyer(self, touche, duree=0.12):
+    def appuyer(self, touche, duree=0.25):
         """Un appui franc : enfoncement, pause, relachement."""
         self.xtest.XTestFakeKeyEvent(self.d, touche, 1, 0)
         self.x.XFlush(self.d)
@@ -78,6 +89,30 @@ class ClavierXTest:
 
     def start(self):
         self.appuyer(KEY_ENTREE)
+
+    def piece_j2(self):
+        self.appuyer(KEY_6)
+
+    def start_j2(self):
+        self.appuyer(KEY_2)
+
+    def bouton(self, nom, joueur=1):
+        """Un bouton du panneau, par son nom RetroPad : a, b, x, y, l, r."""
+        code = (BOUTONS_J1 if joueur == 1 else BOUTONS_J2).get(nom)
+        if code is not None:
+            self.appuyer(code)
+
+    def entrees_possibles(self, joueur=1):
+        """Tout ce qui peut encaisser une piece, du plus probable au reste."""
+        # Seulement les boutons d ACTION. « l » et « r » sont ecartes : dans
+        # FBNeo, beaucoup de pilotes y placent Service et Test/Diagnostic, et
+        # les essayer fait entrer le jeu en mode service — ou le compteur de
+        # credits ne se comporte pas normalement et l adresse relevee serait
+        # fausse.
+        table = {n: c for n, c in (BOUTONS_J1 if joueur == 1 else BOUTONS_J2).items()
+                 if n in ("a", "b", "x", "y")}
+        depart = [("select", KEY_SHIFT_DROIT if joueur == 1 else KEY_6)]
+        return depart + [(n, c) for n, c in sorted(table.items())]
 
 
 if __name__ == "__main__":

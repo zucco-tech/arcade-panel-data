@@ -4,11 +4,8 @@ import os
 import importlib.util, json, os, socket, sys, threading, time
 sys.path.insert(0, "/tmp/claude-1000/test")
 from faux_retroarch import FauxRetroArch
-# Les programmes de la borne sont dans borne/share/userscripts/ : la suite doit
-# tourner partout ou le depot est copie, pas seulement chez son auteur.
-W = os.environ.get("ARCADE_CREDITS") or os.path.join(
-    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
-    "borne", "share", "userscripts")
+# nuit-credits.py est un outil du PC : il est dans le dossier parent de celui-ci.
+W = os.environ.get("ARCADE_OUTILS") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 spec = importlib.util.spec_from_file_location("nuit", os.path.join(W, "nuit-credits.py"))
 nuit = importlib.util.module_from_spec(spec); spec.loader.exec_module(nuit)
 
@@ -58,6 +55,11 @@ class FauxClavier:
         ra.bruit(80); ra.ram[ra.adresse] = (ra.ram[ra.adresse] + 1) & 0xFF
     def start(self):
         if ra.ram[ra.adresse] > 0: ra.ram[ra.adresse] -= 1
+    # Le joueur 2 partage la cagnotte dans ce faux jeu.
+    def piece_j2(self): self.piece()
+    def start_j2(self): self.start()
+    def appuyer(self, touche, duree=0.25): pass
+    def entrees_possibles(self, joueur=1): return []
 nuit.ClavierVirtuel = lambda *a, **k: FauxClavier()
 
 nuit.PORT_RA, nuit.PORT_ES = PORT_RA, PORT_ES
@@ -72,8 +74,10 @@ ra.stop = True
 print("\n--- verification ---")
 b = json.load(open(BASE))
 echecs = []
+# La base est indexee par coeur (« finalburn-neo/jeu »), pas par systeme :
+# c est le coeur qui decide de la disposition memoire.
 for jeu, adresse in JEUX.items():
-    f = b["jeux"].get("fbneo/" + jeu)
+    f = b["jeux"].get("finalburn-neo/" + jeu)
     ok = f and f["credits"]["adresse"] == adresse
     print("%-14s %s %s" % (jeu, "OK  " if ok else "ECHEC",
                            f["credits"]["adresse_hex"] if f else "absent"))

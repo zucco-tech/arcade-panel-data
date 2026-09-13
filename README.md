@@ -211,20 +211,17 @@ pas près.
 
 | | |
 |---|---|
-| `outils/surveiller.sh` | **le point d'entrée** : enchaîne les systèmes jour et nuit, reprend les écartés en fin de cycle, déploie sur la borne toutes les 30 min, surveille l'option de diagnostic |
-| `outils/nuit-credits.py` | le relevé lui-même : lance chaque jeu, paie, START, cherche le compteur des deux joueurs |
-| `outils/balayage-continu.py` | même chose en Python, avec contrôle d'un jeu témoin au changement de cœur |
-| `outils/analyser-difficiles.py` | trie les écartés par raison, pour savoir quoi reprendre |
-| `outils/complement-joueur2.py` | ajoute le compteur du joueur 2 aux fiches qui n'en ont pas |
+| `outils/surveiller.sh` | **le point d'entrée** : enchaîne les systèmes jour et nuit, reprend les écartés en fin de cycle, déploie sur la borne toutes les 30 min |
+| `outils/balayer.sh` | un système, en quatre relevés parallèles, puis `fusionner-parts.py` |
+| `outils/releve-direct.py` | le relevé lui-même : charge le cœur libretro sans RetroArch ni écran, paie, START, cherche le compteur, vérifie les miroirs |
+| `outils/releve-mame.py`, `mame-credits.lua` | même chose pour MAME, mesuré à l'intérieur de l'émulateur |
+| `outils/nuit-credits.py` | la reprise par RetroArch, pour les rares roms que le cœur nu refuse |
 | `outils/exporter-pour-borne.py` | découpe la base en un fichier par système (`credits/fbneo.json`…), la forme que lit la borne |
 | `outils/deployer-vers-borne.sh` | met les bases en place sur la borne fichier par fichier, par renommage ; rien à redémarrer |
 | `outils/importer-cheats.py` | importe les pistes des cheats FBNeo et MAME |
 | `outils/importer-boutons.py` | construit la base des boutons depuis arcade-database |
-| `outils/capture-credits.py` | mesure un jeu à la main |
-| `outils/verifier-borne.py` | contrôle avant un balayage |
-| `outils/clavier_virtuel.py` | clavier virtuel (`uinput`) : pièce et START des deux joueurs |
-| `outils/fenetre_x.py`, `capture_fenetre.py` | plein écran et captures d'écran, pour **regarder** un échec au lieu de le deviner |
-| `outils/demarrer.sh`, `suivre-boutons.sh` | lancement et suivi |
+| `outils/relever-entrees.py` | ce que chaque jeu déclare comme entrées, demandé au cœur |
+| `outils/complement-joueur2.py`, `analyser-difficiles.py` | le compteur du joueur 2 ; le tri des écartés par raison |
 
 Python 3, bibliothèque standard uniquement. Aucune dépendance.
 

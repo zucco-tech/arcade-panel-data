@@ -181,20 +181,17 @@ which never moves. The measured `0x0011` tracks credits exactly.
 
 | | |
 |---|---|
-| `outils/surveiller.sh` | **the entry point**: cycles through systems day and night, retries set-aside games at the end of a cycle, deploys to the cabinet every 30 min, watches the diagnostic option |
-| `outils/nuit-credits.py` | the sweep itself: launches each game, pays, START, finds both players' counters |
-| `outils/balayage-continu.py` | same in Python, with a witness game checked on each core change |
-| `outils/analyser-difficiles.py` | sorts set-aside games by reason |
-| `outils/complement-joueur2.py` | adds the player 2 counter to records lacking it |
+| `outils/surveiller.sh` | **the entry point**: cycles through systems day and night, retries set-aside games at the end of a cycle, deploys to the cabinet every 30 min |
+| `outils/balayer.sh` | one system, four sweeps in parallel, then `fusionner-parts.py` |
+| `outils/releve-direct.py` | the sweep itself: loads the libretro core with no RetroArch and no screen, pays, START, finds the counter, checks mirrors |
+| `outils/releve-mame.py`, `mame-credits.lua` | the same for MAME, measured inside the emulator |
+| `outils/nuit-credits.py` | the RetroArch fallback, for the few roms the bare core refuses |
 | `outils/exporter-pour-borne.py` | splits the dataset into one file per system (`credits/fbneo.json`…), the form the cabinet reads |
 | `outils/deployer-vers-borne.sh` | puts the datasets in place on the cabinet file by file, by rename; nothing to restart |
 | `outils/importer-cheats.py` | import leads from FBNeo and MAME cheat sets |
 | `outils/importer-boutons.py` | build the button dataset from arcade-database |
-| `outils/capture-credits.py` | measure one game by hand |
-| `outils/verifier-borne.py` | pre-flight check before a sweep |
-| `outils/clavier_virtuel.py` | virtual keyboard (`uinput`): coin and START for both players |
-| `outils/fenetre_x.py`, `capture_fenetre.py` | fullscreen and screenshots, to **look at** a failure instead of guessing |
-| `outils/demarrer.sh`, `suivre-boutons.sh` | launch and follow-up |
+| `outils/relever-entrees.py` | what each game declares as inputs, asked from the core itself |
+| `outils/complement-joueur2.py`, `analyser-difficiles.py` | the player 2 counter; set-aside games sorted by reason |
 
 Python 3, standard library only. No dependencies.
 
