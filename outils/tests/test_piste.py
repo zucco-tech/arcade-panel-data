@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Une piste issue du pack de cheats doit se confirmer des la 1re piece."""
-import os
+import os, tempfile
 import importlib.util, json, os, sys, threading, time, types
-sys.path.insert(0, "/tmp/claude-1000/test")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))   # faux_retroarch.py est a cote
 from faux_retroarch import FauxRetroArch
 # Les programmes de la borne sont dans borne/share/userscripts/ : la suite doit
 # tourner partout ou le depot est copie, pas seulement chez son auteur.
@@ -12,7 +12,7 @@ W = os.environ.get("ARCADE_CREDITS") or os.path.join(
 spec = importlib.util.spec_from_file_location("cp", os.path.join(W, "credits(permanent).py"))
 cp = importlib.util.module_from_spec(spec); spec.loader.exec_module(cp)
 
-R = "/tmp/claude-1000/test/piste"; os.system("rm -rf " + R); os.makedirs(R)
+R = tempfile.mkdtemp(prefix="piste-")            # un dossier neuf, nettoye par le systeme
 PORT_RA, ORIG = 45900, "170 170 170"
 # Le compteur est en 0x80B1 ; le cheat, lui, annonce 0xFF80B0 (XOR 1).
 ADRESSE, CHEAT = 0x80B1, "0xFF80B0"

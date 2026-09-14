@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Un seul script sur le Pi : il doit apprendre, PUIS faire clignoter."""
-import os
+import os, tempfile
 import importlib.util, json, os, socket, sys, threading, time, types
-sys.path.insert(0, "/tmp/claude-1000/test")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))   # faux_retroarch.py est a cote
 from faux_retroarch import FauxRetroArch
 
 # Les programmes de la borne sont dans borne/share/userscripts/ : la suite doit
@@ -13,7 +13,7 @@ W = os.environ.get("ARCADE_CREDITS") or os.path.join(
 spec = importlib.util.spec_from_file_location("cp", os.path.join(W, "credits(permanent).py"))
 cp = importlib.util.module_from_spec(spec); spec.loader.exec_module(cp)
 
-RACINE = "/tmp/claude-1000/test/pi"; os.system("rm -rf " + RACINE); os.makedirs(RACINE)
+RACINE = tempfile.mkdtemp(prefix="pi-")            # un dossier neuf, nettoye par le systeme
 ADRESSE, PORT_RA = 0x1234, 45400
 
 leds = []

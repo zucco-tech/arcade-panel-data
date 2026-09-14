@@ -91,17 +91,52 @@ Ils viennent tous d'un vrai problème rencontré :
 - tout le groupe de processus est tué à la fermeture : un orphelin fait
   échouer tous les lancements suivants
 
-## `tests/`
+## Vérifier
 
-Contre un RetroArch simulé, **aucun matériel nécessaire**. Les programmes
-de la borne sont pris dans `borne/share/userscripts/`.
+Quatre niveaux, du plus rapide au plus lourd. Chacun ne prouve qu'une chose,
+et une seule commande les enchaîne :
 
-```bash
-cd tests && python3 test_partie.py       # une partie : pièce, START, plus rien ne clignote
-python3 test_panneau.py                  # les règles d'éclairage du menu
+```
+sh outils/verifier-tout.sh                 # niveaux 1 et 2
+sh outils/verifier-tout.sh --echantillon   # les quatre
 ```
 
-`test_partie`, `test_j2`, `test_base`, `test_piste`, `test_complet`,
-`test_collision`, `test_arcade`, `test_borne`, `test_couleur` visent le démon
-des crédits ; `test_panneau` le panneau du menu ; `test_nuit` le relevé par
-RetroArch.
+| niveau | commande | ce que ça prouve | durée |
+|---|---|---|---|
+| 1. les bancs d'essai | `sh outils/tests/tout.sh` | la **logique** des programmes, contre un RetroArch simulé et un faux panneau — aucun matériel | ~3 min |
+| 2. la santé de la borne | `sh outils/sante-borne.sh` | les trois programmes tournent, discrets (processeur, mémoire), sans erreur, et font leur travail ; chaque ligne `ALERTE` est un vrai souci | 10 s |
+| 3. l'échantillon sur le PC | `python3 outils/verifier-echantillon.py --remesurer …` | vingt fiches tirées au sort se **remesurent à l'identique** | ~10 min |
+| 4. l'échantillon sur la borne | `sh outils/verifier-sur-borne.sh` | les **mêmes** fiches rejouées par la borne elle-même : pièce +1, START −1, sur le vrai cœur et le fichier déployé | ~5 min, prend l'écran |
+
+Le niveau 2 tourne seul chaque matin à 8 h (rapport dans
+`journaux/sante.log`). Le niveau 4 arrête EmulationStation le temps du
+contrôle : on ne le lance pas pendant qu'on joue. MAME n'y est pas
+contrôlable — RetroArch ne livre pas sa mémoire — et l'est au niveau 3.
+La preuve continue, elle, se fait toute seule : à chaque partie, le démon
+note `credits 0 -> 1` dans `journaux/credits.log`.
+
+## `tests/`
+
+Contre un RetroArch simulé (`faux_retroarch.py`, à côté), **aucun matériel
+nécessaire**, dans un dossier temporaire neuf à chaque banc. Les programmes
+de la borne sont pris dans `borne/share/userscripts/`.
+
+```
+sh outils/tests/tout.sh                  # tous, un verdict
+python3 outils/tests/test_partie.py      # un seul
+```
+
+| banc | ce qu'il vérifie |
+|---|---|
+| `test_partie` | une partie : pièce, START, plus rien ne clignote, le bouton 1 guide, la fin de partie |
+| `test_j2` | le joueur 2 : invité par START ou par la pièce, accepté ou refusé, et retenu |
+| `test_arcade` | les trois états d'une borne : pièce, start, partie en cours |
+| `test_complet` | le démon apprend un jeu inconnu, puis le fait clignoter |
+| `test_base` | miroirs, format d'`appris.json`, cohabitation avec les fichiers du PC |
+| `test_piste` | une piste du pack de cheats se confirme dès la première pièce |
+| `test_collision` | le même set sous deux systèmes ne s'écrase pas |
+| `test_couleur` | jamais une couleur posée par la carte n'est écrasée |
+| `test_panneau` | les règles d'éclairage du menu : manettes, START/SELECT, veille, arcade ≠ console |
+| `test_nuit` | une nuit de relevé contre une fausse borne : ES, RetroArch, clavier |
+
+Les commits ne partent que si `tout.sh` est vert.

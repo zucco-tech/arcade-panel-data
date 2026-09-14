@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """Deroule une nuit complete contre une fausse borne : ES, RetroArch, clavier."""
-import os
+import os, tempfile
 import importlib.util, json, os, socket, sys, threading, time
-sys.path.insert(0, "/tmp/claude-1000/test")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))   # faux_retroarch.py est a cote
 from faux_retroarch import FauxRetroArch
 # nuit-credits.py est un outil du PC : il est dans le dossier parent de celui-ci.
 W = os.environ.get("ARCADE_OUTILS") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 spec = importlib.util.spec_from_file_location("nuit", os.path.join(W, "nuit-credits.py"))
 nuit = importlib.util.module_from_spec(spec); spec.loader.exec_module(nuit)
 
-R = "/tmp/claude-1000/test/nuit"; os.system("rm -rf " + R); os.makedirs(R + "/roms/fbneo")
+R = tempfile.mkdtemp(prefix="nuit-"); os.makedirs(R + "/roms/fbneo")
 PORT_RA, PORT_ES = 46000, 46001
 # Trois jeux : un avec piste juste, un avec piste fausse, un sans piste.
 JEUX = {"avecpiste": 0x80B1, "piste_fausse": 0x2222, "sanspiste": 0x3333}

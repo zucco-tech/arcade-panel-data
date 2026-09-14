@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Le cas signale : START consomme le credit, plus rien ne doit clignoter."""
-import os
+import os, tempfile
 import importlib.util, json, os, sys, threading, time, types
-sys.path.insert(0, "/tmp/claude-1000/test")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))   # faux_retroarch.py est a cote
 from faux_retroarch import FauxRetroArch
 # Les programmes de la borne sont dans borne/share/userscripts/ : la suite doit
 # tourner partout ou le depot est copie, pas seulement chez son auteur.
@@ -12,7 +12,7 @@ W = os.environ.get("ARCADE_CREDITS") or os.path.join(
 spec = importlib.util.spec_from_file_location("cp", os.path.join(W, "credits(permanent).py"))
 cp = importlib.util.module_from_spec(spec); spec.loader.exec_module(cp)
 
-RACINE = "/tmp/claude-1000/test/partie"; os.system("rm -rf " + RACINE); os.makedirs(RACINE)
+RACINE = tempfile.mkdtemp(prefix="partie-")            # un dossier neuf, nettoye par le systeme
 ADRESSE, PORT_RA, ORIGINE = 0x1234, 45600, "170 170 170"
 def lampe(nom):
     c = []

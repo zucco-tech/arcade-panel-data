@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Le script ne doit jamais ecraser une couleur posee par la carte AllInOne."""
-import importlib.util, os, sys
+import importlib.util, os, sys, tempfile
 # Les programmes de la borne sont dans borne/share/userscripts/ : la suite doit
 # tourner partout ou le depot est copie, pas seulement chez son auteur.
 W = os.environ.get("ARCADE_CREDITS") or os.path.join(
@@ -9,7 +9,7 @@ W = os.environ.get("ARCADE_CREDITS") or os.path.join(
 spec = importlib.util.spec_from_file_location("cp", os.path.join(W, "credits(permanent).py"))
 cp = importlib.util.module_from_spec(spec); spec.loader.exec_module(cp)
 
-R = "/tmp/claude-1000/test/couleur"; os.system("rm -rf " + R); os.makedirs(R)
+R = tempfile.mkdtemp(prefix="couleur-")            # un dossier neuf, nettoye par le systeme
 cp.JOURNAL = os.path.join(R, "log")
 SYSTEME = "0xAA 0xAA 0xAA"
 # Une couleur qui n'est surtout pas la notre, quel que soit l'ordre materiel.
