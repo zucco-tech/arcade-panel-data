@@ -191,9 +191,10 @@ VERDICT_J2 = 2.0
 # Juste apres START, beaucoup de jeux attendent encore un « OK » — choisir
 # son personnage, valider un mode — et rien ne dit lequel des boutons le
 # donne. Sur une borne c'est presque toujours le bouton 1. On le fait donc
-# pulser quelques secondes apres chaque START, joueur 1 comme joueur 2 :
-# « c'est celui-ci ». Puis il se stabilise avec les autres.
-GUIDE = 4.0                     # secondes de pulsation du bouton 1
+# pulser apres chaque START, joueur 1 comme joueur 2 : « c'est celui-ci »,
+# jusqu'a ce que le joueur appuie sur un bouton de jeu — il a trouve — ou
+# au plus GUIDE secondes. Quatre secondes ne suffisaient pas (14/09/2026).
+GUIDE = 15.0                    # au plus ; un appui sur un bouton de jeu arrete avant
 GUIDE_PERIODE = 0.35            # plus vif qu'un appel a payer : c'est un conseil
 
 PLEIN = 255                     # brightness au repos, valeur posee par le driver
@@ -1340,7 +1341,10 @@ def main():
                     if not en_jeu:
                         continue
                     if code not in (CODE_PIECE, CODE_START):
-                        continue          # une touche de jeu : juste un signe de vie
+                        # Une touche de jeu : un signe de vie, et le joueur a
+                        # trouve le bouton qui valide — son guide s'arrete.
+                        guide_jusqu[2 if pads[fd].endswith("P2") else 1] = 0.0
+                        continue
                     if coeur_mame(core):
                         # Sous MAME, les boutons SONT le compteur.
                         if code == CODE_PIECE:
