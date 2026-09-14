@@ -190,10 +190,15 @@ VERDICT_J2 = 2.0
 
 # Juste apres START, beaucoup de jeux attendent encore un « OK » — choisir
 # son personnage, valider un mode — et rien ne dit lequel des boutons le
-# donne. Sur une borne c'est presque toujours le bouton 1. On le fait donc
-# pulser apres chaque START, joueur 1 comme joueur 2 : « c'est celui-ci »,
-# jusqu'a ce que le joueur appuie sur un bouton de jeu — il a trouve — ou
-# au plus GUIDE secondes. Quatre secondes ne suffisaient pas (14/09/2026).
+# donne. Sur une borne c'est presque toujours le bouton 1. Mais tous les
+# jeux ne le demandent pas, et on ne sait pas lesquels : on regarde donc si
+# le joueur HESITE. S'il appuie sur un bouton de jeu dans les DELAI_GUIDE
+# secondes qui suivent START, le jeu a demarre direct, rien a montrer. Si
+# rien ne bouge, l'ecran attend quelque chose : le bouton 1 pulse, joueur 1
+# comme joueur 2, jusqu'a ce qu'il appuie — il a trouve — ou GUIDE secondes
+# au plus. (Quatre secondes de pulsation d'office ne suffisaient pas et
+# genaient sur les jeux qui n'en ont pas besoin, 14/09/2026.)
+DELAI_GUIDE = 2.0               # le temps de voir si le joueur hesite
 GUIDE = 15.0                    # au plus ; un appui sur un bouton de jeu arrete avant
 GUIDE_PERIODE = 0.35            # plus vif qu'un appel a payer : c'est un conseil
 
@@ -1267,7 +1272,8 @@ def main():
     place_b1 = ORDRE_BOUTONS.index(1)
     guides = {j: Lampe("bouton 1 J%d" % j, LEDS_JEU.get(j, [])[place_b1] if len(LEDS_JEU.get(j, [])) > place_b1 else (), None)
               for j in (1, 2)}
-    guide_jusqu = {1: 0.0, 2: 0.0}
+    guide_depuis = {1: 0.0, 2: 0.0}  # quand le bouton 1 commence a pulser
+    guide_jusqu = {1: 0.0, 2: 0.0}   # quand il s'arrete, faute d'appui
     deuxieme = True                # tant qu on ne sait pas, on n eteint rien
     panneaux = {1: Panneau(1), 2: Panneau(2)}
     boutons = BoutonsSurDisque(BASE_BOUTONS)
@@ -1281,12 +1287,17 @@ def main():
                len(piece.chemins), len(start.chemins), len(start2.chemins),
                len(pads)))
 
+    def guider(joueur):
+        """Ce joueur vient d appuyer sur START : si rien ne bouge d ici
+        DELAI_GUIDE, son bouton 1 pulsera pour dire qu il valide."""
+        guide_depuis[joueur] = maintenant + DELAI_GUIDE
+        guide_jusqu[joueur] = guide_depuis[joueur] + GUIDE
+
     def demarrer(joueur):
-        """Un START vient d engager une partie pour ce joueur : on le note,
-        et son bouton 1 pulse quelques secondes pour dire qu il valide."""
+        """Un START vient d engager une partie pour ce joueur."""
         nonlocal lance, depuis_lance
         lance, depuis_lance = True, maintenant
-        guide_jusqu[joueur] = maintenant + GUIDE
+        guider(joueur)
 
     def rendre(*_):
         """Les boutons doivent repartir allumes et de leur couleur."""
@@ -1355,7 +1366,7 @@ def main():
                     if code == CODE_START and pads[fd].endswith("P2"):
                         p2_engage = True    # il a rejoint, on cesse de l'appeler
                         if credits:
-                            guide_jusqu[2] = maintenant + GUIDE
+                            guider(2)
                             # On regarde si le jeu accepte vraiment : s'il
                             # consomme le credit, il est bien a deux.
                             essai_j2 = (maintenant, credits)
@@ -1488,7 +1499,7 @@ def main():
             # Le bouton 1 pulse quelques secondes apres un START, puis se
             # stabilise : repos() ne fait rien s il n a pas ete lance.
             for j, lampe in guides.items():
-                if en_jeu and maintenant < guide_jusqu[j]:
+                if en_jeu and guide_depuis[j] <= maintenant < guide_jusqu[j]:
                     lampe.clignoter(maintenant, GUIDE_PERIODE)
                 else:
                     lampe.repos()

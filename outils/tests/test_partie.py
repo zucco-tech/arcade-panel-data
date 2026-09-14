@@ -35,7 +35,8 @@ cp.RA_HOTE, cp.RA_PORT = "127.0.0.1", PORT_RA
 cp.STATE_FILE, cp.JOURNAL = ETAT, os.path.join(RACINE, "log")
 cp.ouvrir_pads = lambda: {lecture: "AllInOneP1"}
 cp.signal = types.SimpleNamespace(signal=lambda *a: None, SIGTERM=15)
-cp.INACTIVITE = 4.0                      # 45 s en vrai, 4 s pour le test
+cp.INACTIVITE = 4.0                      # 120 s en vrai, 4 s pour le test
+cp.DELAI_GUIDE = 0.8                     # 2 s en vrai : le temps de voir si le joueur hesite
 def appui(code): os.write(ecriture, cp.EV.pack(0, 0, cp.EV_KEY, code, 1))
 def etat(a):
     with open(ETAT, "w") as fh: fh.write("Action=%s\nSystemId=fbneo\n" % a)
@@ -63,7 +64,7 @@ verifier("le bouton piece se calme", observer(L_PIECE, 1.0) == {"255"})
 
 print("\n--- le cas signale : on appuie sur START ---")
 appui(cp.CODE_START); ra.credits(-1); time.sleep(1.5)
-verifier("le bouton 1 pulse : c'est lui qui valide", len(observer(L_B1, 1.5)) > 1)
+verifier("le joueur hesite : le bouton 1 pulse, c'est lui qui valide", len(observer(L_B1, 1.5)) > 1)
 appui(304)                                 # le joueur appuie sur un bouton de jeu : il a trouve
 time.sleep(0.4)
 verifier("des qu'on joue, il se stabilise, allume", observer(L_B1, 1.0, jouer=True) == {"255"})
