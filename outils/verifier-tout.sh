@@ -15,11 +15,15 @@
 # La commande s arrete au premier niveau rouge et rend 1.
 OUTILS=$(cd "$(dirname "$0")" && pwd)
 ECHANTILLON=/mnt/recalbox/donnees/echantillon.json
+# Les bancs d essai vivent dans le depot, a cote des programmes de la borne
+# qu ils chargent (borne/share/userscripts/). Lance depuis la copie de
+# travail du NAS (/mnt/recalbox/outils), on va les chercher dans le depot.
+if [ -d "$OUTILS/../borne" ]; then BANCS="$OUTILS/tests"; else BANCS=/mnt/recalbox/depot/outils/tests; fi
 
 etape() { printf "\n=== %s ===\n" "$1"; }
 
 etape "1. les bancs d essai"
-sh "$OUTILS/tests/tout.sh" || exit 1
+sh "$BANCS/tout.sh" || exit 1
 
 etape "2. la sante de la borne"
 sh "$OUTILS/sante-borne.sh" || exit 1
