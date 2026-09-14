@@ -85,12 +85,9 @@ s'allument. Les journaux disent ce que le panneau fait, jeu par jeu :
 **Pendant la partie** — `credits(permanent).py` lit le compteur de crédits
 dans la mémoire du jeu (adresse dans `credits/<système>.json`) : PIÈCE
 clignote tant qu'il n'y a pas de crédit, START prend le relais dès qu'il y
-en a un, puis tout reste fixe — sauf le **bouton qui valide**, et seulement
-sur un jeu où on le connaît déjà. Chaque jeu a sa logique de touches, et on
-ne la devine pas : la première fois, le panneau se tait et retient le bouton
-que le joueur presse après START (`appris.json`, champ `valide`) ; les fois
-suivantes, si le joueur hésite deux secondes, c'est ce bouton-là qui pulse. Sur un jeu à deux, pendant que le joueur 1 joue, le
-poste 2 invite : son START clignote s'il reste du crédit, sa PIÈCE sinon.
+en a un, puis tout reste fixe. Les boutons de jeu, eux, ne clignotent
+jamais : chaque jeu a sa logique de touches et le panneau ne la devine pas.
+Sur un jeu à deux, pendant que le joueur 1 joue, le poste 2 invite : son START clignote s'il reste du crédit, sa PIÈCE sinon.
 Chaque mouvement du compteur est noté dans `journaux/credits.log`
 (`credits 0 -> 1`) : la preuve, en jouant, que l'adresse est la bonne. Deux
 minutes sans le moindre geste — stick compris — et la partie est tenue pour
