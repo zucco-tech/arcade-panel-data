@@ -9,7 +9,7 @@
 # qui attraperait aussi le shell qui l execute (et se tuerait lui-meme).
 NOM=$1
 U=/recalbox/share/userscripts
-N=/recalbox/share/system/panneau-arcade
+N=/recalbox/share/system/panneau-allinone
 PROGRAMME="$U/$NOM(permanent).py"
 mkdir -p "$N/journaux" "$N/etat"
 [ -f "$PROGRAMME" ] || { echo "inconnu : $NOM"; exit 1; }

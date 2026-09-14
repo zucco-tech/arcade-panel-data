@@ -10,7 +10,7 @@
 # donc son cout est negligeable, contrairement a un script appele sur la
 # navigation.
 U=/recalbox/share/userscripts
-N=/recalbox/share/system/panneau-arcade
+N=/recalbox/share/system/panneau-allinone
 JOURNAL=$N/journaux/gardefou.log
 
 vivant() {                      # $1 : morceau de nom cherche dans /proc

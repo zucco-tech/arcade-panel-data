@@ -61,10 +61,10 @@ import time
 # On ne lit que le fichier du systeme du jeu lance, au moment du lancement.
 # Rien n'est garde en memoire pour des milliers de jeux, et un fichier
 # remplace par le PC vaut pour la partie suivante, sans redemarrage.
-DOSSIER_CREDITS = "/recalbox/share/system/panneau-arcade/credits"
+DOSSIER_CREDITS = "/recalbox/share/system/panneau-allinone/credits"
 APPRIS = "appris.json"           # ce que la borne a appris elle-meme
 PISTES = "pistes.json"           # adresses de cheats, par nom de set
-BASE_BOUTONS = "/recalbox/share/system/panneau-arcade/boutons-arcade.json"
+BASE_BOUTONS = "/recalbox/share/system/panneau-allinone/boutons-arcade.json"
 
 # Version du format des fiches, ecrite dans appris.json.
 SCHEMA = 3
@@ -73,7 +73,7 @@ OUTIL = "credits(permanent).py"
 # Le journal est sur le partage, et non dans /tmp, pour rester lisible depuis
 # le reseau sans ouvrir un shell sur la borne. Il est plafonne : sur une carte
 # SD, un fichier qui grossit sans fin finit toujours par poser probleme.
-JOURNAL = "/recalbox/share/system/panneau-arcade/journaux/credits.log"
+JOURNAL = "/recalbox/share/system/panneau-allinone/journaux/credits.log"
 JOURNAL_MAX = 200 * 1024
 STATE_FILE = "/tmp/es_state.inf"
 # Les couleurs que la carte porte quand personne n y touche. Elles sont
@@ -82,12 +82,12 @@ STATE_FILE = "/tmp/es_state.inf"
 # relire les LED revenait a memoriser les couleurs que l AUTRE programme
 # venait d y poser, et le panneau ressortait de la partie avec les couleurs
 # du jeu precedent. Fichier absent : on retombe sur la relecture des LED.
-COULEURS_CARTE = "/recalbox/share/system/panneau-arcade/etat/couleurs-carte.json"
+COULEURS_CARTE = "/recalbox/share/system/panneau-allinone/etat/couleurs-carte.json"
 # Signe de vie de panneau(permanent).py. S il bat, c est lui qui peindra le
 # menu des la fin de la partie : nous rendons alors l ALLUMAGE seulement, et
 # nous le laissons poser les couleurs. Deux programmes qui repeignent l un
 # apres l autre, cela se voit — un clignotement en sortant du jeu.
-BATTEMENT = "/recalbox/share/system/panneau-arcade/etat/panneau-vivant"
+BATTEMENT = "/recalbox/share/system/panneau-allinone/etat/panneau-vivant"
 BATTEMENT_FRAIS = 6.0
 
 RA_HOTE = "127.0.0.1"

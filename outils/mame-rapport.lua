@@ -16,7 +16,7 @@
 --   FICHES   liste des adresses, produite par le PC de releve
 --   RAPPORT  ce que le demon lit : « <jeu> <credits> » ou « <jeu> inconnu »
 
-local FICHES = "/recalbox/share/system/panneau-arcade/mame-fiches.txt"
+local FICHES = "/recalbox/share/system/panneau-allinone/mame-fiches.txt"
 local RAPPORT = "/tmp/mame-credits"
 local CADENCE = 0.2                  -- secondes entre deux rapports
 

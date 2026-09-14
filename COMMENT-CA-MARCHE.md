@@ -34,7 +34,7 @@ adresses, jeu par jeu, et les range dans un fichier.
 ```
 
 Sur la borne, les crédits sont découpés en **un fichier par système**,
-`system/panneau-arcade/credits/fbneo.json`, `mame.json`… (fiches indexées
+`system/panneau-allinone/credits/fbneo.json`, `mame.json`… (fiches indexées
 par nom de set), plus `pistes.json`. Le démon ne charge que le fichier du
 système du jeu lancé. Les boutons restent un seul fichier, copié tel quel.
 
@@ -230,8 +230,8 @@ Les jeux non mesurés sont dans `difficiles`, avec leur cause :
 
 ```
 python3 outils/exporter-pour-borne.py --base donnees/credits-arcade.json --dossier /tmp/credits
-scp /tmp/credits/*.json                        root@borne:/recalbox/share/system/panneau-arcade/credits/
-scp /mnt/recalbox/donnees/boutons-arcade.json  root@borne:/recalbox/share/system/panneau-arcade/
+scp /tmp/credits/*.json                        root@borne:/recalbox/share/system/panneau-allinone/credits/
+scp /mnt/recalbox/donnees/boutons-arcade.json  root@borne:/recalbox/share/system/panneau-allinone/
 ```
 
 Les fichiers sont du JSON simple, sans dépendance. Le programme des LED lit

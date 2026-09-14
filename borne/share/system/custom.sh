@@ -14,14 +14,14 @@
 #      du panneau d arcade, en veilleuse : la borne a l air vivante des
 #      l allumage, et le programme prendra le relais.
 #
-# Journal : /recalbox/share/system/panneau-arcade/journaux/demarrage.log
+# Journal : /recalbox/share/system/panneau-allinone/journaux/demarrage.log
 
 # Recalbox passe « start » ou « stop » : on n agit qu au demarrage.
 case "$1" in
     stop|shutdown|reboot) exit 0 ;;
 esac
 
-N=/recalbox/share/system/panneau-arcade
+N=/recalbox/share/system/panneau-allinone
 U=/recalbox/share/userscripts
 mkdir -p "$N/journaux" "$N/etat"
 echo "$(date "+%Y-%m-%d %H:%M:%S") demarrage" >> "$N/journaux/demarrage.log"

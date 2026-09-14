@@ -143,7 +143,7 @@ lisait en second memorisait donc les couleurs du PREMIER, et les restituait
 en sortant de partie : le panneau revenait avec les couleurs du jeu
 precedent. Il n y a desormais qu une source : `panneau(permanent).py` publie
 les couleurs de la carte (la table Recalbox du systeme) dans
-`panneau-arcade/couleurs-carte.json` juste avant que la partie commence, et
+`panneau-allinone/couleurs-carte.json` juste avant que la partie commence, et
 `credits(permanent).py` les lit de la. Aucune course possible.
 
 ## Chercher un compteur de credits : cinq pieges, tous mesures

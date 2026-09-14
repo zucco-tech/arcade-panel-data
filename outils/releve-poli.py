@@ -36,7 +36,7 @@ import subprocess
 import sys
 import time
 
-DOSSIER = "/recalbox/share/system/panneau-arcade"
+DOSSIER = "/recalbox/share/system/panneau-allinone"
 OUTILS = os.path.join(DOSSIER, "outils")
 BASE = os.path.join(DOSSIER, "releve-borne.json")
 JOURNAL = os.path.join(DOSSIER, "releve.log")

@@ -23,8 +23,8 @@ INVITE=/mnt/recalbox/outils/.mdp-borne.sh
 export SSH_ASKPASS="$INVITE" SSH_ASKPASS_REQUIRE=force DISPLAY=${DISPLAY:-:0}
 DONNEES=/mnt/recalbox/donnees
 EXPORT=/mnt/recalbox/donnees/pour-borne          # un <systeme>.json par systeme + pistes.json
-DEPOT_BORNE=/mnt/recalbox/depot/borne/share/system/panneau-arcade
-SUR_BORNE=/recalbox/share/system/panneau-arcade
+DEPOT_BORNE=/mnt/recalbox/depot/borne/share/system/panneau-allinone
+SUR_BORNE=/recalbox/share/system/panneau-allinone
 JOURNAL=/mnt/recalbox/journaux/deploiement.log
 SSH="setsid -w ssh -o ConnectTimeout=8 -o StrictHostKeyChecking=no"
 SCP="setsid -w scp -q -o StrictHostKeyChecking=no"

@@ -43,13 +43,13 @@ import struct
 import time
 
 ETAT = "/tmp/es_state.inf"
-BASE_BOUTONS = "/recalbox/share/system/panneau-arcade/boutons-arcade.json"
+BASE_BOUTONS = "/recalbox/share/system/panneau-allinone/boutons-arcade.json"
 # Les corrections apportees a la table de Recalbox d apres les manettes
 # d origine : la Game Boy est magenta, la Master System rouge, la N64 n a
 # pas de SELECT. Recalbox est juste presque partout ; ce fichier ne dit que
 # les exceptions, et il peut ne pas exister.
-FICHIER_MANETTES = "/recalbox/share/system/panneau-arcade/manettes-consoles.json"
-JOURNAL = "/recalbox/share/system/panneau-arcade/journaux/panneau.log"
+FICHIER_MANETTES = "/recalbox/share/system/panneau-allinone/manettes-consoles.json"
+JOURNAL = "/recalbox/share/system/panneau-allinone/journaux/panneau.log"
 # La table de couleurs par systeme livree par Recalbox pour ce panneau. Elle
 # servait aux scripts allinone[…].sh, appeles a chaque mouvement dans le
 # menu ; ils sont desactives (un bash par evenement, et deux programmes qui
@@ -62,12 +62,12 @@ PALETTE_RECALBOX = "/recalbox/scripts/recalbox_allinone_rgb.sh"
 # la fin d une partie, au lieu de relire les LED — ce que nous avons pu
 # repeindre entre-temps. Sans cette source unique, chacun memorisait les
 # couleurs de l autre et le panneau revenait faux en sortant d un jeu.
-COULEURS_CARTE = "/recalbox/share/system/panneau-arcade/etat/couleurs-carte.json"
+COULEURS_CARTE = "/recalbox/share/system/panneau-allinone/etat/couleurs-carte.json"
 # Notre signe de vie. Tant qu il est frais, le demon des credits sait que le
 # menu va repeindre lui-meme et ne rend PAS les couleurs de la carte en
 # sortant d une partie : sans cela les deux repeignaient l un apres l autre
 # et le joueur voyait un clignotement.
-BATTEMENT = "/recalbox/share/system/panneau-arcade/etat/panneau-vivant"
+BATTEMENT = "/recalbox/share/system/panneau-allinone/etat/panneau-vivant"
 PERIODE_BATTEMENT = 2.0
 
 # Meme correspondance que credits(permanent).py, reprise de

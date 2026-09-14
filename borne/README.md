@@ -12,7 +12,7 @@ borne/share/                          →  /recalbox/share/
         gardefou[start,rungame,endgame].ash   relance un programme permanent qui serait mort
     system/
         custom.sh                         crochet de démarrage Recalbox (voir plus bas)
-        panneau-arcade/
+        panneau-allinone/
             credits/
                 fbneo.json, mame.json…    où lire les crédits, un fichier par système
                 pistes.json               les adresses de cheats, par nom de set
@@ -38,7 +38,7 @@ réseau, ou la clé USB qui la porte), puis redémarrer :
 | `userscripts/gardefou[start,rungame,endgame].ash` | `share\userscripts\` |
 | `userscripts/marquee(permanent).py` | `share\userscripts\` — facultatif, seulement s'il y a un marquee |
 | `system/custom.sh` | `share\system\` |
-| `system/panneau-arcade/` (le dossier entier) | `share\system\` |
+| `system/panneau-allinone/` (le dossier entier) | `share\system\` |
 
 **Rien d'autre n'est touché.** On ajoute ces fichiers, on n'en remplace
 aucun : les roms, les bios, les sauvegardes et tout le reste de la share
@@ -51,7 +51,7 @@ arrière : supprimer ces six fichiers et remettre les `.off` à leur nom.
 
 Pour vérifier que ça tourne : survoler un jeu dans le menu, ses boutons
 s'allument. Les journaux disent ce que le panneau fait, jeu par jeu :
-`system/panneau-arcade/journaux/panneau.log` (le menu) et `credits.log` (les parties).
+`system/panneau-allinone/journaux/panneau.log` (le menu) et `credits.log` (les parties).
 
 ## Ce que fait le panneau
 
@@ -93,7 +93,7 @@ retour au menu         panneau reprend, après avoir rendu les couleurs
 
 Tous deux n'écrivent que dans `brightness`, et dans `multi_intensity`
 seulement pour poser la couleur d'origine d'un bouton. Le panneau publie
-les couleurs qu'il a posées dans `panneau-arcade/etat/couleurs-carte.json` et le
+les couleurs qu'il a posées dans `panneau-allinone/etat/couleurs-carte.json` et le
 démon des crédits les y lit : une seule mémoire, pas de couleur perdue.
 
 ## MAME
@@ -124,12 +124,12 @@ fait deux choses à chaque allumage :
 
 `gardefou[…].ash` est appelé au démarrage du frontend, au lancement et à la
 fin de chaque partie : il relance celui des programmes permanents qui
-serait mort (journal dans `panneau-arcade/journaux/gardefou.log`). Une borne sans
+serait mort (journal dans `panneau-allinone/journaux/gardefou.log`). Une borne sans
 marquee n'a rien à faire : il ne relance que ce qui est présent.
 
 ## Les données
 
-Les crédits tiennent dans `system/panneau-arcade/credits/`, **un fichier par
+Les crédits tiennent dans `system/panneau-allinone/credits/`, **un fichier par
 système** : `fbneo.json`, `mame.json`, `neogeo.json`… Chacun contient les
 fiches de ce système, indexées par nom de set, et ses jeux écartés. À côté,
 `pistes.json` : les adresses de cheats « crédits infinis », par nom de set,
