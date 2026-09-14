@@ -192,14 +192,12 @@ VERDICT_J2 = 2.0
 
 # Juste apres START, beaucoup de jeux attendent encore un « OK » — choisir
 # son personnage, valider un mode — et rien ne dit lequel des boutons le
-# donne. Sur une borne c'est presque toujours le bouton 1. Mais tous les
-# jeux ne le demandent pas, et on ne sait pas lesquels : on regarde donc si
-# le joueur HESITE. S'il appuie sur un bouton de jeu dans les DELAI_GUIDE
-# secondes qui suivent START, le jeu a demarre direct, rien a montrer. Si
-# rien ne bouge, l'ecran attend quelque chose : le bouton 1 pulse, joueur 1
-# comme joueur 2, jusqu'a ce qu'il appuie — il a trouve — ou GUIDE secondes
-# au plus. (Quatre secondes de pulsation d'office ne suffisaient pas et
-# genaient sur les jeux qui n'en ont pas besoin, 14/09/2026.)
+# donne. On ne le DEVINE jamais : proposer le bouton 1 d office designait un
+# bouton qui ne fait rien sur beaucoup de jeux, et c est pire que rien
+# (constate le 14/09/2026). Le guide ne s allume donc que sur un jeu ou le
+# joueur a DEJA montre quel bouton valide — voir noter_validation() : le
+# premier bouton de jeu presse apres un START hesitant est retenu. La
+# premiere fois sur un jeu, le panneau se tait.
 DELAI_GUIDE = 2.0               # le temps de voir si le joueur hesite
 GUIDE = 15.0                    # au plus ; un appui sur un bouton de jeu arrete avant
 GUIDE_PERIODE = 0.35            # plus vif qu'un appel a payer : c'est un conseil
@@ -1295,7 +1293,7 @@ def main():
     # utilise la derniere fois sur ce jeu.
     lampes = {j: {n: Lampe("LED %d J%d" % (n, j), (LEDS_JEU.get(j) or [()] * 8)[n - 1], None)
                   for n in range(1, 7)} for j in (1, 2)}
-    guide_led = {j: TABLE.led_du_bouton(j, 1) or 4 for j in (1, 2)}   # quelle LED guide, par poste
+    guide_led = {1: None, 2: None}   # la LED apprise pour ce jeu, ou rien
     guide_depuis = {1: 0.0, 2: 0.0}  # quand elle commence a pulser
     guide_jusqu = {1: 0.0, 2: 0.0}   # quand elle s'arrete, faute d'appui
     guide_montre = {1: False, 2: False}   # a-t-elle pulse ? alors le 1er appui apprend
@@ -1315,7 +1313,8 @@ def main():
 
     def guider(joueur):
         """Ce joueur vient d appuyer sur START : si rien ne bouge d ici
-        DELAI_GUIDE, la LED du bouton qui valide pulsera."""
+        DELAI_GUIDE, la LED du bouton qui valide pulsera — a condition qu on
+        la connaisse pour ce jeu."""
         guide_depuis[joueur] = maintenant + DELAI_GUIDE
         guide_jusqu[joueur] = guide_depuis[joueur] + GUIDE
         guide_montre[joueur] = False
@@ -1389,9 +1388,12 @@ def main():
                         # Si le guide avait pulse, c est qu il hesitait : ce
                         # premier bouton EST celui qui valide sur ce jeu, on
                         # le retient pour la prochaine fois.
+                        # Meme quand rien n a pulse : c est ainsi qu on
+                        # apprend le bouton d un jeu qu on ne connaissait pas.
                         led = TABLE.led_du_code(j, code)
-                        if guide_montre[j] and led and nom:
+                        if led and nom and maintenant < guide_jusqu[j]:
                             base.noter_validation(systeme, nom, led)
+                            guide_led[j] = led
                         guide_jusqu[j], guide_montre[j] = 0.0, False
                         continue
                     if coeur_mame(core):
@@ -1458,8 +1460,10 @@ def main():
                     if not coeur_mame(core):
                         apprenti.nouveau_jeu(nom, systeme, core)
                     multi = jeu_multijoueur(base, systeme, nom)
-                    for j in (1, 2):
-                        guide_led[j] = base.validation(systeme, nom) or TABLE.led_du_bouton(j, 1) or 4
+                    # Rien d appris sur ce jeu : aucun guide, plutot qu un
+                    # bouton propose au hasard.
+                    apprise = base.validation(systeme, nom)
+                    guide_led[1] = guide_led[2] = apprise
                     adresse = adresse_de(fiche_de(base, systeme, nom, core))
                     journal("%s/%s : %s" % (systeme, nom,
                                             "0x%04X" % adresse if adresse
@@ -1545,7 +1549,7 @@ def main():
             # stabilise : repos() ne fait rien s il n a pas ete lance.
             for j in (1, 2):
                 for n, lampe in lampes[j].items():
-                    if (n == guide_led[j] and en_jeu
+                    if (guide_led[j] is not None and n == guide_led[j] and en_jeu
                             and guide_depuis[j] <= maintenant < guide_jusqu[j]):
                         lampe.clignoter(maintenant, GUIDE_PERIODE)
                         guide_montre[j] = True

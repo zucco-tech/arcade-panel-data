@@ -65,10 +65,9 @@ verifier("le bouton piece se calme", observer(L_PIECE, 1.0) == {"255"})
 
 print("\n--- le cas signale : on appuie sur START ---")
 appui(cp.CODE_START); ra.credits(-1); time.sleep(1.5)
-verifier("le joueur hesite : le bouton 1 pulse, c'est lui qui valide", len(observer(L_B1, 1.5)) > 1)
-appui(304)                                 # le joueur valide avec la LED 1, pas le bouton 1
+verifier("jeu inconnu : RIEN ne pulse, on ne devine pas", observer(L_B1, 1.5) == {"255"})
+appui(304)                                 # le joueur valide avec la LED 1
 time.sleep(0.4)
-verifier("des qu'on joue, il se stabilise, allume", observer(L_B1, 1.0, jouer=True) == {"255"})
 verifier("la base retient : sur ce jeu, c'est la LED 1 qui valide",
          (json.load(open(APPRIS))["jeux"].get("fbneo/testgame") or {}).get("valide") == 1)
 verifier("credit retombe a 0 : LE PIECE NE CLIGNOTE PAS", observer(L_PIECE, 2.5, jouer=True) == {"255"})
@@ -88,12 +87,12 @@ verifier("apres le silence : le piece reclignote", len(observer(L_PIECE, 2.5)) >
 etat("endgame"); time.sleep(1.2)
 verifier("sortie : tout est rendu", lu(L_PIECE) == "255" and lu(L_START) == "255")
 
-print("\n--- partie suivante : c'est le bouton appris qui guide ---")
+print("\n--- partie suivante : SEUL le bouton appris guide ---")
 etat("rungame"); ra.ram[ADRESSE] = 0; time.sleep(1.5)
 ra.credits(+1); appui(cp.CODE_PIECE); time.sleep(1.0)
 appui(cp.CODE_START); ra.credits(-1); time.sleep(1.5)
 verifier("la LED 1, apprise, pulse", len(observer(L_LED1, 1.5)) > 1)
-verifier("le bouton 1, lui, reste fixe", observer(L_B1, 1.0) == {"255"})
+verifier("aucune autre LED ne pulse", observer(L_B1, 1.0) == {"255"})
 appui(304); time.sleep(0.4)
 etat("endgame"); time.sleep(1.0)
 ra.stop = True
