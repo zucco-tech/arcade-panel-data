@@ -64,7 +64,7 @@ verifier("le bouton piece se calme", observer(L_PIECE, 1.0) == {"255"})
 print("\n--- le cas signale : on appuie sur START ---")
 appui(cp.CODE_START); ra.credits(-1); time.sleep(1.5)
 verifier("le bouton 1 pulse : c'est lui qui valide", len(observer(L_B1, 1.0, jouer=True)) > 1)
-time.sleep(cp.GUIDE)
+observer(L_B1, cp.GUIDE, jouer=True)      # on continue de jouer pendant la pulsation
 verifier("puis il se stabilise, allume", observer(L_B1, 1.0, jouer=True) == {"255"})
 verifier("credit retombe a 0 : LE PIECE NE CLIGNOTE PAS", observer(L_PIECE, 2.5, jouer=True) == {"255"})
 verifier("le start non plus", observer(L_START, 1.5, jouer=True) == {"255"})
