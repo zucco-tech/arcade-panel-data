@@ -36,6 +36,15 @@ MANETTES = {1: "AllInOneP1", 2: "AllInOneP2"}
 # cablage : c est une convention du coeur d emulation.
 ROLE_DU_BOUTON = {1: "b", 2: "a", 3: "y", 4: "x", 5: "l1", 6: "r1", 7: "l2", 8: "r2"}
 
+# Recalbox nomme les quatre boutons de face de deux facons selon la version :
+# les lettres du RetroPad (b, a, y, x) et les points cardinaux de SDL (south,
+# east, west, north) — c est le meme bouton, b est celui du bas, a celui de
+# droite, y celui de gauche, x celui du haut. Constate le 14/09/2026 : apres
+# une reconfiguration, es_input.cfg est passe aux points cardinaux et quatre
+# boutons sur six n avaient plus de LED. On accepte donc les deux ecritures.
+AUTRE_NOM = {"b": "south", "a": "east", "y": "west", "x": "north",
+             "south": "b", "east": "a", "west": "y", "north": "x"}
+
 # La mesure de reference (borne du 14/09/2026), code evdev -> numero de LED
 # aio_p*_b<n>. Sert quand cablage.json manque. Les deux postes envoient les
 # memes codes sur leur propre manette.
@@ -89,14 +98,19 @@ class Cablage:
                                   "cablage.json" if physique else "cablage par defaut")
 
     def code(self, joueur, role):
-        """Le code evdev du role (« select », « start », « b »...) sur ce poste."""
-        return self._roles[joueur].get(role)
+        """Le code evdev du role (« select », « start », « b »...) sur ce poste,
+        quelle que soit l ecriture des quatre boutons de face."""
+        roles = self._roles[joueur]
+        if role in roles:
+            return roles[role]
+        return roles.get(AUTRE_NOM.get(role, ""))
 
     def role(self, joueur, code):
-        """Le role d un code sur ce poste, ou None."""
+        """Le role d un code sur ce poste, ou None. Rendu dans l ecriture en
+        lettres (b, a, y, x), celle du reste du programme."""
         for r, c in self._roles[joueur].items():
             if c == code:
-                return r
+                return AUTRE_NOM[r] if r in ("south", "east", "west", "north") else r
         return None
 
     def led_du_code(self, joueur, code):
