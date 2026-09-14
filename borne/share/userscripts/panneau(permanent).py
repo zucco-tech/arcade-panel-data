@@ -296,6 +296,7 @@ def fiche_de_systeme(systeme):
             # rend alors jaune, rouge, vert, bleu — les boutons B, A, Y, X.
             # Une couleur venue de manettes-consoles.json, elle, est ecrite
             # en vrai RGB : elle passe par la correction, donc pas « brut ».
+            """La palette des boutons, en dictionnaire BUTTONn -> couleur."""
             rendu = {}
             for i in range(1, nombre + 1):
                 mieux = teinte_hexa(remplace[i - 1]) if i - 1 < len(remplace) else None
@@ -330,11 +331,15 @@ def joueurs_depuis(etat):
 
 
 def teinte_par_defaut(nombre, numero):
+    """La couleur d un bouton quand la fiche n en donne pas : la palette par
+    defaut pour ce nombre de boutons, blanc au-dela."""
     palette = PALETTE_DEFAUT.get(nombre) or PALETTE_DEFAUT[6]
     return palette[numero - 1] if numero - 1 < len(palette) else "white"
 
 
 def lire_fichier(chemin):
+    """Le contenu d un fichier sans ses espaces autour, ou None s il n est pas
+    lisible. C est ainsi qu on lit une LED ou l etat d EmulationStation."""
     try:
         with open(chemin) as fh:
             return fh.read().strip()
@@ -427,6 +432,8 @@ def preparer_dossiers():
 
 
 def journal(msg):
+    """Une ligne datee dans le journal du panneau ; un journal illisible n arrete
+    jamais le programme."""
     try:
         with open(JOURNAL, "a") as fh:
             fh.write("%s %s\n" % (time.strftime("%Y-%m-%d %H:%M:%S"), msg))
@@ -494,6 +501,8 @@ def lire_etat():
 
 
 def charger_boutons():
+    """La base des boutons d arcade (boutons-arcade.json), indexee par nom de set
+    ; vide si elle manque ou est illisible."""
     try:
         with open(BASE_BOUTONS) as fh:
             return json.load(fh).get("jeux", {})
@@ -529,6 +538,8 @@ def chemins_annexes(joueur):
 
 
 def _leds(nom):
+    """Les chemins des deux LED d un bouton (« _1 » et « _2 ») qui existent
+    vraiment dans /sys/class/leds."""
     return [c for c in (os.path.join(RACINE_LEDS, "%s_%d" % (nom, k)) for k in (1, 2))
             if os.path.isdir(c)]
 
@@ -577,6 +588,9 @@ def geste(fds):
 
 
 def ecrire(chemin, valeur, fichier="brightness"):
+    """Ecrit une valeur dans un fichier d une LED, brightness par defaut. Une LED
+    absente ou en erreur est ignoree : le panneau ne doit jamais s arreter
+    pour une LED."""
     try:
         with open(os.path.join(chemin, fichier), "w") as fh:
             fh.write(valeur)
@@ -585,6 +599,10 @@ def ecrire(chemin, valeur, fichier="brightness"):
 
 
 class Panneau:
+    """Un poste de jeu : ses boutons, son START, sa PIECE et, pour le poste 1, la
+    touche hotkey. Il retient ce qu il a applique en dernier pour ne rien
+    reecrire sans raison, et la couleur que la carte avait posee sur chaque
+    LED pour la lui rendre."""
     def __init__(self, joueur):
         self.joueur = joueur
         self.boutons = chemins_led(joueur)
@@ -600,12 +618,15 @@ class Panneau:
         self.origine = {}            # couleur posee par la carte, par led
 
     def _memoriser(self, chemin):
+        """Retient la couleur que la LED avait avant qu on y touche, une seule
+        fois par LED."""
         if chemin not in self.origine:
             valeur = lire_fichier(os.path.join(chemin, "multi_intensity"))
             if valeur:
                 self.origine[chemin] = valeur
 
     def _rendre_couleur(self, chemin):
+        """Remet a la LED la couleur memorisee, si on en a une."""
         if chemin in self.origine:
             ecrire(chemin, self.origine[chemin], "multi_intensity")
 

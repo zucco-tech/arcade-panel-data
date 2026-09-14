@@ -137,6 +137,9 @@ class Interruption(Exception):
 
 
 class Borne:
+    """RetroArch vu d ici : on lui parle par son port reseau — lire la RAM, la
+    photographier, quitter — et, en mode direct, on le lance et on l arrete
+    soi-meme."""
     def __init__(self, hote, rapide_voulue=False, direct=False):
         self.hote = hote
         self.direct = direct         # on lance RetroArch soi-meme
@@ -151,6 +154,8 @@ class Borne:
         self.coeur_nomme = None          # nom observe, quand l appelant le sait
 
     def _udp(self, port, texte, attendre_reponse=True, timeout=0.6):
+        """Envoie un texte a RetroArch en UDP et renvoie sa reponse : une chaine
+        vide si on n en attend pas, None s il ne repond pas."""
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         sock.settimeout(timeout)
         try:
@@ -184,6 +189,8 @@ class Borne:
         return (self.jeu_lance or "inconnu"), self.coeur_lance
 
     def lire(self, adresse, n):
+        """Lit n octets de la RAM du coeur a une adresse, par READ_CORE_RAM ;
+        None si le coeur ne les expose pas."""
         reponse = self._udp(self.port, "READ_CORE_RAM %x %d" % (adresse, n))
         if not reponse:
             return None
@@ -197,6 +204,8 @@ class Borne:
         return octets if len(octets) == n else None
 
     def quitter(self):
+        """Demande a RetroArch de quitter et, en mode direct, s assure qu il est
+        bien mort."""
         self._udp(self.port, "QUIT", attendre_reponse=False)
         if self.direct:
             time.sleep(1.0)
@@ -217,6 +226,8 @@ class Borne:
         time.sleep(0.3)
 
     def mesurer(self):
+        """La taille de la RAM que le coeur expose, par dichotomie : on double l
+        adresse jusqu a ce que la lecture echoue, puis on resserre."""
         if self.lire(0, 1) is None:
             return 0
         bas, haut = 0, 1
@@ -231,6 +242,8 @@ class Borne:
         return bas + 1
 
     def photo(self):
+        """Toute la RAM exposee, d un bloc ; None si une lecture a echoue en
+        route, une photo partielle fausserait la comparaison."""
         if self.taille is None:
             self.taille = self.mesurer()
         if not self.taille:
@@ -564,6 +577,8 @@ def lancer_avec_reprises(borne, systeme, jeu, chemin, arret, journal):
 
 
 def base_charger(chemin):
+    """Charge la base des credits, et la convertit au passage si elle est encore
+    indexee par systeme et non par coeur."""
     with open(chemin) as fh:
         base = json.load(fh)
     if migrer_par_coeur(base):
@@ -575,6 +590,7 @@ def base_ecrire(chemin, base):
     # Un nom de fichier temporaire propre a ce processus. Deux ecrivains qui
     # partagent le meme ".tmp" melangent leurs contenus et laissent une base
     # tronquee — c'est arrive, et ca coute toutes les fiches relevees.
+    """Ecrit la base de facon atomique."""
     provisoire = "%s.%d.tmp" % (chemin, os.getpid())
     with open(provisoire, "w") as fh:
         json.dump(base, fh, indent=2, sort_keys=True, ensure_ascii=False)
@@ -1154,11 +1170,15 @@ def main():
     stop = {"demande": False}
 
     def demander_arret(*_):
+        """Un signal d arret (SIGTERM, Ctrl-C) : on note la demande, le releve s
+        arretera proprement au prochain point sur."""
         stop["demande"] = True
     signal.signal(signal.SIGINT, demander_arret)
     signal.signal(signal.SIGTERM, demander_arret)
 
     def arret():
+        """Leve Interruption si un arret a ete demande, par signal ou par le
+        fichier drapeau."""
         if stop["demande"] or os.path.exists(args.arret):
             raise Interruption()
 
@@ -1167,6 +1187,8 @@ def main():
     echecs_daffilee = 0
 
     def journal(msg):
+        """Une ligne de journal, ecrite tout de suite : le journal est suivi en
+        direct."""
         print(msg, flush=True)
 
     try:

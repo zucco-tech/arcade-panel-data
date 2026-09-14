@@ -29,6 +29,8 @@ _GESTIONNAIRE = ctypes.CFUNCTYPE(ctypes.c_int, ctypes.c_void_p, ctypes.c_void_p)
 
 
 def _ignorer(_affichage, _erreur):
+    """Gestionnaire d erreurs X qui ne fait rien : une fenetre qui disparait
+    pendant qu on l interroge ne doit pas tuer le programme."""
     return 0
 
 
@@ -36,6 +38,8 @@ _ignorer_c = _GESTIONNAIRE(_ignorer)
 
 
 class _X:
+    """Le strict necessaire de la Xlib, par ctypes : ouvrir l affichage, nommer
+    un atome, parcourir l arbre des fenetres, lire un titre."""
     def __init__(self, affichage=":0"):
         self.x = ctypes.CDLL(ctypes.util.find_library("X11"))
         self.x.XSetErrorHandler.argtypes = [_GESTIONNAIRE]
@@ -49,11 +53,15 @@ class _X:
         self.racine = self.x.XDefaultRootWindow(self.d)
 
     def atome(self, nom):
+        """Le numero d un atome X (un nom de propriete ou de message), cree s il
+        n existe pas encore."""
         self.x.XInternAtom.argtypes = [ctypes.c_void_p, ctypes.c_char_p, ctypes.c_int]
         self.x.XInternAtom.restype = ctypes.c_ulong
         return self.x.XInternAtom(self.d, nom.encode(), False)
 
     def enfants(self, fenetre):
+        """Les fenetres filles d une fenetre, par XQueryTree ; vide si la fenetre
+        n existe plus."""
         r = ctypes.c_ulong(); p = ctypes.c_ulong()
         tab = ctypes.POINTER(ctypes.c_ulong)(); n = ctypes.c_uint()
         self.x.XQueryTree.argtypes = [
@@ -66,6 +74,7 @@ class _X:
         return [tab[i] for i in range(n.value)]
 
     def nom(self, fenetre):
+        """Le titre d une fenetre (XFetchName), ou une chaine vide."""
         p = ctypes.c_char_p()
         self.x.XFetchName.argtypes = [ctypes.c_void_p, ctypes.c_ulong,
                                       ctypes.POINTER(ctypes.c_char_p)]
@@ -99,6 +108,8 @@ class _X:
     def chercher(self, titre):
         """La fenetre CLIENTE dont le titre correspond."""
         def descendre(fenetre, profondeur=0):
+            """Parcours en profondeur, quatre niveaux au plus : au-dela ce ne
+            sont plus des fenetres d application."""
             if profondeur > 4:
                 return None
             for f in self.enfants(fenetre):
@@ -127,6 +138,7 @@ class _X:
 
 
 class XEvenementClient(ctypes.Structure):
+    """Un XClientMessageEvent, tel que la Xlib le range en memoire."""
     _fields_ = [("type", ctypes.c_int), ("serial", ctypes.c_ulong),
                 ("send_event", ctypes.c_int), ("display", ctypes.c_void_p),
                 ("window", ctypes.c_ulong), ("message_type", ctypes.c_ulong),
@@ -134,11 +146,14 @@ class XEvenementClient(ctypes.Structure):
 
 
 class XEvent(ctypes.Union):
+    """L union XEvent de la Xlib : assez large pour n importe quel evenement."""
     _fields_ = [("type", ctypes.c_int), ("xclient", XEvenementClient),
                 ("pad", ctypes.c_long * 24)]
 
 
 def _message(X, fenetre, type_message, donnees):
+    """Envoie un ClientMessage au gestionnaire de fenetres ; c est ainsi qu on
+    lui demande un plein ecran ou un deplacement."""
     ev = XEvent()
     ev.type = 33                                      # ClientMessage
     ev.xclient.type = 33

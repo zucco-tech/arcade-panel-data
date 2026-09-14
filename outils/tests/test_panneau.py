@@ -29,6 +29,7 @@ essais = []
 
 
 def essai(nom):
+    """Decorateur qui inscrit une fonction au banc d essai sous un nom lisible."""
     def decorateur(fonction):
         essais.append((nom, fonction))
         return fonction
@@ -88,6 +89,8 @@ def palette_factice(chemin):
 
 
 def lire(dossier, nom, fichier="brightness"):
+    """La valeur d un fichier d une LED du faux panneau ; « _1 » suffit, les deux
+    LED d un bouton recoivent la meme chose."""
     with open(os.path.join(dossier, nom + "_1", fichier)) as fh:
         return fh.read().strip()
 
@@ -339,6 +342,8 @@ def _(dossier, espace):
 
 
 def principal():
+    """Fait tourner tous les essais dans un dossier temporaire, un faux panneau
+    neuf pour chacun, et compte les rates."""
     dossier = tempfile.mkdtemp(prefix="panneau-essai-")
     palette = os.path.join(dossier, "rgb.sh")
     palette_factice(palette)

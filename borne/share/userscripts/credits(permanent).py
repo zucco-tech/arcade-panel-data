@@ -233,6 +233,8 @@ def journal(msg):
 # --- RetroArch -----------------------------------------------------------
 
 def ra(commande, timeout=RA_TIMEOUT):
+    """Envoie une commande au port reseau de RetroArch (UDP) et renvoie sa
+    reponse, ou None s il ne repond pas dans le delai."""
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.settimeout(timeout)
     try:
@@ -256,6 +258,8 @@ def jeu_en_cours():
 
 
 def core_en_cours():
+    """Le nom du coeur que RetroArch fait tourner, d apres GET_STATUS ; une
+    chaine vide s il ne joue rien."""
     reponse = ra("GET_STATUS")
     if not reponse or "PLAYING" not in reponse:
         return ""
@@ -273,6 +277,8 @@ RAPPORT_MAME = "/tmp/mame-credits"
 
 
 def coeur_mame(core):
+    """Vrai si ce coeur est MAME : ses credits ne se lisent pas par RetroArch
+    mais par le rapport Lua ecrit de l interieur."""
     return (core or "").lower().startswith("mame")
 
 
@@ -380,10 +386,13 @@ class Lampe:
             journal("LED %s introuvables : module allinone charge ?" % nom)
 
     def _ecrire(self, fichier, valeur):
+        """Ecrit la meme valeur dans les deux LED du bouton."""
         for chemin in self.chemins:
             ecrire_led(chemin, fichier, valeur)
 
     def _memoriser(self):
+        """Retient la couleur que chaque LED du bouton avait avant qu on la fasse
+        clignoter."""
         for chemin in self.chemins:
             if chemin not in self.origine:
                 valeur = lire_couleur(chemin)
@@ -402,6 +411,8 @@ class Lampe:
             return a.strip() == b.strip()
 
     def _rendre_couleur(self):
+        """Rend a chaque LED sa couleur d origine, sauf si la carte l a repeinte
+        entre-temps."""
         for chemin, valeur in self.origine.items():
             # recalbox_allinone_rgb.sh repeint les boutons a chaque
             # navigation, et cela peut tomber juste apres notre sortie de
@@ -414,6 +425,8 @@ class Lampe:
         self.origine.clear()
 
     def clignoter(self, maintenant, periode=PERIODE):
+        """Un pas de clignotement : au premier appel la lampe prend sa couleur,
+        puis elle s allume et s eteint a chaque periode."""
         if not self.active:
             self.active = True
             if self.couleur is not None:
@@ -466,9 +479,12 @@ class Panneau:
             journal("boutons du joueur %d introuvables" % joueur)
 
     def _ecrire(self, chemin, fichier, valeur):
+        """Ecrit dans une LED du poste."""
         ecrire_led(chemin, fichier, valeur)
 
     def _memoriser(self, chemin):
+        """Retient la couleur d origine d une LED : celle publiee par le panneau
+        du menu (la source unique), sinon celle lue dans la LED."""
         if chemin in self.origine:
             return
         valeur = couleur_de_carte(chemin)
@@ -539,6 +555,8 @@ PALETTE_DEFAUT = {
 
 
 def teinte_par_defaut(nombre, numero):
+    """La couleur d un bouton quand la fiche n en donne pas : la palette par
+    defaut pour ce nombre de boutons, blanc au-dela."""
     palette = PALETTE_DEFAUT.get(nombre) or PALETTE_DEFAUT[6]
     return palette[numero - 1] if numero - 1 < len(palette) else "white"
 
@@ -627,6 +645,8 @@ def jeu_multijoueur(base, systeme, nom):
 
 
 def champ_etat(cle):
+    """La valeur d une cle dans l etat qu EmulationStation ecrit
+    (/tmp/es_state.inf), ou une chaine vide."""
     try:
         with open(STATE_FILE, "r", errors="replace") as fh:
             for ligne in fh:
@@ -731,6 +751,8 @@ class Base:
         return self._lire(nom) or {}
 
     def _du_systeme(self, systeme):
+        """Les fiches du systeme demande, depuis son fichier ; un seul fichier de
+        systeme reste en memoire a la fois."""
         nom = "%s.json" % (systeme or "?")
         # Un seul fichier de systeme en memoire a la fois.
         for autre in [n for n in self._cache if n not in (APPRIS, PISTES, nom)]:
@@ -795,6 +817,8 @@ class Base:
         self.ecrire()
 
     def ecrire(self):
+        """Ecrit appris.json — ce que la borne a mesure elle-meme — de facon
+        atomique, et jamais quand la base est figee."""
         if self.fige:
             return
         chemin = os.path.join(self.dossier, APPRIS)
@@ -840,6 +864,8 @@ class Apprenti:
         self.oublier()
 
     def oublier(self):
+        """Efface tout ce qu on savait du jeu en cours : on repart de zero pour
+        le suivant."""
         self.jeu = None
         self.systeme = None
         self.core = None
@@ -892,6 +918,9 @@ class Apprenti:
     # -- evenements
 
     def nouveau_jeu(self, nom, systeme, core):
+        """Prepare l apprentissage d un jeu : on oublie le precedent, on retient
+        nom, systeme et coeur, et la piste que le pack de cheats suggere s il
+        y en a une."""
         self.oublier()
         self.jeu = nom
         self.systeme = systeme
@@ -936,9 +965,12 @@ class Apprenti:
 
     @property
     def cle(self):
+        """La cle de ce jeu dans la base : systeme/jeu."""
         return cle(self.systeme, self.jeu)
 
     def a_apprendre(self):
+        """Vrai s il reste quelque chose a apprendre sur ce jeu : pas d adresse
+        connue, pas trop d echecs deja, pas trop de pieces deja mises."""
         return (self.jeu is not None
                 and adresse_de(fiche_de(self.base, self.systeme, self.jeu,
                                         self.core)) is None
@@ -1069,6 +1101,8 @@ class Apprenti:
     # -- fin
 
     def conclure(self):
+        """Une adresse est confirmee : on ecrit la fiche du jeu, les autres
+        adresses confirmees en miroirs."""
         retenues = sorted(self.candidats)
         adresse = retenues[0]
         self.base.noter_fiche(self.systeme, self.jeu, {
@@ -1103,6 +1137,8 @@ class Apprenti:
     def abandonner(self, raison):
         # Un echec peut etre passager. On compte les tentatives plutot que de
         # condamner un jeu sur une seule partie malchanceuse.
+        """Le jeu n a pas livre son compteur cette fois : on note la raison et on
+        compte l essai, sans le condamner."""
         ancien = self.base.difficile(self.systeme, self.jeu)
         self.base.noter_difficile(self.systeme, self.jeu, {
             "jeu": self.jeu,
