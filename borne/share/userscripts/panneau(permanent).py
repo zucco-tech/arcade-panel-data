@@ -618,8 +618,9 @@ class Panneau:
         self.hotkey = _leds("aio_hotkey") if joueur == 1 else []
         self.present = True          # quelqu un est-il devant la borne ?
         self.dernier = None          # ce qu on a applique en dernier
-        self.derniers_args = None    # pour re-appliquer a une autre intensite
         self.facade = None           # START/SELECT de la manette d origine
+        self.systeme = ""            # le systeme montre : la place des boutons en depend
+        self.en_jeu = False          # en partie, RetroArch dit ou sont les boutons
         self.intensite = PRESENT
         self.origine = {}            # couleur posee par la carte, par led
 
@@ -636,20 +637,21 @@ class Panneau:
         if chemin in self.origine:
             ecrire(chemin, self.origine[chemin], "multi_intensity")
 
-    def appliquer(self, nombre, couleurs, allume=True, facade=None):
+    def appliquer(self, nombre, couleurs, allume=True, facade=None, systeme="", en_jeu=False):
         """Allume les `nombre` premiers boutons logiques, eteint le reste,
         et pose la couleur d origine de chacun quand la base la connait.
 
         `facade` dit ce que la manette d origine possede comme START et
-        SELECT ; None (un jeu d arcade) garde la regle de la borne."""
-        self.derniers_args = (nombre, couleurs, allume, facade)
-        self.facade = facade
+        SELECT ; None (un jeu d arcade) garde la regle de la borne.
+        `systeme` et `en_jeu` disent OU sont les boutons : Recalbox ne les
+        place pas pareil sous MAME et sous FBNeo (voir cablage.py)."""
+        self.facade, self.systeme, self.en_jeu = facade, systeme, en_jeu
         voulu = (nombre, tuple(sorted(couleurs.items())), self.intensite,
-                 tuple(sorted((facade or {}).items()))) if allume else 0
+                 tuple(sorted((facade or {}).items())), systeme, en_jeu) if allume else 0
         if voulu == self.dernier:
             return
         for position, chemins in enumerate(self.boutons):
-            numero = TABLE.bouton_de_led(self.joueur, position + 1)
+            numero = TABLE.bouton_de_led(self.joueur, position + 1, self.systeme, self.en_jeu)
             utilise = allume and numero is not None and numero <= nombre
             entree = couleurs.get("BUTTON%d" % numero) or {}
             teinte = entree.get("couleur") or teinte_par_defaut(nombre, numero)
@@ -896,13 +898,20 @@ def main():
             for p in panneaux.values():
                 p.dernier = None
         facade = decision.get("facade")
-        panneaux[1].appliquer(nombre, couleurs, facade=facade)
+        en_jeu = etat.get("Action") == "rungame"
+        panneaux[1].appliquer(nombre, couleurs, facade=facade, systeme=systeme, en_jeu=en_jeu)
         panneaux[2].appliquer(nombre, decision["couleurs_j2"], allume=deuxieme,
-                              facade=facade)
+                              facade=facade, systeme=systeme, en_jeu=en_jeu)
         if jeu != dernier_jeu:
             journal("%s : %d bouton(s), %d couleur(s), joueur 2 %s [%s]"
                     % (jeu, nombre, sum(1 for v in couleurs.values() if v.get("couleur") or v.get("rvb")),
                        "allume" if deuxieme else "eteint", origine))
+            # En partie, RetroArch a le dernier mot : si Recalbox a place les
+            # boutons autrement que sa regle, on le note — c est le signe
+            # d un remap par jeu, ou d une regle qui a change.
+            ecart = TABLE.ecart_retroarch(1, systeme) if en_jeu else []
+            if ecart:
+                journal("%s : RetroArch place les boutons autrement que la regle (%s)" % (jeu, "; ".join(ecart)))
         dernier_jeu = jeu
 
 

@@ -16,6 +16,17 @@ instances() {
     done
 }
 
+# Les shells qui attendent la fin de la partie pour relancer les credits
+# (deployer-programmes.sh). Il n en faut qu un : chaque deploiement tue les
+# precedents avant de poser le sien.
+attentes() {
+    for p in /proc/[0-9]*; do
+        pid=${p#/proc/}
+        [ "$pid" = "$$" ] && continue
+        tr '\0' ' ' < "$p/cmdline" 2>/dev/null | grep -q "while pidof retroarch" && echo "$pid"
+    done
+}
+
 # Lance une instance du programme $1, detachee, ses erreurs dans un journal
 # a part. « -u » : sans lui, python garde ses lignes en memoire et le journal
 # arrive avec des minutes de retard.

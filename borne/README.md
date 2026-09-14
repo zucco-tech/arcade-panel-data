@@ -108,6 +108,20 @@ toucher au programme, dans `manettes-consoles.json` : une couleur en vrai
 RGB, `null` pour un bouton absent, `nombre` quand Recalbox en compte trop
 peu.
 
+**Où sont les boutons du jeu — la règle de Recalbox.** Sur un panneau déclaré
+`arcade6` dans l'assistant (les boutons pressés dans l'ordre du dessin, 1 à
+6), Recalbox ne passe pas les rôles tels quels à l'émulateur : son
+`configgen` **réordonne** les six boutons pour que la rangée du bas porte
+les boutons 1 et 2 du jeu et la rangée du haut les 3, 4, 5 — sur FBNeo et
+sur toutes les consoles. **MAME**, lui, les prend dans l'ordre du dessin :
+1, 2, 3 en haut, 4, 5, 6 en bas. La famille Naomi échange encore L1 et R1,
+la Megadrive a ses propres tables. `cablage.py` recopie cette règle
+(`configgen/controllers/controller.py`, Recalbox 11) et, en partie, la
+vérifie contre `retroarchcustom.cfg` — ce que RetroArch a réellement
+chargé a le dernier mot, et un écart est écrit au journal. Ne jamais
+« corriger » `es_input.cfg` à la main pour changer la place des boutons :
+c'est cette règle qu'il faut suivre, pas contourner (leçon du 14/09/2026).
+
 ## Qui pilote les LED, et quand
 
 Deux programmes écrivent dans les LED, jamais en même temps :

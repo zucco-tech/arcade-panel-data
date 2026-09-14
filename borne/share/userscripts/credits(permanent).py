@@ -502,11 +502,12 @@ class Panneau:
         if valeur is not None:
             self.origine[chemin] = valeur
 
-    def appliquer(self, fiche, allume=True):
+    def appliquer(self, fiche, allume=True, systeme=""):
         """Eclaire le panneau selon la fiche du jeu.
 
         allume=False eteint tout : c est ce qu on fait au panneau du joueur 2
-        quand le jeu est solo.
+        quand le jeu est solo. On est en partie : la place des boutons est
+        celle que RetroArch a chargee (voir cablage.py).
         """
         nombre = (fiche or {}).get("nombre")
         couleurs = (fiche or {}).get("boutons") or {}
@@ -514,7 +515,7 @@ class Panneau:
         for position, chemins in enumerate(self.boutons):
             if not chemins:
                 continue
-            numero = TABLE.bouton_de_led(self.joueur, position + 1)
+            numero = TABLE.bouton_de_led(self.joueur, position + 1, systeme, True)
             utilise = (allume and nombre is not None and numero is not None
                        and numero <= nombre)
             for chemin in chemins:
@@ -1413,8 +1414,8 @@ def main():
                         # joueur 2 reste noir meme si le jeu est "a deux".
                         simultane = joueurs_simultanes(fiche_boutons)
                         deuxieme = multi if simultane is None else simultane
-                        panneaux[1].appliquer(fiche_boutons)
-                        panneaux[2].appliquer(fiche_boutons, allume=deuxieme)
+                        panneaux[1].appliquer(fiche_boutons, systeme=systeme)
+                        panneaux[2].appliquer(fiche_boutons, allume=deuxieme, systeme=systeme)
                         journal("%s : %s bouton(s), %s%s" % (
                             nom, fiche_boutons.get("nombre"),
                             fiche_boutons.get("mode") or "mode inconnu",

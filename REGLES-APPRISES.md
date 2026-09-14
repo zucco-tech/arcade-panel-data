@@ -365,3 +365,23 @@ toutes de notre cote, verifiees une a une en regardant l ecran :
    joueur 1 — ce qu un joueur ferait.
 4. **Le delai fixe avant la premiere piece**, comme sous FBNeo : remplace
    par l attente que la RAM vive, puis l insistance.
+
+## La place des boutons : c est Recalbox qui decide, lire son code avant de supposer
+
+Le 14/09/2026, une journee perdue a « corriger » es_input.cfg parce que le
+bouton 1 du jeu n etait pas ou le panneau l attendait. La configuration du
+joueur etait juste depuis le debut. Ce que personne n avait lu :
+`configgen/controllers/controller.py` **reordonne** les six boutons d un
+panneau `arcade6` (south east west / north l1 r1 devient west north l1 /
+south east r1), sauf pour MAME ; Naomi echange L1 et R1 ; la Megadrive a
+ses tables. Le fichier que RetroArch charge, `retroarchcustom.cfg`, le
+montre noir sur blanc a chaque lancement.
+
+1. **Quand un comportement vient de Recalbox, lire configgen d abord.**
+   Une supposition sur « la disposition standard » a coute deux
+   reecritures fausses d es_input.cfg et un rapport de bug injustifie.
+2. **retroarchcustom.cfg est la verite en jeu.** Il est reecrit a chaque
+   lancement ; le panneau le lit et note tout ecart avec la regle.
+3. **Ne jamais reecrire es_input.cfg a la place du joueur.** L assistant
+   de Recalbox produit exactement ce que configgen attend.
+

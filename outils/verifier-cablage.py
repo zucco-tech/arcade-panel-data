@@ -100,13 +100,14 @@ def tour(poste, table):
     attendus = []
     for n in range(1, 7):
         code = next((c for c, l in table._led_du_code[poste].items() if l == n), None)
-        attendus.append(("b%d" % n, code, "bouton %s du jeu" % (table.bouton_de_led(poste, n) or "?")))
+        attendus.append(("b%d" % n, code, "bouton %s FBNeo / %s MAME" % (
+            table.bouton_de_led(poste, n, "fbneo") or "?", table.bouton_de_led(poste, n, "mame") or "?")))
     for nom_led, role in FACADE:
         if nom_led == "hotkey" and poste != 1:
             continue
         attendus.append((nom_led, table.code(poste, "hotkey" if nom_led == "hotkey"
                                              else ("select" if nom_led == "start" else "start")), role))
-    print("\n--- poste %d ---" % poste, flush=True)
+    print("\n--- poste %d (bouton du jeu : sous FBNeo et les consoles Recalbox met 1 et 2 en bas ; MAME suit le dessin) ---" % poste, flush=True)
     with open(MANETTE[poste], "rb", buffering=0) as pad:
         while select.select([pad], [], [], 0)[0]:      # on vide ce qui traine
             pad.read(TAILLE)

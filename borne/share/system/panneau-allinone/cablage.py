@@ -8,14 +8,24 @@ ne doivent pas la deviner :
     allume une LED, le joueur appuie sur le bouton allume, on note le code)
     et garde dans cablage.json. Sans ce fichier, on prend la mesure du
     14/09/2026 sur la borne de reference ;
-  - quel ROLE joue chaque code — b, a, y, x, l1, r1, select, start, hotkey :
-    c est le mappage de Recalbox, es_input.cfg, celui que l on refait dans
-    « Configurer une manette ». On le lit tel quel : si le joueur remappe,
-    les LED suivent.
+  - quel ROLE Recalbox donne a chaque code — south, east, west, north, l1,
+    r1, select, start, hotkey — et de quel TYPE est la manette : c est
+    es_input.cfg, ce que l on refait dans « Configurer une manette ». On
+    le lit tel quel : si le joueur remappe, les LED suivent ;
+  - ce que le JEU voit reellement. Recalbox ne passe pas les roles tels
+    quels a l emulateur : sur un panneau d arcade a six boutons
+    (gamepadtype « arcade6 »), son configgen REORDONNE les boutons pour
+    que la rangee du bas porte les coups de pied et la rangee du haut les
+    poings — sauf pour MAME, qui les prend dans l ordre. Cette regle est
+    recopiee ici depuis configgen/controllers/controller.py (Recalbox 11,
+    lue le 14/09/2026) et verifiee contre retroarchcustom.cfg, le fichier
+    que RetroArch charge vraiment ; en jeu, c est ce fichier qui a le
+    dernier mot.
 
-De ces deux tables on deduit tout : la LED du bouton 1 du jeu (bouton 1 =
-role b sous FBNeo, b = tel code, tel code = telle LED), le code de la
-piece, du start, de la hotkey. Une seule source pour les deux programmes.
+De ces tables on deduit tout : la LED du bouton 1 du jeu (bouton 1 = role b
+sous FBNeo ; sur ce systeme, b recoit le bouton que Recalbox appelle
+north ; north = tel code ; tel code = telle LED), le code de la piece, du
+start, de la hotkey. Une seule source pour les deux programmes.
 
 A importer depuis userscripts/ :
     sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "system", "panneau-allinone"))
@@ -24,54 +34,81 @@ A importer depuis userscripts/ :
 
 import json
 import os
+import re
 import xml.etree.ElementTree as ET
 
 ES_INPUT = "/recalbox/share/system/.emulationstation/es_input.cfg"
+RETROARCH = "/recalbox/share/system/configs/retroarch/retroarchcustom.cfg"
 FICHIER_CABLAGE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "cablage.json")
 MANETTES = {1: "AllInOneP1", 2: "AllInOneP2"}
 
-# Ce que les jeux appellent bouton 1, 2, 3... : sous FBNeo (disposition
-# classique) le bouton 1 est B, le 2 est A, le 3 est Y, le 4 est X, puis
-# les gachettes. C est la seule table qui ne vienne ni de Recalbox ni du
-# cablage : c est une convention du coeur d emulation.
+# Ce que les jeux appellent bouton 1, 2, 3... : sous FBNeo comme sous MAME
+# (RetroPad classique) le bouton 1 est B, le 2 est A, le 3 est Y, le 4 est
+# X, puis les gachettes. C est une convention du coeur d emulation.
 ROLE_DU_BOUTON = {1: "b", 2: "a", 3: "y", 4: "x", 5: "l1", 6: "r1", 7: "l2", 8: "r2"}
 
 # Recalbox nomme les quatre boutons de face de deux facons selon la version :
 # les lettres du RetroPad (b, a, y, x) et les points cardinaux de SDL (south,
-# east, west, north) — c est le meme bouton, b est celui du bas, a celui de
-# droite, y celui de gauche, x celui du haut. Constate le 14/09/2026 : apres
-# une reconfiguration, es_input.cfg est passe aux points cardinaux et quatre
-# boutons sur six n avaient plus de LED. On accepte donc les deux ecritures.
+# east, west, north) — c est le meme bouton. On lit les deux, on parle en
+# lettres.
 AUTRE_NOM = {"b": "south", "a": "east", "y": "west", "x": "north",
              "south": "b", "east": "a", "west": "y", "north": "x"}
+LETTRE = {"south": "b", "east": "a", "west": "y", "north": "x"}
+# Les noms de RetroArch pour nos roles (retroarchcustom.cfg : input_player1_l_btn).
+NOM_RETROARCH = {"l1": "l", "r1": "r"}
 
 # La mesure de reference (borne du 14/09/2026), code evdev -> numero de LED
 # aio_p*_b<n>. Sert quand cablage.json manque. Les deux postes envoient les
 # memes codes sur leur propre manette.
 CABLAGE_DEFAUT = {304: 1, 305: 2, 307: 3, 313: 4, 311: 5, 310: 6}
-# Le mappage de reference de Recalbox pour cette carte, role -> code. Sert
-# quand es_input.cfg manque (les bancs d essai, une borne pas encore
-# configuree).
-ROLES_DEFAUT = {"y": 304, "x": 305, "l1": 307, "b": 313, "a": 311, "r1": 310,
+# Ce que l assistant de Recalbox ecrit pour ce panneau quand on presse les
+# boutons dans l ordre du dessin (1 a 6 : south, east, west, north, l1,
+# r1) ; sert quand es_input.cfg manque (les bancs d essai, une borne pas
+# encore configuree).
+ROLES_DEFAUT = {"b": 304, "a": 305, "y": 307, "x": 313, "l1": 311, "r1": 310,
                 "select": 314, "start": 315, "hotkey": 316}
+TYPE_DEFAUT = "arcade6"
+
+# --- la regle de Recalbox (configgen, controller.py et libretroControllers.py)
+# Panneaux consideres comme des sticks d arcade, et ceux a six boutons.
+TYPES_ARCADE = ("arcade4", "arcade6", "arcade8")
+TYPES_SIX = ("arcade6", "arcade8")
+# Les systemes que Recalbox laisse dans l ordre (_NO_SHUFFLE_ARCADE_SYSTEMS).
+SANS_REORDRE = frozenset({"mame"})
+# Sur la famille Naomi, Recalbox echange L1 et R1 pour tout stick d arcade.
+NAOMI = frozenset({"naomi", "naomigd", "atomiswave"})
+# Megadrive sur un stick d arcade : ses propres tables, role Recalbox ->
+# nom RetroArch (retroarchmegadrivebtns / retroarchmegadrive6btns).
+MEGADRIVE_3 = {"a": "b", "b": "y", "x": "x", "y": "a", "l1": "l1", "r1": "r1"}
+MEGADRIVE_6 = {"a": "b", "b": "y", "x": "x", "y": "l1", "l1": "r1", "r1": "a"}
+ROLES_DE_JEU = ("b", "a", "y", "x", "l1", "r1", "l2", "r2")
 
 
 def _lire_es_input(chemin=ES_INPUT):
-    """{nom de manette: {role: code}} d apres es_input.cfg ; {} s il manque."""
+    """{nom de manette: (roles, ids, type)} d apres es_input.cfg ; {} s il
+    manque. roles : role -> code evdev ; ids : numero SDL -> code, c est par
+    ce numero que retroarchcustom.cfg designe un bouton."""
     try:
         racine = ET.parse(chemin).getroot()
     except (OSError, ET.ParseError):
         return {}
     manettes = {}
     for config in racine.iter("inputConfig"):
-        roles = {}
+        roles, ids = {}, {}
         for entree in config.iter("input"):
-            if entree.get("type") == "button":
-                try:
-                    roles[entree.get("name")] = int(entree.get("code"))
-                except (TypeError, ValueError):
-                    pass
-        manettes[config.get("deviceName")] = roles
+            if entree.get("type") != "button":
+                continue
+            try:
+                code = int(entree.get("code"))
+            except (TypeError, ValueError):
+                continue
+            nom = entree.get("name")
+            roles[LETTRE.get(nom, nom)] = code
+            try:
+                ids[int(entree.get("id"))] = code
+            except (TypeError, ValueError):
+                pass
+        manettes[config.get("deviceName")] = (roles, ids, config.get("gamepadtype") or "standard")
     return manettes
 
 
@@ -85,43 +122,62 @@ def _lire_cablage(chemin=FICHIER_CABLAGE):
     return {int(p): {int(c): int(l) for c, l in table.items()} for p, table in postes.items()}
 
 
+def _lire_retroarch(chemin=RETROARCH):
+    """{joueur: {nom RetroArch: numero SDL}} d apres retroarchcustom.cfg, le
+    fichier que Recalbox ecrit a chaque lancement de jeu ; {} s il manque."""
+    try:
+        with open(chemin) as fh:
+            texte = fh.read()
+    except OSError:
+        return {}
+    joueurs = {}
+    for j, nom, numero in re.findall(r"^input_player(\d)_(\w+?)_btn\s*=\s*\"?(\d+)", texte, re.M):
+        joueurs.setdefault(int(j), {})[nom] = int(numero)
+    return joueurs
+
+
+def _horodate(chemin):
+    try:
+        return os.path.getmtime(chemin)
+    except OSError:
+        return None
+
+
 class Cablage:
     """Les tables d un panneau. `source` dit d ou elles viennent, pour le
     journal de demarrage.
 
     Elles se relisent toutes seules : es_input.cfg change chaque fois que
-    quelqu un reconfigure une manette dans EmulationStation, et un programme
-    qui garde l ancienne version eclaire les mauvais boutons — constate le
-    14/09/2026, un poste reconfigure et l autre pas, les deux panneaux
-    allumaient des rangees differentes. Appeler rafraichir() regulierement
-    suffit : il ne relit que si un fichier a change."""
+    quelqu un reconfigure une manette dans EmulationStation, et
+    retroarchcustom.cfg a chaque lancement de jeu. Un programme qui garde
+    l ancienne version eclaire les mauvais boutons — constate le
+    14/09/2026. Appeler rafraichir() regulierement suffit : il ne relit que
+    si un fichier a change."""
 
-    def __init__(self, es_input=ES_INPUT, fichier_cablage=FICHIER_CABLAGE):
-        self._es_input = es_input
-        self._fichier_cablage = fichier_cablage
+    def __init__(self, es_input=ES_INPUT, fichier_cablage=FICHIER_CABLAGE, retroarch=RETROARCH):
+        self._fichiers = (es_input, fichier_cablage, retroarch)
         self._dates = {}
         self._charger()
 
     def _charger(self):
-        """Lit les deux fichiers et en tire les tables ; retient leur date pour
-        savoir quand relire."""
-        es = _lire_es_input(self._es_input)
-        physique = _lire_cablage(self._fichier_cablage)
-        self._roles = {j: es.get(nom) or dict(ROLES_DEFAUT) for j, nom in MANETTES.items()}
+        """Lit les trois fichiers et en tire les tables ; retient leur date
+        pour savoir quand relire."""
+        es_input, fichier_cablage, retroarch = self._fichiers
+        es = _lire_es_input(es_input)
+        physique = _lire_cablage(fichier_cablage)
+        self._roles, self._ids, self._types = {}, {}, {}
+        for j, nom in MANETTES.items():
+            roles, ids, genre = es.get(nom) or (dict(ROLES_DEFAUT), {}, TYPE_DEFAUT)
+            self._roles[j], self._ids[j], self._types[j] = roles, ids, genre
         self._led_du_code = {j: physique.get(j) or dict(CABLAGE_DEFAUT) for j in MANETTES}
+        self._retroarch = _lire_retroarch(retroarch)
         self.source = "%s, %s" % ("es_input.cfg" if es else "roles par defaut",
                                   "cablage.json" if physique else "cablage par defaut")
         self._dates = self._horodates()
 
     def _horodates(self):
         """La date de derniere modification de chaque fichier, None s il manque."""
-        dates = {}
-        for chemin in (self._es_input, self._fichier_cablage):
-            try:
-                dates[chemin] = os.path.getmtime(chemin)
-            except OSError:
-                dates[chemin] = None
-        return dates
+        return {chemin: _horodate(chemin) for chemin in self._fichiers}
 
     def rafraichir(self):
         """Relit les tables si un fichier a change depuis la derniere fois.
@@ -132,34 +188,94 @@ class Cablage:
         self._charger()
         return True
 
+    # -- ce que Recalbox a configure
+
     def code(self, joueur, role):
-        """Le code evdev du role (« select », « start », « b »...) sur ce poste,
-        quelle que soit l ecriture des quatre boutons de face."""
+        """Le code evdev du role tel que Recalbox l a enregistre (« select »,
+        « start », « b »...), quelle que soit l ecriture des quatre boutons
+        de face. C est le bouton du MENU ; en jeu, voir disposition()."""
         roles = self._roles[joueur]
-        if role in roles:
-            return roles[role]
-        return roles.get(AUTRE_NOM.get(role, ""))
+        role = LETTRE.get(role, role)
+        return roles.get(role)
 
     def role(self, joueur, code):
-        """Le role d un code sur ce poste, ou None. Rendu dans l ecriture en
-        lettres (b, a, y, x), celle du reste du programme."""
+        """Le role Recalbox d un code sur ce poste, ou None, en lettres."""
         for r, c in self._roles[joueur].items():
             if c == code:
-                return AUTRE_NOM[r] if r in ("south", "east", "west", "north") else r
+                return r
         return None
 
     def led_du_code(self, joueur, code):
         """Le numero de LED (1..8) du bouton qui envoie ce code, ou None."""
         return self._led_du_code[joueur].get(code)
 
-    def led_du_bouton(self, joueur, numero):
-        """La LED du bouton numero N du jeu, ou None : bouton -> role -> code -> LED."""
-        code = self.code(joueur, ROLE_DU_BOUTON.get(numero, ""))
+    # -- ce que le jeu voit
+
+    def disposition(self, joueur, systeme=""):
+        """{role du jeu: code} sur ce systeme, d apres la regle de Recalbox.
+
+        Sur un panneau a six boutons, configgen transforme
+
+            south east west        west  north l1
+            north l1   r1    en    south east  r1
+
+        c est-a-dire : le role b du jeu recoit le bouton que Recalbox
+        appelle north, a recoit l1, y recoit south, x recoit east, l1
+        recoit west, r1 ne bouge pas. MAME est laisse dans l ordre ; la
+        famille Naomi echange ensuite L1 et R1 ; la Megadrive a ses tables.
+        Les boutons de facade (select, start, hotkey) ne bougent jamais."""
+        entrees = dict(self._roles[joueur])
+        genre = self._types[joueur]
+        if genre in TYPES_SIX and "l1" in entrees and systeme not in SANS_REORDRE:
+            b, a, y, x, l1 = (entrees.get(r) for r in ("b", "a", "y", "x", "l1"))
+            entrees.update({"a": l1, "b": x, "x": a, "y": b, "l1": y})
+        if genre in TYPES_ARCADE and systeme in NAOMI and "l1" in entrees and "r1" in entrees:
+            entrees["l1"], entrees["r1"] = entrees["r1"], entrees["l1"]
+        table = {r: r for r in ROLES_DE_JEU}
+        if genre in TYPES_ARCADE and systeme == "megadrive":
+            table.update(MEGADRIVE_6 if genre in TYPES_SIX else MEGADRIVE_3)
+        jeu = {ra: entrees.get(role) for role, ra in table.items() if entrees.get(role) is not None}
+        for facade in ("select", "start", "hotkey"):
+            if facade in entrees:
+                jeu[facade] = entrees[facade]
+        return jeu
+
+    def code_en_jeu(self, joueur, role):
+        """Le code que RetroArch a VRAIMENT donne a ce role dans la partie en
+        cours, d apres retroarchcustom.cfg, ou None si le fichier ne le dit
+        pas. Ne vaut que pendant une partie : hors jeu, le fichier decrit la
+        precedente."""
+        numero = self._retroarch.get(joueur, {}).get(NOM_RETROARCH.get(role, role))
+        return self._ids[joueur].get(numero) if numero is not None else None
+
+    def ecart_retroarch(self, joueur, systeme=""):
+        """Les roles ou RetroArch ne fait pas ce que la regle prevoit —
+        vide si tout concorde ou si retroarchcustom.cfg manque. A ecrire au
+        journal : c est le signe que Recalbox a change sa regle, ou qu un
+        remap par jeu s applique."""
+        if not self._retroarch.get(joueur):
+            return []
+        regle = self.disposition(joueur, systeme)
+        ecarts = []
+        for role in ROLES_DE_JEU[:6]:
+            vrai = self.code_en_jeu(joueur, role)
+            if vrai is not None and regle.get(role) != vrai:
+                ecarts.append("%s : regle %s, retroarch %s" % (role, regle.get(role), vrai))
+        return ecarts
+
+    def led_du_bouton(self, joueur, numero, systeme="", en_jeu=False):
+        """La LED du bouton numero N du jeu sur ce systeme, ou None :
+        bouton -> role -> code -> LED. En jeu, le code vient de ce que
+        RetroArch a charge ; sinon de la regle de Recalbox."""
+        role = ROLE_DU_BOUTON.get(numero, "")
+        code = self.code_en_jeu(joueur, role) if en_jeu else None
+        if code is None:
+            code = self.disposition(joueur, systeme).get(role)
         return self.led_du_code(joueur, code) if code is not None else None
 
-    def bouton_de_led(self, joueur, led):
+    def bouton_de_led(self, joueur, led, systeme="", en_jeu=False):
         """Le numero de bouton du jeu que porte cette LED, ou None."""
         for numero in ROLE_DU_BOUTON:
-            if self.led_du_bouton(joueur, numero) == led:
+            if self.led_du_bouton(joueur, numero, systeme, en_jeu) == led:
                 return numero
         return None

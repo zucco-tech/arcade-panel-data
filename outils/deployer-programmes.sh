@@ -39,6 +39,7 @@ mv -f custom.sh /recalbox/share/system/custom.sh
 cd / && rm -rf /tmp/programmes
 sh $N/relancer.sh panneau >/dev/null 2>&1
 if pidof retroarch >/dev/null; then
+    . $N/processus.sh; for pid in \$(attentes); do kill \$pid 2>/dev/null; done
     setsid nohup sh -c 'while pidof retroarch >/dev/null; do sleep 15; done; sleep 5; sh $N/relancer.sh credits >/dev/null 2>&1' >/dev/null 2>&1 &
     echo 'partie en cours : le demon des credits sera relance a sa fin'
 else
