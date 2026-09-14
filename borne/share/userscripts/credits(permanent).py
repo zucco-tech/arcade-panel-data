@@ -1311,6 +1311,12 @@ def main():
                 nouveau = lire_credits(adresse, core, nom)
                 if nouveau is None and coeur_mame(core):
                     nouveau = deduits
+                # Chaque mouvement du compteur est note : c est la preuve, en
+                # jouant, que l adresse de la fiche est la bonne — une piece
+                # fait +1, un START fait -1. Quelques lignes par partie, et
+                # de quoi verifier une fiche sans rien mesurer a la main.
+                if nouveau is not None and credits is not None and nouveau != credits:
+                    journal("%s : credits %s -> %s" % (nom, credits, nouveau))
                 # Un credit qui descend, c'est quelqu'un qui vient de lancer
                 # une partie ou de rejoindre : rien d'autre ne le consomme.
                 # C'est le signal le plus sur dont on dispose.
