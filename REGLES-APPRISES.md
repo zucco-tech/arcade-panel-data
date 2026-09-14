@@ -168,6 +168,27 @@ Recalbox et que « pas de manette » avait ete lu comme « pas de boutons ».
 Regle : un systeme absent de la table Recalbox n est pas une console, il
 garde la regle de la borne.
 
+## La carte transforme un START tenu en HOTKEY
+Le pilote de la carte AllInOne ne renvoie pas les boutons tels quels : il
+guette des « motifs » sur START (allinone.c, manage_special_inputs). Le seul
+qui joue meme quand tout est desactive :
+
+    appui bref sur START (< 1 s)   ->  START
+    START tenu 1 s ou plus         ->  HOTKEY, et pas START
+
+Consequence, constatee le 14/09/2026 en configurant les manettes : HOTKEY +
+START ne valide jamais l ecran de configuration. On tient HOTKEY, on appuie
+sur START, on le garde une seconde le temps du geste — la carte convertit ce
+START en un second HOTKEY. EmulationStation ne voit donc jamais START, et au
+bout de cinq secondes il annule. Le journal du noyau le dit mot pour mot :
+« allinone: middle press : sending HK ».
+
+La parade est dans le geste : tenir HOTKEY et **taper START tres brievement**,
+moins d une seconde. Les autres motifs (START+BTN1 = piece, START tenu 2 s =
+HK+START, volume, autofire) sont desactives par defaut et s activent dans
+recalbox-user-config.txt : dtoverlay=allinone,exit_on_start=1,
+credit_on_start_btn1=1, hk_on_start=1, sound_on_start=1, autofire=1.
+
 ## Quel bouton envoie quel code, LED par LED
 Mesure le 14/09/2026 en allumant chaque LED du poste 1 a son tour et en
 notant le code evdev recu (associer-boutons) :
