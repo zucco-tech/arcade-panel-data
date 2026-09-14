@@ -33,28 +33,19 @@ for f in "allinone[startgameclip].sh" "allinone[systembrowsing].sh"; do
     fi
 done
 
-# Couleurs astrocity, en veilleuse, le temps que le frontend demarre.
+# Le panneau en veilleuse le temps que le frontend demarre : boutons et
+# START a 77, monnayeur et touche hotkey eteints. On ne touche qu a la
+# luminosite, jamais aux couleurs : elles restent celles de la carte. (Le
+# START est la LED que le pilote appelle « select », voir panneau(permanent).py.)
+regler() {                      # $1 : nom de la LED sans son suffixe, $2 : valeur
+    for k in 1 2; do
+        [ -d "/sys/class/leds/$1_$k" ] && echo "$2" > "/sys/class/leds/$1_$k/brightness"
+    done
+}
 for j in 1 2; do
-    for b in 1 2 3 4 5 6; do
-        for k in 1 2; do
-            [ -d "/sys/class/leds/aio_p${j}_b${b}_${k}" ] || continue
-            echo "77" > "/sys/class/leds/aio_p${j}_b${b}_${k}/brightness"
-        done
-    done
-    for x in select; do
-        for k in 1 2; do
-            [ -d "/sys/class/leds/aio_p${j}_${x}_${k}" ] || continue
-            echo "77" > "/sys/class/leds/aio_p${j}_${x}_${k}/brightness"
-        done
-    done
-    for x in start; do
-        for k in 1 2; do
-            [ -d "/sys/class/leds/aio_p${j}_${x}_${k}" ] || continue
-            echo "0" > "/sys/class/leds/aio_p${j}_${x}_${k}/brightness"
-        done
-    done
+    for b in 1 2 3 4 5 6; do regler "aio_p${j}_b${b}" 77; done
+    regler "aio_p${j}_select" 77
+    regler "aio_p${j}_start" 0
 done
-for k in 1 2; do
-    [ -d "/sys/class/leds/aio_hotkey_${k}" ] && echo "0" > "/sys/class/leds/aio_hotkey_${k}/brightness"
-done
+regler aio_hotkey 0
 exit 0

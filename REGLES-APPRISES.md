@@ -135,7 +135,48 @@ en VERT et le second en ROUGE. Les deux programmes ecrivent donc dans
 l ordre (vert, rouge, bleu) — constante `ORDRE_MATERIEL = (1, 0, 2)`.
 Avant cette correction, le panneau du menu peignait a l envers tandis que le
 demon des credits peignait juste : un meme jeu changeait de couleur en
-entrant en partie, et la NES sortait rouge au lieu de verte.
+entrant en partie. Cette correction vaut pour ce qui est ecrit en vrai RGB :
+nos fiches d arcade et manettes-consoles.json. La table de Recalbox est un
+cas a part, voir ci-dessous.
+
+## La table de couleurs de Recalbox est DEJA dans l ordre du materiel
+Le script d origine `recalbox_allinone_rgb.sh` ecrit ses triplets tels quels
+dans les LED. Ses valeurs sont donc dans l ordre reel de la carte (vert,
+rouge, bleu), pas en RGB : « 00 FF 00 » y veut dire ROUGE. Lui appliquer
+notre correction la retournait — la NES et la Game Boy sortaient vertes,
+alors que leurs boutons sont rouges. Constate le 14/09/2026 en lisant les
+LED sur la borne. La preuve par la SNES : sa table, envoyee telle quelle,
+donne jaune, rouge, vert, bleu — les boutons B, A, Y, X ; corrigee, elle
+donnait jaune, vert, rouge, bleu, faux. Regle : ce qui vient de la table
+Recalbox est marque « brut » et part sans correction ; le reste est corrige.
+Et cette table est fidele presque partout — NES rouge, PSX bleu/rouge/rose/
+vert, Neo Geo jaune/bleu/rouge/vert, START rouge de la N64, bleu de la Game
+Gear. Ses 9e et 10e entrees disent meme si la manette a un SELECT et un
+START : noires sur Master System, Game Gear, Saturn, Dreamcast, GameCube.
+manettes-consoles.json ne corrige que ses rares erreurs.
+
+## Sur une borne, PIECE est un monnayeur ; sur une console, c est SELECT
+Le meme bouton du panneau change de nature avec le jeu. Sur un jeu d arcade
+c est le monnayeur : il ne sert a rien tant que personne n est devant, il
+reste noir pendant les clips. Sur une console, un ordinateur ou une
+portable, c est le SELECT de la manette, un bouton de jeu comme les autres :
+il s allume avec eux, clips compris. Sans cette distinction, on a eu les
+deux defauts a la suite : le SELECT de la Game Boy noir en veille, puis —
+en le traitant comme un bouton de manette pour tout le monde — le panneau
+entierement noir sur un clip mame, parce que mame n est pas dans la table
+Recalbox et que « pas de manette » avait ete lu comme « pas de boutons ».
+Regle : un systeme absent de la table Recalbox n est pas une console, il
+garde la regle de la borne.
+
+## Un script shell en cours d execution ne se recharge pas
+`surveiller.sh` tournait depuis le 12/09 21 h 36. Le 13/09 a 13 h 30 on y a
+ajoute la reprise acharnee. Le 13/09 a 21 h 07, a la fin du balayage MAME,
+il est passe directement a la reprise par RetroArch : l instance en cours
+suivait toujours l ancien plan, elle n a jamais vu la modification. Un
+shell lit son script au fil de l eau, mais ne le relit pas ; et modifier le
+fichier sous lui peut meme lui faire executer n importe quoi, puisqu il
+avance par position dans le fichier. Regle : on ne modifie jamais un script
+qui tourne ; on l arrete (`touch /tmp/arret-nuit`), on modifie, on relance.
 
 ## Deux programmes ne peuvent pas memoriser « la couleur d origine » chacun de son cote
 Chacun relisait `multi_intensity` au moment ou il touchait une LED. Celui qui

@@ -18,7 +18,10 @@ borne/share/                          →  /recalbox/share/
                 pistes.json               les adresses de cheats, par nom de set
                 appris.json               ce que la borne a appris elle-même (créé par elle)
             boutons-arcade.json           combien de boutons, combien de joueurs, couleurs
+            manettes-consoles.json        les manettes d'origine là où Recalbox se trompe : couleurs, START, SELECT, nombre de boutons
             relancer.sh                   sh relancer.sh credits|panneau|marquee
+            processus.sh                  ce que relancer.sh et le garde-fou ont en commun
+            sauvegardes/                  anciennes versions gardées sous la main (créé à la main)
             journaux/                     ce que les programmes ont fait, jeu par jeu (créé par eux)
             etat/                         couleurs posées, signe de vie du panneau (créé par eux)
 ```
@@ -58,15 +61,24 @@ s'allument. Les journaux disent ce que le panneau fait, jeu par jeu :
 **Dans le menu** — `panneau(permanent).py` lit l'état d'EmulationStation
 (`/tmp/es_state.inf`) et écoute les manettes sans les accaparer :
 
-- au survol d'un jeu, seuls les boutons qu'il utilise s'allument, dans ses
-  couleurs d'origine ; pour une console, le nombre de boutons de la
-  manette ; sans fiche, la table de couleurs de Recalbox pour ce système ;
-- le poste 2 reste noir pour un jeu à un joueur ;
+- au survol d'un jeu d'arcade, seuls les boutons qu'il utilise s'allument,
+  dans ses couleurs d'origine ;
+- au survol d'un jeu de console, d'ordinateur ou de portable, c'est la
+  **manette d'origine** qui s'allume : ses boutons, leurs couleurs, et son
+  START et son SELECT s'il les a — pas de SELECT sur Master System, Game
+  Gear ou N64, START rouge sur N64, bleu sur Game Gear. La table de
+  couleurs de Recalbox le sait déjà presque partout ; `manettes-consoles.json`
+  la corrige là où elle se trompe (Game Boy magenta, Master System rouge,
+  Game Boy Advance et Virtual Boy à quatre boutons) ;
+- le poste 2 reste noir pour un jeu à un joueur, en veille aussi ;
 - quelqu'un est devant (un geste sur une manette, une navigation) :
-  `PRESENT` (255, plein), les deux START et la PIÈCE allumés, le HK aussi ;
+  `PRESENT` (255, plein), START et PIÈCE allumés, le HK aussi ;
 - personne depuis `VEILLE_APRES` secondes (30), la borne se raconte toute
-  seule : `CLIP` (128, tamisé), les deux START allumés, PIÈCE et HK éteints.
-  Les clips vidéo ne réveillent pas le panneau, un joueur oui.
+  seule : `CLIP` (128, tamisé), le HK s'éteint. Sur un jeu d'arcade la
+  PIÈCE s'éteint aussi — un monnayeur n'invite personne ; sur une console
+  elle reste allumée, parce que ce bouton est le SELECT de la manette, un
+  bouton de jeu comme les autres. Les clips vidéo ne réveillent pas le
+  panneau, un joueur oui.
 
 **Pendant la partie** — `credits(permanent).py` lit le compteur de crédits
 dans la mémoire du jeu (adresse dans `credits/<système>.json`) : PIÈCE
@@ -79,7 +91,10 @@ Réglages, tous en tête de `panneau(permanent).py` : `PRESENT`, `CLIP`,
 `VEILLE_APRES`, `PORTABLES` (consoles portables : poste 2 toujours noir),
 et deux particularités de la carte prototype : `ORDRE_MATERIEL` (les WS2812B
 attendent vert, rouge, bleu) et l'échange `start`/`select` du driver
-(`LED_PIECE`, `LED_START`).
+(`LED_PIECE`, `LED_START`). Les manettes d'origine se corrigent sans
+toucher au programme, dans `manettes-consoles.json` : une couleur en vrai
+RGB, `null` pour un bouton absent, `nombre` quand Recalbox en compte trop
+peu.
 
 ## Qui pilote les LED, et quand
 

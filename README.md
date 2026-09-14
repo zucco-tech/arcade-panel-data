@@ -260,7 +260,7 @@ AllInOne (digipcb.tech)** sous Recalbox, jamais en même temps :
 
 | | |
 |---|---|
-| `borne/share/userscripts/panneau(permanent).py` | **dans le menu** : éclaire les boutons du jeu survolé, avec ses couleurs d'origine ; pour une console, le nombre de boutons de la manette ; pour un système sans fiche, la table de couleurs de Recalbox |
+| `borne/share/userscripts/panneau(permanent).py` | **dans le menu** : éclaire les boutons du jeu survolé, avec ses couleurs d'origine ; pour une console, la manette d'origine — ses boutons, ses couleurs, son START et son SELECT s'il les a — d'après la table de couleurs de Recalbox, corrigée par `manettes-consoles.json` là où elle se trompe |
 | `borne/share/userscripts/credits(permanent).py` | **pendant la partie** : lit le compteur en mémoire, fait clignoter PIÈCE puis START, allume les boutons utiles, éteint le poste 2 s'il ne sert pas ou si la cagnotte est commune |
 
 `borne/share/` est la copie exacte de la share de la borne : pour équiper une

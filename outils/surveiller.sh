@@ -56,6 +56,15 @@ verifier_diagnostic() {
     fi
 }
 
+# Vrai si ce systeme est a traiter : ses roms sont la (pour mame, le romset
+# 0.278), et l option de diagnostic de FBNeo est verifiee au passage.
+a_traiter() {
+    [ -d "/mnt/roms/$1" ] || return 1
+    [ "$1" = "mame" ] && [ ! -d /mnt/roms/mame/mame0278 ] && return 1
+    verifier_diagnostic
+    return 0
+}
+
 # Attend la fin du programme dont le numero est donne, en rendant la main
 # tout de suite si l arret est demande. Renvoie faux si on s arrete.
 attendre() {
@@ -71,9 +80,7 @@ n=0
 while [ ! -f "$ARRET" ]; do
     for sys in $SYSTEMES; do
         [ -f "$ARRET" ] && break
-        [ -d "/mnt/roms/$sys" ] || continue
-        [ "$sys" = "mame" ] && [ ! -d /mnt/roms/mame/mame0278 ] && continue
-        verifier_diagnostic
+        a_traiter "$sys" || continue
         note "coeur direct : $sys ($PARALLELE releves en parallele)"
         sh /mnt/recalbox/outils/balayer.sh "$sys" "$PARALLELE" \
             > "$JOURNAUX/balayage-$sys-$(date +%Y%m%d-%H%M).log" 2>&1 &
@@ -87,9 +94,7 @@ while [ ! -f "$ARRET" ]; do
     # Les ecartes ou le jeu tournait : on s acharne, avec les memes regles.
     for sys in $SYSTEMES; do
         [ -f "$ARRET" ] && break
-        [ -d "/mnt/roms/$sys" ] || continue
-        [ "$sys" = "mame" ] && [ ! -d /mnt/roms/mame/mame0278 ] && continue
-        verifier_diagnostic
+        a_traiter "$sys" || continue
         note "reprise acharnee : $sys"
         ACHARNE=1 sh /mnt/recalbox/outils/balayer.sh "$sys" "$PARALLELE" \
             > "$JOURNAUX/balayage-acharne-$sys-$(date +%Y%m%d-%H%M).log" 2>&1 &
@@ -103,7 +108,7 @@ while [ ! -f "$ARRET" ]; do
     # Cette passe prend l ecran, mais seulement pour celles-la.
     for sys in $SYSTEMES; do
         [ -f "$ARRET" ] && break
-        verifier_diagnostic
+        a_traiter "$sys" || continue
         note "reprise par RetroArch : $sys"
         DISPLAY=:0 python3 -u /mnt/recalbox/outils/nuit-credits.py \
             --direct --reessayer --systeme "$sys" --roms /mnt/roms --base "$BASE" \
