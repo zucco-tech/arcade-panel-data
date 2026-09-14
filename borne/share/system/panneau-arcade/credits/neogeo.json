@@ -1,37 +1,36 @@
 {
   "description": "Adresse RAM du compteur de credits de chaque jeu de ce systeme, indexee par nom de set. Se lit par l'interface reseau de RetroArch : READ_CORE_RAM <adresse> 1 en UDP sur le port 55355.",
   "difficiles": {
-    "avengers": {
-      "jeu": "avengers",
-      "le": "2026-09-12",
-      "raison": "rom refusee ([FBNeo] Using ROM with known crc 0x5052fa9d and name tbb_1bpr.1e from archive /mnt/roms/neogeo/avengers | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
-      "systeme": "neogeo"
-    },
     "bloodstm": {
+      "core": "FinalBurn Neo",
       "jeu": "bloodstm",
       "le": "2026-09-12",
       "raison": "rom refusee ([FBNeo] Driver bloodstm was successfully started : game's full name is Blood Storm (v2.22) | [FBNeo] Unknown device type for port 0, forcing \"Classic\" instead |)",
       "systeme": "neogeo"
     },
     "gg-bios": {
+      "core": "FinalBurn Neo",
       "jeu": "gg-bios",
       "le": "2026-09-12",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeo"
     },
     "ironclad": {
+      "core": "FinalBurn Neo",
       "jeu": "ironclad",
       "le": "2026-09-12",
       "raison": "rom refusee ([FBNeo] Using ROM with known crc 0x5a86cff2 and name 000-lo.lo from archive /mnt/roms/neogeo/neogeo | DIPSWITCH Neo Geo Mode selected => NeoSystem: 0x%02x. | [F)",
       "systeme": "neogeo"
     },
     "neogeo": {
+      "core": "FinalBurn Neo",
       "jeu": "neogeo",
       "le": "2026-09-12",
       "raison": "rom refusee (Setting system dir to /root/.config/retroarch/system | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe gi)",
       "systeme": "neogeo"
     },
     "sftm": {
+      "core": "FinalBurn Neo",
       "jeu": "sftm",
       "le": "2026-09-12",
       "raison": "rom refusee ([FBNeo] Driver sftm was successfully started : game's full name is Street Fighter: The Movie (v1.12) | [FBNeo] Unknown device type for port 0, forcing \"Classic\")",
@@ -47,6 +46,7 @@
       "vu_le": "2026-09-11"
     },
     "uni-bios-32": {
+      "core": "FinalBurn Neo",
       "jeu": "uni-bios-32",
       "le": "2026-09-12",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
