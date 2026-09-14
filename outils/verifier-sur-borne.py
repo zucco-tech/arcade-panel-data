@@ -33,6 +33,13 @@ COEURS = {"fbneo": "fbneo_libretro.so", "neogeo": "fbneo_libretro.so",
           "neogeocd": "fbneo_libretro.so", "fba": "fbneo_libretro.so"}
 PORT = 55355
 FRONTEND = "/etc/init.d/S31emulationstation"
+# Les attentes, en secondes. Le balayage du PC laisse bien plus de temps a
+# un jeu pour demarrer ; ici on veut aller vite, mais un jeu lent a se
+# reveiller (Pinball Action) rendrait un faux ecart. On peut donc les
+# allonger en argument : verifier-sur-borne.py echantillon rapport [boot] [start].
+ATTENTE_BOOT = 6.0                    # apres que le coeur repond, avant la piece
+ATTENTE_PIECE = 1.5                   # entre la piece et la lecture
+ATTENTE_START = 2.5                   # entre le START et la lecture
 
 
 def udp(texte, attendre=True, timeout=0.6):
@@ -92,22 +99,27 @@ def controler(fiche, clavier, journal):
     try:
         if not attendre_le_jeu(adresse, octets):
             return "NON LANCE   le jeu n a pas demarre en 30 s"
-        time.sleep(6.0)                       # le temps d arriver en attract
+        time.sleep(ATTENTE_BOOT)              # le temps d arriver en attract
         avant = lire(adresse, octets)
         if fiche.get("entree_piece") and fiche["entree_piece"] != "select":
             clavier.bouton(fiche["entree_piece"])
         else:
             clavier.piece()
-        time.sleep(1.5)
+        time.sleep(ATTENTE_PIECE)
         apres_piece = lire(adresse, octets)
         clavier.start()
-        time.sleep(2.5)
+        time.sleep(ATTENTE_START)
         apres_start = lire(adresse, octets)
         suite = "%s -> %s -> %s" % (avant, apres_piece, apres_start)
         if None in (avant, apres_piece, apres_start):
             return "ILLISIBLE   %s" % suite
-        if apres_piece == avant + 1 and apres_start < apres_piece:
+        if apres_piece == avant + 1 and apres_start == avant:
             return "OK          %s" % suite
+        if apres_piece == avant + 1 and apres_start < apres_piece:
+            # Il descend, mais pas de un : le demon s en contente (il ne
+            # regarde que le sens), mais ce n est pas un compteur de credits
+            # ordinaire — a noter, pas a valider les yeux fermes.
+            return "DESCEND     %s (pas de -1 franc)" % suite
         if apres_piece == avant + 1:
             return "PIECE SEULE %s (le START n a pas consomme)" % suite
         return "ECART       %s (la piece n a pas monte le compteur)" % suite
@@ -123,8 +135,13 @@ def controler(fiche, clavier, journal):
 
 
 def main():
+    global ATTENTE_BOOT, ATTENTE_START
     echantillon = json.load(open(sys.argv[1]))
     sortie = sys.argv[2]
+    if len(sys.argv) > 3:
+        ATTENTE_BOOT = float(sys.argv[3])
+    if len(sys.argv) > 4:
+        ATTENTE_START = float(sys.argv[4])
     if subprocess.call(["pidof", "retroarch"], stdout=subprocess.DEVNULL) == 0:
         print("une partie est en cours : on ne touche pas a la borne")
         return 2

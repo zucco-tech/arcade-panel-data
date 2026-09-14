@@ -54,7 +54,7 @@ done
 # --- erreurs et relances ---
 erreurs=$(cat $N/journaux/*-erreurs.log 2>/dev/null | wc -l)
 relances=$(grep -c "relance" $N/journaux/gardefou.log 2>/dev/null)
-derniere=$(tail -n 1 $N/journaux/gardefou.log 2>/dev/null | cut -c1-16)
+derniere=$(grep "relance" $N/journaux/gardefou.log 2>/dev/null | tail -n 1 | cut -c1-16)
 echo "erreurs    $erreurs ligne(s) dans les journaux d erreurs ; $relances relance(s) par le garde-fou${derniere:+, derniere le $derniere}"
 [ "$erreurs" -gt 0 ] && echo "ALERTE     $erreurs erreur(s) : lire $N/journaux/*-erreurs.log"
 

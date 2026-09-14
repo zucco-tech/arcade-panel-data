@@ -1,7 +1,7 @@
 #!/bin/sh
 # Fait rejouer l echantillon par la borne elle-meme, et rapatrie le rapport.
 #
-#   sh /mnt/recalbox/outils/verifier-sur-borne.sh [/mnt/recalbox/donnees/echantillon.json]
+#   sh /mnt/recalbox/outils/verifier-sur-borne.sh [echantillon.json] [attente boot] [attente start]
 #
 # A ne lancer que quand personne ne joue : EmulationStation est arrete le
 # temps du controle (une dizaine de minutes pour vingt fiches) et relance a
@@ -11,6 +11,7 @@
 BORNE=root@192.168.1.50
 OUTILS=/mnt/recalbox/outils
 ECHANTILLON=${1:-/mnt/recalbox/donnees/echantillon.json}
+ATTENTES="${2:-} ${3:-}"                  # secondes, voir verifier-sur-borne.py
 JOURNAL=/mnt/recalbox/journaux/verification-borne-$(date +%Y%m%d).log
 INVITE=$OUTILS/.mdp-borne.sh
 [ -x "$INVITE" ] || { printf '#!/bin/sh\necho recalboxroot\n' > "$INVITE"; chmod 700 "$INVITE"; }
@@ -21,7 +22,10 @@ SCP="setsid -w scp -q -o StrictHostKeyChecking=no"
 $SSH $BORNE "mkdir -p /tmp/verification" 2>/dev/null || { echo "borne injoignable"; exit 1; }
 $SCP "$OUTILS/verifier-sur-borne.py" "$OUTILS/clavier_virtuel.py" "$ECHANTILLON" $BORNE:/tmp/verification/ 2>/dev/null
 echo "=== controle sur la borne, $(date '+%Y-%m-%d %H:%M') ===" | tee -a "$JOURNAL"
-$SSH $BORNE "cd /tmp/verification && python3 verifier-sur-borne.py $(basename "$ECHANTILLON") rapport.json" 2>/dev/null | tee -a "$JOURNAL"
-code=$?
+# Le code de retour est celui du controle, pas celui de tee : on l ecrit
+# dans un fichier de passage.
+RESULTAT=$(mktemp)
+$SSH $BORNE "cd /tmp/verification && python3 verifier-sur-borne.py $(basename "$ECHANTILLON") rapport.json $ATTENTES" 2>/dev/null > "$RESULTAT"; code=$?
+cat "$RESULTAT" | tee -a "$JOURNAL"; rm -f "$RESULTAT"
 $SSH $BORNE "rm -rf /tmp/verification" 2>/dev/null
 exit $code
