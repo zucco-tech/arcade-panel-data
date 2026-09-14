@@ -41,6 +41,7 @@ def ecrire(poste, nom, valeur):
 
 
 def lire(poste, nom):
+    """La luminosite actuelle d une LED, pour la rendre telle quelle a la fin."""
     try:
         with open("%s/aio_p%d_%s_1/brightness" % (LEDS, poste, nom)) as fh:
             return fh.read().strip()

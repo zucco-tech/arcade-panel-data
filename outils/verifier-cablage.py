@@ -46,6 +46,8 @@ FACADE = [("start", "PIECE"), ("select", "START"), ("hotkey", "HOTKEY")]
 
 
 def ecrire(poste, nom, fichier, valeur):
+    """Ecrit la meme valeur dans les deux LED d un bouton ; le hotkey n existe
+    que sur le poste 1."""
     cible = "aio_hotkey" if nom == "hotkey" else "aio_p%d_%s" % (poste, nom)
     for k in (1, 2):
         try:
@@ -56,6 +58,7 @@ def ecrire(poste, nom, fichier, valeur):
 
 
 def eteindre_tout(poste):
+    """Eteint tous les boutons du poste, pour qu un seul soit allume a la fois."""
     for nom in list(COULEURS):
         if nom == "hotkey" and poste != 1:
             continue
@@ -63,6 +66,7 @@ def eteindre_tout(poste):
 
 
 def arreter_panneau():
+    """Arrete le programme du menu : il repeindrait les LED pendant le tour."""
     for p in os.listdir("/proc"):
         if not p.isdigit():
             continue

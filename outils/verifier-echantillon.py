@@ -33,6 +33,7 @@ ROMS = {"fbneo": "/mnt/roms/fbneo", "mame": "/mnt/roms/mame/mame0278"}
 
 
 def charger(chemin):
+    """Le contenu d un fichier JSON."""
     with open(chemin) as fh:
         return json.load(fh)
 

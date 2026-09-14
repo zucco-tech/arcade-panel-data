@@ -103,6 +103,8 @@ class Cablage:
         self._charger()
 
     def _charger(self):
+        """Lit les deux fichiers et en tire les tables ; retient leur date pour
+        savoir quand relire."""
         es = _lire_es_input(self._es_input)
         physique = _lire_cablage(self._fichier_cablage)
         self._roles = {j: es.get(nom) or dict(ROLES_DEFAUT) for j, nom in MANETTES.items()}
@@ -112,6 +114,7 @@ class Cablage:
         self._dates = self._horodates()
 
     def _horodates(self):
+        """La date de derniere modification de chaque fichier, None s il manque."""
         dates = {}
         for chemin in (self._es_input, self._fichier_cablage):
             try:
@@ -160,7 +163,3 @@ class Cablage:
             if self.led_du_bouton(joueur, numero) == led:
                 return numero
         return None
-
-    def est_bouton_de_jeu(self, joueur, code):
-        """Vrai pour un bouton d action, faux pour piece, start, hotkey ou inconnu."""
-        return self.role(joueur, code) in ROLE_DU_BOUTON.values()

@@ -74,6 +74,7 @@ def lire(adresse, octets):
 
 
 def attendre_le_jeu(adresse, octets, delai=30.0):
+    """Attend que le coeur tourne ET rende sa memoire, au plus `delai` secondes."""
     fin = time.time() + delai
     while time.time() < fin:
         etat = udp("GET_STATUS") or ""
@@ -84,6 +85,8 @@ def attendre_le_jeu(adresse, octets, delai=30.0):
 
 
 def controler(fiche, clavier, journal):
+    """Une fiche : lance le jeu, met une piece, appuie sur START, et dit ce que
+    le compteur a fait."""
     systeme, jeu = fiche["systeme"], fiche["jeu"]
     coeur = COEURS.get(systeme)
     rom = os.path.join(ROMS, systeme, jeu + ".zip")

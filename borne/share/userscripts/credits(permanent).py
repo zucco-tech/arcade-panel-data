@@ -600,6 +600,16 @@ def joueurs_simultanes(fiche_boutons):
     return None            # pas d avis : on s en remet au constat sur la borne
 
 
+def _en_forme(fh):
+    """Ce fichier a-t-il la forme que nos ecritures produisent — accolade
+    seule sur la premiere ligne, sections a deux espaces ? Si oui, il se lit
+    en flux ; sinon il faut le charger entierement. Le curseur est rendu au
+    debut dans les deux cas."""
+    premiere, seconde = fh.readline(), fh.readline()
+    fh.seek(0)
+    return premiere.rstrip() == "{" and seconde.startswith('  "')
+
+
 def entree_json(chemin, section, cle):
     """Une seule entree d un gros fichier JSON, sans le charger en entier.
 
@@ -615,11 +625,8 @@ def entree_json(chemin, section, cle):
     voulu = "    %s: " % json.dumps(cle, ensure_ascii=False)
     try:
         with open(chemin, encoding="utf-8") as fh:
-            premiere, seconde = fh.readline(), fh.readline()
-            if premiere.rstrip() != "{" or not seconde.startswith('  "'):
-                fh.seek(0)
+            if not _en_forme(fh):
                 return (json.load(fh).get(section) or {}).get(cle)
-            fh.seek(0)
             dans, bloc = None, None
             for ligne in fh:
                 if bloc is not None:
@@ -651,11 +658,8 @@ def compter_entrees(chemin, section):
     message de demarrage."""
     try:
         with open(chemin, encoding="utf-8") as fh:
-            premiere, seconde = fh.readline(), fh.readline()
-            if premiere.rstrip() != "{" or not seconde.startswith('  "'):
-                fh.seek(0)
+            if not _en_forme(fh):
                 return len(json.load(fh).get(section) or {})
-            fh.seek(0)
             dans, n = None, 0
             for ligne in fh:
                 if ligne.startswith('  "'):
