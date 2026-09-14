@@ -576,16 +576,86 @@ def joueurs_simultanes(fiche_boutons):
     return None            # pas d avis : on s en remet au constat sur la borne
 
 
-def charger_boutons():
-    """La base des boutons. Absente : on n eclaire simplement rien."""
+def entree_json(chemin, section, cle):
+    """Une seule entree d un gros fichier JSON, sans le charger en entier.
+
+    Les fichiers du PC (credits/<systeme>.json, pistes.json) et la base des
+    boutons sont ecrits par nous, indent=2 et cles triees : une section est
+    une cle a deux espaces (« "jeux": { »), chaque entree une cle a quatre
+    (« "1942": { ») qui se ferme par «    } ». On lit donc ligne par ligne et
+    on ne garde que le bloc voulu. Mesure du 14/09/2026 sur la borne :
+    fbneo.json (4,8 Mo) pesait 14 Mo une fois charge, la base des boutons
+    6 Mo — pour une seule fiche utile a la fois ; en flux, rien ne reste.
+    Un fichier qui n a pas cette forme (petit, ecrit a la main, un essai)
+    est charge normalement. Renvoie l entree, ou None si elle manque."""
+    voulu = "    %s: " % json.dumps(cle, ensure_ascii=False)
     try:
-        with open(BASE_BOUTONS) as fh:
-            return json.load(fh).get("jeux", {})
+        with open(chemin, encoding="utf-8") as fh:
+            premiere, seconde = fh.readline(), fh.readline()
+            if premiere.rstrip() != "{" or not seconde.startswith('  "'):
+                fh.seek(0)
+                return (json.load(fh).get(section) or {}).get(cle)
+            fh.seek(0)
+            dans, bloc = None, None
+            for ligne in fh:
+                if bloc is not None:
+                    bloc.append(ligne)
+                    if ligne.rstrip() in ("    }", "    },"):
+                        break
+                elif ligne.startswith('  "'):
+                    dans = ligne[3:ligne.index('"', 3)]
+                elif dans == section and ligne.startswith(voulu):
+                    bloc = [ligne]
+                    if ligne[len(voulu):].rstrip() not in ("{", "{}", "{},"):
+                        # une valeur sur une ligne, ou un objet vide : fini
+                        if not ligne[len(voulu):].startswith("{"):
+                            break
+                    if ligne[len(voulu):].rstrip() in ("{}", "{},"):
+                        break
+            if bloc is None:
+                return None
+            return json.loads("{" + "".join(bloc).rstrip().rstrip(",") + "}").get(cle)
     except (IOError, OSError):
-        return {}
+        return None
     except ValueError as err:
-        journal("base des boutons illisible : %s" % err)
-        return {}
+        journal("%s illisible (%s)" % (os.path.basename(chemin), err))
+        return None
+
+
+def compter_entrees(chemin, section):
+    """Combien d entrees dans une section, sans charger le fichier — pour le
+    message de demarrage."""
+    try:
+        with open(chemin, encoding="utf-8") as fh:
+            premiere, seconde = fh.readline(), fh.readline()
+            if premiere.rstrip() != "{" or not seconde.startswith('  "'):
+                fh.seek(0)
+                return len(json.load(fh).get(section) or {})
+            fh.seek(0)
+            dans, n = None, 0
+            for ligne in fh:
+                if ligne.startswith('  "'):
+                    dans = ligne[3:ligne.index('"', 3)]
+                elif dans == section and ligne.startswith('    "'):
+                    n += 1
+            return n
+    except (IOError, OSError, ValueError):
+        return 0
+
+
+class BoutonsSurDisque:
+    """La base des boutons, lue fiche par fiche au moment ou l on en a besoin
+    — une fois par partie — au lieu d etre gardee en memoire."""
+
+    def __init__(self, chemin):
+        self.chemin = chemin
+
+    def get(self, jeu):
+        """La fiche de boutons d un jeu, ou None."""
+        return entree_json(self.chemin, "jeux", jeu)
+
+    def __len__(self):
+        return compter_entrees(self.chemin, "jeux")
 
 
 # --- Manettes ------------------------------------------------------------
@@ -713,7 +783,8 @@ class Base:
 
     def __init__(self, dossier):
         self.dossier = dossier
-        self._cache = {}                 # nom de fichier -> (mtime, contenu)
+        self._cache = {}                 # nom de fichier -> (mtime, contenu), pour appris.json
+        self._entrees = {}               # (fichier, section, cle) -> (mtime, entree)
         appris = self._lire(APPRIS)
         # Un fichier appris illisible : on ne l'ecrase surtout pas, il
         # contient peut-etre des releves recuperables a la main.
@@ -746,22 +817,27 @@ class Base:
         self._cache[nom] = (mtime, contenu)
         return contenu
 
-    def _du_pc(self, nom):
-        """Un fichier depose par le PC : {} s'il manque ou ne se lit pas."""
-        return self._lire(nom) or {}
-
-    def _du_systeme(self, systeme):
-        """Les fiches du systeme demande, depuis son fichier ; un seul fichier de
-        systeme reste en memoire a la fois."""
-        nom = "%s.json" % (systeme or "?")
-        # Un seul fichier de systeme en memoire a la fois.
-        for autre in [n for n in self._cache if n not in (APPRIS, PISTES, nom)]:
-            del self._cache[autre]
-        return self._du_pc(nom)
+    def _entree(self, nom, section, cle):
+        """Une entree d un fichier depose par le PC, lue en flux et retenue
+        tant que le fichier n a pas change — une partie relit la meme fiche
+        trois fois par seconde, le disque ne doit pas le sentir."""
+        chemin = os.path.join(self.dossier, nom)
+        try:
+            mtime = os.path.getmtime(chemin)
+        except OSError:
+            return None
+        rep = (nom, section, cle)
+        if rep in self._entrees and self._entrees[rep][0] == mtime:
+            return self._entrees[rep][1]
+        if len(self._entrees) > 32:      # une poignee de fiches, jamais plus
+            self._entrees.clear()
+        valeur = entree_json(chemin, section, cle)
+        self._entrees[rep] = (mtime, valeur)
+        return valeur
 
     def fiche(self, systeme, jeu):
         """La fiche d'un jeu : celle du PC, sinon celle apprise ici."""
-        du_pc = (self._du_systeme(systeme).get("jeux") or {}).get(jeu)
+        du_pc = self._entree("%s.json" % (systeme or "?"), "jeux", jeu)
         apprise = (self.appris.get("jeux") or {}).get(cle(systeme, jeu))
         if du_pc and apprise and apprise.get("joueurs"):
             return dict(du_pc, joueurs=apprise["joueurs"])
@@ -769,12 +845,12 @@ class Base:
 
     def piste(self, jeu):
         """L'adresse suggeree par un pack de cheats, ou None."""
-        return (self._du_pc(PISTES).get("pistes") or {}).get(jeu)
+        return self._entree(PISTES, "pistes", jeu)
 
     def difficile(self, systeme, jeu):
         """Ce qu'on sait d'un jeu recalcitrant : la borne d'abord, puis le PC."""
         return ((self.appris.get("difficiles") or {}).get(cle(systeme, jeu))
-                or (self._du_systeme(systeme).get("difficiles") or {}).get(jeu)
+                or self._entree("%s.json" % (systeme or "?"), "difficiles", jeu)
                 or {})
 
     def systemes(self):
@@ -1164,7 +1240,7 @@ def main():
     piece2 = Lampe("piece J2", LEDS_PIECE_P2, COULEUR_PIECE)
     deuxieme = True                # tant qu on ne sait pas, on n eteint rien
     panneaux = {1: Panneau(1), 2: Panneau(2)}
-    boutons = charger_boutons()
+    boutons = BoutonsSurDisque(BASE_BOUTONS)
     pads = ouvrir_pads()
     apprenti = Apprenti(base)
 

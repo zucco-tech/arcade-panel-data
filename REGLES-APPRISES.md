@@ -168,6 +168,16 @@ Recalbox et que « pas de manette » avait ete lu comme « pas de boutons ».
 Regle : un systeme absent de la table Recalbox n est pas une console, il
 garde la regle de la borne.
 
+## Le joystick est une activite, et 45 secondes ne font pas une fin de partie
+Le demon des credits ne sait pas si l on joue ou si le jeu est revenu en
+attract : apres START le compteur est a zero dans les deux cas. Il tranche
+au silence des manettes. Deux erreurs corrigees le 14/09/2026 : seules les
+touches comptaient, pas le joystick — un jeu mene au stick passait pour
+abandonne — et 45 s suffisaient, alors qu un joueur qui lit l ecran ou
+reflechit les depasse sans peine ; son START se mettait a clignoter en
+pleine partie. Desormais tout geste compte, stick compris, et il faut deux
+minutes de silence complet.
+
 ## Un script shell en cours d execution ne se recharge pas
 `surveiller.sh` tournait depuis le 12/09 21 h 36. Le 13/09 a 13 h 30 on y a
 ajoute la reprise acharnee. Le 13/09 a 21 h 07, a la fin du balayage MAME,
