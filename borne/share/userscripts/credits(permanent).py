@@ -130,6 +130,14 @@ LEDS_JEU = {
 # Si l ordre ne correspond pas a ton panneau, c est la seule ligne a changer.
 ORDRE_BOUTONS = [3, 4, 5, 1, 2, 6, 7, 8]
 
+# Ce que chaque bouton envoie quand on l appuie, LED par LED. Mesure le
+# 14/09/2026 sur la borne en allumant chaque LED a son tour et en notant le
+# code recu (associer-boutons). Le poste 2 envoie les memes codes sur sa
+# propre manette. C est ce qui permet de savoir SUR QUEL bouton le joueur a
+# valide, et donc d apprendre, jeu par jeu, lequel guider.
+CODES_LED = {304: 1, 305: 2, 307: 3, 313: 4, 311: 5, 310: 6}   # code evdev -> aio_p*_b<n>
+LED_BOUTON1 = ORDRE_BOUTONS.index(1) + 1     # la LED du bouton 1 : le guide par defaut
+
 # Couleurs nommees par la base des boutons, telles qu elles sont ecrites sur
 # les vraies bornes. Le materiel attend du G R B, la fonction couleur() s en
 # charge.
@@ -916,6 +924,22 @@ class Base:
         self.ecrire()
         journal("%s : joueur 2 %s" % (jeu, "accepte" if accepte else "refuse"))
 
+    def validation(self, systeme, jeu):
+        """La LED du bouton qui valide sur ce jeu, apprise en jouant ; None
+        tant qu on ne l a pas vu."""
+        return ((self.appris.get("jeux") or {}).get(cle(systeme, jeu)) or {}).get("valide")
+
+    def noter_validation(self, systeme, jeu, led):
+        """Retient le bouton que le joueur a presse pour valider apres START :
+        chaque jeu a sa logique de touches, et c est le joueur qui la montre."""
+        fiche = self.appris.setdefault("jeux", {}).setdefault(cle(systeme, jeu), {})
+        if fiche.get("valide") == led:
+            return
+        fiche["valide"] = led
+        fiche["valide_constate_le"] = time.strftime("%Y-%m-%d")
+        self.ecrire()
+        journal("%s : le bouton qui valide est la LED %d" % (jeu, led))
+
     def noter_difficile(self, systeme, jeu, contenu):
         """Un echec de recherche, compte pour ne pas condamner trop vite."""
         self.appris.setdefault("difficiles", {})[cle(systeme, jeu)] = contenu
@@ -1267,13 +1291,15 @@ def main():
     start = Lampe("start", LEDS_START, COULEUR_START)
     start2 = Lampe("start J2", LEDS_START_P2, COULEUR_START)
     piece2 = Lampe("piece J2", LEDS_PIECE_P2, COULEUR_PIECE)
-    # Le bouton 1 de chaque poste, celui qui valide : ORDRE_BOUTONS dit a
-    # quelle place physique il est.
-    place_b1 = ORDRE_BOUTONS.index(1)
-    guides = {j: Lampe("bouton 1 J%d" % j, LEDS_JEU.get(j, [])[place_b1] if len(LEDS_JEU.get(j, [])) > place_b1 else (), None)
-              for j in (1, 2)}
-    guide_depuis = {1: 0.0, 2: 0.0}  # quand le bouton 1 commence a pulser
-    guide_jusqu = {1: 0.0, 2: 0.0}   # quand il s'arrete, faute d'appui
+    # Une lampe par LED de jeu et par poste : le guide fait pulser celle du
+    # bouton qui valide — le bouton 1 par defaut, ou celui que le joueur a
+    # utilise la derniere fois sur ce jeu.
+    lampes = {j: {n: Lampe("LED %d J%d" % (n, j), (LEDS_JEU.get(j) or [()] * 8)[n - 1], None)
+                  for n in range(1, 7)} for j in (1, 2)}
+    guide_led = {1: LED_BOUTON1, 2: LED_BOUTON1}   # quelle LED guide, par poste
+    guide_depuis = {1: 0.0, 2: 0.0}  # quand elle commence a pulser
+    guide_jusqu = {1: 0.0, 2: 0.0}   # quand elle s'arrete, faute d'appui
+    guide_montre = {1: False, 2: False}   # a-t-elle pulse ? alors le 1er appui apprend
     deuxieme = True                # tant qu on ne sait pas, on n eteint rien
     panneaux = {1: Panneau(1), 2: Panneau(2)}
     boutons = BoutonsSurDisque(BASE_BOUTONS)
@@ -1289,9 +1315,10 @@ def main():
 
     def guider(joueur):
         """Ce joueur vient d appuyer sur START : si rien ne bouge d ici
-        DELAI_GUIDE, son bouton 1 pulsera pour dire qu il valide."""
+        DELAI_GUIDE, la LED du bouton qui valide pulsera."""
         guide_depuis[joueur] = maintenant + DELAI_GUIDE
         guide_jusqu[joueur] = guide_depuis[joueur] + GUIDE
+        guide_montre[joueur] = False
 
     def demarrer(joueur):
         """Un START vient d engager une partie pour ce joueur."""
@@ -1324,6 +1351,7 @@ def main():
     # lance, tout s eteint.
     deduits = 0
     lance = False              # START a ete presse avec du credit : on joue
+    systeme = ""               # celui du jeu en cours, des qu il est connu
     multi = False              # le jeu accepte au moins deux joueurs
     p2_engage = False          # le joueur 2 a pris sa place
     depuis_lance = 0.0         # quand la partie a demarre
@@ -1354,7 +1382,13 @@ def main():
                     if code not in (CODE_PIECE, CODE_START):
                         # Une touche de jeu : un signe de vie, et le joueur a
                         # trouve le bouton qui valide — son guide s'arrete.
-                        guide_jusqu[2 if pads[fd].endswith("P2") else 1] = 0.0
+                        # Si le guide avait pulse, c est qu il hesitait : ce
+                        # premier bouton EST celui qui valide sur ce jeu, on
+                        # le retient pour la prochaine fois.
+                        j = 2 if pads[fd].endswith("P2") else 1
+                        if guide_montre[j] and code in CODES_LED and nom:
+                            base.noter_validation(systeme, nom, CODES_LED[code])
+                        guide_jusqu[j], guide_montre[j] = 0.0, False
                         continue
                     if coeur_mame(core):
                         # Sous MAME, les boutons SONT le compteur.
@@ -1415,6 +1449,7 @@ def main():
                     if not coeur_mame(core):
                         apprenti.nouveau_jeu(nom, systeme, core)
                     multi = jeu_multijoueur(base, systeme, nom)
+                    guide_led[1] = guide_led[2] = base.validation(systeme, nom) or LED_BOUTON1
                     adresse = adresse_de(fiche_de(base, systeme, nom, core))
                     journal("%s/%s : %s" % (systeme, nom,
                                             "0x%04X" % adresse if adresse
@@ -1498,11 +1533,14 @@ def main():
 
             # Le bouton 1 pulse quelques secondes apres un START, puis se
             # stabilise : repos() ne fait rien s il n a pas ete lance.
-            for j, lampe in guides.items():
-                if en_jeu and guide_depuis[j] <= maintenant < guide_jusqu[j]:
-                    lampe.clignoter(maintenant, GUIDE_PERIODE)
-                else:
-                    lampe.repos()
+            for j in (1, 2):
+                for n, lampe in lampes[j].items():
+                    if (n == guide_led[j] and en_jeu
+                            and guide_depuis[j] <= maintenant < guide_jusqu[j]):
+                        lampe.clignoter(maintenant, GUIDE_PERIODE)
+                        guide_montre[j] = True
+                    else:
+                        lampe.repos()
 
             # Joueur 2 : sur un jeu a deux, pendant que le joueur 1 joue et
             # tant qu'il n'a pas pris sa place, le poste 2 l'invite — comme

@@ -83,10 +83,13 @@ s'allument. Les journaux disent ce que le panneau fait, jeu par jeu :
 **Pendant la partie** — `credits(permanent).py` lit le compteur de crédits
 dans la mémoire du jeu (adresse dans `credits/<système>.json`) : PIÈCE
 clignote tant qu'il n'y a pas de crédit, START prend le relais dès qu'il y
-en a un, puis tout reste fixe — sauf le **bouton 1** : si rien n'est
-pressé dans les deux secondes qui suivent START, c'est que l'écran attend
-un choix (personnage, mode), et il pulse pour dire que c'est lui qui valide,
-jusqu'au premier appui. Un jeu qui démarre direct ne le montre jamais. Sur un jeu à deux, pendant que le joueur 1 joue, le
+en a un, puis tout reste fixe — sauf le **bouton qui valide** : si rien
+n'est pressé dans les deux secondes qui suivent START, c'est que l'écran
+attend un choix (personnage, mode), et il pulse jusqu'au premier appui. Un
+jeu qui démarre direct ne le montre jamais. Chaque jeu a sa logique de
+touches : la première fois c'est le bouton 1 qui est proposé, et le bouton
+que le joueur presse alors est retenu dans `appris.json` (`valide`) — la
+fois suivante, c'est lui qui pulse. Sur un jeu à deux, pendant que le joueur 1 joue, le
 poste 2 invite : son START clignote s'il reste du crédit, sa PIÈCE sinon.
 Chaque mouvement du compteur est noté dans `journaux/credits.log`
 (`credits 0 -> 1`) : la preuve, en jouant, que l'adresse est la bonne. Deux

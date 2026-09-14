@@ -21,7 +21,7 @@ def lampe(nom):
         open(os.path.join(d, "brightness"), "w").write("255")
         open(os.path.join(d, "multi_intensity"), "w").write(ORIGINE); c.append(d)
     return tuple(c)
-L_PIECE, L_START, L_B1 = lampe("piece"), lampe("start"), lampe("b1")
+L_PIECE, L_START, L_B1, L_LED1 = lampe("piece"), lampe("start"), lampe("b1"), lampe("led1")
 lecture, ecriture = os.pipe()
 ETAT = os.path.join(RACINE, "es.inf")
 CREDITS = os.path.join(RACINE, "credits"); os.makedirs(CREDITS)
@@ -29,8 +29,9 @@ APPRIS = os.path.join(CREDITS, "appris.json")     # ce que la borne apprend
 json.dump({"jeux": {"testgame": {"credits": {"adresse": ADRESSE}}}}, open(os.path.join(CREDITS, "fbneo.json"), "w"))
 ra = FauxRetroArch(PORT_RA, adresse_credits=ADRESSE); ra.start()
 cp.DOSSIER_CREDITS, cp.LEDS_PIECE, cp.LEDS_START = CREDITS, L_PIECE, L_START
-# Le bouton 1 est a la 4e place physique (ORDRE_BOUTONS) ; le poste 2 n a rien ici.
-cp.LEDS_JEU = {1: [(), (), (), L_B1, (), (), (), ()], 2: []}
+# Le bouton 1 est a la 4e place physique (ORDRE_BOUTONS) ; la LED 1 (code 304)
+# est a la premiere. Le poste 2 n a rien ici.
+cp.LEDS_JEU = {1: [L_LED1, (), (), L_B1, (), (), (), ()], 2: []}
 cp.RA_HOTE, cp.RA_PORT = "127.0.0.1", PORT_RA
 cp.STATE_FILE, cp.JOURNAL = ETAT, os.path.join(RACINE, "log")
 cp.ouvrir_pads = lambda: {lecture: "AllInOneP1"}
@@ -65,9 +66,11 @@ verifier("le bouton piece se calme", observer(L_PIECE, 1.0) == {"255"})
 print("\n--- le cas signale : on appuie sur START ---")
 appui(cp.CODE_START); ra.credits(-1); time.sleep(1.5)
 verifier("le joueur hesite : le bouton 1 pulse, c'est lui qui valide", len(observer(L_B1, 1.5)) > 1)
-appui(304)                                 # le joueur appuie sur un bouton de jeu : il a trouve
+appui(304)                                 # le joueur valide avec la LED 1, pas le bouton 1
 time.sleep(0.4)
 verifier("des qu'on joue, il se stabilise, allume", observer(L_B1, 1.0, jouer=True) == {"255"})
+verifier("la base retient : sur ce jeu, c'est la LED 1 qui valide",
+         (json.load(open(APPRIS))["jeux"].get("fbneo/testgame") or {}).get("valide") == 1)
 verifier("credit retombe a 0 : LE PIECE NE CLIGNOTE PAS", observer(L_PIECE, 2.5, jouer=True) == {"255"})
 verifier("le start non plus", observer(L_START, 1.5, jouer=True) == {"255"})
 verifier("les couleurs sont d'origine",
@@ -84,5 +87,14 @@ verifier("apres le silence : le piece reclignote", len(observer(L_PIECE, 2.5)) >
 
 etat("endgame"); time.sleep(1.2)
 verifier("sortie : tout est rendu", lu(L_PIECE) == "255" and lu(L_START) == "255")
+
+print("\n--- partie suivante : c'est le bouton appris qui guide ---")
+etat("rungame"); ra.ram[ADRESSE] = 0; time.sleep(1.5)
+ra.credits(+1); appui(cp.CODE_PIECE); time.sleep(1.0)
+appui(cp.CODE_START); ra.credits(-1); time.sleep(1.5)
+verifier("la LED 1, apprise, pulse", len(observer(L_LED1, 1.5)) > 1)
+verifier("le bouton 1, lui, reste fixe", observer(L_B1, 1.0) == {"255"})
+appui(304); time.sleep(0.4)
+etat("endgame"); time.sleep(1.0)
 ra.stop = True
 print("\n%s" % ("TOUT EST BON" if not echecs else "ECHECS : " + ", ".join(echecs)))

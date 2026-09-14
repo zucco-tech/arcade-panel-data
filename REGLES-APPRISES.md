@@ -168,6 +168,17 @@ Recalbox et que « pas de manette » avait ete lu comme « pas de boutons ».
 Regle : un systeme absent de la table Recalbox n est pas une console, il
 garde la regle de la borne.
 
+## Quel bouton envoie quel code, LED par LED
+Mesure le 14/09/2026 en allumant chaque LED du poste 1 a son tour et en
+notant le code evdev recu (associer-boutons) :
+
+    LED b1 -> 304   b2 -> 305   b3 -> 307   b4 -> 313   b5 -> 311   b6 -> 310
+    PIECE (select) -> 314   START -> 315   hotkey -> 316
+
+Le poste 2 envoie les memes codes sur sa manette. Avec ORDRE_BOUTONS
+(LED 4 = bouton 1), le bouton 1 du jeu est donc le code 313. C est ce qui
+permet au demon des credits d apprendre, jeu par jeu, quel bouton valide.
+
 ## Le joystick est une activite, et 45 secondes ne font pas une fin de partie
 Le demon des credits ne sait pas si l on joue ou si le jeu est revenu en
 attract : apres START le compteur est a zero dans les deux cas. Il tranche
