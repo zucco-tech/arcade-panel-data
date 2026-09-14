@@ -56,7 +56,7 @@ def charger(dossier, palette):
     source = open(PROGRAMME).read().split("def main():")[0]
     source = source.replace('PALETTE_RECALBOX = "/recalbox/scripts/recalbox_allinone_rgb.sh"',
                             'PALETTE_RECALBOX = %r' % palette)
-    espace = {"__name__": "panneau_essai"}
+    espace = {"__name__": "panneau_essai", "__file__": PROGRAMME}   # pour trouver cablage.py a cote
     exec(compile(source, PROGRAMME, "exec"), espace)
     return espace
 

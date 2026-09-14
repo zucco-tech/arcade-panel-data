@@ -40,7 +40,16 @@ import os
 import re
 import select
 import struct
+import sys
 import time
+
+# Quelle LED porte quel bouton du jeu : le module commun cablage.py, a cote
+# des donnees de la borne, le deduit du mappage Recalbox (es_input.cfg) et du
+# cablage mesure (cablage.json). Le demon des credits lit la meme chose.
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                "..", "system", "panneau-allinone"))
+import cablage
+TABLE = cablage.Cablage()
 
 ETAT = "/tmp/es_state.inf"
 BASE_BOUTONS = "/recalbox/share/system/panneau-allinone/boutons-arcade.json"
@@ -70,11 +79,6 @@ COULEURS_CARTE = "/recalbox/share/system/panneau-allinone/etat/couleurs-carte.js
 BATTEMENT = "/recalbox/share/system/panneau-allinone/etat/panneau-vivant"
 PERIODE_BATTEMENT = 2.0
 
-# Meme correspondance que credits(permanent).py, reprise de
-# recalbox_allinone_rgb.sh : la LED n eclaire le bouton ORDRE[n].
-#     rangee haute : LED 1 2 3  ->  boutons 3 4 5
-#     rangee basse : LED 4 5 6  ->  boutons 1 2 6
-ORDRE_BOUTONS = [3, 4, 5, 1, 2, 6]
 # La racine des LED. Reglable pour que le banc d essai fabrique un faux
 # panneau dans un dossier temporaire et verifie ce qu on y ecrit.
 RACINE_LEDS = os.environ.get("PANNEAU_LEDS", "/sys/class/leds")
@@ -383,7 +387,9 @@ def couleurs_de_carte(systeme):
         table = connue or RECALBOX.get("astrocityp%d" % joueur) or []
         if not table:
             continue
-        for place, numero in enumerate(ORDRE_BOUTONS + [7, 8], 1):
+        # L ordre est celui du script Recalbox lui-meme, pas de notre cablage :
+        # ses LED 1 a 8 recoivent les entrees 3,4,5,1,2,6,7,8 de sa table.
+        for place, numero in enumerate([3, 4, 5, 1, 2, 6, 7, 8], 1):
             if numero - 1 >= len(table):
                 continue
             for chemin in _leds("aio_p%d_b%d" % (joueur, place)):
@@ -643,8 +649,8 @@ class Panneau:
         if voulu == self.dernier:
             return
         for position, chemins in enumerate(self.boutons):
-            numero = ORDRE_BOUTONS[position] if position < len(ORDRE_BOUTONS) else position + 1
-            utilise = allume and numero <= nombre
+            numero = TABLE.bouton_de_led(self.joueur, position + 1)
+            utilise = allume and numero is not None and numero <= nombre
             entree = couleurs.get("BUTTON%d" % numero) or {}
             teinte = entree.get("couleur") or teinte_par_defaut(nombre, numero)
             rvb = entree.get("rvb") or TEINTES.get((teinte or "").strip().lower())
@@ -790,6 +796,7 @@ def main():
     en_partie = False
     battement = 0.0
     intensite = None                 # fixee au premier tour
+    journal("tables du panneau : %s" % TABLE.source)
     journal("%d manette(s) ecoutee(s) pour la veille" % len(manettes))
 
     while True:

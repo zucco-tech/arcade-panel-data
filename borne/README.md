@@ -19,6 +19,8 @@ borne/share/                          →  /recalbox/share/
                 appris.json               ce que la borne a appris elle-même (créé par elle)
             boutons-arcade.json           combien de boutons, combien de joueurs, couleurs
             manettes-consoles.json        les manettes d'origine là où Recalbox se trompe : couleurs, START, SELECT, nombre de boutons
+            cablage.py                    qui est qui sur le panneau : rôles (es_input.cfg) × câblage (cablage.json) → LED de chaque bouton
+            cablage.json                  quel bouton envoie quel code, LED par LED — mesuré par associer-boutons
             relancer.sh                   sh relancer.sh credits|panneau|marquee
             processus.sh                  ce que relancer.sh et le garde-fou ont en commun
             sauvegardes/                  anciennes versions gardées sous la main (créé à la main)
@@ -102,7 +104,11 @@ Réglages, tous en tête de `panneau(permanent).py` : `PRESENT`, `CLIP`,
 `VEILLE_APRES`, `PORTABLES` (consoles portables : poste 2 toujours noir),
 et deux particularités de la carte prototype : `ORDRE_MATERIEL` (les WS2812B
 attendent vert, rouge, bleu) et l'échange `start`/`select` du driver
-(`LED_PIECE`, `LED_START`). Les manettes d'origine se corrigent sans
+(`LED_PIECE`, `LED_START`). Quelle LED porte quel bouton n'est **pas** un
+réglage : `cablage.py` le déduit du mappage Recalbox (`es_input.cfg`, celui
+de « Configurer une manette ») et du câblage mesuré (`cablage.json`). On
+remappe dans Recalbox, les LED suivent ; on recâble, on relance
+`outils/associer-boutons.sh` et elles suivent aussi. Les manettes d'origine se corrigent sans
 toucher au programme, dans `manettes-consoles.json` : une couleur en vrai
 RGB, `null` pour un bouton absent, `nombre` quand Recalbox en compte trop
 peu.

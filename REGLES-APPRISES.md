@@ -175,9 +175,13 @@ notant le code evdev recu (associer-boutons) :
     LED b1 -> 304   b2 -> 305   b3 -> 307   b4 -> 313   b5 -> 311   b6 -> 310
     PIECE (select) -> 314   START -> 315   hotkey -> 316
 
-Le poste 2 envoie les memes codes sur sa manette. Avec ORDRE_BOUTONS
-(LED 4 = bouton 1), le bouton 1 du jeu est donc le code 313. C est ce qui
-permet au demon des credits d apprendre, jeu par jeu, quel bouton valide.
+Le poste 2 envoie les memes codes sur sa manette. Cette mesure vit dans
+cablage.json ; le role de chaque code (b, a, y, x, l1, r1, select, start,
+hotkey) vient d es_input.cfg, le mappage de Recalbox ; et cablage.py croise
+les deux : bouton 1 du jeu = role b = code 313 = LED 4. Plus rien n est en
+dur : si un joueur remappe sa manette dans Recalbox, ou cable ses boutons
+autrement et relance associer-boutons, les LED suivent au lieu de se
+decaler.
 
 ## Le joystick est une activite, et 45 secondes ne font pas une fin de partie
 Le demon des credits ne sait pas si l on joue ou si le jeu est revenu en

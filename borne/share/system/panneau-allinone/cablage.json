@@ -1,0 +1,8 @@
+{
+  "description": "Quel bouton physique envoie quel code, LED par LED : code evdev -> numero de LED aio_p<poste>_b<n>. Mesure avec associer-boutons : on allume une LED, le joueur appuie sur le bouton allume, on note le code.",
+  "mesure_le": "2026-09-14",
+  "postes": {
+    "1": {"304": 1, "305": 2, "307": 3, "313": 4, "311": 5, "310": 6}
+  },
+  "lisez_moi": "Le poste 2 n a pas encore ete mesure : le programme prend alors la meme table que le poste 1, ce qui est le cas d une carte AllInOne cablee comme la premiere. Relancer associer-boutons.sh pour le mesurer."
+}

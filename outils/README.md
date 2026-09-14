@@ -27,7 +27,9 @@ surveiller.sh                 le point d'entrée : enchaîne les systèmes, jour
 | `clavier_virtuel.py`, `clavier_xtest.py` | les claviers virtuels de `nuit-credits.py` : `uinput`, ou XTEST sur un serveur X précis |
 | `fenetre_x.py`, `capture_fenetre.py` | pour `nuit-credits.py` : plein écran sur un moniteur choisi, et photo du jeu quand il ne réagit pas |
 | `exporter-pour-borne.py` | découpe la base en un fichier par système, la forme que lit la borne |
+| `associer-boutons.sh` / `.py` | mesure sur la borne quel bouton porte quelle LED (une LED s'allume, on appuie dessus, six fois) et rapporte `cablage.json` ; à refaire si l'on recâble, une fois pour le poste 2 |
 | `deployer-vers-borne.sh` | met les fichiers en place sur la borne, par renommage, sans rien redémarrer ; tient à jour la copie `borne/share/` du dépôt |
+| `deployer-programmes.sh` | met les **programmes** du dépôt en place sur la borne (userscripts, `panneau-allinone/`, `custom.sh`) et relance ce qui doit l'être — le démon des crédits seulement hors partie |
 | `importer-cheats.py` | tire des pistes des bases de cheats FBNeo et MAME |
 | `importer-boutons.py`, `suivre-boutons.sh` | construit la base des boutons depuis arcade-database, et la tient à jour |
 | `relever-entrees.py` | ce que chaque jeu déclare comme entrées, demandé au cœur lui-même |

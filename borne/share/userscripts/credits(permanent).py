@@ -42,6 +42,7 @@ Aucune dependance : uniquement la bibliotheque standard.
 import glob
 import json
 import os
+import sys
 import re
 import select
 import signal
@@ -120,23 +121,16 @@ LEDS_JEU = {
         for n in range(1, 9)],
 }
 
-# Correspondance entre le bouton logique du jeu (BUTTON1, BUTTON2...) et la
-# LED physique. Reprise de recalbox_allinone_rgb.sh, qui range le panneau
-# ainsi :
-#
-#     rangee haute : LED 1 2 3   ->  boutons 3 4 5
-#     rangee basse : LED 4 5 6   ->  boutons 1 2 6
-#
-# Si l ordre ne correspond pas a ton panneau, c est la seule ligne a changer.
-ORDRE_BOUTONS = [3, 4, 5, 1, 2, 6, 7, 8]
-
-# Ce que chaque bouton envoie quand on l appuie, LED par LED. Mesure le
-# 14/09/2026 sur la borne en allumant chaque LED a son tour et en notant le
-# code recu (associer-boutons). Le poste 2 envoie les memes codes sur sa
-# propre manette. C est ce qui permet de savoir SUR QUEL bouton le joueur a
-# valide, et donc d apprendre, jeu par jeu, lequel guider.
-CODES_LED = {304: 1, 305: 2, 307: 3, 313: 4, 311: 5, 310: 6}   # code evdev -> aio_p*_b<n>
-LED_BOUTON1 = ORDRE_BOUTONS.index(1) + 1     # la LED du bouton 1 : le guide par defaut
+# Qui est qui sur le panneau — quel bouton envoie quel code, quel code joue
+# quel role, quelle LED porte le bouton 1 du jeu — n est plus ecrit ici :
+# c est le module commun cablage.py, a cote des donnees de la borne, qui le
+# lit dans es_input.cfg (le mappage Recalbox, remappable) et cablage.json
+# (le physique, mesure par associer-boutons). Si l un manque, il prend les
+# valeurs de la borne de reference. Le panneau du menu lit la meme chose.
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                "..", "system", "panneau-allinone"))
+import cablage
+TABLE = cablage.Cablage()
 
 # Couleurs nommees par la base des boutons, telles qu elles sont ecrites sur
 # les vraies bornes. Le materiel attend du G R B, la fonction couleur() s en
@@ -170,8 +164,8 @@ def couleur(rouge, vert, bleu):
 COULEUR_PIECE = couleur(0xFF, 0x00, 0x00)   # rouge : mets une piece
 COULEUR_START = None                        # sa couleur d'origine
 
-CODE_PIECE = 314                # BTN_SELECT
-CODE_START = 315                # BTN_START
+CODE_PIECE = 314                # BTN_SELECT — valeur de secours, voir cablage.py
+CODE_START = 315                # BTN_START  — idem
 
 # Appuyer sur START consomme le credit : le compteur retombe a zero alors
 # qu'on est en train de jouer. C'est le silence du panneau qui dit qu'une
@@ -534,8 +528,9 @@ class Panneau:
         for position, chemins in enumerate(self.boutons):
             if not chemins:
                 continue
-            numero = ORDRE_BOUTONS[position] if position < len(ORDRE_BOUTONS) else position + 1
-            utilise = allume and nombre is not None and numero <= nombre
+            numero = TABLE.bouton_de_led(self.joueur, position + 1)
+            utilise = (allume and nombre is not None and numero is not None
+                       and numero <= nombre)
             for chemin in chemins:
                 self._memoriser(chemin)
                 if not utilise:
@@ -1296,7 +1291,7 @@ def main():
     # utilise la derniere fois sur ce jeu.
     lampes = {j: {n: Lampe("LED %d J%d" % (n, j), (LEDS_JEU.get(j) or [()] * 8)[n - 1], None)
                   for n in range(1, 7)} for j in (1, 2)}
-    guide_led = {1: LED_BOUTON1, 2: LED_BOUTON1}   # quelle LED guide, par poste
+    guide_led = {j: TABLE.led_du_bouton(j, 1) or 4 for j in (1, 2)}   # quelle LED guide, par poste
     guide_depuis = {1: 0.0, 2: 0.0}  # quand elle commence a pulser
     guide_jusqu = {1: 0.0, 2: 0.0}   # quand elle s'arrete, faute d'appui
     guide_montre = {1: False, 2: False}   # a-t-elle pulse ? alors le 1er appui apprend
@@ -1306,6 +1301,7 @@ def main():
     pads = ouvrir_pads()
     apprenti = Apprenti(base)
 
+    journal("tables du panneau : %s" % TABLE.source)
     journal("demarrage — credits pour %s (%d appris ici), %d jeux avec "
             "boutons, %d+%d+%d LED, %d pad(s)"
             % (", ".join(base.systemes()) or "aucun systeme",
@@ -1376,41 +1372,45 @@ def main():
                 codes, bouge = appuis(fd)
                 if en_jeu and (codes or bouge):
                     derniere_activite = maintenant
+                j = 2 if pads[fd].endswith("P2") else 1
+                # La piece et le start de CE poste, d apres le mappage Recalbox.
+                piece_j = TABLE.code(j, "select") or CODE_PIECE
+                start_j = TABLE.code(j, "start") or CODE_START
                 for code in codes:
                     if not en_jeu:
                         continue
-                    if code not in (CODE_PIECE, CODE_START):
+                    if code not in (piece_j, start_j):
                         # Une touche de jeu : un signe de vie, et le joueur a
                         # trouve le bouton qui valide — son guide s'arrete.
                         # Si le guide avait pulse, c est qu il hesitait : ce
                         # premier bouton EST celui qui valide sur ce jeu, on
                         # le retient pour la prochaine fois.
-                        j = 2 if pads[fd].endswith("P2") else 1
-                        if guide_montre[j] and code in CODES_LED and nom:
-                            base.noter_validation(systeme, nom, CODES_LED[code])
+                        led = TABLE.led_du_code(j, code)
+                        if guide_montre[j] and led and nom:
+                            base.noter_validation(systeme, nom, led)
                         guide_jusqu[j], guide_montre[j] = 0.0, False
                         continue
                     if coeur_mame(core):
                         # Sous MAME, les boutons SONT le compteur.
-                        if code == CODE_PIECE:
+                        if code == piece_j:
                             deduits += 1
                         elif deduits > 0:
                             deduits -= 1
-                            demarrer(2 if pads[fd].endswith("P2") else 1)
-                    if code == CODE_START and pads[fd].endswith("P2"):
+                            demarrer(j)
+                    if code == start_j and j == 2:
                         p2_engage = True    # il a rejoint, on cesse de l'appeler
                         if credits:
                             guider(2)
                             # On regarde si le jeu accepte vraiment : s'il
                             # consomme le credit, il est bien a deux.
                             essai_j2 = (maintenant, credits)
-                    if code == CODE_START and credits and not lance:
+                    if code == start_j and credits and not lance:
                         # La partie demarre : plus rien ne clignote, comme
                         # sur une vraie borne. Le cas ou le compteur n'est
                         # pas encore connu est rattrape plus bas, en voyant
                         # le credit se faire consommer.
                         demarrer(1)
-                    trouvee = (apprenti.piece() if code == CODE_PIECE
+                    trouvee = (apprenti.piece() if code == piece_j
                                else apprenti.start())
                     if trouvee is not None:
                         adresse = trouvee
@@ -1449,7 +1449,8 @@ def main():
                     if not coeur_mame(core):
                         apprenti.nouveau_jeu(nom, systeme, core)
                     multi = jeu_multijoueur(base, systeme, nom)
-                    guide_led[1] = guide_led[2] = base.validation(systeme, nom) or LED_BOUTON1
+                    for j in (1, 2):
+                        guide_led[j] = base.validation(systeme, nom) or TABLE.led_du_bouton(j, 1) or 4
                     adresse = adresse_de(fiche_de(base, systeme, nom, core))
                     journal("%s/%s : %s" % (systeme, nom,
                                             "0x%04X" % adresse if adresse
