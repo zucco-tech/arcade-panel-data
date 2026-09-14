@@ -14,22 +14,18 @@ PROGRAMME="$U/$NOM(permanent).py"
 mkdir -p "$N/journaux" "$N/etat"
 [ -f "$PROGRAMME" ] || { echo "inconnu : $NOM"; exit 1; }
 
-for p in /proc/[0-9]*; do
-    pid=${p#/proc/}
-    [ "$pid" = "$$" ] && continue
-    comm=$(cat "$p/comm" 2>/dev/null)
-    case "$comm" in python3|python) ;; *) continue ;; esac
-    if tr '\0' ' ' < "$p/cmdline" 2>/dev/null | grep -q "userscripts/$NOM(permanent)"; then
-        kill "$pid" 2>/dev/null
-    fi
-done
+# Les numeros des instances de ce programme, sauf ce shell lui-meme.
+instances() {
+    for p in /proc/[0-9]*; do
+        pid=${p#/proc/}
+        [ "$pid" = "$$" ] && continue
+        case "$(cat "$p/comm" 2>/dev/null)" in python3|python) ;; *) continue ;; esac
+        tr '\0' ' ' < "$p/cmdline" 2>/dev/null | grep -q "userscripts/$NOM(permanent)" && echo "$pid"
+    done
+}
+
+for pid in $(instances); do kill "$pid" 2>/dev/null; done
 sleep 2
 cd "$U" && setsid nohup /usr/bin/python -u "$PROGRAMME" >> "$N/journaux/$NOM-erreurs.log" 2>&1 &
 sleep 3
-vivants=0
-for p in /proc/[0-9]*; do
-    comm=$(cat "$p/comm" 2>/dev/null)
-    case "$comm" in python3|python) ;; *) continue ;; esac
-    tr '\0' ' ' < "$p/cmdline" 2>/dev/null | grep -q "userscripts/$NOM(permanent)" && vivants=$((vivants + 1))
-done
-echo "$NOM : $vivants instance(s)"
+echo "$NOM : $(instances | wc -l) instance(s)"

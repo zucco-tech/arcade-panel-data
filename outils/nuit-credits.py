@@ -150,14 +150,6 @@ class Borne:
         self.coeur_lance = None
         self.coeur_nomme = None          # nom observe, quand l appelant le sait
 
-    def port_ra(self):
-        """Le port de commande de CETTE instance.
-
-        Avec plusieurs RetroArch ouverts en meme temps, un seul peut ecouter
-        sur 55355 : chacun a donc le sien.
-        """
-        return self.port
-
     def _udp(self, port, texte, attendre_reponse=True, timeout=0.6):
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         sock.settimeout(timeout)
@@ -454,6 +446,18 @@ def ouvrir_clavier(affichage):
     return ClavierVirtuel("clavier-credits")
 
 
+
+def journal_retroarch():
+    """Le journal de RetroArch tel quel, ou None s il n est pas lisible.
+
+    Il est ecrit sur le NAS et arrive en retard : a lire apres un delai
+    confortable, jamais dans la seconde qui suit un lancement."""
+    try:
+        with open(os.path.join(JOURNAUX_RA, "retroarch.log"), "rb") as fh:
+            return fh.read().decode("utf-8", "replace")
+    except OSError:
+        return None
+
 def romset_inconnu():
     """Vrai si FBNeo ne connait pas du tout ce set.
 
@@ -466,11 +470,8 @@ def romset_inconnu():
     arrive en retard. Interroge a huit secondes, ce controle avait produit 23
     faux positifs sur 20 jeux. A vingt-cinq secondes, le doute n existe plus.
     """
-    chemin = os.path.join(JOURNAUX_RA, "retroarch.log")
-    try:
-        with open(chemin, "rb") as fh:
-            texte = fh.read().decode("utf-8", "replace")
-    except OSError:
+    texte = journal_retroarch()
+    if texte is None:
         return False
     return "[FBNeo]" in texte and "Romset name" not in texte
 
@@ -485,11 +486,8 @@ def refus_fbneo():
 
     Renvoie la raison, ou None si la rom n a pas ete refusee.
     """
-    chemin = os.path.join(JOURNAUX_RA, "retroarch.log")
-    try:
-        with open(chemin, "rb") as fh:
-            texte = fh.read().decode("utf-8", "replace")
-    except OSError:
+    texte = journal_retroarch()
+    if texte is None:
         return None
     # On ne se fie qu a des messages EXPLICITES. Deduire un refus de
     # l ABSENCE de « Romset name: » a produit 23 faux positifs sur 20 jeux :
@@ -731,6 +729,22 @@ def photographier_echec(jeu, raison):
         pass
 
 
+
+def montees_depuis(borne, avant, candidats):
+    """Une photo de plus, et les adresses qui ont monte d exactement un.
+
+    Renvoie (candidats, photo) : les adresses encore en lice, croisees avec
+    les precedentes, et la photo qui servira de base au prochain tour. (None,
+    None) quand la photo est inutilisable ou qu il ne reste plus personne.
+    Un compteur de credits ne depasse pas 99 : au-dela, ce n en est pas un."""
+    apres = borne.photo()
+    if apres is None or len(apres) != len(avant):
+        return None, None
+    montes = {a for a in range(len(apres))
+              if apres[a] == (avant[a] + 1) & 0xFF and avant[a] < 0x99}
+    candidats = montes if candidats is None else candidats & montes
+    return (candidats or None), apres
+
 def chercher_avec(borne, appuyer, arret, essais=3, assez=4):
     """Cherche l octet qui monte de 1 a chaque appui sur UNE entree donnee.
 
@@ -750,14 +764,8 @@ def chercher_avec(borne, appuyer, arret, essais=3, assez=4):
         arret()
         appuyer()
         time.sleep(1.2)
-        apres = borne.photo()
-        if apres is None or len(apres) != len(avant):
-            return set()
-        montes = {a for a in range(len(apres))
-                  if apres[a] == (avant[a] + 1) & 0xFF and avant[a] < 0x99}
-        candidats = montes if candidats is None else candidats & montes
-        avant = apres
-        if not candidats:
+        candidats, avant = montees_depuis(borne, avant, candidats)
+        if candidats is None:
             return set()
         if len(candidats) <= assez:
             break
@@ -770,11 +778,8 @@ def est_neogeo():
     Un jeu Neo Geo charge toujours son BIOS depuis neogeo.zip ; le journal de
     RetroArch le montre. C est la seule facon fiable de le savoir depuis ici.
     """
-    chemin = os.path.join(JOURNAUX_RA, "retroarch.log")
-    try:
-        with open(chemin, "rb") as fh:
-            texte = fh.read().decode("utf-8", "replace")
-    except OSError:
+    texte = journal_retroarch()
+    if texte is None:
         return False
     return "neogeo" in texte.lower()
 
@@ -846,14 +851,8 @@ def chercher_joueur2(borne, clavier, arret, journal):
         arret()
         clavier.piece_j2()
         time.sleep(1.5)
-        apres = borne.photo()
-        if apres is None or len(apres) != len(avant):
-            return set()
-        montes = {a for a in range(len(apres))
-                  if apres[a] == (avant[a] + 1) & 0xFF and avant[a] < 0x99}
-        candidats = montes if candidats is None else candidats & montes
-        avant = apres
-        if not candidats:
+        candidats, avant = montees_depuis(borne, avant, candidats)
+        if candidats is None:
             return set()
         if len(candidats) <= ASSEZ_J2:
             break

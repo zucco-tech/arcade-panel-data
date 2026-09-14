@@ -328,6 +328,24 @@ def panneau_vivant():
         return False
 
 
+def ecrire_led(chemin, fichier, valeur):
+    """Ecrit dans un fichier d une LED ; une erreur est notee, jamais fatale."""
+    try:
+        with open(os.path.join(chemin, fichier), "w") as fh:
+            fh.write(valeur)
+    except IOError as err:
+        journal("%s/%s : %s" % (chemin, fichier, err))
+
+
+def lire_couleur(chemin):
+    """La couleur posee dans multi_intensity, ou None si illisible."""
+    try:
+        with open(os.path.join(chemin, "multi_intensity")) as fh:
+            return fh.read().strip()
+    except IOError:
+        return None
+
+
 def couleur_de_carte(chemin_led):
     """La couleur que la carte porte pour cette LED, telle que publiee par
     panneau(permanent).py. None si le fichier n existe pas encore."""
@@ -363,28 +381,14 @@ class Lampe:
 
     def _ecrire(self, fichier, valeur):
         for chemin in self.chemins:
-            try:
-                with open(os.path.join(chemin, fichier), "w") as fh:
-                    fh.write(valeur)
-            except IOError as err:
-                journal("%s/%s : %s" % (chemin, fichier, err))
+            ecrire_led(chemin, fichier, valeur)
 
     def _memoriser(self):
         for chemin in self.chemins:
-            if chemin in self.origine:
-                continue
-            try:
-                with open(os.path.join(chemin, "multi_intensity")) as fh:
-                    self.origine[chemin] = fh.read().strip()
-            except IOError:
-                pass
-
-    def _lire_couleur(self, chemin):
-        try:
-            with open(os.path.join(chemin, "multi_intensity")) as fh:
-                return fh.read().strip()
-        except IOError:
-            return None
+            if chemin not in self.origine:
+                valeur = lire_couleur(chemin)
+                if valeur is not None:
+                    self.origine[chemin] = valeur
 
     @staticmethod
     def _meme_couleur(a, b):
@@ -404,13 +408,9 @@ class Lampe:
             # jeu. Si la LED n'est plus du rouge que nous avons pose, c'est
             # que la carte est repassee derriere : sa couleur est plus
             # recente que la notre, on la laisse.
-            if not self._meme_couleur(self._lire_couleur(chemin), self.couleur):
+            if not self._meme_couleur(lire_couleur(chemin), self.couleur):
                 continue
-            try:
-                with open(os.path.join(chemin, "multi_intensity"), "w") as fh:
-                    fh.write(valeur)
-            except IOError as err:
-                journal("%s : couleur non rendue (%s)" % (chemin, err))
+            ecrire_led(chemin, "multi_intensity", valeur)
         self.origine.clear()
 
     def clignoter(self, maintenant, periode=PERIODE):
@@ -466,24 +466,16 @@ class Panneau:
             journal("boutons du joueur %d introuvables" % joueur)
 
     def _ecrire(self, chemin, fichier, valeur):
-        try:
-            with open(os.path.join(chemin, fichier), "w") as fh:
-                fh.write(valeur)
-        except IOError as err:
-            journal("%s/%s : %s" % (chemin, fichier, err))
+        ecrire_led(chemin, fichier, valeur)
 
     def _memoriser(self, chemin):
         if chemin in self.origine:
             return
-        publiee = couleur_de_carte(chemin)
-        if publiee is not None:
-            self.origine[chemin] = publiee
-            return
-        try:
-            with open(os.path.join(chemin, "multi_intensity")) as fh:
-                self.origine[chemin] = fh.read().strip()
-        except IOError:
-            pass
+        valeur = couleur_de_carte(chemin)
+        if valeur is None:
+            valeur = lire_couleur(chemin)
+        if valeur is not None:
+            self.origine[chemin] = valeur
 
     def appliquer(self, fiche, allume=True):
         """Eclaire le panneau selon la fiche du jeu.

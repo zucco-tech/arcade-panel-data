@@ -156,73 +156,10 @@ def _message(X, fenetre, type_message, donnees):
     X.x.XFlush(X.d)
 
 
-def plein_ecran_en(titre, x, y, largeur, hauteur, affichage=":0", essais=30):
-    """Plein ecran sur le moniteur qui contient le point (x, y).
-
-    GNOME ignore _NET_WM_FULLSCREEN_MONITORS — constate : la fenetre restait
-    sur le moniteur principal. On fait donc dans l ordre : on retire le plein
-    ecran, on DEMANDE le deplacement par _NET_MOVERESIZE_WINDOW (la requete
-    prevue pour ca, adressee a la fenetre cliente et non a son cadre), puis on
-    redemande le plein ecran. Le gestionnaire le donne alors sur le moniteur
-    ou la fenetre se trouve.
-    """
-    X = _X(affichage)
-    fenetre = None
-    for _ in range(essais):
-        fenetre = X.chercher(titre)
-        if fenetre:
-            break
-        time.sleep(0.5)
-    if not fenetre:
-        return False
-
-    etat = X.atome("_NET_WM_STATE")
-    plein = X.atome("_NET_WM_STATE_FULLSCREEN")
-
-    _message(X, fenetre, "_NET_WM_STATE", [0, plein, 0, 1, 0])   # retirer
-    time.sleep(0.5)
-
-    # gravite 0, puis les bits disant que x, y, largeur et hauteur sont
-    # fournis, puis la source « application ».
-    drapeaux = (1 << 8) | (1 << 9) | (1 << 10) | (1 << 11) | (1 << 12)
-    _message(X, fenetre, "_NET_MOVERESIZE_WINDOW",
-             [drapeaux, x, y, largeur, hauteur])
-    time.sleep(0.7)
-
-    _message(X, fenetre, "_NET_WM_STATE", [1, plein, 0, 1, 0])   # remettre
-    time.sleep(0.5)
-    return True
-
-
-def plein_ecran_sur(titre, moniteur, affichage=":0", essais=30):
-    """Met la fenetre `titre` en plein ecran sur LE moniteur demande.
-
-    Deplacer la fenetre soi-meme ne marche pas : GNOME ignore les
-    XMoveResizeWindow des fenetres qu il gere, et le plein ecran atterrit
-    alors sur le moniteur principal — constate. La bonne facon est de le lui
-    demander : _NET_WM_FULLSCREEN_MONITORS designe le moniteur, et seulement
-    ensuite on reclame le plein ecran.
-
-    Le numero est celui de `xrandr --listmonitors`.
-    """
-    X = _X(affichage)
-    fenetre = None
-    for _ in range(essais):
-        fenetre = X.chercher(titre)
-        if fenetre:
-            break
-        time.sleep(0.5)
-    if not fenetre:
-        return False
-    # haut, bas, gauche, droite : le meme moniteur partout = ce moniteur seul.
-    _message(X, fenetre, "_NET_WM_FULLSCREEN_MONITORS",
-             [moniteur, moniteur, moniteur, moniteur, 1])
-    time.sleep(0.4)
-    _message(X, fenetre, "_NET_WM_STATE",
-             [1, X.atome("_NET_WM_STATE_FULLSCREEN"), 0, 1, 0])
-    return True
-
-
+# Deux impasses a ne pas rouvrir, constatees sous GNOME : il ignore
+# _NET_WM_FULLSCREEN_MONITORS (le plein ecran retombe sur le moniteur
+# principal), et il ignore les XMoveResizeWindow des fenetres qu il gere. Ce
+# qui marche est ci-dessous : deplacer PUIS demander le plein ecran.
 def placer(titre, x, y, largeur, hauteur, plein_ecran=True,
            affichage=":0", essais=20):
     """Amene la fenetre `titre` en (x, y) et la passe en plein ecran.
