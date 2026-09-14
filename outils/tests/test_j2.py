@@ -21,7 +21,7 @@ def lampe(n):
         open(os.path.join(d, "brightness"), "w").write("255")
         open(os.path.join(d, "multi_intensity"), "w").write(ORIG); c.append(d)
     return tuple(c)
-PIECE, ST1, ST2 = lampe("piece"), lampe("start1"), lampe("start2")
+PIECE, ST1, ST2, PIECE2 = lampe("piece"), lampe("start1"), lampe("start2"), lampe("piece2")
 p1_l, p1_e = os.pipe(); p2_l, p2_e = os.pipe()
 ETAT = os.path.join(R, "es.inf")
 CREDITS = os.path.join(R, "credits"); os.makedirs(CREDITS)
@@ -30,7 +30,7 @@ json.dump({"jeux": {"deuxjoueurs": {"credits": {"adresse": ADRESSE}},
                     "solo": {"credits": {"adresse": ADRESSE}}}}, open(os.path.join(CREDITS, "fbneo.json"), "w"))
 ra = FauxRetroArch(PORT_RA, adresse_credits=ADRESSE, jeu="deuxjoueurs"); ra.start()
 cp.DOSSIER_CREDITS = CREDITS
-cp.LEDS_PIECE, cp.LEDS_START, cp.LEDS_START_P2 = PIECE, ST1, ST2
+cp.LEDS_PIECE, cp.LEDS_START, cp.LEDS_START_P2, cp.LEDS_PIECE_P2 = PIECE, ST1, ST2, PIECE2
 cp.RA_HOTE, cp.RA_PORT = "127.0.0.1", PORT_RA
 cp.STATE_FILE, cp.JOURNAL = ETAT, os.path.join(R, "log")
 cp.ouvrir_pads = lambda: {p1_l: "AllInOneP1", p2_l: "AllInOneP2"}
@@ -68,9 +68,14 @@ appui(p1_e, cp.CODE_START); ra.credits(-1)
 verifier("aucun clignotement fugace du J2", observer(ST2, cp.DELAI_J2, jouer=True) == {"255"})
 verifier("ni du piece malgre 0 credit", observer(PIECE, 1.0, jouer=True) == {"255"})
 
+print("\n--- J1 joue, 0 credit, jeu a deux : la PIECE du J2 l'invite a payer ---")
+verifier("piece J2 clignote (mets une piece pour rejoindre)", len(observer(PIECE2, 2.0, jouer=True)) > 1)
+verifier("start J2 reste fixe tant qu'il n'y a pas de credit", observer(ST2, 1.0, jouer=True) == {"255"})
+
 print("\n--- une piece pendant la partie : on appelle le J2 ---")
 ra.credits(+1); appui(p1_e, cp.CODE_PIECE); time.sleep(1.0)
 verifier("start J2 clignote", len(observer(ST2, 2.0, jouer=True)) > 1)
+verifier("et la piece J2 s'arrete : c'est le start qui invite", observer(PIECE2, 1.5, jouer=True) == {"255"})
 
 print("\n--- le J2 appuie et le jeu consomme : 2 joueurs constate ---")
 appui(p2_e, cp.CODE_START); time.sleep(0.4); ra.credits(-1); time.sleep(1.5)

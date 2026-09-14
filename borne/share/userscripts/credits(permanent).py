@@ -1453,17 +1453,26 @@ def main():
                 piece.repos()
                 start.clignoter(maintenant)  # "appuie sur start"
 
-            # Joueur 2 : sur un jeu multi, tant qu'il reste du credit et
-            # qu'il n'a pas pris sa place, son bouton start l'appelle.
+            # Joueur 2 : sur un jeu a deux, pendant que le joueur 1 joue et
+            # tant qu'il n'a pas pris sa place, le poste 2 l'invite — comme
+            # une vraie borne : « PRESS 2P START » s'il reste du credit,
+            # « INSERT COIN » sinon. Avant le 14/09/2026, seul le premier cas
+            # existait : avec une seule piece mise et consommee par le
+            # joueur 1, personne n'etait jamais invite a rejoindre.
+            invite = (en_jeu and lance and multi and not p2_engage
+                      and credits is not None
+                      and maintenant - depuis_lance > DELAI_J2)
             if en_jeu and not deuxieme:
                 # Poste 2 inutile sur ce jeu : START et PIECE noirs, comme
                 # ses boutons de jeu.
                 start2.eteindre()
                 piece2.eteindre()
-            elif (en_jeu and lance and multi and not p2_engage and credits
-                    and maintenant - depuis_lance > DELAI_J2):
+            elif invite and credits:
                 piece2.repos()
-                start2.clignoter(maintenant)
+                start2.clignoter(maintenant)     # "appuie sur start"
+            elif invite:
+                start2.repos()
+                piece2.clignoter(maintenant)     # "mets une piece pour rejoindre"
             else:
                 start2.repos()
                 piece2.repos()
