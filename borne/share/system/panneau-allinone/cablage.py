@@ -86,16 +86,48 @@ def _lire_cablage(chemin=FICHIER_CABLAGE):
 
 
 class Cablage:
-    """Les tables d un panneau, chargees une fois. `source` dit d ou elles
-    viennent, pour le journal de demarrage."""
+    """Les tables d un panneau. `source` dit d ou elles viennent, pour le
+    journal de demarrage.
+
+    Elles se relisent toutes seules : es_input.cfg change chaque fois que
+    quelqu un reconfigure une manette dans EmulationStation, et un programme
+    qui garde l ancienne version eclaire les mauvais boutons — constate le
+    14/09/2026, un poste reconfigure et l autre pas, les deux panneaux
+    allumaient des rangees differentes. Appeler rafraichir() regulierement
+    suffit : il ne relit que si un fichier a change."""
 
     def __init__(self, es_input=ES_INPUT, fichier_cablage=FICHIER_CABLAGE):
-        es = _lire_es_input(es_input)
-        physique = _lire_cablage(fichier_cablage)
+        self._es_input = es_input
+        self._fichier_cablage = fichier_cablage
+        self._dates = {}
+        self._charger()
+
+    def _charger(self):
+        es = _lire_es_input(self._es_input)
+        physique = _lire_cablage(self._fichier_cablage)
         self._roles = {j: es.get(nom) or dict(ROLES_DEFAUT) for j, nom in MANETTES.items()}
         self._led_du_code = {j: physique.get(j) or dict(CABLAGE_DEFAUT) for j in MANETTES}
         self.source = "%s, %s" % ("es_input.cfg" if es else "roles par defaut",
                                   "cablage.json" if physique else "cablage par defaut")
+        self._dates = self._horodates()
+
+    def _horodates(self):
+        dates = {}
+        for chemin in (self._es_input, self._fichier_cablage):
+            try:
+                dates[chemin] = os.path.getmtime(chemin)
+            except OSError:
+                dates[chemin] = None
+        return dates
+
+    def rafraichir(self):
+        """Relit les tables si un fichier a change depuis la derniere fois.
+        Renvoie vrai quand quelque chose a bouge — de quoi le noter au
+        journal et repeindre le panneau."""
+        if self._horodates() == self._dates:
+            return False
+        self._charger()
+        return True
 
     def code(self, joueur, role):
         """Le code evdev du role (« select », « start », « b »...) sur ce poste,

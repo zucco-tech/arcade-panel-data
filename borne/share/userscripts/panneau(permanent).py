@@ -819,6 +819,13 @@ def main():
             dernier_geste = maintenant
         # Au repos : pleine puissance tant qu il fait jour, tamise la nuit.
         if not en_partie:
+            if TABLE.rafraichir():
+                # Une manette vient d etre reconfiguree : on repeint tout de
+                # suite avec les nouveaux roles, sans attendre un changement
+                # de jeu.
+                journal("tables relues : %s" % TABLE.source)
+                for p in panneaux.values():
+                    p.dernier = None
             present = maintenant - dernier_geste < VEILLE_APRES
             for p in panneaux.values():
                 p.presence(present)

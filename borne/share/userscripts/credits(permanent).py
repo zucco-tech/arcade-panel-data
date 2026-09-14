@@ -1438,6 +1438,11 @@ def main():
                         panneau.rendre()
                     apprenti.oublier()
 
+            # Une manette reconfigurée entre deux parties : on relit avant
+            # de decider quoi eclairer.
+            if not en_jeu and TABLE.rafraichir():
+                journal("tables relues : %s" % TABLE.source)
+
             # Nom du jeu, cherche une seule fois par partie.
             if en_jeu and not resolu and maintenant >= prochain_sondage:
                 prochain_sondage = maintenant + SONDAGE

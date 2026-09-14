@@ -3,7 +3,17 @@
 import os, tempfile
 import importlib.util, json, os, sys, threading, time, types
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))   # faux_retroarch.py est a cote
+import random
 from faux_retroarch import FauxRetroArch
+
+# Le faux RetroArch fait « vivre » la memoire avec des centaines d octets qui
+# bougent au hasard. Un de ces octets peut monter de exactement 1 en meme
+# temps que le compteur, et survivre au croisement des tours : le releve
+# conclut alors sur la plus petite adresse retenue, qui n est pas la bonne.
+# C est un vrai risque, mesure — mais il rendait ce banc capricieux, vert
+# deux fois sur trois. On fixe donc le hasard : un banc doit dire la meme
+# chose a chaque execution, sinon il ne prouve rien.
+random.seed(20260914)
 # Les programmes de la borne sont dans borne/share/userscripts/ : la suite doit
 # tourner partout ou le depot est copie, pas seulement chez son auteur.
 W = os.environ.get("ARCADE_CREDITS") or os.path.join(
