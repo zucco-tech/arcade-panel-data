@@ -173,7 +173,9 @@ CODE_START = 315                # BTN_START
 # 45 s etaient trop courts : le 14/09/2026, un joueur qui lisait l'ecran
 # pendant sa partie a vu son START clignoter comme si elle etait finie.
 # Deux minutes sans le moindre geste — stick compris, voir appuis() —
-# c'est une borne qu'on a quittee, pas une partie qu'on reflechit.
+# c'est une borne qu'on a quittee, pas une partie qu'on reflechit. Et ce
+# delai ne joue que s'il n'y a plus de credit : avec du credit, on ne
+# devine jamais qu'une partie est finie.
 INACTIVITE = 120.0
 
 # On n'appelle pas le joueur 2 dans la seconde ou la partie demarre : la
@@ -1460,9 +1462,13 @@ def main():
             # Les trois etats d'une borne d'arcade. Une lecture ratee
             # (credits vaut None) laisse les boutons tranquilles plutot que
             # de raconter n'importe quoi.
-            # Le panneau silencieux depuis un moment : la partie est finie,
-            # la borne peut recommencer a reclamer une piece.
-            if lance and maintenant - derniere_activite > INACTIVITE:
+            # Le panneau silencieux depuis un moment ET plus aucun credit :
+            # la partie est finie, la borne peut recommencer a reclamer une
+            # piece. S il reste du credit, on ne conclut rien : un joueur
+            # qui regarde son personnage mourir, qui lit l ecran de continue
+            # ou qui reflechit est toujours dans sa partie, et START qui
+            # clignote la lui casse (constate deux fois le 14/09/2026).
+            if lance and not credits and maintenant - derniere_activite > INACTIVITE:
                 lance, p2_engage = False, False
 
             if not en_jeu or credits is None or lance:
