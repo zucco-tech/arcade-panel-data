@@ -1,0 +1,73 @@
+{
+  "description": "Corrections apportees a la table de couleurs de Recalbox, systeme par systeme, d apres les manettes d origine.",
+  "lisez_moi": [
+    "Recalbox donne deja les bonnes couleurs pour presque tous les systemes : la nes est rouge, la snes jaune/rouge/vert/bleu, la psx bleu/rouge/rose/vert, la neogeo jaune/bleu/rouge/vert. Ce fichier ne corrige que ce qui est faux.",
+    "Les couleurs sont ici en VRAI RGB (#RRGGBB), lisibles a l oeil. Le programme se charge de les convertir dans l ordre du materiel (vert, rouge, bleu).",
+    "boutons : la liste remplace les couleurs des boutons, dans l ordre ou Recalbox les donne. null = on garde celle de Recalbox.",
+    "start / select : la couleur du bouton, ou null si la manette d origine n a PAS ce bouton — la LED reste alors eteinte.",
+    "Un bouton reellement noir n est pas eclairable : il reste eteint. C est le choix de fidelite.",
+    "nombre : combien de boutons la manette d origine possede, quand Recalbox en compte moins."
+  ],
+  "systemes": {
+    "gb": {
+      "boutons": [
+        "#C0246E",
+        "#C0246E"
+      ],
+      "pourquoi": "Les A et B de la Game Boy DMG sont magenta, pas rouges ; la croix est violet fonce."
+    },
+    "gbc": {
+      "boutons": [
+        "#3A3A3C",
+        "#3A3A3C"
+      ],
+      "pourquoi": "Les A et B de la Game Boy Color sont gris tres fonce."
+    },
+    "mastersystem": {
+      "boutons": [
+        "#C0392B",
+        "#C0392B"
+      ],
+      "select": null,
+      "pourquoi": "Les boutons 1 et 2 de la Master System sont rouges ; la manette n a pas de SELECT, la pause est sur la console."
+    },
+    "megadrive": {
+      "start": "#C0392B",
+      "pourquoi": "Le START du pad Mega Drive PAL (modele 1650-50) est rouge. Le SELECT reste allume : c est la touche MODE du pad six boutons."
+    },
+    "segacd": {
+      "start": "#C0392B",
+      "pourquoi": "Meme manette que la Mega Drive."
+    },
+    "sega32x": {
+      "start": "#C0392B",
+      "pourquoi": "Meme manette que la Mega Drive."
+    },
+    "n64": {
+      "select": null,
+      "pourquoi": "La manette Nintendo 64 n a pas de bouton SELECT : dix boutons, dont un seul START rouge."
+    },
+    "gamegear": {
+      "pourquoi": "Couleur des boutons 1 et 2 non verifiee : rien de fiable trouve. On garde celle de Recalbox. Le START bleu, lui, est juste."
+    },
+    "gba": {
+      "boutons": [
+        "#3A3A3C",
+        "#3A3A3C",
+        "#9A9A9A",
+        "#9A9A9A"
+      ],
+      "pourquoi": "A et B gris tres fonce, les gachettes L et R de la couleur de la coque. Recalbox ne donnait que deux couleurs : les gachettes tombaient sur une teinte par defaut."
+    },
+    "virtualboy": {
+      "nombre": 4,
+      "boutons": [
+        "#C0392B",
+        "#C0392B",
+        "#9A9A9A",
+        "#9A9A9A"
+      ],
+      "pourquoi": "La Virtual Boy a quatre boutons : A et B rouges, plus les gachettes L et R. Recalbox n en colorait que deux."
+    }
+  }
+}

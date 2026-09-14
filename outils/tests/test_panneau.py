@@ -61,13 +61,23 @@ def charger(dossier, palette):
 
 
 def palette_factice(chemin):
-    """Deux systemes et le secours, dans la forme du script Recalbox."""
+    """Quelques systemes et le secours, dans la forme du script Recalbox."""
     with open(chemin, "w") as fh:
         fh.write('declare -a nes=("0x00 0xFF 0x00" "0x00 0xFF 0x00" "0x00 0x00 0x00" '
                  '"0x00 0x00 0x00" "0x00 0x00 0x00" "0x00 0x00 0x00" "0x00 0x00 0x00" '
                  '"0x00 0x00 0x00" "0xAA 0xAA 0xAA" "0xAA 0xAA 0xAA" "0xFF 0xFF 0xFF")\n')
         fh.write('declare -a gb=("0x00 0xFF 0x00" "0x00 0xFF 0x00" "0x00 0x00 0x00" '
                  '"0x00 0x00 0x00" "0x00 0x00 0x00" "0x00 0x00 0x00" "0x00 0x00 0x00" '
+                 '"0x00 0x00 0x00" "0xAA 0xAA 0xAA" "0xAA 0xAA 0xAA" "0xFF 0xFF 0xFF")\n')
+        # La Master System : deux boutons, un START, et PAS de SELECT — sa 9e
+        # entree est noire. C est ce qui permet d essayer la regle de facade.
+        fh.write('declare -a mastersystem=("0xAA 0xAA 0xAA" "0xAA 0xAA 0xAA" "0x00 0x00 0x00" '
+                 '"0x00 0x00 0x00" "0x00 0x00 0x00" "0x00 0x00 0x00" "0x00 0x00 0x00" '
+                 '"0x00 0x00 0x00" "0x00 0x00 0x00" "0xAA 0xAA 0xAA" "0xFF 0xFF 0xFF")\n')
+        # La Super Nintendo : quatre boutons colores, deux gachettes, et les
+        # deux boutons de facade.
+        fh.write('declare -a snes=("0xFF 0xFF 0x00" "0x00 0xFF 0x00" "0x80 0x00 0x00" '
+                 '"0x00 0x00 0xFF" "0xAA 0xAA 0xAA" "0xAA 0xAA 0xAA" "0x00 0x00 0x00" '
                  '"0x00 0x00 0x00" "0xAA 0xAA 0xAA" "0xAA 0xAA 0xAA" "0xFF 0xFF 0xFF")\n')
         fh.write('declare -a astrocityp1=("0xFF 0x00 0x00" "0xFF 0x00 0x00" "0xFF 0x00 0x00" '
                  '"0xFF 0x00 0x00" "0xFF 0x00 0x00" "0xFF 0x00 0x00" "0x00 0x00 0x00" '
@@ -129,14 +139,17 @@ def _(dossier, espace):
     assert allumes(dossier, 1) == allumes(dossier, 2) == [1, 2, 3, 4, 5, 6]
 
 
-@essai("une console prend les couleurs de Recalbox (NES = vert)")
+@essai("une console garde la table de Recalbox telle quelle (NES = rouge)")
 def _(dossier, espace):
     etat = {"SystemId": "nes", "GamePath": "/roms/nes/mario.nes", "Players": "1-2"}
     d = espace["decider"](etat, {})
     assert d["nombre"] == 2, d["nombre"]
-    espace["Panneau"](1).appliquer(d["nombre"], d["couleurs"])
-    # la carte est cablee vert-rouge-bleu : du vert s ecrit « 255 0 0 »
-    assert lire(dossier, "aio_p1_b4", "multi_intensity") == "255 0 0"
+    espace["Panneau"](1).appliquer(d["nombre"], d["couleurs"], facade=d["facade"])
+    # La table de Recalbox est DEJA dans l ordre du materiel : son « 00 FF 00 »
+    # part tel quel et allume du ROUGE, la couleur des boutons d une NES. Lui
+    # appliquer notre correction vert/rouge donnerait du vert : c est le defaut
+    # corrige le 14/09/2026.
+    assert lire(dossier, "aio_p1_b4", "multi_intensity") == "0 255 0"
 
 
 @essai("une portable laisse le poste 2 eteint meme a deux joueurs annonces")
@@ -204,15 +217,84 @@ def _(dossier, espace):
     assert lire(dossier, "aio_p2_select") == "0"
 
 
-@essai("en mode clip, le start du poste 2 s allume meme sur un jeu solo")
+@essai("en mode clip, le poste 2 reste noir sur un jeu solo")
 def _(dossier, espace):
     p = espace["Panneau"](2)
     p.presence(True)
     p.appliquer(1, {}, allume=False)       # jeu a un joueur : poste 2 eteint
     assert lire(dossier, "aio_p2_select") == "0"
     p.presence(False)                      # personne devant : mode clip
-    assert lire(dossier, "aio_p2_select") != "0", "le start du poste 2 invite a jouer a deux"
+    assert lire(dossier, "aio_p2_select") == "0", "un jeu solo laisse le poste 2 noir"
     assert lire(dossier, "aio_p2_start") == "0", "la piece reste eteinte"
+
+
+@essai("une manette sans SELECT laisse la piece eteinte, meme devant quelqu un")
+def _(dossier, espace):
+    # La Master System n a pas de bouton SELECT : la pause est sur la console.
+    # Recalbox le dit deja, sa 9e entree est noire.
+    etat = {"SystemId": "mastersystem", "GamePath": "/roms/mastersystem/alexkidd.sms",
+            "Players": "1"}
+    d = espace["decider"](etat, {})
+    assert d["facade"]["piece"] is None, d["facade"]
+    p = espace["Panneau"](1)
+    p.presence(True)
+    p.appliquer(d["nombre"], d["couleurs"], facade=d["facade"])
+    assert lire(dossier, "aio_p1_start") == "0", "la Master System n a pas de SELECT"
+    assert lire(dossier, "aio_p1_select") != "0", "mais elle a bien un START"
+
+
+@essai("une manette Nintendo a les deux : START et SELECT s allument")
+def _(dossier, espace):
+    etat = {"SystemId": "snes", "GamePath": "/roms/snes/mario.sfc", "Players": "1"}
+    d = espace["decider"](etat, {})
+    assert d["facade"]["piece"], d["facade"]
+    assert d["facade"]["start"], d["facade"]
+    p = espace["Panneau"](1)
+    p.presence(True)
+    p.appliquer(d["nombre"], d["couleurs"], facade=d["facade"])
+    assert lire(dossier, "aio_p1_start") != "0", "la Super Nintendo a un SELECT"
+    assert lire(dossier, "aio_p1_select") != "0", "et un START"
+
+
+@essai("un jeu d arcade garde la regle de la borne, pas celle d une manette")
+def _(dossier, espace):
+    p = espace["Panneau"](1)
+    p.presence(True)
+    p.appliquer(6, {}, facade=None)        # aucune facade : jeu d arcade
+    assert lire(dossier, "aio_p1_select") != "0", "le start d une borne s allume"
+    assert lire(dossier, "aio_p1_start") != "0", "et le monnayeur aussi"
+
+
+@essai("un systeme inconnu de Recalbox garde la regle de la borne")
+def _(dossier, espace):
+    # mame, l arcade, tout ce que Recalbox ne nomme pas : ce n est pas une
+    # manette, le START et le monnayeur existent toujours.
+    d = espace["decider"]({"SystemId": "mame", "GamePath": "/roms/mame/pacman.zip",
+                           "Players": "1-2"}, {})
+    assert d["facade"] is None, d["facade"]
+    p = espace["Panneau"](1)
+    p.presence(True)
+    p.appliquer(d["nombre"], d["couleurs"], facade=d["facade"])
+    assert lire(dossier, "aio_p1_select") != "0", "le start d une borne s allume"
+    assert lire(dossier, "aio_p1_start") != "0", "et le monnayeur aussi"
+
+
+@essai("sur une console, le SELECT s allume meme en clip ; sur une borne, non")
+def _(dossier, espace):
+    # Game Boy : SELECT est un bouton de jeu, il reste eclaire en veille.
+    d = espace["decider"]({"SystemId": "gb", "GamePath": "/roms/gb/tetris.gb",
+                           "Players": "1"}, {})
+    p = espace["Panneau"](1)
+    p.presence(False)
+    p.appliquer(d["nombre"], d["couleurs"], facade=d["facade"])
+    assert lire(dossier, "aio_p1_start") != "0", "le SELECT d une console est un bouton"
+    # mame : le meme bouton est un monnayeur, il attend quelqu un.
+    d = espace["decider"]({"SystemId": "mame", "GamePath": "/roms/mame/pacman.zip",
+                           "Players": "1"}, {})
+    p2 = espace["Panneau"](2)
+    p2.presence(False)
+    p2.appliquer(d["nombre"], d["couleurs"], facade=d["facade"])
+    assert lire(dossier, "aio_p2_start") == "0", "un monnayeur ne sert a personne en clip"
 
 
 @essai("la touche hotkey s eteint des que personne n est devant")

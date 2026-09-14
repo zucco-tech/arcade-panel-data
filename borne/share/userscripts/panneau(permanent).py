@@ -44,6 +44,11 @@ import time
 
 ETAT = "/tmp/es_state.inf"
 BASE_BOUTONS = "/recalbox/share/system/panneau-arcade/boutons-arcade.json"
+# Les corrections apportees a la table de Recalbox d apres les manettes
+# d origine : la Game Boy est magenta, la Master System rouge, la N64 n a
+# pas de SELECT. Recalbox est juste presque partout ; ce fichier ne dit que
+# les exceptions, et il peut ne pas exister.
+FICHIER_MANETTES = "/recalbox/share/system/panneau-arcade/manettes-consoles.json"
 JOURNAL = "/recalbox/share/system/panneau-arcade/journaux/panneau.log"
 # La table de couleurs par systeme livree par Recalbox pour ce panneau. Elle
 # servait aux scripts allinone[…].sh, appeles a chaque mouvement dans le
@@ -185,6 +190,66 @@ def charger_palette_recalbox():
 RECALBOX = charger_palette_recalbox()
 
 
+def charger_manettes():
+    """Les corrections manuelles, en vrai RGB. Absent = rien a corriger."""
+    try:
+        with open(FICHIER_MANETTES) as fh:
+            return (json.load(fh) or {}).get("systemes") or {}
+    except (IOError, OSError, ValueError):
+        return {}
+
+
+MANETTES_CONSOLES = charger_manettes()
+
+
+def teinte_hexa(valeur):
+    """« #RRGGBB » vers (r, v, b). None reste None."""
+    if not valeur:
+        return None
+    v = valeur.lstrip("#")
+    try:
+        return tuple(int(v[i:i + 2], 16) for i in (0, 2, 4))
+    except (ValueError, IndexError):
+        return None
+
+
+def facade_de_systeme(systeme, correction):
+    """Le START et le SELECT de la manette d origine.
+
+    Recalbox le dit deja : sa table donne onze entrees par systeme, dont la
+    neuvieme pour SELECT et la dixieme pour START. Une entree noire veut dire
+    que la manette n a pas ce bouton — la Master System et la Game Gear n ont
+    pas de SELECT, la Saturn, la Dreamcast et la GameCube non plus.
+    manettes-consoles.json peut corriger l un ou l autre : « null » retire le
+    bouton, une couleur le repeint.
+
+    Renvoie {"start": ..., "piece": ...} ou chaque valeur vaut None si le
+    bouton n existe pas, sinon le triplet a ecrire. « piece » est le nom du
+    bouton SELECT sur cette borne : c est le monnayeur.
+
+    Renvoie None pour tout ce qui n est PAS une console : l arcade, mame, les
+    systemes que Recalbox ne nomme pas. Sur une borne, le START et le
+    monnayeur existent toujours — ce n est pas une manette qui decide. Sans
+    cette distinction, un jeu mame eteignait les deux (constate le
+    14/09/2026 : panneau entierement noir sur un clip mame)."""
+    table = RECALBOX.get(systeme) or []
+    if not table:
+        return None
+    rendu = {}
+    # « piece » est notre nom pour le bouton SELECT : sur cette borne, c est le
+    # monnayeur. Le fichier de corrections, lui, parle la langue des manettes.
+    for nom, cle, rang in (("piece", "select", 8), ("start", "start", 9)):
+        rvb = table[rang] if rang < len(table) else None
+        garde = rvb if (rvb and any(rvb)) else None
+        brut = True
+        if cle in correction:
+            # « null » explicite : la manette n a pas ce bouton.
+            mieux = teinte_hexa(correction.get(cle))
+            garde, brut = mieux, False
+        rendu[nom] = {"rvb": garde, "brut": brut} if garde else None
+    return rendu
+
+
 def fiche_de_systeme(systeme):
     """Une fiche minimale pour un systeme sans fiche arcade, ou None.
 
@@ -209,18 +274,40 @@ def fiche_de_systeme(systeme):
         boutons = (RECALBOX.get("astrocityp1") or [])[:6] or None
         secours = (RECALBOX.get("astrocityp2") or [])[:6] or None
     if boutons:
+        correction = MANETTES_CONSOLES.get(systeme) or {}
+        remplace = correction.get("boutons") or []
         allumes = [i for i, rvb in enumerate(boutons, 1) if any(rvb)]
-        nombre = entree[0] if entree else (max(allumes) if allumes else 0)
+        # Recalbox compte parfois moins de boutons que la manette n en a — la
+        # Virtual Boy en a quatre, sa table n en colore que deux. Le fichier
+        # de corrections peut donc fixer le nombre, sinon on garde le notre,
+        # sinon celui de Recalbox.
+        nombre = (correction.get("nombre") or (entree[0] if entree else 0)
+                  or (max(allumes) if allumes else 0))
         if not nombre:
             return None
 
         def palette(table):
-            return {"BUTTON%d" % i: {"rvb": table[i - 1]}
-                    for i in range(1, nombre + 1)
-                    if i - 1 < len(table) and any(table[i - 1])}
+            # « brut » : ces triplets viennent du script Recalbox, qui les
+            # ecrit tels quels dans les LED. Ils sont donc DEJA dans l ordre
+            # du materiel (vert, rouge, bleu) — leur appliquer notre
+            # correction les retournerait. Verifie le 14/09/2026 : la nes et
+            # la gb valent « 00 FF 00 », ce qui allume du ROUGE sur cette
+            # carte, la couleur de leurs vrais boutons ; et la table snes
+            # rend alors jaune, rouge, vert, bleu — les boutons B, A, Y, X.
+            # Une couleur venue de manettes-consoles.json, elle, est ecrite
+            # en vrai RGB : elle passe par la correction, donc pas « brut ».
+            rendu = {}
+            for i in range(1, nombre + 1):
+                mieux = teinte_hexa(remplace[i - 1]) if i - 1 < len(remplace) else None
+                if mieux:
+                    rendu["BUTTON%d" % i] = {"rvb": mieux}
+                elif i - 1 < len(table) and any(table[i - 1]):
+                    rendu["BUTTON%d" % i] = {"rvb": table[i - 1], "brut": True}
+            return rendu
         fiche = {"nombre": nombre, "boutons": palette(boutons)}
         if secours:
             fiche["boutons_j2"] = palette(secours)
+        fiche["facade"] = facade_de_systeme(systeme, correction)
         return fiche
     if not entree:
         return None
@@ -265,8 +352,15 @@ def lire_fichier(chemin):
 ORDRE_MATERIEL = (1, 0, 2)          # vert, rouge, bleu
 
 
-def couleur_pour(chemin_led, rvb):
-    """La couleur telle que la carte l allume vraiment."""
+def couleur_pour(chemin_led, rvb, brut=False):
+    """La couleur telle que la carte l allume vraiment.
+
+    `brut` : le triplet est DEJA dans l ordre du materiel. C est le cas de
+    tout ce qui vient de la table de Recalbox, que son propre script ecrit
+    tel quel dans les LED ; y appliquer la correction le retournerait. Nos
+    fiches d arcade et manettes-consoles.json, eux, sont en vrai RGB."""
+    if brut:
+        return " ".join(str(x) for x in rvb)
     return " ".join(str(rvb[i]) for i in ORDRE_MATERIEL)
 
 
@@ -381,7 +475,7 @@ def decider(etat, boutons):
     return {"systeme": systeme, "jeu": jeu, "fiche": fiche, "origine": origine,
             "nombre": int(fiche["nombre"]), "couleurs": fiche.get("boutons") or {},
             "couleurs_j2": fiche.get("boutons_j2") or fiche.get("boutons") or {},
-            "deuxieme": deuxieme}
+            "facade": fiche.get("facade"), "deuxieme": deuxieme}
 
 
 def lire_etat():
@@ -501,6 +595,7 @@ class Panneau:
         self.present = True          # quelqu un est-il devant la borne ?
         self.dernier = None          # ce qu on a applique en dernier
         self.derniers_args = None    # pour re-appliquer a une autre intensite
+        self.facade = None           # START/SELECT de la manette d origine
         self.intensite = PRESENT
         self.origine = {}            # couleur posee par la carte, par led
 
@@ -514,11 +609,16 @@ class Panneau:
         if chemin in self.origine:
             ecrire(chemin, self.origine[chemin], "multi_intensity")
 
-    def appliquer(self, nombre, couleurs, allume=True):
+    def appliquer(self, nombre, couleurs, allume=True, facade=None):
         """Allume les `nombre` premiers boutons logiques, eteint le reste,
-        et pose la couleur d origine de chacun quand la base la connait."""
-        self.derniers_args = (nombre, couleurs, allume)
-        voulu = (nombre, tuple(sorted(couleurs.items())), self.intensite) if allume else 0
+        et pose la couleur d origine de chacun quand la base la connait.
+
+        `facade` dit ce que la manette d origine possede comme START et
+        SELECT ; None (un jeu d arcade) garde la regle de la borne."""
+        self.derniers_args = (nombre, couleurs, allume, facade)
+        self.facade = facade
+        voulu = (nombre, tuple(sorted(couleurs.items())), self.intensite,
+                 tuple(sorted((facade or {}).items()))) if allume else 0
         if voulu == self.dernier:
             return
         for position, chemins in enumerate(self.boutons):
@@ -530,7 +630,8 @@ class Panneau:
             for chemin in chemins:
                 self._memoriser(chemin)
                 if utilise and rvb:
-                    ecrire(chemin, couleur_pour(chemin, rvb), "multi_intensity")
+                    ecrire(chemin, couleur_pour(chemin, rvb, entree.get("brut")),
+                           "multi_intensity")
                 else:
                     self._rendre_couleur(chemin)
                 ecrire(chemin, self.intensite if utilise else "0")
@@ -540,18 +641,41 @@ class Panneau:
     def _annexes(self, allume):
         """Les boutons de facade : piece, start et hotkey.
 
-        Choix du proprietaire de la borne, photo a l appui : en mode clip on
-        garde le START des deux postes allume — c est lui qui dit « joue » —
-        et l on eteint la PIECE et la touche hotkey, qui ne servent a
-        personne tant que personne n est devant. Un geste rallume tout."""
-        # En mode clip, les DEUX starts s allument, meme si le jeu survole
-        # est solo : c est l invitation a jouer a deux. Des que quelqu un est
-        # devant, le poste 2 reprend la regle du jeu — eteint s il ne sert pas.
-        for chemin in self.start:
-            ecrire(chemin, self.intensite if (allume or not self.present) else "0")
-        for chemin in self.piece:
-            ecrire(chemin, self.intensite if (allume and self.present) else "0")
+        Choix du proprietaire de la borne : en mode clip, le START ne
+        s allume que sur les postes qui servent au jeu montre — un jeu a un
+        seul joueur laisse donc le poste 2 noir. Sur un jeu d arcade, la
+        PIECE et la touche hotkey restent eteintes tant que personne n est
+        devant : elles ne servent a rien pendant les clips. Sur une console,
+        ce bouton est le SELECT de la manette : il s allume avec les autres.
+        Un geste rallume tout."""
+        # Le START suit la regle du jeu, en clip comme devant quelqu un : un
+        # jeu solo n allume que le poste 1, un jeu a deux allume les deux.
+        # Le second bouton, lui, change de nature avec le jeu : monnayeur sur
+        # une borne — inutile tant que personne n est devant — mais SELECT de
+        # la manette sur une console, et alors bouton de jeu comme les autres.
+        facade = self.facade
+        arcade = facade is None
+        self._un_annexe(self.start, None if arcade else facade.get("start"), allume)
+        self._un_annexe(self.piece, None if arcade else facade.get("piece"),
+                        allume and (self.present or not arcade))
         self._hotkey()
+
+    def _un_annexe(self, chemins, bouton, allumee):
+        """Un bouton de facade — START ou PIECE — sur les deux LED du poste.
+
+        Jeu d arcade (`self.facade` a None) : la borne decide, la couleur ne
+        bouge pas. Console : `bouton` a None veut dire que la manette
+        d origine n a pas ce bouton, et la LED reste noire meme devant
+        quelqu un."""
+        for chemin in chemins:
+            if self.facade is not None and not bouton:
+                ecrire(chemin, "0")
+                continue
+            if bouton and bouton.get("rvb"):
+                self._memoriser(chemin)
+                ecrire(chemin, couleur_pour(chemin, bouton["rvb"], bouton.get("brut")),
+                       "multi_intensity")
+            ecrire(chemin, self.intensite if allumee else "0")
 
     def _hotkey(self):
         """La touche hotkey ne sert qu a quelqu un qui joue : elle reste
@@ -592,7 +716,7 @@ class Panneau:
         # `dernier` vaut 0 quand le poste est eteint, "repos" quand il est
         # rendu a la carte : seul un triplet porte une intensite.
         if isinstance(self.dernier, tuple):
-            self.dernier = self.dernier[:2] + (intensite,)
+            self.dernier = self.dernier[:2] + (intensite,) + self.dernier[3:]
 
     def poser_carte(self, couleurs):
         """Repeint le poste comme la carte — les COULEURS seulement.
@@ -736,8 +860,10 @@ def main():
             # pour reprendre la main sur le demon des credits.
             for p in panneaux.values():
                 p.dernier = None
-        panneaux[1].appliquer(nombre, couleurs)
-        panneaux[2].appliquer(nombre, decision["couleurs_j2"], allume=deuxieme)
+        facade = decision.get("facade")
+        panneaux[1].appliquer(nombre, couleurs, facade=facade)
+        panneaux[2].appliquer(nombre, decision["couleurs_j2"], allume=deuxieme,
+                              facade=facade)
         if jeu != dernier_jeu:
             journal("%s : %d bouton(s), %d couleur(s), joueur 2 %s [%s]"
                     % (jeu, nombre, sum(1 for v in couleurs.values() if v.get("couleur") or v.get("rvb")),
