@@ -21,7 +21,7 @@ def lampe(nom):
         open(os.path.join(d, "brightness"), "w").write("255")
         open(os.path.join(d, "multi_intensity"), "w").write(ORIGINE); c.append(d)
     return tuple(c)
-L_PIECE, L_START = lampe("piece"), lampe("start")
+L_PIECE, L_START, L_B1 = lampe("piece"), lampe("start"), lampe("b1")
 lecture, ecriture = os.pipe()
 ETAT = os.path.join(RACINE, "es.inf")
 CREDITS = os.path.join(RACINE, "credits"); os.makedirs(CREDITS)
@@ -29,6 +29,8 @@ APPRIS = os.path.join(CREDITS, "appris.json")     # ce que la borne apprend
 json.dump({"jeux": {"testgame": {"credits": {"adresse": ADRESSE}}}}, open(os.path.join(CREDITS, "fbneo.json"), "w"))
 ra = FauxRetroArch(PORT_RA, adresse_credits=ADRESSE); ra.start()
 cp.DOSSIER_CREDITS, cp.LEDS_PIECE, cp.LEDS_START = CREDITS, L_PIECE, L_START
+# Le bouton 1 est a la 4e place physique (ORDRE_BOUTONS) ; le poste 2 n a rien ici.
+cp.LEDS_JEU = {1: [(), (), (), L_B1, (), (), (), ()], 2: []}
 cp.RA_HOTE, cp.RA_PORT = "127.0.0.1", PORT_RA
 cp.STATE_FILE, cp.JOURNAL = ETAT, os.path.join(RACINE, "log")
 cp.ouvrir_pads = lambda: {lecture: "AllInOneP1"}
@@ -61,6 +63,9 @@ verifier("le bouton piece se calme", observer(L_PIECE, 1.0) == {"255"})
 
 print("\n--- le cas signale : on appuie sur START ---")
 appui(cp.CODE_START); ra.credits(-1); time.sleep(1.5)
+verifier("le bouton 1 pulse : c'est lui qui valide", len(observer(L_B1, 1.0, jouer=True)) > 1)
+time.sleep(cp.GUIDE)
+verifier("puis il se stabilise, allume", observer(L_B1, 1.0, jouer=True) == {"255"})
 verifier("credit retombe a 0 : LE PIECE NE CLIGNOTE PAS", observer(L_PIECE, 2.5, jouer=True) == {"255"})
 verifier("le start non plus", observer(L_START, 1.5, jouer=True) == {"255"})
 verifier("les couleurs sont d'origine",

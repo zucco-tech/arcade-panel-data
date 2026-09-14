@@ -83,9 +83,16 @@ s'allument. Les journaux disent ce que le panneau fait, jeu par jeu :
 **Pendant la partie** — `credits(permanent).py` lit le compteur de crédits
 dans la mémoire du jeu (adresse dans `credits/<système>.json`) : PIÈCE
 clignote tant qu'il n'y a pas de crédit, START prend le relais dès qu'il y
-en a un, puis tout reste fixe. Le panneau du menu se tait ; au retour au
-menu il reprend, après avoir rendu les couleurs. Un jeu absent de la base
-est appris la première fois qu'on y joue.
+en a un, puis tout reste fixe — sauf le **bouton 1**, qui pulse quatre
+secondes après chaque START pour dire que c'est lui qui valide (choix du
+personnage, du mode). Sur un jeu à deux, pendant que le joueur 1 joue, le
+poste 2 invite : son START clignote s'il reste du crédit, sa PIÈCE sinon.
+Chaque mouvement du compteur est noté dans `journaux/credits.log`
+(`credits 0 -> 1`) : la preuve, en jouant, que l'adresse est la bonne. Deux
+minutes sans le moindre geste — stick compris — et la partie est tenue pour
+finie. Le panneau du menu se tait ; au retour au menu il reprend, après
+avoir rendu les couleurs. Un jeu absent de la base est appris la première
+fois qu'on y joue.
 
 Réglages, tous en tête de `panneau(permanent).py` : `PRESENT`, `CLIP`,
 `VEILLE_APRES`, `PORTABLES` (consoles portables : poste 2 toujours noir),

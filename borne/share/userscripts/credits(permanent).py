@@ -186,6 +186,14 @@ DELAI_J2 = 2.5
 # qu'on apprend le vrai nombre de joueurs, sans croire le scrapeur.
 VERDICT_J2 = 2.0
 
+# Juste apres START, beaucoup de jeux attendent encore un « OK » — choisir
+# son personnage, valider un mode — et rien ne dit lequel des boutons le
+# donne. Sur une borne c'est presque toujours le bouton 1. On le fait donc
+# pulser quelques secondes apres chaque START, joueur 1 comme joueur 2 :
+# « c'est celui-ci ». Puis il se stabilise avec les autres.
+GUIDE = 4.0                     # secondes de pulsation du bouton 1
+GUIDE_PERIODE = 0.35            # plus vif qu'un appel a payer : c'est un conseil
+
 PLEIN = 255                     # brightness au repos, valeur posee par le driver
 PERIODE = 0.5                   # demi-periode du clignotement
 SONDAGE = 0.3                   # relecture des credits pendant une partie
@@ -1251,6 +1259,12 @@ def main():
     start = Lampe("start", LEDS_START, COULEUR_START)
     start2 = Lampe("start J2", LEDS_START_P2, COULEUR_START)
     piece2 = Lampe("piece J2", LEDS_PIECE_P2, COULEUR_PIECE)
+    # Le bouton 1 de chaque poste, celui qui valide : ORDRE_BOUTONS dit a
+    # quelle place physique il est.
+    place_b1 = ORDRE_BOUTONS.index(1)
+    guides = {j: Lampe("bouton 1 J%d" % j, LEDS_JEU.get(j, [])[place_b1] if len(LEDS_JEU.get(j, [])) > place_b1 else (), None)
+              for j in (1, 2)}
+    guide_jusqu = {1: 0.0, 2: 0.0}
     deuxieme = True                # tant qu on ne sait pas, on n eteint rien
     panneaux = {1: Panneau(1), 2: Panneau(2)}
     boutons = BoutonsSurDisque(BASE_BOUTONS)
@@ -1263,6 +1277,13 @@ def main():
                len(base.appris.get("jeux", {})), len(boutons),
                len(piece.chemins), len(start.chemins), len(start2.chemins),
                len(pads)))
+
+    def demarrer(joueur):
+        """Un START vient d engager une partie pour ce joueur : on le note,
+        et son bouton 1 pulse quelques secondes pour dire qu il valide."""
+        nonlocal lance, depuis_lance
+        lance, depuis_lance = True, maintenant
+        guide_jusqu[joueur] = maintenant + GUIDE
 
     def rendre(*_):
         """Les boutons doivent repartir allumes et de leur couleur."""
@@ -1324,10 +1345,11 @@ def main():
                             deduits += 1
                         elif deduits > 0:
                             deduits -= 1
-                            lance, depuis_lance = True, maintenant
+                            demarrer(2 if pads[fd].endswith("P2") else 1)
                     if code == CODE_START and pads[fd].endswith("P2"):
                         p2_engage = True    # il a rejoint, on cesse de l'appeler
                         if credits:
+                            guide_jusqu[2] = maintenant + GUIDE
                             # On regarde si le jeu accepte vraiment : s'il
                             # consomme le credit, il est bien a deux.
                             essai_j2 = (maintenant, credits)
@@ -1336,7 +1358,7 @@ def main():
                         # sur une vraie borne. Le cas ou le compteur n'est
                         # pas encore connu est rattrape plus bas, en voyant
                         # le credit se faire consommer.
-                        lance, depuis_lance = True, maintenant
+                        demarrer(1)
                     trouvee = (apprenti.piece() if code == CODE_PIECE
                                else apprenti.start())
                     if trouvee is not None:
@@ -1414,7 +1436,7 @@ def main():
                 if (nouveau is not None and credits is not None
                         and nouveau < credits):
                     if not lance:
-                        lance, depuis_lance = True, maintenant
+                        demarrer(1)
 
                 # Verdict sur le joueur 2 : le credit a-t-il ete consomme
                 # apres son appui ?
@@ -1452,6 +1474,14 @@ def main():
             else:
                 piece.repos()
                 start.clignoter(maintenant)  # "appuie sur start"
+
+            # Le bouton 1 pulse quelques secondes apres un START, puis se
+            # stabilise : repos() ne fait rien s il n a pas ete lance.
+            for j, lampe in guides.items():
+                if en_jeu and maintenant < guide_jusqu[j]:
+                    lampe.clignoter(maintenant, GUIDE_PERIODE)
+                else:
+                    lampe.repos()
 
             # Joueur 2 : sur un jeu a deux, pendant que le joueur 1 joue et
             # tant qu'il n'a pas pris sa place, le poste 2 l'invite — comme
