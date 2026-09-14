@@ -167,10 +167,14 @@ CODE_START = 315                # BTN_START
 
 # Appuyer sur START consomme le credit : le compteur retombe a zero alors
 # qu'on est en train de jouer. C'est le silence du panneau qui dit qu'une
-# partie est finie, pas le compteur. Sans appui pendant ce delai, on
+# partie est finie, pas le compteur. Sans geste pendant ce delai, on
 # considere que la borne est revenue en attract et on rappelle qu'il faut
-# une piece.
-INACTIVITE = 45.0
+# une piece, ou appuyer sur START s'il reste du credit.
+# 45 s etaient trop courts : le 14/09/2026, un joueur qui lisait l'ecran
+# pendant sa partie a vu son START clignoter comme si elle etait finie.
+# Deux minutes sans le moindre geste — stick compris, voir appuis() —
+# c'est une borne qu'on a quittee, pas une partie qu'on reflechit.
+INACTIVITE = 120.0
 
 # On n'appelle pas le joueur 2 dans la seconde ou la partie demarre : la
 # derniere lecture du credit date d'un tiers de seconde et annonce encore
@@ -201,6 +205,7 @@ MORCEAUX = (16384, 4096, 1024)
 
 EV = struct.Struct("llHHi")     # struct input_event
 EV_KEY = 0x01
+EV_ABS = 0x03                   # le joystick
 
 SYSTEMES = ("fbneo", "neogeo", "neogeocd", "mame", "naomi", "naomigd",
             "atomiswave", "arcade")
@@ -682,17 +687,25 @@ def ouvrir_pads():
 
 
 def appuis(fd):
-    """Codes des touches enfoncees, lus sans bloquer."""
-    codes = []
+    """Ce qu une manette vient de faire, lu sans bloquer : les codes des
+    touches enfoncees, et si le joystick a bouge.
+
+    Le joystick compte comme une activite. Avant, seules les touches
+    comptaient : un jeu qu on mene au stick seul — un shoot, un labyrinthe —
+    laissait croire au demon, au bout du delai, que la partie etait finie,
+    et START se mettait a clignoter en pleine partie."""
+    codes, bouge = [], False
     try:
         donnees = os.read(fd, EV.size * 64)
     except OSError:
-        return codes
+        return codes, bouge
     entiers = len(donnees) // EV.size * EV.size
     for _, _, typ, code, val in EV.iter_unpack(donnees[:entiers]):
         if typ == EV_KEY and val == 1:      # appui, pas relachement
             codes.append(code)
-    return codes
+        elif typ == EV_ABS:
+            bouge = True
+    return codes, bouge
 
 
 # --- Frontend et base ----------------------------------------------------
@@ -1297,10 +1310,12 @@ def main():
             maintenant = time.time()
 
             for fd in prets:
-                for code in appuis(fd):
+                codes, bouge = appuis(fd)
+                if en_jeu and (codes or bouge):
+                    derniere_activite = maintenant
+                for code in codes:
                     if not en_jeu:
                         continue
-                    derniere_activite = maintenant
                     if code not in (CODE_PIECE, CODE_START):
                         continue          # une touche de jeu : juste un signe de vie
                     if coeur_mame(core):
