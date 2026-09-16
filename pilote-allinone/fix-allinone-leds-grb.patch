@@ -1,0 +1,20 @@
+--- a/projects/recalbox-allinone/allinone_leds.c
++++ b/projects/recalbox-allinone/allinone_leds.c
+@@ -101,9 +101,16 @@
+ 
+   return ret;
+ }
++/*
++ * WS2812B take their 24 bits in green, red, blue order: subled[0] is written
++ * first on the wire, so it is the green one. Declaring them as red, green,
++ * blue made multi_index lie, and writing "255 0 0" lit the button green.
++ * Only the labels change: multi_intensity keeps its positional meaning, so
++ * scripts writing raw triplets (recalbox_allinone_rgb.sh) behave the same.
++ */
+ static u32 color_idx[WS2812B_NUM_COLORS] = {
+-  LED_COLOR_ID_RED,
+   LED_COLOR_ID_GREEN,
++  LED_COLOR_ID_RED,
+   LED_COLOR_ID_BLUE,
+ };
+ 
