@@ -29,6 +29,12 @@ import sys
 import time
 
 DIRECTIONS = {"Up", "Down", "Left", "Right"}
+# Les identifiants RetroPad de libretro (RETRO_DEVICE_ID_JOYPAD_*), pour les
+# boutons d action. C est ce qui dit OU le coeur range chaque fonction du jeu :
+# « Weak Punch » sur y chez FBNeo pour Street Fighter, « Fire 1 » sur b pour
+# 1942. outils/aligner-boutons.py s en sert pour placer le bouton N du jeu a
+# la position N du panneau.
+RETROPAD = {0: "b", 1: "y", 8: "a", 9: "x", 10: "l", 11: "r", 12: "l2", 13: "r2"}
 SERVICE = {"Coin", "Start", "Service", "Test", "Diagnostic", "Reset", "Tilt",
            "Dip", "Dip A", "Dip B", "Dip C", "Dip D"}
 
@@ -117,6 +123,7 @@ def enfant(coeur, rom, dossier_systeme):
 def resumer(entrees):
     """Par joueur : ses boutons d action, dans l ordre annonce."""
     joueurs = {}
+    retropad = []                  # joueur 1 : les boutons RetroPad, dans l ordre du jeu
     for port, appareil, ident, nom in entrees:
         nom = nom.strip()
         if "(Fake" in nom or nom in DIRECTIONS or nom in SERVICE:
@@ -126,11 +133,14 @@ def resumer(entrees):
         joueurs.setdefault(port + 1, [])
         if nom not in joueurs[port + 1]:
             joueurs[port + 1].append(nom)
+            if port == 0 and ident in RETROPAD and RETROPAD[ident] not in retropad:
+                retropad.append(RETROPAD[ident])
     ports = sorted(p for p, _, _, _ in entrees) if entrees else []
     return {
         "joueurs": (max(ports) + 1) if ports else 0,
         "boutons": joueurs.get(1, []),
         "boutons_j2": joueurs.get(2, []),
+        "retropad": retropad,
     }
 
 
@@ -171,6 +181,8 @@ def main():
     p.add_argument("--systeme-dir", default="/root/.config/retroarch/system")
     p.add_argument("--delai", type=float, default=60.0)
     p.add_argument("--limite", type=int, default=0)
+    p.add_argument("--d-abord", metavar="BOUTONS_ARCADE",
+                   help="boutons-arcade.json : les jeux qui ont le plus de boutons passent en premier")
     a = p.parse_args()
 
     base = {"coeur": os.path.basename(a.coeur), "jeux": {}}
@@ -183,6 +195,12 @@ def main():
         d = os.path.join(a.roms, s)
         if os.path.isdir(d):
             liste += [(s, f) for f in sorted(os.listdir(d)) if f.lower().endswith((".zip", ".7z"))]
+    if a.d_abord:
+        # Les jeux a beaucoup de boutons d abord : c est chez eux que le coeur
+        # range parfois autrement (poings et pieds des jeux de combat).
+        with open(a.d_abord) as fh:
+            boutons = json.load(fh).get("jeux", {})
+        liste.sort(key=lambda sf: -int((boutons.get(sf[1].rsplit(".", 1)[0]) or {}).get("nombre") or 0))
     if a.limite:
         liste = liste[:a.limite]
     debut = time.time()

@@ -286,7 +286,7 @@ class Cablage:
         vide si tout concorde ou si retroarchcustom.cfg manque. A ecrire au
         journal : c est le signe que Recalbox a change sa regle, ou qu un
         remap par jeu s applique."""
-        if not self._retroarch.get(joueur):
+        if not self._retroarch.get(joueur) or self.surcharge_systeme(systeme):
             return []
         regle = self.disposition(joueur, systeme)
         ecarts = []
@@ -301,6 +301,12 @@ class Cablage:
         bouton -> role -> code -> LED. En jeu, le code vient de ce que
         RetroArch a charge ; sinon de la regle de Recalbox."""
         role = ROLE_DU_BOUTON.get(numero, "")
+        # Systeme aligne par aligner-boutons.py : le bouton N du jeu est a la
+        # position N, par construction — y compris pour les jeux que le coeur
+        # range autrement, dont le fichier par jeu change les noms RetroPad
+        # mais pas les positions. RetroArch n a donc rien a nous apprendre.
+        if self.surcharge_systeme(systeme):
+            en_jeu = False
         code = self.code_en_jeu(joueur, role) if en_jeu else None
         if code is None:
             code = self.disposition(joueur, systeme).get(role)

@@ -27,11 +27,16 @@ configuration, il suffit de relancer ce programme.
 Un fichier .retroarch.cfg qui ne vient pas de ce programme n est jamais
 ecrase ni retire.
 
-Limite connue : les jeux de combat FBNeo a six boutons (Street Fighter...)
-rangent poings et pieds a la maniere d une manette ; dans l ordre du dessin
-ils peuvent se melanger. A verifier jeu par jeu ; un fichier
-<rom>.retroarch.cfg vide ne suffit pas a revenir en arriere, il faut y
-reecrire la regle de Recalbox.
+Par jeu. Le fichier du dossier suppose que le coeur range les boutons du
+jeu dans l ordre b, a, y, x, l, r — vrai pour 1942 (Fire 1 sur b). Pas pour
+les jeux de combat Capcom : FBNeo met les poings sur y, x, l et les pieds sur
+b, a, r (demande au coeur le 16/09/2026). Avec --entrees (le releve de
+relever-entrees.py, champ « retropad » : les boutons RetroPad dans l ordre
+du jeu), on ecrit pour chacun de ces jeux un <rom>.retroarch.cfg qui met
+le bouton N du jeu a la position N : poings en haut, pieds en bas.
+
+    python3 aligner-boutons.py --es-input es_input.cfg --roms /mnt/roms \
+        --entrees /mnt/recalbox/donnees/entrees-retropad.json fbneo
 """
 
 import argparse
@@ -70,18 +75,65 @@ def lire_ids(es_input):
     return postes
 
 
-def contenu(postes):
+NOMS = [retroarch for _, retroarch in ORDRE]          # b a y x l r
+
+
+def ordre_du_jeu(retropad):
+    """Les six noms RetroPad dans l ordre ou le jeu numerote ses boutons :
+    ceux que le coeur annonce d abord, puis les autres dans l ordre habituel."""
+    vus = [n for n in (retropad or []) if n in NOMS]
+    return vus + [n for n in NOMS if n not in vus]
+
+
+def contenu(postes, ordre=None, jeu=None):
+    """Le fichier : le nom RetroPad numero k de l ordre a la position k."""
+    ordre = ordre or NOMS
     lignes = [MARQUE,
               "# Genere a partir de es_input.cfg. Relancer apres « Configurer une manette ».",
               "# Positions : 1 2 3 en haut, 4 5 6 en bas, comme dans l assistant."]
+    if jeu:
+        lignes.append("# %s : le coeur range ses boutons %s" % (jeu, " ".join(ordre)))
     for joueur in sorted(postes):
         ids = postes[joueur]
-        for role, retroarch in ORDRE:
+        for position, (role, _) in enumerate(ORDRE):
             numero = ids.get(role, ids.get(AUTRE_NOM.get(role, "")))
             if numero is None:
                 raise SystemExit("poste %d : le role %s manque dans es_input.cfg" % (joueur, role))
-            lignes.append('input_player%d_%s_btn = "%d"' % (joueur, retroarch, numero))
+            lignes.append('input_player%d_%s_btn = "%d"' % (joueur, ordre[position], numero))
     return "\n".join(lignes) + "\n"
+
+
+def ecrire(chemin, texte):
+    provisoire = chemin + ".tmp"
+    with open(provisoire, "w") as fh:
+        fh.write(texte)
+    os.replace(provisoire, chemin)
+
+
+def par_jeu(dossier, postes, entrees, systeme, retirer, voir):
+    """Un <rom>.retroarch.cfg pour chaque jeu que le coeur ne range pas dans
+    l ordre habituel ; les notres devenus inutiles sont retires. Un fichier
+    par jeu qui n est pas a nous n est jamais touche. Renvoie (ecrits, retires)."""
+    ecrits = retires = 0
+    roms = {f.rsplit(".", 1)[0]: f for f in os.listdir(dossier) if f.lower().endswith((".zip", ".7z"))}
+    for jeu, fichier in sorted(roms.items()):
+        chemin = os.path.join(dossier, fichier + ".retroarch.cfg")
+        existe = os.path.exists(chemin)
+        if existe and not est_a_nous(chemin):
+            continue
+        fiche = (entrees or {}).get(jeu) or {}
+        ordre = ordre_du_jeu(fiche.get("retropad"))
+        if not retirer and ordre != NOMS:
+            texte = contenu(postes, ordre, jeu)
+            if voir:
+                print("--- %s\n%s" % (chemin, texte))
+            elif not existe or open(chemin).read() != texte:
+                ecrire(chemin, texte)
+                ecrits += 1
+        elif existe and not voir:
+            os.remove(chemin)
+            retires += 1
+    return ecrits, retires
 
 
 def est_a_nous(chemin):
@@ -99,9 +151,16 @@ def main():
     p.add_argument("--roms", default="/recalbox/share/roms")
     p.add_argument("--voir", action="store_true", help="affiche sans rien ecrire")
     p.add_argument("--retirer", action="store_true", help="retire nos fichiers")
+    p.add_argument("--entrees", help="releve de relever-entrees.py : un fichier par jeu range autrement")
     a = p.parse_args()
 
-    texte = None if a.retirer else contenu(lire_ids(a.es_input))
+    postes = None if a.retirer else lire_ids(a.es_input)
+    texte = None if a.retirer else contenu(postes)
+    entrees = None
+    if a.entrees:
+        import json
+        with open(a.entrees) as fh:
+            entrees = json.load(fh).get("jeux", {})
     for systeme in a.systemes:
         dossier = os.path.join(a.roms, systeme)
         chemin = os.path.join(dossier, ".retroarch.cfg")
@@ -116,14 +175,17 @@ def main():
             if existe:
                 os.remove(chemin)
                 print("%s : retire, la regle de Recalbox revient" % systeme)
+            _, retires = par_jeu(dossier, None, None, systeme, True, False)
+            if retires:
+                print("%s : %d fichier(s) par jeu retire(s)" % (systeme, retires))
             continue
+        if entrees is not None:
+            ecrits, retires = par_jeu(dossier, postes, entrees, systeme, False, a.voir)
+            print("%s : par jeu, %d fichier(s) ecrit(s), %d retire(s)" % (systeme, ecrits, retires))
         if a.voir:
             print("--- %s (%s)\n%s" % (systeme, chemin, texte))
             continue
-        provisoire = chemin + ".tmp"
-        with open(provisoire, "w") as fh:
-            fh.write(texte)
-        os.replace(provisoire, chemin)
+        ecrire(chemin, texte)
         print("%s : %s ecrit" % (systeme, chemin))
     return 0
 

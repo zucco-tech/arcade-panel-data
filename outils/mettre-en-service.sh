@@ -37,7 +37,16 @@ sh "$OUTILS/deployer-programmes.sh" || exit 1
 etape "3. bouton 1 en haut a gauche ($SYSTEMES)"
 ES=$(mktemp)
 $SCP $BORNE:/recalbox/share/system/.emulationstation/es_input.cfg "$ES" || { echo "es_input.cfg illisible"; exit 1; }
-python3 "$OUTILS/aligner-boutons.py" --es-input "$ES" --roms /mnt/roms $SYSTEMES || exit 1
+# Par jeu, quand le releve des entrees du coeur existe (relever-entrees.py) :
+# les jeux que FBNeo range autrement (Street Fighter...) ont leur fichier.
+ENTREES=/mnt/recalbox/donnees/entrees-retropad.json
+if [ -f "$ENTREES" ]; then
+    python3 "$OUTILS/aligner-boutons.py" --es-input "$ES" --roms /mnt/roms --entrees "$ENTREES" fbneo || exit 1
+    python3 "$OUTILS/aligner-boutons.py" --es-input "$ES" --roms /mnt/roms neogeo || exit 1
+else
+    python3 "$OUTILS/aligner-boutons.py" --es-input "$ES" --roms /mnt/roms $SYSTEMES || exit 1
+    echo "ATTENTION : pas de $ENTREES, les jeux de combat FBNeo auront poings et pieds melanges"
+fi
 rm -f "$ES"
 
 etape "4. sante de la borne"
