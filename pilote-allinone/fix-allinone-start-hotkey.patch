@@ -1,0 +1,43 @@
+--- a/projects/recalbox-allinone/allinone.c
++++ b/projects/recalbox-allinone/allinone.c
+@@ -911,6 +911,9 @@
+ static unsigned int should_release_start = 1;
+ static short can_exit = 0;
+ static short should_release_hk = 0;
++// The physical HOTKEY button was down at some point while START was held:
++// the player is doing HOTKEY + START himself, START must not become HOTKEY.
++static short hk_held_with_start = 0;
+ 
+ #define PRESS_AND_SYNC(player, button)                  \
+   input_report_key(player_devs[(player)], (button), 1); \
+@@ -948,10 +951,13 @@
+       should_release_start = 1;
+       should_release_hk = 0;
+       can_exit = allinone_config.exit_on_start;
++      hk_held_with_start = PRESSED_CODE(*data_chips, PLAYER1, BTN_HOTKEY);
+     } else if (start_state != *data_chips) {
+       // Start is pressed and the state has changed since last loop
+       // Only player 1
+       int player = PLAYER1;
++      if (PRESSED_CODE(*data_chips, PLAYER1, BTN_HOTKEY))
++        hk_held_with_start = 1;
+       for (int button = 0; button < BTN_PER_PLAYER_ON_ALLINONE; button++) {
+         if (press_time[player][button] == 0 && PRESSED_CODE(*data_chips, player, button)) {
+           // Saving press time
+@@ -1056,7 +1062,7 @@
+           PRESS_AND_SYNC(PLAYER1, BTN_START);
+           RELEASE_AND_SYNC(PLAYER1, BTN_START);
+           RELEASE_AND_SYNC(PLAYER1, BTN_MODE);
+-        } else if (HOTKEY_DELAY(*time_ns, last_start_press)) {
++        } else if (!hk_held_with_start && HOTKEY_DELAY(*time_ns, last_start_press)) {
+           // Long press, so we send HK
+           DEBUG &&printk(KERN_INFO
+                          "allinone: middle press : sending HK\n");
+@@ -1074,6 +1080,7 @@
+     }
+     should_release_start = 1;
+     last_start_press = 0;
++    hk_held_with_start = 0;
+   }
+   // For other players, only credits and turbos
+   for (int player = 1; player < allinone_config.player_count; player++) {

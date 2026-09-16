@@ -80,3 +80,25 @@ charge le corrigé, relance `panneau` et `credits`, et affiche
 `multi_index` avant et après. Attendu : `red green blue` puis
 `green red blue`, **et aucune couleur ne change sur le panneau**. Un
 redémarrage remet le module de Recalbox.
+
+## Le second correctif : HOTKEY + START redevient possible
+
+`fix-allinone-start-hotkey.patch`, sur `allinone.c` (le pilote des boutons).
+
+Le défaut : au relâchement de START, si START a été tenu une seconde ou
+plus, le pilote envoie HOTKEY au lieu de START (`HOTKEY_DELAY`), sans
+aucune option pour l'éviter. Quand le joueur tient lui-même le bouton
+HOTKEY et appuie sur START, le geste dure facilement plus d'une seconde :
+EmulationStation reçoit deux HOTKEY et jamais START, et l'écran
+« Configurer une manette » ne se valide pas.
+
+La correction : le pilote retient si le vrai bouton HOTKEY (bit
+`BTN_HOTKEY`) a été enfoncé pendant que START était tenu. Dans ce cas, un
+START long reste un START. Sans HOTKEY physique, rien ne change : un START
+tenu une seconde donne toujours HOTKEY, pour les panneaux qui n'ont pas de
+bouton HOTKEY.
+
+Ce correctif n'a **pas** de module prêt à essayer : il ajoute une variable
+et des tests, ce qui ne se fait pas proprement en changeant quelques octets.
+Il faut le compiler (chaîne de compilation Recalbox) — et il n'a donc pas
+encore été compilé ni essayé.
