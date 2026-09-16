@@ -27,9 +27,11 @@ ecrite apres chaque jeu ; une relance reprend ou on en etait.
 """
 
 import argparse
+import collections
 import ctypes
 import json
 import os
+import resource
 import subprocess
 import sys
 import time
@@ -104,6 +106,7 @@ BOUTON_1 = 0                             # RETRO_DEVICE_ID_JOYPAD_B : bouton 1 s
 ECHEANCE = None                          # heure limite du jeu en cours (mode acharne)
 MARGE_ECHEANCE = 30.0                    # on rend la main avant que le parent ne tue
 DOSSIER_IMAGES = "/mnt/recalbox/journaux/images"
+MEMOIRE_JEU = 2 * 1024 ** 3              # plafond par jeu (voir enfant)
 RAISONS_ACHARNE = ("delai depasse", "jeu inanime", "aucun candidat",
                    "candidats non confirmes")
 
@@ -173,7 +176,9 @@ class Coeur:
     """Un coeur libretro charge en memoire, avec un jeu dedans."""
 
     def __init__(self, chemin_coeur, dossier_systeme, options_frontend=None):
-        self.dits = []               # ce que le coeur raconte (son journal)
+        # Ce que le coeur raconte (son journal) : les dernieres lignes seulement,
+        # certains coeurs ecrivent a chaque image et la liste grossissait sans fin.
+        self.dits = collections.deque(maxlen=50)
         self.image = None            # derniere image calculee, pour la regarder
         self.format = 0              # format des pixels, annonce par le coeur
         self.entrees = []            # ce que le jeu declare comme boutons
@@ -657,7 +662,7 @@ def mesurer(chemin_coeur, chemin_rom, dossier_systeme, bavard, options=None):
         # On rapporte ce que le coeur a dit : « romset is unknown », un
         # fichier manquant... C est la difference entre « ca ne marche pas »
         # et une raison sur laquelle on peut agir.
-        dit = " | ".join(coeur.dits[-3:]) if coeur.dits else "sans explication"
+        dit = " | ".join(list(coeur.dits)[-3:]) if coeur.dits else "sans explication"
         return {"erreur": "rom refusee (%s)" % dit[:160]}, lignes
     imposes = coeur.choisir_les_dip()
     if imposes:
@@ -816,6 +821,11 @@ def enfant():
     """Mesure un jeu et imprime la fiche en JSON. Le processus est jete
     ensuite : aucun pilote ne peut polluer le suivant."""
     _, coeur, rom, dossier, options_ra = sys.argv[1:6]
+    # Un plafond de memoire par jeu. Le 16/09/2026, FBNeo a pris 500 Mo par
+    # instant sur des Neo Geo pirates (kof97inv, kf2k1pkz, ironclado) : les
+    # quatre releves ont rempli les 14 Go du PC et tout le terminal a ete tue.
+    # Un jeu normal tient en 200 Mo ; au-dela de MEMOIRE_JEU, il plante seul.
+    resource.setrlimit(resource.RLIMIT_AS, (MEMOIRE_JEU, MEMOIRE_JEU))
     if os.environ.get("RELEVE_ACHARNE") == "1":
         acharner()
     if os.environ.get("RELEVE_DELAI"):
