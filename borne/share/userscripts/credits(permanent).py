@@ -123,12 +123,12 @@ LEDS_JEU = {
 
 # Qui est qui sur le panneau — quel bouton envoie quel code, quel code joue
 # quel role, quelle LED porte le bouton 1 du jeu — n est plus ecrit ici :
-# c est le module commun cablage.py, a cote des donnees de la borne, qui le
+# c est le module commun cablage.py, dans userscripts/panneau-allinone/, qui le
 # lit dans es_input.cfg (le mappage Recalbox, remappable) et cablage.json
 # (le physique, mesure par associer-boutons). Si l un manque, il prend les
 # valeurs de la borne de reference. Le panneau du menu lit la meme chose.
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                                "..", "system", "panneau-allinone"))
+                                "panneau-allinone"))
 import cablage
 import couleurs
 import reglages

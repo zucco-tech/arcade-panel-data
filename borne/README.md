@@ -10,6 +10,10 @@ borne/share/                          →  /recalbox/share/
         panneau(permanent).py             dans le menu : les boutons du jeu survolé, dans ses couleurs
         marquee(permanent).py             le nom du jeu sur le marquee (facultatif)
         gardefou[start,rungame,endgame].ash   relance un programme permanent qui serait mort
+        panneau-allinone/                 le CODE partagé par panneau et credits (un sous-dossier : voir plus bas)
+            cablage.py                    qui est qui sur le panneau : rôles (es_input.cfg) × câblage (cablage.json) × surcharges des roms → LED de chaque bouton
+            couleurs.py                   palette par défaut, teintes nommées, ordre des couleurs lu dans multi_index
+            reglages.py                   les réglages allinone.* lus dans recalbox.conf
     system/
         custom.sh                         crochet de démarrage Recalbox (voir plus bas)
         panneau-allinone/
@@ -19,16 +23,21 @@ borne/share/                          →  /recalbox/share/
                 appris.json               ce que la borne a appris elle-même (créé par elle)
             boutons-arcade.json           combien de boutons, combien de joueurs, couleurs
             manettes-consoles.json        les manettes d'origine là où Recalbox se trompe : couleurs, START, SELECT, nombre de boutons
-            cablage.py                    qui est qui sur le panneau : rôles (es_input.cfg) × câblage (cablage.json) → LED de chaque bouton
             cablage.json                  quel bouton envoie quel code, LED par LED — mesuré par associer-boutons
-            couleurs.py                   palette par défaut, teintes nommées, ordre des couleurs lu dans multi_index
-            reglages.py                   les réglages allinone.* lus dans recalbox.conf
             relancer.sh                   sh relancer.sh credits|panneau|marquee
             processus.sh                  ce que relancer.sh et le garde-fou ont en commun
             sauvegardes/                  anciennes versions gardées sous la main (créé à la main)
             journaux/                     ce que les programmes ont fait, jeu par jeu (créé par eux)
             etat/                         couleurs posées, signe de vie du panneau (créé par eux)
 ```
+
+**Le code dans `userscripts/`, les données dans `system/`.** Les trois
+modules Python partagés sont dans un **sous-dossier** de `userscripts`, pas
+dans `userscripts` lui-même : EmulationStation exécute tout `.py` ou `.sh`
+posé directement dans `userscripts` dont le nom ne porte pas d'événements
+entre crochets, et il le fait **à chaque événement** — chaque mouvement dans
+le menu (`NotificationManager.cpp`, lu le 16/09/2026). Les sous-dossiers, il
+ne les regarde pas.
 
 ## Mettre en place sur une borne
 
@@ -45,6 +54,7 @@ réseau, ou la clé USB qui la porte), puis redémarrer :
 | `userscripts/gardefou[start,rungame,endgame].ash` | `share\userscripts\` |
 | `userscripts/marquee(permanent).py` | `share\userscripts\` — facultatif, seulement s'il y a un marquee |
 | `system/custom.sh` | `share\system\` |
+| `userscripts/panneau-allinone/` (le dossier entier : le code partagé) | `share\userscripts\` |
 | `system/panneau-allinone/` (le dossier entier) | `share\system\` |
 
 **Rien d'autre n'est touché.** On ajoute ces fichiers, on n'en remplace

@@ -9,7 +9,7 @@ bougent pas, et qu un .retroarch.cfg etranger n est jamais touche.
 import os, subprocess, sys, tempfile
 ICI = os.path.dirname(os.path.abspath(__file__))
 DEPOT = os.path.dirname(os.path.dirname(ICI))
-sys.path.insert(0, os.path.join(DEPOT, "borne", "share", "system", "panneau-allinone"))
+sys.path.insert(0, os.path.join(DEPOT, "borne", "share", "userscripts", "panneau-allinone"))
 import cablage
 
 R = tempfile.mkdtemp(prefix="alignement-")

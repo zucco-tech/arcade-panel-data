@@ -43,11 +43,16 @@ import struct
 import sys
 import time
 
-# Quelle LED porte quel bouton du jeu : le module commun cablage.py, a cote
-# des donnees de la borne, le deduit du mappage Recalbox (es_input.cfg) et du
-# cablage mesure (cablage.json). Le demon des credits lit la meme chose.
+# Le code partage avec le demon des credits vit a cote, dans le sous-dossier
+# userscripts/panneau-allinone/ (les donnees, elles, restent dans
+# system/panneau-allinone/) :
+#   cablage.py   quelle LED porte quel bouton du jeu, deduit du mappage
+#                Recalbox (es_input.cfg), du cablage mesure (cablage.json) et
+#                des surcharges .retroarch.cfg des dossiers de roms
+#   couleurs.py  palette de secours, teintes nommees, ordre des couleurs
+#   reglages.py  les reglages allinone.* de recalbox.conf
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                                "..", "system", "panneau-allinone"))
+                                "panneau-allinone"))
 import cablage
 import couleurs
 import reglages

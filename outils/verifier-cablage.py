@@ -131,7 +131,7 @@ def tour(poste, table):
 
 def main():
     quels = sys.argv[1] if len(sys.argv) > 1 else "12"
-    sys.path.insert(0, N)
+    sys.path.insert(0, "/recalbox/share/userscripts/panneau-allinone")
     import cablage
     table = cablage.Cablage()
     print("tables : %s" % table.source, flush=True)

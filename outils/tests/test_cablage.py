@@ -14,7 +14,7 @@ import tempfile
 import time
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..",
-                                "borne", "share", "system", "panneau-allinone"))
+                                "borne", "share", "userscripts", "panneau-allinone"))
 import cablage
 
 ES = """<?xml version="1.0"?>

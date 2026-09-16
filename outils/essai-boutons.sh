@@ -25,7 +25,7 @@ JOURNAL=/mnt/recalbox/journaux/essai-boutons-$(date +%Y%m%d-%H%M).log
 
 setsid -w ssh -o ConnectTimeout=10 -o StrictHostKeyChecking=no $BORNE python3 - <<'SUR_LA_BORNE' 2>&1 | tee "$JOURNAL"
 import os, socket, subprocess, sys, time
-sys.path.insert(0, "/recalbox/share/system/panneau-allinone")
+sys.path.insert(0, "/recalbox/share/userscripts/panneau-allinone")
 import cablage
 
 R = "/recalbox/share/roms/"

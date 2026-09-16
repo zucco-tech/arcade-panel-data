@@ -30,8 +30,18 @@ Le gestionnaire web ne les montre PAS : son serveur n accepte qu une liste
 fixe de sections (/api/configuration/allinone repond 404, constate le
 16/09/2026). On les change dans le fichier, par le partage reseau.
 
-A importer depuis userscripts/, comme cablage :
-    sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "system", "panneau-allinone"))
+Ou il vit, et pourquoi la. Le code partage par les programmes du panneau
+est range dans userscripts/panneau-allinone/, a cote de ceux qui s en
+servent ; les donnees (credits, cablage.json, journaux) restent dans
+system/panneau-allinone/. Un SOUS-DOSSIER, pas userscripts/ lui-meme :
+EmulationStation execute tout .py ou .sh pose directement dans userscripts
+et dont le nom ne porte pas d evenements entre crochets — a CHAQUE evenement,
+chaque mouvement dans le menu (NotificationManager.cpp, LoadScriptList et
+ExtractNotificationsFromPath, lu le 16/09/2026). Les sous-dossiers, il ne
+les regarde pas.
+
+A importer depuis userscripts/ :
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), "panneau-allinone"))
     import reglages
 """
 

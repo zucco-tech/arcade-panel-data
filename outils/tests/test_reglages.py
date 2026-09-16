@@ -10,7 +10,7 @@ import importlib.util, os, sys, tempfile, time
 
 RACINE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 W = os.environ.get("ARCADE_CREDITS") or os.path.join(RACINE, "borne", "share", "userscripts")
-sys.path.insert(0, os.path.join(W, "..", "system", "panneau-allinone"))
+sys.path.insert(0, os.path.join(W, "panneau-allinone"))
 import couleurs, reglages
 
 def charger(nom, fichier):
