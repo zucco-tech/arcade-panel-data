@@ -49,6 +49,10 @@ import time
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                 "..", "system", "panneau-allinone"))
 import cablage
+import couleurs
+PALETTE_DEFAUT = couleurs.PALETTE_DEFAUT
+TEINTES = couleurs.TEINTES
+teinte_par_defaut = couleurs.teinte_par_defaut
 TABLE = cablage.Cablage()
 
 ETAT = "/tmp/es_state.inf"
@@ -117,14 +121,6 @@ PORTABLES = {"gb", "gbc", "gba", "gamegear", "lynx", "ngp", "ngpc", "wswan",
              "3ds", "gw", "tic80"}
 
 # Couleurs nommees par la base, telles qu elles sont ecrites sur les bornes.
-TEINTES = {
-    "red": (0xFF, 0x00, 0x00), "blue": (0x00, 0x00, 0xFF),
-    "green": (0x00, 0xFF, 0x00), "yellow": (0xFF, 0xFF, 0x00),
-    "white": (0xFF, 0xFF, 0xFF), "black": (0x20, 0x20, 0x20),
-    "orange": (0xFF, 0x60, 0x00), "purple": (0x80, 0x00, 0xFF),
-    "pink": (0xFF, 0x40, 0x80), "cyan": (0x00, 0xFF, 0xFF),
-    "grey": (0x60, 0x60, 0x60), "gray": (0x60, 0x60, 0x60),
-}
 
 
 # Palette « comme les arcades d origine », pour les jeux dont la base ne
@@ -134,14 +130,6 @@ TEINTES = {
 #   4 boutons : Rouge Jaune Vert Bleu — le Neo Geo MVS, 8 jeux sur 16
 #   6 boutons : Bleu Jaune Rouge x2 — les jeux de combat Capcom, deux rangees
 #   3 boutons : egalite Capcom (bleu) / Sega (rouge) — bleu retenu
-PALETTE_DEFAUT = {
-    1: ["red"],
-    2: ["red", "blue"],
-    3: ["blue", "blue", "blue"],
-    4: ["red", "yellow", "green", "blue"],
-    5: ["blue", "yellow", "red", "blue", "yellow"],
-    6: ["blue", "yellow", "red", "blue", "yellow", "red"],
-}
 
 
 # Ce que chaque console utilise comme boutons, pour les systemes qui n ont
@@ -332,13 +320,6 @@ def joueurs_depuis(etat):
     if not nombres:
         return None
     return max(nombres) >= 2
-
-
-def teinte_par_defaut(nombre, numero):
-    """La couleur d un bouton quand la fiche n en donne pas : la palette par
-    defaut pour ce nombre de boutons, blanc au-dela."""
-    palette = PALETTE_DEFAUT.get(nombre) or PALETTE_DEFAUT[6]
-    return palette[numero - 1] if numero - 1 < len(palette) else "white"
 
 
 def lire_fichier(chemin):
@@ -853,30 +834,40 @@ def main():
         derniere_modif = modif
 
         etat = lire_etat()
-        if not etat:
+        # EmulationStation reecrit ce fichier en place : on tombe parfois au
+        # milieu et il manque des lignes. Un etat sans « Action » ne prouve
+        # rien — surtout pas qu on a quitte la partie. Constate le
+        # 14/09/2026 : six bascules dans la meme seconde, le panneau et le
+        # demon des credits se disputaient les LED, et cela se voyait.
+        if not etat or "Action" not in etat:
             continue
         if etat.get("Action") not in AUTOMATIQUES:
             dernier_geste = maintenant       # on a navigue : c est un geste
 
-        # Partie en cours : le demon des credits est maitre des LED.
+        # Partie en cours : le demon des credits est seul maitre des LED.
+        # On n y touche plus du tout tant qu elle dure — deux programmes qui
+        # ecrivent les memes LED dix fois par seconde, cela saccade.
+        etait_en_partie = en_partie
         en_partie = (etat.get("State") == "playing"
                      or etat.get("Action") == "rungame")
         if en_partie:
-            # On rend les couleurs d origine AVANT que le demon des credits
-            # ne memorise les siennes : sinon il retiendrait nos couleurs
-            # comme etant celles de la carte.
-            insister_jusqu = maintenant + INSISTER_APRES_JEU
-            if dernier_jeu is not None:
+            if not etait_en_partie:
+                # On entre : on rend les couleurs d origine AVANT que le
+                # demon des credits ne memorise les siennes, sinon il
+                # retiendrait les notres comme etant celles de la carte.
                 carte = couleurs_de_carte(etat.get("SystemId") or "")
                 publier_couleurs_carte(carte)
                 for p in panneaux.values():
                     p.intensite = PLEIN
                     p.poser_carte(carte) if carte else p.rendre()
-            dernier_jeu = None
-            for p in panneaux.values():
-                p.dernier = None       # on ne sait plus ce qu il y a dessus
-                p.present = True       # pour ne pas toucher HK en revenant
+                    p.dernier = None   # on ne sait plus ce qu il y a dessus
+                    p.present = True   # pour ne pas toucher HK en revenant
+                dernier_jeu = None
             continue
+        if etait_en_partie:
+            # On vient de sortir : on repeint quelques secondes meme si rien
+            # ne change, le temps de reprendre la main sur les credits.
+            insister_jusqu = maintenant + INSISTER_APRES_JEU
 
         decision = decider(etat, boutons)
         systeme, jeu = decision["systeme"], decision["jeu"]

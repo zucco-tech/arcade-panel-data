@@ -51,8 +51,6 @@ ROLE_DU_BOUTON = {1: "b", 2: "a", 3: "y", 4: "x", 5: "l1", 6: "r1", 7: "l2", 8: 
 # les lettres du RetroPad (b, a, y, x) et les points cardinaux de SDL (south,
 # east, west, north) — c est le meme bouton. On lit les deux, on parle en
 # lettres.
-AUTRE_NOM = {"b": "south", "a": "east", "y": "west", "x": "north",
-             "south": "b", "east": "a", "west": "y", "north": "x"}
 LETTRE = {"south": "b", "east": "a", "west": "y", "north": "x"}
 # Les noms de RetroArch pour nos roles (retroarchcustom.cfg : input_player1_l_btn).
 NOM_RETROARCH = {"l1": "l", "r1": "r"}
