@@ -426,3 +426,22 @@ deployer-programmes.sh deplacait couleurs.py sur la borne sans jamais le
 copier : deploye tel quel, panneau et credits seraient morts au demarrage
 sur « import couleurs ». Quand on ajoute un module, l ajouter aux DEUX
 listes du script, la copie et la mise en place.
+
+## Bouton 1 en haut a gauche : une surcharge, pas une modification (16/09/2026)
+Relu apres la mise a jour alpha-3.2 : configgen/controllers/GamepadInfo.py,
+shouldReshuffle6Btn. Sur un panneau arcade6/arcade8 sans carte Jamma, les
+boutons sont reordonnes pour TOUS les systemes sauf MAME. Le menu, lui,
+garde l ordre du dessin. D ou « l inversion » : bouton 1 en haut a gauche
+au menu et sous MAME, en bas a gauche sous FBNeo.
+
+Deux voies fermees, lues dans le code : le Remapper (remap-profiles.json)
+ne lit que le fichier du systeme, en lecture seule ; les « layouts » ne
+viennent que d une carte RGB Jamma ou JVS. La voie ouverte : configgen
+applique par-dessus sa configuration tout .retroarch.cfg pose dans un
+dossier de roms (settings/configOverriding.py, --appendconfig). Choix du
+proprietaire : bouton 1 en haut a gauche partout ; outils/aligner-boutons.py
+ecrit la surcharge de fbneo et neogeo depuis es_input.cfg.
+
+Piege evite : poser la surcharge sans deployer le cablage.py qui la lit
+aurait remis les boutons en place et inverse les LED. Les deux partent
+ensemble (outils/mettre-en-service.sh).

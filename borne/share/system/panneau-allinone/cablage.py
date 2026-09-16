@@ -39,6 +39,14 @@ import xml.etree.ElementTree as ET
 
 ES_INPUT = "/recalbox/share/system/.emulationstation/es_input.cfg"
 RETROARCH = "/recalbox/share/system/configs/retroarch/retroarchcustom.cfg"
+# Ce que RetroArch charge PAR-DESSUS retroarchcustom.cfg : la chaine des
+# .retroarch.cfg des dossiers de roms, recopiee la par configgen a chaque
+# lancement (configOverriding.buildOverrideChain, --appendconfig).
+RETROARCH_SURCHARGE = RETROARCH + ".overrides.cfg"
+# La surcharge d un systeme entier, dans son dossier de roms. C est par elle
+# qu on remet FBNeo dans l ordre du dessin (outils/aligner-boutons.py) : le
+# panneau doit la connaitre des le menu, avant que le jeu ne soit lance.
+SURCHARGE_SYSTEME = "/recalbox/share/roms/%s/.retroarch.cfg"
 FICHIER_CABLAGE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "cablage.json")
 MANETTES = {1: "AllInOneP1", 2: "AllInOneP2"}
 
@@ -120,17 +128,19 @@ def _lire_cablage(chemin=FICHIER_CABLAGE):
     return {int(p): {int(c): int(l) for c, l in table.items()} for p, table in postes.items()}
 
 
-def _lire_retroarch(chemin=RETROARCH):
-    """{joueur: {nom RetroArch: numero SDL}} d apres retroarchcustom.cfg, le
-    fichier que Recalbox ecrit a chaque lancement de jeu ; {} s il manque."""
-    try:
-        with open(chemin) as fh:
-            texte = fh.read()
-    except OSError:
-        return {}
+def _lire_retroarch(*chemins):
+    """{joueur: {nom RetroArch: numero SDL}} d apres les fichiers donnes, lus
+    dans l ordre : un fichier plus loin l emporte, comme --appendconfig chez
+    RetroArch. Un fichier absent ne compte pas ; {} si aucun ne dit rien."""
     joueurs = {}
-    for j, nom, numero in re.findall(r"^input_player(\d)_(\w+?)_btn\s*=\s*\"?(\d+)", texte, re.M):
-        joueurs.setdefault(int(j), {})[nom] = int(numero)
+    for chemin in chemins:
+        try:
+            with open(chemin) as fh:
+                texte = fh.read()
+        except OSError:
+            continue
+        for j, nom, numero in re.findall(r"^input_player(\d)_(\w+?)_btn\s*=\s*\"?(\d+)", texte, re.M):
+            joueurs.setdefault(int(j), {})[nom] = int(numero)
     return joueurs
 
 
@@ -152,15 +162,19 @@ class Cablage:
     14/09/2026. Appeler rafraichir() regulierement suffit : il ne relit que
     si un fichier a change."""
 
-    def __init__(self, es_input=ES_INPUT, fichier_cablage=FICHIER_CABLAGE, retroarch=RETROARCH):
-        self._fichiers = (es_input, fichier_cablage, retroarch)
+    def __init__(self, es_input=ES_INPUT, fichier_cablage=FICHIER_CABLAGE, retroarch=RETROARCH,
+                 surcharge=None, surcharge_systeme=SURCHARGE_SYSTEME):
+        surcharge = surcharge if surcharge is not None else retroarch + ".overrides.cfg"
+        self._fichiers = (es_input, fichier_cablage, retroarch, surcharge)
+        self._surcharge_systeme = surcharge_systeme
+        self._systemes = {}          # systeme -> (date, surcharge lue)
         self._dates = {}
         self._charger()
 
     def _charger(self):
         """Lit les trois fichiers et en tire les tables ; retient leur date
         pour savoir quand relire."""
-        es_input, fichier_cablage, retroarch = self._fichiers
+        es_input, fichier_cablage, retroarch, surcharge = self._fichiers
         es = _lire_es_input(es_input)
         physique = _lire_cablage(fichier_cablage)
         self._roles, self._ids, self._types = {}, {}, {}
@@ -168,7 +182,7 @@ class Cablage:
             roles, ids, genre = es.get(nom) or (dict(ROLES_DEFAUT), {}, TYPE_DEFAUT)
             self._roles[j], self._ids[j], self._types[j] = roles, ids, genre
         self._led_du_code = {j: physique.get(j) or dict(CABLAGE_DEFAUT) for j in MANETTES}
-        self._retroarch = _lire_retroarch(retroarch)
+        self._retroarch = _lire_retroarch(retroarch, surcharge)
         self.source = "%s, %s" % ("es_input.cfg" if es else "roles par defaut",
                                   "cablage.json" if physique else "cablage par defaut")
         self._dates = self._horodates()
@@ -209,6 +223,20 @@ class Cablage:
 
     # -- ce que le jeu voit
 
+    def surcharge_systeme(self, systeme):
+        """{joueur: {nom RetroArch: numero SDL}} de la surcharge du dossier de
+        roms de ce systeme, {} s il n y en a pas. Relue quand elle change : le
+        dossier est sur le NAS, on ne la garde pas plus qu un tour."""
+        if not systeme or not self._surcharge_systeme:
+            return {}
+        chemin = self._surcharge_systeme % systeme
+        date = _horodate(chemin)
+        connue = self._systemes.get(systeme)
+        if connue is None or connue[0] != date:
+            connue = (date, _lire_retroarch(chemin) if date is not None else {})
+            self._systemes[systeme] = connue
+        return connue[1]
+
     def disposition(self, joueur, systeme=""):
         """{role du jeu: code} sur ce systeme, d apres la regle de Recalbox.
 
@@ -221,6 +249,7 @@ class Cablage:
         appelle north, a recoit l1, y recoit south, x recoit east, l1
         recoit west, r1 ne bouge pas. MAME est laisse dans l ordre ; la
         famille Naomi echange ensuite L1 et R1 ; la Megadrive a ses tables.
+        Une surcharge .retroarch.cfg du dossier de roms passe par-dessus.
         Les boutons de facade (select, start, hotkey) ne bougent jamais."""
         entrees = dict(self._roles[joueur])
         genre = self._types[joueur]
@@ -233,6 +262,12 @@ class Cablage:
         if genre in TYPES_ARCADE and systeme == "megadrive":
             table.update(MEGADRIVE_6 if genre in TYPES_SIX else MEGADRIVE_3)
         jeu = {ra: entrees.get(role) for role, ra in table.items() if entrees.get(role) is not None}
+        # Une surcharge du dossier de roms a le dernier mot, comme chez
+        # RetroArch : c est elle qui remet FBNeo dans l ordre du dessin.
+        for nom, numero in self.surcharge_systeme(systeme).get(joueur, {}).items():
+            role = {"l": "l1", "r": "r1"}.get(nom, nom)
+            if role in ROLES_DE_JEU and numero in self._ids[joueur]:
+                jeu[role] = self._ids[joueur][numero]
         for facade in ("select", "start", "hotkey"):
             if facade in entrees:
                 jeu[facade] = entrees[facade]

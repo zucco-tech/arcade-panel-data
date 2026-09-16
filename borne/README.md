@@ -113,19 +113,31 @@ toucher au programme, dans `manettes-consoles.json` : une couleur en vrai
 RGB, `null` pour un bouton absent, `nombre` quand Recalbox en compte trop
 peu.
 
-**Où sont les boutons du jeu — la règle de Recalbox.** Sur un panneau déclaré
-`arcade6` dans l'assistant (les boutons pressés dans l'ordre du dessin, 1 à
-6), Recalbox ne passe pas les rôles tels quels à l'émulateur : son
-`configgen` **réordonne** les six boutons pour que la rangée du bas porte
-les boutons 1 et 2 du jeu et la rangée du haut les 3, 4, 5 — sur FBNeo et
-sur toutes les consoles. **MAME**, lui, les prend dans l'ordre du dessin :
-1, 2, 3 en haut, 4, 5, 6 en bas. La famille Naomi échange encore L1 et R1,
-la Megadrive a ses propres tables. `cablage.py` recopie cette règle
-(`configgen/controllers/controller.py`, Recalbox 11) et, en partie, la
-vérifie contre `retroarchcustom.cfg` — ce que RetroArch a réellement
-chargé a le dernier mot, et un écart est écrit au journal. Ne jamais
-« corriger » `es_input.cfg` à la main pour changer la place des boutons :
-c'est cette règle qu'il faut suivre, pas contourner (leçon du 14/09/2026).
+**Où sont les boutons du jeu — la règle de Recalbox, et notre choix.** Sur
+un panneau déclaré `arcade6` dans l'assistant (les boutons pressés dans
+l'ordre du dessin, 1 à 6), Recalbox ne passe pas les rôles tels quels à
+l'émulateur : son `configgen` **réordonne** les six boutons pour tous les
+systèmes sauf MAME (`GamepadInfo.shouldReshuffle6Btn`, alpha-3.2) :
+
+```
+MAME, menu d'EmulationStation      FBNeo, Neo Geo, consoles (règle Recalbox)
+  [1] [2] [3]                        [3] [4] [5]
+  [4] [5] [6]                        [1] [2] [6]
+```
+
+Choix du propriétaire (16/09/2026) : **bouton 1 en haut à gauche partout**,
+comme une vraie borne, comme MAME et comme le menu. FBNeo et Neo Geo y sont
+remis par une surcharge officielle de Recalbox, un fichier `.retroarch.cfg`
+dans leur dossier de roms, écrit par `outils/aligner-boutons.py` à partir de
+`es_input.cfg`. Aucun fichier de Recalbox n'est modifié ; les consoles
+gardent la règle de Recalbox. `cablage.py` lit cette surcharge, dans le menu
+comme en jeu : les LED suivent. À relancer après chaque « Configurer une
+manette » ; `--retirer` rend la règle de Recalbox. Limite : les jeux de
+combat FBNeo à six boutons rangent poings et pieds comme une manette, ils
+peuvent se mélanger dans l'ordre du dessin — à vérifier jeu par jeu.
+
+Ne jamais « corriger » `es_input.cfg` à la main pour changer la place des
+boutons (leçon du 14/09/2026).
 
 ## Régler la borne
 
