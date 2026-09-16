@@ -10,6 +10,8 @@ A importer depuis userscripts/, comme cablage :
     import couleurs
 """
 
+import os
+
 # Quelle couleur donner au bouton N quand on ne sait rien du jeu, selon le
 # nombre de boutons qu il utilise. Lue sur les bornes d origine.
 PALETTE_DEFAUT = {
@@ -30,6 +32,32 @@ TEINTES = {
     "pink": (0xFF, 0x40, 0x80), "cyan": (0x00, 0xFF, 0xFF),
     "grey": (0x60, 0x60, 0x60), "gray": (0x60, 0x60, 0x60),
 }
+
+COMPOSANTES = ("red", "green", "blue")
+
+
+def ordre_materiel(chemin_led="/sys/class/leds/aio_p1_b1_1"):
+    """Dans quel ordre ecrire (rouge, vert, bleu) dans multi_intensity.
+
+    Chaque LED publie dans multi_index le nom de ses composantes, dans
+    l ordre ou multi_intensity les attend. Le pilote AllInOne d origine
+    annonce « red green blue » alors que ses WS2812B sont cablees vert,
+    rouge, bleu (mesure du 12/09/2026) : ce texte-la est connu pour mentir,
+    on applique la correction mesuree. Un pilote corrige annonce « green
+    red blue » : on le croit, et le resultat est le meme. Sans LED lisible
+    (banc d essai, carte absente), on garde la correction mesuree.
+
+    Renvoie les indices a prendre dans (rouge, vert, bleu), position par
+    position : (1, 0, 2) pour vert, rouge, bleu."""
+    try:
+        with open(os.path.join(chemin_led, "multi_index")) as fh:
+            noms = fh.read().split()
+    except (IOError, OSError):
+        noms = []
+    if sorted(noms) != sorted(COMPOSANTES) or tuple(noms) == COMPOSANTES:
+        return (1, 0, 2)
+    return tuple(COMPOSANTES.index(n) for n in noms)
+
 
 def teinte_par_defaut(nombre, numero):
     """La couleur d un bouton quand la fiche n en donne pas : la palette par

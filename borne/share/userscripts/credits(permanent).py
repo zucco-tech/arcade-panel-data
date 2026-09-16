@@ -131,10 +131,14 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                 "..", "system", "panneau-allinone"))
 import cablage
 import couleurs
+import reglages
 PALETTE_DEFAUT = couleurs.PALETTE_DEFAUT
 TEINTES = couleurs.TEINTES
 teinte_par_defaut = couleurs.teinte_par_defaut
 TABLE = cablage.Cablage()
+# Les reglages de recalbox.conf (voir reglages.py). main() les relie au
+# journal ; un banc d essai qui prend une classe seule n en lit aucun.
+REGLAGES = reglages.Reglages(chemin=os.devnull)
 
 # Couleurs nommees par la base des boutons, telles qu elles sont ecrites sur
 # les vraies bornes. Le materiel attend du G R B, la fonction couleur() s en
@@ -143,10 +147,12 @@ TABLE = cablage.Cablage()
 # Ordre des composantes attendu par le materiel.
 #
 # Les WS2812B recoivent leurs couleurs dans l'ordre vert, rouge, bleu, alors
-# que le module les declare dans l'ordre rouge, vert, bleu. Ecrire du rouge
-# franc allume donc du vert — constate sur la borne. On ecrit les couleurs de
-# facon lisible et cette fonction les remet dans l'ordre du fil.
-ORDRE_MATERIEL = (1, 0, 2)              # G R B
+# que le pilote d'origine les declare dans l'ordre rouge, vert, bleu. Ecrire
+# du rouge franc allume donc du vert — constate sur la borne. On ecrit les
+# couleurs de facon lisible et cette fonction les remet dans l'ordre du fil.
+# couleurs.py lit multi_index et sait quand il ment : meme ordre que le
+# panneau du menu, avec le pilote d'origine comme avec un pilote corrige.
+ORDRE_MATERIEL = couleurs.ordre_materiel()              # G R B
 
 def couleur(rouge, vert, bleu):
     """Une couleur lisible, ecrite dans l'ordre que le materiel attend."""
@@ -158,6 +164,7 @@ def couleur(rouge, vert, bleu):
 # La couleur d'origine est relue avant, et remise des que le clignotement
 # s'arrete : rien n'est perdu.
 COULEUR_PIECE = couleur(0xFF, 0x00, 0x00)   # rouge : mets une piece
+                                            # (allinone.coin.color)
 COULEUR_START = None                        # sa couleur d'origine
 
 CODE_PIECE = 314                # BTN_SELECT — valeur de secours, voir cablage.py
@@ -186,8 +193,21 @@ DELAI_J2 = 2.5
 # qu'on apprend le vrai nombre de joueurs, sans croire le scrapeur.
 VERDICT_J2 = 2.0
 
+# Les valeurs d'origine ; recalbox.conf peut les changer : allinone.brightness,
+# allinone.blink.period, et allinone.game.idle pour INACTIVITE.
 PLEIN = 255                     # brightness au repos, valeur posee par le driver
 PERIODE = 0.5                   # demi-periode du clignotement
+
+
+def plein():
+    """La luminosite d'un bouton allume, telle que recalbox.conf la regle."""
+    return str(REGLAGES.get("allinone.brightness", PLEIN))
+
+
+def couleur_piece():
+    """La couleur de la PIECE qui clignote, telle que recalbox.conf la regle."""
+    rvb = REGLAGES.get("allinone.coin.color", None)
+    return couleur(*rvb) if rvb else COULEUR_PIECE
 SONDAGE = 0.3                   # relecture des credits pendant une partie
 BOUCLE = 0.1                    # granularite de la boucle principale
 
@@ -429,7 +449,7 @@ class Lampe:
             ecrire_led(chemin, "multi_intensity", valeur)
         self.origine.clear()
 
-    def clignoter(self, maintenant, periode=PERIODE):
+    def clignoter(self, maintenant, periode=None):
         """Un pas de clignotement : au premier appel la lampe prend sa couleur,
         puis elle s allume et s eteint a chaque periode."""
         if not self.active:
@@ -438,9 +458,9 @@ class Lampe:
                 self._memoriser()
                 self._ecrire("multi_intensity", self.couleur)
         if maintenant >= self.prochain:
-            self.prochain = maintenant + periode
+            self.prochain = maintenant + (periode or REGLAGES.get("allinone.blink.period", PERIODE))
             self.eteinte = not self.eteinte
-            self._ecrire("brightness", "0" if self.eteinte else str(PLEIN))
+            self._ecrire("brightness", "0" if self.eteinte else plein())
 
     def eteindre(self):
         """Noir : ce poste ne sert pas sur ce jeu.
@@ -459,7 +479,7 @@ class Lampe:
             return
         self.active = False
         self.eteinte = False
-        self._ecrire("brightness", str(PLEIN))
+        self._ecrire("brightness", plein())
         self._rendre_couleur()
 
 
@@ -519,7 +539,7 @@ class Panneau:
                 if not utilise:
                     self._ecrire(chemin, "brightness", "0")
                     continue
-                self._ecrire(chemin, "brightness", str(PLEIN))
+                self._ecrire(chemin, "brightness", plein())
                 teinte = ((couleurs.get("BUTTON%d" % numero) or {}).get("couleur")
                           or teinte_par_defaut(nombre, numero))
                 rvb = TEINTES.get((teinte or "").strip().lower())
@@ -538,7 +558,7 @@ class Panneau:
         menu_vivant = panneau_vivant()
         for chemins in self.boutons:
             for chemin in chemins:
-                self._ecrire(chemin, "brightness", str(PLEIN))
+                self._ecrire(chemin, "brightness", plein())
                 if not menu_vivant and chemin in self.origine:
                     self._ecrire(chemin, "multi_intensity", self.origine[chemin])
         self.origine.clear()
@@ -1236,12 +1256,14 @@ class Apprenti:
 # --- Boucle principale ---------------------------------------------------
 
 def main():
+    global REGLAGES
     preparer_dossiers()
+    REGLAGES = reglages.Reglages(journal)
     base = Base(DOSSIER_CREDITS)
-    piece = Lampe("piece", LEDS_PIECE, COULEUR_PIECE)
+    piece = Lampe("piece", LEDS_PIECE, couleur_piece())
     start = Lampe("start", LEDS_START, COULEUR_START)
     start2 = Lampe("start J2", LEDS_START_P2, COULEUR_START)
-    piece2 = Lampe("piece J2", LEDS_PIECE_P2, COULEUR_PIECE)
+    piece2 = Lampe("piece J2", LEDS_PIECE_P2, couleur_piece())
     deuxieme = True                # tant qu on ne sait pas, on n eteint rien
     panneaux = {1: Panneau(1), 2: Panneau(2)}
     boutons = BoutonsSurDisque(BASE_BOUTONS)
@@ -1371,6 +1393,12 @@ def main():
             # de decider quoi eclairer.
             if not en_jeu and TABLE.rafraichir():
                 journal("tables relues : %s" % TABLE.source)
+            # Les reglages aussi, entre deux parties seulement : une lampe
+            # qui clignote garde la couleur qu elle a memorisee.
+            if not en_jeu and REGLAGES.rafraichir():
+                for lampe in (piece, piece2):
+                    if not lampe.active:
+                        lampe.couleur = couleur_piece()
 
             # Nom du jeu, cherche une seule fois par partie.
             if en_jeu and not resolu and maintenant >= prochain_sondage:
@@ -1395,6 +1423,8 @@ def main():
                         # joueur 2 reste noir meme si le jeu est "a deux".
                         simultane = joueurs_simultanes(fiche_boutons)
                         deuxieme = multi if simultane is None else simultane
+                        # Une borne a un seul poste le dit dans recalbox.conf.
+                        deuxieme = deuxieme and REGLAGES.get("allinone.player2.enabled", True)
                         panneaux[1].appliquer(fiche_boutons, systeme=systeme)
                         panneaux[2].appliquer(fiche_boutons, allume=deuxieme, systeme=systeme)
                         journal("%s : %s bouton(s), %s%s" % (
@@ -1451,7 +1481,8 @@ def main():
             # qui regarde son personnage mourir, qui lit l ecran de continue
             # ou qui reflechit est toujours dans sa partie, et START qui
             # clignote la lui casse (constate deux fois le 14/09/2026).
-            if lance and not credits and maintenant - derniere_activite > INACTIVITE:
+            if (lance and not credits and maintenant - derniere_activite
+                    > REGLAGES.get("allinone.game.idle", INACTIVITE)):
                 lance, p2_engage = False, False
 
             if not en_jeu or credits is None or lance:
@@ -1473,7 +1504,7 @@ def main():
             invite = (en_jeu and lance and multi and not p2_engage
                       and credits is not None
                       and maintenant - depuis_lance > DELAI_J2)
-            if en_jeu and not deuxieme:
+            if en_jeu and not (deuxieme and REGLAGES.get("allinone.player2.enabled", True)):
                 # Poste 2 inutile sur ce jeu : START et PIECE noirs, comme
                 # ses boutons de jeu.
                 start2.eteindre()

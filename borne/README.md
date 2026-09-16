@@ -21,6 +21,8 @@ borne/share/                          →  /recalbox/share/
             manettes-consoles.json        les manettes d'origine là où Recalbox se trompe : couleurs, START, SELECT, nombre de boutons
             cablage.py                    qui est qui sur le panneau : rôles (es_input.cfg) × câblage (cablage.json) → LED de chaque bouton
             cablage.json                  quel bouton envoie quel code, LED par LED — mesuré par associer-boutons
+            couleurs.py                   palette par défaut, teintes nommées, ordre des couleurs lu dans multi_index
+            reglages.py                   les réglages allinone.* lus dans recalbox.conf
             relancer.sh                   sh relancer.sh credits|panneau|marquee
             processus.sh                  ce que relancer.sh et le garde-fou ont en commun
             sauvegardes/                  anciennes versions gardées sous la main (créé à la main)
@@ -95,10 +97,13 @@ finie. Le panneau du menu se tait ; au retour au menu il reprend, après
 avoir rendu les couleurs. Un jeu absent de la base est appris la première
 fois qu'on y joue.
 
-Réglages, tous en tête de `panneau(permanent).py` : `PRESENT`, `CLIP`,
-`VEILLE_APRES`, `PORTABLES` (consoles portables : poste 2 toujours noir),
-et deux particularités de la carte prototype : `ORDRE_MATERIEL` (les WS2812B
-attendent vert, rouge, bleu) et l'échange `start`/`select` du driver
+Les réglages de tous les jours sont dans `recalbox.conf` (voir plus bas,
+« Régler la borne »). Restent en tête de `panneau(permanent).py` :
+`PORTABLES` (consoles portables : poste 2 toujours noir), et deux
+particularités de la carte prototype : l'ordre des couleurs (les WS2812B
+attendent vert, rouge, bleu — `couleurs.ordre_materiel()` le lit dans
+`multi_index` et sait que le pilote d'origine y ment, voir
+`pilote-allinone/`) et l'échange `start`/`select` du driver
 (`LED_PIECE`, `LED_START`). Quelle LED porte quel bouton n'est **pas** un
 réglage : `cablage.py` le déduit du mappage Recalbox (`es_input.cfg`, celui
 de « Configurer une manette ») et du câblage mesuré (`cablage.json`). On
@@ -121,6 +126,44 @@ vérifie contre `retroarchcustom.cfg` — ce que RetroArch a réellement
 chargé a le dernier mot, et un écart est écrit au journal. Ne jamais
 « corriger » `es_input.cfg` à la main pour changer la place des boutons :
 c'est cette règle qu'il faut suivre, pas contourner (leçon du 14/09/2026).
+
+## Régler la borne
+
+Les réglages vivent dans `recalbox.conf`, à côté de ceux de Recalbox
+(`\\RECALBOX\share\system\recalbox.conf` sur le réseau). Aucun n'est
+obligatoire : sans ces lignes, la borne se comporte exactement comme avant.
+Pour en changer un, copier le bloc à la fin du fichier et retirer le `;`
+devant la ligne voulue :
+
+```
+## AllInOne — le panneau lumineux (panneau(permanent).py, credits(permanent).py)
+## Retirer le ; pour activer une ligne. Pris en compte en quelques secondes.
+## Luminosité quand quelqu'un est devant la borne, et en partie (1 à 255)
+;allinone.brightness=255
+## Luminosité en veille, pendant les clips (0 à 255, 0 = éteint)
+;allinone.brightness.idle=128
+## Secondes sans geste avant la veille
+;allinone.idle.delay=30
+## 0 : borne à un seul poste, le panneau 2 ne s'allume jamais pour un jeu
+;allinone.player2.enabled=1
+## Couleur de la PIÈCE qui clignote quand il faut payer (RRGGBB)
+;allinone.coin.color=FF0000
+## Demi-période du clignotement, en secondes
+;allinone.blink.period=0.5
+## Secondes sans geste ni crédit après lesquelles une partie est tenue pour finie
+;allinone.game.idle=120
+```
+
+Un changement est pris en compte en quelques secondes, sans rien
+redémarrer ; pendant une partie, au retour au menu. Une valeur illisible
+est ignorée et notée dans `journaux/panneau.log` ou `credits.log`.
+EmulationStation ne perd pas ces lignes quand il enregistre ses propres
+réglages : il ne réécrit que les siennes (`IniFile.cpp`).
+
+Le gestionnaire web de Recalbox **ne les montre pas** : ses pages sont
+écrites pour une liste fixe de sections, et son serveur répond 404 à
+`/api/configuration/allinone`. Les y faire entrer, c'est contribuer au
+gestionnaire lui-même.
 
 ## Qui pilote les LED, et quand
 

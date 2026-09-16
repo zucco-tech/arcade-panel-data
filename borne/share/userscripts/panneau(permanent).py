@@ -50,10 +50,14 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                 "..", "system", "panneau-allinone"))
 import cablage
 import couleurs
+import reglages
 PALETTE_DEFAUT = couleurs.PALETTE_DEFAUT
 TEINTES = couleurs.TEINTES
 teinte_par_defaut = couleurs.teinte_par_defaut
 TABLE = cablage.Cablage()
+# Les reglages de recalbox.conf. main() les relie au journal ; en attendant
+# (banc d essai qui appelle une fonction seule), aucun reglage n est lu.
+REGLAGES = reglages.Reglages(chemin=os.devnull)
 
 ETAT = "/tmp/es_state.inf"
 BASE_BOUTONS = "/recalbox/share/system/panneau-allinone/boutons-arcade.json"
@@ -94,6 +98,8 @@ PLEIN = "255"
 # borne le soir : plein pot des que quelqu un est devant, la moitie quand
 # elle se raconte toute seule. L oeil est logarithmique : a 160 sur 255 la
 # difference ne se voyait pas, a 128 elle se voit.
+# Ce sont les valeurs d origine : allinone.brightness, allinone.brightness.idle
+# et allinone.idle.delay, dans recalbox.conf, les remplacent (voir reglages.py).
 PRESENT = "255"          # quelqu un navigue
 CLIP = "128"             # personne devant depuis VEILLE_APRES secondes
 VEILLE_APRES = 30.0
@@ -332,14 +338,14 @@ def lire_fichier(chemin):
         return None
 
 
-# Le materiel MENT sur l ordre de ses composantes. multi_index annonce
-# « red green blue », mais les WS2812B de cette carte sont cablees vert,
-# rouge, bleu. Mesure faite le 12/09/2026 sur la borne : ecrire « 255 0 0 »
-# sur le bouton 1 et « 0 255 0 » sur le bouton 2 allume le premier en VERT
-# et le second en ROUGE (photo a l appui). C est le meme constat que celui
-# deja inscrit dans credits(permanent).py, qui ecrit depuis toujours dans
-# cet ordre : les deux programmes peignent enfin pareil.
-ORDRE_MATERIEL = (1, 0, 2)          # vert, rouge, bleu
+# Le pilote d origine MENT sur l ordre de ses composantes. multi_index
+# annonce « red green blue », mais les WS2812B de cette carte sont cablees
+# vert, rouge, bleu. Mesure faite le 12/09/2026 sur la borne : ecrire
+# « 255 0 0 » sur le bouton 1 et « 0 255 0 » sur le bouton 2 allume le
+# premier en VERT et le second en ROUGE (photo a l appui). couleurs.py
+# connait ce mensonge et croit un pilote corrige (« green red blue ») : le
+# demon des credits lit le meme ordre, les deux programmes peignent pareil.
+ORDRE_MATERIEL = couleurs.ordre_materiel(os.path.join(RACINE_LEDS, "aio_p1_b1_1"))
 
 
 def couleur_pour(chemin_led, rvb, brut=False):
@@ -759,8 +765,18 @@ class Panneau:
         self.dernier = "repos"
 
 
+def luminosite(present):
+    """L intensite du panneau, devant quelqu un ou en veille, telle que
+    recalbox.conf la regle."""
+    if present:
+        return str(REGLAGES.get("allinone.brightness", int(PRESENT)))
+    return str(REGLAGES.get("allinone.brightness.idle", int(CLIP)))
+
+
 def main():
+    global REGLAGES
     preparer_dossiers()
+    REGLAGES = reglages.Reglages(journal)
     boutons = charger_boutons()
     panneaux = {1: Panneau(1), 2: Panneau(2)}
     journal("demarrage — %d jeu(x) avec boutons, %d systeme(s) Recalbox"
@@ -802,6 +818,10 @@ def main():
             dernier_geste = maintenant
         # Au repos : pleine puissance tant qu il fait jour, tamise la nuit.
         if not en_partie:
+            if REGLAGES.rafraichir():
+                # Le poste 2 a pu etre active ou coupe : on repeint.
+                for p in panneaux.values():
+                    p.dernier = None
             if TABLE.rafraichir():
                 # Une manette vient d etre reconfiguree : on repeint tout de
                 # suite avec les nouveaux roles, sans attendre un changement
@@ -809,10 +829,11 @@ def main():
                 journal("tables relues : %s" % TABLE.source)
                 for p in panneaux.values():
                     p.dernier = None
-            present = maintenant - dernier_geste < VEILLE_APRES
+            present = (maintenant - dernier_geste
+                       < REGLAGES.get("allinone.idle.delay", VEILLE_APRES))
             for p in panneaux.values():
                 p.presence(present)
-            voulue = PRESENT if present else CLIP
+            voulue = luminosite(present)
             if voulue != intensite:
                 intensite = voulue
                 for p in panneaux.values():
@@ -858,7 +879,7 @@ def main():
                 carte = couleurs_de_carte(etat.get("SystemId") or "")
                 publier_couleurs_carte(carte)
                 for p in panneaux.values():
-                    p.intensite = PLEIN
+                    p.intensite = str(REGLAGES.get("allinone.brightness", int(PLEIN)))
                     p.poser_carte(carte) if carte else p.rendre()
                     p.dernier = None   # on ne sait plus ce qu il y a dessus
                     p.present = True   # pour ne pas toucher HK en revenant
@@ -881,7 +902,8 @@ def main():
             continue
 
         nombre, couleurs = decision["nombre"], decision["couleurs"]
-        deuxieme = decision["deuxieme"]
+        # Une borne a un seul poste le dit dans recalbox.conf.
+        deuxieme = decision["deuxieme"] and REGLAGES.get("allinone.player2.enabled", True)
         jeu = jeu or systeme
         if maintenant < insister_jusqu:
             # On sort d une partie : on repeint meme si rien n a change,

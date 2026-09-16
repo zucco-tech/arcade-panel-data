@@ -385,3 +385,44 @@ montre noir sur blanc a chaque lancement.
 3. **Ne jamais reecrire es_input.cfg a la place du joueur.** L assistant
    de Recalbox produit exactement ce que configgen attend.
 
+
+## Le gestionnaire web ne montre que ce qu il connait (16/09/2026)
+L idee etait de ranger nos reglages dans recalbox.conf, sous allinone.*,
+« reglables depuis le gestionnaire web ». Verifie avant de le promettre :
+c est faux. Le gestionnaire (Recalbox Manager v3) a une page ecrite a la
+main par section, et son serveur, sur le port 81, n accepte qu une liste
+fixe : /api/configuration/controllers repond, /api/configuration/allinone
+rend 404. Les reglages allinone.* se changent donc dans le fichier. Sans
+risque : EmulationStation relit recalbox.conf avant de l enregistrer et ne
+remplace que ses propres lignes (es-core/src/utils/IniFile.cpp) ; « # » en
+tete est un commentaire, « ; » une cle desactivee.
+
+## Un reglage lu ne doit pas ecraser la constante du programme
+Premiere version : chaque cle portait sa valeur par defaut, recopiee de la
+constante du programme. Deux copies d une meme valeur, et surtout les bancs
+d essai qui reglent cp.INACTIVITE = 4.0 se seraient vu imposer 120 s par
+un recalbox.conf absent. Regle : la valeur par defaut reste la constante en
+tete du programme ; REGLAGES.get(cle, CONSTANTE) ne la remplace que si la
+cle est ecrite et lisible.
+
+## Le pilote de LED : ne corriger que les noms (16/09/2026)
+Corriger l ordre des couleurs dans allinone_leds.c ne demande PAS de
+changer ce qui part sur le fil : il suffit d echanger RED et GREEN dans
+color_idx. multi_intensity reste positionnel, recalbox_allinone_rgb.sh
+ecrit exactement les memes octets, et seul multi_index dit enfin vrai.
+Rien d autre sur la borne ne lit multi_index (cherche dans /usr/bin,
+/recalbox/scripts, configgen). Nos programmes lisent multi_index et
+savent que « red green blue » est le mensonge du pilote d origine : ils
+peignent pareil avant et apres.
+
+Le compilateur avait fondu color_idx dans le code (trois « mov wN, #k »
+dans ws2812b_prepare_led) : le module de la borne se corrige en changeant
+deux octets, sans chaine de compilation ni risque de modversions. Un tel
+module ne vaut que pour son noyau exact : le script d essai verifie les
+empreintes avant de charger quoi que ce soit.
+
+## Un fichier deplace doit d abord etre copie
+deployer-programmes.sh deplacait couleurs.py sur la borne sans jamais le
+copier : deploye tel quel, panneau et credits seraient morts au demarrage
+sur « import couleurs ». Quand on ajoute un module, l ajouter aux DEUX
+listes du script, la copie et la mise en place.
