@@ -44,8 +44,14 @@
       "pourquoi": "Meme manette que la Mega Drive."
     },
     "n64": {
-      "select": null,
-      "pourquoi": "La manette Nintendo 64 n a pas de bouton SELECT : dix boutons, dont un seul START rouge."
+      "boutons": [
+        null,
+        null,
+        "#9A9A9A",
+        "#9A9A9A",
+        "#9A9A9A"
+      ],
+      "pourquoi": "Dans l ordre des boutons que mupen lit (A, B, Z, L, R) : A bleu et B vert restent ceux de Recalbox ; Z, L et R sont gris sur la manette, seuls les boutons C sont jaunes (et ils ne sont pas sur le panneau)."
     },
     "gamegear": {
       "pourquoi": "Couleur des boutons 1 et 2 non verifiee : rien de fiable trouve. On garde celle de Recalbox. Le START bleu, lui, est juste."
@@ -68,6 +74,15 @@
         "#9A9A9A"
       ],
       "pourquoi": "La Virtual Boy a quatre boutons : A et B rouges, plus les gachettes L et R. Recalbox n en colorait que deux."
+    },
+    "neogeocd": {
+      "boutons": [
+        "#FF0000",
+        "#FFFF00",
+        "#00FF00",
+        "#0000FF"
+      ],
+      "pourquoi": "Manette Neo Geo CD : A rouge, B jaune, C vert, D bleu. Geolith lit A sur b, B sur a, C sur y, D sur x (libretro.c, lu le 17/09/2026) ; la table de Recalbox mettait B en gris."
     }
   }
 }
