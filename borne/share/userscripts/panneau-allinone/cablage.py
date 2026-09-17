@@ -103,6 +103,11 @@ TYPES_ARCADE = ("arcade4", "arcade6", "arcade8")
 TYPES_SIX = ("arcade6", "arcade8")
 # Les systemes que Recalbox laisse dans l ordre (_NO_SHUFFLE_ARCADE_SYSTEMS).
 SANS_REORDRE = frozenset({"mame"})
+# Les emulateurs hors RetroArch dont la configuration ecrite par Recalbox ne
+# porte PAS ce reordre. Constate, pas deduit : mupen64plus.cfg ecrit au
+# lancement d un jeu N64 sur la borne le 17/09/2026 donne A = bouton 0
+# (south), Z = 1 (east), B = 2 (west), L = 5, R = 4 — l ordre du dessin.
+EMULATEURS_SANS_REORDRE = frozenset({"n64"})
 # Sur la famille Naomi, Recalbox echange L1 et R1 pour tout stick d arcade.
 NAOMI = frozenset({"naomi", "naomigd", "atomiswave"})
 # Megadrive sur un stick d arcade : ses propres tables, role Recalbox ->
@@ -294,7 +299,8 @@ class Cablage:
         Les boutons de facade (select, start, hotkey) ne bougent jamais."""
         entrees = dict(self._roles[joueur])
         genre = self._types[joueur]
-        if genre in TYPES_SIX and "l1" in entrees and systeme not in SANS_REORDRE:
+        if (genre in TYPES_SIX and "l1" in entrees and systeme not in SANS_REORDRE
+                and systeme not in EMULATEURS_SANS_REORDRE):
             b, a, y, x, l1 = (entrees.get(r) for r in ("b", "a", "y", "x", "l1"))
             entrees.update({"a": l1, "b": x, "x": a, "y": b, "l1": y})
         if genre in TYPES_ARCADE and systeme in NAOMI and "l1" in entrees and "r1" in entrees:

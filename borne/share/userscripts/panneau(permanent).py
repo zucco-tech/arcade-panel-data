@@ -179,9 +179,10 @@ BOUTONS_UTILISES = {
     "gba": ("b", "a", "l1", "r1"),          # mgba : X, Y, L2, R2 sont des turbos
     "virtualboy": ("b", "a", "l1", "r1"),   # mednafen_vb : la croix droite est sur L2/R2/L3/R3
     "lynx": ("b", "a", "l1", "r1"),         # handy : L et R = Option 1 et Option 2
-    # mupen64plus (configgen/generators/mupen, input.xml) sur un panneau sans
-    # stick analogique : A = b, B = y, Z = x, L = l1, R = r1 ; a ne sert a rien.
-    "n64": ("b", "y", "x", "l1", "r1"),
+    # mupen64plus, d apres mupen64plus.cfg que Recalbox ecrit au lancement
+    # (lu sur la borne le 17/09/2026) : A = b, Z = a, B = y, L = l1, R = r1 ;
+    # x est une direction de la croix, pas un bouton du jeu.
+    "n64": ("b", "a", "y", "l1", "r1"),
     "dreamcast": ("b", "a", "y", "x"),      # flycast : L et R sont C et Z, absents du pad
     "gamecube": ("b", "a", "y", "x", "r1"), # dolphin : R = Z ; L = test Triforce
     "pokemini": ("b", "a", "r1"),           # pokemini : R = C ; X est un turbo

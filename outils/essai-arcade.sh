@@ -19,7 +19,7 @@ P = "/recalbox/share/system/panneau-allinone/"
 RA = "/recalbox/share/system/configs/retroarch/retroarchcustom.cfg"
 JEUX = [("fbneo", R + "fbneo/1942.zip"), ("fbneo", R + "fbneo/sf2ce.zip"),
         ("mame", R + "mame/mame0278/1942.7z"), ("mame", R + "mame/mame0278/sf2ce.7z"),
-]  # neogeo : masque sur la borne (neogeo.ignore=1)
+        ("neogeo", R + "neogeo/mslug.zip")]
 HABITUEL = ["b", "a", "y", "x", "l", "r"]
 ORDRE = couleurs.ordre_materiel()
 

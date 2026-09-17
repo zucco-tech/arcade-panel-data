@@ -217,13 +217,13 @@ def _(dossier, espace):
     assert allumees == [3, 4, 5, 6], allumees
 
 
-@essai("N64 : le bouton que mupen ne lit pas (a) reste eteint")
+@essai("N64 : les LED de mupen64plus.cfg (A 1, Z 2, B 3, L 5, R 6), la 4 eteinte")
 def _(dossier, espace):
     d = espace["decider"]({"SystemId": "n64", "GamePath": "/r/n64/Mario.z64"}, {})
     p = espace["Panneau"](1)
     p.appliquer(d["nombre"], d["couleurs"], facade=d["facade"], systeme="n64", numeros=d["numeros"])
     allumees = [n for n in range(1, 7) if lire(dossier, "aio_p1_b%d" % n) != "0"]
-    assert allumees == [1, 2, 3, 4, 6], allumees
+    assert allumees == [1, 2, 3, 5, 6], allumees
 
 
 @essai("une console sans liste particuliere garde ses N premiers boutons (snes : 6)")

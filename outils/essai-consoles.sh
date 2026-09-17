@@ -20,11 +20,18 @@ CABLAGE = {304: 1, 305: 2, 307: 3, 313: 4, 311: 5, 310: 6}
 # Ce que chaque coeur lit (code source lu le 17/09/2026), en noms RetroArch.
 LUS = {"gb": "b a", "gbc": "b a", "nes": "b a", "gba": "b a l r", "snes": "b a y x l r",
        "psx": "b a y x l r", "megadrive": "b a y x l r", "mastersystem": "b a",
-       "pcengine": "b a", "lynx": "b a l r", "virtualboy": "b a l r"}
+       "pcengine": "b a", "lynx": "b a l r", "virtualboy": "b a l r",
+       "saturn": "b a y x l r", "dreamcast": "b a y x", "neogeocd": "b a y x"}
+# Le nom du bouton de la console derriere chaque nom RetroArch (code des coeurs).
+NOMS = {"gb": "b=B a=A", "gba": "b=B a=A l=L r=R", "snes": "b=B a=A y=Y x=X l=L r=R",
+        "psx": "b=Croix a=Rond y=Carre x=Triangle l=L1 r=R1",
+        "megadrive": "y=A b=B a=C x=Y l=X r=Z", "saturn": "b=A a=B r=C y=X x=Y l=Z",
+        "dreamcast": "b=A a=B y=X x=Y", "neogeocd": "b=A a=B y=C x=D"}
 # N64 (mupen) : les entrees de sa configuration qui sont des boutons du jeu.
 N64 = ("A Button", "B Button", "Z Trig", "L Trig", "R Trig", "C Button U", "C Button D",
        "C Button L", "C Button R")
 PROCESSUS = ("retroarch", "mupen64plus")
+ETIQUETTES = {}
 
 def ids_vers_codes():
     for conf in ET.parse("/recalbox/share/system/.emulationstation/es_input.cfg").getroot().iter("inputConfig"):
@@ -64,6 +71,7 @@ def attendues(systeme, ids):
                 code = ids.get(int(num))
                 if code in CABLAGE:
                     leds.add(CABLAGE[code])
+                    ETIQUETTES[CABLAGE[code]] = nom.replace(" Button", "").replace(" Trig", "")
         return leds
     noms = LUS.get(systeme, "b a").split()
     config = {}
@@ -73,7 +81,12 @@ def attendues(systeme, ids):
                 config[nom] = int(num)
         except OSError:
             pass
-    return {CABLAGE[ids[config[n]]] for n in noms if n in config and ids.get(config[n]) in CABLAGE}
+    noms_console = dict(x.split("=") for x in NOMS.get(systeme, "").split())
+    ETIQUETTES.clear()
+    for n in noms:
+        if n in config and ids.get(config[n]) in CABLAGE:
+            ETIQUETTES[CABLAGE[ids[config[n]]]] = noms_console.get(n, n)
+    return set(ETIQUETTES)
 
 if en_jeu():
     print("une partie est en cours : on ne touche a rien")
@@ -115,6 +128,7 @@ for systeme in os.environ["SYSTEMES"].split():
     print("%-10s %-40s emulateur %-18s LED allumees %-18s %s" % (
         systeme, os.path.basename(rom)[:40], sorted(voulues), sorted(allumees),
         "OK" if ok else "ECART" + (" (noires : %s)" % noires if noires else "")))
+    print("           boutons  : %s" % "  ".join("LED %d = %s" % (n, ETIQUETTES.get(n, "?")) for n in sorted(voulues)))
     print("           couleurs : %s" % "  ".join("%d=%s" % (n, mi) for n, (on, mi) in etat.items() if on))
     s.sendto(b"QUIT", ("127.0.0.1", 55355))
     if not attendre(lambda: not en_jeu(), 15):

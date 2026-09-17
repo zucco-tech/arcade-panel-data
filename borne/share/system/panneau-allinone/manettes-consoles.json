@@ -46,12 +46,12 @@
     "n64": {
       "boutons": [
         null,
-        null,
         "#9A9A9A",
+        null,
         "#9A9A9A",
         "#9A9A9A"
       ],
-      "pourquoi": "Dans l ordre des boutons que mupen lit (A, B, Z, L, R) : A bleu et B vert restent ceux de Recalbox ; Z, L et R sont gris sur la manette, seuls les boutons C sont jaunes (et ils ne sont pas sur le panneau)."
+      "pourquoi": "Dans l ordre des boutons que mupen lit (A, Z, B, L, R) : A bleu et B vert restent ceux de Recalbox ; Z, L et R sont gris sur la manette, seuls les boutons C sont jaunes (et ils ne sont pas sur le panneau)."
     },
     "gamegear": {
       "pourquoi": "Couleur des boutons 1 et 2 non verifiee : rien de fiable trouve. On garde celle de Recalbox. Le START bleu, lui, est juste."
