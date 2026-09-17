@@ -151,7 +151,9 @@ PORTABLES = {"gb", "gbc", "gba", "gamegear", "lynx", "ngp", "ngpc", "wswan",
 BOUTONS_PAR_SYSTEME = {
     "nes": (2, None),            "fds": (2, None),
     "snes": (6, ["red", "yellow", "blue", "green", "white", "white"]),
-    "megadrive": (3, None),      "sg1000": (2, None),
+    # Six, pas trois : sur un panneau arcade6, configgen passe picodrive en
+    # « 6 button pad » (libretroCores.configurePicodrive, lu le 17/09/2026).
+    "megadrive": (6, None),      "sg1000": (2, None),
     "mastersystem": (2, None),   "gamegear": (2, None),
     "pcengine": (2, None),       "supergrafx": (2, None),
     "neogeo": (4, ["red", "yellow", "green", "blue"]),
