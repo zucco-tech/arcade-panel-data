@@ -375,13 +375,20 @@ def couleurs_de_carte(systeme):
     le faisait le script."""
     connue = RECALBOX.get(systeme or "")
     rendu = {}
+    # L ordre est celui du script Recalbox lui-meme, pas de notre cablage :
+    # ses LED 1 a 8 recoivent les entrees 3,4,5,1,2,6,7,8 de sa table — la
+    # couleur du bouton 1 va la ou Recalbox met le bouton 1, en bas a gauche.
+    # Un systeme aligne par aligner-boutons.py a son bouton N a la position N :
+    # sa couleur aussi. Sans cela, sur la Game Boy alignee (17/09/2026), les
+    # LED 1 et 2 s allumaient avec la couleur de la position 3 : du noir.
+    ordre = [3, 4, 5, 1, 2, 6, 7, 8]
+    if TABLE.surcharge_systeme(systeme or ""):
+        ordre = [1, 2, 3, 4, 5, 6, 7, 8]
     for joueur in (1, 2):
         table = connue or RECALBOX.get("astrocityp%d" % joueur) or []
         if not table:
             continue
-        # L ordre est celui du script Recalbox lui-meme, pas de notre cablage :
-        # ses LED 1 a 8 recoivent les entrees 3,4,5,1,2,6,7,8 de sa table.
-        for place, numero in enumerate([3, 4, 5, 1, 2, 6, 7, 8], 1):
+        for place, numero in enumerate(ordre, 1):
             if numero - 1 >= len(table):
                 continue
             for chemin in _leds("aio_p%d_b%d" % (joueur, place)):

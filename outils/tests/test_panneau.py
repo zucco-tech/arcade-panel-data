@@ -185,6 +185,27 @@ def _(dossier, espace):
     assert os.path.exists(espace["COULEURS_CARTE"])
 
 
+@essai("systeme aligne (gb) : la couleur du bouton N va sur la LED N, pas sur l ordre Recalbox")
+def _(dossier, espace):
+    import tempfile
+    roms = tempfile.mkdtemp()
+    os.makedirs(os.path.join(roms, "gb"))
+    with open(os.path.join(roms, "gb", ".retroarch.cfg"), "w") as fh:
+        fh.write('input_player1_b_btn = "0"\ninput_player1_a_btn = "1"\n')
+    table = espace["TABLE"]
+    ancien = table._surcharge_systeme
+    table._surcharge_systeme = os.path.join(roms, "%s", ".retroarch.cfg")
+    try:
+        gb = espace["couleurs_de_carte"]("gb")
+        nes = espace["couleurs_de_carte"]("nes")      # pas de surcharge : ordre Recalbox
+    finally:
+        table._surcharge_systeme = ancien
+    led = lambda couleurs, n: couleurs[os.path.join(dossier, "aio_p1_b%d_1" % n)]
+    assert led(gb, 1) == (0, 255, 0) and led(gb, 2) == (0, 255, 0), "gb : LED 1 et 2 noires"
+    assert led(gb, 4) == (0, 0, 0), "gb : la LED 4 garde une couleur de bouton"
+    assert led(nes, 4) == (0, 255, 0) and led(nes, 1) == (0, 0, 0), "nes : ordre Recalbox perdu"
+
+
 @essai("poser la carte ne touche QUE les couleurs, jamais l allumage")
 def _(dossier, espace):
     for j in (1, 2):
