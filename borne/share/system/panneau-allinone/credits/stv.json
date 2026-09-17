@@ -15,14 +15,8 @@
     },
     "magzun": {
       "jeu": "magzun",
-      "le": "2026-09-12",
+      "le": "2026-09-17",
       "raison": "aucun candidat",
-      "systeme": "stv"
-    },
-    "micrombc": {
-      "jeu": "micrombc",
-      "le": "2026-09-12",
-      "raison": "candidats non confirmes",
       "systeme": "stv"
     },
     "nameclub": {
@@ -159,13 +153,13 @@
     },
     "pcpooh2": {
       "jeu": "pcpooh2",
-      "le": "2026-09-12",
+      "le": "2026-09-17",
       "raison": "aucun candidat",
       "systeme": "stv"
     },
     "pcpooh3": {
       "jeu": "pcpooh3",
-      "le": "2026-09-12",
+      "le": "2026-09-17",
       "raison": "aucun candidat",
       "systeme": "stv"
     },
@@ -207,7 +201,7 @@
     },
     "sackids": {
       "jeu": "sackids",
-      "le": "2026-09-12",
+      "le": "2026-09-17",
       "raison": "aucun candidat",
       "systeme": "stv"
     },
@@ -231,7 +225,7 @@
     },
     "yattrmnp": {
       "jeu": "yattrmnp",
-      "le": "2026-09-12",
+      "le": "2026-09-17",
       "raison": "aucun candidat",
       "systeme": "stv"
     },
@@ -1056,6 +1050,34 @@
       "releve": {
         "le": "2026-09-12",
         "methode": "coeur direct"
+      },
+      "systeme": "stv"
+    },
+    "micrombc": {
+      "core": "Mednafen ST-V",
+      "credits": {
+        "adresse": 417838,
+        "adresse_hex": "0x6602E",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "dip_imposes": {},
+      "jeu": "micrombc",
+      "ram": {
+        "commande": "coeur direct",
+        "taille": 1048576
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "coeur direct, acharne"
       },
       "systeme": "stv"
     },

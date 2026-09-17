@@ -45,6 +45,12 @@
       "systeme": "neogeo",
       "vu_le": "2026-09-11"
     },
+    "umk3": {
+      "jeu": "umk3",
+      "le": "2026-09-17",
+      "raison": "jeu inanime",
+      "systeme": "neogeo"
+    },
     "uni-bios-32": {
       "core": "FinalBurn Neo",
       "jeu": "uni-bios-32",
