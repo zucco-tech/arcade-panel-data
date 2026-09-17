@@ -62,6 +62,15 @@ SURCHARGE_SYSTEME = "/recalbox/share/roms/%s/.retroarch.cfg"
 FICHIER_CABLAGE = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                "..", "..", "system", "panneau-allinone", "cablage.json")
 MANETTES = {1: "AllInOneP1", 2: "AllInOneP2"}
+# L ordre des boutons des jeux FBNeo que le coeur ne range PAS dans l ordre
+# b, a, y, x, l, r (808 jeux, dont les combats Capcom : poings sur y, x, l).
+# Releve par outils/relever-entrees.py, pose par deployer-vers-borne.sh.
+# On ne deplace aucun bouton (regle du 17/09/2026 : toujours suivre la
+# configuration de Recalbox) : ce fichier sert seulement a donner a chaque
+# LED la couleur du bouton du jeu qu elle porte vraiment.
+FICHIER_ORDRE = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                             "..", "..", "system", "panneau-allinone", "ordre-fbneo.json")
+SYSTEMES_ORDRE = frozenset({"fbneo", "neogeo"})
 
 # Ce que les jeux appellent bouton 1, 2, 3... : sous FBNeo comme sous MAME
 # (RetroPad classique) le bouton 1 est B, le 2 est A, le 3 est Y, le 4 est
@@ -176,11 +185,13 @@ class Cablage:
     si un fichier a change."""
 
     def __init__(self, es_input=ES_INPUT, fichier_cablage=FICHIER_CABLAGE, retroarch=RETROARCH,
-                 surcharge=None, surcharge_systeme=SURCHARGE_SYSTEME):
+                 surcharge=None, surcharge_systeme=SURCHARGE_SYSTEME, fichier_ordre=FICHIER_ORDRE):
         surcharge = surcharge if surcharge is not None else retroarch + ".overrides.cfg"
         self._fichiers = (es_input, fichier_cablage, retroarch, surcharge)
         self._surcharge_systeme = surcharge_systeme
         self._systemes = {}          # systeme -> (date, surcharge lue)
+        self._fichier_ordre = fichier_ordre
+        self._ordres = (None, {})    # (date, jeu -> ordre RetroPad)
         self._dates = {}
         self._charger()
 
@@ -250,6 +261,23 @@ class Cablage:
             self._systemes[systeme] = connue
         return connue[1]
 
+    def ordre_du_jeu(self, systeme, jeu):
+        """Les roles RetroPad des boutons 1, 2, 3... de ce jeu quand son coeur
+        ne suit pas l ordre b, a, y, x, l1, r1 ; None sinon. Relu quand le
+        fichier change, garde en memoire le reste du temps (quelques dizaines
+        de Ko)."""
+        if systeme not in SYSTEMES_ORDRE or not jeu or not self._fichier_ordre:
+            return None
+        date = _horodate(self._fichier_ordre)
+        if date != self._ordres[0]:
+            try:
+                with open(self._fichier_ordre) as fh:
+                    self._ordres = (date, json.load(fh).get("jeux") or {})
+            except (OSError, ValueError):
+                self._ordres = (date, {})
+        ordre = self._ordres[1].get(jeu)
+        return [{"l": "l1", "r": "r1"}.get(r, r) for r in ordre] if ordre else None
+
     def disposition(self, joueur, systeme=""):
         """{role du jeu: code} sur ce systeme, d apres la regle de Recalbox.
 
@@ -309,11 +337,15 @@ class Cablage:
                 ecarts.append("%s : regle %s, retroarch %s" % (role, regle.get(role), vrai))
         return ecarts
 
-    def led_du_bouton(self, joueur, numero, systeme="", en_jeu=False):
+    def led_du_bouton(self, joueur, numero, systeme="", en_jeu=False, ordre=None):
         """La LED du bouton numero N du jeu sur ce systeme, ou None :
         bouton -> role -> code -> LED. En jeu, le code vient de ce que
-        RetroArch a charge ; sinon de la regle de Recalbox."""
-        role = ROLE_DU_BOUTON.get(numero, "")
+        RetroArch a charge ; sinon de la regle de Recalbox. `ordre` : les
+        roles du jeu quand son coeur les range autrement (ordre_du_jeu)."""
+        if ordre and numero <= len(ordre):
+            role = ordre[numero - 1]
+        else:
+            role = ROLE_DU_BOUTON.get(numero, "")
         # Systeme aligne par aligner-boutons.py : le bouton N du jeu est a la
         # position N, par construction — y compris pour les jeux que le coeur
         # range autrement, dont le fichier par jeu change les noms RetroPad
@@ -325,9 +357,9 @@ class Cablage:
             code = self.disposition(joueur, systeme).get(role)
         return self.led_du_code(joueur, code) if code is not None else None
 
-    def bouton_de_led(self, joueur, led, systeme="", en_jeu=False):
+    def bouton_de_led(self, joueur, led, systeme="", en_jeu=False, ordre=None):
         """Le numero de bouton du jeu que porte cette LED, ou None."""
         for numero in ROLE_DU_BOUTON:
-            if self.led_du_bouton(joueur, numero, systeme, en_jeu) == led:
+            if self.led_du_bouton(joueur, numero, systeme, en_jeu, ordre) == led:
                 return numero
         return None

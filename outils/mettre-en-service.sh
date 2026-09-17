@@ -5,16 +5,14 @@
 #   sudo sh /mnt/recalbox/depot/outils/mettre-en-service.sh
 #
 #   1. refuse si une partie est en cours (la famille joue)
-#   2. programmes des LED (deployer-programmes.sh) : reglages recalbox.conf,
-#      couleurs lues dans multi_index, cablage qui connait les surcharges
-#   3. boutons dans l ordre du dessin pour fbneo et neogeo
-#      (aligner-boutons.py, a partir du es_input.cfg de la borne)
+#   2. programmes des LED (deployer-programmes.sh)
+#   3. boutons : ceux de Recalbox, jamais deplaces (choix du 17/09/2026) ;
+#      retire les surcharges .retroarch.cfg d avant et envoie les donnees
+#      (credits, boutons-arcade.json, ordre-fbneo.json pour les couleurs)
 #   4. controle de sante de la borne
 #
-# Les etapes 2 et 3 vont ensemble : sans le nouveau cablage.py, la borne
-# remettrait les boutons a leur place mais les LED seraient inversees.
-# Retour en arriere des boutons :
-#   python3 /mnt/recalbox/depot/outils/aligner-boutons.py --roms /mnt/roms --retirer fbneo neogeo
+# A relancer apres « Configurer une manette » : rien a faire pour les
+# boutons, les LED relisent es_input.cfg toutes seules.
 OUTILS=$(cd "$(dirname "$0")" && pwd)
 BORNE=root@192.168.1.50
 INVITE=/mnt/recalbox/outils/.mdp-borne.sh
@@ -34,23 +32,15 @@ echo "non, on y va"
 etape "2. les programmes des LED"
 sh "$OUTILS/deployer-programmes.sh" || exit 1
 
-etape "3. bouton 1 en haut a gauche ($SYSTEMES)"
-ES=$(mktemp)
-$SCP $BORNE:/recalbox/share/system/.emulationstation/es_input.cfg "$ES" || { echo "es_input.cfg illisible"; exit 1; }
-# Par jeu, quand le releve des entrees du coeur existe (relever-entrees.py) :
-# les jeux que FBNeo range autrement (Street Fighter...) ont leur fichier.
-ENTREES=/mnt/recalbox/donnees/entrees-retropad.json
-if [ -f "$ENTREES" ]; then
-    python3 "$OUTILS/aligner-boutons.py" --es-input "$ES" --roms /mnt/roms --entrees "$ENTREES" fbneo || exit 1
-    python3 "$OUTILS/aligner-boutons.py" --es-input "$ES" --roms /mnt/roms neogeo || exit 1
-else
-    python3 "$OUTILS/aligner-boutons.py" --es-input "$ES" --roms /mnt/roms $SYSTEMES || exit 1
-    echo "ATTENTION : pas de $ENTREES, les jeux de combat FBNeo auront poings et pieds melanges"
-fi
-rm -f "$ES"
+etape "3. les boutons : ceux de Recalbox"
+# Choix du 17/09/2026 : toujours suivre la configuration de Recalbox, jamais
+# deplacer un bouton ; les LED s adaptent (cablage.py, ordre-fbneo.json).
+# On retire donc les surcharges que les versions du 16/09 avaient posees.
+python3 "$OUTILS/aligner-boutons.py" --roms /mnt/roms --retirer fbneo neogeo || exit 1
+sh "$OUTILS/deployer-vers-borne.sh" || { echo "donnees non envoyees (voir journaux/deploiement.log)"; exit 1; }
 
 etape "4. sante de la borne"
 sh "$OUTILS/sante-borne.sh"
 echo
-echo "En service. A essayer : un jeu FBNeo a 2 ou 3 boutons (1942), le tir doit etre en haut a gauche,"
-echo "et un Street Fighter FBNeo, pour voir si poings et pieds tombent juste."
+echo "En service. A essayer : 1942 FBNeo (le tir est la ou Recalbox le met, et c est lui qui s allume)"
+echo "et Street Fighter II FBNeo (chaque bouton allume dans la couleur de son coup)."

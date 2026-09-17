@@ -676,7 +676,7 @@ class Panneau:
             ecrire(chemin, self.origine[chemin], "multi_intensity")
 
     def appliquer(self, nombre, couleurs, allume=True, facade=None, systeme="", en_jeu=False,
-                  numeros=None):
+                  numeros=None, ordre=None):
         """Allume les `nombre` premiers boutons logiques, eteint le reste,
         et pose la couleur d origine de chacun quand la base la connait.
 
@@ -687,11 +687,11 @@ class Panneau:
         self.facade, self.systeme, self.en_jeu = facade, systeme, en_jeu
         voulu = (nombre, tuple(sorted(couleurs.items())), self.intensite,
                  tuple(sorted((facade or {}).items())), systeme, en_jeu,
-                 tuple(numeros or ())) if allume else 0
+                 tuple(numeros or ()), tuple(ordre or ())) if allume else 0
         if voulu == self.dernier:
             return
         for position, chemins in enumerate(self.boutons):
-            numero = TABLE.bouton_de_led(self.joueur, position + 1, self.systeme, self.en_jeu)
+            numero = TABLE.bouton_de_led(self.joueur, position + 1, self.systeme, self.en_jeu, ordre)
             # `numeros` : les boutons que l emulateur lit vraiment (voir
             # BOUTONS_UTILISES) ; sinon les `nombre` premiers.
             utilise = allume and numero is not None and (
@@ -984,9 +984,14 @@ def main():
         facade = decision.get("facade")
         en_jeu = etat.get("Action") == "rungame"
         numeros = decision.get("numeros")
+        # Un jeu FBNeo dont le coeur range ses boutons autrement (Street
+        # Fighter : poings sur y, x, l) : chaque LED prend la couleur du
+        # bouton qu elle porte vraiment. Les boutons, eux, ne bougent pas.
+        ordre = TABLE.ordre_du_jeu(systeme, decision["jeu"]) if origine == "fiche" else None
         panneaux[1].appliquer(nombre, couleurs, facade=facade, systeme=systeme, en_jeu=en_jeu,
-                              numeros=numeros)
+                              numeros=numeros, ordre=ordre)
         panneaux[2].appliquer(nombre, decision["couleurs_j2"], allume=deuxieme, numeros=numeros,
+                              ordre=ordre,
                               facade=facade, systeme=systeme, en_jeu=en_jeu)
         if jeu != dernier_jeu:
             journal("%s : %d bouton(s), %d couleur(s), joueur 2 %s [%s]"

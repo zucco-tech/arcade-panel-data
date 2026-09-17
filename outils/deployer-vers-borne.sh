@@ -31,19 +31,24 @@ SCP="setsid -w scp -q -o StrictHostKeyChecking=no"
 note() { echo "$(date '+%Y-%m-%d %H:%M:%S')  $1" >> "$JOURNAL"; }
 
 python3 /mnt/recalbox/outils/exporter-pour-borne.py --base "$DONNEES/credits-arcade.json" --dossier "$EXPORT" >/dev/null 2>&1 || { note "export impossible"; exit 1; }
+# L ordre des boutons des jeux FBNeo, pour la couleur des LED (voir exporter-ordre-fbneo.py).
+python3 /mnt/recalbox/outils/exporter-ordre-fbneo.py --entrees "$DONNEES/entrees-retropad.json" \
+    --sortie "$DONNEES/ordre-fbneo.json" >/dev/null 2>&1 || { note "ordre fbneo impossible"; exit 1; }
 if [ -d "$DEPOT_BORNE" ]; then
     mkdir -p "$DEPOT_BORNE/credits"
     cp "$EXPORT"/*.json "$DEPOT_BORNE/credits/"
     cp "$DONNEES/boutons-arcade.json" "$DEPOT_BORNE/boutons-arcade.json"
+    cp "$DONNEES/ordre-fbneo.json" "$DEPOT_BORNE/ordre-fbneo.json"
 fi
 $SSH $BORNE true 2>/dev/null || { note "borne injoignable"; exit 1; }
 $SSH $BORNE "rm -rf $SUR_BORNE/credits.tmp && mkdir -p $SUR_BORNE/credits.tmp $SUR_BORNE/credits" 2>/dev/null
 $SCP "$EXPORT"/*.json $BORNE:$SUR_BORNE/credits.tmp/ 2>/dev/null || { note "copie credits echouee"; exit 1; }
 $SCP "$DONNEES/boutons-arcade.json" $BORNE:$SUR_BORNE/credits.tmp/boutons-arcade.json 2>/dev/null
+$SCP "$DONNEES/ordre-fbneo.json" $BORNE:$SUR_BORNE/credits.tmp/ordre-fbneo.json 2>/dev/null
 # Mise en place fichier par fichier, par renommage. appris.json, que seule la
 # borne ecrit, n est pas dans le lot et reste intact.
 $SSH $BORNE "cd $SUR_BORNE/credits.tmp || exit 1
-for f in *.json; do case \$f in boutons-arcade.json) mv -f \$f ../boutons-arcade.json;; *) mv -f \$f ../credits/\$f;; esac; done
+for f in *.json; do case \$f in boutons-arcade.json|ordre-fbneo.json) mv -f \$f ../\$f;; *) mv -f \$f ../credits/\$f;; esac; done
 cd .. && rmdir credits.tmp" 2>/dev/null || { note "mise en place echouee"; exit 1; }
 N=$(python3 -c "
 import json, glob

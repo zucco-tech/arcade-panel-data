@@ -518,7 +518,7 @@ class Panneau:
         if valeur is not None:
             self.origine[chemin] = valeur
 
-    def appliquer(self, fiche, allume=True, systeme=""):
+    def appliquer(self, fiche, allume=True, systeme="", jeu=""):
         """Eclaire le panneau selon la fiche du jeu.
 
         allume=False eteint tout : c est ce qu on fait au panneau du joueur 2
@@ -531,7 +531,10 @@ class Panneau:
         for position, chemins in enumerate(self.boutons):
             if not chemins:
                 continue
-            numero = TABLE.bouton_de_led(self.joueur, position + 1, systeme, True)
+            # Un jeu FBNeo range parfois ses boutons autrement (voir
+            # cablage.ordre_du_jeu) : la LED prend la couleur du bon bouton.
+            numero = TABLE.bouton_de_led(self.joueur, position + 1, systeme, True,
+                                         TABLE.ordre_du_jeu(systeme, jeu))
             utilise = (allume and nombre is not None and numero is not None
                        and numero <= nombre)
             for chemin in chemins:
@@ -1425,8 +1428,8 @@ def main():
                         deuxieme = multi if simultane is None else simultane
                         # Une borne a un seul poste le dit dans recalbox.conf.
                         deuxieme = deuxieme and REGLAGES.get("allinone.player2.enabled", True)
-                        panneaux[1].appliquer(fiche_boutons, systeme=systeme)
-                        panneaux[2].appliquer(fiche_boutons, allume=deuxieme, systeme=systeme)
+                        panneaux[1].appliquer(fiche_boutons, systeme=systeme, jeu=nom)
+                        panneaux[2].appliquer(fiche_boutons, allume=deuxieme, systeme=systeme, jeu=nom)
                         journal("%s : %s bouton(s), %s%s" % (
                             nom, fiche_boutons.get("nombre"),
                             fiche_boutons.get("mode") or "mode inconnu",

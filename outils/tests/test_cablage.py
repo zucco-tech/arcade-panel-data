@@ -110,6 +110,20 @@ with tempfile.TemporaryDirectory() as d:
     verifier("...et le nouveau mappage est pris : b -> LED 1", t.led_du_bouton(1, 1, "fbneo", en_jeu=True) == 1)
     verifier("l ecart est signale", t.ecart_retroarch(1, "fbneo") == ["b : regle 313, retroarch 304"])
 
+    print("--- ordre des boutons FBNeo : les LED s adaptent, les boutons ne bougent pas ---")
+    ordre = os.path.join(d, "ordre-fbneo.json")
+    open(ordre, "w").write('{"jeux": {"sf2ce": ["y", "x", "l", "b", "a", "r"]}}')
+    t3 = cablage.Cablage(os.path.join(d, "absent"), os.path.join(d, "absent"), os.path.join(d, "absent"),
+                         surcharge_systeme=os.path.join(d, "absent", "%s"), fichier_ordre=ordre)
+    o = t3.ordre_du_jeu("fbneo", "sf2ce")
+    verifier("sf2ce : ordre lu, l et r en l1 et r1", o == ["y", "x", "l1", "b", "a", "r1"])
+    verifier("sf2ce : poing faible (bouton 1) sur la LED 1, pied faible (4) sur la LED 4",
+             t3.led_du_bouton(1, 1, "fbneo", False, o) == 1 and t3.led_du_bouton(1, 4, "fbneo", False, o) == 4)
+    verifier("sf2ce : la LED 6 porte le bouton 6 (pied fort)", t3.bouton_de_led(1, 6, "fbneo", False, o) == 6)
+    verifier("1942 absent du fichier : ordre habituel, tir sur la LED 4",
+             t3.ordre_du_jeu("fbneo", "1942") is None and t3.led_du_bouton(1, 1, "fbneo") == 4)
+    verifier("sous MAME, l ordre FBNeo ne s applique pas", t3.ordre_du_jeu("mame", "sf2ce") is None)
+
     print("--- sans fichiers : les valeurs de reference ---")
     t2 = cablage.Cablage(os.path.join(d, "absent"), os.path.join(d, "absent"), os.path.join(d, "absent"))
     verifier("source par defaut", t2.source == "roles par defaut, cablage par defaut")
