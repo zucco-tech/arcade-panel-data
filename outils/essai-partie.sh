@@ -96,8 +96,10 @@ try:
     print("\nboutons", flush=True)
     p1 = [lire("aio_p1_b%d_1" % n) for n in range(1, 7)]
     p2 = [lire("aio_p2_b%d_1" % n) for n in range(1, 7)]
-    verifier("poste 1 : boutons 1 et 2 allumes", all(p1[:2]), p1)
-    verifier("poste 1 : boutons 3 a 6 eteints", not any(p1[2:]), p1)
+    # Les boutons suivent Recalbox (17/09/2026) : sous FBNeo, sur un panneau
+    # arcade6, Fire et Loop sont sur les positions 4 et 5 (en bas a gauche).
+    verifier("poste 1 : boutons 4 et 5 allumes (Fire, Loop)", p1[3] and p1[4], p1)
+    verifier("poste 1 : les autres eteints", not any(p1[:3] + p1[5:]), p1)
     verifier("poste 2 eteint (jeu chacun son tour)", not any(p2), p2)
 
     print("\npas de credit", flush=True)
