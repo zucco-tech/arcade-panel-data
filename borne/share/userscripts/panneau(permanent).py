@@ -167,6 +167,36 @@ BOUTONS_PAR_SYSTEME = {
 }
 
 
+# Les boutons que l EMULATEUR lit vraiment, en noms RetroPad, quand ce ne sont
+# pas simplement les N premiers de b, a, y, x, l1, r1. Lu dans le code source
+# de chaque coeur le 17/09/2026 (et dans configgen pour les emulateurs hors
+# RetroArch). Sans cette table, la GBA allumait Y et X — deux turbos — a la
+# place de ses gachettes L et R, et la N64 un bouton qui ne fait rien.
+# Les gachettes L2/R2 n existent pas sur le panneau : on ne les compte pas.
+BOUTONS_UTILISES = {
+    "gba": ("b", "a", "l1", "r1"),          # mgba : X, Y, L2, R2 sont des turbos
+    "virtualboy": ("b", "a", "l1", "r1"),   # mednafen_vb : la croix droite est sur L2/R2/L3/R3
+    "lynx": ("b", "a", "l1", "r1"),         # handy : L et R = Option 1 et Option 2
+    # mupen64plus (configgen/generators/mupen, input.xml) sur un panneau sans
+    # stick analogique : A = b, B = y, Z = x, L = l1, R = r1 ; a ne sert a rien.
+    "n64": ("b", "y", "x", "l1", "r1"),
+    "dreamcast": ("b", "a", "y", "x"),      # flycast : L et R sont C et Z, absents du pad
+    "gamecube": ("b", "a", "y", "x", "r1"), # dolphin : R = Z ; L = test Triforce
+    "pokemini": ("b", "a", "r1"),           # pokemini : R = C ; X est un turbo
+    "jaguar": ("b", "a", "y"),              # virtualjaguar : A, B, C ; le reste est le pave
+}
+
+
+def numeros_utilises(systeme):
+    """Les numeros de boutons (1 = b, 2 = a, 3 = y...) que ce systeme lit, ou
+    None s il lit simplement les premiers."""
+    roles = BOUTONS_UTILISES.get(systeme or "")
+    if not roles:
+        return None
+    numero = {r: n for n, r in cablage.ROLE_DU_BOUTON.items()}
+    return [numero[r] for r in roles]
+
+
 def charger_palette_recalbox():
     """Les tableaux « declare -a systeme=("R G B" ...) » du script Recalbox :
     11 entrees — boutons 1 a 8, puis select, start, hotkey — rendues en
@@ -286,8 +316,12 @@ def fiche_de_systeme(systeme):
         # sinon celui de Recalbox.
         nombre = (correction.get("nombre") or (entree[0] if entree else 0)
                   or (max(allumes) if allumes else 0))
+        numeros = numeros_utilises(systeme)
+        if numeros:
+            nombre = len(numeros)
         if not nombre:
             return None
+        utilises = numeros or list(range(1, nombre + 1))
 
         def palette(table):
             # « brut » : ces triplets viennent du script Recalbox, qui les
@@ -301,14 +335,16 @@ def fiche_de_systeme(systeme):
             # en vrai RGB : elle passe par la correction, donc pas « brut ».
             """La palette des boutons, en dictionnaire BUTTONn -> couleur."""
             rendu = {}
-            for i in range(1, nombre + 1):
-                mieux = teinte_hexa(remplace[i - 1]) if i - 1 < len(remplace) else None
+            # La k-ieme couleur corrigee va au k-ieme bouton utilise : pour la
+            # GBA, « A B L R » et non « A B Y X ».
+            for k, i in enumerate(utilises):
+                mieux = teinte_hexa(remplace[k]) if k < len(remplace) else None
                 if mieux:
                     rendu["BUTTON%d" % i] = {"rvb": mieux}
                 elif i - 1 < len(table) and any(table[i - 1]):
                     rendu["BUTTON%d" % i] = {"rvb": table[i - 1], "brut": True}
             return rendu
-        fiche = {"nombre": nombre, "boutons": palette(boutons)}
+        fiche = {"nombre": nombre, "boutons": palette(boutons), "numeros": numeros}
         if secours:
             fiche["boutons_j2"] = palette(secours)
         fiche["facade"] = facade_de_systeme(systeme, correction)
@@ -320,7 +356,7 @@ def fiche_de_systeme(systeme):
     if palette:
         for i, teinte in enumerate(palette[:nombre], 1):
             couleurs["BUTTON%d" % i] = {"couleur": teinte}
-    return {"nombre": nombre, "boutons": couleurs}
+    return {"nombre": nombre, "boutons": couleurs, "numeros": numeros_utilises(systeme)}
 
 
 def joueurs_depuis(etat):
@@ -487,7 +523,8 @@ def decider(etat, boutons):
     return {"systeme": systeme, "jeu": jeu, "fiche": fiche, "origine": origine,
             "nombre": int(fiche["nombre"]), "couleurs": fiche.get("boutons") or {},
             "couleurs_j2": fiche.get("boutons_j2") or fiche.get("boutons") or {},
-            "facade": fiche.get("facade"), "deuxieme": deuxieme}
+            "facade": fiche.get("facade"), "numeros": fiche.get("numeros"),
+            "deuxieme": deuxieme}
 
 
 def lire_etat():
@@ -636,7 +673,8 @@ class Panneau:
         if chemin in self.origine:
             ecrire(chemin, self.origine[chemin], "multi_intensity")
 
-    def appliquer(self, nombre, couleurs, allume=True, facade=None, systeme="", en_jeu=False):
+    def appliquer(self, nombre, couleurs, allume=True, facade=None, systeme="", en_jeu=False,
+                  numeros=None):
         """Allume les `nombre` premiers boutons logiques, eteint le reste,
         et pose la couleur d origine de chacun quand la base la connait.
 
@@ -646,12 +684,16 @@ class Panneau:
         place pas pareil sous MAME et sous FBNeo (voir cablage.py)."""
         self.facade, self.systeme, self.en_jeu = facade, systeme, en_jeu
         voulu = (nombre, tuple(sorted(couleurs.items())), self.intensite,
-                 tuple(sorted((facade or {}).items())), systeme, en_jeu) if allume else 0
+                 tuple(sorted((facade or {}).items())), systeme, en_jeu,
+                 tuple(numeros or ())) if allume else 0
         if voulu == self.dernier:
             return
         for position, chemins in enumerate(self.boutons):
             numero = TABLE.bouton_de_led(self.joueur, position + 1, self.systeme, self.en_jeu)
-            utilise = allume and numero is not None and numero <= nombre
+            # `numeros` : les boutons que l emulateur lit vraiment (voir
+            # BOUTONS_UTILISES) ; sinon les `nombre` premiers.
+            utilise = allume and numero is not None and (
+                numero in numeros if numeros else numero <= nombre)
             entree = couleurs.get("BUTTON%d" % numero) or {}
             teinte = entree.get("couleur") or teinte_par_defaut(nombre, numero)
             rvb = entree.get("rvb") or TEINTES.get((teinte or "").strip().lower())
@@ -890,11 +932,26 @@ def main():
                 # retiendrait les notres comme etant celles de la carte.
                 carte = couleurs_de_carte(etat.get("SystemId") or "")
                 publier_couleurs_carte(carte)
+                # Une console : le demon des credits ne s en occupe pas, et la
+                # table de Recalbox ne connait que ses propres couleurs — elle
+                # repeignait en noir les gachettes L et R de la GBA. On garde
+                # donc ce que le menu montrait pour ce jeu : les boutons que
+                # l emulateur lit, dans leurs couleurs, a pleine intensite.
+                console = decider(etat, boutons)
+                console = console if str(console.get("origine", "")).startswith("systeme") \
+                    and console.get("fiche") else None
                 for p in panneaux.values():
                     p.intensite = str(REGLAGES.get("allinone.brightness", int(PLEIN)))
-                    p.poser_carte(carte) if carte else p.rendre()
-                    p.dernier = None   # on ne sait plus ce qu il y a dessus
                     p.present = True   # pour ne pas toucher HK en revenant
+                    if console:
+                        deux = console["deuxieme"] and REGLAGES.get("allinone.player2.enabled", True)
+                        p.appliquer(console["nombre"],
+                                    console["couleurs"] if p.joueur == 1 else console["couleurs_j2"],
+                                    allume=(p.joueur == 1 or deux), facade=console.get("facade"),
+                                    systeme=console["systeme"], numeros=console.get("numeros"))
+                    else:
+                        p.poser_carte(carte) if carte else p.rendre()
+                    p.dernier = None   # on ne sait plus ce qu il y a dessus
                 dernier_jeu = None
             continue
         if etait_en_partie:
@@ -924,8 +981,10 @@ def main():
                 p.dernier = None
         facade = decision.get("facade")
         en_jeu = etat.get("Action") == "rungame"
-        panneaux[1].appliquer(nombre, couleurs, facade=facade, systeme=systeme, en_jeu=en_jeu)
-        panneaux[2].appliquer(nombre, decision["couleurs_j2"], allume=deuxieme,
+        numeros = decision.get("numeros")
+        panneaux[1].appliquer(nombre, couleurs, facade=facade, systeme=systeme, en_jeu=en_jeu,
+                              numeros=numeros)
+        panneaux[2].appliquer(nombre, decision["couleurs_j2"], allume=deuxieme, numeros=numeros,
                               facade=facade, systeme=systeme, en_jeu=en_jeu)
         if jeu != dernier_jeu:
             journal("%s : %d bouton(s), %d couleur(s), joueur 2 %s [%s]"

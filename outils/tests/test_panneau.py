@@ -206,6 +206,32 @@ def _(dossier, espace):
     assert led(nes, 4) == (0, 255, 0) and led(nes, 1) == (0, 0, 0), "nes : ordre Recalbox perdu"
 
 
+@essai("GBA : les LED des boutons que mgba lit (B A L R), pas Y et X qui sont des turbos")
+def _(dossier, espace):
+    d = espace["decider"]({"SystemId": "gba", "GamePath": "/r/gba/Metroid.zip"}, {})
+    assert d["numeros"] == [1, 2, 5, 6], d["numeros"]
+    p = espace["Panneau"](1)
+    p.appliquer(d["nombre"], d["couleurs"], facade=d["facade"], systeme="gba", numeros=d["numeros"])
+    allumees = [n for n in range(1, 7) if lire(dossier, "aio_p1_b%d" % n) != "0"]
+    # arcade6 : Recalbox met b sur la LED 4, a sur la 5, l1 sur la 3, r1 sur la 6
+    assert allumees == [3, 4, 5, 6], allumees
+
+
+@essai("N64 : le bouton que mupen ne lit pas (a) reste eteint")
+def _(dossier, espace):
+    d = espace["decider"]({"SystemId": "n64", "GamePath": "/r/n64/Mario.z64"}, {})
+    p = espace["Panneau"](1)
+    p.appliquer(d["nombre"], d["couleurs"], facade=d["facade"], systeme="n64", numeros=d["numeros"])
+    allumees = [n for n in range(1, 7) if lire(dossier, "aio_p1_b%d" % n) != "0"]
+    assert allumees == [1, 2, 3, 4, 6], allumees
+
+
+@essai("une console sans liste particuliere garde ses N premiers boutons (snes : 6)")
+def _(dossier, espace):
+    d = espace["decider"]({"SystemId": "snes", "GamePath": "/r/snes/Mario.zip"}, {})
+    assert d["numeros"] is None and d["nombre"] == 6
+
+
 @essai("poser la carte ne touche QUE les couleurs, jamais l allumage")
 def _(dossier, espace):
     for j in (1, 2):
