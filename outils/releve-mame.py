@@ -38,6 +38,9 @@ DOSSIER_SYSTEME = "/root/.config/retroarch/system"
 # sans image ni son, cela demande quelques milliers d images.
 IMAGES = 5400
 IMAGES_ACHARNE = 16200         # trois fois plus : le Lua attend et insiste davantage
+# MAME_IMAGES : plafond d images impose de dehors, pour les machines lentes
+# (Naomi, Model 2 : 11 images par seconde) que 16200 images ne menaient pas au bout.
+IMAGES_ACHARNE = int(os.environ.get("MAME_IMAGES", IMAGES_ACHARNE))
 IMAGES_PAS = 300
 RAISONS_ACHARNE = ("delai depasse", "jeu inanime", "aucun candidat",
                    "candidats non confirmes", "aucune RAM declaree",

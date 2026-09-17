@@ -38,7 +38,7 @@ if [ "$ACHARNE" = "1" ]; then
     SUPPLEMENT="--acharne"
     PREFIXE=acharne
     DELAI=900
-    DELAI_MAME=600
+    DELAI_MAME=${DELAI_MAME_ACHARNE:-600}
     [ "$SYSTEME" = "stv" ] && DELAI=1800
 fi
 BASE=/mnt/recalbox/donnees/credits-arcade.json
@@ -63,7 +63,7 @@ while [ $n -le $COMBIEN ]; do
         nice -n 10 python3 -u /mnt/recalbox/outils/releve-mame.py \
             --roms /mnt/roms/mame/mame0278 --delai "$DELAI_MAME" $SUPPLEMENT \
             --base "$PARTS/part-$n.json" --reference "$BASE" \
-            --part "$n/$COMBIEN" --arret "$ARRET" \
+            --part "$n/$COMBIEN" --arret "$ARRET" ${RAISONS:+--raisons "$RAISONS"} \
             > "$JOURNAUX/$PREFIXE-mame-$HORODATE-part$n.log" 2>&1 &
     else
         nice -n 10 python3 -u /mnt/recalbox/outils/releve-direct.py \
