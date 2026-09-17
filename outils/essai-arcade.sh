@@ -4,11 +4,12 @@
 # ce que RetroArch a recu (retroarchcustom.cfg), pas notre propre regle.
 #
 #   sudo sh /mnt/recalbox/outils/essai-arcade.sh
+#   sudo sh /mnt/recalbox/outils/essai-arcade.sh fbneo/1942a.zip mame/mame0278/1943j.7z
 #
 # Refuse de demarrer si une partie est en cours. Chaque jeu tourne ~20 s.
 BORNE=root@192.168.1.50
 export SSH_ASKPASS=/mnt/recalbox/outils/.mdp-borne.sh SSH_ASKPASS_REQUIRE=force DISPLAY=${DISPLAY:-:0}
-setsid -w ssh -o ConnectTimeout=10 -o StrictHostKeyChecking=no $BORNE python3 - <<'SUR_LA_BORNE'
+setsid -w ssh -o ConnectTimeout=10 -o StrictHostKeyChecking=no $BORNE "CHOIX='$*' python3 -" <<'SUR_LA_BORNE'
 import json, os, re, socket, subprocess, sys, time
 import xml.etree.ElementTree as ET
 sys.path.insert(0, "/recalbox/share/userscripts/panneau-allinone")
@@ -20,6 +21,8 @@ RA = "/recalbox/share/system/configs/retroarch/retroarchcustom.cfg"
 JEUX = [("fbneo", R + "fbneo/1942.zip"), ("fbneo", R + "fbneo/sf2ce.zip"),
         ("mame", R + "mame/mame0278/1942.7z"), ("mame", R + "mame/mame0278/sf2ce.7z"),
         ("neogeo", R + "neogeo/mslug.zip")]
+if os.environ.get("CHOIX"):
+    JEUX = [(c.split("/")[0], R + c) for c in os.environ["CHOIX"].split()]
 HABITUEL = ["b", "a", "y", "x", "l", "r"]
 ORDRE = couleurs.ordre_materiel()
 
