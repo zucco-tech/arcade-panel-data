@@ -95,7 +95,10 @@ for systeme in os.environ["SYSTEMES"].split():
     if not roms:
         print("%-10s pas de jeu dans la liste" % systeme)
         continue
-    rom = sorted(roms)[len(roms) // 2]
+    # EmulationStation refuse par commande les noms a apostrophe ou point
+    # d exclamation (« Couldn't find game », 17/09/2026) : on en prend un simple.
+    simples = [r for r in roms if re.match(r"^[\w .,()-]+$", os.path.basename(r))] or roms
+    rom = sorted(simples)[len(simples) // 2]
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     s.sendto(("START|%s|%s" % (systeme, rom)).encode(), ("127.0.0.1", 1337))
     if not attendre(en_jeu, 60):
