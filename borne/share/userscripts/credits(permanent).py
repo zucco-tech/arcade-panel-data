@@ -1418,6 +1418,14 @@ def main():
                     journal("%s/%s : %s" % (systeme, nom,
                                             "0x%04X" % adresse if adresse
                                             else "inconnu, j'apprends"))
+                    # RetroArch tourne : configgen a deja ecrit les boutons
+                    # de CETTE partie. On les relit maintenant — sinon on
+                    # eclairait avec ceux de la partie d avant (1942 sous MAME
+                    # apres 1942 sous FBNeo : LED 4 et 5 au lieu de 1 et 2,
+                    # constate le 17/09/2026). Quatre dates a comparer, rien
+                    # n est relu si rien n a change.
+                    if TABLE.rafraichir():
+                        journal("tables relues pour la partie : %s" % TABLE.source)
                     # Le panneau : seuls les boutons utiles, dans leurs
                     # couleurs. Le joueur 2 reste noir sur un jeu solo.
                     fiche_boutons = boutons.get(nom)
