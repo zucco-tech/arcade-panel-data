@@ -23,10 +23,6 @@ export SSH_ASKPASS="$INVITE" SSH_ASKPASS_REQUIRE=force DISPLAY=${DISPLAY:-:0}
 SSH="setsid -w ssh -o ConnectTimeout=10 -o StrictHostKeyChecking=no"
 SCP="setsid -w scp -q -o ConnectTimeout=10 -o StrictHostKeyChecking=no"
 SYSTEMES="fbneo neogeo"
-# Consoles a deux boutons (17/09/2026) : sans surcharge, B et A tombaient en
-# bas (4 et 5) et les boutons 1 et 2 etaient les TURBO de Gambatte (X et Y).
-# Les consoles a six boutons (snes, psx...) gardent la regle de Recalbox.
-CONSOLES="nes fds sg1000 mastersystem gamegear pcengine supergrafx gb gbc atari2600 atari7800 colecovision"
 etape() { printf "\n=== %s ===\n" "$1"; }
 
 etape "1. personne ne joue ?"
@@ -47,9 +43,8 @@ ENTREES=/mnt/recalbox/donnees/entrees-retropad.json
 if [ -f "$ENTREES" ]; then
     python3 "$OUTILS/aligner-boutons.py" --es-input "$ES" --roms /mnt/roms --entrees "$ENTREES" fbneo || exit 1
     python3 "$OUTILS/aligner-boutons.py" --es-input "$ES" --roms /mnt/roms neogeo || exit 1
-    python3 "$OUTILS/aligner-boutons.py" --es-input "$ES" --roms /mnt/roms $CONSOLES || exit 1
 else
-    python3 "$OUTILS/aligner-boutons.py" --es-input "$ES" --roms /mnt/roms $SYSTEMES $CONSOLES || exit 1
+    python3 "$OUTILS/aligner-boutons.py" --es-input "$ES" --roms /mnt/roms $SYSTEMES || exit 1
     echo "ATTENTION : pas de $ENTREES, les jeux de combat FBNeo auront poings et pieds melanges"
 fi
 rm -f "$ES"
