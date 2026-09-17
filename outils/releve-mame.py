@@ -83,7 +83,7 @@ def enfant():
         # Le Lua n a rien ecrit : MAME a refuse la machine, ou n a jamais
         # lance le script. Ce que MAME a dit est la seule explication
         # disponible — « missing files », « not supported »... — on la garde.
-        dit = " | ".join(coeur.dits[-3:]) if coeur.dits else "sans explication"
+        dit = " | ".join(list(coeur.dits)[-3:]) if coeur.dits else "sans explication"
         try:
             with open(sortie, "w") as fh:
                 json.dump({"jeu": jeu, "erreur": "MAME n a rien rendu (%s)" % dit[:160]}, fh)
