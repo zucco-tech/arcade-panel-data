@@ -123,28 +123,35 @@ toucher au programme, dans `manettes-consoles.json` : une couleur en vrai
 RGB, `null` pour un bouton absent, `nombre` quand Recalbox en compte trop
 peu.
 
-**Où sont les boutons du jeu — la règle de Recalbox, et notre choix.** Sur
-un panneau déclaré `arcade6` dans l'assistant (les boutons pressés dans
-l'ordre du dessin, 1 à 6), Recalbox ne passe pas les rôles tels quels à
-l'émulateur : son `configgen` **réordonne** les six boutons pour tous les
-systèmes sauf MAME (`GamepadInfo.shouldReshuffle6Btn`, alpha-3.2) :
+**Où sont les boutons du jeu : là où Recalbox les met.** Sur un panneau
+déclaré `arcade6` dans l'assistant (les boutons pressés dans l'ordre du
+dessin, 1 à 6), Recalbox ne passe pas les rôles tels quels à l'émulateur : son
+`configgen` **réordonne** les six boutons pour tous les systèmes sauf MAME
+(`GamepadInfo.shouldReshuffle6Btn`, alpha-3.2) :
 
 ```
-MAME, menu d'EmulationStation      FBNeo, Neo Geo, consoles (règle Recalbox)
+MAME, menu d'EmulationStation      FBNeo, Neo Geo, consoles
   [1] [2] [3]                        [3] [4] [5]
   [4] [5] [6]                        [1] [2] [6]
 ```
 
-Choix du propriétaire (16/09/2026) : **bouton 1 en haut à gauche partout**,
-comme une vraie borne, comme MAME et comme le menu. FBNeo et Neo Geo y sont
-remis par une surcharge officielle de Recalbox, un fichier `.retroarch.cfg`
-dans leur dossier de roms, écrit par `outils/aligner-boutons.py` à partir de
-`es_input.cfg`. Aucun fichier de Recalbox n'est modifié ; les consoles
-gardent la règle de Recalbox. `cablage.py` lit cette surcharge, dans le menu
-comme en jeu : les LED suivent. À relancer après chaque « Configurer une
-manette » ; `--retirer` rend la règle de Recalbox. Limite : les jeux de
-combat FBNeo à six boutons rangent poings et pieds comme une manette, ils
-peuvent se mélanger dans l'ordre du dessin — à vérifier jeu par jeu.
+Choix du propriétaire (17/09/2026) : **toujours suivre la configuration de
+Recalbox, et adapter les lumières**. Aucun bouton n'est déplacé, aucune
+surcharge `.retroarch.cfg` n'est posée (celles du 16/09 ont été retirées).
+Les LED s'adaptent :
+
+- `cablage.py` relit `es_input.cfg`, la règle ci-dessus et, en partie,
+  `retroarchcustom.cfg` que configgen vient d'écrire ;
+- `ordre-fbneo.json` donne l'ordre des boutons des 808 jeux FBNeo que le cœur
+  range autrement (Street Fighter II : poings sur y, x, l) : chaque LED prend
+  la couleur du coup qu'elle porte ;
+- `BOUTONS_UTILISES` (panneau) liste, pour les consoles dont l'émulateur ne
+  lit pas simplement les N premiers boutons, ceux qu'il lit vraiment (GBA :
+  B, A, L, R ; ses Y et X sont des turbos). Relevé dans le code source de
+  chaque cœur.
+
+Vérification sur la vraie borne, LED lues sur la carte :
+`outils/essai-arcade.sh` (FBNeo et MAME) et `outils/essai-consoles.sh`.
 
 Ne jamais « corriger » `es_input.cfg` à la main pour changer la place des
 boutons (leçon du 14/09/2026).
