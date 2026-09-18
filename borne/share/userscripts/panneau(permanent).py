@@ -865,8 +865,12 @@ def main():
     REGLAGES = reglages.Reglages(journal)
     boutons = charger_boutons()
     panneaux = {1: Panneau(1), 2: Panneau(2)}
-    journal("demarrage — %d jeu(x) avec boutons, %d systeme(s) Recalbox"
-            % (len(boutons), len(RECALBOX)))
+    # Ce que le panneau a lu : sans ce compte, on ne voit pas qu un fichier de
+    # donnees manquait au lancement (constate le 18/09/2026, ou le releve des
+    # boutons par systeme etait arrive apres le demarrage du panneau).
+    journal("demarrage — %d jeu(x) avec boutons, %d systeme(s) Recalbox, "
+            "%d systeme(s) releves, %d correction(s) de manette"
+            % (len(boutons), len(RECALBOX), len(SYSTEMES_RELEVES), len(MANETTES_CONSOLES)))
     derniere_modif = None
     dernier_jeu = None
     base_vue = 0.0

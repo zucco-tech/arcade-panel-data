@@ -10,11 +10,12 @@ BORNE=root@192.168.1.50
 export SSH_ASKPASS=/mnt/recalbox/outils/.mdp-borne.sh SSH_ASKPASS_REQUIRE=force DISPLAY=${DISPLAY:-:0}
 SYSTEMES="${*:-gb gba snes psx n64 megadrive}"
 setsid -w ssh -o ConnectTimeout=10 -o StrictHostKeyChecking=no $BORNE "SYSTEMES='$SYSTEMES' python3 -" <<'SUR_LA_BORNE'
-import os, re, socket, subprocess, sys, time
+import json, os, re, socket, subprocess, sys, time
 import xml.etree.ElementTree as ET
 
 R = "/recalbox/share/roms/"
 RA = "/recalbox/share/system/configs/retroarch/retroarchcustom.cfg"
+P = "/recalbox/share/system/panneau-allinone/"
 MUPEN = "/recalbox/share/system/configs/mupen64/mupen64plus.cfg"
 CABLAGE = {304: 1, 305: 2, 307: 3, 313: 4, 311: 5, 310: 6}
 # Ce que chaque coeur lit (code source lu le 17/09/2026), en noms RetroArch.
@@ -39,6 +40,14 @@ def ids_vers_codes():
             return {int(e.get("id")): int(e.get("code")) for e in conf.iter("input")
                     if e.get("type") == "button"}
     return {}
+
+def charger(chemin, cle):
+    """Le contenu d une cle d un fichier JSON de la borne, {} s il manque."""
+    try:
+        return json.load(open(chemin)).get(cle) or {}
+    except (OSError, ValueError):
+        return {}
+
 
 def en_jeu():
     return any(subprocess.call(["pidof", p], stdout=subprocess.DEVNULL) == 0 for p in PROCESSUS)
@@ -73,7 +82,17 @@ def attendues(systeme, ids):
                     leds.add(CABLAGE[code])
                     ETIQUETTES[CABLAGE[code]] = nom.replace(" Button", "").replace(" Trig", "")
         return leds
-    noms = LUS.get(systeme, "b a").split()
+    noms = LUS.get(systeme)
+    if noms is None:
+        # Pas dans la table ecrite a la main : le releve des coeurs fait foi
+        # (boutons-systemes.json, voir relever-boutons-systemes.py).
+        releve = charger(P + "boutons-systemes.json", "systemes").get(systeme)
+        if releve is None:
+            print("%-10s pas de releve : on ne sait pas quoi attendre" % systeme)
+            return None
+        noms = [{"l1": "l", "r1": "r"}.get(r, r) for r in releve.get("roles") or []]
+    else:
+        noms = noms.split()
     config = {}
     for fichier in (RA, RA + ".overrides.cfg"):
         try:
@@ -123,6 +142,9 @@ for systeme in os.environ["SYSTEMES"].split():
     allumees = {n for n, (on, _) in etat.items() if on}
     noires = [n for n, (on, mi) in etat.items() if on and set(mi.split()) == {"0"}]
     voulues = attendues(systeme, ids)
+    if voulues is None:
+        total -= 1
+        continue
     ok = allumees == voulues and not noires
     bons += ok
     print("%-10s %-40s emulateur %-18s LED allumees %-18s %s" % (
