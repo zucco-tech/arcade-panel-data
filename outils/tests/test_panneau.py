@@ -226,6 +226,37 @@ def _(dossier, espace):
     assert allumees == [1, 2, 3, 5, 6], allumees
 
 
+@essai("un systeme releve sans aucun bouton (clavier) laisse le panneau noir")
+def _(dossier, espace):
+    espace["SYSTEMES_RELEVES"]["alice"] = []
+    try:
+        d = espace["decider"]({"SystemId": "alice", "GamePath": "/r/alice/Horse.zip"}, {})
+        assert d["nombre"] == 0 and d["numeros"] == [], d
+        p = espace["Panneau"](1)
+        p.appliquer(d["nombre"], d["couleurs"], facade=d["facade"], systeme="alice",
+                    numeros=d["numeros"])
+        allumees = [n for n in range(1, 7) if lire(dossier, "aio_p1_b%d" % n) != "0"]
+        assert allumees == [], allumees
+    finally:
+        del espace["SYSTEMES_RELEVES"]["alice"]
+
+
+@essai("un systeme releve avec deux boutons (pv1000) n en allume que deux")
+def _(dossier, espace):
+    espace["SYSTEMES_RELEVES"]["pv1000"] = ["b", "a"]
+    try:
+        d = espace["decider"]({"SystemId": "pv1000", "GamePath": "/r/pv1000/Jeu.zip"}, {})
+        assert d["numeros"] == [1, 2], d["numeros"]
+        p = espace["Panneau"](1)
+        p.appliquer(d["nombre"], d["couleurs"], facade=d["facade"], systeme="pv1000",
+                    numeros=d["numeros"])
+        allumees = [n for n in range(1, 7) if lire(dossier, "aio_p1_b%d" % n) != "0"]
+        # arcade6 : b va sur la LED 4, a sur la LED 5
+        assert allumees == [4, 5], allumees
+    finally:
+        del espace["SYSTEMES_RELEVES"]["pv1000"]
+
+
 @essai("une console sans liste particuliere garde ses N premiers boutons (snes : 6)")
 def _(dossier, espace):
     d = espace["decider"]({"SystemId": "snes", "GamePath": "/r/snes/Mario.zip"}, {})

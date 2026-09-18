@@ -39,16 +39,18 @@ if [ -d "$DEPOT_BORNE" ]; then
     cp "$EXPORT"/*.json "$DEPOT_BORNE/credits/"
     cp "$DONNEES/boutons-arcade.json" "$DEPOT_BORNE/boutons-arcade.json"
     cp "$DONNEES/ordre-fbneo.json" "$DEPOT_BORNE/ordre-fbneo.json"
+    [ -f "$DONNEES/boutons-systemes.json" ] && cp "$DONNEES/boutons-systemes.json" "$DEPOT_BORNE/boutons-systemes.json"
 fi
 $SSH $BORNE true 2>/dev/null || { note "borne injoignable"; exit 1; }
 $SSH $BORNE "rm -rf $SUR_BORNE/credits.tmp && mkdir -p $SUR_BORNE/credits.tmp $SUR_BORNE/credits" 2>/dev/null
 $SCP "$EXPORT"/*.json $BORNE:$SUR_BORNE/credits.tmp/ 2>/dev/null || { note "copie credits echouee"; exit 1; }
 $SCP "$DONNEES/boutons-arcade.json" $BORNE:$SUR_BORNE/credits.tmp/boutons-arcade.json 2>/dev/null
 $SCP "$DONNEES/ordre-fbneo.json" $BORNE:$SUR_BORNE/credits.tmp/ordre-fbneo.json 2>/dev/null
+$SCP "$DONNEES/boutons-systemes.json" $BORNE:$SUR_BORNE/credits.tmp/boutons-systemes.json 2>/dev/null
 # Mise en place fichier par fichier, par renommage. appris.json, que seule la
 # borne ecrit, n est pas dans le lot et reste intact.
 $SSH $BORNE "cd $SUR_BORNE/credits.tmp || exit 1
-for f in *.json; do case \$f in boutons-arcade.json|ordre-fbneo.json) mv -f \$f ../\$f;; *) mv -f \$f ../credits/\$f;; esac; done
+for f in *.json; do case \$f in boutons-arcade.json|ordre-fbneo.json|boutons-systemes.json) mv -f \$f ../\$f;; *) mv -f \$f ../credits/\$f;; esac; done
 cd .. && rmdir credits.tmp" 2>/dev/null || { note "mise en place echouee"; exit 1; }
 N=$(python3 -c "
 import json, glob

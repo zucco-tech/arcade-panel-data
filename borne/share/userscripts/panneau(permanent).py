@@ -71,6 +71,11 @@ BASE_BOUTONS = "/recalbox/share/system/panneau-allinone/boutons-arcade.json"
 # pas de SELECT. Recalbox est juste presque partout ; ce fichier ne dit que
 # les exceptions, et il peut ne pas exister.
 FICHIER_MANETTES = "/recalbox/share/system/panneau-allinone/manettes-consoles.json"
+# Les boutons que le coeur de chaque systeme lit vraiment, releves en chargeant
+# les coeurs sur la borne (outils/relever-boutons-systemes.py, 18/09/2026) :
+# c est ce qui evite d allumer six boutons sur une machine qui n en a qu un, ou
+# aucun (le Matra Alice, le PC-98 : clavier).
+FICHIER_SYSTEMES = "/recalbox/share/system/panneau-allinone/boutons-systemes.json"
 JOURNAL = "/recalbox/share/system/panneau-allinone/journaux/panneau.log"
 # La table de couleurs par systeme livree par Recalbox pour ce panneau. Elle
 # servait aux scripts allinone[…].sh, appeles a chaque mouvement dans le
@@ -190,14 +195,31 @@ BOUTONS_UTILISES = {
 }
 
 
+def charger_systemes():
+    """Le releve des boutons par systeme, {systeme: [roles]} ; {} s il manque."""
+    try:
+        with open(FICHIER_SYSTEMES) as fh:
+            releve = (json.load(fh) or {}).get("systemes") or {}
+    except (IOError, OSError, ValueError):
+        return {}
+    return {s: list(f.get("roles") or []) for s, f in releve.items()}
+
+
 def numeros_utilises(systeme):
     """Les numeros de boutons (1 = b, 2 = a, 3 = y...) que ce systeme lit, ou
-    None s il lit simplement les premiers."""
+    None s il lit simplement les premiers. Une liste vide veut dire « aucun
+    bouton » : la machine se joue au clavier, le panneau reste noir.
+
+    Notre table d abord (verifiee a la main, code source des coeurs a l appui),
+    puis le releve des coeurs de la borne."""
     roles = BOUTONS_UTILISES.get(systeme or "")
-    if not roles:
+    if roles is None:
+        roles = SYSTEMES_RELEVES.get(systeme or "")
+    if roles is None:
         return None
     numero = {r: n for n, r in cablage.ROLE_DU_BOUTON.items()}
-    return [numero[r] for r in roles]
+    equivalent = {"l": "l1", "r": "r1"}
+    return [numero[equivalent.get(r, r)] for r in roles if equivalent.get(r, r) in numero]
 
 
 def charger_palette_recalbox():
@@ -236,6 +258,7 @@ def charger_manettes():
 
 
 MANETTES_CONSOLES = charger_manettes()
+SYSTEMES_RELEVES = charger_systemes()
 
 
 def teinte_hexa(valeur):
@@ -301,6 +324,12 @@ def fiche_de_systeme(systeme):
         # a droit aux couleurs de secours.
         return None
     entree = BOUTONS_PAR_SYSTEME.get(systeme)
+    numeros_releves = numeros_utilises(systeme)
+    if numeros_releves == []:
+        # Releve sur la borne : ce coeur ne lit aucun bouton (clavier). On
+        # n allume donc rien, mais le START et la piece gardent leur regle.
+        return {"nombre": 0, "boutons": {}, "numeros": [],
+                "facade": facade_de_systeme(systeme, MANETTES_CONSOLES.get(systeme) or {})}
     boutons = (RECALBOX.get(systeme) or [])[:6] or None
     secours = None
     if not boutons:

@@ -319,7 +319,7 @@
     },
     "8bpm": {
       "jeu": "8bpm",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -494,25 +494,19 @@
     },
     "arkatour2": {
       "jeu": "arkatour2",
-      "le": "2026-09-13",
-      "raison": "MAME n a rien rendu (Configuration file arkatour2.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-17",
+      "raison": "MAME n a rien rendu (Attempting to parse: arkatour2.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "arlingtn": {
       "jeu": "arlingtn",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "arlingtna": {
       "jeu": "arlingtna",
-      "le": "2026-09-13",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "attackf": {
-      "jeu": "attackf",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -555,7 +549,7 @@
     },
     "badlands": {
       "jeu": "badlands",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -643,18 +637,6 @@
       "raison": "delai depasse",
       "systeme": "mame"
     },
-    "blaster": {
-      "jeu": "blaster",
-      "le": "2026-09-13",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "blastero": {
-      "jeu": "blastero",
-      "le": "2026-09-13",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
     "blazeon": {
       "jeu": "blazeon",
       "le": "2026-09-13",
@@ -693,8 +675,8 @@
     },
     "bounty2": {
       "jeu": "bounty2",
-      "le": "2026-09-13",
-      "raison": "MAME n a rien rendu (Configuration file bounty2.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-17",
+      "raison": "MAME n a rien rendu (Attempting to parse: bounty2.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "brival": {
@@ -711,7 +693,7 @@
     },
     "bubsys": {
       "jeu": "bubsys",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -747,49 +729,49 @@
     },
     "ccastles": {
       "jeu": "ccastles",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "ccastles1": {
       "jeu": "ccastles1",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "ccastles2": {
       "jeu": "ccastles2",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "ccastles3": {
       "jeu": "ccastles3",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "ccastlesf": {
       "jeu": "ccastlesf",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "ccastlesg": {
       "jeu": "ccastlesg",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "ccastlesj": {
       "jeu": "ccastlesj",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "ccastlesp": {
       "jeu": "ccastlesp",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -801,7 +783,7 @@
     },
     "checkman": {
       "jeu": "checkman",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -889,12 +871,6 @@
       "raison": "delai depasse",
       "systeme": "mame"
     },
-    "complexx": {
-      "jeu": "complexx",
-      "le": "2026-09-13",
-      "raison": "MAME n a rien rendu (Configuration file complexx.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
-      "systeme": "mame"
-    },
     "confmiss": {
       "jeu": "confmiss",
       "le": "2026-09-14",
@@ -903,19 +879,19 @@
     },
     "contcirc": {
       "jeu": "contcirc",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "contcircu": {
       "jeu": "contcircu",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "countrun": {
       "jeu": "countrun",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -945,7 +921,7 @@
     },
     "curvebal": {
       "jeu": "curvebal",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -981,19 +957,19 @@
     },
     "ddribble": {
       "jeu": "ddribble",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "ddribblep": {
       "jeu": "ddribblep",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "dealer": {
       "jeu": "dealer",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -1017,37 +993,7 @@
     },
     "decocass": {
       "jeu": "decocass",
-      "le": "2026-09-13",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "defcmnd": {
-      "jeu": "defcmnd",
-      "le": "2026-09-13",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "defence": {
-      "jeu": "defence",
-      "le": "2026-09-13",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "defender": {
-      "jeu": "defender",
-      "le": "2026-09-13",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "defenderj": {
-      "jeu": "defenderj",
-      "le": "2026-09-13",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "defenseb": {
-      "jeu": "defenseb",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -1101,32 +1047,32 @@
     },
     "downtown": {
       "jeu": "downtown",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "downtown2": {
       "jeu": "downtown2",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "downtownj": {
       "jeu": "downtownj",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "downtownp": {
       "jeu": "downtownp",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "dquizgo2": {
       "jeu": "dquizgo2",
-      "le": "2026-09-13",
-      "raison": "MAME n a rien rendu (Configuration file dquizgo2.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-17",
+      "raison": "MAME n a rien rendu (Attempting to parse: dquizgo2.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "dragntr": {
@@ -1177,12 +1123,6 @@
       "raison": "delai depasse",
       "systeme": "mame"
     },
-    "dwpc": {
-      "jeu": "dwpc",
-      "le": "2026-09-13",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
     "dygolf": {
       "jeu": "dygolf",
       "le": "2026-09-14",
@@ -1203,7 +1143,7 @@
     },
     "ejanhs": {
       "jeu": "ejanhs",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -1317,8 +1257,8 @@
     },
     "fenix": {
       "jeu": "fenix",
-      "le": "2026-09-13",
-      "raison": "MAME n a rien rendu (Configuration file fenix.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-17",
+      "raison": "MAME n a rien rendu (Attempting to parse: fenix.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "finalap2j": {
@@ -1341,13 +1281,13 @@
     },
     "fsoccerba": {
       "jeu": "fsoccerba",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "fsoccerj": {
       "jeu": "fsoccerj",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -1367,12 +1307,6 @@
       "jeu": "ga2u",
       "le": "2026-09-13",
       "raison": "MAME n a rien rendu (machine refusee ?)",
-      "systeme": "mame"
-    },
-    "galwars2": {
-      "jeu": "galwars2",
-      "le": "2026-09-14",
-      "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "genpeitd": {
@@ -1473,7 +1407,7 @@
     },
     "groundfx": {
       "jeu": "groundfx",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -1593,31 +1527,31 @@
     },
     "hstennis": {
       "jeu": "hstennis",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "hstennis10": {
       "jeu": "hstennis10",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "hunchbkg": {
       "jeu": "hunchbkg",
-      "le": "2026-09-13",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "hydra": {
       "jeu": "hydra",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "hydrap": {
       "jeu": "hydrap",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -1677,7 +1611,7 @@
     },
     "insector": {
       "jeu": "insector",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -1701,8 +1635,8 @@
     },
     "isgsm": {
       "jeu": "isgsm",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file isgsm.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-17",
+      "raison": "MAME n a rien rendu (Attempting to parse: isgsm.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "jackrabts": {
@@ -1713,7 +1647,7 @@
     },
     "jjparad2": {
       "jeu": "jjparad2",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -1731,38 +1665,20 @@
     },
     "jmpbreak": {
       "jeu": "jmpbreak",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file jmpbreak.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-17",
+      "raison": "MAME n a rien rendu (Attempting to parse: jmpbreak.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "jmpbreaka": {
       "jeu": "jmpbreaka",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file jmpbreaka.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-17",
+      "raison": "MAME n a rien rendu (Attempting to parse: jmpbreaka.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "jongpute": {
       "jeu": "jongpute",
       "le": "2026-09-14",
       "raison": "MAME n a rien rendu (machine refusee ?)",
-      "systeme": "mame"
-    },
-    "joust": {
-      "jeu": "joust",
-      "le": "2026-09-14",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "joustr": {
-      "jeu": "joustr",
-      "le": "2026-09-14",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "jousty": {
-      "jeu": "jousty",
-      "le": "2026-09-14",
-      "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "jpark": {
@@ -1857,26 +1773,14 @@
     },
     "kong": {
       "jeu": "kong",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "kontest": {
       "jeu": "kontest",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "kram": {
-      "jeu": "kram",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file kram.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
-      "systeme": "mame"
-    },
-    "krama": {
-      "jeu": "krama",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file krama.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "kurucham": {
@@ -1917,31 +1821,31 @@
     },
     "lghost": {
       "jeu": "lghost",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "lghostd": {
       "jeu": "lghostd",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "lghostj": {
       "jeu": "lghostj",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "lghostu": {
       "jeu": "lghostu",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "lghostud": {
       "jeu": "lghostud",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -1953,7 +1857,7 @@
     },
     "livequiz": {
       "jeu": "livequiz",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -1995,8 +1899,8 @@
     },
     "luctoday": {
       "jeu": "luctoday",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file luctoday.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-17",
+      "raison": "MAME n a rien rendu (Attempting to parse: luctoday.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "lupinsho": {
@@ -2007,20 +1911,20 @@
     },
     "luplup": {
       "jeu": "luplup",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file luplup.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-17",
+      "raison": "MAME n a rien rendu (Attempting to parse: luplup.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "luplup10": {
       "jeu": "luplup10",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file luplup10.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-17",
+      "raison": "MAME n a rien rendu (Attempting to parse: luplup10.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "luplup29": {
       "jeu": "luplup29",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file luplup29.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-17",
+      "raison": "MAME n a rien rendu (Attempting to parse: luplup29.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "luptype": {
@@ -2149,36 +2053,6 @@
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
-    "mk2r20": {
-      "jeu": "mk2r20",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file mk2r20.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
-      "systeme": "mame"
-    },
-    "mk3": {
-      "jeu": "mk3",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file mk3.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
-      "systeme": "mame"
-    },
-    "mk3p40": {
-      "jeu": "mk3p40",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file mk3p40.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
-      "systeme": "mame"
-    },
-    "mk3r10": {
-      "jeu": "mk3r10",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file mk3r10.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
-      "systeme": "mame"
-    },
-    "mk3r20": {
-      "jeu": "mk3r20",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file mk3r20.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
-      "systeme": "mame"
-    },
     "moeru": {
       "jeu": "moeru",
       "le": "2026-09-14",
@@ -2193,8 +2067,8 @@
     },
     "mrdig": {
       "jeu": "mrdig",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file mrdig.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-17",
+      "raison": "MAME n a rien rendu (Attempting to parse: mrdig.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "mslug6": {
@@ -2487,13 +2361,13 @@
     },
     "pitfight": {
       "jeu": "pitfight",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "pitfight3": {
       "jeu": "pitfight3",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -2511,19 +2385,19 @@
     },
     "pkladies": {
       "jeu": "pkladies",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "pkladiesl": {
       "jeu": "pkladiesl",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "pkladiesla": {
       "jeu": "pkladiesla",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -2547,14 +2421,14 @@
     },
     "pokrdice": {
       "jeu": "pokrdice",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "poosho": {
       "jeu": "poosho",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file poosho.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-17",
+      "raison": "MAME n a rien rendu (Attempting to parse: poosho.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "progear": {
@@ -2595,14 +2469,14 @@
     },
     "puzlbang": {
       "jeu": "puzlbang",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file puzlbang.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-17",
+      "raison": "MAME n a rien rendu (Attempting to parse: puzlbang.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "puzlbanga": {
       "jeu": "puzlbanga",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file puzlbanga.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-17",
+      "raison": "MAME n a rien rendu (Attempting to parse: puzlbanga.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "puzzlekg": {
@@ -2623,36 +2497,6 @@
       "raison": "delai depasse",
       "systeme": "mame"
     },
-    "qix": {
-      "jeu": "qix",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file qix.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
-      "systeme": "mame"
-    },
-    "qix2": {
-      "jeu": "qix2",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file qix2.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
-      "systeme": "mame"
-    },
-    "qixa": {
-      "jeu": "qixa",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file qixa.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
-      "systeme": "mame"
-    },
-    "qixb": {
-      "jeu": "qixb",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file qixb.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
-      "systeme": "mame"
-    },
-    "qixo": {
-      "jeu": "qixo",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file qixo.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
-      "systeme": "mame"
-    },
     "qmegamis": {
       "jeu": "qmegamis",
       "le": "2026-09-14",
@@ -2667,7 +2511,7 @@
     },
     "rackemup": {
       "jeu": "rackemup",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -2721,80 +2565,80 @@
     },
     "rdft2": {
       "jeu": "rdft2",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdft2a": {
       "jeu": "rdft2a",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdft2aa": {
       "jeu": "rdft2aa",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdft2it": {
       "jeu": "rdft2it",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdft2j": {
       "jeu": "rdft2j",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdft2ja": {
       "jeu": "rdft2ja",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdft2jb": {
       "jeu": "rdft2jb",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdft2jc": {
       "jeu": "rdft2jc",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdft2s": {
       "jeu": "rdft2s",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdft2t": {
       "jeu": "rdft2t",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdft2u": {
       "jeu": "rdft2u",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdfta": {
       "jeu": "rdfta",
-      "le": "2026-09-14",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-17",
+      "raison": "MAME n a rien rendu (Attempting to parse: rdfta.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "rdftadi": {
       "jeu": "rdftadi",
-      "le": "2026-09-14",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-17",
+      "raison": "delai depasse",
       "systeme": "mame"
     },
     "rdftam": {
@@ -2805,8 +2649,8 @@
     },
     "rdftau": {
       "jeu": "rdftau",
-      "le": "2026-09-14",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-17",
+      "raison": "delai depasse",
       "systeme": "mame"
     },
     "rdftauge": {
@@ -2817,20 +2661,20 @@
     },
     "rdftgb": {
       "jeu": "rdftgb",
-      "le": "2026-09-14",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-17",
+      "raison": "MAME n a rien rendu (Attempting to parse: rdftgb.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "rdftgr": {
       "jeu": "rdftgr",
-      "le": "2026-09-14",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-17",
+      "raison": "MAME n a rien rendu (Attempting to parse: rdftgr.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "rdftit": {
       "jeu": "rdftit",
-      "le": "2026-09-14",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-17",
+      "raison": "MAME n a rien rendu (Attempting to parse: rdftit.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "rdftj": {
@@ -2841,20 +2685,20 @@
     },
     "rdftja": {
       "jeu": "rdftja",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdftjb": {
       "jeu": "rdftjb",
-      "le": "2026-09-14",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-17",
+      "raison": "MAME n a rien rendu (Attempting to parse: rdftjb.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "rdftu": {
       "jeu": "rdftu",
-      "le": "2026-09-14",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-17",
+      "raison": "delai depasse",
       "systeme": "mame"
     },
     "rdftua": {
@@ -2865,20 +2709,20 @@
     },
     "redearthn": {
       "jeu": "redearthn",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "redearthnr1": {
       "jeu": "redearthnr1",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "revenger": {
       "jeu": "revenger",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file revenger.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-17",
+      "raison": "MAME n a rien rendu (Attempting to parse: revenger.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "revx": {
@@ -2901,8 +2745,8 @@
     },
     "rfjetj": {
       "jeu": "rfjetj",
-      "le": "2026-09-14",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-17",
+      "raison": "delai depasse",
       "systeme": "mame"
     },
     "rfjett": {
@@ -2913,8 +2757,8 @@
     },
     "rfjetu": {
       "jeu": "rfjetu",
-      "le": "2026-09-14",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-17",
+      "raison": "delai depasse",
       "systeme": "mame"
     },
     "rhytngk": {
@@ -3057,13 +2901,13 @@
     },
     "scorpionmc": {
       "jeu": "scorpionmc",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "screwloo": {
       "jeu": "screwloo",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -3099,8 +2943,8 @@
     },
     "sf2stt": {
       "jeu": "sf2stt",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file sf2stt.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-17",
+      "raison": "MAME n a rien rendu (Attempting to parse: sf2stt.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "sfz3ugd": {
@@ -3273,49 +3117,19 @@
     },
     "showdown4": {
       "jeu": "showdown4",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file showdown4.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
-      "systeme": "mame"
-    },
-    "sinistar": {
-      "jeu": "sinistar",
-      "le": "2026-09-14",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "sinistar2": {
-      "jeu": "sinistar2",
-      "le": "2026-09-14",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "sinistarc": {
-      "jeu": "sinistarc",
-      "le": "2026-09-14",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "sinistarc2": {
-      "jeu": "sinistarc2",
-      "le": "2026-09-14",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "sinistarp": {
-      "jeu": "sinistarp",
-      "le": "2026-09-14",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-17",
+      "raison": "MAME n a rien rendu (Attempting to parse: showdown4.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "sisv1": {
       "jeu": "sisv1",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file sisv1.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-17",
+      "raison": "MAME n a rien rendu (Attempting to parse: sisv1.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "sjryuko1": {
       "jeu": "sjryuko1",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -3493,12 +3307,6 @@
       "raison": "delai depasse",
       "systeme": "mame"
     },
-    "spdball": {
-      "jeu": "spdball",
-      "le": "2026-09-14",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
     "speakhlp": {
       "jeu": "speakhlp",
       "le": "2026-09-14",
@@ -3543,13 +3351,13 @@
     },
     "spyhunt": {
       "jeu": "spyhunt",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "spyhuntp": {
       "jeu": "spyhuntp",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -3561,7 +3369,7 @@
     },
     "sspirtfc": {
       "jeu": "sspirtfc",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -3579,13 +3387,7 @@
     },
     "stadhr96j2": {
       "jeu": "stadhr96j2",
-      "le": "2026-09-14",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "stadhr96k": {
-      "jeu": "stadhr96k",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -3593,12 +3395,6 @@
       "jeu": "starforcb",
       "le": "2026-09-14",
       "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "stargate": {
-      "jeu": "stargate",
-      "le": "2026-09-14",
-      "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "stealsee": {
@@ -3639,8 +3435,8 @@
     },
     "suplup": {
       "jeu": "suplup",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Loading data from EEPROM region ':eeprom' | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-17",
+      "raison": "MAME n a rien rendu (Attempting to parse: suplup.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "sushibar": {
@@ -3669,25 +3465,25 @@
     },
     "tdfever": {
       "jeu": "tdfever",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "tdfever2": {
       "jeu": "tdfever2",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "tdfever2b": {
       "jeu": "tdfever2b",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "tdfeverj": {
       "jeu": "tdfeverj",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -3705,7 +3501,7 @@
     },
     "teljan": {
       "jeu": "teljan",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -3717,13 +3513,13 @@
     },
     "thehustl": {
       "jeu": "thehustl",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "thehustlj": {
       "jeu": "thehustlj",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -3753,37 +3549,37 @@
     },
     "toobin": {
       "jeu": "toobin",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "toobin1": {
       "jeu": "toobin1",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "toobin2": {
       "jeu": "toobin2",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "toobin2e": {
       "jeu": "toobin2e",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "toobine": {
       "jeu": "toobine",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "toobing": {
       "jeu": "toobing",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -3845,12 +3641,6 @@
       "jeu": "twinbeeb",
       "le": "2026-09-14",
       "raison": "MAME n a rien rendu (machine refusee ?)",
-      "systeme": "mame"
-    },
-    "umk3": {
-      "jeu": "umk3",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file umk3.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "umk3r10": {
@@ -4041,7 +3831,7 @@
     },
     "vstetris": {
       "jeu": "vstetris",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -4131,13 +3921,13 @@
     },
     "wfortune": {
       "jeu": "wfortune",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "wfortunea": {
       "jeu": "wfortunea",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -4191,8 +3981,8 @@
     },
     "worldadv": {
       "jeu": "worldadv",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file worldadv.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-17",
+      "raison": "MAME n a rien rendu (Attempting to parse: worldadv.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "wrally2": {
@@ -4245,37 +4035,13 @@
     },
     "xtrmhunt": {
       "jeu": "xtrmhunt",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "yesnoj": {
       "jeu": "yesnoj",
-      "le": "2026-09-14",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "yukon": {
-      "jeu": "yukon",
-      "le": "2026-09-14",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "yukon1": {
-      "jeu": "yukon1",
-      "le": "2026-09-14",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "zero": {
-      "jeu": "zero",
-      "le": "2026-09-14",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "zero2": {
-      "jeu": "zero2",
-      "le": "2026-09-14",
+      "le": "2026-09-17",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -4287,26 +4053,8 @@
     },
     "zeroteamsr": {
       "jeu": "zeroteamsr",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file zeroteamsr.cfg not found | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
-      "systeme": "mame"
-    },
-    "zookeep": {
-      "jeu": "zookeep",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file default.cfg not found | Configuration file zookeep.cfg not found | Output audio buffer capacity set to %d)",
-      "systeme": "mame"
-    },
-    "zookeep2": {
-      "jeu": "zookeep2",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file default.cfg not found | Configuration file zookeep2.cfg not found | Output audio buffer capacity set to %d)",
-      "systeme": "mame"
-    },
-    "zookeep3": {
-      "jeu": "zookeep3",
-      "le": "2026-09-14",
-      "raison": "MAME n a rien rendu (Configuration file default.cfg not found | Configuration file zookeep3.cfg not found | Output audio buffer capacity set to %d)",
+      "le": "2026-09-17",
+      "raison": "MAME n a rien rendu (Attempting to parse: zeroteamsr.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "zunou": {
@@ -14846,6 +14594,35 @@
       },
       "systeme": "mame"
     },
+    "attackf": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 41068,
+        "adresse_hex": "0xA06C",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN0/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "attackf",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 98576,
+        "zone": "0x0000-0xBFFF"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "aurail": {
       "core": "MAME",
       "credits": {
@@ -20207,6 +19984,64 @@
       },
       "releve": {
         "le": "2026-09-13",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "blaster": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 48519,
+        "adresse_hex": "0xBD87",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "blaster",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 100368,
+        "zone": ":videoram"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "blastero": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 48519,
+        "adresse_hex": "0xBD87",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 3,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "blastero",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 100368,
+        "zone": "0x0000-0xBFFF"
+      },
+      "releve": {
+        "le": "2026-09-17",
         "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
@@ -32652,6 +32487,35 @@
       },
       "systeme": "mame"
     },
+    "complexx": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 33794,
+        "adresse_hex": "0x8402",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":COIN/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "complexx",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 70659,
+        "zone": "0x8400-0x87FF"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "condor": {
       "core": "MAME",
       "credits": {
@@ -41963,6 +41827,93 @@
       },
       "systeme": "mame"
     },
+    "defcmnd": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 41015,
+        "adresse_hex": "0xA037",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN0/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "defcmnd",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 98576,
+        "zone": ":videoram"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "defence": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 41015,
+        "adresse_hex": "0xA037",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN0/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "defence",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 98576,
+        "zone": "0x0000-0xBFFF"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "defender": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 41015,
+        "adresse_hex": "0xA037",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN0/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 4,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "defender",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 98576,
+        "zone": "0x0000-0xBFFF"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "defenderb": {
       "core": "MAME",
       "credits": {
@@ -42021,6 +41972,35 @@
       },
       "systeme": "mame"
     },
+    "defenderj": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 41015,
+        "adresse_hex": "0xA037",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN0/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 4,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "defenderj",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 98576,
+        "zone": "0x0000-0xBFFF"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "defenderw": {
       "core": "MAME",
       "credits": {
@@ -42076,6 +42056,35 @@
       "releve": {
         "le": "2026-09-13",
         "methode": "lua dans mame"
+      },
+      "systeme": "mame"
+    },
+    "defenseb": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 41015,
+        "adresse_hex": "0xA037",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN0/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 4,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "defenseb",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 98576,
+        "zone": "0x0000-0xBFFF"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
     },
@@ -48864,6 +48873,35 @@
       "releve": {
         "le": "2026-09-13",
         "methode": "lua dans mame"
+      },
+      "systeme": "mame"
+    },
+    "dwpc": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 81066,
+        "adresse_hex": "0x13CAA",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":Service/Coin 1",
+        "entree_start": ":P1P2/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "dwpc",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 489536,
+        "zone": ":sram"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
     },
@@ -62070,6 +62108,35 @@
       "releve": {
         "le": "2026-09-13",
         "methode": "lua dans mame"
+      },
+      "systeme": "mame"
+    },
+    "galwars2": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 41015,
+        "adresse_hex": "0xA037",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN0/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "galwars2",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 98576,
+        "zone": ":videoram"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
     },
@@ -80896,6 +80963,93 @@
       },
       "systeme": "mame"
     },
+    "joust": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 41202,
+        "adresse_hex": "0xA0F2",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN0/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "joust",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 100368,
+        "zone": "0x0000-0xBFFF"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "joustr": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 41202,
+        "adresse_hex": "0xA0F2",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN0/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "joustr",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 100368,
+        "zone": ":videoram"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "jousty": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 41202,
+        "adresse_hex": "0xA0F2",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN0/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "jousty",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 100368,
+        "zone": ":videoram"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "joyjoy": {
       "core": "MAME",
       "credits": {
@@ -87856,6 +88010,64 @@
       "releve": {
         "le": "2026-09-13",
         "methode": "lua dans mame"
+      },
+      "systeme": "mame"
+    },
+    "kram": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 33782,
+        "adresse_hex": "0x83F6",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":COIN/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "kram",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 70659,
+        "zone": "0x8000-0x83FF"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "krama": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 33782,
+        "adresse_hex": "0x83F6",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":COIN/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "krama",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 70659,
+        "zone": "0x8000-0x83FF"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
     },
@@ -98995,6 +99207,35 @@
       },
       "systeme": "mame"
     },
+    "mk2r20": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 16973167,
+        "adresse_hex": "0x102FD6F",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN1/Coin 1",
+        "entree_start": ":IN1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "mk2r20",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x1000000-0x107FFFF"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "mk2r21": {
       "core": "MAME",
       "credits": {
@@ -99165,6 +99406,122 @@
       },
       "releve": {
         "le": "2026-09-14",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "mk3": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 17152937,
+        "adresse_hex": "0x105BBA9",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN2/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 3,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "mk3",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x1000000-0x107FFFF"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "mk3p40": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 17152936,
+        "adresse_hex": "0x105BBA8",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN2/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 3,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "mk3p40",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x1000000-0x107FFFF"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "mk3r10": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 17152936,
+        "adresse_hex": "0x105BBA8",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN2/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 3,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "mk3r10",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x1000000-0x107FFFF"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "mk3r20": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 17152941,
+        "adresse_hex": "0x105BBAD",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN2/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 3,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "mk3r20",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x1000000-0x107FFFF"
+      },
+      "releve": {
+        "le": "2026-09-17",
         "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
@@ -124167,6 +124524,151 @@
       },
       "systeme": "mame"
     },
+    "qix": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 33782,
+        "adresse_hex": "0x83F6",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":COIN/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "qix",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 70659,
+        "zone": "0x8000-0x83FF"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "qix2": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 1014,
+        "adresse_hex": "0x03F6",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":COIN/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "qix2",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 70659,
+        "zone": ":sharedram"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "qixa": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 1014,
+        "adresse_hex": "0x03F6",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":COIN/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "qixa",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 70659,
+        "zone": ":sharedram"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "qixb": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 33635,
+        "adresse_hex": "0x8363",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":COIN/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "qixb",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 70659,
+        "zone": "0x8000-0x83FF"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "qixo": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 1014,
+        "adresse_hex": "0x03F6",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":COIN/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "qixo",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 70659,
+        "zone": ":sharedram"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "qjinsei": {
       "core": "MAME",
       "credits": {
@@ -148122,6 +148624,151 @@
       },
       "systeme": "mame"
     },
+    "sinistar": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 48923,
+        "adresse_hex": "0xBF1B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 4,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "sinistar",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 104464,
+        "zone": "0x0000-0xBFFF"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "sinistar2": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 48923,
+        "adresse_hex": "0xBF1B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 4,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "sinistar2",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 104464,
+        "zone": ":videoram"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "sinistarc": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 48923,
+        "adresse_hex": "0xBF1B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 4,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "sinistarc",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 104464,
+        "zone": "0x0000-0xBFFF"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "sinistarc2": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 48923,
+        "adresse_hex": "0xBF1B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 4,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "sinistarc2",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 104464,
+        "zone": ":videoram"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "sinistarp": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 48923,
+        "adresse_hex": "0xBF1B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 4,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "sinistarp",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 104464,
+        "zone": ":videoram"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "sinvasn": {
       "core": "MAME",
       "credits": {
@@ -152589,6 +153236,35 @@
       },
       "systeme": "mame"
     },
+    "spdball": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 48871,
+        "adresse_hex": "0xBEE7",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN4/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 3,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "spdball",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 100368,
+        "zone": ":videoram"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "spdodgeb": {
       "core": "MAME",
       "credits": {
@@ -156591,6 +157267,35 @@
       },
       "systeme": "mame"
     },
+    "stadhr96k": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 1152412,
+        "adresse_hex": "0x11959C",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":INPUTS/Coin 1",
+        "entree_start": ":INPUTS/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "stadhr96k",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x100000-0x11FFFF"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "stadhr96u": {
       "core": "MAME",
       "credits": {
@@ -156878,6 +157583,35 @@
       "releve": {
         "le": "2026-09-13",
         "methode": "lua dans mame"
+      },
+      "systeme": "mame"
+    },
+    "stargate": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 39992,
+        "adresse_hex": "0x9C38",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN0/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "stargate",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 100368,
+        "zone": ":videoram"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
     },
@@ -173470,6 +174204,35 @@
       },
       "systeme": "mame"
     },
+    "umk3": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 16890139,
+        "adresse_hex": "0x101B91B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN2/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 3,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "umk3",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x1000000-0x107FFFF"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "unclepoo": {
       "core": "MAME",
       "credits": {
@@ -186384,6 +187147,64 @@
       },
       "systeme": "mame"
     },
+    "yukon": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 8587,
+        "adresse_hex": "0x218B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN3/Coin 1",
+        "entree_start": ":IN0/P1 Button 1",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "yukon",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 23234,
+        "zone": "0x20A0-0x29FF"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "yukon1": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 8587,
+        "adresse_hex": "0x218B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN3/Coin 1",
+        "entree_start": ":IN0/P1 Button 1",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "yukon1",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 23234,
+        "zone": "0x20A0-0x29FF"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "yuyugogo": {
       "core": "MAME",
       "credits": {
@@ -186700,6 +187521,64 @@
       "releve": {
         "le": "2026-09-13",
         "methode": "lua dans mame"
+      },
+      "systeme": "mame"
+    },
+    "zero": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 41015,
+        "adresse_hex": "0xA037",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN0/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "zero",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 98576,
+        "zone": "0x0000-0xBFFF"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "zero2": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 41015,
+        "adresse_hex": "0xA037",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN0/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "zero2",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 98576,
+        "zone": ":videoram"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
     },
@@ -187801,6 +188680,93 @@
       },
       "releve": {
         "le": "2026-09-14",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "zookeep": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 583,
+        "adresse_hex": "0x0247",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":COIN/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "zookeep",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 70659,
+        "zone": ":nvram"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "zookeep2": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 583,
+        "adresse_hex": "0x0247",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":COIN/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "zookeep2",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 70659,
+        "zone": ":nvram"
+      },
+      "releve": {
+        "le": "2026-09-17",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "zookeep3": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 1014,
+        "adresse_hex": "0x03F6",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":COIN/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "zookeep3",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 70659,
+        "zone": ":sharedram"
+      },
+      "releve": {
+        "le": "2026-09-17",
         "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
