@@ -8,7 +8,9 @@
 # Refuse de demarrer si une partie est en cours. Chaque jeu tourne ~15 s.
 BORNE=root@192.168.1.50
 export SSH_ASKPASS=/mnt/recalbox/outils/.mdp-borne.sh SSH_ASKPASS_REQUIRE=force DISPLAY=${DISPLAY:-:0}
-SYSTEMES="${*:-gb gba snes psx n64 megadrive}"
+# Sans argument : tous les systemes pour lesquels on sait ce que le coeur lit
+# (table ecrite a la main ou releve de relever-boutons-systemes.py).
+SYSTEMES="$*"
 setsid -w ssh -o ConnectTimeout=10 -o StrictHostKeyChecking=no $BORNE "SYSTEMES='$SYSTEMES' python3 -" <<'SUR_LA_BORNE'
 import json, os, re, socket, subprocess, sys, time
 import xml.etree.ElementTree as ET
@@ -32,6 +34,7 @@ NOMS = {"gb": "b=B a=A", "gba": "b=B a=A l=L r=R", "snes": "b=B a=A y=Y x=X l=L 
 N64 = ("A Button", "B Button", "Z Trig", "L Trig", "R Trig", "C Button U", "C Button D",
        "C Button L", "C Button R")
 PROCESSUS = ("retroarch", "mupen64plus")
+ATTENTE_LANCEMENT = float(os.environ.get("ATTENTE_LANCEMENT", 30))
 ETIQUETTES = {}
 
 def ids_vers_codes():
@@ -111,8 +114,12 @@ if en_jeu():
     print("une partie est en cours : on ne touche a rien")
     sys.exit(2)
 ids = ids_vers_codes()
+demandes = os.environ["SYSTEMES"].split()
+if not demandes:
+    releves = charger(P + "boutons-systemes.json", "systemes")
+    demandes = sorted(set(LUS) | {s for s, f in releves.items() if f.get("roles")})
 bons = total = 0
-for systeme in os.environ["SYSTEMES"].split():
+for systeme in demandes:
     dossier = R + systeme
     # Un jeu qu EmulationStation connait : sa liste, pas le dossier (un .chd
     # d un jeu multi-disques ou une rom masquee est refuse).
@@ -130,11 +137,22 @@ for systeme in os.environ["SYSTEMES"].split():
     # EmulationStation refuse par commande les noms a apostrophe ou point
     # d exclamation (« Couldn't find game », 17/09/2026) : on en prend un simple.
     simples = [r for r in roms if re.match(r"^[\w .,()-]+$", os.path.basename(r))] or roms
-    rom = sorted(simples)[len(simples) // 2]
+    candidats = sorted(simples)
+    candidats = candidats[len(candidats) // 2:] + candidats[:len(candidats) // 2]
+    # Des roms ne se lancent pas (rom incomplete, BIOS manquant) : on n attend
+    # pas et on en essaie une autre, jusqu a trois.
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    s.sendto(("START|%s|%s" % (systeme, rom)).encode(), ("127.0.0.1", 1337))
-    if not attendre(en_jeu, 60):
-        print("%-10s %s : NE DEMARRE PAS" % (systeme, os.path.basename(rom)))
+    rom = None
+    for essai in candidats[:3]:
+        s.sendto(("START|%s|%s" % (systeme, essai)).encode(), ("127.0.0.1", 1337))
+        if attendre(en_jeu, ATTENTE_LANCEMENT):
+            rom = essai
+            break
+        print("%-10s %s : ne demarre pas, j essaie une autre rom"
+              % (systeme, os.path.basename(essai)[:40]), flush=True)
+        time.sleep(3)
+    if rom is None:
+        print("%-10s aucune des 3 roms essayees ne demarre" % systeme)
         continue
     time.sleep(10)
     total += 1

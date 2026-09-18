@@ -32,7 +32,12 @@ DELAI=180
 DELAI_MAME=150
 case "$SYSTEME" in
     stv)  COEUR=/opt/coeurs/mednafen_stv_libretro.so ; NOM="Mednafen ST-V" ; COMBIEN=2 ; DELAI=900 ;;
-    *)    COEUR=/opt/coeurs/fbneo_rb.so              ; NOM="FinalBurn Neo" ;;
+    # Le coeur FBNeo de 2026 (buildbot libretro, pose le 18/09/2026) remplace
+    # celui tire de l image Recalbox 10.1 : l ancien n exposait PAS la memoire
+    # de travail des cartes CPS2 (1944 comptait ses credits a l ecran pendant
+    # que la zone lue restait a zero), et refusait des centaines de romsets que
+    # celui-ci accepte. COEUR=... en variable d environnement pour l ancien.
+    *)    COEUR=${COEUR:-/opt/coeurs/fbneo_2026.so}   ; NOM="FinalBurn Neo" ;;
 esac
 if [ "$ACHARNE" = "1" ]; then
     SUPPLEMENT="--acharne"
@@ -42,7 +47,9 @@ if [ "$ACHARNE" = "1" ]; then
     [ "$SYSTEME" = "stv" ] && DELAI=1800
 fi
 BASE=/mnt/recalbox/donnees/credits-arcade.json
-PARTS=/mnt/recalbox/donnees/parts
+# PARTS=... : un dossier de parts a soi, pour faire tourner deux balayages en
+# meme temps (MAME et FBNeo) sans qu ils effacent les resultats l un de l autre.
+PARTS=${PARTS:-/mnt/recalbox/donnees/parts}
 JOURNAUX=/mnt/recalbox/journaux
 ARRET=/tmp/arret-nuit
 HORODATE=$(date +%Y%m%d-%H%M)
@@ -71,6 +78,7 @@ while [ $n -le $COMBIEN ]; do
             --coeur "$COEUR" --coeur-nomme "$NOM" \
             --base "$PARTS/part-$n.json" --reference "$BASE" \
             --part "$n/$COMBIEN" --arret "$ARRET" --delai "$DELAI" $SUPPLEMENT \
+            ${RAISONS:+--raisons "$RAISONS"} \
             > "$JOURNAUX/$PREFIXE-$SYSTEME-$HORODATE-part$n.log" 2>&1 &
     fi
     n=$((n + 1))
