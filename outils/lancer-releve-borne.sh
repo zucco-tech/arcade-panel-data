@@ -66,11 +66,20 @@ $SCP /tmp/releve-borne-depart.json $BORNE:$SUR_BORNE/releve-borne.json.tmp || ex
 $SSH $BORNE "mv -f $SUR_BORNE/releve-borne.json.tmp $SUR_BORNE/releve-borne.json" || exit 1
 
 echo "=== 3. en route (il attend le silence avant de commencer)"
-$SSH $BORNE "rm -f /tmp/arret-releve-poli /tmp/arret-nuit
+# Le programme doit survivre a la fermeture de la connexion : on l ecrit dans
+# un petit lanceur sur la borne, et on le detache avec setsid dans un
+# sous-shell — un « & » direct dans la commande ssh ne survit pas toujours.
+$SSH $BORNE "cat > $SUR_BORNE/outils/lancer.sh <<'FIN'
+#!/bin/sh
+cd $SUR_BORNE/outils
+exec python3 -u releve-poli.py --systemes $SYSTEMES > $SUR_BORNE/releve-poli.log 2>&1 < /dev/null
+FIN
+chmod +x $SUR_BORNE/outils/lancer.sh
+rm -f /tmp/arret-releve-poli /tmp/arret-nuit
 pkill -f releve-poli.py 2>/dev/null
-cd $SUR_BORNE/outils && setsid nohup python3 -u releve-poli.py --systemes $SYSTEMES \
-    > $SUR_BORNE/releve-poli.log 2>&1 < /dev/null &
-sleep 2; pgrep -f releve-poli.py >/dev/null && echo 'releve poli en route' || echo 'ECHEC du lancement'"
+( setsid $SUR_BORNE/outils/lancer.sh & )
+sleep 3
+pgrep -f releve-poli.py >/dev/null && echo 'releve poli en route' || { echo 'ECHEC du lancement'; tail -3 $SUR_BORNE/releve-poli.log 2>/dev/null; }"
 
 echo
 echo "Suivre :  sudo sh $0 --ou-en-est"

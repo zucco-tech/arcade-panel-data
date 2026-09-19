@@ -27,6 +27,34 @@ ARRET=/tmp/arret-campagne
 RAISONS_TOUT="rom refusee,romset inconnu,jeu non supporte,aucun candidat,candidats non confirmes,jeu inanime,delai depasse,pilote plante,reponse illisible"
 
 note() { echo "$(date '+%F %T')  $1" >> $JOURNAUX/campagne.log; }
+
+# Le disque interne du PC ne doit jamais se remplir a cause de nous. Avant
+# chaque systeme : si la place libre passe sous PLACE_BASSE, on fait le menage
+# de ce qui nous appartient (images memoire des coeurs plantes, vieux
+# journaux) ; si elle reste sous PLACE_CRITIQUE, on s arrete et on le dit.
+PLACE_BASSE=10        # Go
+PLACE_CRITIQUE=5      # Go
+place_libre() { df -BG --output=avail / | tail -1 | tr -dc "0-9"; }
+
+veiller_au_disque() {
+    libre=$(place_libre)
+    [ "${libre:-99}" -ge $PLACE_BASSE ] && return 0
+    note "disque : plus que $libre Go, menage"
+    rm -rf /var/lib/systemd/coredump/* 2>/dev/null
+    rm -f /var/crash/*.crash 2>/dev/null
+    journalctl --vacuum-size=200M >/dev/null 2>&1
+    find $JOURNAUX -name "*.log" -mtime +7 -delete 2>/dev/null
+    find /root/.config/retroarch/system/mame/nvram -mtime +30 -delete 2>/dev/null
+    libre=$(place_libre)
+    note "disque : $libre Go libres apres menage"
+    if [ "${libre:-0}" -lt $PLACE_CRITIQUE ]; then
+        note "disque : moins de $PLACE_CRITIQUE Go, la campagne s arrete"
+        echo "ARRET : le disque du PC est plein ($libre Go libres)." > $RAPPORT
+        echo "Le gros du disque n est pas a nous : voir ~/dev (depot Recalbox)." >> $RAPPORT
+        return 1
+    fi
+    return 0
+}
 compter() { python3 -c "
 import json; b = json.load(open('$BASE'))
 print(len(b['jeux']), len(b['difficiles']))"; }
@@ -51,6 +79,7 @@ while [ ! -f $ARRET ]; do
 
     for systeme in fbneo neogeo neogeocd fba stv; do
         [ -f $ARRET ] && break
+        veiller_au_disque || { touch $ARRET; break; }
         [ -d /mnt/roms/$systeme ] || continue
         note "tour $tour : $systeme"
         PARTS=$DONNEES/parts-campagne ACHARNE=1 RAISONS="$RAISONS_TOUT" \
@@ -58,7 +87,7 @@ while [ ! -f $ARRET ]; do
             > $JOURNAUX/campagne-$systeme-$(date +%Y%m%d-%H%M).log 2>&1
     done
 
-    if [ ! -f $ARRET ]; then
+    if [ ! -f $ARRET ] && veiller_au_disque; then
         note "tour $tour : mame (NVRAM d abord)"
         python3 -u $OUTILS/preparer-nvram.py --base $BASE \
             --raisons "candidats non confirmes,MAME n a rien rendu,jeu inanime,aucun candidat" \

@@ -53,7 +53,12 @@ PORT_ES = 1337           # commandes EmulationStation
 #     l envelopper dans dbus-run-session.
 #   * la version 1.18 livree par Ubuntu n expose pas la RAM a READ_CORE_RAM.
 #     Il faut la 1.22.2 officielle.
-RETROARCH = "/opt/retroarch.AppImage"
+# RETROARCH=... : la version 1.18 livree par Ubuntu n expose pas la RAM a
+# READ_CORE_RAM, et les coeurs 3D (Flycast) ont besoin d un RetroArch recent.
+# Celle du 19/09/2026 vit dans nos outils, sans rien installer sur le systeme.
+RETROARCH = os.environ.get("RETROARCH", "/mnt/recalbox/outils/retroarch-1.22.AppImage")
+# BIOS=... : le dossier « system » de RetroArch (les BIOS Naomi sont dans dc/).
+BIOS = os.environ.get("BIOS", "/mnt/recalbox/bios")
 DOSSIER_COEURS = "/opt/coeurs"
 JOURNAUX_RA = "/mnt/recalbox/journaux"
 # Le nom que RetroArch annonce pour chaque coeur, pour savoir avant de
@@ -301,14 +306,16 @@ class Borne:
         Xephyr, qui tombe alors avec le serveur. Inutile de toute facon, la
         fenetre occupe deja tout le serveur imbrique.
         """
-        if self.port == PORT_RA and not self.affichage:
-            return []                      # instance unique : rien a changer
         chemin = os.path.join(JOURNAUX_RA, "retroarch-%d.cfg" % self.port)
         try:
             os.makedirs(JOURNAUX_RA, exist_ok=True)
             with open(chemin, "w") as fh:
                 fh.write('network_cmd_enable = "true"\n')
                 fh.write('network_cmd_port = "%d"\n' % self.port)
+                # Les BIOS (Naomi, Atomiswave, Dreamcast) vivent avec nos
+                # outils, pas dans le systeme : on le dit a chaque lancement.
+                fh.write('system_directory = "%s"\n' % BIOS)
+                fh.write('menu_driver = "null"\n')
                 if self.affichage:
                     fh.write('video_fullscreen = "false"\n')
                     fh.write('video_windowed_fullscreen = "false"\n')
