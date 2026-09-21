@@ -3,55 +3,55 @@
   "difficiles": {
     "bloodstm": {
       "jeu": "bloodstm",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] Using ROM with known crc 0xb0f32ec5 and name bssrom1.bin from archive /mnt/roms/neogeo/bloodstm | [FBNeo] Using ROM with known crc 0x8aee1e77 and name b)",
       "systeme": "neogeo"
     },
     "gg-bios": {
       "jeu": "gg-bios",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeo"
     },
     "ironclad": {
       "jeu": "ironclad",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] Using ROM with known crc 0x5a86cff2 and name 000-lo.lo from archive /mnt/roms/neogeo/neogeo | DIPSWITCH Neo Geo Mode selected => NeoSystem: 0x%02x. | [F)",
       "systeme": "neogeo"
     },
     "sftm": {
       "jeu": "sftm",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] Driver successfully started | [FBNeo] Unknown device type for port 0, forcing \"Classic\" instead | [FBNeo] Unknown device type for port 1, forcing \"Class)",
       "systeme": "neogeo"
     },
     "timekill": {
       "jeu": "timekill",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] Driver successfully started | [FBNeo] Unknown device type for port 0, forcing \"Classic\" instead | [FBNeo] Unknown device type for port 1, forcing \"Class)",
       "systeme": "neogeo"
     },
     "tws96": {
       "jeu": "tws96",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeo"
     },
     "umk3": {
       "jeu": "umk3",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "neogeo"
     },
     "uni-bios-32": {
       "jeu": "uni-bios-32",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeo"
     },
     "uni-bioscd-32": {
       "jeu": "uni-bioscd-32",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeo"
     }

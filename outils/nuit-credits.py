@@ -114,6 +114,13 @@ ASSEZ = 4
 # deux adresses, pas davantage. Ecrire une fiche sur six candidats dont aucun
 # n'a ete confirme, c'est inventer une reponse.
 SANS_CONFIRMATION_MAX = 2
+# Apres le START, on ne prenait qu un instantane a 1,5 s. Trop tot pour les
+# jeux qui chargent : sur Naomi, 211 jeux sur 253 ont ete ecartes pour
+# « candidats non confirmes ». On surveille maintenant sans relache pendant
+# ATTENTE_START secondes : toute adresse qui descend, a n importe quel
+# moment, est retenue. Reglable par l environnement pour pouvoir mesurer.
+ATTENTE_START = float(os.environ.get("ATTENTE_START", "8.0"))
+PAS_SURVEILLANCE = 0.4
 ECHECS_MAX = 8            # au-dela, quelque chose ne va pas : on s'arrete
 
 # Un echec peut etre passager : le jeu n'avait pas fini de demarrer et la
@@ -718,6 +725,29 @@ def migrer_par_coeur(base):
     return change
 
 
+def surveiller_baisse(borne, avant, duree, arret):
+    """Les adresses qui descendent sous leur valeur d avant, a tout moment.
+
+    Un seul relevé differe attrape le decompte seulement s il tombe pile
+    dans la fenetre. On relit donc en boucle pendant toute la duree : des
+    qu une adresse passe sous sa valeur de depart, elle est acquise, meme
+    si le jeu la remonte ensuite (ecran de selection, remise a zero).
+    """
+    baissiers = set()
+    fin = time.monotonic() + duree
+    while True:
+        for a in sorted(avant):
+            if a in baissiers:
+                continue
+            octet = borne.lire(a, 1)
+            if octet is not None and octet[0] < avant[a]:
+                baissiers.add(a)
+        if len(baissiers) == len(avant) or time.monotonic() >= fin:
+            return baissiers
+        arret()
+        time.sleep(PAS_SURVEILLANCE)
+
+
 def deja_fait(base, coeur, jeu, reessayer=False):
     """Vrai si ce jeu n'a plus rien a nous apprendre, pour ce coeur."""
     fiche = (base.get("jeux") or {}).get(cle(coeur, jeu)) or {}
@@ -1041,12 +1071,7 @@ def traiter(borne, clavier, base, systeme, jeu, arret, journal):
             avant_start[a] = octet[0]
     arret()
     clavier.start()
-    time.sleep(1.5)
-    baissiers = set()
-    for a in sorted(candidats):
-        octet = borne.lire(a, 1)
-        if octet is not None and a in avant_start and octet[0] < avant_start[a]:
-            baissiers.add(a)
+    baissiers = surveiller_baisse(borne, avant_start, ATTENTE_START, arret)
 
     surs = candidats & baissiers
     if not surs:

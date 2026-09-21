@@ -57,12 +57,6 @@
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
-    "25pacmano": {
-      "jeu": "25pacmano",
-      "le": "2026-09-17",
-      "raison": "jeu inanime",
-      "systeme": "mame"
-    },
     "30test": {
       "core": "MAME",
       "jeu": "30test",
@@ -289,49 +283,49 @@
     },
     "8bpm": {
       "jeu": "8bpm",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "abcop": {
       "jeu": "abcop",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "abcopd": {
       "jeu": "abcopd",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "abcopj": {
       "jeu": "abcopj",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "abcopjd": {
       "jeu": "abcopjd",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "aburner": {
       "jeu": "aburner",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "aburner2": {
       "jeu": "aburner2",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "aburner2g": {
       "jeu": "aburner2g",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
@@ -344,145 +338,145 @@
     },
     "alien3": {
       "jeu": "alien3",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "alien3j": {
       "jeu": "alien3j",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "alien3u": {
       "jeu": "alien3u",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "alienfnt": {
       "jeu": "alienfnt",
-      "le": "2026-09-17",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-20",
+      "raison": "delai depasse",
       "systeme": "mame"
     },
     "alienfnta": {
       "jeu": "alienfnta",
-      "le": "2026-09-18",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "alphaone": {
       "jeu": "alphaone",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "alphaonea": {
       "jeu": "alphaonea",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "alpilot": {
       "jeu": "alpilot",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "alpilotj": {
       "jeu": "alpilotj",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "anpanman2": {
       "jeu": "anpanman2",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "anpanman2a": {
       "jeu": "anpanman2a",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "arabfgt": {
       "jeu": "arabfgt",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "arabfgtj": {
       "jeu": "arabfgtj",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "arabfgtu": {
       "jeu": "arabfgtu",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "archrivl": {
       "jeu": "archrivl",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "archrivla": {
       "jeu": "archrivla",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "archrivlb": {
       "jeu": "archrivlb",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "arescue": {
       "jeu": "arescue",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "arescuej": {
       "jeu": "arescuej",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "arescueu": {
       "jeu": "arescueu",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "arkatour2": {
       "jeu": "arkatour2",
-      "le": "2026-09-17",
-      "raison": "MAME n a rien rendu (Attempting to parse: arkatour2.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "arlingtn": {
       "jeu": "arlingtn",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "arlingtna": {
       "jeu": "arlingtna",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "avspirit": {
       "jeu": "avspirit",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
@@ -495,3284 +489,3092 @@
     },
     "backfire": {
       "jeu": "backfire",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "backfirea": {
       "jeu": "backfirea",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "backfirt": {
       "jeu": "backfirt",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "badlands": {
       "jeu": "badlands",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "batlball": {
       "jeu": "batlball",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "batlballa": {
       "jeu": "batlballa",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "batlballe": {
       "jeu": "batlballe",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "batlballo": {
       "jeu": "batlballo",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "batlballpt": {
       "jeu": "batlballpt",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "batlballu": {
       "jeu": "batlballu",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "beachspi": {
       "jeu": "beachspi",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "biomtoy": {
       "jeu": "biomtoy",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "biomtoya": {
       "jeu": "biomtoya",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "biomtoyb": {
       "jeu": "biomtoyb",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "biomtoyc": {
       "jeu": "biomtoyc",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "bioplayc": {
       "jeu": "bioplayc",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "blazeon": {
       "jeu": "blazeon",
-      "le": "2026-09-17",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "blokpong": {
-      "jeu": "blokpong",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "bloodbrom": {
       "jeu": "bloodbrom",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "bloodstm": {
       "jeu": "bloodstm",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "bloodstm220": {
       "jeu": "bloodstm220",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "bloodstm221": {
       "jeu": "bloodstm221",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "bounty2": {
       "jeu": "bounty2",
-      "le": "2026-09-17",
-      "raison": "MAME n a rien rendu (Attempting to parse: bounty2.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "brival": {
       "jeu": "brival",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "brivalj": {
       "jeu": "brivalj",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "bubsys": {
       "jeu": "bubsys",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "candy": {
       "jeu": "candy",
-      "le": "2026-09-17",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "capsnk": {
-      "jeu": "capsnk",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "capsnka": {
-      "jeu": "capsnka",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "capsnkb": {
       "jeu": "capsnkb",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "cashquiz": {
       "jeu": "cashquiz",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "pas de monnayeur declare",
       "systeme": "mame"
     },
     "ccastles": {
       "jeu": "ccastles",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "ccastles1": {
       "jeu": "ccastles1",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "ccastles2": {
       "jeu": "ccastles2",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "ccastles3": {
       "jeu": "ccastles3",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "ccastlesf": {
       "jeu": "ccastlesf",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "ccastlesg": {
       "jeu": "ccastlesg",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "ccastlesj": {
       "jeu": "ccastlesj",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "ccastlesp": {
       "jeu": "ccastlesp",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "checkman": {
       "jeu": "checkman",
-      "le": "2026-09-17",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "chocomk": {
-      "jeu": "chocomk",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "claychal": {
       "jeu": "claychal",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "clubk2k3": {
       "jeu": "clubk2k3",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "clubk2kp": {
       "jeu": "clubk2kp",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "clubk2kpa": {
       "jeu": "clubk2kpa",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "clubkcyc": {
       "jeu": "clubkcyc",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "clubkprz": {
       "jeu": "clubkprz",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "clubkpzb": {
       "jeu": "clubkpzb",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "clubkpzbp": {
       "jeu": "clubkpzbp",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "clubkrt": {
       "jeu": "clubkrt",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "clubkrta": {
       "jeu": "clubkrta",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "clubkrtc": {
       "jeu": "clubkrtc",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "clubkrto": {
       "jeu": "clubkrto",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "contcirc": {
       "jeu": "contcirc",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "contcircu": {
       "jeu": "contcircu",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "countrun": {
       "jeu": "countrun",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "cspike": {
-      "jeu": "cspike",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
       "systeme": "mame"
     },
     "curvebal": {
       "jeu": "curvebal",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "cvs2": {
       "jeu": "cvs2",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "cvsgd": {
       "jeu": "cvsgd",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "darkedge": {
       "jeu": "darkedge",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "darkedgej": {
       "jeu": "darkedgej",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "dbzvrvs": {
       "jeu": "dbzvrvs",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "ddribble": {
       "jeu": "ddribble",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "ddribblep": {
       "jeu": "ddribblep",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "dealer": {
       "jeu": "dealer",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "decocass": {
       "jeu": "decocass",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "derbyo2k": {
       "jeu": "derbyo2k",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "derbyoc": {
       "jeu": "derbyoc",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "derbyoc2": {
       "jeu": "derbyoc2",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "derbyocw": {
       "jeu": "derbyocw",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "divebomb": {
       "jeu": "divebomb",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "doa2": {
       "jeu": "doa2",
-      "le": "2026-09-18",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-20",
+      "raison": "delai depasse",
       "systeme": "mame"
     },
     "doa2a": {
       "jeu": "doa2a",
-      "le": "2026-09-18",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "doa2m": {
       "jeu": "doa2m",
-      "le": "2026-09-18",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-20",
+      "raison": "delai depasse",
       "systeme": "mame"
     },
     "downtown": {
       "jeu": "downtown",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "downtown2": {
       "jeu": "downtown2",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "downtownj": {
       "jeu": "downtownj",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "downtownp": {
       "jeu": "downtownp",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "dquizgo2": {
       "jeu": "dquizgo2",
-      "le": "2026-09-17",
-      "raison": "MAME n a rien rendu (Attempting to parse: dquizgo2.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "dragntr": {
       "jeu": "dragntr",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "dragntr2": {
       "jeu": "dragntr2",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "dragntr3": {
       "jeu": "dragntr3",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "drbyocwa": {
       "jeu": "drbyocwa",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "drbyocwb": {
       "jeu": "drbyocwb",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "drbyocwc": {
       "jeu": "drbyocwc",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "drbyocwt": {
       "jeu": "drbyocwt",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "dtfamily": {
       "jeu": "dtfamily",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "dygolf": {
       "jeu": "dygolf",
-      "le": "2026-09-18",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "dynabomb": {
       "jeu": "dynabomb",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "ejanhs": {
       "jeu": "ejanhs",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "emeraldaj": {
       "jeu": "emeraldaj",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "emeraldaja": {
       "jeu": "emeraldaja",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "exzisus": {
       "jeu": "exzisus",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "exzisusa": {
       "jeu": "exzisusa",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "exzisust": {
       "jeu": "exzisust",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "f1dream": {
       "jeu": "f1dream",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "f1en": {
       "jeu": "f1en",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "f1enj": {
       "jeu": "f1enj",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "f1enu": {
       "jeu": "f1enu",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "f1lap": {
       "jeu": "f1lap",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "f1lapj": {
       "jeu": "f1lapj",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "f1lapt": {
       "jeu": "f1lapt",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "f355": {
       "jeu": "f355",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "f355dlx": {
       "jeu": "f355dlx",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "f355p": {
       "jeu": "f355p",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "f355twin": {
       "jeu": "f355twin",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "f355twinp": {
       "jeu": "f355twinp",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "f355twn2": {
       "jeu": "f355twn2",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "fenix": {
       "jeu": "fenix",
-      "le": "2026-09-17",
-      "raison": "MAME n a rien rendu (Attempting to parse: fenix.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "finalap2j": {
       "jeu": "finalap2j",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "flower": {
       "jeu": "flower",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "flowerj": {
       "jeu": "flowerj",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "fsoccerba": {
       "jeu": "fsoccerba",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "fsoccerj": {
       "jeu": "fsoccerj",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "ga2": {
       "jeu": "ga2",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "ga2j": {
       "jeu": "ga2j",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "ga2u": {
       "jeu": "ga2u",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "genpeitd": {
       "jeu": "genpeitd",
-      "le": "2026-09-13",
-      "raison": "MAME n a rien rendu (machine refusee ?)",
-      "systeme": "mame"
-    },
-    "ggxxrl": {
-      "jeu": "ggxxrl",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "gijoea": {
       "jeu": "gijoea",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "gng": {
       "jeu": "gng",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "gnga": {
       "jeu": "gnga",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "gngc": {
       "jeu": "gngc",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "gprider": {
       "jeu": "gprider",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "gpriderj": {
       "jeu": "gpriderj",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "gpriderjs": {
       "jeu": "gpriderjs",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "gprideru": {
       "jeu": "gprideru",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "gpriderus": {
       "jeu": "gpriderus",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "gradiusb": {
       "jeu": "gradiusb",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "groundfx": {
       "jeu": "groundfx",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "gundmct": {
       "jeu": "gundmct",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "gundmgd": {
-      "jeu": "gundmgd",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "gundmxgd": {
-      "jeu": "gundmxgd",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "gwing2": {
-      "jeu": "gwing2",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "hangon2": {
       "jeu": "hangon2",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "harddunk": {
       "jeu": "harddunk",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "harddunkj": {
       "jeu": "harddunkj",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "hidctch2": {
       "jeu": "hidctch2",
-      "le": "2026-09-17",
-      "raison": "delai depasse",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "hidctch2a": {
       "jeu": "hidctch2a",
-      "le": "2026-09-17",
-      "raison": "delai depasse",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "hidctch3": {
       "jeu": "hidctch3",
-      "le": "2026-09-17",
-      "raison": "delai depasse",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "hidnc2k": {
       "jeu": "hidnc2k",
-      "le": "2026-09-17",
-      "raison": "delai depasse",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "hidnctch": {
       "jeu": "hidnctch",
-      "le": "2026-09-17",
-      "raison": "delai depasse",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "hidnctcha": {
       "jeu": "hidnctcha",
-      "le": "2026-09-17",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "hmgeo": {
-      "jeu": "hmgeo",
-      "le": "2026-09-18",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "holo": {
       "jeu": "holo",
-      "le": "2026-09-13",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "hopmappy": {
       "jeu": "hopmappy",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "hopper": {
       "jeu": "hopper",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "hstennis": {
       "jeu": "hstennis",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "hstennis10": {
       "jeu": "hstennis10",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "hunchbkg": {
       "jeu": "hunchbkg",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "hydra": {
       "jeu": "hydra",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "hydrap": {
       "jeu": "hydrap",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "ikaruga": {
-      "jeu": "ikaruga",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
       "systeme": "mame"
     },
     "illvelo": {
       "jeu": "illvelo",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "inidv3cy": {
       "jeu": "inidv3cy",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "initd": {
       "jeu": "initd",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "initdexp": {
       "jeu": "initdexp",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "initdv2e": {
       "jeu": "initdv2e",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "initdv2j": {
       "jeu": "initdv2j",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "initdv3e": {
       "jeu": "initdv3e",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "initdv3j": {
       "jeu": "initdv3j",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "insector": {
       "jeu": "insector",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "inunoos": {
       "jeu": "inunoos",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "ironfort": {
       "jeu": "ironfort",
-      "le": "2026-09-17",
-      "raison": "delai depasse",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "ironfortc": {
       "jeu": "ironfortc",
-      "le": "2026-09-17",
-      "raison": "delai depasse",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "isgsm": {
       "jeu": "isgsm",
-      "le": "2026-09-17",
-      "raison": "MAME n a rien rendu (Attempting to parse: isgsm.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "jackrabts": {
       "jeu": "jackrabts",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "jjparad2": {
       "jeu": "jjparad2",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "jleague": {
       "jeu": "jleague",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "jleagueo": {
       "jeu": "jleagueo",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "jmpbreak": {
       "jeu": "jmpbreak",
-      "le": "2026-09-17",
-      "raison": "MAME n a rien rendu (Attempting to parse: jmpbreak.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "jmpbreaka": {
       "jeu": "jmpbreaka",
-      "le": "2026-09-17",
-      "raison": "MAME n a rien rendu (Attempting to parse: jmpbreaka.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "jongpute": {
       "jeu": "jongpute",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "jpark": {
       "jeu": "jpark",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "jparkj": {
       "jeu": "jparkj",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "jparkja": {
       "jeu": "jparkja",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "jparkjc": {
       "jeu": "jparkjc",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "karnovj": {
       "jeu": "karnovj",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "keyboard": {
       "jeu": "keyboard",
-      "le": "2026-09-18",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "kick4csh": {
       "jeu": "kick4csh",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "kingrt66": {
       "jeu": "kingrt66",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "kingrt66p": {
       "jeu": "kingrt66p",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "kofnw": {
       "jeu": "kofnw",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "kofnwj": {
       "jeu": "kofnwj",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "kokoroj": {
       "jeu": "kokoroj",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "kokoroj2": {
       "jeu": "kokoroj2",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "kokoroja": {
       "jeu": "kokoroja",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "kong": {
       "jeu": "kong",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "kontest": {
       "jeu": "kontest",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "landbrk": {
       "jeu": "landbrk",
-      "le": "2026-09-17",
-      "raison": "delai depasse",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "landbrka": {
       "jeu": "landbrka",
-      "le": "2026-09-17",
-      "raison": "delai depasse",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "landbrkb": {
       "jeu": "landbrkb",
-      "le": "2026-09-17",
-      "raison": "delai depasse",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "lastsurv": {
       "jeu": "lastsurv",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "lastsurvd": {
       "jeu": "lastsurvd",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "lghost": {
       "jeu": "lghost",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "lghostd": {
       "jeu": "lghostd",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "lghostj": {
       "jeu": "lghostj",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "lghostu": {
       "jeu": "lghostu",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "lghostud": {
       "jeu": "lghostud",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "linkypip": {
       "jeu": "linkypip",
-      "le": "2026-09-17",
-      "raison": "delai depasse",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "livequiz": {
       "jeu": "livequiz",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "loffire": {
       "jeu": "loffire",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "loffired": {
       "jeu": "loffired",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "loffirej": {
       "jeu": "loffirej",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "loffirejd": {
       "jeu": "loffirejd",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "loffireu": {
       "jeu": "loffireu",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "loffireud": {
       "jeu": "loffireud",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "luctoday": {
       "jeu": "luctoday",
-      "le": "2026-09-17",
-      "raison": "MAME n a rien rendu (Attempting to parse: luctoday.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "luplup": {
       "jeu": "luplup",
-      "le": "2026-09-17",
-      "raison": "MAME n a rien rendu (Attempting to parse: luplup.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "luplup10": {
       "jeu": "luplup10",
-      "le": "2026-09-17",
-      "raison": "MAME n a rien rendu (Attempting to parse: luplup10.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "luplup29": {
       "jeu": "luplup29",
-      "le": "2026-09-17",
-      "raison": "MAME n a rien rendu (Attempting to parse: luplup29.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "luptype": {
       "jeu": "luptype",
-      "le": "2026-09-18",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "mamonoro": {
       "jeu": "mamonoro",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "manicpnc": {
       "jeu": "manicpnc",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "mario": {
       "jeu": "mario",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "marioe": {
       "jeu": "marioe",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "mazan": {
       "jeu": "mazan",
-      "le": "2026-09-18",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "mazanj": {
       "jeu": "mazanj",
-      "le": "2026-09-18",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "mazanu": {
       "jeu": "mazanu",
-      "le": "2026-09-18",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "mexico86": {
       "jeu": "mexico86",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "mgcrystl": {
       "jeu": "mgcrystl",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "mgcrystlj": {
       "jeu": "mgcrystlj",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "mgcrystlo": {
       "jeu": "mgcrystlo",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "mhavoc": {
       "jeu": "mhavoc",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "mhavoc2": {
       "jeu": "mhavoc2",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "mhavocp": {
       "jeu": "mhavocp",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "mhavocrv": {
       "jeu": "mhavocrv",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "mj1": {
       "jeu": "mj1",
-      "le": "2026-09-14",
+      "le": "2026-09-21",
       "raison": "MAME n a rien rendu (machine refusee ?)",
-      "systeme": "mame"
-    },
-    "moeru": {
-      "jeu": "moeru",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
       "systeme": "mame"
     },
     "mofflott": {
       "jeu": "mofflott",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "mrdig": {
       "jeu": "mrdig",
-      "le": "2026-09-17",
-      "raison": "MAME n a rien rendu (Attempting to parse: mrdig.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "mslug6": {
       "jeu": "mslug6",
-      "le": "2026-09-18",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "mushi2k61": {
-      "jeu": "mushi2k61",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "mushi2k62": {
       "jeu": "mushi2k62",
-      "le": "2026-09-18",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "mushik2e": {
       "jeu": "mushik2e",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "mushik2k": {
       "jeu": "mushik2k",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "mushik4e": {
       "jeu": "mushik4e",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "mushikc": {
       "jeu": "mushikc",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "mushike": {
       "jeu": "mushike",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "mushikeo": {
       "jeu": "mushikeo",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "mushikk": {
       "jeu": "mushikk",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
-      "systeme": "mame"
-    },
-    "mvsc2": {
-      "jeu": "mvsc2",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "mvsc2u": {
-      "jeu": "mvsc2u",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
       "systeme": "mame"
     },
     "mx5000": {
       "jeu": "mx5000",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "naomi": {
       "jeu": "naomi",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "naomi2": {
       "jeu": "naomi2",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "naomigd": {
       "jeu": "naomigd",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "nbahangt": {
       "jeu": "nbahangt",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "nbahangtl11": {
       "jeu": "nbahangtl11",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "nbahangtl12": {
       "jeu": "nbahangtl12",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "nbahangtm11": {
       "jeu": "nbahangtm11",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "nbahangtm12": {
       "jeu": "nbahangtm12",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "nbahangtm13": {
       "jeu": "nbahangtm13",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "nbamht": {
       "jeu": "nbamht",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "nbamhtl10": {
       "jeu": "nbamhtl10",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "nbamhtm10": {
       "jeu": "nbamhtm10",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "nbamhtp": {
       "jeu": "nbamhtp",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "ndcfboxa": {
       "jeu": "ndcfboxa",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "ngdup23a": {
       "jeu": "ngdup23a",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "ngdup23c": {
       "jeu": "ngdup23c",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "ngdup23e": {
       "jeu": "ngdup23e",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "nhidctch": {
       "jeu": "nhidctch",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "ninjaslt": {
       "jeu": "ninjaslt",
-      "le": "2026-09-18",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "ninjaslta": {
       "jeu": "ninjaslta",
-      "le": "2026-09-18",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "ninjasltj": {
       "jeu": "ninjasltj",
-      "le": "2026-09-18",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "ninjasltu": {
       "jeu": "ninjasltu",
-      "le": "2026-09-18",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "oinori": {
       "jeu": "oinori",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "omegaf": {
       "jeu": "omegaf",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "omegafs": {
       "jeu": "omegafs",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "orunners": {
       "jeu": "orunners",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "orunnersj": {
       "jeu": "orunnersj",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "orunnersu": {
       "jeu": "orunnersu",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "otrigger": {
       "jeu": "otrigger",
-      "le": "2026-09-18",
-      "raison": "MAME n a rien rendu (machine refusee ?)",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "pasha2": {
       "jeu": "pasha2",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "peekaboo": {
       "jeu": "peekaboo",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "peekaboou": {
       "jeu": "peekaboou",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "penfan": {
       "jeu": "penfan",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "penfana": {
       "jeu": "penfana",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "pitfight": {
       "jeu": "pitfight",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "pitfight3": {
       "jeu": "pitfight3",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "pjustic": {
-      "jeu": "pjustic",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "pjustica": {
-      "jeu": "pjustica",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
       "systeme": "mame"
     },
     "pkladies": {
       "jeu": "pkladies",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "pkladiesl": {
       "jeu": "pkladiesl",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "pkladiesla": {
       "jeu": "pkladiesla",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "plgirls2": {
       "jeu": "plgirls2",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "poittoc": {
       "jeu": "poittoc",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "pokasuka": {
       "jeu": "pokasuka",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "pokrdice": {
       "jeu": "pokrdice",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "poosho": {
       "jeu": "poosho",
-      "le": "2026-09-17",
-      "raison": "MAME n a rien rendu (Attempting to parse: poosho.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "progear": {
       "jeu": "progear",
-      "le": "2026-09-17",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "pstone": {
-      "jeu": "pstone",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "pstone2": {
-      "jeu": "pstone2",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "pstone2b": {
       "jeu": "pstone2b",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "puzlbang": {
       "jeu": "puzlbang",
-      "le": "2026-09-17",
-      "raison": "MAME n a rien rendu (Attempting to parse: puzlbang.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "puzlbanga": {
       "jeu": "puzlbanga",
-      "le": "2026-09-17",
-      "raison": "MAME n a rien rendu (Attempting to parse: puzlbanga.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "puzzlekg": {
       "jeu": "puzzlekg",
-      "le": "2026-09-17",
-      "raison": "delai depasse",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "puzznic": {
       "jeu": "puzznic",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "puzznicu": {
       "jeu": "puzznicu",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "raccoon": {
       "jeu": "raccoon",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "rackemup": {
       "jeu": "rackemup",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "radm": {
       "jeu": "radm",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "radmu": {
       "jeu": "radmu",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "radr": {
       "jeu": "radr",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "radrj": {
       "jeu": "radrj",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "radru": {
       "jeu": "radru",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
-      "systeme": "mame"
-    },
-    "rangrmsn": {
-      "jeu": "rangrmsn",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
       "systeme": "mame"
     },
     "rdft": {
       "jeu": "rdft",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "rdft2": {
       "jeu": "rdft2",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdft2a": {
       "jeu": "rdft2a",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdft2aa": {
       "jeu": "rdft2aa",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdft2it": {
       "jeu": "rdft2it",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdft2j": {
       "jeu": "rdft2j",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdft2ja": {
       "jeu": "rdft2ja",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdft2jb": {
       "jeu": "rdft2jb",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdft2jc": {
       "jeu": "rdft2jc",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdft2s": {
       "jeu": "rdft2s",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdft2t": {
       "jeu": "rdft2t",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdft2u": {
       "jeu": "rdft2u",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdfta": {
       "jeu": "rdfta",
-      "le": "2026-09-17",
-      "raison": "MAME n a rien rendu (Attempting to parse: rdfta.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-20",
+      "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdftadi": {
       "jeu": "rdftadi",
-      "le": "2026-09-17",
-      "raison": "delai depasse",
+      "le": "2026-09-20",
+      "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdftam": {
       "jeu": "rdftam",
-      "le": "2026-09-17",
-      "raison": "jeu inanime",
+      "le": "2026-09-20",
+      "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdftau": {
       "jeu": "rdftau",
-      "le": "2026-09-17",
-      "raison": "delai depasse",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "rdftauge": {
       "jeu": "rdftauge",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "rdftgb": {
       "jeu": "rdftgb",
-      "le": "2026-09-17",
-      "raison": "MAME n a rien rendu (Attempting to parse: rdftgb.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-20",
+      "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdftgr": {
       "jeu": "rdftgr",
-      "le": "2026-09-17",
-      "raison": "MAME n a rien rendu (Attempting to parse: rdftgr.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-20",
+      "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdftit": {
       "jeu": "rdftit",
-      "le": "2026-09-17",
-      "raison": "MAME n a rien rendu (Attempting to parse: rdftit.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-20",
+      "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdftj": {
       "jeu": "rdftj",
-      "le": "2026-09-17",
-      "raison": "jeu inanime",
+      "le": "2026-09-20",
+      "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdftja": {
       "jeu": "rdftja",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdftjb": {
       "jeu": "rdftjb",
-      "le": "2026-09-17",
-      "raison": "MAME n a rien rendu (Attempting to parse: rdftjb.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "rdftu": {
       "jeu": "rdftu",
-      "le": "2026-09-17",
-      "raison": "delai depasse",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "rdftua": {
       "jeu": "rdftua",
-      "le": "2026-09-17",
-      "raison": "jeu inanime",
+      "le": "2026-09-20",
+      "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "redearthn": {
       "jeu": "redearthn",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "redearthnr1": {
       "jeu": "redearthnr1",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "revenger": {
       "jeu": "revenger",
-      "le": "2026-09-17",
-      "raison": "MAME n a rien rendu (Attempting to parse: revenger.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "revx": {
       "jeu": "revx",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "rfjet": {
       "jeu": "rfjet",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "rfjeta": {
       "jeu": "rfjeta",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "rfjetj": {
       "jeu": "rfjetj",
-      "le": "2026-09-17",
-      "raison": "delai depasse",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "rfjett": {
       "jeu": "rfjett",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "rfjetu": {
       "jeu": "rfjetu",
-      "le": "2026-09-17",
-      "raison": "delai depasse",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "rhytngk": {
       "jeu": "rhytngk",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "ringout": {
       "jeu": "ringout",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "ringouto": {
       "jeu": "ringouto",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "roishtar": {
       "jeu": "roishtar",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "route16": {
       "jeu": "route16",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "route16a": {
       "jeu": "route16a",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "route16b": {
       "jeu": "route16b",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "route16bl": {
       "jeu": "route16bl",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "route16c": {
       "jeu": "route16c",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "route16d": {
       "jeu": "route16d",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "routex": {
       "jeu": "routex",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "routexa": {
       "jeu": "routexa",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "rthunder": {
       "jeu": "rthunder",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "rthunder0": {
       "jeu": "rthunder0",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "rthunder1": {
       "jeu": "rthunder1",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "rthunder2": {
       "jeu": "rthunder2",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "rthundera": {
       "jeu": "rthundera",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "sailormn": {
       "jeu": "sailormn",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "sailormnj": {
       "jeu": "sailormnj",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "sailormnn": {
       "jeu": "sailormnn",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "sailormno": {
       "jeu": "sailormno",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "salmankt": {
       "jeu": "salmankt",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "sambap": {
       "jeu": "sambap",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "scorpionmc": {
       "jeu": "scorpionmc",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "screwloo": {
       "jeu": "screwloo",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "scross": {
       "jeu": "scross",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "scrossa": {
       "jeu": "scrossa",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "scrossu": {
       "jeu": "scrossu",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "senkyu": {
       "jeu": "senkyu",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "senkyua": {
       "jeu": "senkyua",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "sf2stt": {
       "jeu": "sf2stt",
-      "le": "2026-09-17",
-      "raison": "MAME n a rien rendu (Attempting to parse: sf2stt.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
-      "systeme": "mame"
-    },
-    "sfz3ugd": {
-      "jeu": "sfz3ugd",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "sgdrvsim": {
       "jeu": "sgdrvsim",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "shadowwa": {
       "jeu": "shadowwa",
-      "le": "2026-09-17",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "shangril": {
-      "jeu": "shangril",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "shimpact": {
       "jeu": "shimpact",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "shootopl": {
       "jeu": "shootopl",
-      "le": "2026-09-18",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "shootpl": {
       "jeu": "shootpl",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "shootplm": {
       "jeu": "shootplm",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "shootplmp": {
       "jeu": "shootplmp",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "shors2k1": {
       "jeu": "shors2k1",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "shors2k2": {
       "jeu": "shors2k2",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "shors2k2l": {
       "jeu": "shors2k2l",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "shors2k2m": {
       "jeu": "shors2k2m",
-      "le": "2026-09-18",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "shors2k2s": {
       "jeu": "shors2k2s",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "shorse": {
       "jeu": "shorse",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "shorsel": {
       "jeu": "shorsel",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "shorsem": {
       "jeu": "shorsem",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "shorsep": {
       "jeu": "shorsep",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "shorsepb": {
       "jeu": "shorsepb",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "shorsepl": {
       "jeu": "shorsepl",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "shorsepm": {
       "jeu": "shorsepm",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "shorsepr": {
       "jeu": "shorsepr",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "shorseprl": {
       "jeu": "shorseprl",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "shorseprs": {
       "jeu": "shorseprs",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "shorseprvl": {
       "jeu": "shorseprvl",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "shorseprvr": {
       "jeu": "shorseprvr",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "shorseps": {
       "jeu": "shorseps",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "showdown4": {
       "jeu": "showdown4",
-      "le": "2026-09-17",
-      "raison": "MAME n a rien rendu (Attempting to parse: showdown4.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "sisv1": {
       "jeu": "sisv1",
-      "le": "2026-09-17",
-      "raison": "MAME n a rien rendu (Attempting to parse: sisv1.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "sjryuko1": {
       "jeu": "sjryuko1",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "skykiddx": {
       "jeu": "skykiddx",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "skykiddxo": {
       "jeu": "skykiddxo",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "sl2007": {
       "jeu": "sl2007",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "slipstrm": {
       "jeu": "slipstrm",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "slipstrmh": {
       "jeu": "slipstrmh",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "smarinef": {
       "jeu": "smarinef",
-      "le": "2026-09-18",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "smgp": {
       "jeu": "smgp",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "smgp5": {
       "jeu": "smgp5",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "smgp5d": {
       "jeu": "smgp5d",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "smgp6": {
       "jeu": "smgp6",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "smgp6d": {
       "jeu": "smgp6d",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "smgpd": {
       "jeu": "smgpd",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "smgpj": {
       "jeu": "smgpj",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "smgpja": {
       "jeu": "smgpja",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "smgpjd": {
       "jeu": "smgpjd",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "smgpu": {
       "jeu": "smgpu",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "smgpu1": {
       "jeu": "smgpu1",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "smgpu1d": {
       "jeu": "smgpu1d",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "smgpu2": {
       "jeu": "smgpu2",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "smgpu2d": {
       "jeu": "smgpu2d",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "smgpud": {
       "jeu": "smgpud",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "sonic": {
       "jeu": "sonic",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "sonicp": {
       "jeu": "sonicp",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "soulsurf": {
       "jeu": "soulsurf",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "spacecho": {
       "jeu": "spacecho",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "spacecho2": {
       "jeu": "spacecho2",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
-      "systeme": "mame"
-    },
-    "spawn": {
-      "jeu": "spawn",
-      "le": "2026-09-18",
-      "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "speakhlp": {
       "jeu": "speakhlp",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "speakres": {
       "jeu": "speakres",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "speakresb": {
       "jeu": "speakresb",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "spidman": {
       "jeu": "spidman",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "spidmanj": {
       "jeu": "spidmanj",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "spidmanu": {
       "jeu": "spidmanu",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "sprtjam": {
       "jeu": "sprtjam",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "spyhunt": {
       "jeu": "spyhunt",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "spyhuntp": {
       "jeu": "spyhuntp",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "sspirtfc": {
       "jeu": "sspirtfc",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "sstrkfgt": {
       "jeu": "sstrkfgt",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "sstrkfgta": {
       "jeu": "sstrkfgta",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "stadhr96j2": {
       "jeu": "stadhr96j2",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "starforcb": {
       "jeu": "starforcb",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "stealsee": {
       "jeu": "stealsee",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "stoneage": {
       "jeu": "stoneage",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "stratvox": {
       "jeu": "stratvox",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "stratvoxa": {
       "jeu": "stratvoxa",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "stratvoxb": {
       "jeu": "stratvoxb",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "suchie3": {
       "jeu": "suchie3",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "suplup": {
       "jeu": "suplup",
-      "le": "2026-09-17",
-      "raison": "MAME n a rien rendu (Attempting to parse: suplup.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
-      "systeme": "mame"
-    },
-    "sushibar": {
-      "jeu": "sushibar",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "svf": {
       "jeu": "svf",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "svfo": {
       "jeu": "svfo",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "svs": {
       "jeu": "svs",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "tdfever": {
       "jeu": "tdfever",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "tdfever2": {
       "jeu": "tdfever2",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "tdfever2b": {
       "jeu": "tdfever2b",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "tdfeverj": {
       "jeu": "tdfeverj",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "tduno": {
       "jeu": "tduno",
-      "le": "2026-09-18",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "tduno2": {
       "jeu": "tduno2",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "teljan": {
       "jeu": "teljan",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "tetkiwam": {
       "jeu": "tetkiwam",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "thehustl": {
       "jeu": "thehustl",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "thehustlj": {
       "jeu": "thehustlj",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "thndrbld": {
       "jeu": "thndrbld",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "thndrbld1": {
       "jeu": "thndrbld1",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "thndrbldd": {
       "jeu": "thndrbldd",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "tokyobus": {
       "jeu": "tokyobus",
-      "le": "2026-09-18",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "toobin": {
       "jeu": "toobin",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "toobin1": {
       "jeu": "toobin1",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "toobin2": {
       "jeu": "toobin2",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "toobin2e": {
       "jeu": "toobin2e",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "toobine": {
       "jeu": "toobine",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "toobing": {
       "jeu": "toobing",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "totd": {
       "jeu": "totd",
-      "le": "2026-09-19",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "totdo": {
       "jeu": "totdo",
-      "le": "2026-09-18",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "toyland": {
       "jeu": "toyland",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "tp84": {
       "jeu": "tp84",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "tp84a": {
       "jeu": "tp84a",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "tp84b": {
       "jeu": "tp84b",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "ttmahjng": {
       "jeu": "ttmahjng",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "twinbeeb": {
       "jeu": "twinbeeb",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
-      "systeme": "mame"
-    },
-    "umk3r10": {
-      "jeu": "umk3r10",
-      "le": "2026-09-17",
-      "raison": "jeu inanime",
-      "systeme": "mame"
-    },
-    "umk3r11": {
-      "jeu": "umk3r11",
-      "le": "2026-09-17",
-      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "unksig": {
       "jeu": "unksig",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "pas de monnayeur declare",
       "systeme": "mame"
     },
     "unksiga": {
       "jeu": "unksiga",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "pas de monnayeur declare",
       "systeme": "mame"
     },
     "unksigb": {
       "jeu": "unksigb",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "pas de monnayeur declare",
       "systeme": "mame"
     },
     "valkyrie": {
       "jeu": "valkyrie",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "vf4": {
       "jeu": "vf4",
-      "le": "2026-09-19",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "vf4cart": {
       "jeu": "vf4cart",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "vf4evo": {
       "jeu": "vf4evo",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "vf4evoct": {
       "jeu": "vf4evoct",
-      "le": "2026-09-18",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "vf4tuned": {
       "jeu": "vf4tuned",
-      "le": "2026-09-19",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "vfurlong": {
       "jeu": "vfurlong",
-      "le": "2026-09-19",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "viprp1": {
       "jeu": "viprp1",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "viprp1h": {
       "jeu": "viprp1h",
-      "le": "2026-09-17",
-      "raison": "jeu inanime",
+      "le": "2026-09-20",
+      "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "viprp1hk": {
       "jeu": "viprp1hk",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "viprp1j": {
       "jeu": "viprp1j",
-      "le": "2026-09-17",
-      "raison": "jeu inanime",
+      "le": "2026-09-20",
+      "raison": "delai depasse",
       "systeme": "mame"
     },
     "viprp1k": {
       "jeu": "viprp1k",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "viprp1oj": {
       "jeu": "viprp1oj",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "viprp1ot": {
       "jeu": "viprp1ot",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "viprp1pt": {
       "jeu": "viprp1pt",
-      "le": "2026-09-17",
-      "raison": "jeu inanime",
+      "le": "2026-09-20",
+      "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "viprp1s": {
       "jeu": "viprp1s",
-      "le": "2026-09-17",
-      "raison": "jeu inanime",
+      "le": "2026-09-20",
+      "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "viprp1t": {
       "jeu": "viprp1t",
-      "le": "2026-09-17",
-      "raison": "jeu inanime",
+      "le": "2026-09-20",
+      "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "viprp1u": {
       "jeu": "viprp1u",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "viprp1ua": {
       "jeu": "viprp1ua",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "virnbao": {
       "jeu": "virnbao",
-      "le": "2026-09-14",
+      "le": "2026-09-21",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "virnbap": {
       "jeu": "virnbap",
-      "le": "2026-09-14",
+      "le": "2026-09-21",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "vonot": {
       "jeu": "vonot",
-      "le": "2026-09-19",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "vstetris": {
       "jeu": "vstetris",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "vstrik3": {
       "jeu": "vstrik3",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "vstrik3c": {
       "jeu": "vstrik3c",
-      "le": "2026-09-19",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "vstrik3co": {
       "jeu": "vstrik3co",
-      "le": "2026-09-19",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "vtennisg": {
       "jeu": "vtennisg",
-      "le": "2026-09-19",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "wccf116": {
       "jeu": "wccf116",
-      "le": "2026-09-19",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "wccf1dup": {
       "jeu": "wccf1dup",
-      "le": "2026-09-14",
+      "le": "2026-09-21",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "wccf212e": {
       "jeu": "wccf212e",
-      "le": "2026-09-19",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "wccf234j": {
       "jeu": "wccf234j",
-      "le": "2026-09-19",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "wccf310j": {
       "jeu": "wccf310j",
-      "le": "2026-09-19",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "wccf322e": {
       "jeu": "wccf322e",
-      "le": "2026-09-19",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "wccf341j": {
       "jeu": "wccf341j",
-      "le": "2026-09-19",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "wccf400j": {
       "jeu": "wccf400j",
-      "le": "2026-09-19",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "wccf420e": {
       "jeu": "wccf420e",
-      "le": "2026-09-19",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "wfortune": {
       "jeu": "wfortune",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "wfortunea": {
       "jeu": "wfortunea",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "wivernwg": {
       "jeu": "wivernwg",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "wldkicks": {
       "jeu": "wldkicks",
-      "le": "2026-09-19",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "wldkicksj": {
       "jeu": "wldkicksj",
-      "le": "2026-09-19",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "wldkickspj": {
-      "jeu": "wldkickspj",
-      "le": "2026-09-19",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "wldkickspw": {
-      "jeu": "wldkickspw",
-      "le": "2026-09-19",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "wldkicksu": {
       "jeu": "wldkicksu",
-      "le": "2026-09-19",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "wldrider": {
       "jeu": "wldrider",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "wndrmomo": {
       "jeu": "wndrmomo",
-      "le": "2026-09-14",
+      "le": "2026-09-20",
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
     "worldadv": {
       "jeu": "worldadv",
-      "le": "2026-09-17",
-      "raison": "MAME n a rien rendu (Attempting to parse: worldadv.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
+      "le": "2026-09-20",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "wrally2": {
       "jeu": "wrally2",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "wrally2a": {
       "jeu": "wrally2a",
-      "le": "2026-09-17",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "wrungp": {
-      "jeu": "wrungp",
-      "le": "2026-09-19",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "wrungpo": {
-      "jeu": "wrungpo",
-      "le": "2026-09-19",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "wyvernwg": {
       "jeu": "wyvernwg",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "wyvernwga": {
       "jeu": "wyvernwga",
-      "le": "2026-09-18",
+      "le": "2026-09-20",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "xtrmhnt2": {
       "jeu": "xtrmhnt2",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "xtrmhunt": {
       "jeu": "xtrmhunt",
-      "le": "2026-09-17",
+      "le": "2026-09-21",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "yesnoj": {
       "jeu": "yesnoj",
-      "le": "2026-09-17",
+      "le": "2026-09-20",
       "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "zerogu2": {
-      "jeu": "zerogu2",
-      "le": "2026-09-19",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "zeroteamsr": {
-      "jeu": "zeroteamsr",
-      "le": "2026-09-17",
-      "raison": "MAME n a rien rendu (Attempting to parse: zeroteamsr.cfg | Output audio buffer capacity set to %d | Output audio buffer capacity set to %d)",
       "systeme": "mame"
     },
     "zunou": {
       "jeu": "zunou",
-      "le": "2026-09-19",
-      "raison": "delai depasse",
+      "le": "2026-09-21",
+      "raison": "jeu inanime",
       "systeme": "mame"
     }
   },
@@ -5514,6 +5316,35 @@
       },
       "releve": {
         "le": "2026-09-13",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "25pacmano": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 285352,
+        "adresse_hex": "0x45AA8",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":P1/Coin 1",
+        "entree_start": ":P1/P1 Button 1",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "25pacmano",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 14341,
+        "zone": "0x44800-0x45EFF"
+      },
+      "releve": {
+        "le": "2026-09-20",
         "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
@@ -20918,6 +20749,35 @@
       },
       "systeme": "mame"
     },
+    "blokpong": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097618,
+        "adresse_hex": "0x2001D2",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":COINS/Coin 1",
+        "entree_start": ":P1.0/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "blokpong",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x21FFFF"
+      },
+      "releve": {
+        "le": "2026-09-20",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "bloodbro": {
       "core": "MAME",
       "credits": {
@@ -27095,6 +26955,64 @@
       },
       "systeme": "mame"
     },
+    "capsnk": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097168,
+        "adresse_hex": "0x200010",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":837_13551:COINS/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "capsnk",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x207FFF"
+      },
+      "releve": {
+        "le": "2026-09-21",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "capsnka": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097168,
+        "adresse_hex": "0x200010",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":837_13551:COINS/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "capsnka",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x207FFF"
+      },
+      "releve": {
+        "le": "2026-09-20",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "captaven": {
       "core": "MAME",
       "credits": {
@@ -29673,6 +29591,35 @@
       "releve": {
         "le": "2026-09-13",
         "methode": "lua dans mame"
+      },
+      "systeme": "mame"
+    },
+    "chocomk": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097168,
+        "adresse_hex": "0x200010",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":837_13551:COINS/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "chocomk",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x207FFF"
+      },
+      "releve": {
+        "le": "2026-09-20",
+        "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
     },
@@ -35386,6 +35333,35 @@
       },
       "releve": {
         "le": "2026-09-18",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "cspike": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097168,
+        "adresse_hex": "0x200010",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":837_13551:COINS/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "cspike",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x207FFF"
+      },
+      "releve": {
+        "le": "2026-09-21",
         "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
@@ -64868,6 +64844,35 @@
       },
       "systeme": "mame"
     },
+    "ggxxrl": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097416,
+        "adresse_hex": "0x200108",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":837_13551:COINS/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "ggxxrl",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x207FFF"
+      },
+      "releve": {
+        "le": "2026-09-21",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "ggxxsla": {
       "core": "MAME",
       "credits": {
@@ -71279,6 +71284,64 @@
       },
       "systeme": "mame"
     },
+    "gundmgd": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097168,
+        "adresse_hex": "0x200010",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":837_13551:COINS/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "gundmgd",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x207FFF"
+      },
+      "releve": {
+        "le": "2026-09-20",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "gundmxgd": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097416,
+        "adresse_hex": "0x200108",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":837_13551:COINS/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "gundmxgd",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x207FFF"
+      },
+      "releve": {
+        "le": "2026-09-21",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "gunforc2": {
       "core": "MAME",
       "credits": {
@@ -72320,6 +72383,35 @@
       "releve": {
         "le": "2026-09-13",
         "methode": "lua dans mame"
+      },
+      "systeme": "mame"
+    },
+    "gwing2": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097416,
+        "adresse_hex": "0x200108",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":837_13551:COINS/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "gwing2",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x207FFF"
+      },
+      "releve": {
+        "le": "2026-09-21",
+        "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
     },
@@ -75365,6 +75457,35 @@
       "releve": {
         "le": "2026-09-13",
         "methode": "lua dans mame"
+      },
+      "systeme": "mame"
+    },
+    "hmgeo": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097168,
+        "adresse_hex": "0x200010",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":837_13551:COINS/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "hmgeo",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x207FFF"
+      },
+      "releve": {
+        "le": "2026-09-21",
+        "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
     },
@@ -78613,6 +78734,35 @@
       "releve": {
         "le": "2026-09-13",
         "methode": "lua dans mame"
+      },
+      "systeme": "mame"
+    },
+    "ikaruga": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097416,
+        "adresse_hex": "0x200108",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":837_13551:COINS/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "ikaruga",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x207FFF"
+      },
+      "releve": {
+        "le": "2026-09-21",
+        "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
     },
@@ -101153,6 +101303,35 @@
       },
       "systeme": "mame"
     },
+    "moeru": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097168,
+        "adresse_hex": "0x200010",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":837_13551:COINS/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "moeru",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x207FFF"
+      },
+      "releve": {
+        "le": "2026-09-21",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "moguchan": {
       "core": "MAME",
       "credits": {
@@ -105764,6 +105943,35 @@
       },
       "systeme": "mame"
     },
+    "mushi2k61": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097168,
+        "adresse_hex": "0x200010",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":837_13551:COINS/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "mushi2k61",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x207FFF"
+      },
+      "releve": {
+        "le": "2026-09-21",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "mushikep": {
       "core": "MAME",
       "credits": {
@@ -106457,6 +106665,64 @@
       "releve": {
         "le": "2026-09-13",
         "methode": "lua dans mame"
+      },
+      "systeme": "mame"
+    },
+    "mvsc2": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097416,
+        "adresse_hex": "0x200108",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":837_13551:COINS/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "mvsc2",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x207FFF"
+      },
+      "releve": {
+        "le": "2026-09-21",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "mvsc2u": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097416,
+        "adresse_hex": "0x200108",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":837_13551:COINS/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "mvsc2u",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x207FFF"
+      },
+      "releve": {
+        "le": "2026-09-21",
+        "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
     },
@@ -119394,6 +119660,64 @@
       },
       "systeme": "mame"
     },
+    "pjustic": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097416,
+        "adresse_hex": "0x200108",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":837_13551:COINS/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "pjustic",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x207FFF"
+      },
+      "releve": {
+        "le": "2026-09-21",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "pjustica": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097168,
+        "adresse_hex": "0x200010",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":837_13551:COINS/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "pjustica",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x207FFF"
+      },
+      "releve": {
+        "le": "2026-09-21",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "pkscram": {
       "core": "MAME",
       "credits": {
@@ -122639,6 +122963,64 @@
       "releve": {
         "le": "2026-09-13",
         "methode": "lua dans mame"
+      },
+      "systeme": "mame"
+    },
+    "pstone": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097416,
+        "adresse_hex": "0x200108",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":837_13551:COINS/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "pstone",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x207FFF"
+      },
+      "releve": {
+        "le": "2026-09-21",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "pstone2": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097168,
+        "adresse_hex": "0x200010",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":837_13551:COINS/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "pstone2",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x207FFF"
+      },
+      "releve": {
+        "le": "2026-09-21",
+        "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
     },
@@ -128903,6 +129285,35 @@
       "releve": {
         "le": "2026-09-13",
         "methode": "lua dans mame"
+      },
+      "systeme": "mame"
+    },
+    "rangrmsn": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097616,
+        "adresse_hex": "0x2001D0",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":COINS/Coin 1",
+        "entree_start": ":P1.0/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "rangrmsn",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x21FFFF"
+      },
+      "releve": {
+        "le": "2026-09-21",
+        "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
     },
@@ -145640,6 +146051,35 @@
       },
       "systeme": "mame"
     },
+    "sfz3ugd": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097416,
+        "adresse_hex": "0x200108",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":837_13551:COINS/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "sfz3ugd",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x207FFF"
+      },
+      "releve": {
+        "le": "2026-09-21",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "sfza": {
       "core": "MAME",
       "credits": {
@@ -146884,6 +147324,35 @@
       "releve": {
         "le": "2026-09-13",
         "methode": "lua dans mame"
+      },
+      "systeme": "mame"
+    },
+    "shangril": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097168,
+        "adresse_hex": "0x200010",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":837_13551:COINS/Coin 1",
+        "entree_start": ":KEY2/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 4,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "shangril",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x207FFF"
+      },
+      "releve": {
+        "le": "2026-09-21",
+        "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
     },
@@ -153816,6 +154285,35 @@
       "releve": {
         "le": "2026-09-13",
         "methode": "lua dans mame"
+      },
+      "systeme": "mame"
+    },
+    "spawn": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097168,
+        "adresse_hex": "0x200010",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":837_13551:COINS/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "spawn",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x207FFF"
+      },
+      "releve": {
+        "le": "2026-09-21",
+        "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
     },
@@ -161501,6 +161999,35 @@
       "releve": {
         "le": "2026-09-13",
         "methode": "lua dans mame"
+      },
+      "systeme": "mame"
+    },
+    "sushibar": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097626,
+        "adresse_hex": "0x2001DA",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":COINS/Coin 1",
+        "entree_start": ":P1.0/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "sushibar",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x21FFFF"
+      },
+      "releve": {
+        "le": "2026-09-21",
+        "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
     },
@@ -175164,6 +175691,64 @@
       },
       "systeme": "mame"
     },
+    "umk3r10": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 16892253,
+        "adresse_hex": "0x101C15D",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN2/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 3,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "umk3r10",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x1000000-0x107FFFF"
+      },
+      "releve": {
+        "le": "2026-09-20",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "umk3r11": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 16887455,
+        "adresse_hex": "0x101AE9F",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": ":IN2/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 3,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "umk3r11",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x1000000-0x107FFFF"
+      },
+      "releve": {
+        "le": "2026-09-20",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "unclepoo": {
       "core": "MAME",
       "credits": {
@@ -183699,6 +184284,66 @@
       },
       "systeme": "mame"
     },
+    "wldkickspj": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097152,
+        "adresse_hex": "0x200000",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":837_13551:COINS/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 3,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "wldkickspj",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x207FFF"
+      },
+      "releve": {
+        "le": "2026-09-21",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "wldkickspw": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097152,
+        "adresse_hex": "0x200000",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":837_13551:COINS/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 3,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "wldkickspw",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x207FFF"
+      },
+      "releve": {
+        "le": "2026-09-21",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "wlstar": {
       "core": "MAME",
       "credits": {
@@ -184653,6 +185298,64 @@
       "releve": {
         "le": "2026-09-13",
         "methode": "lua dans mame"
+      },
+      "systeme": "mame"
+    },
+    "wrungp": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097168,
+        "adresse_hex": "0x200010",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":837_13551:COINS/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "wrungp",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x207FFF"
+      },
+      "releve": {
+        "le": "2026-09-21",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "wrungpo": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097416,
+        "adresse_hex": "0x200108",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":837_13551:COINS/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "wrungpo",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x207FFF"
+      },
+      "releve": {
+        "le": "2026-09-21",
+        "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
     },
@@ -188687,6 +189390,35 @@
       },
       "systeme": "mame"
     },
+    "zerogu2": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097168,
+        "adresse_hex": "0x200010",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":837_13551:COINS/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "zerogu2",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x207FFF"
+      },
+      "releve": {
+        "le": "2026-09-21",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "zerohour": {
       "core": "MAME",
       "credits": {
@@ -189090,6 +189822,36 @@
       "releve": {
         "le": "2026-09-13",
         "methode": "lua dans mame"
+      },
+      "systeme": "mame"
+    },
+    "zeroteamsr": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2082,
+        "adresse_hex": "0x0822",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": ":COIN/Coin 1",
+        "entree_start": ":SYSTEM/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 12,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "zeroteamsr",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 134144,
+        "zone": "0x0800-0xB7FF"
+      },
+      "releve": {
+        "le": "2026-09-20",
+        "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
     },

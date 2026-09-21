@@ -3,463 +3,463 @@
   "difficiles": {
     "azumanga": {
       "jeu": "azumanga",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "bdrdown": {
       "jeu": "bdrdown",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "cfield": {
       "jeu": "cfield",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "chocomk": {
       "jeu": "chocomk",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "cleoftp": {
       "jeu": "cleoftp",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "confmiss": {
       "jeu": "confmiss",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "cvs2": {
       "jeu": "cvs2",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "cvsgd": {
       "jeu": "cvsgd",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "dragntr": {
       "jeu": "dragntr",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "dragntr2": {
       "jeu": "dragntr2",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "dragntr3": {
       "jeu": "dragntr3",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "dygolf": {
       "jeu": "dygolf",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "dygolfp": {
       "jeu": "dygolfp",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "ggxx": {
       "jeu": "ggxx",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "ggxxac": {
       "jeu": "ggxxac",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "ggxxrl": {
       "jeu": "ggxxrl",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "ggxxsla": {
       "jeu": "ggxxsla",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "gundmgd": {
       "jeu": "gundmgd",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "gundmxgd": {
       "jeu": "gundmxgd",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "ikaruga": {
       "jeu": "ikaruga",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "jingystm": {
       "jeu": "jingystm",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "karous": {
       "jeu": "karous",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "keyboard": {
       "jeu": "keyboard",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "kurucham": {
       "jeu": "kurucham",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "lupinsho": {
       "jeu": "lupinsho",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "luptype": {
       "jeu": "luptype",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "meltyb": {
       "jeu": "meltyb",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "meltybld": {
       "jeu": "meltybld",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "mj1": {
       "jeu": "mj1",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "moeru": {
       "jeu": "moeru",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "mok": {
       "jeu": "mok",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "monkeyba": {
       "jeu": "monkeyba",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "naomigd": {
       "jeu": "naomigd",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "ndcfboxa": {
       "jeu": "ndcfboxa",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "neocdz": {
       "jeu": "neocdz",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] Romset name: neocdz | [FBNeo] Romset description: Neo Geo CDZ system | [FBNeo] You need a disc image to launch neogeo CD)",
       "systeme": "neogeocd"
     },
     "neogeo": {
       "jeu": "neogeo",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] Romset description: Neo Geo | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give it a try)",
       "systeme": "neogeocd"
     },
     "ngdup23a": {
       "jeu": "ngdup23a",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "ngdup23c": {
       "jeu": "ngdup23c",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "ngdup23e": {
       "jeu": "ngdup23e",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "psyvar2": {
       "jeu": "psyvar2",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "puyofev": {
       "jeu": "puyofev",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "puyofevp": {
       "jeu": "puyofevp",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "quizqgd": {
       "jeu": "quizqgd",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "radirgy": {
       "jeu": "radirgy",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "senko": {
       "jeu": "senko",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "senkoo": {
       "jeu": "senkoo",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "senkosp": {
       "jeu": "senkosp",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "sfz3ugd": {
       "jeu": "sfz3ugd",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "shaktam": {
       "jeu": "shaktam",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "shaktamb": {
       "jeu": "shaktamb",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "shaktmsp": {
       "jeu": "shaktmsp",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "shikgam2": {
       "jeu": "shikgam2",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "slashout": {
       "jeu": "slashout",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "spkrbtl": {
       "jeu": "spkrbtl",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "sprtjam": {
       "jeu": "sprtjam",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "ss2005": {
       "jeu": "ss2005",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "starseek": {
       "jeu": "starseek",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "takoron": {
       "jeu": "takoron",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "tetkiwam": {
       "jeu": "tetkiwam",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "trgheart": {
       "jeu": "trgheart",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "trizeal": {
       "jeu": "trizeal",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "undefeat": {
       "jeu": "undefeat",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "usagiym": {
       "jeu": "usagiym",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "vathlete": {
       "jeu": "vathlete",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "vathletep": {
       "jeu": "vathletep",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "vtennis2": {
       "jeu": "vtennis2",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "vtennisg": {
       "jeu": "vtennisg",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "wccf116": {
       "jeu": "wccf116",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "wccf1dup": {
       "jeu": "wccf1dup",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "wccf212e": {
       "jeu": "wccf212e",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "wccf234j": {
       "jeu": "wccf234j",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "wccf310j": {
       "jeu": "wccf310j",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "wccf322e": {
       "jeu": "wccf322e",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "wccf341j": {
       "jeu": "wccf341j",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "wccf400j": {
       "jeu": "wccf400j",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "wccf420e": {
       "jeu": "wccf420e",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     },
     "wsbbgd": {
       "jeu": "wsbbgd",
-      "le": "2026-09-19",
+      "le": "2026-09-21",
       "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
       "systeme": "neogeocd"
     }
