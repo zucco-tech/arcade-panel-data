@@ -1,0 +1,30 @@
+[Unit]
+Description=Naomi / Atomiswave / Naomi GD : recherche des adresses de credits
+After=network-online.target remote-fs.target graphical.target
+
+[Service]
+Type=simple
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/recaldev/.Xauthority
+# Apres le START, on surveille la baisse du credit pendant 8 s au lieu d un
+# seul releve a 1,5 s : c est ce qui a fait passer 3 jeux sur 5 a l essai.
+Environment=ATTENTE_START=8.0
+# La campagne replie puis efface le fichier de travail : on le reconstruit
+# depuis la base a chaque depart, sinon un redemarrage refait tout.
+ExecStartPre=/usr/bin/python3 /mnt/recalbox/outils/amorcer-naomi.py
+ExecStart=/usr/bin/python3 -u /mnt/recalbox/outils/nuit-credits.py \
+    --systeme naomi,atomiswave,naomigd --direct --reessayer \
+    --base /mnt/recalbox/donnees/parts-naomi/part-1.json \
+    --roms /mnt/roms --arret /tmp/arret-naomi
+# Toujours : une session graphique qui redemarre, un coeur qui plante, un
+# redemarrage de la machine — dans tous les cas elle repart d elle-meme.
+# nuit-credits refuse de travailler sans ecran, donc une relance a vide ne
+# coute qu un aller-retour de cinq minutes.
+Restart=always
+RestartSec=300
+MemoryMax=6G
+MemorySwapMax=1G
+Nice=15
+
+[Install]
+WantedBy=multi-user.target
