@@ -18,7 +18,11 @@
 # qui est public (documentation Recalbox). Il est fourni a ssh par un petit
 # programme d invite, ce que ssh exige quand il n y a pas de terminal.
 BORNE=root@192.168.1.50
-INVITE=/mnt/recalbox/outils/.mdp-borne.sh
+INVITE=${INVITE_BORNE:-/mnt/recalbox/outils/.mdp-borne.sh}
+# Le NAS peut ramener root a un autre utilisateur : le fichier pose sur la
+# share devient alors illisible, y compris par celui qui l a ecrit. On se
+# rabat sur un emplacement local, propre a chaque utilisateur.
+[ -x "$INVITE" ] || INVITE=/var/tmp/.mdp-borne-$(id -u).sh
 [ -x "$INVITE" ] || { printf '#!/bin/sh\necho recalboxroot\n' > "$INVITE"; chmod 700 "$INVITE"; }
 export SSH_ASKPASS="$INVITE" SSH_ASKPASS_REQUIRE=force DISPLAY=${DISPLAY:-:0}
 DONNEES=/mnt/recalbox/donnees

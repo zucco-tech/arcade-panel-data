@@ -1,86 +1,653 @@
 {
   "description": "Adresse RAM du compteur de credits de chaque jeu de ce systeme, indexee par nom de set. Se lit par l'interface reseau de RetroArch : READ_CORE_RAM <adresse> 1 en UDP sur le port 55355.",
   "difficiles": {
+    "18wheelr": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "18wheelr",
+      "par": "nuit-credits.py",
+      "raison": "jeu inanime",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "18wheelu": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "18wheelu",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
     "airlbios": {
-      "core": "FinalBurn Neo",
+      "core": "Flycast",
       "essais": 1,
       "jeu": "airlbios",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomi",
-      "vu_le": "2026-09-11"
+      "vu_le": "2026-09-19"
+    },
+    "alpilot": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "alpilot",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "anpanman2": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "anpanman2",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "anpanman2a": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "anpanman2a",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "asndynmt": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "asndynmt",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "asndynmto": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "asndynmto",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "ausfache": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "ausfache",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "capsnk": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "capsnk",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "capsnka": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "capsnka",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "capsnkb": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "capsnkb",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "crakndj2": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "crakndj2",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "crzytaxi": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "crzytaxi",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "csmash": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "csmash",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "csmasho": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "csmasho",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "cspike": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "cspike",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "deathcox": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "deathcox",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "deathcoxj": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "deathcoxj",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "deathcoxo": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "deathcoxo",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "derbyo2k": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "derbyo2k",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "derbyoc": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "derbyoc",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "derbyoc2": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "derbyoc2",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "derbyocw": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "derbyocw",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "doa2": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "doa2",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "doa2a": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "doa2a",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "doa2m": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "doa2m",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "drbyocwa": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "drbyocwa",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "drbyocwb": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "drbyocwb",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "drbyocwc": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "drbyocwc",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "drbyocwt": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "drbyocwt",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "dybb99": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "dybb99",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "dybbnao": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "dybbnao",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
     },
     "f355": {
-      "core": "FinalBurn Neo",
+      "core": "Flycast",
       "essais": 1,
       "jeu": "f355",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomi",
-      "vu_le": "2026-09-12"
+      "vu_le": "2026-09-19"
     },
     "f355bios": {
-      "core": "FinalBurn Neo",
+      "core": "Flycast",
       "essais": 1,
       "jeu": "f355bios",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomi",
-      "vu_le": "2026-09-12"
+      "vu_le": "2026-09-19"
     },
     "f355dlx": {
-      "core": "FinalBurn Neo",
+      "core": "Flycast",
       "essais": 1,
       "jeu": "f355dlx",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomi",
-      "vu_le": "2026-09-12"
+      "vu_le": "2026-09-19"
     },
     "f355p": {
-      "core": "FinalBurn Neo",
+      "core": "Flycast",
       "essais": 1,
       "jeu": "f355p",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomi",
-      "vu_le": "2026-09-12"
+      "vu_le": "2026-09-19"
     },
     "f355twin": {
-      "core": "FinalBurn Neo",
+      "core": "Flycast",
       "essais": 1,
       "jeu": "f355twin",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomi",
-      "vu_le": "2026-09-12"
+      "vu_le": "2026-09-19"
     },
     "f355twinp": {
-      "core": "FinalBurn Neo",
+      "core": "Flycast",
       "essais": 1,
       "jeu": "f355twinp",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomi",
-      "vu_le": "2026-09-12"
+      "vu_le": "2026-09-19"
     },
     "f355twn2": {
-      "core": "FinalBurn Neo",
+      "core": "Flycast",
       "essais": 1,
       "jeu": "f355twn2",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomi",
-      "vu_le": "2026-09-12"
+      "vu_le": "2026-09-19"
+    },
+    "ggram2": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "ggram2",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "ggx": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "ggx",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "gram2000": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "gram2000",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "gundmct": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "gundmct",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "gunsur2": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "gunsur2",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "gunsur2j": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "gunsur2j",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "gwing2": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "gwing2",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "hmgeo": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "hmgeo",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
     },
     "hod2bios": {
-      "core": "FinalBurn Neo",
+      "core": "Flycast",
       "essais": 1,
       "jeu": "hod2bios",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomi",
-      "vu_le": "2026-09-12"
+      "vu_le": "2026-09-19"
+    },
+    "hopper": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "hopper",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "hotd2": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "hotd2",
+      "par": "nuit-credits.py",
+      "raison": "jeu inanime",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "hotd2e": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "hotd2e",
+      "par": "nuit-credits.py",
+      "raison": "jeu inanime",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "hotd2o": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "hotd2o",
+      "par": "nuit-credits.py",
+      "raison": "jeu inanime",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "hotd2p": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "hotd2p",
+      "par": "nuit-credits.py",
+      "raison": "aucun candidat",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "illvelo": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "illvelo",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "inunoos": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "inunoos",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "jambo": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "jambo",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "kick4csh": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "kick4csh",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "mamonoro": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "mamonoro",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "manicpnc": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "manicpnc",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "marstv": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "marstv",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "mazan": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "mazan",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "mazanj": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "mazanj",
+      "par": "nuit-credits.py",
+      "raison": "aucun candidat",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "mazanu": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "mazanu",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "mbaa": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "mbaa",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "mushi2k4": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "mushi2k4",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "mushi2k5": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "mushi2k5",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "mushi2k61": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "mushi2k61",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "mushi2k62": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "mushi2k62",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "mushik2e": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "mushik2e",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "mushik2k": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "mushik2k",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
+    },
+    "mushik4e": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "mushik4e",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi",
+      "vu_le": "2026-09-19"
     }
   },
   "format": "recalbox-arcade-credits (un fichier par systeme, pour la borne)",
@@ -119,16 +686,18 @@
       "systeme": "naomi"
     },
     "18wheelro": {
-      "core": "FinalBurn Neo",
+      "core": "Flycast",
       "credits": {
-        "adresse": 6074733,
-        "adresse_hex": "0x5CB16D",
-        "adresse_j2": 13165423,
-        "adresse_j2_hex": "0xC8E36F",
+        "adresse": 6063111,
+        "adresse_hex": "0x5C8407",
+        "adresse_j2": 13115027,
+        "adresse_j2_hex": "0xC81E93",
         "compteur_commun": false,
         "entree_piece": "select",
         "j2_verifie_consommation": true,
         "miroirs": [
+          "0x5C841B",
+          "0x5CB16D",
           "0x5CB181"
         ],
         "octets": 1,
@@ -143,19 +712,19 @@
         "taille": 16777216
       },
       "releve": {
-        "le": "2026-09-11",
+        "le": "2026-09-19",
         "methode": "balayage nocturne",
         "par": "nuit-credits.py"
       },
       "systeme": "naomi"
     },
     "18wheelrt": {
-      "core": "FinalBurn Neo",
+      "core": "Flycast",
       "credits": {
         "adresse": 6074733,
         "adresse_hex": "0x5CB16D",
-        "adresse_j2": 13165039,
-        "adresse_j2_hex": "0xC8E1EF",
+        "adresse_j2": 13115667,
+        "adresse_j2_hex": "0xC82113",
         "compteur_commun": false,
         "entree_piece": "select",
         "j2_verifie_consommation": true,
@@ -174,25 +743,23 @@
         "taille": 16777216
       },
       "releve": {
-        "le": "2026-09-11",
+        "le": "2026-09-19",
         "methode": "balayage nocturne",
         "par": "nuit-credits.py"
       },
       "systeme": "naomi"
     },
     "18wheels": {
-      "core": "FinalBurn Neo",
+      "core": "Flycast",
       "credits": {
-        "adresse": 6073159,
-        "adresse_hex": "0x5CAB47",
+        "adresse": 6084773,
+        "adresse_hex": "0x5CD8A5",
         "adresse_j2": null,
         "adresse_j2_hex": null,
         "compteur_commun": false,
         "entree_piece": "select",
         "j2_verifie_consommation": false,
         "miroirs": [
-          "0x5CAB5B",
-          "0x5CD8A5",
           "0x5CD8B9"
         ],
         "octets": 1,
@@ -207,7 +774,7 @@
         "taille": 16777216
       },
       "releve": {
-        "le": "2026-09-11",
+        "le": "2026-09-19",
         "methode": "balayage nocturne",
         "par": "nuit-credits.py"
       },
@@ -246,7 +813,7 @@
       "systeme": "naomi"
     },
     "alienfnt": {
-      "core": "FinalBurn Neo",
+      "core": "Flycast",
       "credits": {
         "adresse": 2257266,
         "adresse_hex": "0x227172",
@@ -268,14 +835,14 @@
         "taille": 16777216
       },
       "releve": {
-        "le": "2026-09-11",
+        "le": "2026-09-19",
         "methode": "balayage nocturne",
         "par": "nuit-credits.py"
       },
       "systeme": "naomi"
     },
     "alienfnta": {
-      "core": "FinalBurn Neo",
+      "core": "Flycast",
       "credits": {
         "adresse": 2287550,
         "adresse_hex": "0x22E7BE",
@@ -297,7 +864,7 @@
         "taille": 16777216
       },
       "releve": {
-        "le": "2026-09-11",
+        "le": "2026-09-19",
         "methode": "balayage nocturne",
         "par": "nuit-credits.py"
       },
@@ -335,20 +902,20 @@
       "systeme": "naomi"
     },
     "alpilotj": {
-      "core": "FinalBurn Neo",
+      "core": "Flycast",
       "credits": {
         "adresse": 1387456,
         "adresse_hex": "0x152BC0",
-        "adresse_j2": 2067356,
-        "adresse_j2_hex": "0x1F8B9C",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
         "compteur_commun": false,
         "entree_piece": "select",
-        "j2_verifie_consommation": true,
+        "j2_verifie_consommation": false,
         "miroirs": [
           "0x152BD0"
         ],
         "octets": 1,
-        "pieces_observees": 2,
+        "pieces_observees": 3,
         "verifie_consommation": false,
         "verifie_insertion": true
       },
@@ -359,7 +926,36 @@
         "taille": 16777216
       },
       "releve": {
-        "le": "2026-09-11",
+        "le": "2026-09-19",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "naomi"
+    },
+    "crackndj": {
+      "core": "Flycast",
+      "credits": {
+        "adresse": 2045723,
+        "adresse_hex": "0x1F371B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "crackndj",
+      "nom": "crackndj",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 16777216
+      },
+      "releve": {
+        "le": "2026-09-19",
         "methode": "balayage nocturne",
         "par": "nuit-credits.py"
       },

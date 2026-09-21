@@ -2,679 +2,466 @@
   "description": "Adresse RAM du compteur de credits de chaque jeu de ce systeme, indexee par nom de set. Se lit par l'interface reseau de RetroArch : READ_CORE_RAM <adresse> 1 en UDP sur le port 55355.",
   "difficiles": {
     "azumanga": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "azumanga",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "bdrdown": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "bdrdown",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "cfield": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "cfield",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "chocomk": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "chocomk",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "cleoftp": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "cleoftp",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "confmiss": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "confmiss",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "cvs2": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "cvs2",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "cvsgd": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "cvsgd",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "dragntr": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "dragntr",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "dragntr2": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "dragntr2",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "dragntr3": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "dragntr3",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "dygolf": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "dygolf",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "dygolfp": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "dygolfp",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "ggxx": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "ggxx",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "ggxxac": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "ggxxac",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "ggxxrl": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "ggxxrl",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "ggxxsla": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "ggxxsla",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "gundmgd": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "gundmgd",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "gundmxgd": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "gundmxgd",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "ikaruga": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "ikaruga",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "jingystm": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "jingystm",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "karous": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "karous",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "keyboard": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "keyboard",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "kurucham": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "kurucham",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "lupinsho": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "lupinsho",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "luptype": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "luptype",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "meltyb": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "meltyb",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "meltybld": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "meltybld",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "mj1": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "mj1",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "moeru": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "moeru",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "mok": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "mok",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "monkeyba": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "monkeyba",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "naomigd": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "naomigd",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "ndcfboxa": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "ndcfboxa",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
+    },
+    "neocdz": {
+      "jeu": "neocdz",
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] Romset name: neocdz | [FBNeo] Romset description: Neo Geo CDZ system | [FBNeo] You need a disc image to launch neogeo CD)",
+      "systeme": "neogeocd"
+    },
+    "neogeo": {
+      "jeu": "neogeo",
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] Romset description: Neo Geo | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give it a try)",
+      "systeme": "neogeocd"
     },
     "ngdup23a": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "ngdup23a",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "ngdup23c": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "ngdup23c",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "ngdup23e": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "ngdup23e",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "psyvar2": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "psyvar2",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "puyofev": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "puyofev",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "puyofevp": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "puyofevp",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "quizqgd": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "quizqgd",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "radirgy": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "radirgy",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "senko": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "senko",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "senkoo": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "senkoo",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "senkosp": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "senkosp",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "sfz3ugd": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "sfz3ugd",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "shaktam": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "shaktam",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "shaktamb": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "shaktamb",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "shaktmsp": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "shaktmsp",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "shikgam2": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "shikgam2",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "slashout": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "slashout",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "spkrbtl": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "spkrbtl",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "sprtjam": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "sprtjam",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "ss2005": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "ss2005",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "starseek": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "starseek",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "takoron": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "takoron",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "tetkiwam": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "tetkiwam",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "trgheart": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "trgheart",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "trizeal": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "trizeal",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "undefeat": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "undefeat",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "usagiym": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "usagiym",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "vathlete": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "vathlete",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "vathletep": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "vathletep",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "vtennis2": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "vtennis2",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "vtennisg": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "vtennisg",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "wccf116": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "wccf116",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "wccf1dup": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "wccf1dup",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "wccf212e": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "wccf212e",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "wccf234j": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "wccf234j",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "wccf310j": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "wccf310j",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "wccf322e": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "wccf322e",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "wccf341j": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "wccf341j",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "wccf400j": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "wccf400j",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "wccf420e": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "wccf420e",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     },
     "wsbbgd": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "wsbbgd",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "neogeocd",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "neogeocd"
     }
   },
   "format": "recalbox-arcade-credits (un fichier par systeme, pour la borne)",

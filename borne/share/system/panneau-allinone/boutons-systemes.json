@@ -1,0 +1,366 @@
+{
+ "description": "Les boutons que le coeur de chaque systeme lit vraiment, en noms RetroPad, releves en chargeant le coeur sur la borne (outils/relever-boutons-systemes.py). Le panneau n allume que ceux-la. « roles » vide = machine sans bouton (clavier).",
+ "format": "panneau-allinone (boutons par systeme)",
+ "releve_le": "2026-09-18",
+ "systemes": {
+  "64dd": {
+   "coeur": "parallel_n64",
+   "fonctions": [
+    "A Button (C-Down)",
+    "B Button (C-Left)",
+    "L-Trigger",
+    "R-Trigger",
+    "(C-Up)",
+    "(C-Right)"
+   ],
+   "roles": [
+    "b",
+    "y",
+    "l",
+    "r",
+    "x",
+    "a"
+   ]
+  },
+  "alice": {
+   "coeur": "alice",
+   "fonctions": [],
+   "note": "aucun bouton : cette machine se joue au clavier",
+   "roles": []
+  },
+  "amigacdtv": {
+   "coeur": "puae",
+   "fonctions": [
+    "B / Fire / Red",
+    "A / 2nd fire / Blue",
+    "Y / Green",
+    "X / Yellow"
+   ],
+   "roles": [
+    "b",
+    "a",
+    "y",
+    "x"
+   ]
+  },
+  "apf": {
+   "coeur": "imagination",
+   "fonctions": [],
+   "note": "aucun bouton : cette machine se joue au clavier",
+   "roles": []
+  },
+  "arduboy": {
+   "coeur": "arduous",
+   "fonctions": [
+    "A",
+    "B"
+   ],
+   "roles": [
+    "a",
+    "b"
+   ]
+  },
+  "bk": {
+   "coeur": "bk",
+   "fonctions": [
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "roles": [
+    "a",
+    "b",
+    "x",
+    "y"
+   ]
+  },
+  "cassettevision": {
+   "coeur": "pd777",
+   "fonctions": [
+    "Push4",
+    "Push2",
+    "Push1",
+    "Push3"
+   ],
+   "roles": [
+    "a",
+    "b",
+    "x",
+    "y"
+   ]
+  },
+  "channelf": {
+   "coeur": "freechaf",
+   "fonctions": [
+    "push",
+    "rotate right",
+    "pull",
+    "rotate left"
+   ],
+   "roles": [
+    "b",
+    "a",
+    "x",
+    "y"
+   ]
+  },
+  "dice": {
+   "coeur": "dice",
+   "fonctions": [
+    "Button 2",
+    "Button 1",
+    "Button 3"
+   ],
+   "roles": [
+    "a",
+    "b",
+    "y"
+   ]
+  },
+  "enterprise": {
+   "coeur": "ncc1701",
+   "fonctions": [],
+   "note": "aucun bouton : cette machine se joue au clavier",
+   "roles": []
+  },
+  "exl100": {
+   "coeur": "exel-hence",
+   "fonctions": [],
+   "note": "aucun bouton : cette machine se joue au clavier",
+   "roles": []
+  },
+  "fm7": {
+   "coeur": "ohfm7",
+   "fonctions": [],
+   "note": "aucun bouton : cette machine se joue au clavier",
+   "roles": []
+  },
+  "fmtowns": {
+   "coeur": "rbcities",
+   "fonctions": [],
+   "note": "aucun bouton : cette machine se joue au clavier",
+   "roles": []
+  },
+  "gamate": {
+   "coeur": "wanban",
+   "fonctions": [
+    "A",
+    "B"
+   ],
+   "roles": [
+    "a",
+    "b"
+   ]
+  },
+  "game.com": {
+   "coeur": "tigerdotcom",
+   "fonctions": [
+    "Button A",
+    "Button B",
+    "Button C",
+    "Button D"
+   ],
+   "roles": [
+    "a",
+    "b",
+    "y",
+    "x"
+   ]
+  },
+  "intellivision": {
+   "coeur": "freeintv",
+   "fonctions": [
+    "Left Action Button",
+    "Right Action Button",
+    "Top Action Button"
+   ],
+   "roles": [
+    "a",
+    "b",
+    "y"
+   ]
+  },
+  "loopy": {
+   "coeur": "looping",
+   "fonctions": [],
+   "note": "aucun bouton : cette machine se joue au clavier",
+   "roles": []
+  },
+  "lowresnx": {
+   "coeur": "lowresnx",
+   "fonctions": [
+    "A",
+    "B"
+   ],
+   "roles": [
+    "a",
+    "b"
+   ]
+  },
+  "lutro": {
+   "coeur": "lutro",
+   "fonctions": [
+    "B",
+    "A",
+    "X",
+    "Y",
+    "L1",
+    "R1"
+   ],
+   "roles": [
+    "b",
+    "a",
+    "x",
+    "y",
+    "l",
+    "r"
+   ]
+  },
+  "macintosh": {
+   "coeur": "minivmac",
+   "fonctions": [
+    "A",
+    "B",
+    "X",
+    "Y",
+    "R",
+    "L"
+   ],
+   "roles": [
+    "a",
+    "b",
+    "x",
+    "y",
+    "r",
+    "l"
+   ]
+  },
+  "marty": {
+   "coeur": "rbcities",
+   "fonctions": [],
+   "note": "aucun bouton : cette machine se joue au clavier",
+   "roles": []
+  },
+  "msxturbor": {
+   "coeur": "bluemsx",
+   "fonctions": [],
+   "note": "aucun bouton : cette machine se joue au clavier",
+   "roles": []
+  },
+  "n-gage": {
+   "coeur": "taco",
+   "fonctions": [],
+   "note": "aucun bouton : cette machine se joue au clavier",
+   "roles": []
+  },
+  "p2000t": {
+   "coeur": "m2000",
+   "fonctions": [
+    "Space/Fire",
+    "Space/Fire"
+   ],
+   "roles": [
+    "a",
+    "b"
+   ]
+  },
+  "palm": {
+   "coeur": "mu",
+   "fonctions": [
+    "Date Book",
+    "Address Book",
+    "To Do List",
+    "Note Pad"
+   ],
+   "roles": [
+    "y",
+    "x",
+    "b",
+    "a"
+   ]
+  },
+  "pc88": {
+   "coeur": "quasi88",
+   "fonctions": [],
+   "note": "aucun bouton : cette machine se joue au clavier",
+   "roles": []
+  },
+  "pc98": {
+   "coeur": "np2kai",
+   "fonctions": [],
+   "note": "aucun bouton : cette machine se joue au clavier",
+   "roles": []
+  },
+  "pcv2": {
+   "coeur": "mednafen_wswan",
+   "fonctions": [
+    "A",
+    "B"
+   ],
+   "roles": [
+    "a",
+    "b"
+   ]
+  },
+  "pico": {
+   "coeur": "picodrive",
+   "fonctions": [
+    "Button 1 Start",
+    "Button 2"
+   ],
+   "roles": [
+    "b",
+    "a"
+   ]
+  },
+  "pico8": {
+   "coeur": "retro8",
+   "fonctions": [
+    "O",
+    "X"
+   ],
+   "roles": [
+    "a",
+    "b"
+   ]
+  },
+  "pv1000": {
+   "coeur": "positionvision",
+   "fonctions": [
+    "Button 1",
+    "Button 2"
+   ],
+   "roles": [
+    "b",
+    "a"
+   ]
+  },
+  "vsmile": {
+   "coeur": "smartsmile",
+   "fonctions": [
+    "Red",
+    "Yellow",
+    "Blue",
+    "Green"
+   ],
+   "roles": [
+    "a",
+    "b",
+    "x",
+    "y"
+   ]
+  },
+  "wasm4": {
+   "coeur": "wasm4",
+   "fonctions": [
+    "X",
+    "Z"
+   ],
+   "roles": [
+    "a",
+    "b"
+   ]
+  }
+ }
+}

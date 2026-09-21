@@ -35,6 +35,7 @@ import glob
 import subprocess
 import json
 import os
+import re
 import signal
 import socket
 import sys
@@ -448,6 +449,50 @@ def patienter(condition, delai, arret, pas=0.5):
             return valeur
         time.sleep(pas)
     return None
+
+
+def _ecran_repond(affichage, jeton=None):
+    """Vrai si un client X arrive a ouvrir cet ecran."""
+    env = dict(os.environ)
+    if affichage:
+        env["DISPLAY"] = affichage
+    if jeton:
+        env["XAUTHORITY"] = jeton
+    try:
+        return subprocess.run(["xdpyinfo"], env=env,
+                              stdout=subprocess.DEVNULL,
+                              stderr=subprocess.DEVNULL,
+                              timeout=15).returncode == 0
+    except FileNotFoundError:
+        return True          # xdpyinfo absent : on ne bloque pas pour si peu
+    except (OSError, subprocess.SubprocessError):
+        return False
+
+
+def ecran_utilisable(affichage=None):
+    """S assure qu on a un ecran, en retrouvant le jeton au besoin.
+
+    La session graphique change de jeton d acces a chaque redemarrage. Le
+    fichier passe au service au lancement devient alors muet : RetroArch
+    charge bien le jeu, puis meurt faute d ecran. Sans ce controle, chaque
+    jeu est note « ne demarre pas » et finit ecarte pour de bon — c est ce
+    qui est arrive le 20 septembre, apres un redemarrage de session a 8 h 23.
+
+    On relit donc le jeton sur la ligne de commande du serveur X lui-meme.
+    Renvoie vrai si l ecran repond, apres correction eventuelle.
+    """
+    if _ecran_repond(affichage):
+        return True
+    try:
+        sortie = subprocess.run(["ps", "-eo", "args"], stdout=subprocess.PIPE,
+                                text=True, timeout=15).stdout
+    except (OSError, subprocess.SubprocessError):
+        return False
+    for jeton in re.findall(r"-auth (\S+)", sortie):
+        if os.path.exists(jeton) and _ecran_repond(affichage, jeton):
+            os.environ["XAUTHORITY"] = jeton
+            return True
+    return False
 
 
 def ouvrir_clavier(affichage):
@@ -1198,6 +1243,12 @@ def main():
         direct."""
         print(msg, flush=True)
 
+    if not ecran_utilisable(args.affichage):
+        print("l ecran ne repond pas : on ne demarre pas (sinon chaque jeu "
+              "serait note « ne demarre pas » et finirait ecarte a tort)",
+              flush=True)
+        return 2
+
     try:
         with ouvrir_clavier(args.affichage) as clavier:
             for n, (systeme, jeu, chemin) in enumerate(liste, 1):
@@ -1212,6 +1263,10 @@ def main():
                         # On l ENREGISTRE, sinon le meme jeu bloque repasse en
                         # premier a chaque relance et mange une minute a
                         # chaque fois. Un echec non note est un echec repete.
+                        if not ecran_utilisable(args.affichage):
+                            journal("  l ecran ne repond plus : on s arrete, "
+                                    "plutot que d ecarter des jeux a tort")
+                            raise Interruption()
                         journal("  RetroArch n a pas demarre, on le note")
                         resultat = ("difficile", "ne demarre pas")
                     else:

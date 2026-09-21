@@ -2,13 +2,10 @@
   "description": "Adresse RAM du compteur de credits de chaque jeu de ce systeme, indexee par nom de set. Se lit par l'interface reseau de RetroArch : READ_CORE_RAM <adresse> 1 en UDP sur le port 55355.",
   "difficiles": {
     "3wonderu": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "3wonderu",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "fba",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "fba"
     },
     "AGALLET": {
       "core": "FinalBurn Neo",
@@ -488,220 +485,154 @@
       "vu_le": "2026-09-11"
     },
     "batridra": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "batridra",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "fba",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "fba"
     },
     "battleg": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "battleg",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "fba",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "fba"
     },
     "battlega": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "battlega",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "fba",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "fba"
     },
     "batugnsp": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "batugnsp",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "fba",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "fba"
     },
     "captcomj": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "captcomj",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "fba",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "fba"
     },
     "captcomu": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "captcomu",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "fba",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "fba"
     },
     "donpachk": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "donpachk",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "fba",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "fba"
     },
     "dw": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "dw",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "fba",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "fba"
     },
     "dwj": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "dwj",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "fba",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "fba"
     },
     "espradeo": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "espradeo",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "fba",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "fba"
     },
     "gwingj": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "gwingj",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "fba",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "fba"
     },
     "punishrj": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "punishrj",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "fba",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "fba"
     },
     "punishru": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "punishru",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "fba",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "fba"
     },
     "qadj": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "qadj",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "fba",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "fba"
     },
     "qtono2": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "qtono2",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "fba",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "fba"
     },
     "sailormo": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "sailormo",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "fba",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "fba"
     },
     "sf2cej": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "sf2cej",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "fba",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "fba"
     },
     "sf2t": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "sf2t",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "fba",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "fba"
     },
     "sf2tj": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "sf2tj",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "fba",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "fba"
     },
     "sfa3r1": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "sfa3r1",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "fba",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "fba"
     },
     "sfz2aa": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "sfz2aa",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "fba",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "fba"
     },
     "sfz2aj": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "sfz2aj",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "fba",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "fba"
     },
     "slammasu": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "slammasu",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "fba",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "fba"
     },
     "stridrja": {
-      "core": "FinalBurn Neo",
-      "essais": 1,
       "jeu": "stridrja",
-      "par": "nuit-credits.py",
-      "raison": "romset inconnu de ce coeur",
-      "systeme": "fba",
-      "vu_le": "2026-09-11"
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
+      "systeme": "fba"
+    },
+    "truxton2": {
+      "jeu": "truxton2",
+      "le": "2026-09-19",
+      "raison": "rom refusee ([FBNeo] Driver successfully started | [FBNeo] Unknown device type for port 0, forcing \"Classic\" instead | [FBNeo] Unknown device type for port 1, forcing \"Class)",
+      "systeme": "fba"
     }
   },
   "format": "recalbox-arcade-credits (un fichier par systeme, pour la borne)",

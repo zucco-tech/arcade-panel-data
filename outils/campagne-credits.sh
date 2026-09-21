@@ -11,8 +11,11 @@
 #   3. le repliage des parts dans la base, apres CHAQUE systeme
 #   4. un compte rendu dans journaux/campagne.txt
 #
-# Elle ne touche JAMAIS a la borne : l envoi des fiches reste une decision du
-# proprietaire (outils/deployer-vers-borne.sh).
+# Depuis le 19/09/2026, a la demande du proprietaire, elle ENVOIE au fil de
+# l eau : apres chaque systeme, les nouvelles fiches partent sur la borne
+# (deployer-vers-borne.sh, qui remplace les fichiers par renommage et ne
+# derange donc pas une partie en cours). Si la borne est eteinte, l envoi
+# echoue sans bruit et sera refait au systeme suivant.
 #
 # Pourquoi un tour apres l autre, sans fin : une passe apprend des adresses,
 # ce qui reduit la liste ; la passe suivante reprend ce qui reste avec plus de
@@ -27,6 +30,20 @@ ARRET=/tmp/arret-campagne
 RAISONS_TOUT="rom refusee,romset inconnu,jeu non supporte,aucun candidat,candidats non confirmes,jeu inanime,delai depasse,pilote plante,reponse illisible"
 
 note() { echo "$(date '+%F %T')  $1" >> $JOURNAUX/campagne.log; }
+
+# Les resultats du releve Naomi (nuit-credits, qui ecrit sa propre base)
+# rejoignent la base commune, puis tout part sur la borne.
+envoyer() {
+    for reste in $DONNEES/parts-naomi $DONNEES/parts-campagne; do
+        [ -d "$reste" ] && python3 $OUTILS/fusionner-parts.py --base $BASE --parts "$reste" \
+            >> $JOURNAUX/campagne.log 2>&1
+    done
+    if sh $OUTILS/deployer-vers-borne.sh >/dev/null 2>&1; then
+        note "envoye sur la borne"
+    else
+        note "borne injoignable : l envoi sera refait plus tard"
+    fi
+}
 
 # Le disque interne du PC ne doit jamais se remplir a cause de nous. Avant
 # chaque systeme : si la place libre passe sous PLACE_BASSE, on fait le menage
@@ -85,6 +102,7 @@ while [ ! -f $ARRET ]; do
         PARTS=$DONNEES/parts-campagne ACHARNE=1 RAISONS="$RAISONS_TOUT" \
             sh $OUTILS/balayer.sh $systeme 4 \
             > $JOURNAUX/campagne-$systeme-$(date +%Y%m%d-%H%M).log 2>&1
+        envoyer
     done
 
     if [ ! -f $ARRET ] && veiller_au_disque; then
@@ -95,6 +113,7 @@ while [ ! -f $ARRET ]; do
         PARTS=$DONNEES/parts-campagne ACHARNE=1 DELAI_MAME_ACHARNE=1800 MAME_IMAGES=45000 \
             sh $OUTILS/balayer.sh mame 4 \
             > $JOURNAUX/campagne-mame-$(date +%Y%m%d-%H%M).log 2>&1
+        envoyer
     fi
 
     set -- $(compter); apres_jeux=$1; apres_durs=$2
