@@ -3,232 +3,262 @@
   "difficiles": {
     "anmlbskt": {
       "core": "Flycast",
-      "essais": 1,
+      "essais": 2,
       "jeu": "anmlbskt",
       "par": "nuit-credits.py",
-      "raison": "candidats non confirmes",
+      "raison": "jeu inanime",
       "systeme": "atomiswave",
-      "vu_le": "2026-09-20"
-    },
-    "anmlbskta": {
-      "core": "Flycast",
-      "essais": 1,
-      "jeu": "anmlbskta",
-      "par": "nuit-credits.py",
-      "raison": "candidats non confirmes",
-      "systeme": "atomiswave",
-      "vu_le": "2026-09-20"
+      "vu_le": "2026-09-22"
     },
     "awbios": {
       "core": "Flycast",
-      "essais": 1,
+      "essais": 2,
       "jeu": "awbios",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "atomiswave",
-      "vu_le": "2026-09-20"
-    },
-    "basschal": {
-      "core": "Flycast",
-      "essais": 1,
-      "jeu": "basschal",
-      "par": "nuit-credits.py",
-      "raison": "candidats non confirmes",
-      "systeme": "atomiswave",
-      "vu_le": "2026-09-20"
+      "vu_le": "2026-09-22"
     },
     "basschalo": {
       "core": "Flycast",
-      "essais": 1,
+      "essais": 2,
       "jeu": "basschalo",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "atomiswave",
-      "vu_le": "2026-09-20"
+      "vu_le": "2026-09-22"
     },
     "blokpong": {
       "core": "Flycast",
-      "essais": 1,
+      "essais": 2,
       "jeu": "blokpong",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "atomiswave",
-      "vu_le": "2026-09-20"
+      "vu_le": "2026-09-22"
     },
     "claychal": {
       "core": "Flycast",
-      "essais": 1,
+      "essais": 2,
       "jeu": "claychal",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "atomiswave",
-      "vu_le": "2026-09-20"
+      "vu_le": "2026-09-22"
     },
     "fotns": {
       "core": "Flycast",
-      "essais": 1,
+      "essais": 2,
       "jeu": "fotns",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "atomiswave",
-      "vu_le": "2026-09-20"
+      "vu_le": "2026-09-22"
     },
     "ftspeed": {
       "core": "Flycast",
-      "essais": 1,
+      "essais": 2,
       "jeu": "ftspeed",
       "par": "nuit-credits.py",
       "raison": "aucun candidat",
       "systeme": "atomiswave",
-      "vu_le": "2026-09-20"
+      "vu_le": "2026-09-22"
     },
     "ggisuka": {
       "core": "Flycast",
-      "essais": 1,
+      "essais": 2,
       "jeu": "ggisuka",
-      "par": "nuit-credits.py",
-      "raison": "jeu inanime",
-      "systeme": "atomiswave",
-      "vu_le": "2026-09-20"
-    },
-    "ggx15": {
-      "core": "Flycast",
-      "essais": 1,
-      "jeu": "ggx15",
-      "par": "nuit-credits.py",
-      "raison": "jeu inanime",
-      "systeme": "atomiswave",
-      "vu_le": "2026-09-20"
-    },
-    "kofnw": {
-      "core": "Flycast",
-      "essais": 1,
-      "jeu": "kofnw",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "atomiswave",
-      "vu_le": "2026-09-20"
+      "vu_le": "2026-09-22"
+    },
+    "ggx15": {
+      "core": "Flycast",
+      "essais": 2,
+      "jeu": "ggx15",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "atomiswave",
+      "vu_le": "2026-09-22"
     },
     "kofxi": {
       "core": "Flycast",
-      "essais": 1,
+      "essais": 2,
       "jeu": "kofxi",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "atomiswave",
-      "vu_le": "2026-09-20"
+      "vu_le": "2026-09-22"
     },
     "kov7sprt": {
       "core": "Flycast",
-      "essais": 1,
+      "essais": 2,
       "jeu": "kov7sprt",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "atomiswave",
-      "vu_le": "2026-09-20"
-    },
-    "maxspeed": {
-      "core": "Flycast",
-      "essais": 1,
-      "jeu": "maxspeed",
-      "par": "nuit-credits.py",
-      "raison": "candidats non confirmes",
-      "systeme": "atomiswave",
-      "vu_le": "2026-09-20"
+      "vu_le": "2026-09-22"
     },
     "mslug6": {
       "core": "Flycast",
-      "essais": 1,
+      "essais": 2,
       "jeu": "mslug6",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "atomiswave",
-      "vu_le": "2026-09-20"
+      "vu_le": "2026-09-22"
     },
     "ngbc": {
       "core": "Flycast",
-      "essais": 1,
+      "essais": 2,
       "jeu": "ngbc",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "atomiswave",
-      "vu_le": "2026-09-20"
+      "vu_le": "2026-09-22"
     },
     "ngbcj": {
       "core": "Flycast",
-      "essais": 1,
+      "essais": 2,
       "jeu": "ngbcj",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "atomiswave",
-      "vu_le": "2026-09-20"
+      "vu_le": "2026-09-22"
     },
     "rumblf2p": {
       "core": "Flycast",
-      "essais": 1,
+      "essais": 2,
       "jeu": "rumblf2p",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "atomiswave",
-      "vu_le": "2026-09-20"
+      "vu_le": "2026-09-22"
     },
     "salmankt": {
       "core": "Flycast",
-      "essais": 1,
+      "essais": 2,
       "jeu": "salmankt",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "atomiswave",
-      "vu_le": "2026-09-20"
+      "vu_le": "2026-09-22"
     },
     "samsptk": {
       "core": "Flycast",
-      "essais": 1,
+      "essais": 2,
       "jeu": "samsptk",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "atomiswave",
-      "vu_le": "2026-09-20"
+      "vu_le": "2026-09-22"
     },
     "sushibar": {
       "core": "Flycast",
-      "essais": 1,
+      "essais": 2,
       "jeu": "sushibar",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "atomiswave",
-      "vu_le": "2026-09-20"
+      "vu_le": "2026-09-22"
     },
     "vfurlong": {
       "core": "Flycast",
-      "essais": 1,
+      "essais": 2,
       "jeu": "vfurlong",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "atomiswave",
-      "vu_le": "2026-09-20"
+      "vu_le": "2026-09-22"
     },
     "waidrive": {
       "core": "Flycast",
-      "essais": 1,
+      "essais": 2,
       "jeu": "waidrive",
       "par": "nuit-credits.py",
-      "raison": "jeu inanime",
+      "raison": "candidats non confirmes",
       "systeme": "atomiswave",
-      "vu_le": "2026-09-20"
+      "vu_le": "2026-09-22"
     },
     "xtrmhunt": {
       "core": "Flycast",
-      "essais": 1,
+      "essais": 2,
       "jeu": "xtrmhunt",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "atomiswave",
-      "vu_le": "2026-09-20"
+      "vu_le": "2026-09-22"
     }
   },
   "format": "recalbox-arcade-credits (un fichier par systeme, pour la borne)",
   "jeux": {
+    "anmlbskta": {
+      "core": "Flycast",
+      "credits": {
+        "adresse": 457300,
+        "adresse_hex": "0x6FA54",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x6FA7E",
+          "0x6FA80",
+          "0xF0EBE",
+          "0xF0EC0",
+          "0xF0F43",
+          "0xF1CA8",
+          "0xF1CAA"
+        ],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "anmlbskta",
+      "nom": "anmlbskta",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 16777216
+      },
+      "releve": {
+        "le": "2026-09-21",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "atomiswave"
+    },
+    "basschal": {
+      "core": "Flycast",
+      "credits": {
+        "adresse": 1970148,
+        "adresse_hex": "0x1E0FE4",
+        "adresse_j2": 11297731,
+        "adresse_j2_hex": "0xAC63C3",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "basschal",
+      "nom": "basschal",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 16777216
+      },
+      "releve": {
+        "le": "2026-09-22",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "atomiswave"
+    },
     "demofist": {
       "core": "Flycast",
       "credits": {
@@ -329,6 +359,44 @@
       },
       "systeme": "atomiswave"
     },
+    "kofnw": {
+      "core": "Flycast",
+      "credits": {
+        "adresse": 3116912,
+        "adresse_hex": "0x2F8F70",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x2F8F78",
+          "0x2F8F80",
+          "0x2F8F88",
+          "0xE089A2",
+          "0xE089A4",
+          "0xE08A27",
+          "0xE0B6B8",
+          "0xE0B6BA"
+        ],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "kofnw",
+      "nom": "kofnw",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 16777216
+      },
+      "releve": {
+        "le": "2026-09-22",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "atomiswave"
+    },
     "kofnwj": {
       "core": "Flycast",
       "credits": {
@@ -362,6 +430,37 @@
       },
       "releve": {
         "le": "2026-09-20",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "atomiswave"
+    },
+    "maxspeed": {
+      "core": "Flycast",
+      "credits": {
+        "adresse": 2327518,
+        "adresse_hex": "0x2383DE",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x238A48"
+        ],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "maxspeed",
+      "nom": "maxspeed",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 16777216
+      },
+      "releve": {
+        "le": "2026-09-22",
         "methode": "balayage nocturne",
         "par": "nuit-credits.py"
       },

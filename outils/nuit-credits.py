@@ -120,7 +120,11 @@ SANS_CONFIRMATION_MAX = 2
 # ATTENTE_START secondes : toute adresse qui descend, a n importe quel
 # moment, est retenue. Reglable par l environnement pour pouvoir mesurer.
 ATTENTE_START = float(os.environ.get("ATTENTE_START", "8.0"))
-PAS_SURVEILLANCE = 0.4
+# 1,5 s entre deux lectures, pas 0,4 : lire, c est faire repondre RetroArch,
+# et le marteler empeche le jeu d avancer jusqu a consommer le credit.
+# Mesure du 21/09 : a 0,4 s, 0 confirmation sur 29 jeux ; l ancien code,
+# qui laissait 1,5 s de calme avant sa lecture unique, en confirmait 21.
+PAS_SURVEILLANCE = 1.5
 ECHECS_MAX = 8            # au-dela, quelque chose ne va pas : on s'arrete
 
 # Un echec peut etre passager : le jeu n'avait pas fini de demarrer et la
@@ -289,6 +293,7 @@ class Borne:
         self.coeur_lance = self.coeur_nomme or COEURS_NOMMES.get(systeme)
         self.arreter_processus()
         self.oublier_les_restes()      # aucun rescape ne doit trainer
+        imposer_options_coeur(self.coeur_lance)
         env = dict(os.environ)
         env.update({"HOME": "/root", "XDG_RUNTIME_DIR": "/run/user/0"})
         if self.affichage:
@@ -456,6 +461,44 @@ def patienter(condition, delai, arret, pas=0.5):
             return valeur
         time.sleep(pas)
     return None
+
+
+OPTIONS_COEUR = "/root/.config/retroarch/config/%s/%s.opt"
+# Flycast force le mode gratuit par defaut : le jeu n a alors jamais besoin de
+# credit, la piece monte bien un compteur mais START ne decompte rien. C est
+# la cause des 211 « candidats non confirmes » sur Naomi (trouve le 21/09).
+# RetroArch reecrit ce fichier en quittant : on le remet avant chaque lancement.
+OPTIONS_IMPOSEES = {"Flycast": {"reicast_force_freeplay": "disabled"}}
+
+
+def imposer_options_coeur(coeur):
+    """Remet les options du coeur que RetroArch pourrait avoir changees."""
+    voulues = OPTIONS_IMPOSEES.get(coeur)
+    if not voulues:
+        return
+    chemin = OPTIONS_COEUR % (coeur, coeur)
+    try:
+        with open(chemin) as fh:
+            lignes = fh.readlines()
+    except (IOError, OSError):
+        return
+    change = False
+    for i, ligne in enumerate(lignes):
+        cle = ligne.split("=")[0].strip()
+        if cle in voulues:
+            neuve = '%s = "%s"\n' % (cle, voulues[cle])
+            if lignes[i] != neuve:
+                lignes[i] = neuve
+                change = True
+    if not change:
+        return
+    try:
+        provisoire = chemin + ".tmp"
+        with open(provisoire, "w") as fh:
+            fh.writelines(lignes)
+        os.replace(provisoire, chemin)
+    except (IOError, OSError):
+        pass
 
 
 def _ecran_repond(affichage, jeton=None):
@@ -736,6 +779,9 @@ def surveiller_baisse(borne, avant, duree, arret):
     baissiers = set()
     fin = time.monotonic() + duree
     while True:
+        # Le calme d abord : le jeu doit pouvoir tourner sans etre lu.
+        arret()
+        time.sleep(PAS_SURVEILLANCE)
         for a in sorted(avant):
             if a in baissiers:
                 continue
@@ -744,8 +790,6 @@ def surveiller_baisse(borne, avant, duree, arret):
                 baissiers.add(a)
         if len(baissiers) == len(avant) or time.monotonic() >= fin:
             return baissiers
-        arret()
-        time.sleep(PAS_SURVEILLANCE)
 
 
 def deja_fait(base, coeur, jeu, reessayer=False):
