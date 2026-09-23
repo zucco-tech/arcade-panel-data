@@ -38,7 +38,15 @@ if ACHARNE then
     ATTENTE_START = 6
     PIECES = 6
 end
-local TENUE_START = ACHARNE and 0.5 or 0.1     -- un START tenu une demi-seconde
+-- Troisieme niveau, pour la derniere poche : les jeux qui demarrent, qui
+-- encaissent, dont la recherche converge — mais dont le START ne confirme
+-- jamais. Reglable de dehors pour pouvoir mesurer sans retoucher au fichier.
+INSISTANCE = tonumber(os.getenv("MAME_INSISTANCE")) or INSISTANCE
+ATTENTE_START = tonumber(os.getenv("MAME_ATTENTE_START")) or ATTENTE_START
+PIECES = tonumber(os.getenv("MAME_PIECES")) or PIECES
+
+local TENUE_START = tonumber(os.getenv("MAME_TENUE_START"))
+    or (ACHARNE and 0.5 or 0.1)                -- un START tenu une demi-seconde
 local ZONE_SECOURS_MAX = 64 * 1024             -- une zone de secours ne depasse pas ca
 local ACCORDS_SEUL = 3                         -- un octet fidele a 3 pieces, seul de sa classe
 

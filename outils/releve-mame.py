@@ -42,9 +42,15 @@ IMAGES_ACHARNE = 16200         # trois fois plus : le Lua attend et insiste dava
 # (Naomi, Model 2 : 11 images par seconde) que 16200 images ne menaient pas au bout.
 IMAGES_ACHARNE = int(os.environ.get("MAME_IMAGES", IMAGES_ACHARNE))
 IMAGES_PAS = 300
+# Trois raisons ne disent rien sur notre methode, elles disent un fait sur la
+# machine : MAME refuse de la lancer, elle n a pas de monnayeur, elle ne
+# declare aucune RAM. Aucun reglage n y changera quoi que ce soit.
+# Mesure du 23/09 : 176 machines dans ce cas, reprises a chaque tour depuis le
+# 17/09 — zero adresse gagnee, et plusieurs heures perdues par tour.
+RAISONS_SANS_APPEL = ("MAME n a rien rendu", "pas de monnayeur declare",
+                      "aucune RAM declaree")
 RAISONS_ACHARNE = ("delai depasse", "jeu inanime", "aucun candidat",
-                   "candidats non confirmes", "aucune RAM declaree",
-                   "pas de monnayeur declare", "MAME n a rien rendu")
+                   "candidats non confirmes")
 OPTIONS = {
     "mame_softlists_enable": "disabled",   # sinon le dossier devient la machine
     "mame_softlists_auto_media": "disabled",
