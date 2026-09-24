@@ -46,6 +46,12 @@ def par_systeme(entrees):
         systeme = fiche.get("systeme")
         if not systeme:
             continue
+        # Une fiche lue dans une sauvegarde d etat porte une POSITION dans cet
+        # etat, pas une adresse machine. Le demon de la borne lit la memoire
+        # du coeur : il irait lire n importe quoi. On ne l envoie donc pas
+        # tant qu il ne sait pas relire un etat serialise.
+        if (fiche.get("ram") or {}).get("commande") == "sauvegarde d etat":
+            continue
         jeux = groupes.setdefault(systeme, {})
         ancienne = jeux.get(jeu)
         if ancienne is not None:

@@ -107,6 +107,8 @@ ECHEANCE = None                          # heure limite du jeu en cours (mode ac
 MARGE_ECHEANCE = 30.0                    # on rend la main avant que le parent ne tue
 DOSSIER_IMAGES = "/mnt/recalbox/journaux/images"
 MEMOIRE_JEU = 2 * 1024 ** 3              # plafond par jeu (voir enfant)
+# Images accordees a un coeur pour publier sa memoire apres le chargement.
+IMAGES_MEMOIRE = int(os.environ.get("IMAGES_MEMOIRE", "60"))
 RAISONS_ACHARNE = ("delai depasse", "jeu inanime", "aucun candidat",
                    "candidats non confirmes")
 
@@ -312,8 +314,13 @@ class Coeur:
     def charger(self, chemin_rom):
         self.lib.retro_load_game.restype = ctypes.c_bool
         info = InfoJeu(chemin_rom.encode(), None, 0, None)
+        # Deux echecs tres differents se cachaient sous « rom refusee » : le
+        # coeur refuse la rom, ou il l accepte et ne publie jamais sa memoire.
+        # Le second n est pas un probleme de romset, et se soigne autrement.
+        self.refus = "le coeur refuse la rom"
         if not self.lib.retro_load_game(ctypes.byref(info)):
             return False
+        self.refus = "chargee, mais le coeur ne publie pas sa memoire"
         self.lib.retro_set_controller_port_device(0, MANETTE)
         self.lib.retro_set_controller_port_device(1, MANETTE)
         # Certains coeurs n exposent leur memoire qu une fois la machine
@@ -323,12 +330,31 @@ class Coeur:
         # images suffisent, et elles ne coutent rien.
         self.lib.retro_get_memory_data.restype = ctypes.c_void_p
         self.lib.retro_get_memory_size.restype = ctypes.c_size_t
-        for _ in range(3):
+        # Trois images, c est un vingtieme de seconde : beaucoup de pilotes
+        # FBNeo n ont pas fini leur initialisation et n ont encore rien
+        # publie. Leur journal dit pourtant « Driver successfully started »,
+        # et on les classait « rom refusee ». Mesure du 24/09 : 220 jeux dans
+        # ce cas. On laisse maintenant le temps qu il faut (IMAGES_MEMOIRE,
+        # une seconde par defaut), quitte a le regler de dehors.
+        for _ in range(IMAGES_MEMOIRE):
             self.lib.retro_run()
             self.taille = self.lib.retro_get_memory_size(MEMOIRE_SYSTEME)
             self.adresse = self.lib.retro_get_memory_data(MEMOIRE_SYSTEME)
             if self.taille and self.adresse:
                 return True
+        # Le coeur ne publie pas sa memoire — 494 jeux FBNeo dans ce cas. Mais
+        # il sait sauvegarder l etat complet de la machine, RAM comprise : on
+        # lit donc dedans. Les offsets y sont stables d une execution a l
+        # autre (verifie sur assault et aztarac le 24/09), ce qui suffit a la
+        # detection. Ce n est PAS une adresse machine : la fiche le dit.
+        self.lib.retro_serialize_size.restype = ctypes.c_size_t
+        self.lib.retro_serialize.restype = ctypes.c_bool
+        self.taille = self.lib.retro_serialize_size()
+        if self.taille:
+            self.par_etat = True
+            self.refus = None
+            return True
+        self.refus = "chargee, ni memoire publiee ni sauvegarde d etat"
         return False
 
     def images(self, combien):
@@ -342,6 +368,10 @@ class Coeur:
         self.appuis[(joueur - 1, bouton)] = images
 
     def photo(self):
+        if getattr(self, "par_etat", False):
+            tampon = (ctypes.c_ubyte * self.taille)()
+            self.lib.retro_serialize(ctypes.byref(tampon), self.taille)
+            return bytes(tampon)
         return bytes((ctypes.c_ubyte * self.taille).from_address(self.adresse))
 
 
@@ -663,7 +693,8 @@ def mesurer(chemin_coeur, chemin_rom, dossier_systeme, bavard, options=None):
         # fichier manquant... C est la difference entre « ca ne marche pas »
         # et une raison sur laquelle on peut agir.
         dit = " | ".join(list(coeur.dits)[-3:]) if coeur.dits else "sans explication"
-        return {"erreur": "rom refusee (%s)" % dit[:160]}, lignes
+        return {"erreur": "%s (%s)" % (getattr(coeur, "refus", "rom refusee"),
+                                       dit[:120])}, lignes
     imposes = coeur.choisir_les_dip()
     if imposes:
         journal("  reglages imposes : %s" % ", ".join(sorted(imposes.values())))
@@ -782,7 +813,15 @@ def fidele_et_seul(accords):
 def fiche_un_octet(coeur, adresse, miroirs, adresse_j2, commun, imposes,
                    consommation=True, note=None):
     fiche = {
-        "ram": {"taille": coeur.taille, "commande": "coeur direct"},
+        "ram": {"taille": coeur.taille,
+                # « sauvegarde d etat » : le coeur ne publiait pas sa memoire,
+                # on a lu dans l etat serialise. L adresse est alors une
+                # POSITION DANS CET ETAT, pas une adresse machine : la borne
+                # ne peut pas la lire comme les autres. A ne pas exporter tant
+                # que le demon des credits ne sait pas lire un etat.
+                "commande": ("sauvegarde d etat"
+                             if getattr(coeur, "par_etat", False)
+                             else "coeur direct")},
         "credits": {
             "adresse": adresse, "adresse_hex": "0x%04X" % adresse, "octets": 1,
             "miroirs": ["0x%04X" % m for m in miroirs],
@@ -802,7 +841,15 @@ def fiche_un_octet(coeur, adresse, miroirs, adresse_j2, commun, imposes,
 
 def fiche_deux_octets(coeur, adresse, sens, imposes):
     return {
-        "ram": {"taille": coeur.taille, "commande": "coeur direct"},
+        "ram": {"taille": coeur.taille,
+                # « sauvegarde d etat » : le coeur ne publiait pas sa memoire,
+                # on a lu dans l etat serialise. L adresse est alors une
+                # POSITION DANS CET ETAT, pas une adresse machine : la borne
+                # ne peut pas la lire comme les autres. A ne pas exporter tant
+                # que le demon des credits ne sait pas lire un etat.
+                "commande": ("sauvegarde d etat"
+                             if getattr(coeur, "par_etat", False)
+                             else "coeur direct")},
         "credits": {
             "adresse": adresse, "adresse_hex": "0x%04X" % adresse, "octets": 2,
             "sens": sens, "miroirs": [],
