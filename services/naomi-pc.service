@@ -13,7 +13,7 @@ Environment=ATTENTE_START=8.0
 # depuis la base a chaque depart, sinon un redemarrage refait tout.
 ExecStartPre=/usr/bin/python3 /mnt/recalbox/outils/amorcer-naomi.py
 ExecStart=/usr/bin/python3 -u /mnt/recalbox/outils/nuit-credits.py \
-    --systeme naomi,atomiswave,naomigd --direct --reessayer \
+    --systeme naomi,naomi2,atomiswave,naomigd --direct --reessayer \
     --base /mnt/recalbox/donnees/parts-naomi/part-1.json \
     --roms /mnt/roms --arret /tmp/arret-naomi
 # Toujours : une session graphique qui redemarre, un coeur qui plante, un
