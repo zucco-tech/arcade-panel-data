@@ -32,7 +32,11 @@ import importlib.machinery
 
 RACINE = os.path.dirname(os.path.abspath(__file__))
 LUA = os.path.join(RACINE, "mame-credits.lua")
-COEUR = "/opt/coeurs/mame_libretro.so"
+# Plusieurs coeurs MAME cohabitent (mame_libretro, mame0278, mame2003_plus).
+# Une machine que l un refuse, un autre la fait parfois tourner — et un coeur
+# plus leger vient a bout des machines trop lentes. On peut donc en changer
+# sans toucher au fichier : MAME_COEUR=/opt/coeurs/<coeur>.so
+COEUR = os.environ.get("MAME_COEUR", "/opt/coeurs/mame_libretro.so")
 DOSSIER_SYSTEME = "/root/.config/retroarch/system"
 # Le Lua attend environ trente secondes de jeu ; a la vitesse ou MAME tourne
 # sans image ni son, cela demande quelques milliers d images.

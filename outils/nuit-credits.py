@@ -93,6 +93,15 @@ COEURS = {
     "mame0278": "mame_libretro.so",
     "mame": "mame_libretro.so",
 }
+# Recalbox declare flycast-next en priorite 1 pour naomi, atomiswave et
+# naomigd, et comme SEUL coeur pour naomi2 (systemlist.xml de la borne, relu
+# le 24/09). On doit donc pouvoir changer de coeur sans retoucher au fichier :
+#   COEUR_NAOMI=flycast-next_libretro.so
+for _systeme in list(COEURS):
+    _autre = os.environ.get("COEUR_%s" % _systeme.upper())
+    if _autre:
+        COEURS[_systeme] = _autre
+
 MORCEAU = 16384          # maximum accepte par RetroArch en une commande
 
 ATTENTE_LANCEMENT = 90.0  # un Neo Geo met du temps a demarrer
