@@ -169,6 +169,49 @@ local function entree(motifs)
     return nil, nil
 end
 
+-- Les DIP switches d une carte peuvent la mettre en ACCES LIBRE : la piece
+-- est alors comptee, mais aucun credit n est cree, donc rien ne redescend au
+-- START. C est exactement le symptome des 118 jeux « candidats non
+-- confirmes » (constat du 24/09). FBNeo imposait deja ces reglages ; MAME
+-- n y touchait pas du tout. On les remet donc dans l etat d une borne
+-- d exploitation : pas d acces libre, pas de mode test, une piece un credit.
+local REGLAGES = {
+    {"free play",  "off"},
+    {"freeplay",   "off"},
+    {"free_play",  "off"},
+    {"service mode", "off"},
+    {"test mode",  "off"},
+    {"coinage",    "1 coin/1 credit"},
+    {"coin a",     "1 coin/1 credit"},
+    {"coin b",     "1 coin/1 credit"},
+}
+
+local function imposer_les_dip()
+    local poses = {}
+    for tag, port in pairs(mach.ioport.ports) do
+        for nom, champ in pairs(port.fields) do
+            local bas = nom:lower()
+            for _, regle in ipairs(REGLAGES) do
+                if bas:find(regle[1], 1, true) and champ.settings then
+                    -- On cherche le reglage voulu parmi ceux que la carte
+                    -- propose vraiment ; ce qu elle n a pas est ignore.
+                    for valeur, libelle in pairs(champ.settings) do
+                        if libelle:lower() == regle[2] then
+                            local ok = pcall(function()
+                                champ.user_value = valeur
+                            end)
+                            if ok then poses[#poses + 1] = nom .. "=" .. libelle end
+                            break
+                        end
+                    end
+                    break
+                end
+            end
+        end
+    end
+    return poses
+end
+
 local function appuyer(champ, secondes, tenue)
     if not champ then return end
     champ:set_value(1)
@@ -244,6 +287,13 @@ local function attendre_vivant()
     end
     return nil
 end
+-- Avant tout : remettre la carte en mode piece. Beaucoup de machines ne
+-- relisent leurs DIP qu au demarrage, donc on le fait le plus tot possible.
+local dip_poses = imposer_les_dip()
+if #dip_poses > 0 then
+    print("  DIP imposes : " .. table.concat(dip_poses, ", "))
+end
+
 local vivant = attendre_vivant()
 if not piece then
     ecrire('{"jeu": ' .. texte(mach.system.name) .. ', "erreur": "pas de monnayeur declare",'
