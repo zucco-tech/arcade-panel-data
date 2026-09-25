@@ -22,49 +22,49 @@
    "jeu": "1944",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/1944ad": {
    "jeu": "1944ad",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/1944d": {
    "jeu": "1944d",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/1944j": {
    "jeu": "1944j",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/1944u": {
    "jeu": "1944u",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/25pacman": {
    "jeu": "25pacman",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Pac-Man - 25th Anniversary Edition (Rev 3.00) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones m)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Pac-Man - 25th Anniversary Edition (Rev 3.00) | [FBNeo] This romset is known but marked as n)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/3wonderu": {
    "jeu": "3wonderu",
    "systeme": "fba",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/8ballact": {
    "jeu": "8ballact",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Eight Ball Action (DK conversion) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Eight Ball Action (DK conversion) | [FBNeo] This romset is known but marked as not working |)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/AGALLET": {
    "core": "FinalBurn Neo",
@@ -546,14 +546,14 @@
   "finalburn-neo/aerfboo2": {
    "jeu": "aerfboo2",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Aero Fighters (bootleg, set 2) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so ma)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Aero Fighters (bootleg, set 2) | [FBNeo] This romset is known but marked as not working | [F)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/aerfboot": {
    "jeu": "aerfboot",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Aero Fighters (bootleg, set 1) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so ma)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Aero Fighters (bootleg, set 1) | [FBNeo] This romset is known but marked as not working | [F)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/airlbios": {
    "core": "FinalBurn Neo",
@@ -585,38 +585,38 @@
   "finalburn-neo/arkatour2": {
    "jeu": "arkatour2",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Tournament Arkanoid (US, newer) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so m)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Tournament Arkanoid (US, newer) | [FBNeo] This romset is known but marked as not working | [)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/armchmp2": {
    "jeu": "armchmp2",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Arm Champs II (ver 2.7) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe giv)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Arm Champs II (ver 2.7) | [FBNeo] This romset is known but marked as not working | [FBNeo] O)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/armchmp2o": {
    "jeu": "armchmp2o",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Arm Champs II (ver 1.7) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe giv)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Arm Champs II (ver 1.7) | [FBNeo] This romset is known but marked as not working | [FBNeo] O)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/armchmp2o2": {
    "jeu": "armchmp2o2",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Arm Champs II (ver 2.6) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe giv)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Arm Champs II (ver 2.6) | [FBNeo] This romset is known but marked as not working | [FBNeo] O)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/atlantol": {
    "jeu": "atlantol",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Atlant Olimpic (Italian bootleg) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so )",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Atlant Olimpic (Italian bootleg) | [FBNeo] This romset is known but marked as not working | )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/attackf": {
    "jeu": "attackf",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Attack (bootleg of Defender) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so mayb)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Attack (bootleg of Defender) | [FBNeo] This romset is known but marked as not working | [FBN)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/avengers": {
    "core": "FinalBurn Neo",
@@ -630,632 +630,632 @@
   "finalburn-neo/azumanga": {
    "jeu": "azumanga",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/bagmanm2": {
    "jeu": "bagmanm2",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Bagman (bootleg on Moon Cresta hardware, set 2) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Bagman (bootleg on Moon Cresta hardware, set 2) | [FBNeo] This romset is known but marked as)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/bagmans3": {
    "jeu": "bagmans3",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give it a try | Warning: tms5110_exit() called without in)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give it a try | W)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/batridra": {
    "jeu": "batridra",
    "systeme": "fba",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/battleg": {
    "jeu": "battleg",
    "systeme": "fba",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/battlega": {
    "jeu": "battlega",
    "systeme": "fba",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/batugnsp": {
    "jeu": "batugnsp",
    "systeme": "fba",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/bdrdown": {
    "jeu": "bdrdown",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/bigbucks": {
    "jeu": "bigbucks",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/bloodstm": {
    "jeu": "bloodstm",
-   "systeme": "neogeo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0xb0f32ec5 and name bssrom1.bin from archive /mnt/roms/neogeo/bloodstm | [FBNeo] Using ROM with known crc 0x8aee1e77 and name b)",
-   "le": "2026-09-23"
+   "systeme": "fbneo",
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0xb0f32ec5 and name bssrom1.bin from archive /mnt/roms/fbneo/bloodstm | [FBNeo] Using R)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/bloodstm220": {
    "jeu": "bloodstm220",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0xb0f32ec5 and name bssrom1.bin from archive /mnt/roms/fbneo/bloodstm | [FBNeo] Using ROM with known crc 0x8aee1e77 and name bs)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0xb0f32ec5 and name bssrom1.bin from archive /mnt/roms/fbneo/bloodstm | [FBNeo] Using R)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/bloodstm221": {
    "jeu": "bloodstm221",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0xb0f32ec5 and name bssrom1.bin from archive /mnt/roms/fbneo/bloodstm | [FBNeo] Using ROM with known crc 0x8aee1e77 and name bs)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0xb0f32ec5 and name bssrom1.bin from archive /mnt/roms/fbneo/bloodstm | [FBNeo] Using R)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/bnstars1": {
    "jeu": "bnstars1",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Vs. Janshi Brandnew Stars | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe g)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Vs. Janshi Brandnew Stars | [FBNeo] This romset is known but marked as not working | [FBNeo])",
+   "le": "2026-09-25"
   },
   "finalburn-neo/brkblast": {
    "jeu": "brkblast",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0x83e3e293 and name 74s288.c2 from archive /mnt/roms/fbneo/wallc | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is requi)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0x83e3e293 and name 74s288.c2 from archive /mnt/roms/fbneo/wallc | [FBNeo] ROM at index)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/bubbletr": {
    "jeu": "bubbletr",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Bubble Trouble - Golly! Ghost! 2 (World, Rev B) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Bubble Trouble - Golly! Ghost! 2 (World, Rev B) | [FBNeo] This romset is known but marked as)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/bubbletrj": {
    "jeu": "bubbletrj",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Bubble Trouble - Golly! Ghost! 2 (Japan, Rev C) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Bubble Trouble - Golly! Ghost! 2 (Japan, Rev C) | [FBNeo] This romset is known but marked as)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/bubsys": {
    "jeu": "bubsys",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Bubble System BIOS | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give it )",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Bubble System BIOS | [FBNeo] This romset is known but marked as not working | [FBNeo] One of)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/cadanglr": {
    "jeu": "cadanglr",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/captcm2y": {
    "jeu": "captcm2y",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/captcmcr": {
    "jeu": "captcmcr",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/captcmmy": {
    "jeu": "captcmmy",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/captcmzs": {
    "jeu": "captcmzs",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/captcmzt": {
    "jeu": "captcmzt",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/captcomj": {
    "jeu": "captcomj",
    "systeme": "fba",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/captcommb2": {
    "jeu": "captcommb2",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Captain Commando (bootleg with 2xMSM5205) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Captain Commando (bootleg with 2xMSM5205) | [FBNeo] This romset is known but marked as not w)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/captcomu": {
    "jeu": "captcomu",
    "systeme": "fba",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/cbdash": {
    "jeu": "cbdash",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/cbtime": {
    "jeu": "cbtime",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/cchip": {
    "jeu": "cchip",
    "systeme": "fbneo",
    "raison": "pilote plante (code -11)",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/cexplore": {
    "jeu": "cexplore",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/cfield": {
    "jeu": "cfield",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/cflyball": {
    "jeu": "cflyball",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/cgraplop": {
    "jeu": "cgraplop",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/cgraplop2": {
    "jeu": "cgraplop2",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/chewing": {
    "jeu": "chewing",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/chocomk": {
    "jeu": "chocomk",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/choplift": {
    "jeu": "choplift",
    "systeme": "fbneo",
-   "raison": "rom refusee (Cheat cpu-register INIT. | [FBNeo] Failed initializing driver. | [FBNeo] This is unexpected, you should probably report it.)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat (Cheat cpu-register INIT. | [FBNeo] Failed initializing driver. | [FBNeo] This is unexpected, you should probably report )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/chopliftbl": {
    "jeu": "chopliftbl",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0xdd223015 and name 315-5138.ic11 from archive /mnt/roms/fbneo/choplift | [FBNeo] Using ROM with known crc 0x2c9229b4 and name )",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0xdd223015 and name 315-5138.ic11 from archive /mnt/roms/fbneo/choplift | [FBNeo] Using)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/chopliftu": {
    "jeu": "chopliftu",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/chopper": {
    "jeu": "chopper",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] No romset found at /root/.config/retroarch/system/fbneo/chopper | [FBNeo] No romset found at /root/.config/retroarch/system/chopper | [FBNeo] None of th)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] No romset found at /root/.config/retroarch/system/fbneo/chopper | [FBNeo] No romset found at /root/.config/retro)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/choppera": {
    "jeu": "choppera",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] No romset found at /root/.config/retroarch/system/fbneo/chopper | [FBNeo] No romset found at /root/.config/retroarch/system/chopper | [FBNeo] None of th)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] No romset found at /root/.config/retroarch/system/fbneo/chopper | [FBNeo] No romset found at /root/.config/retro)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/chopperb": {
    "jeu": "chopperb",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/chqflag": {
    "jeu": "chqflag",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] No romset found at /root/.config/retroarch/system/fbneo/chqflag | [FBNeo] No romset found at /root/.config/retroarch/system/chqflag | [FBNeo] None of th)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] No romset found at /root/.config/retroarch/system/fbneo/chqflag | [FBNeo] No romset found at /root/.config/retro)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/chqflagj": {
    "jeu": "chqflagj",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] No romset found at /root/.config/retroarch/system/fbneo/chqflag | [FBNeo] No romset found at /root/.config/retroarch/system/chqflag | [FBNeo] None of th)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] No romset found at /root/.config/retroarch/system/fbneo/chqflag | [FBNeo] No romset found at /root/.config/retro)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/chukatai": {
    "jeu": "chukatai",
    "systeme": "fbneo",
-   "raison": "rom refusee (Cheat cpu-register INIT. | [FBNeo] Failed initializing driver. | [FBNeo] This is unexpected, you should probably report it.)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat (Cheat cpu-register INIT. | [FBNeo] Failed initializing driver. | [FBNeo] This is unexpected, you should probably report )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/chukataij": {
    "jeu": "chukataij",
    "systeme": "fbneo",
-   "raison": "rom refusee (Cheat cpu-register INIT. | [FBNeo] Failed initializing driver. | [FBNeo] This is unexpected, you should probably report it.)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat (Cheat cpu-register INIT. | [FBNeo] Failed initializing driver. | [FBNeo] This is unexpected, you should probably report )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/chukataija": {
    "jeu": "chukataija",
    "systeme": "fbneo",
-   "raison": "rom refusee (Cheat cpu-register INIT. | [FBNeo] Failed initializing driver. | [FBNeo] This is unexpected, you should probably report it.)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat (Cheat cpu-register INIT. | [FBNeo] Failed initializing driver. | [FBNeo] This is unexpected, you should probably report )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/chukataiu": {
    "jeu": "chukataiu",
    "systeme": "fbneo",
-   "raison": "rom refusee (Cheat cpu-register INIT. | [FBNeo] Failed initializing driver. | [FBNeo] This is unexpected, you should probably report it.)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat (Cheat cpu-register INIT. | [FBNeo] Failed initializing driver. | [FBNeo] This is unexpected, you should probably report )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/chwy": {
    "jeu": "chwy",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/cleoftp": {
    "jeu": "cleoftp",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/cluckypo": {
    "jeu": "cluckypo",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/cnebula": {
    "jeu": "cnebula",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/cocean6b": {
    "jeu": "cocean6b",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/complexx": {
    "jeu": "complexx",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/confmiss": {
    "jeu": "confmiss",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/countrun": {
    "jeu": "countrun",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Counter Run (NS6201-A 1988.3) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so may)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Counter Run (NS6201-A 1988.3) | [FBNeo] This romset is known but marked as not working | [FB)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/countryc": {
    "jeu": "countryc",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Country Club | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give it a try)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Country Club | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its c)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/cprobowl": {
    "jeu": "cprobowl",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/cprogolf": {
    "jeu": "cprogolf",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/cps1demo": {
    "jeu": "cps1demo",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/cpsoccer": {
    "jeu": "cpsoccer",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/crush3": {
    "jeu": "crush3",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Crush Roller (set 3) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give i)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Crush Roller (set 3) | [FBNeo] This romset is known but marked as not working | [FBNeo] One )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/crzrallyrf": {
    "jeu": "crzrallyrf",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/ctisland": {
    "jeu": "ctisland",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/ctisland2": {
    "jeu": "ctisland2",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/ctisland3": {
    "jeu": "ctisland3",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/ctower": {
    "jeu": "ctower",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/ctsttape": {
    "jeu": "ctsttape",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/cvs2": {
    "jeu": "cvs2",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/cvsgd": {
    "jeu": "cvsgd",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/cyclshtg": {
    "jeu": "cyclshtg",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Cycle Shooting | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give it a tr)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Cycle Shooting | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/czeroize": {
    "jeu": "czeroize",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/dangarj": {
    "jeu": "dangarj",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Ufo Robo Dangar (9/26/1986, Japan) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work s)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Ufo Robo Dangar (9/26/1986, Japan) | [FBNeo] This romset is known but marked as not working )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/dduxbl": {
    "jeu": "dduxbl",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Dynamite Dux (Datsu bootleg) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so mayb)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Dynamite Dux (Datsu bootleg) | [FBNeo] This romset is known but marked as not working | [FBN)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/decocass": {
    "jeu": "decocass",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: DECO Cassette System Bios | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe g)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: DECO Cassette System Bios | [FBNeo] This romset is known but marked as not working | [FBNeo])",
+   "le": "2026-09-25"
   },
   "finalburn-neo/defcmnd": {
    "jeu": "defcmnd",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/defence": {
    "jeu": "defence",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/defender": {
    "jeu": "defender",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/defenderb": {
    "jeu": "defenderb",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/defenderg": {
    "jeu": "defenderg",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/defenderj": {
    "jeu": "defenderj",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/defenseb": {
    "jeu": "defenseb",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/dinojd": {
    "jeu": "dinojd",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0x6619c494 and name d10f1.10f from archive /mnt/roms/fbneo/dino | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is requir)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0x6619c494 and name d10f1.10f from archive /mnt/roms/fbneo/dino | [FBNeo] ROM at index )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/dinoplus": {
    "jeu": "dinoplus",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0xcd85a156 and name d9k2.9k from archive /mnt/roms/fbneo/dino | [FBNeo] Using ROM with known crc 0x6619c494 and name d10f1.10f )",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0xcd85a156 and name d9k2.9k from archive /mnt/roms/fbneo/dino | [FBNeo] Using ROM with )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/dinosdj": {
    "jeu": "dinosdj",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0xcd85a156 and name d9k2.9k from archive /mnt/roms/fbneo/dino | [FBNeo] Using ROM with known crc 0x6619c494 and name d10f1.10f )",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0xcd85a156 and name d9k2.9k from archive /mnt/roms/fbneo/dino | [FBNeo] Using ROM with )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/dinoss": {
    "jeu": "dinoss",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0xcd85a156 and name d9k2.9k from archive /mnt/roms/fbneo/dino | [FBNeo] Using ROM with known crc 0x6619c494 and name d10f1.10f )",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0xcd85a156 and name d9k2.9k from archive /mnt/roms/fbneo/dino | [FBNeo] Using ROM with )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/dinosyn": {
    "jeu": "dinosyn",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0xcd85a156 and name d9k2.9k from archive /mnt/roms/fbneo/dino | [FBNeo] Using ROM with known crc 0x6619c494 and name d10f1.10f )",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0xcd85a156 and name d9k2.9k from archive /mnt/roms/fbneo/dino | [FBNeo] Using ROM with )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/dinotj": {
    "jeu": "dinotj",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/dinoxz": {
    "jeu": "dinoxz",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0x6619c494 and name d10f1.10f from archive /mnt/roms/fbneo/dino | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is requir)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0x6619c494 and name d10f1.10f from archive /mnt/roms/fbneo/dino | [FBNeo] ROM at index )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/donpachk": {
    "jeu": "donpachk",
    "systeme": "fba",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/dragntr": {
    "jeu": "dragntr",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/dragntr2": {
    "jeu": "dragntr2",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/dragntr3": {
    "jeu": "dragntr3",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/ducki": {
    "jeu": "ducki",
    "systeme": "fbneo",
    "raison": "pilote plante (code -11)",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/dw": {
    "jeu": "dw",
    "systeme": "fba",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/dwi": {
    "jeu": "dwi",
    "systeme": "fbneo",
    "raison": "pilote plante (code -11)",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/dwia": {
    "jeu": "dwia",
    "systeme": "fbneo",
    "raison": "pilote plante (code -11)",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/dwj": {
    "jeu": "dwj",
    "systeme": "fba",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/dwpc": {
    "jeu": "dwpc",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/dygolf": {
    "jeu": "dygolf",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/dygolfp": {
    "jeu": "dygolfp",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/elecyoyo": {
    "jeu": "elecyoyo",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/elecyoyoa": {
    "jeu": "elecyoyoa",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/enmadaio": {
    "jeu": "enmadaio",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Enma Daio (Japan) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give it a)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Enma Daio (Japan) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/espradeo": {
    "jeu": "espradeo",
    "systeme": "fba",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/f355": {
    "core": "FinalBurn Neo",
@@ -1323,260 +1323,260 @@
   "finalburn-neo/fenix": {
    "jeu": "fenix",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Fenix (Orio bootleg of Phoenix) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so m)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Fenix (Orio bootleg of Phoenix) | [FBNeo] This romset is known but marked as not working | [)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/finalap2j": {
    "jeu": "finalap2j",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/friskytb": {
    "jeu": "friskytb",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Frisky Tom (set 3) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give it )",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Frisky Tom (set 3) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/fsoccer": {
    "jeu": "fsoccer",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Fighting Soccer (version 4) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Fighting Soccer (version 4) | [FBNeo] This romset is known but marked as not working | [FBNe)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/fsoccerb": {
    "jeu": "fsoccerb",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Fighting Soccer (Joystick hack bootleg) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might w)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Fighting Soccer (Joystick hack bootleg) | [FBNeo] This romset is known but marked as not wor)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/fsoccerba": {
    "jeu": "fsoccerba",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Fighting Soccer (Joystick hack bootleg, alt) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones mi)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Fighting Soccer (Joystick hack bootleg, alt) | [FBNeo] This romset is known but marked as no)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/fsoccerj": {
    "jeu": "fsoccerj",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Fighting Soccer (Japan) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe giv)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Fighting Soccer (Japan) | [FBNeo] This romset is known but marked as not working | [FBNeo] O)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/galwars2": {
    "jeu": "galwars2",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/gberetb": {
    "jeu": "gberetb",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Green Beret (bootleg) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give )",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Green Beret (bootleg) | [FBNeo] This romset is known but marked as not working | [FBNeo] One)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/gg-bios": {
    "jeu": "gg-bios",
    "systeme": "neogeo",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/ggxx": {
    "jeu": "ggxx",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/ggxxac": {
    "jeu": "ggxxac",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/ggxxrl": {
    "jeu": "ggxxrl",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/ggxxsla": {
    "jeu": "ggxxsla",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/ghostbi": {
    "jeu": "ghostbi",
    "systeme": "fbneo",
    "raison": "pilote plante (code -11)",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/gladmort": {
    "jeu": "gladmort",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/glass": {
    "jeu": "glass",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0xd9f075a2 and name c1.bin from archive /mnt/roms/fbneo/glass | [FBNeo] Using ROM with known crc 0x47c9df4c and name glass_ds50)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0xd9f075a2 and name c1.bin from archive /mnt/roms/fbneo/glass | [FBNeo] Using ROM with )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/glasskr": {
    "jeu": "glasskr",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0xd9f075a2 and name c1.bin from archive /mnt/roms/fbneo/glass | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0xd9f075a2 and name c1.bin from archive /mnt/roms/fbneo/glass | [FBNeo] ROM at index %d)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/gollygho": {
    "jeu": "gollygho",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Golly! Ghost! | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give it a try)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Golly! Ghost! | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/gowcaiet": {
    "jeu": "gowcaiet",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0xc63b9285 and name 094-v3.v3 from archive /mnt/roms/fbneo/gowcaizr | DIPSWITCH Neo Geo Mode selected => NeoSystem: 0x%02x. | [)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0xc63b9285 and name 094-v3.v3 from archive /mnt/roms/fbneo/gowcaizr | DIPSWITCH Neo Geo)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/grdiands": {
    "jeu": "grdiands",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/grdianke": {
    "jeu": "grdianke",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/grdianls": {
    "jeu": "grdianls",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/grdiansl": {
    "jeu": "grdiansl",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0xcf0f3017 and name u32.bin from archive /mnt/roms/fbneo/grdians | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is requi)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0xcf0f3017 and name u32.bin from archive /mnt/roms/fbneo/grdians | [FBNeo] ROM at index)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/grdiansy": {
    "jeu": "grdiansy",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/gtg2j": {
    "jeu": "gtg2j",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/gulfwar2a": {
    "jeu": "gulfwar2a",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Driver successfully started | [FBNeo] Unknown device type for port 0, forcing \"Classic\" instead | [FBNeo] Unknown device type for port 1, forcing \"Class)",
-   "le": "2026-09-23"
+   "raison": "jeu inanime",
+   "le": "2026-09-25"
   },
   "finalburn-neo/gunbuletj": {
    "jeu": "gunbuletj",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/gundmgd": {
    "jeu": "gundmgd",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/gundmxgd": {
    "jeu": "gundmxgd",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/gwingj": {
    "jeu": "gwingj",
    "systeme": "fba",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/hachamf": {
    "jeu": "hachamf",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Hacha Mecha Fighter (19th Sep. 1991, protected, set 1) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Hacha Mecha Fighter (19th Sep. 1991, protected, set 1) | [FBNeo] This romset is known but ma)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/hachamfa": {
    "jeu": "hachamfa",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Hacha Mecha Fighter (19th Sep. 1991, protected, set 2) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Hacha Mecha Fighter (19th Sep. 1991, protected, set 2) | [FBNeo] This romset is known but ma)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/headonsa": {
    "jeu": "headonsa",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Head On (Sidam bootleg, set 2) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so ma)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Head On (Sidam bootleg, set 2) | [FBNeo] This romset is known but marked as not working | [F)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/hero": {
    "jeu": "hero",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Hero | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give it a try)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Hero | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones mi)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/hiimpact": {
    "jeu": "hiimpact",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/hiimpact1": {
    "jeu": "hiimpact1",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/hiimpact2": {
    "jeu": "hiimpact2",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/hiimpact3": {
    "jeu": "hiimpact3",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/hiimpact4": {
    "jeu": "hiimpact4",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/hiimpactp": {
    "jeu": "hiimpactp",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/hipoly": {
    "jeu": "hipoly",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Hipoly (bootleg of Hyper Olympic) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Hipoly (bootleg of Hyper Olympic) | [FBNeo] This romset is known but marked as not working |)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/hishouza": {
    "jeu": "hishouza",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0xbc88cced and name b02-22.c21 from archive /mnt/roms/fbneo/fshark | [FBNeo] Using ROM with known crc 0x4fb5df2a and name b02-2)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0xbc88cced and name b02-22.c21 from archive /mnt/roms/fbneo/fshark | [FBNeo] Using ROM )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/hod2bios": {
    "core": "FinalBurn Neo",
@@ -1590,1640 +1590,1640 @@
   "finalburn-neo/hookjy": {
    "jeu": "hookjy",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0x3f336904 and name m92_d-3p-.ic29 from archive /mnt/roms/fbneo/hook | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is r)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0x3f336904 and name m92_d-3p-.ic29 from archive /mnt/roms/fbneo/hook | [FBNeo] ROM at i)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/hookxx": {
    "jeu": "hookxx",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0x3f336904 and name m92_d-3p-.ic29 from archive /mnt/roms/fbneo/hook | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is r)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0x3f336904 and name m92_d-3p-.ic29 from archive /mnt/roms/fbneo/hook | [FBNeo] ROM at i)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/hunchbak": {
    "jeu": "hunchbak",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Hunchback (set 1) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give it a)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Hunchback (set 1) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/huncholy": {
    "jeu": "huncholy",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Hunchback Olympic | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give it a)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Hunchback Olympic | [FBNeo] This romset is known but marked as not working | [FBNeo] One of )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/hypersptb": {
    "jeu": "hypersptb",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Hyper Sports (bootleg) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Hyper Sports (bootleg) | [FBNeo] This romset is known but marked as not working | [FBNeo] On)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/hyprolymb": {
    "jeu": "hyprolymb",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Hyper Olympic (bootleg, set 1) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so ma)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Hyper Olympic (bootleg, set 1) | [FBNeo] This romset is known but marked as not working | [F)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/hyprolymba": {
    "jeu": "hyprolymba",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Hyper Olympic (bootleg, set 2) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so ma)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Hyper Olympic (bootleg, set 2) | [FBNeo] This romset is known but marked as not working | [F)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/ichirjbl": {
    "jeu": "ichirjbl",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/ikaruga": {
    "jeu": "ikaruga",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/ironclad": {
    "jeu": "ironclad",
    "systeme": "neogeo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0x5a86cff2 and name 000-lo.lo from archive /mnt/roms/neogeo/neogeo | DIPSWITCH Neo Geo Mode selected => NeoSystem: 0x%02x. | [F)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0x5a86cff2 and name 000-lo.lo from archive /mnt/roms/neogeo/neogeo | DIPSWITCH Neo Geo )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/ironclado": {
    "jeu": "ironclado",
    "systeme": "fbneo",
    "raison": "pilote plante (code -11)",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/isgsm": {
    "jeu": "isgsm",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset name: isgsm | [FBNeo] Romset description: ISG Selection Master Type 2006 System BIOS | [FBNeo] Bioses aren't meant to be launched this way)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset name: isgsm | [FBNeo] Romset description: ISG Selection Master Type 2006 System BIOS | [FBNeo] Bioses are)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/ixion": {
    "jeu": "ixion",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Ixion (prototype) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give it a)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Ixion (prototype) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/jingystm": {
    "jeu": "jingystm",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/jongpute": {
    "jeu": "jongpute",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Jongputer | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give it a try)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Jongputer | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clon)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/joust": {
    "jeu": "joust",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/joustr": {
    "jeu": "joustr",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/jousty": {
    "jeu": "jousty",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/karous": {
    "jeu": "karous",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/keyboard": {
    "jeu": "keyboard",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/kf2k1pkz": {
    "jeu": "kf2k1pkz",
    "systeme": "fbneo",
    "raison": "pilote plante (code -11)",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/kf2k1ult": {
    "jeu": "kf2k1ult",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/kf2k23rd": {
    "jeu": "kf2k23rd",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/kf2k2ps2": {
    "jeu": "kf2k2ps2",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/kf2k3ps2": {
    "jeu": "kf2k3ps2",
    "systeme": "fbneo",
    "raison": "pilote plante (code -11)",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/kickball": {
    "jeu": "kickball",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Kick Ball | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give it a try)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Kick Ball | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clon)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/killbld": {
    "jeu": "killbld",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/killbld100": {
    "jeu": "killbld100",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/killbld104": {
    "jeu": "killbld104",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/killbld106": {
    "jeu": "killbld106",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/killbld109": {
    "jeu": "killbld109",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/killbldjq": {
    "jeu": "killbldjq",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/killbldqy": {
    "jeu": "killbldqy",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/knightsb3": {
    "jeu": "knightsb3",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Knights of the Round (bootleg with 2xMSM5205, set 2) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its c)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Knights of the Round (bootleg with 2xMSM5205, set 2) | [FBNeo] This romset is known but mark)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/kodly": {
    "jeu": "kodly",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/kodlys": {
    "jeu": "kodlys",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/kodyh": {
    "jeu": "kodyh",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/kof2002m": {
    "jeu": "kof2002m",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/kof2k1bs": {
    "jeu": "kof2k1bs",
    "systeme": "fbneo",
    "raison": "pilote plante (code -11)",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/kof95jq": {
    "jeu": "kof95jq",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/kof96ae": {
    "jeu": "kof96ae",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/kof97bs": {
    "jeu": "kof97bs",
    "systeme": "fbneo",
    "raison": "pilote plante (code -11)",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/kof97inv": {
    "jeu": "kof97inv",
    "systeme": "fbneo",
    "raison": "pilote plante (code -11)",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/kof97plc": {
    "jeu": "kof97plc",
    "systeme": "fbneo",
    "raison": "pilote plante (code -11)",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/kof97pm": {
    "jeu": "kof97pm",
    "systeme": "fbneo",
    "raison": "pilote plante (code -11)",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/kof98bsc": {
    "jeu": "kof98bsc",
    "systeme": "fbneo",
    "raison": "pilote plante (code -11)",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/kof98cb": {
    "jeu": "kof98cb",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/kof98eck": {
    "jeu": "kof98eck",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/kof98plc": {
    "jeu": "kof98plc",
    "systeme": "fbneo",
    "raison": "pilote plante (code -11)",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/kof98rat": {
    "jeu": "kof98rat",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/kof99jq": {
    "jeu": "kof99jq",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/kof99sk": {
    "jeu": "kof99sk",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/kontest": {
    "jeu": "kontest",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/kram": {
    "jeu": "kram",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/krama": {
    "jeu": "krama",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/kurucham": {
    "jeu": "kurucham",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/lastblsp": {
    "jeu": "lastblsp",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/legionj2": {
    "jeu": "legionj2",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Chouji Meikyuu Legion (Japan ver 1.05, set 2) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones m)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Chouji Meikyuu Legion (Japan ver 1.05, set 2) | [FBNeo] This romset is known but marked as n)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/legofair": {
    "jeu": "legofair",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/lghost": {
    "jeu": "lghost",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/lghostd": {
    "jeu": "lghostd",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/lghostj": {
    "jeu": "lghostj",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/lghostu": {
    "jeu": "lghostu",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/lghostud": {
    "jeu": "lghostud",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/loffirej": {
    "jeu": "loffirej",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/loffirejd": {
    "jeu": "loffirejd",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/loht_ms": {
    "jeu": "loht_ms",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Legend of Hero Tonma (Gaelco bootleg, Modular System) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its )",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Legend of Hero Tonma (Gaelco bootleg, Modular System) | [FBNeo] This romset is known but mar)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/lottofun": {
    "jeu": "lottofun",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/luctoday": {
    "jeu": "luctoday",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/lunarba1": {
    "jeu": "lunarba1",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/lupinsho": {
    "jeu": "lupinsho",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/luptype": {
    "jeu": "luptype",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/magdrop": {
    "jeu": "magdrop",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/magdropp": {
    "jeu": "magdropp",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/mariobl": {
    "jeu": "mariobl",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0x7b58c92e and name mbjba-2.3ls from archive /mnt/roms/fbneo/mariobl | [FBNeo] Using ROM with known crc 0xc772cb8f and name mbj)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0x7b58c92e and name mbjba-2.3ls from archive /mnt/roms/fbneo/mariobl | [FBNeo] Using RO)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/meikyuhbl": {
    "jeu": "meikyuhbl",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0xcc16f3fa and name 82s137.10d from archive /mnt/roms/fbneo/meikyuhbl | [FBNeo] Using ROM with known crc 0x28e9ced9 and name dw)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0xcc16f3fa and name 82s137.10d from archive /mnt/roms/fbneo/meikyuhbl | [FBNeo] Using R)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/meltyb": {
    "jeu": "meltyb",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/meltybld": {
    "jeu": "meltybld",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/midssio": {
    "jeu": "midssio",
    "systeme": "fbneo",
    "raison": "pilote plante (code -11)",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/mj1": {
    "jeu": "mj1",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/mk3r20": {
    "jeu": "mk3r20",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/mkyturbo": {
    "jeu": "mkyturbo",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/moeru": {
    "jeu": "moeru",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/mok": {
    "jeu": "mok",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/monkeyba": {
    "jeu": "monkeyba",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/ms21v2": {
    "jeu": "ms21v2",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/mslug2ct": {
    "jeu": "mslug2ct",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/mslug2dg": {
    "jeu": "mslug2dg",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/mslug3cq": {
    "jeu": "mslug3cq",
    "systeme": "fbneo",
-   "raison": "rom refusee (DIPSWITCH Neo Geo Mode selected => NeoSystem: 0x%02x. | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s a)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat (DIPSWITCH Neo Geo Mode selected => NeoSystem: 0x%02x. | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/mslug3cqi": {
    "jeu": "mslug3cqi",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/mslug3x": {
    "jeu": "mslug3x",
    "systeme": "fbneo",
    "raison": "pilote plante (code -11)",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/mslug5cq": {
    "jeu": "mslug5cq",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/mslug5es": {
    "jeu": "mslug5es",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0x5a86cff2 and name 000-lo.lo from archive /mnt/roms/fbneo/neogeo | DIPSWITCH Neo Geo Mode selected => NeoSystem: 0x%02x. | [FB)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0x5a86cff2 and name 000-lo.lo from archive /mnt/roms/fbneo/neogeo | DIPSWITCH Neo Geo M)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/mslugfc2": {
    "jeu": "mslugfc2",
    "systeme": "fbneo",
-   "raison": "rom refusee (DIPSWITCH Neo Geo Mode selected => NeoSystem: 0x%02x. | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s a)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat (DIPSWITCH Neo Geo Mode selected => NeoSystem: 0x%02x. | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/mslugqy": {
    "jeu": "mslugqy",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0x472cf9db and name 201-v2.v2 from archive /mnt/roms/fbneo/mslug | DIPSWITCH Neo Geo Mode selected => NeoSystem: 0x%02x. | [FBN)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0x472cf9db and name 201-v2.v2 from archive /mnt/roms/fbneo/mslug | DIPSWITCH Neo Geo Mo)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/mslugxcq": {
    "jeu": "mslugxcq",
    "systeme": "fbneo",
-   "raison": "rom refusee (DIPSWITCH Neo Geo Mode selected => NeoSystem: 0x%02x. | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s a)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat (DIPSWITCH Neo Geo Mode selected => NeoSystem: 0x%02x. | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/mslugxcqi": {
    "jeu": "mslugxcqi",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/namcoc69": {
    "jeu": "namcoc69",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Namco C69 (M37702) (Bios) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe g)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Namco C69 (M37702) (Bios) | [FBNeo] This romset is known but marked as not working | [FBNeo])",
+   "le": "2026-09-25"
   },
   "finalburn-neo/namcoc70": {
    "jeu": "namcoc70",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Namco C70 (M37702) (Bios) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe g)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Namco C70 (M37702) (Bios) | [FBNeo] This romset is known but marked as not working | [FBNeo])",
+   "le": "2026-09-25"
   },
   "finalburn-neo/namcoc75": {
    "jeu": "namcoc75",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Namco C75 (M37702) (Bios) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe g)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Namco C75 (M37702) (Bios) | [FBNeo] This romset is known but marked as not working | [FBNeo])",
+   "le": "2026-09-25"
   },
   "finalburn-neo/naomigd": {
    "jeu": "naomigd",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/nbajamp2": {
    "jeu": "nbajamp2",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/nblktiger": {
    "jeu": "nblktiger",
    "systeme": "fbneo",
    "raison": "pilote plante (code -11)",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/ndcfboxa": {
    "jeu": "ndcfboxa",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/neo2500": {
    "jeu": "neo2500",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/neocdz": {
    "jeu": "neocdz",
-   "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] Romset name: neocdz | [FBNeo] Romset description: Neo Geo CDZ system | [FBNeo] You need a disc image to launch neogeo CD)",
-   "le": "2026-09-23"
+   "systeme": "fbneo",
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset name: neocdz | [FBNeo] Romset description: Neo Geo CDZ system | [FBNeo] You need a disc image to launch n)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/neodemo": {
    "jeu": "neodemo",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/neogeo": {
    "jeu": "neogeo",
-   "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] Romset description: Neo Geo | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give it a try)",
-   "le": "2026-09-23"
+   "systeme": "fbneo",
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Neo Geo | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/neothndr": {
    "jeu": "neothndr",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/neoww2": {
    "jeu": "neoww2",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/ngdup23a": {
    "jeu": "ngdup23a",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/ngdup23c": {
    "jeu": "ngdup23c",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/ngdup23e": {
    "jeu": "ngdup23e",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/ninclown": {
    "jeu": "ninclown",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/nmk004": {
    "jeu": "nmk004",
    "systeme": "fbneo",
    "raison": "pilote plante (code -11)",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/nsmb": {
    "jeu": "nsmb",
    "systeme": "fbneo",
    "raison": "pilote plante (code -11)",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/pacminer": {
    "jeu": "pacminer",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/pgm": {
    "jeu": "pgm",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: PGM (Polygame Master) System BIOS | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: PGM (Polygame Master) System BIOS | [FBNeo] This romset is known but marked as not working |)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/pgmdemo": {
    "jeu": "pgmdemo",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Driver successfully started | [FBNeo] Unknown device type for port 0, forcing \"Classic\" instead | [FBNeo] Unknown device type for port 1, forcing \"Class)",
-   "le": "2026-09-23"
+   "raison": "jeu inanime",
+   "le": "2026-09-25"
   },
   "finalburn-neo/pgmfrog": {
    "jeu": "pgmfrog",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/phoenixi": {
    "jeu": "phoenixi",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Phoenix (IDI bootleg) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give )",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Phoenix (IDI bootleg) | [FBNeo] This romset is known but marked as not working | [FBNeo] One)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/pitnrun": {
    "jeu": "pitnrun",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Driver successfully started | [FBNeo] Unknown device type for port 0, forcing \"Classic\" instead | [FBNeo] Unknown device type for port 1, forcing \"Class)",
-   "le": "2026-09-23"
+   "raison": "jeu inanime",
+   "le": "2026-09-25"
   },
   "finalburn-neo/pitnruna": {
    "jeu": "pitnruna",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Driver successfully started | [FBNeo] Unknown device type for port 0, forcing \"Classic\" instead | [FBNeo] Unknown device type for port 1, forcing \"Class)",
-   "le": "2026-09-23"
+   "raison": "jeu inanime",
+   "le": "2026-09-25"
   },
   "finalburn-neo/pitnrunb": {
    "jeu": "pitnrunb",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Driver successfully started | [FBNeo] Unknown device type for port 0, forcing \"Classic\" instead | [FBNeo] Unknown device type for port 1, forcing \"Class)",
-   "le": "2026-09-23"
+   "raison": "jeu inanime",
+   "le": "2026-09-25"
   },
   "finalburn-neo/poittoc": {
    "jeu": "poittoc",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Poitto! (revision C) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give i)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Poitto! (revision C) | [FBNeo] This romset is known but marked as not working | [FBNeo] One )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/popeyebl": {
    "jeu": "popeyebl",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Popeye (bootleg set 1) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Popeye (bootleg set 1) | [FBNeo] This romset is known but marked as not working | [FBNeo] On)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/powerinsc": {
    "jeu": "powerinsc",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Power Instinct (USA, bootleg set 3) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work )",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Power Instinct (USA, bootleg set 3) | [FBNeo] This romset is known but marked as not working)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/psyvar2": {
    "jeu": "psyvar2",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/punishrj": {
    "jeu": "punishrj",
    "systeme": "fba",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/punishru": {
    "jeu": "punishru",
    "systeme": "fba",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/puyofev": {
    "jeu": "puyofev",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/puyofevp": {
    "jeu": "puyofevp",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/qadj": {
    "jeu": "qadj",
    "systeme": "fba",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/qix": {
    "jeu": "qix",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/qix2": {
    "jeu": "qix2",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/qixa": {
    "jeu": "qixa",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/qixb": {
    "jeu": "qixb",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/qixo": {
    "jeu": "qixo",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/qtono2": {
    "jeu": "qtono2",
    "systeme": "fba",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/quizqgd": {
    "jeu": "quizqgd",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/radirgy": {
    "jeu": "radirgy",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/raiders5": {
    "jeu": "raiders5",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Driver successfully started | [FBNeo] Unknown device type for port 0, forcing \"Classic\" instead | [FBNeo] Unknown device type for port 1, forcing \"Class)",
-   "le": "2026-09-23"
+   "raison": "jeu inanime",
+   "le": "2026-09-25"
   },
   "finalburn-neo/raiders5t": {
    "jeu": "raiders5t",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Driver successfully started | [FBNeo] Unknown device type for port 0, forcing \"Classic\" instead | [FBNeo] Unknown device type for port 1, forcing \"Class)",
-   "le": "2026-09-23"
+   "raison": "jeu inanime",
+   "le": "2026-09-25"
   },
   "finalburn-neo/raiders5ta": {
    "jeu": "raiders5ta",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Driver successfully started | [FBNeo] Unknown device type for port 0, forcing \"Classic\" instead | [FBNeo] Unknown device type for port 1, forcing \"Class)",
-   "le": "2026-09-23"
+   "raison": "jeu inanime",
+   "le": "2026-09-25"
   },
   "finalburn-neo/razmataz": {
    "jeu": "razmataz",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Razzmatazz | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give it a try)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Razzmatazz | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clo)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/revenger": {
    "jeu": "revenger",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Revenger '84 (older) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give i)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Revenger '84 (older) | [FBNeo] This romset is known but marked as not working | [FBNeo] One )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/robocopi": {
    "jeu": "robocopi",
    "systeme": "fbneo",
    "raison": "pilote plante (code -11)",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/robotron": {
    "jeu": "robotron",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/robotron12": {
    "jeu": "robotron12",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/robotron87": {
    "jeu": "robotron87",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/robotrontd": {
    "jeu": "robotrontd",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/robotronun": {
    "jeu": "robotronun",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/robotronyo": {
    "jeu": "robotronyo",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/sailmnhy": {
    "jeu": "sailmnhy",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0x0f2901b9 and name bpsm.u47 from archive /mnt/roms/fbneo/sailormn | [FBNeo] Using ROM with known crc 0x59a7dc50 and name sailo)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0x0f2901b9 and name bpsm.u47 from archive /mnt/roms/fbneo/sailormn | [FBNeo] Using ROM )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/sailmnsl": {
    "jeu": "sailmnsl",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0x0f2901b9 and name bpsm.u47 from archive /mnt/roms/fbneo/sailormn | [FBNeo] Using ROM with known crc 0x59a7dc50 and name sailo)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0x0f2901b9 and name bpsm.u47 from archive /mnt/roms/fbneo/sailormn | [FBNeo] Using ROM )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/sailmnxy": {
    "jeu": "sailmnxy",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0x0f2901b9 and name bpsm.u47 from archive /mnt/roms/fbneo/sailormn | [FBNeo] Using ROM with known crc 0x59a7dc50 and name sailo)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0x0f2901b9 and name bpsm.u47 from archive /mnt/roms/fbneo/sailormn | [FBNeo] Using ROM )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/sailmnyh": {
    "jeu": "sailmnyh",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0x0f2901b9 and name bpsm.u47 from archive /mnt/roms/fbneo/sailormn | [FBNeo] Using ROM with known crc 0x59a7dc50 and name sailo)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0x0f2901b9 and name bpsm.u47 from archive /mnt/roms/fbneo/sailormn | [FBNeo] Using ROM )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/sailormo": {
    "jeu": "sailormo",
    "systeme": "fba",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/samsho2pe": {
    "jeu": "samsho2pe",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/sbm": {
    "jeu": "sbm",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Sonic Blast Man (US) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give i)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Sonic Blast Man (US) | [FBNeo] This romset is known but marked as not working | [FBNeo] One )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/sbmj": {
    "jeu": "sbmj",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Sonic Blast Man (Japan) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe giv)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Sonic Blast Man (Japan) | [FBNeo] This romset is known but marked as not working | [FBNeo] O)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/sdungeon": {
    "jeu": "sdungeon",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/sdungeona": {
    "jeu": "sdungeona",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/sectrzon": {
    "jeu": "sectrzon",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0xe1a6a86d and name pal16h2.3b from archive /mnt/roms/fbneo/seicross | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is r)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0xe1a6a86d and name pal16h2.3b from archive /mnt/roms/fbneo/seicross | [FBNeo] ROM at i)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/sectrzona": {
    "jeu": "sectrzona",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/sectrzont": {
    "jeu": "sectrzont",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Sector Zone (bootleg) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give )",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Sector Zone (bootleg) | [FBNeo] This romset is known but marked as not working | [FBNeo] One)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/seganinja": {
    "jeu": "seganinja",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Sega Ninja (315-5113) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give )",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Sega Ninja (315-5113) | [FBNeo] This romset is known but marked as not working | [FBNeo] One)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/sengk3fs": {
    "jeu": "sengk3fs",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/senko": {
    "jeu": "senko",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/senkoo": {
    "jeu": "senkoo",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/senkosp": {
    "jeu": "senkosp",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/sf2amf12": {
    "jeu": "sf2amf12",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/sf2cej": {
    "jeu": "sf2cej",
    "systeme": "fba",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/sf2t": {
    "jeu": "sf2t",
    "systeme": "fba",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/sf2tj": {
    "jeu": "sf2tj",
    "systeme": "fba",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/sfa3r1": {
    "jeu": "sfa3r1",
    "systeme": "fba",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/sfz2aa": {
    "jeu": "sfz2aa",
    "systeme": "fba",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/sfz2aj": {
    "jeu": "sfz2aj",
    "systeme": "fba",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/sfz3mix": {
    "jeu": "sfz3mix",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0x2cf772b0 and name phoenix.key from archive /mnt/roms/fbneo/sfz3mix | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is r)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0x2cf772b0 and name phoenix.key from archive /mnt/roms/fbneo/sfz3mix | [FBNeo] ROM at i)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/sfz3ugd": {
    "jeu": "sfz3ugd",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/shaktam": {
    "jeu": "shaktam",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/shaktamb": {
    "jeu": "shaktamb",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/shaktmsp": {
    "jeu": "shaktmsp",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/shikgam2": {
    "jeu": "shikgam2",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/showdown4": {
    "jeu": "showdown4",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Showdown (version 4.0) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Showdown (version 4.0) | [FBNeo] This romset is known but marked as not working | [FBNeo] On)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/shtriderb": {
    "jeu": "shtriderb",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Shot Rider (bootleg) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give i)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Shot Rider (bootleg) | [FBNeo] This romset is known but marked as not working | [FBNeo] One )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/sinistar": {
    "jeu": "sinistar",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/sinistar2": {
    "jeu": "sinistar2",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/sinistarc": {
    "jeu": "sinistarc",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/sinistarc2": {
    "jeu": "sinistarc2",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/sinistarcsm": {
    "jeu": "sinistarcsm",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/sinistarp": {
    "jeu": "sinistarp",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/sinistarsm": {
    "jeu": "sinistarsm",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/sisv1": {
    "jeu": "sisv1",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Space Invaders (SV Version rev 1) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Space Invaders (SV Version rev 1) | [FBNeo] This romset is known but marked as not working |)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/skns": {
    "jeu": "skns",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Super Kaneko Nova System BIOS | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so may)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Super Kaneko Nova System BIOS | [FBNeo] This romset is known but marked as not working | [FB)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/skywolf3": {
    "jeu": "skywolf3",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/slammasu": {
    "jeu": "slammasu",
    "systeme": "fba",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/slampic2": {
    "jeu": "slampic2",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Saturday Night Slam Masters (bootleg with PIC16C57, set 2) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Saturday Night Slam Masters (bootleg with PIC16C57, set 2) | [FBNeo] This romset is known bu)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/slashout": {
    "jeu": "slashout",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/spdball": {
    "jeu": "spdball",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/spidermi": {
    "jeu": "spidermi",
    "systeme": "fbneo",
    "raison": "pilote plante (code -11)",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/spkrbtl": {
    "jeu": "spkrbtl",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/splash": {
    "jeu": "splash",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0xfebb9893 and name splash_10.i13 from archive /mnt/roms/fbneo/splash | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is )",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0xfebb9893 and name splash_10.i13 from archive /mnt/roms/fbneo/splash | [FBNeo] ROM at )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/splat": {
    "jeu": "splat",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/sprtjam": {
    "jeu": "sprtjam",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/ss2005": {
    "jeu": "ss2005",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/ssf2tbh": {
    "jeu": "ssf2tbh",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/ssf2tbj": {
    "jeu": "ssf2tbj",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/ssf2tbj1": {
    "jeu": "ssf2tbj1",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/ssf2tbr1": {
    "jeu": "ssf2tbr1",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/ssf2tbu": {
    "jeu": "ssf2tbu",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/sspirtfc": {
    "jeu": "sspirtfc",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Scramble Spirits (World, Floppy Based, FD1094 317-0058-02c) | [FBNeo] This romset is known but marked as not working | [FBNeo] One o)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Scramble Spirits (World, Floppy Based, FD1094 317-0058-02c) | [FBNeo] This romset is known b)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/stadhr96j2": {
    "jeu": "stadhr96j2",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Stadium Hero '96 (Japan?, EAE) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so ma)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Stadium Hero '96 (Japan?, EAE) | [FBNeo] This romset is known but marked as not working | [F)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/stadhr96k": {
    "jeu": "stadhr96k",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/starforcb": {
    "jeu": "starforcb",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Star Force (encrypted, bootleg) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so m)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Star Force (encrypted, bootleg) | [FBNeo] This romset is known but marked as not working | [)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/stargate": {
    "jeu": "stargate",
    "systeme": "fbneo",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/starseek": {
    "jeu": "starseek",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/stridrja": {
    "jeu": "stridrja",
    "systeme": "fba",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/syscheck": {
    "jeu": "syscheck",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/takoron": {
    "jeu": "takoron",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/tdfever": {
    "jeu": "tdfever",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: TouchDown Fever (US) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give i)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: TouchDown Fever (US) | [FBNeo] This romset is known but marked as not working | [FBNeo] One )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/tdfever2": {
    "jeu": "tdfever2",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: TouchDown Fever 2 | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give it a)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: TouchDown Fever 2 | [FBNeo] This romset is known but marked as not working | [FBNeo] One of )",
+   "le": "2026-09-25"
   },
   "finalburn-neo/tdfever2b": {
    "jeu": "tdfever2b",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: TouchDown Fever 2 (bootleg) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: TouchDown Fever 2 (bootleg) | [FBNeo] This romset is known but marked as not working | [FBNe)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/tdfeverj": {
    "jeu": "tdfeverj",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: TouchDown Fever (Japan) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe giv)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: TouchDown Fever (Japan) | [FBNeo] This romset is known but marked as not working | [FBNeo] O)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/teot": {
    "jeu": "teot",
    "systeme": "fbneo",
    "raison": "pilote plante (code -11)",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/test240p": {
    "jeu": "test240p",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/tetkiwam": {
    "jeu": "tetkiwam",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/tmnti": {
    "jeu": "tmnti",
    "systeme": "fbneo",
    "raison": "pilote plante (code -11)",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/tmntia": {
    "jeu": "tmntia",
    "systeme": "fbneo",
    "raison": "pilote plante (code -11)",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/topsecex": {
    "jeu": "topsecex",
    "systeme": "fbneo",
    "raison": "candidats non confirmes",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/tornado1": {
    "jeu": "tornado1",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Tornado (bootleg of Defender, set 1) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Tornado (bootleg of Defender, set 1) | [FBNeo] This romset is known but marked as not workin)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/trgheart": {
    "jeu": "trgheart",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/trizeal": {
    "jeu": "trizeal",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/tws96": {
    "jeu": "tws96",
    "systeme": "neogeo",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/umk3": {
    "jeu": "umk3",
    "systeme": "neogeo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/umk3p": {
    "jeu": "umk3p",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/umk3r10": {
    "jeu": "umk3r10",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/umk3r11": {
    "jeu": "umk3r11",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/umk3te": {
    "jeu": "umk3te",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/undefeat": {
    "jeu": "undefeat",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/uni-bios-32": {
    "jeu": "uni-bios-32",
    "systeme": "neogeo",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/uni-bioscd-32": {
    "jeu": "uni-bioscd-32",
    "systeme": "neogeo",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/usagiym": {
    "jeu": "usagiym",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/valkyrie": {
    "jeu": "valkyrie",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0xf1ace193 and name wd1voi1.bin from archive /mnt/roms/fbneo/valkyrie | [FBNeo] Using ROM with known crc 0xe95c5cf3 and name wd)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0xf1ace193 and name wd1voi1.bin from archive /mnt/roms/fbneo/valkyrie | [FBNeo] Using R)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/vathlete": {
    "jeu": "vathlete",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/vathletep": {
    "jeu": "vathletep",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/vtennis2": {
    "jeu": "vtennis2",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/vtennisg": {
    "jeu": "vtennisg",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/wbbc97": {
    "jeu": "wbbc97",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Beach Festival World Championship 1997 | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might wo)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Beach Festival World Championship 1997 | [FBNeo] This romset is known but marked as not work)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/wccf116": {
    "jeu": "wccf116",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/wccf1dup": {
    "jeu": "wccf1dup",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/wccf212e": {
    "jeu": "wccf212e",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/wccf234j": {
    "jeu": "wccf234j",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/wccf310j": {
    "jeu": "wccf310j",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/wccf322e": {
    "jeu": "wccf322e",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/wccf341j": {
    "jeu": "wccf341j",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/wccf400j": {
    "jeu": "wccf400j",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/wccf420e": {
    "jeu": "wccf420e",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/wizzquiz": {
    "jeu": "wizzquiz",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Wizz Quiz (Konami version) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe )",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Wizz Quiz (Konami version) | [FBNeo] This romset is known but marked as not working | [FBNeo)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/wizzquiza": {
    "jeu": "wizzquiza",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Wizz Quiz (version 4) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give )",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Wizz Quiz (version 4) | [FBNeo] This romset is known but marked as not working | [FBNeo] One)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/wofdr20": {
    "jeu": "wofdr20",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Using ROM with known crc 0x6619c494 and name d10f1.10f from archive /mnt/roms/fbneo/wof | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is require)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0x6619c494 and name d10f1.10f from archive /mnt/roms/fbneo/wof | [FBNeo] ROM at index %)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/wsbbgd": {
    "jeu": "wsbbgd",
    "systeme": "neogeocd",
-   "raison": "rom refusee ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/system | Setting system dir to /root/.conf)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/ym2608": {
    "jeu": "ym2608",
    "systeme": "fbneo",
    "raison": "pilote plante (code -11)",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/zero": {
    "jeu": "zero",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Zero (bootleg of Defender, set 1) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Zero (bootleg of Defender, set 1) | [FBNeo] This romset is known but marked as not working |)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/zero2": {
    "jeu": "zero2",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] Romset description: Zero (bootleg of Defender, set 2) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Zero (bootleg of Defender, set 2) | [FBNeo] This romset is known but marked as not working |)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/zeroteamsr": {
    "jeu": "zeroteamsr",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/zookeep": {
    "jeu": "zookeep",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/zookeep2": {
    "jeu": "zookeep2",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/zookeep3": {
    "jeu": "zookeep3",
    "systeme": "fbneo",
    "raison": "jeu inanime",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "finalburn-neo/zteamdr": {
    "jeu": "zteamdr",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/zteammm": {
    "jeu": "zteammm",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/zteamym": {
    "jeu": "zteamym",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
+   "le": "2026-09-25"
   },
   "finalburn-neo/zteamys": {
    "jeu": "zteamys",
    "systeme": "fbneo",
-   "raison": "rom refusee ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with)",
-   "le": "2026-09-23"
+   "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
+   "le": "2026-09-25"
   },
   "mame/005": {
    "core": "MAME",
@@ -6642,236 +6642,236 @@
   "mednafen-st-v/decathlto": {
    "jeu": "decathlto",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/dnmtdeka": {
    "jeu": "dnmtdeka",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/magzun": {
    "jeu": "magzun",
    "systeme": "stv",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "mednafen-st-v/nameclub": {
    "jeu": "nameclub",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/nclubdis": {
    "jeu": "nclubdis",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/nclubv2": {
    "jeu": "nclubv2",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/nclubv3": {
    "jeu": "nclubv3",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/nclubv4": {
    "jeu": "nclubv4",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/pclb2elk": {
    "jeu": "pclb2elk",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/pclove": {
    "jeu": "pclove",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/pclove2": {
    "jeu": "pclove2",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/pclub2": {
    "jeu": "pclub2",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/pclub26w": {
    "jeu": "pclub26w",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/pclub26wa": {
    "jeu": "pclub26wa",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/pclub27s": {
    "jeu": "pclub27s",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/pclub2fc": {
    "jeu": "pclub2fc",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/pclub2kc": {
    "jeu": "pclub2kc",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/pclub2pe": {
    "jeu": "pclub2pe",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/pclub2pf": {
    "jeu": "pclub2pf",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/pclub2v3": {
    "jeu": "pclub2v3",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/pclub2wb": {
    "jeu": "pclub2wb",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/pclubol": {
    "jeu": "pclubol",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/pclubor": {
    "jeu": "pclubor",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/pclubpok": {
    "jeu": "pclubpok",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/pclubyo2": {
    "jeu": "pclubyo2",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/pcpooh2": {
    "jeu": "pcpooh2",
    "systeme": "stv",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "mednafen-st-v/pcpooh3": {
    "jeu": "pcpooh3",
    "systeme": "stv",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "mednafen-st-v/prc28su": {
    "jeu": "prc28su",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/prc297wi": {
    "jeu": "prc297wi",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/prc297wia": {
    "jeu": "prc297wia",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/prc298au": {
    "jeu": "prc298au",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/prc298sp": {
    "jeu": "prc298sp",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/prc298su": {
    "jeu": "prc298su",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/sackids": {
    "jeu": "sackids",
    "systeme": "stv",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "mednafen-st-v/stvbios": {
    "jeu": "stvbios",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/tatacot": {
    "jeu": "tatacot",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/twsoc98": {
    "jeu": "twsoc98",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "mednafen-st-v/yattrmnp": {
    "jeu": "yattrmnp",
    "systeme": "stv",
    "raison": "aucun candidat",
-   "le": "2026-09-23"
+   "le": "2026-09-25"
   },
   "mednafen-st-v/znpwfvt": {
    "jeu": "znpwfvt",
    "systeme": "stv",
-   "raison": "rom refusee (%s | %s | %s)",
-   "le": "2026-09-23"
+   "raison": "le coeur refuse la rom (%s | %s | %s)",
+   "le": "2026-09-25"
   },
   "flycast/airlbios": {
    "core": "Flycast",
@@ -7964,12 +7964,12 @@
   },
   "flycast/wwfroyal": {
    "core": "Flycast",
-   "essais": 4,
+   "essais": 5,
    "jeu": "wwfroyal",
    "par": "nuit-credits.py",
    "raison": "candidats non confirmes",
    "systeme": "naomi",
-   "vu_le": "2026-09-24"
+   "vu_le": "2026-09-25"
   },
   "flycast/anmlbskt": {
    "core": "Flycast",
@@ -8603,12 +8603,12 @@
   },
   "flycast/zunou": {
    "core": "Flycast",
-   "essais": 3,
+   "essais": 4,
    "jeu": "zunou",
    "par": "nuit-credits.py",
    "raison": "candidats non confirmes",
    "systeme": "naomi",
-   "vu_le": "2026-09-24"
+   "vu_le": "2026-09-25"
   },
   "flycast/wccf1dup": {
    "core": "Flycast",
@@ -8618,6 +8618,51 @@
    "raison": "jeu inanime",
    "systeme": "naomigd",
    "vu_le": "2026-09-23"
+  },
+  "flycast/clubk2k3": {
+   "core": "Flycast",
+   "essais": 1,
+   "jeu": "clubk2k3",
+   "par": "nuit-credits.py",
+   "raison": "jeu inanime",
+   "systeme": "naomi2",
+   "vu_le": "2026-09-25"
+  },
+  "flycast/clubk2kp": {
+   "core": "Flycast",
+   "essais": 1,
+   "jeu": "clubk2kp",
+   "par": "nuit-credits.py",
+   "raison": "candidats non confirmes",
+   "systeme": "naomi2",
+   "vu_le": "2026-09-25"
+  },
+  "flycast/clubk2kpa": {
+   "core": "Flycast",
+   "essais": 1,
+   "jeu": "clubk2kpa",
+   "par": "nuit-credits.py",
+   "raison": "candidats non confirmes",
+   "systeme": "naomi2",
+   "vu_le": "2026-09-25"
+  },
+  "flycast/clubkcyc": {
+   "core": "Flycast",
+   "essais": 1,
+   "jeu": "clubkcyc",
+   "par": "nuit-credits.py",
+   "raison": "candidats non confirmes",
+   "systeme": "naomi2",
+   "vu_le": "2026-09-25"
+  },
+  "flycast/clubkprz": {
+   "core": "Flycast",
+   "essais": 1,
+   "jeu": "clubkprz",
+   "par": "nuit-credits.py",
+   "raison": "candidats non confirmes",
+   "systeme": "naomi2",
+   "vu_le": "2026-09-25"
   }
  },
  "format": "recalbox-arcade-credits",
@@ -415855,6 +415900,35 @@
     "par": "nuit-credits.py"
    },
    "systeme": "naomi"
+  },
+  "flycast/beachspi": {
+   "core": "Flycast",
+   "credits": {
+    "adresse": 3943065,
+    "adresse_hex": "0x3C2A99",
+    "adresse_j2": null,
+    "adresse_j2_hex": null,
+    "compteur_commun": false,
+    "entree_piece": "select",
+    "j2_verifie_consommation": false,
+    "miroirs": [],
+    "octets": 1,
+    "pieces_observees": 3,
+    "verifie_consommation": false,
+    "verifie_insertion": true
+   },
+   "jeu": "beachspi",
+   "nom": "beachspi",
+   "ram": {
+    "commande": "READ_CORE_RAM",
+    "taille": 16777216
+   },
+   "releve": {
+    "le": "2026-09-25",
+    "methode": "balayage nocturne",
+    "par": "nuit-credits.py"
+   },
+   "systeme": "naomi2"
   }
  },
  "pistes": {

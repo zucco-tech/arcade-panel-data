@@ -1,0 +1,84 @@
+{
+  "description": "Adresse RAM du compteur de credits de chaque jeu de ce systeme, indexee par nom de set. Se lit par l'interface reseau de RetroArch : READ_CORE_RAM <adresse> 1 en UDP sur le port 55355.",
+  "difficiles": {
+    "clubk2k3": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "clubk2k3",
+      "par": "nuit-credits.py",
+      "raison": "jeu inanime",
+      "systeme": "naomi2",
+      "vu_le": "2026-09-25"
+    },
+    "clubk2kp": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "clubk2kp",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi2",
+      "vu_le": "2026-09-25"
+    },
+    "clubk2kpa": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "clubk2kpa",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi2",
+      "vu_le": "2026-09-25"
+    },
+    "clubkcyc": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "clubkcyc",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi2",
+      "vu_le": "2026-09-25"
+    },
+    "clubkprz": {
+      "core": "Flycast",
+      "essais": 1,
+      "jeu": "clubkprz",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "naomi2",
+      "vu_le": "2026-09-25"
+    }
+  },
+  "format": "recalbox-arcade-credits (un fichier par systeme, pour la borne)",
+  "jeux": {
+    "beachspi": {
+      "core": "Flycast",
+      "credits": {
+        "adresse": 3943065,
+        "adresse_hex": "0x3C2A99",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 3,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "beachspi",
+      "nom": "beachspi",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "taille": 16777216
+      },
+      "releve": {
+        "le": "2026-09-25",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "naomi2"
+    }
+  },
+  "systeme": "naomi2",
+  "version": 3
+}

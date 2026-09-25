@@ -266,6 +266,9 @@ def main():
                     "verifie_consommation": fiche.get("consommation", True),
                     "pieces_observees": fiche.get("accords", 0),
                     "entree_piece": fiche.get("piece"), "entree_start": fiche.get("start"),
+                    # Ce que le Lua a remis en mode piece avant de chercher :
+                    # une carte laissee en acces libre ne cree aucun credit.
+                    "dip_imposes": fiche.get("dip") or None,
                     "compteur_commun": False, "adresse_j2": None, "adresse_j2_hex": None,
                     "j2_verifie_consommation": False,
                 },

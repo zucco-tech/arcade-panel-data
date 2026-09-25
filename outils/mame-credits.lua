@@ -411,6 +411,7 @@ ecrire('{"jeu": ' .. texte(mach.system.name)
        .. ', "ram": ' .. total
        .. ', "piece": ' .. texte(nom_piece)
        .. ', "start": ' .. texte(nom_start or "?")
+       .. ', "dip": ' .. texte(table.concat(dip_poses, " "))
        .. ', "consommation": ' .. (sans_preuve and "false" or "true")
        .. (sans_preuve and ', "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement"' or "")
        .. '}')
