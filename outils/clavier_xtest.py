@@ -87,8 +87,8 @@ class ClavierXTest:
     def piece(self):
         self.appuyer(KEY_SHIFT_DROIT)
 
-    def start(self):
-        self.appuyer(KEY_ENTREE)
+    def start(self, duree=None):
+        self.appuyer(KEY_ENTREE, duree or 0.25)
 
     def piece_j2(self):
         self.appuyer(KEY_6)

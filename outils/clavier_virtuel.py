@@ -120,8 +120,8 @@ class ClavierVirtuel:
     def piece(self):
         self.appuyer(KEY_RIGHTSHIFT, self.DUREE_PIECE)
 
-    def start(self):
-        self.appuyer(KEY_ENTER)
+    def start(self, duree=None):
+        self.appuyer(KEY_ENTER, duree or 0.25)
 
     def piece_j2(self):
         self.appuyer(KEY_6, self.DUREE_PIECE)

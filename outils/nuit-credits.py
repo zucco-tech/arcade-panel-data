@@ -1165,6 +1165,30 @@ def traiter(borne, clavier, base, systeme, jeu, arret, journal):
     surs = a_tester & baissiers
     if surs and not (candidats & baissiers):
         journal("  confirme par le START a raison de DEUX pieces par credit")
+
+    # Le START n a rien consomme. Sur bien des cartes ce n est pas lui qui
+    # lance la partie : certaines veulent un appui plus franc, d autres un
+    # bouton de jeu (MAME a ce repli depuis longtemps, pas nous). Un joueur
+    # devant la borne essaierait la meme chose. Constat du 25/09 : a l ecran,
+    # le jeu reclame START et ne demarre pas.
+    if not surs:
+        for nom, agir in (("START tenu 1 s", lambda: clavier.start(1.0)),
+                          ("bouton A", lambda: clavier.bouton("a")),
+                          ("bouton B", lambda: clavier.bouton("b")),
+                          ("bouton X", lambda: clavier.bouton("x"))):
+            arret()
+            avant_bis = {}
+            for a in sorted(a_tester):
+                octet = borne.lire(a, 1)
+                if octet is not None:
+                    avant_bis[a] = octet[0]
+            agir()
+            encore = surveiller_baisse(borne, avant_bis, ATTENTE_START, arret)
+            if encore:
+                journal("  consomme par %s, pas par le START" % nom)
+                surs, baissiers = a_tester & encore, encore
+                break
+
     if not surs:
         if len(candidats) > SANS_CONFIRMATION_MAX:
             journal("  %d candidats, aucun confirme par le START : trop mince"
