@@ -1072,6 +1072,8 @@ def traiter(borne, clavier, base, systeme, jeu, arret, journal):
             return "echec"
 
     pieces = 0
+    candidats2 = None          # ce qui monte toutes les DEUX pieces
+    avant2 = avant             # la photo d il y a deux pieces
     entree_piece = "select"
     for _ in range(PIECES_MAX):
         arret()
@@ -1104,8 +1106,19 @@ def traiter(borne, clavier, base, systeme, jeu, arret, journal):
         if apres is None or len(apres) != len(avant):
             return "echec"
         trouves = {a for a in range(len(apres))
-                   if apres[a] == (avant[a] + 1) & 0xFF and avant[a] < 0x99}
+                   if monte_de_un(avant[a], apres[a])}
         candidats = trouves if candidats is None else candidats & trouves
+        # Des cartes demandent DEUX pieces pour un credit : le compteur ne
+        # monte alors qu une fois sur deux, et la regle ci-dessus ne retient
+        # que le compteur de pieces cumulees — qui ne redescend jamais au
+        # START. C est le symptome des jeux « candidats non confirmes ». On
+        # suit donc en parallele ce qui monte de un toutes les deux pieces.
+        if avant2 is not None and pieces % 2 == 0:
+            deux = {a for a in range(len(apres))
+                    if monte_de_un(avant2[a], apres[a])}
+            candidats2 = deux if candidats2 is None else candidats2 & deux
+        if pieces % 2 == 0:
+            avant2 = apres
         avant = apres
         journal("  piece %d : %d candidat(s)" % (pieces, len(candidats)))
         if not candidats:
@@ -1136,8 +1149,12 @@ def traiter(borne, clavier, base, systeme, jeu, arret, journal):
             avant_start_j2[a] = o[0]
 
     # START consomme un credit : le solde baisse, un total de pieces non.
+    # On soumet au START les deux familles : ce qui monte a chaque piece, et
+    # ce qui ne monte qu une fois sur deux. Seul ce qui redescend sera retenu,
+    # donc elargir ici ne peut pas faire entrer de fausse adresse.
+    a_tester = candidats | (candidats2 or set())
     avant_start = {}
-    for a in sorted(candidats):
+    for a in sorted(a_tester):
         octet = borne.lire(a, 1)
         if octet is not None:
             avant_start[a] = octet[0]
@@ -1145,7 +1162,9 @@ def traiter(borne, clavier, base, systeme, jeu, arret, journal):
     clavier.start()
     baissiers = surveiller_baisse(borne, avant_start, ATTENTE_START, arret)
 
-    surs = candidats & baissiers
+    surs = a_tester & baissiers
+    if surs and not (candidats & baissiers):
+        journal("  confirme par le START a raison de DEUX pieces par credit")
     if not surs:
         if len(candidats) > SANS_CONFIRMATION_MAX:
             journal("  %d candidats, aucun confirme par le START : trop mince"
