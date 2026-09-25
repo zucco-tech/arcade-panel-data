@@ -892,9 +892,28 @@ def montees_depuis(borne, avant, candidats):
     if apres is None or len(apres) != len(avant):
         return None, None
     montes = {a for a in range(len(apres))
-              if apres[a] == (avant[a] + 1) & 0xFF and avant[a] < 0x99}
+              if monte_de_un(avant[a], apres[a])}
     candidats = montes if candidats is None else candidats & montes
     return (candidats or None), apres
+
+def monte_de_un(vieux, neuf):
+    """Un credit de plus, que la carte compte en binaire ou en BCD.
+
+    Beaucoup de cartes d arcade comptent en decimal code binaire : apres 9
+    vient 0x10, pas 0x0A. On ne cherchait que « +1 » : une piece sur dix
+    passait inapercue, et tout compteur deja au-dela de neuf devenait
+    invisible. Le filtre « < 0x99 » qui etait la disait deja que ces
+    compteurs sont en BCD — on ne s en servait pas.
+
+    Un compteur de credits ne depasse pas 99, dans les deux ecritures.
+    """
+    if vieux >= 0x99:
+        return False
+    if neuf == vieux + 1:                       # binaire, et BCD hors retenue
+        return True
+    bas = vieux & 0x0F
+    return bas == 9 and neuf == (vieux & 0xF0) + 0x10      # BCD : 9 -> 10
+
 
 def chercher_avec(borne, appuyer, arret, essais=3, assez=4):
     """Cherche l octet qui monte de 1 a chaque appui sur UNE entree donnee.
