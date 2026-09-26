@@ -152,7 +152,8 @@ ATTENTE_ECRAN_ERREUR = 35.0
 # Au-dela de ce delai, un journal sans « Romset name: » ne peut plus etre un
 # retard d ecriture : le set est vraiment inconnu de ce coeur.
 DELAI_ROMSET_INCONNU = 25.0
-SANS_APPEL = ("RAM non lisible",
+SANS_APPEL = ("le coeur refuse la rom",
+              "RAM non lisible",
               "jeu non supporte par ce coeur",
               "romset incomplet pour cette version",
               "romset inconnu de ce coeur")
@@ -810,8 +811,13 @@ def lancer_avec_reprises(borne, systeme, jeu, chemin, arret, journal):
         # demarrage lent. Deux essais suffisent — quatre font deux minutes
         # de fenetres qui clignotent pour rien.
         if ecran_erreur and essai >= 2:
+            # RetroArch repond, mais aucun contenu n est charge : ni RAM, ni
+            # sauvegarde d etat possible. C est l ecran d erreur de FBNeo, qui
+            # refuse le romset (mesure sur la borne le 26/09 : chopper, chqflag).
+            # Un jeu que l emulateur refuse n est pas jouable sur la borne non
+            # plus : inutile d y revenir a chaque tour.
             borne.arreter_processus()
-            return None
+            return "le coeur refuse la rom"
         if essai < ESSAIS_LANCEMENT:
             journal("  demarrage rate (%s), tentative %d sur %d"
                     % (en_cours[0] if en_cours else "rien mesure",
