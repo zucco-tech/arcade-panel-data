@@ -3,236 +3,236 @@
   "difficiles": {
     "decathlto": {
       "jeu": "decathlto",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "dnmtdeka": {
       "jeu": "dnmtdeka",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "magzun": {
       "jeu": "magzun",
-      "le": "2026-09-22",
+      "le": "2026-09-25",
       "raison": "aucun candidat",
       "systeme": "stv"
     },
     "nameclub": {
       "jeu": "nameclub",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "nclubdis": {
       "jeu": "nclubdis",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "nclubv2": {
       "jeu": "nclubv2",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "nclubv3": {
       "jeu": "nclubv3",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "nclubv4": {
       "jeu": "nclubv4",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "pclb2elk": {
       "jeu": "pclb2elk",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "pclove": {
       "jeu": "pclove",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "pclove2": {
       "jeu": "pclove2",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "pclub2": {
       "jeu": "pclub2",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "pclub26w": {
       "jeu": "pclub26w",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "pclub26wa": {
       "jeu": "pclub26wa",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "pclub27s": {
       "jeu": "pclub27s",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "pclub2fc": {
       "jeu": "pclub2fc",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "pclub2kc": {
       "jeu": "pclub2kc",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "pclub2pe": {
       "jeu": "pclub2pe",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "pclub2pf": {
       "jeu": "pclub2pf",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "pclub2v3": {
       "jeu": "pclub2v3",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "pclub2wb": {
       "jeu": "pclub2wb",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "pclubol": {
       "jeu": "pclubol",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "pclubor": {
       "jeu": "pclubor",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "pclubpok": {
       "jeu": "pclubpok",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "pclubyo2": {
       "jeu": "pclubyo2",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "pcpooh2": {
       "jeu": "pcpooh2",
-      "le": "2026-09-22",
+      "le": "2026-09-25",
       "raison": "aucun candidat",
       "systeme": "stv"
     },
     "pcpooh3": {
       "jeu": "pcpooh3",
-      "le": "2026-09-22",
+      "le": "2026-09-25",
       "raison": "aucun candidat",
       "systeme": "stv"
     },
     "prc28su": {
       "jeu": "prc28su",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "prc297wi": {
       "jeu": "prc297wi",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "prc297wia": {
       "jeu": "prc297wia",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "prc298au": {
       "jeu": "prc298au",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "prc298sp": {
       "jeu": "prc298sp",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "prc298su": {
       "jeu": "prc298su",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "sackids": {
       "jeu": "sackids",
-      "le": "2026-09-22",
+      "le": "2026-09-25",
       "raison": "aucun candidat",
       "systeme": "stv"
     },
     "stvbios": {
       "jeu": "stvbios",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "tatacot": {
       "jeu": "tatacot",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "twsoc98": {
       "jeu": "twsoc98",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     },
     "yattrmnp": {
       "jeu": "yattrmnp",
-      "le": "2026-09-22",
+      "le": "2026-09-25",
       "raison": "aucun candidat",
       "systeme": "stv"
     },
     "znpwfvt": {
       "jeu": "znpwfvt",
-      "le": "2026-09-22",
-      "raison": "rom refusee (%s | %s | %s)",
+      "le": "2026-09-25",
+      "raison": "le coeur refuse la rom (%s | %s | %s)",
       "systeme": "stv"
     }
   },

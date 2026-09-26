@@ -3,489 +3,489 @@
   "difficiles": {
     "cleoftp": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "cleoftp",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-22"
+      "vu_le": "2026-09-25"
     },
     "confmiss": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "confmiss",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "cvs2": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "cvs2",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "cvsgd": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "cvsgd",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "dragntr": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "dragntr",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "dragntr2": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "dragntr2",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "dragntr3": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "dragntr3",
       "par": "nuit-credits.py",
       "raison": "aucun candidat",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "dygolf": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "dygolf",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "dygolfp": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "dygolfp",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "ggxxac": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "ggxxac",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "ggxxsla": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "ggxxsla",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "gundmgd": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "gundmgd",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "gundmxgd": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "gundmxgd",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "keyboard": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "keyboard",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "lupinsho": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "lupinsho",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "luptype": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "luptype",
       "par": "nuit-credits.py",
-      "raison": "aucun candidat",
+      "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "mj1": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "mj1",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "mok": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "mok",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "monkeyba": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "monkeyba",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "naomigd": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "naomigd",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "ndcfboxa": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "ndcfboxa",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "ngdup23a": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "ngdup23a",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "ngdup23c": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "ngdup23c",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "ngdup23e": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "ngdup23e",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "puyofev": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "puyofev",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "senko": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "senko",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "senkoo": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "senkoo",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "senkosp": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "senkosp",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "sfz3ugd": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "sfz3ugd",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "shaktam": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "shaktam",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "shaktamb": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "shaktamb",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "shaktmsp": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "shaktmsp",
       "par": "nuit-credits.py",
-      "raison": "candidats non confirmes",
+      "raison": "aucun candidat",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "slashout": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "slashout",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "spkrbtl": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "spkrbtl",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "sprtjam": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "sprtjam",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "starseek": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "starseek",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "takoron": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "takoron",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "tetkiwam": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "tetkiwam",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "trgheart": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "trgheart",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "undefeat": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "undefeat",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "usagiym": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "usagiym",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "vathletep": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "vathletep",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "vtennis2": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "vtennis2",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "vtennisg": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "vtennisg",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "wccf116": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "wccf116",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "wccf1dup": {
       "core": "Flycast",
-      "essais": 1,
+      "essais": 2,
       "jeu": "wccf1dup",
       "par": "nuit-credits.py",
       "raison": "jeu inanime",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "wccf212e": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "wccf212e",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "wccf234j": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "wccf234j",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "wccf310j": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "wccf310j",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "wccf322e": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "wccf322e",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "wccf341j": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "wccf341j",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "wccf400j": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "wccf400j",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "wccf420e": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "wccf420e",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     },
     "wsbbgd": {
       "core": "Flycast",
-      "essais": 2,
+      "essais": 3,
       "jeu": "wsbbgd",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-23"
+      "vu_le": "2026-09-25"
     }
   },
   "format": "recalbox-arcade-credits (un fichier par systeme, pour la borne)",
