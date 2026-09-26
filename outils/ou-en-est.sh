@@ -24,6 +24,9 @@ echo "--- Naomi ---"
 journalctl -u naomi-pc --no-pager -o cat --since "-2h" 2>/dev/null \
     | grep -E "^\[|APPRIS" | tail -3 | sed 's/^/  /'
 echo
+echo "--- le balayage SUR la borne (sauvegarde d etat) ---"
+sh /mnt/recalbox/outils/lancer-releve-borne.sh --ou-en-est 2>/dev/null | tail -4 | sed 's/^/  /'
+echo
 echo "--- la borne ---"
 tail -2 /mnt/recalbox/journaux/deploiement.log 2>/dev/null | sed 's/^/  /'
 echo

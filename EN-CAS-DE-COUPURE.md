@@ -81,3 +81,26 @@ le dossier `roms`.
 
 Ne jamais tuer un relevé en pleine partie : la base est sauvée après chaque
 jeu, mais le jeu en cours serait à refaire.
+
+## Le balayage SUR la borne (depuis le 26/09)
+
+Une partie des jeux FBNeo (~500) ne se mesure que sur la borne elle-même, par
+sauvegarde d'état. Un « relevé poli » y tourne : il attend 5 minutes sans
+personne aux manettes, mesure, et rend la main dès qu'on touche un bouton.
+
+    sudo sh /mnt/recalbox/outils/lancer-releve-borne.sh --ou-en-est   # où il en est
+    sudo sh /mnt/recalbox/outils/lancer-releve-borne.sh              # (re)lancer
+    sudo sh /mnt/recalbox/outils/lancer-releve-borne.sh --arreter    # arrêter
+
+Ses mesures restent sur la borne tant qu'on ne les a pas rapatriées :
+
+    sudo sh /mnt/recalbox/outils/rapatrier-releve-borne.sh
+
+Ça les replie dans la base du PC (les mesures de la borne remplacent celles du
+PC lues par sauvegarde d'état — elles seules valent pour son FBNeo) et renvoie
+les fichiers à la borne. À faire quand `--ou-en-est` montre que le balayage a
+avancé, ou qu'il est fini.
+
+Si le démon des crédits de la borne est tombé (« No module named rzip » dans
+`journaux/credits-erreurs.log`) : `sudo sh /mnt/recalbox/outils/deployer-programmes.sh`
+le redéploie au bon endroit.
