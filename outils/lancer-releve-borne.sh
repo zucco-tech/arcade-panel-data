@@ -29,7 +29,9 @@ SCP="setsid -w scp -q -o ConnectTimeout=10 -o StrictHostKeyChecking=no"
 OUTILS=$(cd "$(dirname "$0")" && pwd)
 SUR_BORNE=/recalbox/share/system/panneau-allinone
 BASE=/mnt/recalbox/donnees/credits-arcade.json
-RAISONS_A_REPRENDRE="aucun candidat|candidats non confirmes|jeu inanime|delai depasse"
+# « rom refusee » et « ne publie pas sa memoire » : depuis le 26/09 la borne lit
+# ces jeux dans la sauvegarde d etat (nuit-credits, mode par_etat, rzip.py).
+RAISONS_A_REPRENDRE="aucun candidat|candidats non confirmes|jeu inanime|delai depasse|rom refusee|chargee, mais le coeur ne publie pas"
 
 case "$1" in
     --arreter)
@@ -54,14 +56,21 @@ motifs = re.compile(sys.argv[2])
 durs = {c: d for c, d in (base.get("difficiles") or {}).items()
         if not motifs.match(str(d.get("raison") or ""))}
 repris = len(base.get("difficiles") or {}) - len(durs)
-json.dump({"jeux": base.get("jeux") or {}, "difficiles": durs}, sys.stdout, indent=1)
-print("%d fiche(s) connues, %d ecarte(s) laisses de cote, %d a reprendre par la borne"
-      % (len(base.get("jeux") or {}), len(durs), repris), file=sys.stderr)
+# Une fiche lue dans une sauvegarde d etat ne vaut que pour le coeur qui l a
+# ecrite (assault : 0x20026 sur le PC, 0x20036 sur la borne). Ce que le PC a
+# mesure ainsi, la borne doit le remesurer avec son propre FBNeo.
+jeux = {c: f for c, f in (base.get("jeux") or {}).items()
+        if not ((f.get("ram") or {}).get("commande") == "sauvegarde d etat"
+                and (f.get("ram") or {}).get("hote") != "RECALBOX")}
+a_remesurer = len(base.get("jeux") or {}) - len(jeux)
+json.dump({"jeux": jeux, "difficiles": durs}, sys.stdout, indent=1)
+print("%d fiche(s) connues, %d ecarte(s) laisses de cote, %d a reprendre par la borne, %d mesure(s) du PC a refaire ici"
+      % (len(jeux), len(durs), repris, a_remesurer), file=sys.stderr)
 PYTHON
 
 echo "=== 2. les programmes et la base sur la borne"
 $SSH $BORNE "mkdir -p $SUR_BORNE/outils" || exit 1
-$SCP "$OUTILS/releve-poli.py" "$OUTILS/nuit-credits.py" $BORNE:$SUR_BORNE/outils/ || exit 1
+$SCP "$OUTILS/releve-poli.py" "$OUTILS/nuit-credits.py" "$OUTILS/rzip.py" "$OUTILS/clavier_virtuel.py" $BORNE:$SUR_BORNE/outils/ || exit 1
 $SCP /tmp/releve-borne-depart.json $BORNE:$SUR_BORNE/releve-borne.json.tmp || exit 1
 $SSH $BORNE "mv -f $SUR_BORNE/releve-borne.json.tmp $SUR_BORNE/releve-borne.json" || exit 1
 

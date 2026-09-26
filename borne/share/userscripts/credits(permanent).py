@@ -131,6 +131,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                 "panneau-allinone"))
 import cablage
 import couleurs
+import rzip                      # sauvegardes d etat RetroArch (RZIP)
 import reglages
 PALETTE_DEFAUT = couleurs.PALETTE_DEFAUT
 TEINTES = couleurs.TEINTES
@@ -319,15 +320,70 @@ def lire_rapport_mame(nom):
     return int(valeur)
 
 
-def lire_credits(adresse, core, nom):
+# --- sauvegarde d etat -----------------------------------------------------
+# FBNeo ne publie pas la RAM de 494 de ses jeux (ni sur le PC ni ici, verifie
+# le 26/09). Mais SAVE_STATE ecrit l etat complet de la machine, RAM comprise,
+# en 15 ms : le PC de releve y a trouve le compteur, et la fiche porte alors
+# une POSITION DANS L ETAT (ram.commande = "sauvegarde d etat"), pas une
+# adresse machine. On lit donc pareil : une sauvegarde, puis l octet dedans.
+# On travaille dans le slot 9 pour ne jamais ecraser une sauvegarde du joueur.
+DOSSIER_ETATS = "/recalbox/share/saves/%s"
+SLOT_ETAT = 9
+
+def ra_envoyer(commande):
+    """Une commande a RetroArch sans attendre de reponse (SAVE_STATE n en a pas)."""
+    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    try:
+        sock.sendto(commande.encode(), (RA_HOTE, RA_PORT))
+    except OSError:
+        pass
+    finally:
+        sock.close()
+
+def choisir_slot_etat():
+    """Place RetroArch sur le slot SLOT_ETAT, une fois par partie."""
+    for _ in range(SLOT_ETAT):
+        ra_envoyer("STATE_SLOT_PLUS")
+        time.sleep(0.02)
+
+def lire_dans_etat(systeme, nom, adresse):
+    """L octet a cette position dans une sauvegarde d etat fraiche, ou None."""
+    chemin = os.path.join(DOSSIER_ETATS % systeme, "%s.state%d" % (nom, SLOT_ETAT))
+    try:
+        avant = os.path.getmtime(chemin)
+    except OSError:
+        avant = 0.0
+    ra_envoyer("SAVE_STATE")
+    # Le fichier s ecrit en plusieurs fois : on attend qu il soit la et que sa
+    # taille ne bouge plus ; un RZIP tronque leve une erreur, on reessaie.
+    fin = time.monotonic() + 0.8
+    taille_vue = -1
+    while time.monotonic() < fin:
+        try:
+            if os.path.getmtime(chemin) > avant:
+                taille = os.path.getsize(chemin)
+                if taille > 64 and taille == taille_vue:
+                    etat = rzip.lire_etat(chemin)
+                    return etat[adresse] if adresse < len(etat) else None
+                taille_vue = taille
+        except (OSError, ValueError):
+            taille_vue = -1
+        time.sleep(0.03)
+    return None
+
+
+def lire_credits(adresse, core, nom, mode=None, systeme=None):
     """Le compteur de credits du jeu en cours, quel que soit le coeur.
 
     Sous MAME, on prend le rapport du Lua s il existe ; sinon None, et
-    c est le compte DEDUIT des boutons qui prend le relais (voir la boucle)."""
+    c est le compte DEDUIT des boutons qui prend le relais (voir la boucle).
+    Une fiche lue par sauvegarde d etat se relit par sauvegarde d etat."""
     if coeur_mame(core):
         return lire_rapport_mame(nom)
     if adresse is None:
         return None
+    if mode == "sauvegarde d etat":
+        return lire_dans_etat(systeme, nom, adresse)
     octet = lire(adresse, 1)
     return octet[0] if octet else None
 
@@ -1300,6 +1356,7 @@ def main():
     en_jeu = False
     resolu = False
     adresse = None
+    mode_lecture = None
     credits = None
     core, nom = "", None          # le coeur et le nom du jeu en cours
     # Comportement de borne SANS lire la memoire : une piece, c est un appui
@@ -1414,10 +1471,16 @@ def main():
                     if not coeur_mame(core):
                         apprenti.nouveau_jeu(nom, systeme, core)
                     multi = jeu_multijoueur(base, systeme, nom)
-                    adresse = adresse_de(fiche_de(base, systeme, nom, core))
-                    journal("%s/%s : %s" % (systeme, nom,
-                                            "0x%04X" % adresse if adresse
-                                            else "inconnu, j'apprends"))
+                    fiche_credits = fiche_de(base, systeme, nom, core)
+                    adresse = adresse_de(fiche_credits)
+                    mode_lecture = ((fiche_credits or {}).get("ram") or {}).get("commande")
+                    if adresse is not None and mode_lecture == "sauvegarde d etat":
+                        choisir_slot_etat()
+                    journal("%s/%s : %s%s" % (systeme, nom,
+                                              "0x%04X" % adresse if adresse
+                                              else "inconnu, j'apprends",
+                                              " (par sauvegarde d etat)"
+                                              if mode_lecture == "sauvegarde d etat" else ""))
                     # RetroArch tourne : configgen a deja ecrit les boutons
                     # de CETTE partie. On les relit maintenant — sinon on
                     # eclairait avec ceux de la partie d avant (1942 sous MAME
@@ -1447,7 +1510,7 @@ def main():
             # rapport du Lua s il existe, sinon le compte deduit des boutons.
             elif en_jeu and (adresse is not None or coeur_mame(core)) and maintenant >= prochain_sondage:
                 prochain_sondage = maintenant + SONDAGE
-                nouveau = lire_credits(adresse, core, nom)
+                nouveau = lire_credits(adresse, core, nom, mode_lecture, systeme)
                 if nouveau is None and coeur_mame(core):
                     nouveau = deduits
                 # Chaque mouvement du compteur est note : c est la preuve, en

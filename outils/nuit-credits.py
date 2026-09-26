@@ -176,6 +176,7 @@ class Borne:
         self.port = PORT_RA              # propre a cette instance
         self.affichage = None            # serveur X ou lancer RetroArch
         self.jeu_lance = None            # ce qu on a demande a RetroArch
+        self.systeme_lance = None        # et sous quel systeme (chemin des etats)
         self.coeur_lance = None
         self.coeur_nomme = None          # nom observe, quand l appelant le sait
 
@@ -211,12 +212,35 @@ class Borne:
         l avons lance.
         """
         if self.lire(0, 1) is None:
-            return None
+            # La RAM ne se lit pas : ou bien RetroArch n est pas la, ou bien
+            # le coeur ne la publie pas (494 jeux FBNeo). VERSION repond des
+            # que RetroArch tourne ; on demande alors une sauvegarde d etat,
+            # et si elle arrive, le jeu tourne — et on lira dedans.
+            if self.par_etat or not self._udp(self.port, "VERSION"):
+                return None
+            if not (self.jeu_lance and self.systeme_lance):
+                return None
+            etat = self.etat()
+            if etat is None:
+                return None
+            self.par_etat = True
+            self._etat_cache = (time.monotonic(), etat)
         return (self.jeu_lance or "inconnu"), self.coeur_lance
 
     def lire(self, adresse, n):
         """Lit n octets de la RAM du coeur a une adresse, par READ_CORE_RAM ;
-        None si le coeur ne les expose pas."""
+        None si le coeur ne les expose pas. En mode etat, on decoupe dans la
+        derniere sauvegarde, rafraichie au plus toutes les 0,3 s : les
+        lectures groupees (candidats, joueur 2) n en declenchent qu une."""
+        if self.par_etat:
+            quand, etat = self._etat_cache
+            if etat is None or time.monotonic() - quand > 0.3:
+                etat = self.etat()
+                if etat is None:
+                    return None
+                self._etat_cache = (time.monotonic(), etat)
+            bloc = etat[adresse:adresse + n]
+            return bloc if len(bloc) == n else None
         reponse = self._udp(self.port, "READ_CORE_RAM %x %d" % (adresse, n))
         if not reponse:
             return None
@@ -251,10 +275,58 @@ class Borne:
         self.rapide = actif
         time.sleep(0.3)
 
+    # --- sauvegarde d etat : quand le coeur ne publie pas sa RAM ----------
+    # FBNeo ne publie la RAM que d une partie de ses pilotes (494 jeux sans,
+    # le 24/09) ; et le FBNeo de la borne pas davantage (verifie le 26/09).
+    # Mais il sait sauvegarder l etat complet de la machine, RAM comprise :
+    # SAVE_STATE ecrit un fichier (RZIP, 15 ms sur le Raspberry), qu on lit
+    # et decompresse. Les offsets y sont stables d une sauvegarde a l autre.
+    # Une adresse ainsi trouvee est une POSITION DANS L ETAT, pas une adresse
+    # machine : la fiche le dit (ram.commande), et le demon lit pareil.
+    DOSSIER_ETATS = os.environ.get("DOSSIER_ETATS", "/recalbox/share/saves/%s")
+    par_etat = False
+    _etat_cache = (0.0, None)
+
+    def _chemin_etat(self):
+        return os.path.join(self.DOSSIER_ETATS % (self.systeme_lance or ""),
+                            "%s.state" % (self.jeu_lance or ""))
+
+    def etat(self):
+        """L etat complet de la machine, par SAVE_STATE puis lecture du
+        fichier ; None si RetroArch n a rien ecrit."""
+        import rzip
+        chemin = self._chemin_etat()
+        try:
+            avant = os.path.getmtime(chemin)
+        except OSError:
+            avant = 0.0
+        self._udp(self.port, "SAVE_STATE", attendre_reponse=False)
+        # RetroArch ecrit le fichier en plusieurs fois, et sur le NAS ca dure :
+        # on attend qu il soit la, que sa taille ne bouge plus, et que le
+        # decodage aboutisse (un RZIP tronque leve une erreur, on reessaie).
+        fin = time.monotonic() + 3.0
+        taille_vue = -1
+        while time.monotonic() < fin:
+            try:
+                if os.path.getmtime(chemin) > avant:
+                    taille = os.path.getsize(chemin)
+                    if taille > 64 and taille == taille_vue:
+                        return rzip.lire_etat(chemin)
+                    taille_vue = taille
+            except (OSError, ValueError):
+                taille_vue = -1
+            time.sleep(0.05)
+        return None
+
     def mesurer(self):
         """La taille de la RAM que le coeur expose, par dichotomie : on double l
         adresse jusqu a ce que la lecture echoue, puis on resserre."""
         if self.lire(0, 1) is None:
+            etat = self.etat()
+            if etat:
+                self.par_etat = True
+                self._etat_cache = (time.monotonic(), etat)
+                return len(etat)
             return 0
         bas, haut = 0, 1
         while haut < (1 << 24) and self.lire(haut, 1) is not None:
@@ -274,6 +346,11 @@ class Borne:
             self.taille = self.mesurer()
         if not self.taille:
             return None
+        if self.par_etat:
+            etat = self.etat()
+            if etat is not None:
+                self._etat_cache = (time.monotonic(), etat)
+            return etat
         out = bytearray()
         for a in range(0, self.taille, MORCEAU):
             bloc = self.lire(a, min(MORCEAU, self.taille - a))
@@ -293,12 +370,16 @@ class Borne:
             self._udp(PORT_ES, "START|%s|%s" % (systeme, chemin_rom),
                       attendre_reponse=False)
             self.jeu_lance = os.path.basename(chemin_rom).rsplit(".", 1)[0]
+            self.systeme_lance = systeme
+            self.par_etat, self._etat_cache = False, (0.0, None)
             self.coeur_lance = self.coeur_nomme or COEURS_NOMMES.get(systeme)
             return
         coeur = COEURS.get(systeme)
         if coeur is None:
             return
         self.jeu_lance = os.path.basename(chemin_rom).rsplit(".", 1)[0]
+        self.systeme_lance = systeme
+        self.par_etat, self._etat_cache = False, (0.0, None)
         self.coeur_lance = self.coeur_nomme or COEURS_NOMMES.get(systeme)
         self.arreter_processus()
         self.oublier_les_restes()      # aucun rescape ne doit trainer
@@ -1045,6 +1126,8 @@ def traiter(borne, clavier, base, systeme, jeu, arret, journal):
         journal("  ce core n'expose pas sa RAM")
         return "difficile", "RAM non lisible"
     borne.taille = taille          # mesuree une fois, reutilisee ensuite
+    if borne.par_etat:
+        journal("  RAM non publiee : lecture par sauvegarde d etat (%d octets)" % taille)
 
     if not attendre_vivant(borne, arret):
         journal("  le jeu ne s'anime pas, il n'encaissera pas de piece")
@@ -1227,7 +1310,10 @@ def traiter(borne, clavier, base, systeme, jeu, arret, journal):
         "nom": jeu,
         "systeme": systeme,
         "core": en_cours[1],
-        "ram": {"taille": borne.taille, "commande": "READ_CORE_RAM"},
+        "ram": {"taille": borne.taille, "commande": ("sauvegarde d etat" if borne.par_etat else "READ_CORE_RAM"),
+                    # Une position dans l etat ne vaut que pour le coeur qui l a ecrite :
+                    # on note qui a mesure, l export s en sert.
+                    "hote": socket.gethostname()},
         "credits": {
             "adresse": adresse,
             "adresse_hex": "0x%04X" % adresse,
@@ -1265,6 +1351,8 @@ def main():
                         help="un ou plusieurs, separes par des virgules "
                              "(fbneo,neogeo,mame)")
     parser.add_argument("--limite", type=int, default=0, help="0 = pas de limite")
+    parser.add_argument("--jeux", nargs="*", default=None,
+                        help="ne mesurer que ces jeux (noms de sets), meme deja connus")
     parser.add_argument("--pistes-seulement", action="store_true",
                         help="ne traiter que les jeux deja documentes (rapide et sur)")
     parser.add_argument("--essai", action="store_true",
@@ -1327,6 +1415,18 @@ def main():
             liste.append((systeme, jeu, os.path.join(dossier, rom)))
             retenus += 1
         print("%-12s %5d roms, %5d a traiter" % (systeme, len(roms), retenus))
+    if args.jeux:
+        # Des jeux nommes : on les prend meme s ils sont deja connus ou
+        # ecartes — c est fait pour verifier ou reprendre a la main.
+        voulus = set(args.jeux)
+        liste = []
+        for systeme in systemes:
+            dossier = os.path.join(args.roms, systeme)
+            for rom in sorted(glob.glob(os.path.join(dossier, "*"))):
+                jeu = os.path.basename(rom).rsplit(".", 1)[0]
+                if jeu in voulus and rom.lower().endswith((".zip", ".7z")):
+                    liste.append((systeme, jeu, rom))
+        print("jeux demandes : %d trouve(s) sur %d" % (len(liste), len(voulus)))
     if args.part:
         # « 2/3 » : un jeu sur trois, en commencant par le deuxieme. Les
         # parts sont disjointes et couvrent tout, sans se concerter.
