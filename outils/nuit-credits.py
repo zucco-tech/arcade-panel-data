@@ -810,7 +810,11 @@ def lancer_avec_reprises(borne, systeme, jeu, chemin, arret, journal):
         # RetroArch ouvert mais muet : c est un ecran d erreur, pas un
         # demarrage lent. Deux essais suffisent — quatre font deux minutes
         # de fenetres qui clignotent pour rien.
-        if ecran_erreur and essai >= 2:
+        # Une seule tentative suffit : l ecran d erreur ne guerit pas en le
+        # relançant. Sur la borne, le journal de RetroArch n existe pas
+        # (log_verbosity = false), donc on ne peut pas lire le message et
+        # c est ce delai qui fait foi — autant ne le payer qu une fois.
+        if ecran_erreur:
             # RetroArch repond, mais aucun contenu n est charge : ni RAM, ni
             # sauvegarde d etat possible. C est l ecran d erreur de FBNeo, qui
             # refuse le romset (mesure sur la borne le 26/09 : chopper, chqflag).
