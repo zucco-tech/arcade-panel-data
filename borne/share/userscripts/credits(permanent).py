@@ -326,9 +326,10 @@ def lire_rapport_mame(nom):
 # en 15 ms : le PC de releve y a trouve le compteur, et la fiche porte alors
 # une POSITION DANS L ETAT (ram.commande = "sauvegarde d etat"), pas une
 # adresse machine. On lit donc pareil : une sauvegarde, puis l octet dedans.
-# On travaille dans le slot 9 pour ne jamais ecraser une sauvegarde du joueur.
+# RetroArch ecrit dans le SLOT COURANT, dont on ne sait rien (mesure du 26/09 :
+# il etait a 2, pas a 0). On ne cherche donc pas un nom de fichier precis : on
+# prend celui que RetroArch vient d ecrire, quel que soit son slot.
 DOSSIER_ETATS = "/recalbox/share/saves/%s"
-SLOT_ETAT = 9
 
 def ra_envoyer(commande):
     """Une commande a RetroArch sans attendre de reponse (SAVE_STATE n en a pas)."""
@@ -340,27 +341,34 @@ def ra_envoyer(commande):
     finally:
         sock.close()
 
-def choisir_slot_etat():
-    """Place RetroArch sur le slot SLOT_ETAT, une fois par partie."""
-    for _ in range(SLOT_ETAT):
-        ra_envoyer("STATE_SLOT_PLUS")
-        time.sleep(0.02)
+def etat_le_plus_frais(systeme, nom):
+    """Le fichier d etat de ce jeu le plus recemment ecrit, et sa date."""
+    motif = os.path.join(DOSSIER_ETATS % systeme, "%s.state*" % nom)
+    recent, quand = None, 0.0
+    for chemin in glob.glob(motif):
+        if chemin.endswith(".png"):
+            continue                      # la vignette, pas l etat
+        try:
+            date = os.path.getmtime(chemin)
+        except OSError:
+            continue
+        if date > quand:
+            recent, quand = chemin, date
+    return recent, quand
+
 
 def lire_dans_etat(systeme, nom, adresse):
     """L octet a cette position dans une sauvegarde d etat fraiche, ou None."""
-    chemin = os.path.join(DOSSIER_ETATS % systeme, "%s.state%d" % (nom, SLOT_ETAT))
-    try:
-        avant = os.path.getmtime(chemin)
-    except OSError:
-        avant = 0.0
+    _, avant = etat_le_plus_frais(systeme, nom)
     ra_envoyer("SAVE_STATE")
     # Le fichier s ecrit en plusieurs fois : on attend qu il soit la et que sa
     # taille ne bouge plus ; un RZIP tronque leve une erreur, on reessaie.
     fin = time.monotonic() + 0.8
     taille_vue = -1
     while time.monotonic() < fin:
+        chemin, date = etat_le_plus_frais(systeme, nom)
         try:
-            if os.path.getmtime(chemin) > avant:
+            if chemin and date > avant:
                 taille = os.path.getsize(chemin)
                 if taille > 64 and taille == taille_vue:
                     etat = rzip.lire_etat(chemin)
@@ -1474,8 +1482,6 @@ def main():
                     fiche_credits = fiche_de(base, systeme, nom, core)
                     adresse = adresse_de(fiche_credits)
                     mode_lecture = ((fiche_credits or {}).get("ram") or {}).get("commande")
-                    if adresse is not None and mode_lecture == "sauvegarde d etat":
-                        choisir_slot_etat()
                     journal("%s/%s : %s%s" % (systeme, nom,
                                               "0x%04X" % adresse if adresse
                                               else "inconnu, j'apprends",

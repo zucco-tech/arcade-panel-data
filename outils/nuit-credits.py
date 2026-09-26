@@ -304,19 +304,31 @@ class Borne:
     par_etat = False
     _etat_cache = (0.0, None)
 
-    def _chemin_etat(self):
-        return os.path.join(self.DOSSIER_ETATS % (self.systeme_lance or ""),
-                            "%s.state" % (self.jeu_lance or ""))
+    def _etat_le_plus_frais(self):
+        """Le fichier d etat de ce jeu le plus recemment ecrit, et sa date.
+
+        RetroArch ecrit dans le SLOT COURANT, dont on ne sait rien (mesure du
+        26/09 : il etait a 2). On ne devine donc pas un nom de fichier.
+        """
+        motif = os.path.join(self.DOSSIER_ETATS % (self.systeme_lance or ""),
+                             "%s.state*" % (self.jeu_lance or ""))
+        recent, quand = None, 0.0
+        for chemin in glob.glob(motif):
+            if chemin.endswith(".png"):
+                continue                      # la vignette, pas l etat
+            try:
+                date = os.path.getmtime(chemin)
+            except OSError:
+                continue
+            if date > quand:
+                recent, quand = chemin, date
+        return recent, quand
 
     def etat(self):
         """L etat complet de la machine, par SAVE_STATE puis lecture du
         fichier ; None si RetroArch n a rien ecrit."""
         import rzip
-        chemin = self._chemin_etat()
-        try:
-            avant = os.path.getmtime(chemin)
-        except OSError:
-            avant = 0.0
+        _, avant = self._etat_le_plus_frais()
         self._udp(self.port, "SAVE_STATE", attendre_reponse=False)
         # RetroArch ecrit le fichier en plusieurs fois, et sur le NAS ca dure :
         # on attend qu il soit la, que sa taille ne bouge plus, et que le
@@ -324,8 +336,9 @@ class Borne:
         fin = time.monotonic() + 3.0
         taille_vue = -1
         while time.monotonic() < fin:
+            chemin, date = self._etat_le_plus_frais()
             try:
-                if os.path.getmtime(chemin) > avant:
+                if chemin and date > avant:
                     taille = os.path.getsize(chemin)
                     if taille > 64 and taille == taille_vue:
                         return rzip.lire_etat(chemin)
