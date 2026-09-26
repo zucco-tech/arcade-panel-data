@@ -535,17 +535,25 @@ class Borne:
                 pass
 
 
-def attendre_vivant(borne, arret, delai=ATTENTE_VIVANT):
+def attendre_vivant(borne, arret, delai=ATTENTE_VIVANT, clavier=None):
     """Attend que le jeu s'anime vraiment.
 
     Avant son ecran d'attente, la RAM est quasi figee et la piece tombe dans
     le vide — c'est ce qui faisait echouer les CPS2, longs a demarrer. Deux
     lectures a une seconde d'intervalle suffisent a le voir vivre.
+
+    Une machine qui ne bouge pas attend peut-etre un appui — ecran « press
+    start », calibrage (constate a la borne le 26/09). Un START toutes les
+    douze secondes, jamais de piece : une piece hors d un jeu pret est perdue.
     """
     fin = time.time() + delai
     precedent = None
+    dernier_start = time.time()
     while time.time() < fin:
         arret()
+        if clavier is not None and time.time() - dernier_start > 12.0:
+            clavier.start()
+            dernier_start = time.time()
         # On regarde TOUTE la RAM : sur certains jeux les premiers kilo-octets
         # restent figes alors que l'action se passe plus loin. Une photo coute
         # quatre commandes, c'est negligeable.
@@ -1161,7 +1169,7 @@ def traiter(borne, clavier, base, systeme, jeu, arret, journal):
     if borne.par_etat:
         journal("  RAM non publiee : lecture par sauvegarde d etat (%d octets)" % taille)
 
-    if not attendre_vivant(borne, arret):
+    if not attendre_vivant(borne, arret, clavier=clavier):
         journal("  le jeu ne s'anime pas, il n'encaissera pas de piece")
         return "difficile", "jeu inanime"
 
@@ -1187,6 +1195,7 @@ def traiter(borne, clavier, base, systeme, jeu, arret, journal):
             return "echec"
 
     pieces = 0
+    ecran_franchi = False      # a-t-on deja tente de passer un menu ?
     candidats2 = None          # ce qui monte toutes les DEUX pieces
     avant2 = avant             # la photo d il y a deux pieces
     entree_piece = "select"
@@ -1236,6 +1245,24 @@ def traiter(borne, clavier, base, systeme, jeu, arret, journal):
             avant2 = apres
         avant = apres
         journal("  piece %d : %d candidat(s)" % (pieces, len(candidats)))
+        if not candidats and not ecran_franchi:
+            # Rien de compte : le jeu attend peut-etre un appui — choix de
+            # langue, « press start » — et la piece est tombee dans le vide
+            # (constate a la borne le 26/09). On fait ce qu un joueur ferait,
+            # puis on reessaie une piece, en repartant de zero.
+            ecran_franchi = True
+            journal("  piece non comptee : START, A, B, puis on reessaie")
+            for agir in (clavier.start, lambda: clavier.bouton("a"),
+                         lambda: clavier.bouton("b")):
+                arret()
+                agir()
+                time.sleep(1.0)
+            time.sleep(2.0)
+            avant = borne.photo()
+            if avant is None:
+                return "echec"
+            candidats, candidats2, avant2 = None, None, avant
+            continue
         if not candidats:
             # SELECT n encaisse pas : ce jeu a peut-etre son monnayeur sur un
             # autre bouton. On les essaie tous avant de le condamner.
