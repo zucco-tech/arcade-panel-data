@@ -85,10 +85,14 @@ exec python3 -u releve-poli.py --systemes $SYSTEMES > $SUR_BORNE/releve-poli.log
 FIN
 chmod +x $SUR_BORNE/outils/lancer.sh
 rm -f /tmp/arret-releve-poli /tmp/arret-nuit
-pkill -f releve-poli.py 2>/dev/null
-( setsid $SUR_BORNE/outils/lancer.sh & )
+pkill -f releve-poli.py 2>/dev/null; sleep 1
+# Detache de la session ssh : sans nohup et sans fermer TOUTES ses sorties, le
+# processus meurt avec la session (constate le 26/09 : deux lancements « reussis »
+# et rien qui tournait). Et on le cherche par « [r]eleve-poli.py » : pgrep -f
+# attrapait la commande ssh elle-meme, qui contient ce nom.
+nohup sh $SUR_BORNE/outils/lancer.sh >/dev/null 2>&1 </dev/null &
 sleep 3
-pgrep -f releve-poli.py >/dev/null && echo 'releve poli en route' || { echo 'ECHEC du lancement'; tail -3 $SUR_BORNE/releve-poli.log 2>/dev/null; }"
+[ \"\$(ps -o args | grep -c '[r]eleve-poli.py')\" != 0 ] && echo 'releve poli en route' || { echo 'ECHEC du lancement'; tail -3 $SUR_BORNE/releve.log 2>/dev/null; }"
 
 echo
 echo "Suivre :  sudo sh $0 --ou-en-est"
