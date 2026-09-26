@@ -27,12 +27,14 @@ $SSH $BORNE "mkdir -p $N /tmp/programmes" 2>/dev/null
 $SCP "$DEPOT/userscripts/panneau(permanent).py" "$DEPOT/userscripts/credits(permanent).py" \
      "$DEPOT/userscripts/marquee(permanent).py" "$DEPOT/userscripts/gardefou[start,rungame,endgame].ash" \
      "$DEPOT/system/panneau-allinone/relancer.sh" "$DEPOT/system/panneau-allinone/processus.sh" \
-     "$DEPOT/system/panneau-allinone/cablage.py" "$DEPOT/system/panneau-allinone/rzip.py" "$DEPOT/system/panneau-allinone/manettes-consoles.json" \
+     "$DEPOT/userscripts/panneau-allinone/cablage.py" "$DEPOT/userscripts/panneau-allinone/couleurs.py" \
+     "$DEPOT/userscripts/panneau-allinone/reglages.py" "$DEPOT/userscripts/panneau-allinone/rzip.py" \
+     "$DEPOT/system/panneau-allinone/manettes-consoles.json" \
      "$DEPOT/system/custom.sh" $BORNE:/tmp/programmes/ 2>/dev/null || { note "programmes : copie echouee"; exit 1; }
 [ -f "$DEPOT/system/panneau-allinone/cablage.json" ] && $SCP "$DEPOT/system/panneau-allinone/cablage.json" $BORNE:/tmp/programmes/ 2>/dev/null
 $SSH $BORNE "cd /tmp/programmes || exit 1
 for f in 'panneau(permanent).py' 'credits(permanent).py' 'marquee(permanent).py' 'gardefou[start,rungame,endgame].ash'; do [ -f \"\$f\" ] && mv -f \"\$f\" \"/recalbox/share/userscripts/\$f\"; done
-for f in relancer.sh processus.sh cablage.py couleurs.py rzip.py manettes-consoles.json; do [ -f \$f ] && mv -f \$f $N/\$f; done
+for f in relancer.sh processus.sh cablage.py couleurs.py reglages.py rzip.py manettes-consoles.json; do [ -f \$f ] && mv -f \$f $N/\$f; done
 # le cablage mesure sur la borne prime sur celui du depot s il est plus recent
 if [ -f cablage.json ]; then [ $N/cablage.json -nt cablage.json ] 2>/dev/null || mv -f cablage.json $N/cablage.json; fi
 mv -f custom.sh /recalbox/share/system/custom.sh
