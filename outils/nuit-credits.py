@@ -177,6 +177,7 @@ class Borne:
         self.affichage = None            # serveur X ou lancer RetroArch
         self.jeu_lance = None            # ce qu on a demande a RetroArch
         self.systeme_lance = None        # et sous quel systeme (chemin des etats)
+        self.identite_prouvee = False    # sur la borne : le fichier d etat porte le bon nom
         self.coeur_lance = None
         self.coeur_nomme = None          # nom observe, quand l appelant le sait
 
@@ -211,15 +212,31 @@ class Borne:
         le jeu tourne. Et ce jeu, on sait lequel c est — c est nous qui
         l avons lance.
         """
-        if self.lire(0, 1) is None:
+        ram_lisible = self.lire(0, 1) is not None
+        if not ram_lisible:
             # La RAM ne se lit pas : ou bien RetroArch n est pas la, ou bien
             # le coeur ne la publie pas (494 jeux FBNeo). VERSION repond des
             # que RetroArch tourne ; on demande alors une sauvegarde d etat,
             # et si elle arrive, le jeu tourne — et on lira dedans.
             if self.par_etat or not self._udp(self.port, "VERSION"):
                 return None
-            if not (self.jeu_lance and self.systeme_lance):
+        if not (self.jeu_lance and self.systeme_lance):
+            return None
+        # Sur la borne, c est EmulationStation qui lance : s il ignore notre
+        # START parce que RetroArch est encore ouvert, c est le jeu d AVANT
+        # qui repond -- et il etait mesure sous le nom du nouveau (arkatour2
+        # « trouve » a l adresse d arkanoidpe, le 26/09). Le fichier d etat
+        # que RetroArch ecrit porte le nom du contenu charge : c est la
+        # preuve. Une fois par lancement.
+        if not self.direct and not self.identite_prouvee:
+            etat = self.etat()
+            if etat is None:
                 return None
+            self.identite_prouvee = True
+            if not ram_lisible:
+                self.par_etat = True
+                self._etat_cache = (time.monotonic(), etat)
+        elif not ram_lisible and not self.par_etat:
             etat = self.etat()
             if etat is None:
                 return None
@@ -372,6 +389,7 @@ class Borne:
             self.jeu_lance = os.path.basename(chemin_rom).rsplit(".", 1)[0]
             self.systeme_lance = systeme
             self.par_etat, self._etat_cache = False, (0.0, None)
+            self.identite_prouvee = False
             self.coeur_lance = self.coeur_nomme or COEURS_NOMMES.get(systeme)
             return
         coeur = COEURS.get(systeme)
@@ -380,6 +398,7 @@ class Borne:
         self.jeu_lance = os.path.basename(chemin_rom).rsplit(".", 1)[0]
         self.systeme_lance = systeme
         self.par_etat, self._etat_cache = False, (0.0, None)
+        self.identite_prouvee = False
         self.coeur_lance = self.coeur_nomme or COEURS_NOMMES.get(systeme)
         self.arreter_processus()
         self.oublier_les_restes()      # aucun rescape ne doit trainer
@@ -452,6 +471,19 @@ class Borne:
         Un raté suffisait alors a bloquer tout le reste du balayage.
         """
         if self.processus is None:
+            # Pas de processus a nous : sur la borne, c est EmulationStation
+            # qui a lance RetroArch. On lui demande de quitter, et on ATTEND
+            # qu il soit parti -- sinon le START suivant est ignore par
+            # EmulationStation, et c est le jeu d avant qui se fait mesurer.
+            if self.direct or not self._udp(self.port, "VERSION"):
+                return
+            fin = time.monotonic() + ATTENTE_ARRET
+            while time.monotonic() < fin:
+                self._udp(self.port, "QUIT", attendre_reponse=False)
+                time.sleep(1.5)
+                if not self._udp(self.port, "VERSION"):
+                    time.sleep(2.0)          # EmulationStation reprend la main
+                    return
             return
         try:
             groupe = os.getpgid(self.processus.pid)
