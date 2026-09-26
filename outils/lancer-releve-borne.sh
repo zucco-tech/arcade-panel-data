@@ -61,7 +61,7 @@ repris = len(base.get("difficiles") or {}) - len(durs)
 # mesure ainsi, la borne doit le remesurer avec son propre FBNeo.
 jeux = {c: f for c, f in (base.get("jeux") or {}).items()
         if not ((f.get("ram") or {}).get("commande") == "sauvegarde d etat"
-                and (f.get("ram") or {}).get("hote") != "RECALBOX")}
+                and (f.get("ram") or {}).get("hote") != "BORNEARCADE")}
 a_remesurer = len(base.get("jeux") or {}) - len(jeux)
 json.dump({"jeux": jeux, "difficiles": durs}, sys.stdout, indent=1)
 print("%d fiche(s) connues, %d ecarte(s) laisses de cote, %d a reprendre par la borne, %d mesure(s) du PC a refaire ici"

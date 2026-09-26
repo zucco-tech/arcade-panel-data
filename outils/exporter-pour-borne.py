@@ -47,10 +47,12 @@ def par_systeme(entrees):
         if not systeme:
             continue
         # Une fiche lue dans une sauvegarde d etat porte une POSITION dans cet
-        # etat, pas une adresse machine. Le demon de la borne lit la memoire
-        # du coeur : il irait lire n importe quoi. On ne l envoie donc pas
-        # tant qu il ne sait pas relire un etat serialise.
-        if (fiche.get("ram") or {}).get("commande") == "sauvegarde d etat":
+        # etat, valable pour le seul coeur qui l a ecrite (assault : 0x20026
+        # sur le PC, 0x20036 sur la borne). Le demon de la borne sait la
+        # relire depuis le 26/09 -- mais seulement si c est la borne elle-meme
+        # qui a mesure. Ce que le PC a lu ainsi reste ici.
+        ram = fiche.get("ram") or {}
+        if ram.get("commande") == "sauvegarde d etat" and ram.get("hote") != "BORNEARCADE":
             continue
         jeux = groupes.setdefault(systeme, {})
         ancienne = jeux.get(jeu)
