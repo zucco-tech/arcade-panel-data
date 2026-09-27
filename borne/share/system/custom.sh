@@ -56,7 +56,11 @@ regler aio_hotkey 0
 #    remettre au demarrage ne gene jamais personne. Le drapeau
 #    « releve-en-cours » dit qu on le veut ; il est pose par
 #    lancer-releve-borne.sh et retire par --arreter.
-if [ -f "$N/releve-en-cours" ] && [ -x "$N/outils/lancer.sh" ]; then
+# On teste la PRESENCE du script, pas son bit d execution : sur la carte de
+# la borne, chmod +x ne prend pas, et « -x » etait toujours faux -- la relance
+# ne s est jamais declenchee (constate le 27/09, dix heures perdues). « sh »
+# n a pas besoin du bit d execution.
+if [ -f "$N/releve-en-cours" ] && [ -f "$N/outils/lancer.sh" ]; then
     rm -f /tmp/arret-releve-poli /tmp/arret-nuit
     setsid nohup sh "$N/outils/lancer.sh" >/dev/null 2>&1 </dev/null &
     echo "$(date "+%Y-%m-%d %H:%M:%S") releve poli relance" >> "$N/journaux/demarrage.log"

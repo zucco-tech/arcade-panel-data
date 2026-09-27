@@ -7,22 +7,10 @@
       "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
       "systeme": "neogeo"
     },
-    "ironclad": {
-      "jeu": "ironclad",
-      "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0x5a86cff2 and name 000-lo.lo from archive /mnt/roms/neogeo/neogeo | DIPSWITCH Neo Geo )",
-      "systeme": "neogeo"
-    },
     "tws96": {
       "jeu": "tws96",
       "le": "2026-09-25",
       "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
-      "systeme": "neogeo"
-    },
-    "umk3": {
-      "jeu": "umk3",
-      "le": "2026-09-26",
-      "raison": "jeu inanime",
       "systeme": "neogeo"
     },
     "uni-bios-32": {

@@ -101954,6 +101954,36 @@
       },
       "systeme": "mame"
     },
+    "monkeyba": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097416,
+        "adresse_hex": "0x200108",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": null,
+        "entree_piece": ":837_13551:COINS/Coin 1",
+        "entree_start": ":P1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 3,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "monkeyba",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x207FFF"
+      },
+      "releve": {
+        "le": "2026-09-26",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "monymony": {
       "core": "MAME",
       "credits": {
@@ -175888,6 +175918,36 @@
       },
       "systeme": "mame"
     },
+    "twsoc98": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2214704,
+        "adresse_hex": "0x21CB30",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": null,
+        "entree_piece": ":PORTC/Coin 1",
+        "entree_start": ":PORTC/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "twsoc98",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x27FFFF"
+      },
+      "releve": {
+        "le": "2026-09-26",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "tylz": {
       "core": "MAME",
       "credits": {
@@ -191035,6 +191095,36 @@
       "releve": {
         "le": "2026-09-13",
         "methode": "lua dans mame"
+      },
+      "systeme": "mame"
+    },
+    "znpwfvt": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2099494,
+        "adresse_hex": "0x200926",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": null,
+        "entree_piece": ":PORTC/Coin 1",
+        "entree_start": ":PORTC/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "znpwfvt",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": "0x200000-0x27FFFF"
+      },
+      "releve": {
+        "le": "2026-09-26",
+        "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
     },
