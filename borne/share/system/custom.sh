@@ -48,4 +48,18 @@ for j in 1 2; do
     regler "aio_p${j}_start" 0
 done
 regler aio_hotkey 0
+
+# 3. Le releve poli des credits, s il etait en cours avant l extinction.
+#    Il ne repartait pas tout seul : la borne rallumee le 27/09 l a laisse
+#    mort jusqu a une relance a la main. Il attend cinq minutes de silence
+#    avant de commencer et rend la main au premier bouton presse, donc le
+#    remettre au demarrage ne gene jamais personne. Le drapeau
+#    « releve-en-cours » dit qu on le veut ; il est pose par
+#    lancer-releve-borne.sh et retire par --arreter.
+if [ -f "$N/releve-en-cours" ] && [ -x "$N/outils/lancer.sh" ]; then
+    rm -f /tmp/arret-releve-poli /tmp/arret-nuit
+    setsid nohup sh "$N/outils/lancer.sh" >/dev/null 2>&1 </dev/null &
+    echo "$(date "+%Y-%m-%d %H:%M:%S") releve poli relance" >> "$N/journaux/demarrage.log"
+fi
+
 exit 0

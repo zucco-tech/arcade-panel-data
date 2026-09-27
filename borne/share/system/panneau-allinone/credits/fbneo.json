@@ -3,19 +3,19 @@
   "difficiles": {
     "1944": {
       "jeu": "1944",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
     "1944ad": {
       "jeu": "1944ad",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
     "1944d": {
       "jeu": "1944d",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
@@ -26,21 +26,24 @@
       "systeme": "fbneo"
     },
     "8ballact": {
+      "essais": 9,
       "jeu": "8ballact",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Eight Ball Action (DK conversion) | [FBNeo] This romset is known but marked as not working |)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "aerfboo2": {
+      "essais": 9,
       "jeu": "aerfboo2",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Aero Fighters (bootleg, set 2) | [FBNeo] This romset is known but marked as not working | [F)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "aerfboot": {
+      "essais": 9,
       "jeu": "aerfboot",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Aero Fighters (bootleg, set 1) | [FBNeo] This romset is known but marked as not working | [F)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "aquario": {
@@ -62,39 +65,45 @@
       "vu_le": "2026-09-13"
     },
     "arkatour2": {
+      "essais": 9,
       "jeu": "arkatour2",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Tournament Arkanoid (US, newer) | [FBNeo] This romset is known but marked as not working | [)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "armchmp2": {
+      "essais": 9,
       "jeu": "armchmp2",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Arm Champs II (ver 2.7) | [FBNeo] This romset is known but marked as not working | [FBNeo] O)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "armchmp2o": {
+      "essais": 9,
       "jeu": "armchmp2o",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Arm Champs II (ver 1.7) | [FBNeo] This romset is known but marked as not working | [FBNeo] O)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "armchmp2o2": {
+      "essais": 9,
       "jeu": "armchmp2o2",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Arm Champs II (ver 2.6) | [FBNeo] This romset is known but marked as not working | [FBNeo] O)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "atlantol": {
+      "essais": 9,
       "jeu": "atlantol",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Atlant Olimpic (Italian bootleg) | [FBNeo] This romset is known but marked as not working | )",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "attackf": {
+      "essais": 9,
       "jeu": "attackf",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Attack (bootleg of Defender) | [FBNeo] This romset is known but marked as not working | [FBN)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "avengers": {
@@ -113,15 +122,17 @@
       "systeme": "fbneo"
     },
     "bagmans3": {
+      "essais": 9,
       "jeu": "bagmans3",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give it a try | W)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "bnstars1": {
+      "essais": 9,
       "jeu": "bnstars1",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Vs. Janshi Brandnew Stars | [FBNeo] This romset is known but marked as not working | [FBNeo])",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "brkblast": {
@@ -143,9 +154,10 @@
       "systeme": "fbneo"
     },
     "bubsys": {
+      "essais": 9,
       "jeu": "bubsys",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Bubble System BIOS | [FBNeo] This romset is known but marked as not working | [FBNeo] One of)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "captcm2y": {
@@ -186,19 +198,19 @@
     },
     "cbdash": {
       "jeu": "cbdash",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "cbtime": {
       "jeu": "cbtime",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "cchip": {
       "jeu": "cchip",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
@@ -276,115 +288,122 @@
     },
     "cluckypo": {
       "jeu": "cluckypo",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "countrun": {
+      "essais": 9,
       "jeu": "countrun",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Counter Run (NS6201-A 1988.3) | [FBNeo] This romset is known but marked as not working | [FB)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "countryc": {
+      "essais": 9,
       "jeu": "countryc",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Country Club | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its c)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "cps1demo": {
       "jeu": "cps1demo",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "cpsoccer": {
       "jeu": "cpsoccer",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "crush3": {
+      "essais": 9,
       "jeu": "crush3",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Crush Roller (set 3) | [FBNeo] This romset is known but marked as not working | [FBNeo] One )",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "crzrallyrf": {
       "jeu": "crzrallyrf",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
     "ctsttape": {
       "jeu": "ctsttape",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "cyclshtg": {
+      "essais": 9,
       "jeu": "cyclshtg",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Cycle Shooting | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "dangarj": {
+      "essais": 9,
       "jeu": "dangarj",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Ufo Robo Dangar (9/26/1986, Japan) | [FBNeo] This romset is known but marked as not working )",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "dduxbl": {
+      "essais": 9,
       "jeu": "dduxbl",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Dynamite Dux (Datsu bootleg) | [FBNeo] This romset is known but marked as not working | [FBN)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "decocass": {
+      "essais": 9,
       "jeu": "decocass",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: DECO Cassette System Bios | [FBNeo] This romset is known but marked as not working | [FBNeo])",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "defcmnd": {
       "jeu": "defcmnd",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "defence": {
       "jeu": "defence",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "defender": {
       "jeu": "defender",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "defenderb": {
       "jeu": "defenderb",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
     "defenderg": {
       "jeu": "defenderg",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
     "defenderj": {
       "jeu": "defenderj",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "defenseb": {
       "jeu": "defenseb",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
@@ -432,20 +451,22 @@
     },
     "elecyoyoa": {
       "jeu": "elecyoyoa",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "enmadaio": {
+      "essais": 9,
       "jeu": "enmadaio",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Enma Daio (Japan) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of )",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "fenix": {
+      "essais": 9,
       "jeu": "fenix",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Fenix (Orio bootleg of Phoenix) | [FBNeo] This romset is known but marked as not working | [)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "finalap2j": {
@@ -455,15 +476,17 @@
       "systeme": "fbneo"
     },
     "friskytb": {
+      "essais": 9,
       "jeu": "friskytb",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Frisky Tom (set 3) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "fsoccer": {
+      "essais": 9,
       "jeu": "fsoccer",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Fighting Soccer (version 4) | [FBNeo] This romset is known but marked as not working | [FBNe)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "fsoccerb": {
@@ -479,26 +502,28 @@
       "systeme": "fbneo"
     },
     "fsoccerj": {
+      "essais": 9,
       "jeu": "fsoccerj",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Fighting Soccer (Japan) | [FBNeo] This romset is known but marked as not working | [FBNeo] O)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "galwars2": {
       "jeu": "galwars2",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "gberetb": {
+      "essais": 9,
       "jeu": "gberetb",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Green Beret (bootleg) | [FBNeo] This romset is known but marked as not working | [FBNeo] One)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "ghostbi": {
       "jeu": "ghostbi",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
@@ -521,9 +546,10 @@
       "systeme": "fbneo"
     },
     "gollygho": {
+      "essais": 9,
       "jeu": "gollygho",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Golly! Ghost! | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its )",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "gowcaiet": {
@@ -564,19 +590,19 @@
     },
     "gtg2j": {
       "jeu": "gtg2j",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
     "gulfwar2a": {
       "jeu": "gulfwar2a",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "gunbuletj": {
       "jeu": "gunbuletj",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
@@ -593,57 +619,60 @@
       "systeme": "fbneo"
     },
     "headonsa": {
+      "essais": 9,
       "jeu": "headonsa",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Head On (Sidam bootleg, set 2) | [FBNeo] This romset is known but marked as not working | [F)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "hero": {
+      "essais": 9,
       "jeu": "hero",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Hero | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones mi)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "hiimpact": {
       "jeu": "hiimpact",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "hiimpact1": {
       "jeu": "hiimpact1",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "hiimpact2": {
       "jeu": "hiimpact2",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "hiimpact3": {
       "jeu": "hiimpact3",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "hiimpact4": {
       "jeu": "hiimpact4",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "hiimpactp": {
       "jeu": "hiimpactp",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "hipoly": {
+      "essais": 9,
       "jeu": "hipoly",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Hipoly (bootleg of Hyper Olympic) | [FBNeo] This romset is known but marked as not working |)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "hishouza": {
@@ -665,44 +694,49 @@
       "systeme": "fbneo"
     },
     "hunchbak": {
+      "essais": 9,
       "jeu": "hunchbak",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Hunchback (set 1) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of )",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "huncholy": {
+      "essais": 9,
       "jeu": "huncholy",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Hunchback Olympic | [FBNeo] This romset is known but marked as not working | [FBNeo] One of )",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "hypersptb": {
+      "essais": 9,
       "jeu": "hypersptb",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Hyper Sports (bootleg) | [FBNeo] This romset is known but marked as not working | [FBNeo] On)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "hyprolymb": {
+      "essais": 9,
       "jeu": "hyprolymb",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Hyper Olympic (bootleg, set 1) | [FBNeo] This romset is known but marked as not working | [F)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "hyprolymba": {
+      "essais": 9,
       "jeu": "hyprolymba",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Hyper Olympic (bootleg, set 2) | [FBNeo] This romset is known but marked as not working | [F)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "ichirjbl": {
       "jeu": "ichirjbl",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "ironclado": {
       "jeu": "ironclado",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
@@ -713,38 +747,40 @@
       "systeme": "fbneo"
     },
     "ixion": {
+      "essais": 9,
       "jeu": "ixion",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Ixion (prototype) | [FBNeo] This romset is known but marked as not working | [FBNeo] One of )",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "jongpute": {
+      "essais": 9,
       "jeu": "jongpute",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Jongputer | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clon)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "joust": {
       "jeu": "joust",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "joustr": {
       "jeu": "joustr",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "jousty": {
       "jeu": "jousty",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "kf2k1pkz": {
       "jeu": "kf2k1pkz",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
@@ -756,7 +792,7 @@
     },
     "kf2k23rd": {
       "jeu": "kf2k23rd",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
@@ -768,55 +804,56 @@
     },
     "kf2k3ps2": {
       "jeu": "kf2k3ps2",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
     "kickball": {
+      "essais": 9,
       "jeu": "kickball",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Kick Ball | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clon)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "killbld": {
       "jeu": "killbld",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "killbld100": {
       "jeu": "killbld100",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "killbld104": {
       "jeu": "killbld104",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "killbld106": {
       "jeu": "killbld106",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "killbld109": {
       "jeu": "killbld109",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "killbldjq": {
       "jeu": "killbldjq",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "killbldqy": {
       "jeu": "killbldqy",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
@@ -834,73 +871,73 @@
     },
     "kodlys": {
       "jeu": "kodlys",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
     "kodyh": {
       "jeu": "kodyh",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
     "kof2002m": {
       "jeu": "kof2002m",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
     "kof2k1bs": {
       "jeu": "kof2k1bs",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
     "kof95jq": {
       "jeu": "kof95jq",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
     "kof96ae": {
       "jeu": "kof96ae",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
     "kof97bs": {
       "jeu": "kof97bs",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
     "kof97inv": {
       "jeu": "kof97inv",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
     "kof97plc": {
       "jeu": "kof97plc",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
     "kof97pm": {
       "jeu": "kof97pm",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
     "kof98bsc": {
       "jeu": "kof98bsc",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
     "kof98cb": {
       "jeu": "kof98cb",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
@@ -912,19 +949,19 @@
     },
     "kof98plc": {
       "jeu": "kof98plc",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
     "kof98rat": {
       "jeu": "kof98rat",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
     "kof99jq": {
       "jeu": "kof99jq",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
@@ -936,19 +973,19 @@
     },
     "kontest": {
       "jeu": "kontest",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
     "kram": {
       "jeu": "kram",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "krama": {
       "jeu": "krama",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
@@ -972,43 +1009,43 @@
     },
     "lghost": {
       "jeu": "lghost",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "lghostd": {
       "jeu": "lghostd",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "lghostj": {
       "jeu": "lghostj",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "lghostu": {
       "jeu": "lghostu",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "lghostud": {
       "jeu": "lghostud",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "loffirej": {
       "jeu": "loffirej",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "loffirejd": {
       "jeu": "loffirejd",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
@@ -1020,31 +1057,31 @@
     },
     "lottofun": {
       "jeu": "lottofun",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
     "luctoday": {
       "jeu": "luctoday",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "lunarba1": {
       "jeu": "lunarba1",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "magdrop": {
       "jeu": "magdrop",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "magdropp": {
       "jeu": "magdropp",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
@@ -1062,37 +1099,37 @@
     },
     "midssio": {
       "jeu": "midssio",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
     "mk3r20": {
       "jeu": "mk3r20",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "mkyturbo": {
       "jeu": "mkyturbo",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "ms21v2": {
       "jeu": "ms21v2",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
     "mslug2ct": {
       "jeu": "mslug2ct",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
     "mslug2dg": {
       "jeu": "mslug2dg",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
@@ -1110,7 +1147,7 @@
     },
     "mslug3x": {
       "jeu": "mslug3x",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
@@ -1151,38 +1188,41 @@
       "systeme": "fbneo"
     },
     "namcoc69": {
+      "essais": 9,
       "jeu": "namcoc69",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Namco C69 (M37702) (Bios) | [FBNeo] This romset is known but marked as not working | [FBNeo])",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "namcoc70": {
+      "essais": 9,
       "jeu": "namcoc70",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Namco C70 (M37702) (Bios) | [FBNeo] This romset is known but marked as not working | [FBNeo])",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "namcoc75": {
+      "essais": 9,
       "jeu": "namcoc75",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Namco C75 (M37702) (Bios) | [FBNeo] This romset is known but marked as not working | [FBNeo])",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "nbajamp2": {
       "jeu": "nbajamp2",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
     "nblktiger": {
       "jeu": "nblktiger",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
     "neo2500": {
       "jeu": "neo2500",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
@@ -1194,211 +1234,219 @@
     },
     "neodemo": {
       "jeu": "neodemo",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "neogeo": {
+      "essais": 9,
       "jeu": "neogeo",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Neo Geo | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "neothndr": {
       "jeu": "neothndr",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "neoww2": {
       "jeu": "neoww2",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "ninclown": {
       "jeu": "ninclown",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
     "nmk004": {
       "jeu": "nmk004",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
     "nsmb": {
       "jeu": "nsmb",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
     "pacminer": {
       "jeu": "pacminer",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "pgm": {
+      "essais": 9,
       "jeu": "pgm",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: PGM (Polygame Master) System BIOS | [FBNeo] This romset is known but marked as not working |)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "pgmdemo": {
       "jeu": "pgmdemo",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "pgmfrog": {
       "jeu": "pgmfrog",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "phoenixi": {
+      "essais": 9,
       "jeu": "phoenixi",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Phoenix (IDI bootleg) | [FBNeo] This romset is known but marked as not working | [FBNeo] One)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "pitnrun": {
       "jeu": "pitnrun",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "pitnruna": {
       "jeu": "pitnruna",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "pitnrunb": {
       "jeu": "pitnrunb",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "poittoc": {
+      "essais": 9,
       "jeu": "poittoc",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Poitto! (revision C) | [FBNeo] This romset is known but marked as not working | [FBNeo] One )",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "popeyebl": {
+      "essais": 9,
       "jeu": "popeyebl",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Popeye (bootleg set 1) | [FBNeo] This romset is known but marked as not working | [FBNeo] On)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "powerinsc": {
+      "essais": 9,
       "jeu": "powerinsc",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Power Instinct (USA, bootleg set 3) | [FBNeo] This romset is known but marked as not working)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "qix": {
       "jeu": "qix",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "qix2": {
       "jeu": "qix2",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "qixa": {
       "jeu": "qixa",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "qixb": {
       "jeu": "qixb",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "qixo": {
       "jeu": "qixo",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "raiders5": {
       "jeu": "raiders5",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "raiders5t": {
       "jeu": "raiders5t",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "raiders5ta": {
       "jeu": "raiders5ta",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "razmataz": {
+      "essais": 9,
       "jeu": "razmataz",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Razzmatazz | [FBNeo] This romset is known but marked as not working | [FBNeo] One of its clo)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "revenger": {
+      "essais": 9,
       "jeu": "revenger",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Revenger '84 (older) | [FBNeo] This romset is known but marked as not working | [FBNeo] One )",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "robocopi": {
       "jeu": "robocopi",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
     "robotron": {
       "jeu": "robotron",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "robotron12": {
       "jeu": "robotron12",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "robotron87": {
       "jeu": "robotron87",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "robotrontd": {
       "jeu": "robotrontd",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "robotronun": {
       "jeu": "robotronun",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "robotronyo": {
       "jeu": "robotronyo",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
@@ -1433,26 +1481,28 @@
       "systeme": "fbneo"
     },
     "sbm": {
+      "essais": 9,
       "jeu": "sbm",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Sonic Blast Man (US) | [FBNeo] This romset is known but marked as not working | [FBNeo] One )",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "sbmj": {
+      "essais": 9,
       "jeu": "sbmj",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Sonic Blast Man (Japan) | [FBNeo] This romset is known but marked as not working | [FBNeo] O)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "sdungeon": {
       "jeu": "sdungeon",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "sdungeona": {
       "jeu": "sdungeona",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
@@ -1469,20 +1519,22 @@
       "systeme": "fbneo"
     },
     "sectrzont": {
+      "essais": 9,
       "jeu": "sectrzont",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Sector Zone (bootleg) | [FBNeo] This romset is known but marked as not working | [FBNeo] One)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "seganinja": {
+      "essais": 9,
       "jeu": "seganinja",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Sega Ninja (315-5113) | [FBNeo] This romset is known but marked as not working | [FBNeo] One)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "sengk3fs": {
       "jeu": "sengk3fs",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
@@ -1499,74 +1551,78 @@
       "systeme": "fbneo"
     },
     "showdown4": {
+      "essais": 9,
       "jeu": "showdown4",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Showdown (version 4.0) | [FBNeo] This romset is known but marked as not working | [FBNeo] On)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "shtriderb": {
+      "essais": 9,
       "jeu": "shtriderb",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Shot Rider (bootleg) | [FBNeo] This romset is known but marked as not working | [FBNeo] One )",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "sinistar": {
       "jeu": "sinistar",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "sinistar2": {
       "jeu": "sinistar2",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "sinistarc": {
       "jeu": "sinistarc",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "sinistarc2": {
       "jeu": "sinistarc2",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "sinistarcsm": {
       "jeu": "sinistarcsm",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "sinistarp": {
       "jeu": "sinistarp",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "sinistarsm": {
       "jeu": "sinistarsm",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "sisv1": {
+      "essais": 9,
       "jeu": "sisv1",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Space Invaders (SV Version rev 1) | [FBNeo] This romset is known but marked as not working |)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "skns": {
+      "essais": 9,
       "jeu": "skns",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Super Kaneko Nova System BIOS | [FBNeo] This romset is known but marked as not working | [FB)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "skywolf3": {
       "jeu": "skywolf3",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
@@ -1578,13 +1634,13 @@
     },
     "spdball": {
       "jeu": "spdball",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "spidermi": {
       "jeu": "spidermi",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
@@ -1596,37 +1652,37 @@
     },
     "splat": {
       "jeu": "splat",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "ssf2tbh": {
       "jeu": "ssf2tbh",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
     "ssf2tbj": {
       "jeu": "ssf2tbj",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
     "ssf2tbj1": {
       "jeu": "ssf2tbj1",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
     "ssf2tbr1": {
       "jeu": "ssf2tbr1",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
     "ssf2tbu": {
       "jeu": "ssf2tbu",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
@@ -1637,86 +1693,92 @@
       "systeme": "fbneo"
     },
     "stadhr96j2": {
+      "essais": 9,
       "jeu": "stadhr96j2",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Stadium Hero '96 (Japan?, EAE) | [FBNeo] This romset is known but marked as not working | [F)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "stadhr96k": {
       "jeu": "stadhr96k",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "starforcb": {
+      "essais": 9,
       "jeu": "starforcb",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Star Force (encrypted, bootleg) | [FBNeo] This romset is known but marked as not working | [)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "stargate": {
       "jeu": "stargate",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "syscheck": {
       "jeu": "syscheck",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "tdfever": {
+      "essais": 9,
       "jeu": "tdfever",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: TouchDown Fever (US) | [FBNeo] This romset is known but marked as not working | [FBNeo] One )",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "tdfever2": {
+      "essais": 9,
       "jeu": "tdfever2",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: TouchDown Fever 2 | [FBNeo] This romset is known but marked as not working | [FBNeo] One of )",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "tdfever2b": {
+      "essais": 9,
       "jeu": "tdfever2b",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: TouchDown Fever 2 (bootleg) | [FBNeo] This romset is known but marked as not working | [FBNe)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "tdfeverj": {
+      "essais": 9,
       "jeu": "tdfeverj",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: TouchDown Fever (Japan) | [FBNeo] This romset is known but marked as not working | [FBNeo] O)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "teot": {
       "jeu": "teot",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
     "test240p": {
       "jeu": "test240p",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
     "tmnti": {
       "jeu": "tmnti",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
     "tmntia": {
       "jeu": "tmntia",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
     "topsecex": {
       "jeu": "topsecex",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
@@ -1728,25 +1790,25 @@
     },
     "umk3p": {
       "jeu": "umk3p",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "umk3r10": {
       "jeu": "umk3r10",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "umk3r11": {
       "jeu": "umk3r11",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "umk3te": {
       "jeu": "umk3te",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
@@ -1763,15 +1825,17 @@
       "systeme": "fbneo"
     },
     "wizzquiz": {
+      "essais": 9,
       "jeu": "wizzquiz",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Wizz Quiz (Konami version) | [FBNeo] This romset is known but marked as not working | [FBNeo)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "wizzquiza": {
+      "essais": 9,
       "jeu": "wizzquiza",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Wizz Quiz (version 4) | [FBNeo] This romset is known but marked as not working | [FBNeo] One)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "wofdr20": {
@@ -1782,43 +1846,45 @@
     },
     "ym2608": {
       "jeu": "ym2608",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
     "zero": {
+      "essais": 9,
       "jeu": "zero",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Zero (bootleg of Defender, set 1) | [FBNeo] This romset is known but marked as not working |)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "zero2": {
+      "essais": 9,
       "jeu": "zero2",
       "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Zero (bootleg of Defender, set 2) | [FBNeo] This romset is known but marked as not working |)",
+      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
     "zeroteamsr": {
       "jeu": "zeroteamsr",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "zookeep": {
       "jeu": "zookeep",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "zookeep2": {
       "jeu": "zookeep2",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "zookeep3": {
       "jeu": "zookeep3",
-      "le": "2026-09-25",
+      "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },

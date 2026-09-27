@@ -35,7 +35,7 @@ RAISONS_A_REPRENDRE="aucun candidat|candidats non confirmes|jeu inanime|delai de
 
 case "$1" in
     --arreter)
-        $SSH $BORNE "touch /tmp/arret-releve-poli; sleep 2; pkill -f releve-poli.py; pkill -f nuit-credits.py; echo arrete"
+        $SSH $BORNE "touch /tmp/arret-releve-poli; sleep 2; pkill -f releve-poli.py; pkill -f nuit-credits.py; rm -f $SUR_BORNE/releve-en-cours; echo arrete"
         exit $?
         ;;
     --ou-en-est)
@@ -85,7 +85,10 @@ exec python3 -u releve-poli.py --systemes $SYSTEMES > $SUR_BORNE/releve-poli.log
 FIN
 chmod +x $SUR_BORNE/outils/lancer.sh
 rm -f /tmp/arret-releve-poli /tmp/arret-nuit
-pkill -f releve-poli.py 2>/dev/null; sleep 1"
+pkill -f releve-poli.py 2>/dev/null; sleep 1
+# Le drapeau dit « on veut que ce releve tourne » : custom.sh le relit au
+# demarrage et relance tout seul apres une extinction de la borne.
+touch $SUR_BORNE/releve-en-cours"
 # Detache de la session ssh, dans un appel A PART : le meme nohup au fond du
 # bloc ci-dessus ne survivait pas a la session (constate le 26/09, trois fois).
 # Et on le cherche par « [r]eleve-poli.py » : pgrep -f attrapait la commande
