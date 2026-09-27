@@ -102,3 +102,9 @@ ou lecture sur la borne) · 🟡 en place, pas encore validé par vous ·
 | Demande | État |
 |---|---|
 | Faire clignoter **START** (ou SELECT, ou un bouton) sur les jeux **console** qui attendent un appui à l'écran-titre, comme le fait une borne d'arcade. Méthode différente : pas de compteur de crédits sur console, il faut détecter que le jeu *attend* un appui. À faire **quand tous les jeux d'arcade seront passés** (demandé le 24/09) | ⏳ après l'arcade |
+
+## 9. La liste des jeux qui ne passent pas
+
+| Demande | État |
+|---|---|
+| **Une liste des jeux dont on n'a pas trouvé le compteur**, à publier sur Discord, pour que tu la regardes toi-même — **à la fin**, quand les recherches seront terminées (demandé le 27/09) | 🟢 outil prêt : `sudo python3 /mnt/recalbox/outils/liste-jeux-restants.py > /mnt/recalbox/jeux-restants.md`. Groupée par raison, variantes regroupées, jeux couverts par un autre émulateur exclus. |
