@@ -1505,7 +1505,8 @@ def main():
                     adresse = adresse_de(fiche_credits)
                     mode_lecture = ((fiche_credits or {}).get("ram") or {}).get("commande")
                     journal("%s/%s : %s%s" % (systeme, nom,
-                                              "0x%04X" % adresse if adresse
+                                              "0x%04X" % adresse
+                                              if adresse is not None
                                               else "inconnu, j'apprends",
                                               " (par sauvegarde d etat)"
                                               if mode_lecture == "sauvegarde d etat" else ""))

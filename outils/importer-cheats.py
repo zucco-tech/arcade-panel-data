@@ -145,7 +145,8 @@ def main():
             doublons += 1
             continue
         # Un jeu deja releve sur la borne n'a pas besoin de piste.
-        if ((base.get("jeux", {}).get(jeu) or {}).get("credits") or {}).get("adresse"):
+        # Une adresse a 0 est une vraie adresse : ne pas la prendre pour rien.
+        if ((base.get("jeux", {}).get(jeu) or {}).get("credits") or {}).get("adresse") is not None:
             ignorees += 1
             continue
         pistes[jeu] = {"cheat": "0x%06X" % adresse, "source": source}

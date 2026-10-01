@@ -140,6 +140,8 @@ ECHECS_MAX = 8            # au-dela, quelque chose ne va pas : on s'arrete
 # piece n'a pas ete encaissee. On ne condamne un jeu qu'apres deux tentatives,
 # sauf quand la cause est sans appel (le core n'expose pas sa RAM).
 ESSAIS_AVANT_ABANDON = 2
+# Plafond applique meme avec --reessayer (0 = pas de plafond).
+ESSAIS_MAX = int(os.environ.get("ESSAIS_MAX", "3"))
 # RetroArch rate parfois son demarrage : il meurt dans la seconde, toujours au
 # meme endroit (segfault a la lecture d un pointeur nul). Mesure sur cette
 # machine : environ un lancement sur cinq. Rien en aval ne peut le rattraper,
@@ -913,8 +915,8 @@ def migrer_par_coeur(base):
             # rejoignent ici. On garde celle qui porte une adresse.
             gardee = nouvelles.get(neuve)
             if (gardee is not None
-                    and (gardee.get("credits") or {}).get("adresse")
-                    and not (fiche.get("credits") or {}).get("adresse")):
+                    and (gardee.get("credits") or {}).get("adresse") is not None
+                    and (fiche.get("credits") or {}).get("adresse") is None):
                 continue
             nouvelles[neuve] = fiche
         base[section] = nouvelles
@@ -948,7 +950,11 @@ def surveiller_baisse(borne, avant, duree, arret):
 def deja_fait(base, coeur, jeu, reessayer=False):
     """Vrai si ce jeu n'a plus rien a nous apprendre, pour ce coeur."""
     fiche = (base.get("jeux") or {}).get(cle(coeur, jeu)) or {}
-    if (fiche.get("credits") or {}).get("adresse"):
+    # « adresse » peut valoir 0 : c est une adresse valable (le premier
+    # octet de la RAM), et 118 fiches de la base sont dans ce cas. Le test
+    # de verite simple les lisait comme « pas de fiche » : la borne relancait
+    # ces jeux a chaque tour, sans fin — crshrace2 262 fois (constate le 30/09).
+    if (fiche.get("credits") or {}).get("adresse") is not None:
         return True
     dur = (base.get("difficiles") or {}).get(cle(coeur, jeu))
     if not dur:
@@ -956,7 +962,9 @@ def deja_fait(base, coeur, jeu, reessayer=False):
     if dur.get("raison") in SANS_APPEL:
         return True             # inutile d'insister, meme sur demande
     if reessayer:
-        return False
+        # Meme sur demande de reprise, un jeu qui a deja echoue ESSAIS_MAX
+        # fois ne revient plus : f355p en etait a son 14e essai pour rien.
+        return bool(ESSAIS_MAX) and dur.get("essais", 1) >= ESSAIS_MAX
     return dur.get("essais", 1) >= ESSAIS_AVANT_ABANDON
 
 
