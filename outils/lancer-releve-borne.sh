@@ -31,7 +31,11 @@ SUR_BORNE=/recalbox/share/system/panneau-allinone
 BASE=/mnt/recalbox/donnees/credits-arcade.json
 # « rom refusee » et « ne publie pas sa memoire » : depuis le 26/09 la borne lit
 # ces jeux dans la sauvegarde d etat (nuit-credits, mode par_etat, rzip.py).
-RAISONS_A_REPRENDRE="aucun candidat|candidats non confirmes|jeu inanime|delai depasse|rom refusee|chargee, mais le coeur ne publie pas"
+# Le texte de cette raison a change dans releve-direct.py : il dit desormais
+# « chargee, ni memoire publiee ni sauvegarde d etat (...) ». L ancien motif ne
+# correspondait plus, et 134 jeux FBNeo que la borne SAIT lire par sauvegarde
+# d etat ne lui etaient jamais envoyes (constate le 29/09/2026).
+RAISONS_A_REPRENDRE="aucun candidat|candidats non confirmes|jeu inanime|delai depasse|rom refusee|chargee, mais le coeur ne publie pas|chargee, ni memoire publiee"
 
 case "$1" in
     --arreter)
