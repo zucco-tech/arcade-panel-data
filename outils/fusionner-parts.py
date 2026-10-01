@@ -53,6 +53,13 @@ def main():
             appris += 1
         for cle, ecart in part.get("difficiles", {}).items():
             if cle not in base["jeux"]:
+                # Le compteur d essais s AJOUTE a celui de la base : une part
+                # part d un fichier vide, son compteur ne vaut que pour SON
+                # tour. En ecrasant, un jeu gele a 3 essais repartait a 1 et le
+                # plafond ESSAIS_MAX ne protegeait plus rien (mesure le 29/09).
+                ancien = base["difficiles"].get(cle) or {}
+                ecart = dict(ecart)
+                ecart["essais"] = ancien.get("essais", 0) + ecart.get("essais", 1)
                 base["difficiles"][cle] = ecart
                 ecartes += 1
         os.remove(chemin)

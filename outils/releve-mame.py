@@ -46,6 +46,12 @@ IMAGES_ACHARNE = 16200         # trois fois plus : le Lua attend et insiste dava
 # (Naomi, Model 2 : 11 images par seconde) que 16200 images ne menaient pas au bout.
 IMAGES_ACHARNE = int(os.environ.get("MAME_IMAGES", IMAGES_ACHARNE))
 IMAGES_PAS = 300
+
+# ESSAIS_MAX : au-dela de ce nombre d echecs, un jeu sort de la file et reste
+# dans la liste des non trouves. Les jeux durs revenaient a chaque tour et
+# coutaient jusqu a 30 min de processeur chacun pour presque rien (mesure du
+# 26/09 : 3 fiches gagnees sur 111 reprises). 0 = pas de plafond, comme avant.
+ESSAIS_MAX = int(os.environ.get("ESSAIS_MAX", "3"))
 # Trois raisons ne disent rien sur notre methode, elles disent un fait sur la
 # machine : MAME refuse de la lancer, elle n a pas de monnayeur, elle ne
 # declare aucune RAM. Aucun reglage n y changera quoi que ce soit.
@@ -176,6 +182,10 @@ def main():
     p.add_argument("--acharne", action="store_true",
                    help="le Lua attend plus, paie plus, essaie d autres facons de demarrer "
                         "et d autres zones de memoire ; sous-entend --reessayer")
+    p.add_argument("--pistes", default=None,
+                   help="fichier de pistes {jeu: {\"cheat\": \"0x...\"}} ecrit par "
+                        "pistes-par-variante.py : l adresse d un jeu de la meme "
+                        "famille, donnee au Lua comme point de depart a confirmer")
     p.add_argument("--delai", type=float, default=300.0)
     p.add_argument("--arret", default="/tmp/arret-nuit")
     a = p.parse_args()
@@ -187,6 +197,13 @@ def main():
 
     base = charger_base(a.base)
     connue = charger_base(a.reference) if a.reference else base
+    pistes = {}
+    if a.pistes:
+        with open(a.pistes) as fh:
+            lu = json.load(fh)
+        # Le fichier de pistes est soit une part complete, soit les pistes seules.
+        pistes = lu.get("pistes", lu)
+        print("%d piste(s) chargee(s)" % len(pistes), flush=True)
     noms = a.jeux or sorted(
         f.rsplit(".", 1)[0] for f in os.listdir(a.roms)
         if f.lower().endswith((".zip", ".7z")))
@@ -200,6 +217,9 @@ def main():
         deja |= {c for c, d in durs.items()
                  if not str(d.get("raison", "")).startswith(motifs)}
         deja |= {"mame/%s" % n for n in noms if "mame/%s" % n not in durs}
+    if ESSAIS_MAX:
+        # Deja ESSAIS_MAX echecs : on n y revient plus, le processeur sert ailleurs.
+        deja |= {c for c, d in durs.items() if d.get("essais", 0) >= ESSAIS_MAX}
     reste = noms if a.jeux else [n for n in noms if "mame/%s" % n not in deja]
     connus = len(noms) - len(reste)
     # Seulement les jeux d arcade : la base des boutons les connait. Sur
@@ -235,14 +255,23 @@ def main():
             print("arret demande", flush=True)
             break
         parti = time.time()
+        # MAME_PISTE n existe que pour les jeux qui en ont une : les autres
+        # sont mesures exactement comme avant.
+        piste = (pistes.get(jeu) or {}).get("cheat")
+        if piste:
+            os.environ["MAME_PISTE"] = piste
+        else:
+            os.environ.pop("MAME_PISTE", None)
         fiche = mesurer(jeu, a.roms, a.delai)
         duree = time.time() - parti
         print("[%d/%d] mame/%s" % (n, len(reste), jeu), flush=True)
         if "erreur" in fiche:
             ecartes += 1
             print("  difficile : %s (%.0f s)" % (fiche["erreur"], duree), flush=True)
+            ancien = base["difficiles"].get("mame/" + jeu) or {}
             base["difficiles"]["mame/" + jeu] = {"jeu": jeu, "systeme": "mame",
                                                  "raison": fiche["erreur"],
+                                                 "essais": ancien.get("essais", 0) + 1,
                                                  "le": time.strftime("%Y-%m-%d")}
         else:
             appris += 1

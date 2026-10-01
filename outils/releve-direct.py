@@ -109,6 +109,12 @@ DOSSIER_IMAGES = "/mnt/recalbox/journaux/images"
 MEMOIRE_JEU = 2 * 1024 ** 3              # plafond par jeu (voir enfant)
 # Images accordees a un coeur pour publier sa memoire apres le chargement.
 IMAGES_MEMOIRE = int(os.environ.get("IMAGES_MEMOIRE", "60"))
+
+# ESSAIS_MAX : au-dela de ce nombre d echecs, un jeu sort de la file et reste
+# dans la liste des non trouves. Les jeux durs revenaient a chaque tour et
+# coutaient jusqu a 30 min de processeur chacun pour presque rien (mesure du
+# 26/09 : 3 fiches gagnees sur 111 reprises). 0 = pas de plafond, comme avant.
+ESSAIS_MAX = int(os.environ.get("ESSAIS_MAX", "3"))
 RAISONS_ACHARNE = ("delai depasse", "jeu inanime", "aucun candidat",
                    "candidats non confirmes")
 
@@ -991,6 +997,9 @@ def main():
                      if not str(d.get("raison", "")).startswith(motifs)}
             deja |= {"%s/%s" % (prefixe, n) for n in noms
                      if "%s/%s" % (prefixe, n) not in durs}    # jamais ecartes : rien a reprendre
+        if ESSAIS_MAX:
+            # Deja ESSAIS_MAX echecs : on n y revient plus, le processeur sert ailleurs.
+            deja |= {c for c, d in durs.items() if d.get("essais", 0) >= ESSAIS_MAX}
         reste = [n for n in noms if "%s/%s" % (prefixe, n) not in deja]
     if a.part:
         rang, total = (int(x) for x in a.part.split("/"))
@@ -1024,8 +1033,10 @@ def main():
             ecartes += 1
             print("  difficile : %s (%.0f s)" % (fiche["erreur"], time.time() - parti), flush=True)
             if not a.sec:
+                ancien = base["difficiles"].get(cle) or {}
                 base["difficiles"][cle] = {"jeu": jeu, "systeme": a.systeme,
                                            "raison": fiche["erreur"],
+                                           "essais": ancien.get("essais", 0) + 1,
                                            "le": time.strftime("%Y-%m-%d")}
         else:
             appris += 1
