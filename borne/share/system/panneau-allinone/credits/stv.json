@@ -14,8 +14,9 @@
       "systeme": "stv"
     },
     "magzun": {
+      "essais": 3,
       "jeu": "magzun",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "aucun candidat",
       "systeme": "stv"
     },
@@ -152,14 +153,16 @@
       "systeme": "stv"
     },
     "pcpooh2": {
+      "essais": 3,
       "jeu": "pcpooh2",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "aucun candidat",
       "systeme": "stv"
     },
     "pcpooh3": {
+      "essais": 3,
       "jeu": "pcpooh3",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "aucun candidat",
       "systeme": "stv"
     },
@@ -200,8 +203,9 @@
       "systeme": "stv"
     },
     "sackids": {
+      "essais": 3,
       "jeu": "sackids",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "aucun candidat",
       "systeme": "stv"
     },
@@ -224,8 +228,9 @@
       "systeme": "stv"
     },
     "yattrmnp": {
+      "essais": 3,
       "jeu": "yattrmnp",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "aucun candidat",
       "systeme": "stv"
     },

@@ -3,273 +3,237 @@
   "difficiles": {
     "airlbios": {
       "core": "Flycast",
-      "essais": 13,
+      "essais": 288,
       "jeu": "airlbios",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomi",
-      "vu_le": "2026-09-27"
-    },
-    "anpanman2": {
-      "core": "Flycast",
-      "essais": 11,
-      "jeu": "anpanman2",
-      "par": "nuit-credits.py",
-      "raison": "candidats non confirmes",
-      "systeme": "naomi",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "f355": {
       "core": "Flycast",
-      "essais": 10,
+      "essais": 240,
       "jeu": "f355",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomi",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "f355bios": {
       "core": "Flycast",
-      "essais": 9,
+      "essais": 224,
       "jeu": "f355bios",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomi",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "f355dlx": {
       "core": "Flycast",
-      "essais": 9,
+      "essais": 224,
       "jeu": "f355dlx",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomi",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "f355p": {
       "core": "Flycast",
-      "essais": 9,
+      "essais": 208,
       "jeu": "f355p",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomi",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "f355twin": {
       "core": "Flycast",
-      "essais": 9,
+      "essais": 192,
       "jeu": "f355twin",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomi",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "f355twinp": {
       "core": "Flycast",
-      "essais": 9,
+      "essais": 192,
       "jeu": "f355twinp",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomi",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "f355twn2": {
       "core": "Flycast",
-      "essais": 9,
+      "essais": 192,
       "jeu": "f355twn2",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomi",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "gunsur2j": {
       "core": "Flycast",
-      "essais": 8,
+      "essais": 176,
       "jeu": "gunsur2j",
       "par": "nuit-credits.py",
-      "raison": "jeu inanime",
+      "raison": "candidats non confirmes",
       "systeme": "naomi",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "hod2bios": {
       "core": "Flycast",
-      "essais": 8,
+      "essais": 176,
       "jeu": "hod2bios",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomi",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "naomi": {
       "core": "Flycast",
-      "essais": 8,
+      "essais": 176,
       "jeu": "naomi",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomi",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "shootplmp": {
       "core": "Flycast",
-      "essais": 8,
+      "essais": 176,
       "jeu": "shootplmp",
       "par": "nuit-credits.py",
       "raison": "jeu inanime",
       "systeme": "naomi",
-      "vu_le": "2026-09-27"
-    },
-    "shors2k1": {
-      "core": "Flycast",
-      "essais": 8,
-      "jeu": "shors2k1",
-      "par": "nuit-credits.py",
-      "raison": "candidats non confirmes",
-      "systeme": "naomi",
-      "vu_le": "2026-09-27"
-    },
-    "shors2k2": {
-      "core": "Flycast",
-      "essais": 8,
-      "jeu": "shors2k2",
-      "par": "nuit-credits.py",
-      "raison": "candidats non confirmes",
-      "systeme": "naomi",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "shors2k2l": {
       "core": "Flycast",
-      "essais": 8,
+      "essais": 176,
       "jeu": "shors2k2l",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomi",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "shors2k2m": {
       "core": "Flycast",
-      "essais": 7,
+      "essais": 160,
       "jeu": "shors2k2m",
       "par": "nuit-credits.py",
-      "raison": "jeu inanime",
+      "raison": "candidats non confirmes",
       "systeme": "naomi",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "shors2k2s": {
       "core": "Flycast",
-      "essais": 7,
+      "essais": 160,
       "jeu": "shors2k2s",
       "par": "nuit-credits.py",
-      "raison": "jeu inanime",
+      "raison": "candidats non confirmes",
       "systeme": "naomi",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "shorsel": {
       "core": "Flycast",
-      "essais": 7,
+      "essais": 160,
       "jeu": "shorsel",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomi",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "shorsem": {
       "core": "Flycast",
-      "essais": 7,
+      "essais": 160,
       "jeu": "shorsem",
       "par": "nuit-credits.py",
-      "raison": "candidats non confirmes",
+      "raison": "jeu inanime",
       "systeme": "naomi",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "shorsep": {
       "core": "Flycast",
-      "essais": 7,
+      "essais": 160,
       "jeu": "shorsep",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomi",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "shorsepl": {
       "core": "Flycast",
-      "essais": 7,
+      "essais": 160,
       "jeu": "shorsepl",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomi",
-      "vu_le": "2026-09-27"
-    },
-    "shorsepr": {
-      "core": "Flycast",
-      "essais": 7,
-      "jeu": "shorsepr",
-      "par": "nuit-credits.py",
-      "raison": "candidats non confirmes",
-      "systeme": "naomi",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "shorseprl": {
       "core": "Flycast",
-      "essais": 7,
+      "essais": 160,
       "jeu": "shorseprl",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomi",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "shorseprs": {
       "core": "Flycast",
-      "essais": 7,
+      "essais": 160,
       "jeu": "shorseprs",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomi",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "shorseprvl": {
       "core": "Flycast",
-      "essais": 7,
+      "essais": 160,
       "jeu": "shorseprvl",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomi",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "shorseprvr": {
       "core": "Flycast",
-      "essais": 7,
+      "essais": 160,
       "jeu": "shorseprvr",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomi",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "shorseps": {
       "core": "Flycast",
-      "essais": 7,
+      "essais": 160,
       "jeu": "shorseps",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomi",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "sl2007": {
       "core": "Flycast",
-      "essais": 7,
+      "essais": 160,
       "jeu": "sl2007",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomi",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "zunou": {
       "core": "Flycast",
-      "essais": 6,
+      "essais": 144,
       "jeu": "zunou",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomi",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     }
   },
   "format": "recalbox-arcade-credits (un fichier par systeme, pour la borne)",
@@ -550,6 +514,36 @@
       },
       "releve": {
         "le": "2026-09-19",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "naomi"
+    },
+    "anpanman2": {
+      "core": "Flycast",
+      "credits": {
+        "adresse": 1133240,
+        "adresse_hex": "0x114AB8",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "anpanman2",
+      "nom": "anpanman2",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "hote": "recaldev",
+        "taille": 16777216
+      },
+      "releve": {
+        "le": "2026-09-28",
         "methode": "balayage nocturne",
         "par": "nuit-credits.py"
       },
@@ -33455,6 +33449,66 @@
       },
       "systeme": "naomi"
     },
+    "shors2k1": {
+      "core": "Flycast",
+      "credits": {
+        "adresse": 2334736,
+        "adresse_hex": "0x23A010",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "shors2k1",
+      "nom": "shors2k1",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "hote": "recaldev",
+        "taille": 16777216
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "naomi"
+    },
+    "shors2k2": {
+      "core": "Flycast",
+      "credits": {
+        "adresse": 12582764,
+        "adresse_hex": "0xBFFF6C",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "shors2k2",
+      "nom": "shors2k2",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "hote": "recaldev",
+        "taille": 16777216
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "naomi"
+    },
     "shorse": {
       "core": "Flycast",
       "credits": {
@@ -33548,6 +33602,36 @@
       },
       "releve": {
         "le": "2026-09-27",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "naomi"
+    },
+    "shorsepr": {
+      "core": "Flycast",
+      "credits": {
+        "adresse": 16506,
+        "adresse_hex": "0x407A",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "shorsepr",
+      "nom": "shorsepr",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "hote": "recaldev",
+        "taille": 16777216
+      },
+      "releve": {
+        "le": "2026-09-28",
         "methode": "balayage nocturne",
         "par": "nuit-credits.py"
       },

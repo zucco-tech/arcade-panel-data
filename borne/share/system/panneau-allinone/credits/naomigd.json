@@ -3,174 +3,147 @@
   "difficiles": {
     "dragntr": {
       "core": "Flycast",
-      "essais": 5,
+      "essais": 128,
       "jeu": "dragntr",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomigd",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "dragntr2": {
       "core": "Flycast",
-      "essais": 5,
+      "essais": 128,
       "jeu": "dragntr2",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomigd",
-      "vu_le": "2026-09-27"
-    },
-    "dragntr3": {
-      "core": "Flycast",
-      "essais": 5,
-      "jeu": "dragntr3",
-      "par": "nuit-credits.py",
-      "raison": "aucun candidat",
-      "systeme": "naomigd",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "mj1": {
       "core": "Flycast",
-      "essais": 5,
+      "essais": 112,
       "jeu": "mj1",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "naomigd": {
       "core": "Flycast",
-      "essais": 5,
+      "essais": 112,
       "jeu": "naomigd",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomigd",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "ndcfboxa": {
       "core": "Flycast",
-      "essais": 5,
+      "essais": 112,
       "jeu": "ndcfboxa",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomigd",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "ngdup23a": {
       "core": "Flycast",
-      "essais": 5,
+      "essais": 112,
       "jeu": "ngdup23a",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomigd",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "ngdup23c": {
       "core": "Flycast",
-      "essais": 5,
+      "essais": 112,
       "jeu": "ngdup23c",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomigd",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "ngdup23e": {
       "core": "Flycast",
-      "essais": 5,
+      "essais": 112,
       "jeu": "ngdup23e",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomigd",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "senkoo": {
       "core": "Flycast",
-      "essais": 5,
+      "essais": 112,
       "jeu": "senkoo",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "usagiym": {
       "core": "Flycast",
-      "essais": 5,
+      "essais": 112,
       "jeu": "usagiym",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "vathletep": {
       "core": "Flycast",
-      "essais": 5,
+      "essais": 112,
       "jeu": "vathletep",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomigd",
-      "vu_le": "2026-09-27"
-    },
-    "vtennis2": {
-      "core": "Flycast",
-      "essais": 5,
-      "jeu": "vtennis2",
-      "par": "nuit-credits.py",
-      "raison": "candidats non confirmes",
-      "systeme": "naomigd",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "wccf1dup": {
       "core": "Flycast",
-      "essais": 3,
+      "essais": 80,
       "jeu": "wccf1dup",
       "par": "nuit-credits.py",
       "raison": "jeu inanime",
       "systeme": "naomigd",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "wccf212e": {
       "core": "Flycast",
-      "essais": 5,
+      "essais": 112,
       "jeu": "wccf212e",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "wccf310j": {
       "core": "Flycast",
-      "essais": 5,
+      "essais": 112,
       "jeu": "wccf310j",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-27"
-    },
-    "wccf322e": {
-      "core": "Flycast",
-      "essais": 5,
-      "jeu": "wccf322e",
-      "par": "nuit-credits.py",
-      "raison": "candidats non confirmes",
-      "systeme": "naomigd",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "wccf341j": {
       "core": "Flycast",
-      "essais": 5,
+      "essais": 112,
       "jeu": "wccf341j",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "wccf400j": {
       "core": "Flycast",
-      "essais": 5,
+      "essais": 112,
       "jeu": "wccf400j",
       "par": "nuit-credits.py",
-      "raison": "jeu inanime",
+      "raison": "candidats non confirmes",
       "systeme": "naomigd",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     }
   },
   "format": "recalbox-arcade-credits (un fichier par systeme, pour la borne)",
@@ -440,6 +413,36 @@
       },
       "releve": {
         "le": "2026-09-27",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "naomigd"
+    },
+    "dragntr3": {
+      "core": "Flycast",
+      "credits": {
+        "adresse": 637148,
+        "adresse_hex": "0x9B8DC",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "dragntr3",
+      "nom": "dragntr3",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "hote": "recaldev",
+        "taille": 16777216
+      },
+      "releve": {
+        "le": "2026-09-28",
         "methode": "balayage nocturne",
         "par": "nuit-credits.py"
       },
@@ -2059,6 +2062,36 @@
       },
       "systeme": "naomigd"
     },
+    "vtennis2": {
+      "core": "Flycast",
+      "credits": {
+        "adresse": 2370999,
+        "adresse_hex": "0x242DB7",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "vtennis2",
+      "nom": "vtennis2",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "hote": "recaldev",
+        "taille": 16777216
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "naomigd"
+    },
     "vtennisg": {
       "core": "Flycast",
       "credits": {
@@ -2151,6 +2184,36 @@
       },
       "releve": {
         "le": "2026-09-27",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "naomigd"
+    },
+    "wccf322e": {
+      "core": "Flycast",
+      "credits": {
+        "adresse": 6115548,
+        "adresse_hex": "0x5D50DC",
+        "adresse_j2": 2665849,
+        "adresse_j2_hex": "0x28AD79",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "wccf322e",
+      "nom": "wccf322e",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "hote": "recaldev",
+        "taille": 16777216
+      },
+      "releve": {
+        "le": "2026-09-28",
         "methode": "balayage nocturne",
         "par": "nuit-credits.py"
       },

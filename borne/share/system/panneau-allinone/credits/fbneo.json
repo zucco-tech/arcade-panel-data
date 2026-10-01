@@ -1,15 +1,10 @@
 {
   "description": "Adresse RAM du compteur de credits de chaque jeu de ce systeme, indexee par nom de set. Se lit par l'interface reseau de RetroArch : READ_CORE_RAM <adresse> 1 en UDP sur le port 55355.",
   "difficiles": {
-    "1944ad": {
-      "jeu": "1944ad",
-      "le": "2026-09-27",
-      "raison": "candidats non confirmes",
-      "systeme": "fbneo"
-    },
     "1944d": {
+      "essais": 3,
       "jeu": "1944d",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
@@ -27,18 +22,20 @@
       "systeme": "fbneo"
     },
     "aerfboo2": {
-      "essais": 9,
+      "essais": 2,
       "jeu": "aerfboo2",
-      "le": "2026-09-25",
-      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
+      "le": "2026-09-29",
+      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Aero Fighters (bootleg, set 2) | [FBNeo] This romset is known but marked as not working | [F)",
       "systeme": "fbneo"
     },
     "aerfboot": {
-      "essais": 9,
+      "core": "FinalBurn Neo",
+      "essais": 1,
       "jeu": "aerfboot",
-      "le": "2026-09-25",
-      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
-      "systeme": "fbneo"
+      "par": "nuit-credits.py",
+      "raison": "ne demarre pas",
+      "systeme": "fbneo",
+      "vu_le": "2026-09-28"
     },
     "aquario": {
       "core": "FinalBurn Neo",
@@ -56,7 +53,7 @@
       "par": "nuit-credits.py",
       "raison": "romset incomplet pour cette version",
       "systeme": "fbneo",
-      "vu_le": "2026-09-13"
+      "vu_le": "2026-09-28"
     },
     "arkatour2": {
       "essais": 9,
@@ -94,10 +91,10 @@
       "systeme": "fbneo"
     },
     "attackf": {
-      "essais": 9,
+      "essais": 2,
       "jeu": "attackf",
-      "le": "2026-09-25",
-      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
+      "le": "2026-09-29",
+      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Attack (bootleg of Defender) | [FBNeo] This romset is known but marked as not working | [FBN)",
       "systeme": "fbneo"
     },
     "avengers": {
@@ -107,19 +104,20 @@
       "par": "nuit-credits.py",
       "raison": "romset incomplet pour cette version",
       "systeme": "fbneo",
-      "vu_le": "2026-09-13"
+      "vu_le": "2026-09-28"
     },
     "bagmanm2": {
+      "essais": 2,
       "jeu": "bagmanm2",
-      "le": "2026-09-25",
+      "le": "2026-09-29",
       "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Bagman (bootleg on Moon Cresta hardware, set 2) | [FBNeo] This romset is known but marked as)",
       "systeme": "fbneo"
     },
     "bagmans3": {
-      "essais": 9,
+      "essais": 2,
       "jeu": "bagmans3",
-      "le": "2026-09-25",
-      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
+      "le": "2026-09-29",
+      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] This romset is known but marked as not working | [FBNeo] One of its clones might work so maybe give it a try | W)",
       "systeme": "fbneo"
     },
     "bnstars1": {
@@ -185,14 +183,16 @@
       "systeme": "fbneo"
     },
     "captcommb2": {
+      "essais": 2,
       "jeu": "captcommb2",
-      "le": "2026-09-25",
+      "le": "2026-09-29",
       "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Captain Commando (bootleg with 2xMSM5205) | [FBNeo] This romset is known but marked as not w)",
       "systeme": "fbneo"
     },
     "cchip": {
+      "essais": 3,
       "jeu": "cchip",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
@@ -269,8 +269,9 @@
       "systeme": "fbneo"
     },
     "cluckypo": {
+      "essais": 3,
       "jeu": "cluckypo",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
@@ -289,8 +290,9 @@
       "systeme": "fbneo"
     },
     "cps1demo": {
+      "essais": 3,
       "jeu": "cps1demo",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
@@ -301,12 +303,6 @@
       "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
-    "ctsttape": {
-      "jeu": "ctsttape",
-      "le": "2026-09-27",
-      "raison": "jeu inanime",
-      "systeme": "fbneo"
-    },
     "cyclshtg": {
       "essais": 9,
       "jeu": "cyclshtg",
@@ -315,10 +311,10 @@
       "systeme": "fbneo"
     },
     "dangarj": {
-      "essais": 9,
+      "essais": 2,
       "jeu": "dangarj",
-      "le": "2026-09-25",
-      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
+      "le": "2026-09-29",
+      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Ufo Robo Dangar (9/26/1986, Japan) | [FBNeo] This romset is known but marked as not working )",
       "systeme": "fbneo"
     },
     "dduxbl": {
@@ -336,14 +332,16 @@
       "systeme": "fbneo"
     },
     "defenderb": {
+      "essais": 3,
       "jeu": "defenderb",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
     "defenderg": {
+      "essais": 3,
       "jeu": "defenderg",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
@@ -397,11 +395,13 @@
       "systeme": "fbneo"
     },
     "fenix": {
-      "essais": 9,
+      "core": "FinalBurn Neo",
+      "essais": 1,
       "jeu": "fenix",
-      "le": "2026-09-25",
-      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
-      "systeme": "fbneo"
+      "par": "nuit-credits.py",
+      "raison": "ne demarre pas",
+      "systeme": "fbneo",
+      "vu_le": "2026-09-28"
     },
     "friskytb": {
       "essais": 9,
@@ -437,10 +437,10 @@
       "systeme": "fbneo"
     },
     "gberetb": {
-      "essais": 9,
+      "essais": 2,
       "jeu": "gberetb",
-      "le": "2026-09-25",
-      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
+      "le": "2026-09-29",
+      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Green Beret (bootleg) | [FBNeo] This romset is known but marked as not working | [FBNeo] One)",
       "systeme": "fbneo"
     },
     "gladmort": {
@@ -505,8 +505,9 @@
       "systeme": "fbneo"
     },
     "gulfwar2a": {
+      "essais": 3,
       "jeu": "gulfwar2a",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
@@ -536,46 +537,40 @@
       "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
-    "hiimpact": {
-      "jeu": "hiimpact",
-      "le": "2026-09-27",
-      "raison": "aucun candidat",
-      "systeme": "fbneo"
-    },
     "hiimpact1": {
+      "essais": 3,
       "jeu": "hiimpact1",
-      "le": "2026-09-27",
-      "raison": "aucun candidat",
-      "systeme": "fbneo"
-    },
-    "hiimpact2": {
-      "jeu": "hiimpact2",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "hiimpact3": {
+      "essais": 3,
       "jeu": "hiimpact3",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "hiimpact4": {
+      "essais": 3,
       "jeu": "hiimpact4",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "hipoly": {
-      "essais": 9,
+      "core": "FinalBurn Neo",
+      "essais": 1,
       "jeu": "hipoly",
-      "le": "2026-09-25",
-      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
-      "systeme": "fbneo"
+      "par": "nuit-credits.py",
+      "raison": "le coeur refuse la rom",
+      "systeme": "fbneo",
+      "vu_le": "2026-09-28"
     },
     "hishouza": {
+      "essais": 2,
       "jeu": "hishouza",
-      "le": "2026-09-25",
+      "le": "2026-09-29",
       "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0xbc88cced and name b02-22.c21 from archive /mnt/roms/fbneo/fshark | [FBNeo] Using ROM )",
       "systeme": "fbneo"
     },
@@ -606,29 +601,34 @@
       "systeme": "fbneo"
     },
     "hypersptb": {
-      "essais": 9,
+      "core": "FinalBurn Neo",
+      "essais": 1,
       "jeu": "hypersptb",
-      "le": "2026-09-25",
-      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
-      "systeme": "fbneo"
+      "par": "nuit-credits.py",
+      "raison": "le coeur refuse la rom",
+      "systeme": "fbneo",
+      "vu_le": "2026-09-28"
     },
     "hyprolymb": {
-      "essais": 9,
+      "core": "FinalBurn Neo",
+      "essais": 1,
       "jeu": "hyprolymb",
-      "le": "2026-09-25",
-      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
-      "systeme": "fbneo"
+      "par": "nuit-credits.py",
+      "raison": "le coeur refuse la rom",
+      "systeme": "fbneo",
+      "vu_le": "2026-09-28"
     },
     "hyprolymba": {
-      "essais": 9,
+      "essais": 2,
       "jeu": "hyprolymba",
-      "le": "2026-09-25",
-      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
+      "le": "2026-09-29",
+      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Hyper Olympic (bootleg, set 2) | [FBNeo] This romset is known but marked as not working | [F)",
       "systeme": "fbneo"
     },
     "ichirjbl": {
+      "essais": 3,
       "jeu": "ichirjbl",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
@@ -664,12 +664,6 @@
       "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] hiscore.dat requires this feature to work in a runahead context | Setting save dir to /root/.config/retroarch/sy)",
       "systeme": "fbneo"
     },
-    "kf2k3ps2": {
-      "jeu": "kf2k3ps2",
-      "le": "2026-09-27",
-      "raison": "pilote plante (code -11)",
-      "systeme": "fbneo"
-    },
     "kickball": {
       "essais": 9,
       "jeu": "kickball",
@@ -678,8 +672,9 @@
       "systeme": "fbneo"
     },
     "knightsb3": {
+      "essais": 2,
       "jeu": "knightsb3",
-      "le": "2026-09-25",
+      "le": "2026-09-29",
       "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Knights of the Round (bootleg with 2xMSM5205, set 2) | [FBNeo] This romset is known but mark)",
       "systeme": "fbneo"
     },
@@ -690,20 +685,16 @@
       "systeme": "fbneo"
     },
     "kof95jq": {
+      "essais": 3,
       "jeu": "kof95jq",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
-    "kof97inv": {
-      "jeu": "kof97inv",
-      "le": "2026-09-27",
-      "raison": "pilote plante (code -11)",
-      "systeme": "fbneo"
-    },
     "kof97pm": {
+      "essais": 3,
       "jeu": "kof97pm",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
@@ -713,18 +704,6 @@
       "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
       "systeme": "fbneo"
     },
-    "kof98rat": {
-      "jeu": "kof98rat",
-      "le": "2026-09-27",
-      "raison": "candidats non confirmes",
-      "systeme": "fbneo"
-    },
-    "kof99jq": {
-      "jeu": "kof99jq",
-      "le": "2026-09-27",
-      "raison": "candidats non confirmes",
-      "systeme": "fbneo"
-    },
     "kof99sk": {
       "jeu": "kof99sk",
       "le": "2026-09-25",
@@ -732,8 +711,9 @@
       "systeme": "fbneo"
     },
     "kontest": {
+      "essais": 3,
       "jeu": "kontest",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
@@ -755,39 +735,24 @@
       "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] ROM at index %d with name %s and CRC 0x%08x is required | [FBNeo] ROM at index %d with name %s and CRC 0x%08x is)",
       "systeme": "fbneo"
     },
-    "lghost": {
-      "jeu": "lghost",
-      "le": "2026-09-27",
-      "raison": "aucun candidat",
-      "systeme": "fbneo"
-    },
     "lghostd": {
+      "essais": 3,
       "jeu": "lghostd",
-      "le": "2026-09-27",
-      "raison": "aucun candidat",
-      "systeme": "fbneo"
-    },
-    "lghostj": {
-      "jeu": "lghostj",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "lghostu": {
+      "essais": 3,
       "jeu": "lghostu",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "lghostud": {
+      "essais": 3,
       "jeu": "lghostud",
-      "le": "2026-09-27",
-      "raison": "aucun candidat",
-      "systeme": "fbneo"
-    },
-    "loffirej": {
-      "jeu": "loffirej",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
@@ -798,22 +763,20 @@
       "systeme": "fbneo"
     },
     "luctoday": {
+      "essais": 3,
       "jeu": "luctoday",
-      "le": "2026-09-27",
-      "raison": "jeu inanime",
-      "systeme": "fbneo"
-    },
-    "lunarba1": {
-      "jeu": "lunarba1",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "mariobl": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
       "jeu": "mariobl",
-      "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0x7b58c92e and name mbjba-2.3ls from archive /mnt/roms/fbneo/mariobl | [FBNeo] Using RO)",
-      "systeme": "fbneo"
+      "par": "nuit-credits.py",
+      "raison": "le coeur refuse la rom",
+      "systeme": "fbneo",
+      "vu_le": "2026-09-28"
     },
     "meikyuhbl": {
       "jeu": "meikyuhbl",
@@ -822,26 +785,23 @@
       "systeme": "fbneo"
     },
     "midssio": {
+      "essais": 3,
       "jeu": "midssio",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
-    "ms21v2": {
-      "jeu": "ms21v2",
-      "le": "2026-09-27",
-      "raison": "candidats non confirmes",
-      "systeme": "fbneo"
-    },
     "mslug2ct": {
+      "essais": 3,
       "jeu": "mslug2ct",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
     "mslug2dg": {
+      "essais": 3,
       "jeu": "mslug2dg",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
@@ -915,8 +875,9 @@
       "systeme": "fbneo"
     },
     "neo2500": {
+      "essais": 3,
       "jeu": "neo2500",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
@@ -927,8 +888,9 @@
       "systeme": "fbneo"
     },
     "neodemo": {
+      "essais": 3,
       "jeu": "neodemo",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
@@ -940,14 +902,16 @@
       "systeme": "fbneo"
     },
     "neoww2": {
+      "essais": 3,
       "jeu": "neoww2",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "nmk004": {
+      "essais": 3,
       "jeu": "nmk004",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
@@ -959,39 +923,44 @@
       "systeme": "fbneo"
     },
     "pgmdemo": {
+      "essais": 3,
       "jeu": "pgmdemo",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "pgmfrog": {
+      "essais": 3,
       "jeu": "pgmfrog",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "aucun candidat",
       "systeme": "fbneo"
     },
     "phoenixi": {
-      "essais": 9,
+      "essais": 2,
       "jeu": "phoenixi",
-      "le": "2026-09-25",
-      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
+      "le": "2026-09-29",
+      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Phoenix (IDI bootleg) | [FBNeo] This romset is known but marked as not working | [FBNeo] One)",
       "systeme": "fbneo"
     },
     "pitnrun": {
+      "essais": 3,
       "jeu": "pitnrun",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "pitnruna": {
+      "essais": 3,
       "jeu": "pitnruna",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "pitnrunb": {
+      "essais": 3,
       "jeu": "pitnrunb",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
@@ -1003,10 +972,10 @@
       "systeme": "fbneo"
     },
     "popeyebl": {
-      "essais": 9,
+      "essais": 2,
       "jeu": "popeyebl",
-      "le": "2026-09-25",
-      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
+      "le": "2026-09-29",
+      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Popeye (bootleg set 1) | [FBNeo] This romset is known but marked as not working | [FBNeo] On)",
       "systeme": "fbneo"
     },
     "powerinsc": {
@@ -1017,20 +986,23 @@
       "systeme": "fbneo"
     },
     "raiders5": {
+      "essais": 3,
       "jeu": "raiders5",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "raiders5t": {
+      "essais": 3,
       "jeu": "raiders5t",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "raiders5ta": {
+      "essais": 3,
       "jeu": "raiders5ta",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
@@ -1113,8 +1085,9 @@
       "systeme": "fbneo"
     },
     "sengk3fs": {
+      "essais": 3,
       "jeu": "sengk3fs",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "candidats non confirmes",
       "systeme": "fbneo"
     },
@@ -1139,10 +1112,10 @@
       "systeme": "fbneo"
     },
     "sisv1": {
-      "essais": 9,
+      "essais": 2,
       "jeu": "sisv1",
-      "le": "2026-09-25",
-      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
+      "le": "2026-09-29",
+      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Space Invaders (SV Version rev 1) | [FBNeo] This romset is known but marked as not working |)",
       "systeme": "fbneo"
     },
     "skns": {
@@ -1153,16 +1126,20 @@
       "systeme": "fbneo"
     },
     "skywolf3": {
+      "essais": 3,
       "jeu": "skywolf3",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
     "slampic2": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
       "jeu": "slampic2",
-      "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Saturday Night Slam Masters (bootleg with PIC16C57, set 2) | [FBNeo] This romset is known bu)",
-      "systeme": "fbneo"
+      "par": "nuit-credits.py",
+      "raison": "le coeur refuse la rom",
+      "systeme": "fbneo",
+      "vu_le": "2026-09-28"
     },
     "splash": {
       "jeu": "splash",
@@ -1170,17 +1147,14 @@
       "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Using ROM with known crc 0xfebb9893 and name splash_10.i13 from archive /mnt/roms/fbneo/splash | [FBNeo] ROM at )",
       "systeme": "fbneo"
     },
-    "ssf2tbj1": {
-      "jeu": "ssf2tbj1",
-      "le": "2026-09-27",
-      "raison": "candidats non confirmes",
-      "systeme": "fbneo"
-    },
     "sspirtfc": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
       "jeu": "sspirtfc",
-      "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Scramble Spirits (World, Floppy Based, FD1094 317-0058-02c) | [FBNeo] This romset is known b)",
-      "systeme": "fbneo"
+      "par": "nuit-credits.py",
+      "raison": "ne demarre pas",
+      "systeme": "fbneo",
+      "vu_le": "2026-09-28"
     },
     "stadhr96j2": {
       "essais": 9,
@@ -1190,15 +1164,18 @@
       "systeme": "fbneo"
     },
     "starforcb": {
-      "essais": 9,
+      "core": "FinalBurn Neo",
+      "essais": 1,
       "jeu": "starforcb",
-      "le": "2026-09-25",
-      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
-      "systeme": "fbneo"
+      "par": "nuit-credits.py",
+      "raison": "le coeur refuse la rom",
+      "systeme": "fbneo",
+      "vu_le": "2026-09-28"
     },
     "syscheck": {
+      "essais": 3,
       "jeu": "syscheck",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "jeu inanime",
       "systeme": "fbneo"
     },
@@ -1230,17 +1207,14 @@
       "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
       "systeme": "fbneo"
     },
-    "topsecex": {
-      "jeu": "topsecex",
-      "le": "2026-09-27",
-      "raison": "candidats non confirmes",
-      "systeme": "fbneo"
-    },
     "tornado1": {
+      "core": "FinalBurn Neo",
+      "essais": 1,
       "jeu": "tornado1",
-      "le": "2026-09-25",
-      "raison": "chargee, ni memoire publiee ni sauvegarde d etat ([FBNeo] Romset description: Tornado (bootleg of Defender, set 1) | [FBNeo] This romset is known but marked as not workin)",
-      "systeme": "fbneo"
+      "par": "nuit-credits.py",
+      "raison": "ne demarre pas",
+      "systeme": "fbneo",
+      "vu_le": "2026-09-28"
     },
     "wbbc97": {
       "jeu": "wbbc97",
@@ -1269,17 +1243,20 @@
       "systeme": "fbneo"
     },
     "ym2608": {
+      "essais": 3,
       "jeu": "ym2608",
-      "le": "2026-09-27",
+      "le": "2026-09-29",
       "raison": "pilote plante (code -11)",
       "systeme": "fbneo"
     },
     "zero": {
-      "essais": 9,
+      "core": "FinalBurn Neo",
+      "essais": 1,
       "jeu": "zero",
-      "le": "2026-09-25",
-      "raison": "le coeur refuse la rom (romset marque non fonctionnel par FBNeo)",
-      "systeme": "fbneo"
+      "par": "nuit-credits.py",
+      "raison": "ne demarre pas",
+      "systeme": "fbneo",
+      "vu_le": "2026-09-28"
     },
     "zero2": {
       "essais": 9,
@@ -1987,6 +1964,39 @@
       },
       "releve": {
         "le": "2026-09-27",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "fbneo"
+    },
+    "1944ad": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 138676,
+        "adresse_hex": "0x21DB4",
+        "adresse_j2": 138541,
+        "adresse_j2_hex": "0x21D2D",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x56388",
+          "0x56D17"
+        ],
+        "octets": 1,
+        "pieces_observees": 3,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "1944ad",
+      "nom": "1944ad",
+      "ram": {
+        "commande": "sauvegarde d etat",
+        "hote": "BORNEARCADE",
+        "taille": 357720
+      },
+      "releve": {
+        "le": "2026-09-29",
         "methode": "balayage nocturne",
         "par": "nuit-credits.py"
       },
@@ -34533,6 +34543,38 @@
       },
       "systeme": "fbneo"
     },
+    "compgolfo": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 261,
+        "adresse_hex": "0x0105",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x0109"
+        ],
+        "octets": 1,
+        "pieces_observees": 3,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "compgolfo",
+      "nom": "compgolfo",
+      "ram": {
+        "commande": "sauvegarde d etat",
+        "hote": "BORNEARCADE",
+        "taille": 752
+      },
+      "releve": {
+        "le": "2026-09-29",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "fbneo"
+    },
     "complexx": {
       "core": "FinalBurn Neo",
       "credits": {
@@ -38247,6 +38289,36 @@
       },
       "releve": {
         "le": "2026-09-10",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "fbneo"
+    },
+    "ctsttape": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 60824,
+        "adresse_hex": "0xED98",
+        "adresse_j2": 60826,
+        "adresse_j2_hex": "0xED9A",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "ctsttape",
+      "nom": "ctsttape",
+      "ram": {
+        "commande": "sauvegarde d etat",
+        "hote": "BORNEARCADE",
+        "taille": 61400
+      },
+      "releve": {
+        "le": "2026-09-29",
         "methode": "balayage nocturne",
         "par": "nuit-credits.py"
       },
@@ -133514,6 +133586,639 @@
       },
       "systeme": "fbneo"
     },
+    "hiimpact": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 28750,
+        "adresse_hex": "0x704E",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x7090",
+          "0x7A04",
+          "0x9320",
+          "0x963C",
+          "0x9720",
+          "0xB24E",
+          "0xB51C",
+          "0xB9EC",
+          "0xBA14",
+          "0xBA54",
+          "0xBDAE",
+          "0xBDF0",
+          "0xBE32",
+          "0xC1CE",
+          "0xC210",
+          "0xC252",
+          "0xD110",
+          "0xD11C",
+          "0xD1C2",
+          "0xD928",
+          "0xD9D4",
+          "0xED24",
+          "0xEE44",
+          "0x119BE",
+          "0x11A00",
+          "0x11A42",
+          "0x1320C",
+          "0x13634",
+          "0x141F0",
+          "0x14232",
+          "0x14E04",
+          "0x152C0",
+          "0x16A36",
+          "0x16EE4",
+          "0x17204",
+          "0x176EE",
+          "0x18320",
+          "0x1863C",
+          "0x18A0C",
+          "0x18E0C",
+          "0x18EAE",
+          "0x18ECC",
+          "0x191AC",
+          "0x195EE",
+          "0x1960C",
+          "0x19630",
+          "0x19EB4",
+          "0x205BC",
+          "0x2099C",
+          "0x20A10",
+          "0x20A52",
+          "0x20B1C",
+          "0x20EBC",
+          "0x20F0C",
+          "0x212BC",
+          "0x21320",
+          "0x21540",
+          "0x21A7C",
+          "0x21B14",
+          "0x21CBE",
+          "0x21E0C",
+          "0x21E4C",
+          "0x221EE",
+          "0x22230",
+          "0x22272",
+          "0x225B4",
+          "0x2306C",
+          "0x2306E",
+          "0x234C4",
+          "0x238A4",
+          "0x240AC",
+          "0x258AC",
+          "0x25C5C",
+          "0x25CC4",
+          "0x26052",
+          "0x26090",
+          "0x260BC",
+          "0x27C74",
+          "0x29E2E",
+          "0x29E70",
+          "0x2B146",
+          "0x2B188",
+          "0x2BDA6",
+          "0x2C156",
+          "0x2C218",
+          "0x2C55C",
+          "0x2CB20",
+          "0x2DAE4",
+          "0x2E6A4",
+          "0x2F2CC",
+          "0x2FACC",
+          "0x2FAEE",
+          "0x2FD76",
+          "0x2FDB8",
+          "0x3094A",
+          "0x30952",
+          "0x30D3A",
+          "0x31146",
+          "0x31188",
+          "0x31946",
+          "0x31988",
+          "0x32270",
+          "0x32AC0",
+          "0x332C0",
+          "0x336A4",
+          "0x339B6",
+          "0x33EA4",
+          "0x34AC4",
+          "0x358E0",
+          "0x3826E",
+          "0x84110",
+          "0x84300",
+          "0x844F0",
+          "0x846C0",
+          "0x846E0",
+          "0x848CC",
+          "0x84CAC",
+          "0x84E8D",
+          "0x85061",
+          "0x85088",
+          "0x85468",
+          "0x856DE",
+          "0x85844",
+          "0x85C24",
+          "0x85FDD",
+          "0x86000",
+          "0x86108",
+          "0x862E0",
+          "0x862F8",
+          "0x863E0",
+          "0x864C8",
+          "0x864E8",
+          "0x865C8",
+          "0x867BC",
+          "0x868C4",
+          "0x86C84",
+          "0x86C95",
+          "0x86CA4",
+          "0x86EA5",
+          "0x86F51",
+          "0x86F61",
+          "0x86F78",
+          "0x87080",
+          "0x87440",
+          "0x87460",
+          "0x875AB",
+          "0x8762B",
+          "0x87734",
+          "0x87C0D",
+          "0x87EC4",
+          "0x87ED5",
+          "0x87EF0",
+          "0x87F01",
+          "0x87F10",
+          "0x88100",
+          "0x882C0",
+          "0x884B0",
+          "0x884E0",
+          "0x88680",
+          "0x886AC",
+          "0x888BC",
+          "0x88BAD",
+          "0x88C7D",
+          "0x88C9C",
+          "0x88E55",
+          "0x88E68",
+          "0x89078",
+          "0x890FE",
+          "0x892DE",
+          "0x893AB",
+          "0x894BE",
+          "0x894CF",
+          "0x894DE",
+          "0x89624",
+          "0x89834",
+          "0x89DBD",
+          "0x89DCC",
+          "0x89DE0",
+          "0x89DF8",
+          "0x89EE0",
+          "0x89F08",
+          "0x89FF0",
+          "0x8A0C8",
+          "0x8A2B8",
+          "0x8A3B8",
+          "0x8A588",
+          "0x8A6D5",
+          "0x8A791",
+          "0x8A7AC",
+          "0x8A7BD",
+          "0x8AA69",
+          "0x8AB0E",
+          "0x8AB69",
+          "0x8AF68",
+          "0x8B0AE",
+          "0x8B0DE",
+          "0x8B1CD",
+          "0x8B1D9",
+          "0x8B24D",
+          "0x8B2C1",
+          "0x8B341",
+          "0x8B4B5",
+          "0x8B5C1",
+          "0x8B711",
+          "0x8B724",
+          "0x8B7C1",
+          "0x8B891",
+          "0x8B8D3",
+          "0x8BCB4",
+          "0x8BD0C",
+          "0x8BEE0",
+          "0x8BEF1",
+          "0x8C0CC",
+          "0x8C0DD",
+          "0x8C0F0",
+          "0x8C280",
+          "0x8C2E0",
+          "0x8C470",
+          "0x8C4C8",
+          "0x8C7BD",
+          "0x8C888",
+          "0x8C8AC",
+          "0x8CC2C",
+          "0x8CC84",
+          "0x8CCFD",
+          "0x8CEDD",
+          "0x8CEDE",
+          "0x8D044",
+          "0x8D055",
+          "0x8D068",
+          "0x8D26C",
+          "0x8D3E8",
+          "0x8D440",
+          "0x8D548",
+          "0x8D741",
+          "0x8D800",
+          "0x8D824",
+          "0x8DBA4",
+          "0x8DCE8",
+          "0x8DCF9",
+          "0x8DD04",
+          "0x8DDF5",
+          "0x8DE8F",
+          "0x8DF05",
+          "0x8DFCD",
+          "0x8DFD5",
+          "0x8DFE0",
+          "0x8E088",
+          "0x8E0EC",
+          "0x8E2DC",
+          "0x8E4A4",
+          "0x8E4C0",
+          "0x8E636",
+          "0x8E647",
+          "0x8E6B5",
+          "0x8E79C",
+          "0x8E844",
+          "0x8E8A8",
+          "0x8E9F3",
+          "0x8EA8D",
+          "0x8EC60",
+          "0x8EC71",
+          "0x8EE99",
+          "0x8EF59",
+          "0x8EF69",
+          "0x8F000",
+          "0x8F064",
+          "0x8F086",
+          "0x8F1CB",
+          "0x8F2C8",
+          "0x8F354",
+          "0x8F530",
+          "0x8F5D1",
+          "0x8F679",
+          "0x8F6A1",
+          "0x8F6BB",
+          "0x8F6E3",
+          "0x8F820",
+          "0x8F899",
+          "0x8FA84",
+          "0x8FAB0",
+          "0x8FAE0",
+          "0x8FB10",
+          "0x8FC97",
+          "0x8FCA4",
+          "0x8FCDD",
+          "0x8FCFC",
+          "0x8FEA4",
+          "0x8FECC",
+          "0x8FEDD",
+          "0x8FFFD",
+          "0x90074",
+          "0x900E0",
+          "0x90237",
+          "0x90240",
+          "0x902BF",
+          "0x90447",
+          "0x90460",
+          "0x9053E",
+          "0x90647",
+          "0x90660",
+          "0x9071D",
+          "0x90889",
+          "0x9089C",
+          "0x90ADE",
+          "0x90B0E",
+          "0x90CBD",
+          "0x90CDE",
+          "0x90E2C",
+          "0x90E7C",
+          "0x90FD4",
+          "0x9107E",
+          "0x910AE",
+          "0x910DE",
+          "0x91334",
+          "0x914FB",
+          "0x9153D",
+          "0x91638",
+          "0x91704",
+          "0x9188D",
+          "0x91A97",
+          "0x91B01",
+          "0x91B0C",
+          "0x91C7F",
+          "0x91DB5",
+          "0x91DD1",
+          "0x91DDC",
+          "0x91E64",
+          "0x92037",
+          "0x9204C",
+          "0x920AC",
+          "0x920DC",
+          "0x923AD",
+          "0x92673",
+          "0x92808",
+          "0x92A43",
+          "0x92BB7",
+          "0x92D13",
+          "0x92DED",
+          "0x92E6D",
+          "0x92EB9",
+          "0x92EE1",
+          "0x92F56",
+          "0x930DA",
+          "0x933FE",
+          "0x934C9",
+          "0x936D7",
+          "0x93908",
+          "0x93CE8",
+          "0x940C4",
+          "0x944A4",
+          "0x946A8",
+          "0x9485F",
+          "0x94880",
+          "0x94BA9",
+          "0x94C60",
+          "0x9503C",
+          "0x951EE",
+          "0x953CE",
+          "0x955BF",
+          "0x956CB",
+          "0x957F8",
+          "0x95900",
+          "0x95BC3",
+          "0x95CC0",
+          "0x95CD1",
+          "0x95CE0",
+          "0x95FB4",
+          "0x963BC",
+          "0x963CD",
+          "0x96692",
+          "0x966B5",
+          "0x96770",
+          "0x969B5",
+          "0x96B37",
+          "0x96B78",
+          "0x96F2C",
+          "0x96FEE",
+          "0x971CE",
+          "0x9745B",
+          "0x9746E",
+          "0x976E8",
+          "0x978F8",
+          "0x97CCF",
+          "0x97E95",
+          "0x97EA4",
+          "0x980B4",
+          "0x980C8",
+          "0x981F0",
+          "0x9836F",
+          "0x983D4",
+          "0x983E5",
+          "0x984A8",
+          "0x985B5",
+          "0x98660",
+          "0x98870",
+          "0x98B69",
+          "0x98B90",
+          "0x98DC2",
+          "0x98F71",
+          "0x9902C",
+          "0x99343",
+          "0x993B3",
+          "0x99418",
+          "0x997C3",
+          "0x997E8",
+          "0x99979",
+          "0x99DC9",
+          "0x99DDC",
+          "0x99E15",
+          "0x99FA4",
+          "0x99FF4",
+          "0x9A0C0",
+          "0x9A1D0",
+          "0x9A2A9",
+          "0x9A2B4",
+          "0x9A470",
+          "0x9A598",
+          "0x9A5B5",
+          "0x9A637",
+          "0x9A760",
+          "0x9A79F",
+          "0x9A7B0",
+          "0x9A8DF",
+          "0x9A955",
+          "0x9AA0D",
+          "0x9AA81",
+          "0x9AAF6",
+          "0x9ACBB",
+          "0x9AE7B",
+          "0x9AEA9",
+          "0x9B097",
+          "0x9B0D9",
+          "0x9B4AC",
+          "0x9B504",
+          "0x9B82D",
+          "0x9B8C4",
+          "0x9B8E8",
+          "0x9BC68",
+          "0x9BCC0",
+          "0x9BDED",
+          "0x9BFC3",
+          "0x9BFD4",
+          "0x9C080",
+          "0x9C091",
+          "0x9C0A4",
+          "0x9C1CF",
+          "0x9C237",
+          "0x9C2BF",
+          "0x9C2DE",
+          "0x9C417",
+          "0x9C424",
+          "0x9C671",
+          "0x9C860",
+          "0x9C957",
+          "0x9CBB2",
+          "0x9CD40",
+          "0x9CF37",
+          "0x9D01C",
+          "0x9D1CE",
+          "0x9D4E0",
+          "0x9D548",
+          "0x9D693",
+          "0x9D72D",
+          "0x9D73A",
+          "0x9D880",
+          "0x9D8E4",
+          "0x9D98A",
+          "0x9DBDC",
+          "0x9DC1D",
+          "0x9DCAD",
+          "0x9DCEE",
+          "0x9DEC8",
+          "0x9E0A0",
+          "0x9E17A",
+          "0x9E278",
+          "0x9E41B",
+          "0x9E936",
+          "0x9E989",
+          "0x9EA27",
+          "0x9EAC0",
+          "0x9ED1D",
+          "0x9EDAE",
+          "0x9EE12",
+          "0x9F0CB",
+          "0x9F28D",
+          "0x9F3BD",
+          "0x9F508",
+          "0x9F6D5",
+          "0x9F7F3",
+          "0x9F861",
+          "0x9FAA8",
+          "0x9FAD8",
+          "0x9FC5F",
+          "0x9FC6C",
+          "0x9FDE1",
+          "0x9FECF",
+          "0x9FEDE",
+          "0xA003C",
+          "0xA00A8",
+          "0xA0197",
+          "0xA01C7",
+          "0xA01D0",
+          "0xA023E",
+          "0xA0317",
+          "0xA0517",
+          "0xA064A",
+          "0xA08B7",
+          "0xA0A61",
+          "0xA0AD6",
+          "0xA0B64",
+          "0xA0BF5",
+          "0xA0DFD",
+          "0xA0E2F",
+          "0xA1076",
+          "0xA10A6",
+          "0xA1571",
+          "0xA1701",
+          "0xA170E",
+          "0xA1855",
+          "0xA189B",
+          "0xA1932",
+          "0xA194A",
+          "0xA1AFD",
+          "0xA1B06",
+          "0xA1E55",
+          "0xA1E62",
+          "0xA1ECA",
+          "0xA1F81",
+          "0xA1FF7",
+          "0xA2027",
+          "0xA20A6",
+          "0xA20BE",
+          "0xA21DD",
+          "0xA2251",
+          "0xA2439",
+          "0xA2469",
+          "0xA24C5",
+          "0xA25AD",
+          "0xA272D",
+          "0xA2739",
+          "0xA27AD",
+          "0xA2821",
+          "0xA28A1",
+          "0xA28E3",
+          "0xA2CB8",
+          "0xA2D10",
+          "0xA3025",
+          "0xA30D0",
+          "0xA30E1",
+          "0xA3100",
+          "0xA3284",
+          "0xA3474",
+          "0xA34E0",
+          "0xA3644",
+          "0xA3666",
+          "0xA36CC",
+          "0xA37AB",
+          "0xA38BC",
+          "0xA3A40",
+          "0xA3E00",
+          "0xA3E11",
+          "0xA3E22",
+          "0xA3E79",
+          "0xAA9A1",
+          "0xAB95C",
+          "0xAB960",
+          "0xABA96",
+          "0xABAA2",
+          "0xABABA"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "hiimpact",
+      "nom": "hiimpact",
+      "ram": {
+        "commande": "sauvegarde d etat",
+        "hote": "BORNEARCADE",
+        "taille": 736040
+      },
+      "releve": {
+        "le": "2026-09-29",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "fbneo"
+    },
+    "hiimpact2": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 163948,
+        "adresse_hex": "0x2806C",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x2806E"
+        ],
+        "octets": 1,
+        "pieces_observees": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "hiimpact2",
+      "nom": "hiimpact2",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "hote": "BORNEARCADE",
+        "taille": 688128
+      },
+      "releve": {
+        "le": "2026-09-29",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "fbneo"
+    },
     "hiimpactp": {
       "core": "FinalBurn Neo",
       "credits": {
@@ -144659,6 +145364,74 @@
       },
       "systeme": "fbneo"
     },
+    "kf2k3ps2": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 301,
+        "adresse_hex": "0x012D",
+        "adresse_j2": 788,
+        "adresse_j2_hex": "0x0314",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": true,
+        "miroirs": [
+          "0x2304C",
+          "0x23051",
+          "0x231CC",
+          "0x231D1",
+          "0x2334C",
+          "0x23351",
+          "0x234CC",
+          "0x234D1",
+          "0x2364C",
+          "0x23651",
+          "0x237CC",
+          "0x2394C",
+          "0x23ACC",
+          "0x23C4C",
+          "0x23DCC",
+          "0x23F4C",
+          "0x240CC",
+          "0x2424C",
+          "0x243CC",
+          "0x2454C",
+          "0x246CC",
+          "0x2484C",
+          "0x249CC",
+          "0x24B4C",
+          "0x24CCC",
+          "0x24E4C",
+          "0x24FCC",
+          "0x24FD1",
+          "0x252CC",
+          "0x282FB",
+          "0x282FD",
+          "0x3091E",
+          "0x30945",
+          "0x333B9",
+          "0x3343D",
+          "0x33463",
+          "0x335E3"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "kf2k3ps2",
+      "nom": "kf2k3ps2",
+      "ram": {
+        "commande": "sauvegarde d etat",
+        "hote": "BORNEARCADE",
+        "taille": 348544
+      },
+      "releve": {
+        "le": "2026-09-29",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "fbneo"
+    },
     "kf2k3upl": {
       "core": "FinalBurn Neo",
       "credits": {
@@ -149039,6 +149812,44 @@
       },
       "systeme": "fbneo"
     },
+    "kof97inv": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 198882,
+        "adresse_hex": "0x308E2",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x30999",
+          "0x309B9",
+          "0x309C0",
+          "0x30CB8",
+          "0x55028",
+          "0x55038",
+          "0x550F4"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "kof97inv",
+      "nom": "kof97inv",
+      "ram": {
+        "commande": "sauvegarde d etat",
+        "hote": "BORNEARCADE",
+        "taille": 348544
+      },
+      "releve": {
+        "le": "2026-09-29",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "fbneo"
+    },
     "kof97k": {
       "core": "FinalBurn Neo",
       "credits": {
@@ -150165,6 +150976,107 @@
       },
       "systeme": "fbneo"
     },
+    "kof98rat": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 93,
+        "adresse_hex": "0x005D",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x0080",
+          "0x0081",
+          "0x008B",
+          "0x00AA",
+          "0x0140",
+          "0x015B",
+          "0x0176",
+          "0x0191",
+          "0x01B8",
+          "0x01D3",
+          "0x01EE",
+          "0x0209",
+          "0x02A8",
+          "0x02C3",
+          "0x02DE",
+          "0x02F9",
+          "0x0344",
+          "0x0346",
+          "0x035D",
+          "0x035F",
+          "0x0368",
+          "0x20681",
+          "0x30B86",
+          "0x30BBF",
+          "0x30BC5",
+          "0x30BCC",
+          "0x30D79",
+          "0x30DBF",
+          "0x30DC5",
+          "0x3BB87",
+          "0x3C84C",
+          "0x3C8D8",
+          "0x3C9C9",
+          "0x3CB8B",
+          "0x3CCA7",
+          "0x3CD07",
+          "0x3CDE7",
+          "0x3CEEA",
+          "0x3CFAE",
+          "0x3D00E",
+          "0x3D2ED",
+          "0x3F904",
+          "0x403FC",
+          "0x4091E",
+          "0x40945",
+          "0x4096C",
+          "0x40A20",
+          "0x40A21",
+          "0x40A25",
+          "0x40A47",
+          "0x40A4C",
+          "0x40A6F",
+          "0x40A71",
+          "0x40A9A",
+          "0x43911",
+          "0x439A7",
+          "0x43AB4",
+          "0x43AB8",
+          "0x43B55",
+          "0x43BFD",
+          "0x43E88",
+          "0x43F25",
+          "0x440C1",
+          "0x44303",
+          "0x44408",
+          "0x44858",
+          "0x46F60",
+          "0x65028",
+          "0x65038",
+          "0x65138"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "kof98rat",
+      "nom": "kof98rat",
+      "ram": {
+        "commande": "sauvegarde d etat",
+        "hote": "BORNEARCADE",
+        "taille": 414152
+      },
+      "releve": {
+        "le": "2026-09-29",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "fbneo"
+    },
     "kof98ult": {
       "core": "FinalBurn Neo",
       "credits": {
@@ -150423,6 +151335,65 @@
       "releve": {
         "le": "2026-09-19",
         "methode": "coeur direct, acharne"
+      },
+      "systeme": "fbneo"
+    },
+    "kof99jq": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 903,
+        "adresse_hex": "0x0387",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x20681",
+          "0x206A9",
+          "0x30B86",
+          "0x30BCC",
+          "0x30FBF",
+          "0x30FC5",
+          "0x3BEE8",
+          "0x3C642",
+          "0x3C65D",
+          "0x3C8A8",
+          "0x3CAA1",
+          "0x3CB71",
+          "0x3CC0F",
+          "0x3CE49",
+          "0x3EB67",
+          "0x3EB69",
+          "0x3F904",
+          "0x403FC",
+          "0x40981",
+          "0x40A20",
+          "0x40A21",
+          "0x40A25",
+          "0x40A47",
+          "0x40A4C",
+          "0x40A6F",
+          "0x40A71",
+          "0x40A9A",
+          "0x64E93"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "kof99jq",
+      "nom": "kof99jq",
+      "ram": {
+        "commande": "sauvegarde d etat",
+        "hote": "BORNEARCADE",
+        "taille": 414152
+      },
+      "releve": {
+        "le": "2026-09-29",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
       },
       "systeme": "fbneo"
     },
@@ -156573,6 +157544,69 @@
       },
       "systeme": "fbneo"
     },
+    "lghost": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 185732,
+        "adresse_hex": "0x2D584",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x2D594",
+          "0x2D7E5"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "lghost",
+      "nom": "lghost",
+      "ram": {
+        "commande": "sauvegarde d etat",
+        "hote": "BORNEARCADE",
+        "taille": 252008
+      },
+      "releve": {
+        "le": "2026-09-29",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "fbneo"
+    },
+    "lghostj": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 88033,
+        "adresse_hex": "0x157E1",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": true,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 3,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "lghostj",
+      "nom": "lghostj",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "hote": "BORNEARCADE",
+        "taille": 100352
+      },
+      "releve": {
+        "le": "2026-09-29",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "fbneo"
+    },
     "lgtnfght": {
       "core": "FinalBurn Neo",
       "credits": {
@@ -157835,6 +158869,36 @@
       },
       "systeme": "fbneo"
     },
+    "loffirej": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 135471,
+        "adresse_hex": "0x2112F",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "loffirej",
+      "nom": "loffirej",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "hote": "BORNEARCADE",
+        "taille": 169984
+      },
+      "releve": {
+        "le": "2026-09-29",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "fbneo"
+    },
     "loffirejd": {
       "core": "FinalBurn Neo",
       "credits": {
@@ -158758,6 +159822,36 @@
       },
       "releve": {
         "le": "2026-09-27",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "fbneo"
+    },
+    "lunarba1": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 229,
+        "adresse_hex": "0x00E5",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 1,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "lunarba1",
+      "nom": "lunarba1",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "hote": "BORNEARCADE",
+        "taille": 4096
+      },
+      "releve": {
+        "le": "2026-09-29",
         "methode": "balayage nocturne",
         "par": "nuit-credits.py"
       },
@@ -174074,6 +175168,36 @@
       "releve": {
         "le": "2026-09-12",
         "methode": "coeur direct"
+      },
+      "systeme": "fbneo"
+    },
+    "ms21v2": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 65163,
+        "adresse_hex": "0xFE8B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 3,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "ms21v2",
+      "nom": "ms21v2",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "hote": "BORNEARCADE",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-29",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
       },
       "systeme": "fbneo"
     },
@@ -240327,6 +241451,39 @@
       },
       "systeme": "fbneo"
     },
+    "ssf2tbj1": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 306,
+        "adresse_hex": "0x0132",
+        "adresse_j2": 524,
+        "adresse_j2_hex": "0x020C",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x0133",
+          "0x82ED"
+        ],
+        "octets": 1,
+        "pieces_observees": 2,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "ssf2tbj1",
+      "nom": "ssf2tbj1",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "hote": "BORNEARCADE",
+        "taille": 65536
+      },
+      "releve": {
+        "le": "2026-09-29",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "fbneo"
+    },
     "ssf2tbr1": {
       "core": "FinalBurn Neo",
       "credits": {
@@ -256581,6 +257738,36 @@
       },
       "systeme": "fbneo"
     },
+    "topsecex": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 17048,
+        "adresse_hex": "0x4298",
+        "adresse_j2": 8476,
+        "adresse_j2_hex": "0x211C",
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "topsecex",
+      "nom": "topsecex",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "hote": "BORNEARCADE",
+        "taille": 155296
+      },
+      "releve": {
+        "le": "2026-09-29",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "fbneo"
+    },
     "topsecrt": {
       "core": "FinalBurn Neo",
       "credits": {
@@ -267496,6 +268683,36 @@
       },
       "systeme": "fbneo"
     },
+    "vscastlevania": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 640,
+        "adresse_hex": "0x0280",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 1,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "vscastlevania",
+      "nom": "vscastlevania",
+      "ram": {
+        "commande": "sauvegarde d etat",
+        "hote": "BORNEARCADE",
+        "taille": 17536
+      },
+      "releve": {
+        "le": "2026-09-29",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "fbneo"
+    },
     "vsclucluland": {
       "core": "FinalBurn Neo",
       "credits": {
@@ -271419,6 +272636,263 @@
       },
       "releve": {
         "le": "2026-09-27",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "fbneo"
+    },
+    "wcbowl130": {
+      "core": "FinalBurn Neo",
+      "credits": {
+        "adresse": 1173,
+        "adresse_hex": "0x0495",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x0FC5",
+          "0x112F",
+          "0x1D31",
+          "0x1D43",
+          "0x1DD3",
+          "0x1E09",
+          "0x1E1B",
+          "0x1E2D",
+          "0x1E3F",
+          "0x1E51",
+          "0x1E63",
+          "0x1E75",
+          "0x1E87",
+          "0x1E99",
+          "0x1E9D",
+          "0x1EE7",
+          "0x1F53",
+          "0x1F65",
+          "0x1FF5",
+          "0x2019",
+          "0x202B",
+          "0x203D",
+          "0x204F",
+          "0x2061",
+          "0x2073",
+          "0x2085",
+          "0x2097",
+          "0x20A9",
+          "0x20BB",
+          "0x20C9",
+          "0x2109",
+          "0x2175",
+          "0x2187",
+          "0x220E",
+          "0x2217",
+          "0x223B",
+          "0x224D",
+          "0x225F",
+          "0x2271",
+          "0x2283",
+          "0x2295",
+          "0x22A7",
+          "0x22B9",
+          "0x22CB",
+          "0x22DD",
+          "0x22EB",
+          "0x232B",
+          "0x2397",
+          "0x23A9",
+          "0x2430",
+          "0x2439",
+          "0x245D",
+          "0x246F",
+          "0x2481",
+          "0x2493",
+          "0x24A5",
+          "0x24B7",
+          "0x24C9",
+          "0x24DB",
+          "0x24ED",
+          "0x24FF",
+          "0x250D",
+          "0x254D",
+          "0x25B9",
+          "0x25CB",
+          "0x2640",
+          "0x2649",
+          "0x265B",
+          "0x267F",
+          "0x2691",
+          "0x26A3",
+          "0x26B5",
+          "0x26C7",
+          "0x26D9",
+          "0x26EB",
+          "0x26FD",
+          "0x270F",
+          "0x2721",
+          "0x272F",
+          "0x2793",
+          "0x27DB",
+          "0x27ED",
+          "0x2862",
+          "0x286B",
+          "0x287D",
+          "0x28A1",
+          "0x28B3",
+          "0x28C5",
+          "0x28D7",
+          "0x28E9",
+          "0x28FB",
+          "0x290D",
+          "0x291F",
+          "0x2931",
+          "0x2943",
+          "0x2951",
+          "0x29B5",
+          "0x29FD",
+          "0x2A0F",
+          "0x2A84",
+          "0x2A8D",
+          "0x2A9F",
+          "0x2AC3",
+          "0x2AD5",
+          "0x2AE7",
+          "0x2AF9",
+          "0x2B0B",
+          "0x2B1D",
+          "0x2B2F",
+          "0x2B41",
+          "0x2B53",
+          "0x2B65",
+          "0x2B73",
+          "0x2BD7",
+          "0x2C1F",
+          "0x2C31",
+          "0x2CA6",
+          "0x2CAF",
+          "0x2CC1",
+          "0x2CE5",
+          "0x2CF7",
+          "0x2D09",
+          "0x2D1B",
+          "0x2D2D",
+          "0x2D3F",
+          "0x2D51",
+          "0x2D63",
+          "0x2D75",
+          "0x2E2F",
+          "0x2E41",
+          "0x2EC8",
+          "0x2ED1",
+          "0x2F07",
+          "0x2F19",
+          "0x2F2B",
+          "0x2F3D",
+          "0x2F4F",
+          "0x2F61",
+          "0x2F73",
+          "0x2F85",
+          "0x2F97",
+          "0x3051",
+          "0x3063",
+          "0x30EA",
+          "0x30F3",
+          "0x3129",
+          "0x313B",
+          "0x314D",
+          "0x315F",
+          "0x3171",
+          "0x3183",
+          "0x3195",
+          "0x31A7",
+          "0x31B9",
+          "0x3273",
+          "0x3285",
+          "0x330C",
+          "0x3315",
+          "0x334B",
+          "0x335D",
+          "0x336F",
+          "0x3381",
+          "0x3393",
+          "0x33A5",
+          "0x33B7",
+          "0x33C9",
+          "0x33DB",
+          "0x33DF",
+          "0x3495",
+          "0x34A7",
+          "0x352E",
+          "0x3537",
+          "0x356D",
+          "0x357F",
+          "0x3591",
+          "0x35A3",
+          "0x35B5",
+          "0x35C7",
+          "0x35D9",
+          "0x35EB",
+          "0x35FD",
+          "0x3601",
+          "0x36B7",
+          "0x36C9",
+          "0x3750",
+          "0x3759",
+          "0x378F",
+          "0x37A1",
+          "0x37B3",
+          "0x37C5",
+          "0x37D7",
+          "0x37E9",
+          "0x37FB",
+          "0x380D",
+          "0x381F",
+          "0x3823",
+          "0x38D9",
+          "0x38EB",
+          "0x3972",
+          "0x397B",
+          "0x39B1",
+          "0x39C3",
+          "0x39D5",
+          "0x39E7",
+          "0x39F9",
+          "0x3A0B",
+          "0x3A1D",
+          "0x3A2F",
+          "0x3A41",
+          "0x3A45",
+          "0x3AFB",
+          "0x3B0D",
+          "0x3B94",
+          "0x3B9D",
+          "0x3BD3",
+          "0x3BE5",
+          "0x3BF7",
+          "0x3C09",
+          "0x3C1B",
+          "0x3C2D",
+          "0x3C3F",
+          "0x3C51",
+          "0x3C63",
+          "0x3C67",
+          "0x7FF8",
+          "0x23A231"
+        ],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "wcbowl130",
+      "nom": "wcbowl130",
+      "ram": {
+        "commande": "sauvegarde d etat",
+        "hote": "BORNEARCADE",
+        "taille": 2357176
+      },
+      "releve": {
+        "le": "2026-09-29",
         "methode": "balayage nocturne",
         "par": "nuit-credits.py"
       },

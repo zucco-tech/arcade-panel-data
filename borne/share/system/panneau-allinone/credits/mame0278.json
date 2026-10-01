@@ -1,0 +1,225 @@
+{
+  "description": "Adresse RAM du compteur de credits de chaque jeu de ce systeme, indexee par nom de set. Se lit par l'interface reseau de RetroArch : READ_CORE_RAM <adresse> 1 en UDP sur le port 55355.",
+  "difficiles": {
+    "archrivla": {
+      "core": "MAME",
+      "essais": 3,
+      "jeu": "archrivla",
+      "par": "nuit-credits.py",
+      "raison": "delai depasse",
+      "systeme": "mame0278",
+      "vu_le": "2026-09-28"
+    },
+    "archrivlb": {
+      "core": "MAME",
+      "essais": 3,
+      "jeu": "archrivlb",
+      "par": "nuit-credits.py",
+      "raison": "delai depasse",
+      "systeme": "mame0278",
+      "vu_le": "2026-09-28"
+    },
+    "bloodbrom": {
+      "core": "MAME",
+      "essais": 3,
+      "jeu": "bloodbrom",
+      "par": "nuit-credits.py",
+      "raison": "delai depasse",
+      "systeme": "mame0278",
+      "vu_le": "2026-09-28"
+    },
+    "bloodstm220": {
+      "core": "MAME",
+      "essais": 3,
+      "jeu": "bloodstm220",
+      "par": "nuit-credits.py",
+      "raison": "delai depasse",
+      "systeme": "mame0278",
+      "vu_le": "2026-09-28"
+    },
+    "bloodstm221": {
+      "core": "MAME",
+      "essais": 3,
+      "jeu": "bloodstm221",
+      "par": "nuit-credits.py",
+      "raison": "delai depasse",
+      "systeme": "mame0278",
+      "vu_le": "2026-09-28"
+    },
+    "f1dream": {
+      "core": "MAME",
+      "essais": 3,
+      "jeu": "f1dream",
+      "par": "nuit-credits.py",
+      "raison": "delai depasse",
+      "systeme": "mame0278",
+      "vu_le": "2026-09-28"
+    },
+    "fenix": {
+      "core": "MAME",
+      "essais": 3,
+      "jeu": "fenix",
+      "par": "nuit-credits.py",
+      "raison": "jeu inanime",
+      "systeme": "mame0278",
+      "vu_le": "2026-09-28"
+    },
+    "finalap2j": {
+      "core": "MAME",
+      "essais": 3,
+      "jeu": "finalap2j",
+      "par": "nuit-credits.py",
+      "raison": "delai depasse",
+      "systeme": "mame0278",
+      "vu_le": "2026-09-28"
+    },
+    "gijoea": {
+      "core": "MAME",
+      "essais": 3,
+      "jeu": "gijoea",
+      "par": "nuit-credits.py",
+      "raison": "delai depasse",
+      "systeme": "mame0278",
+      "vu_le": "2026-09-28"
+    },
+    "gng": {
+      "core": "MAME",
+      "essais": 3,
+      "jeu": "gng",
+      "par": "nuit-credits.py",
+      "raison": "delai depasse",
+      "systeme": "mame0278",
+      "vu_le": "2026-09-28"
+    },
+    "gnga": {
+      "core": "MAME",
+      "essais": 3,
+      "jeu": "gnga",
+      "par": "nuit-credits.py",
+      "raison": "delai depasse",
+      "systeme": "mame0278",
+      "vu_le": "2026-09-28"
+    },
+    "gngc": {
+      "core": "MAME",
+      "essais": 3,
+      "jeu": "gngc",
+      "par": "nuit-credits.py",
+      "raison": "delai depasse",
+      "systeme": "mame0278",
+      "vu_le": "2026-09-28"
+    },
+    "karnovj": {
+      "core": "MAME",
+      "essais": 3,
+      "jeu": "karnovj",
+      "par": "nuit-credits.py",
+      "raison": "delai depasse",
+      "systeme": "mame0278",
+      "vu_le": "2026-09-28"
+    },
+    "mario": {
+      "core": "MAME",
+      "essais": 3,
+      "jeu": "mario",
+      "par": "nuit-credits.py",
+      "raison": "delai depasse",
+      "systeme": "mame0278",
+      "vu_le": "2026-09-28"
+    },
+    "mx5000": {
+      "core": "MAME",
+      "essais": 3,
+      "jeu": "mx5000",
+      "par": "nuit-credits.py",
+      "raison": "delai depasse",
+      "systeme": "mame0278",
+      "vu_le": "2026-09-28"
+    },
+    "rdft2it": {
+      "core": "MAME",
+      "essais": 3,
+      "jeu": "rdft2it",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "mame0278",
+      "vu_le": "2026-09-28"
+    },
+    "rdft2ja": {
+      "core": "MAME",
+      "essais": 3,
+      "jeu": "rdft2ja",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "mame0278",
+      "vu_le": "2026-09-28"
+    },
+    "rdft2jb": {
+      "core": "MAME",
+      "essais": 3,
+      "jeu": "rdft2jb",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "mame0278",
+      "vu_le": "2026-09-28"
+    },
+    "rdft2jc": {
+      "core": "MAME",
+      "essais": 3,
+      "jeu": "rdft2jc",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "mame0278",
+      "vu_le": "2026-09-28"
+    },
+    "rdft2s": {
+      "core": "MAME",
+      "essais": 3,
+      "jeu": "rdft2s",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "mame0278",
+      "vu_le": "2026-09-28"
+    },
+    "rdftadi": {
+      "core": "MAME",
+      "essais": 3,
+      "jeu": "rdftadi",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "mame0278",
+      "vu_le": "2026-09-28"
+    },
+    "rdftam": {
+      "core": "MAME",
+      "essais": 3,
+      "jeu": "rdftam",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "mame0278",
+      "vu_le": "2026-09-28"
+    },
+    "rdftgb": {
+      "core": "MAME",
+      "essais": 3,
+      "jeu": "rdftgb",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "mame0278",
+      "vu_le": "2026-09-28"
+    },
+    "rdftgr": {
+      "core": "MAME",
+      "essais": 3,
+      "jeu": "rdftgr",
+      "par": "nuit-credits.py",
+      "raison": "candidats non confirmes",
+      "systeme": "mame0278",
+      "vu_le": "2026-09-28"
+    }
+  },
+  "format": "recalbox-arcade-credits (un fichier par systeme, pour la borne)",
+  "jeux": {},
+  "systeme": "mame0278",
+  "version": 3
+}

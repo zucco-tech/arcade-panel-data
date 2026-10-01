@@ -1,15 +1,9 @@
 {
   "description": "Adresse RAM du compteur de credits de chaque jeu de ce systeme, indexee par nom de set. Se lit par l'interface reseau de RetroArch : READ_CORE_RAM <adresse> 1 en UDP sur le port 55355.",
   "difficiles": {
-    "005": {
-      "core": "MAME",
-      "jeu": "005",
-      "le": "2026-09-12",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
     "100lions": {
       "core": "MAME",
+      "essais": 3,
       "jeu": "100lions",
       "le": "2026-09-12",
       "raison": "delai depasse",
@@ -17,6 +11,7 @@
     },
     "100lionsa": {
       "core": "MAME",
+      "essais": 3,
       "jeu": "100lionsa",
       "le": "2026-09-12",
       "raison": "delai depasse",
@@ -24,6 +19,7 @@
     },
     "11beat": {
       "core": "MAME",
+      "essais": 3,
       "jeu": "11beat",
       "le": "2026-09-12",
       "raison": "delai depasse",
@@ -31,6 +27,7 @@
     },
     "15lions": {
       "core": "MAME",
+      "essais": 3,
       "jeu": "15lions",
       "le": "2026-09-12",
       "raison": "delai depasse",
@@ -38,16 +35,17 @@
     },
     "19in1": {
       "core": "MAME",
+      "essais": 3,
       "jeu": "19in1",
       "le": "2026-09-12",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "1on1gov": {
-      "core": "MAME",
+      "essais": 3,
       "jeu": "1on1gov",
-      "le": "2026-09-12",
-      "raison": "candidats non confirmes",
+      "le": "2026-09-28",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "22vp931": {
@@ -66,6 +64,7 @@
     },
     "39in1": {
       "core": "MAME",
+      "essais": 3,
       "jeu": "39in1",
       "le": "2026-09-12",
       "raison": "delai depasse",
@@ -129,6 +128,7 @@
     },
     "3wondersbi": {
       "core": "MAME",
+      "essais": 3,
       "jeu": "3wondersbi",
       "le": "2026-09-12",
       "raison": "candidats non confirmes",
@@ -143,6 +143,7 @@
     },
     "48in1": {
       "core": "MAME",
+      "essais": 3,
       "jeu": "48in1",
       "le": "2026-09-12",
       "raison": "delai depasse",
@@ -150,6 +151,7 @@
     },
     "48in1a": {
       "core": "MAME",
+      "essais": 3,
       "jeu": "48in1a",
       "le": "2026-09-12",
       "raison": "delai depasse",
@@ -157,6 +159,7 @@
     },
     "48in1b": {
       "core": "MAME",
+      "essais": 3,
       "jeu": "48in1b",
       "le": "2026-09-12",
       "raison": "delai depasse",
@@ -164,6 +167,7 @@
     },
     "48in1c": {
       "core": "MAME",
+      "essais": 3,
       "jeu": "48in1c",
       "le": "2026-09-12",
       "raison": "delai depasse",
@@ -185,6 +189,7 @@
     },
     "4in1a": {
       "core": "MAME",
+      "essais": 3,
       "jeu": "4in1a",
       "le": "2026-09-12",
       "raison": "delai depasse",
@@ -192,6 +197,7 @@
     },
     "4in1b": {
       "core": "MAME",
+      "essais": 3,
       "jeu": "4in1b",
       "le": "2026-09-12",
       "raison": "delai depasse",
@@ -213,6 +219,7 @@
     },
     "500gp": {
       "core": "MAME",
+      "essais": 3,
       "jeu": "500gp",
       "le": "2026-09-12",
       "raison": "delai depasse",
@@ -220,6 +227,7 @@
     },
     "50lionrr": {
       "core": "MAME",
+      "essais": 3,
       "jeu": "50lionrr",
       "le": "2026-09-12",
       "raison": "delai depasse",
@@ -227,6 +235,7 @@
     },
     "50lions": {
       "core": "MAME",
+      "essais": 3,
       "jeu": "50lions",
       "le": "2026-09-12",
       "raison": "delai depasse",
@@ -234,6 +243,7 @@
     },
     "50lionsa": {
       "core": "MAME",
+      "essais": 3,
       "jeu": "50lionsa",
       "le": "2026-09-12",
       "raison": "delai depasse",
@@ -262,6 +272,7 @@
     },
     "5drag": {
       "core": "MAME",
+      "essais": 3,
       "jeu": "5drag",
       "le": "2026-09-12",
       "raison": "delai depasse",
@@ -269,6 +280,7 @@
     },
     "5draga": {
       "core": "MAME",
+      "essais": 3,
       "jeu": "5draga",
       "le": "2026-09-12",
       "raison": "delai depasse",
@@ -276,15 +288,10 @@
     },
     "5dragce": {
       "core": "MAME",
+      "essais": 3,
       "jeu": "5dragce",
       "le": "2026-09-12",
       "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "8bpm": {
-      "jeu": "8bpm",
-      "le": "2026-09-26",
-      "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "abcop": {
@@ -312,6 +319,7 @@
       "systeme": "mame"
     },
     "aburner": {
+      "essais": 3,
       "jeu": "aburner",
       "le": "2026-09-26",
       "raison": "delai depasse",
@@ -331,6 +339,7 @@
     },
     "airlbios": {
       "core": "MAME",
+      "essais": 3,
       "jeu": "airlbios",
       "le": "2026-09-12",
       "raison": "delai depasse",
@@ -355,12 +364,14 @@
       "systeme": "mame"
     },
     "alienfnt": {
+      "essais": 3,
       "jeu": "alienfnt",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "alienfnta": {
+      "essais": 3,
       "jeu": "alienfnta",
       "le": "2026-09-27",
       "raison": "delai depasse",
@@ -379,24 +390,28 @@
       "systeme": "mame"
     },
     "alpilot": {
+      "essais": 3,
       "jeu": "alpilot",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "alpilotj": {
+      "essais": 3,
       "jeu": "alpilotj",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "anpanman2": {
+      "essais": 3,
       "jeu": "anpanman2",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "anpanman2a": {
+      "essais": 3,
       "jeu": "anpanman2a",
       "le": "2026-09-27",
       "raison": "jeu inanime",
@@ -421,20 +436,9 @@
       "systeme": "mame"
     },
     "archrivl": {
+      "essais": 3,
       "jeu": "archrivl",
-      "le": "2026-09-26",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "archrivla": {
-      "jeu": "archrivla",
-      "le": "2026-09-26",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "archrivlb": {
-      "jeu": "archrivlb",
-      "le": "2026-09-26",
+      "le": "2026-09-28",
       "raison": "delai depasse",
       "systeme": "mame"
     },
@@ -457,31 +461,36 @@
       "systeme": "mame"
     },
     "arkatour2": {
+      "essais": 3,
       "jeu": "arkatour2",
       "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "arlingtn": {
+      "essais": 3,
       "jeu": "arlingtn",
       "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "arlingtna": {
+      "essais": 3,
       "jeu": "arlingtna",
       "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "avspirit": {
+      "essais": 3,
       "jeu": "avspirit",
-      "le": "2026-09-26",
+      "le": "2026-09-28",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "awbios": {
       "core": "MAME",
+      "essais": 3,
       "jeu": "awbios",
       "le": "2026-09-12",
       "raison": "delai depasse",
@@ -500,114 +509,112 @@
       "systeme": "mame"
     },
     "backfirt": {
+      "essais": 3,
       "jeu": "backfirt",
-      "le": "2026-09-26",
+      "le": "2026-09-28",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "batlball": {
+      "essais": 3,
       "jeu": "batlball",
-      "le": "2026-09-26",
+      "le": "2026-09-28",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "batlballa": {
+      "essais": 3,
       "jeu": "batlballa",
-      "le": "2026-09-26",
+      "le": "2026-09-28",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "batlballe": {
+      "essais": 3,
       "jeu": "batlballe",
       "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "batlballo": {
+      "essais": 3,
       "jeu": "batlballo",
       "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "batlballpt": {
+      "essais": 3,
       "jeu": "batlballpt",
       "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "batlballu": {
+      "essais": 3,
       "jeu": "batlballu",
-      "le": "2026-09-26",
+      "le": "2026-09-28",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "beachspi": {
+      "essais": 3,
       "jeu": "beachspi",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "biomtoy": {
+      "essais": 3,
       "jeu": "biomtoy",
       "le": "2026-09-26",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "biomtoya": {
+      "essais": 3,
       "jeu": "biomtoya",
       "le": "2026-09-26",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "biomtoyb": {
+      "essais": 3,
       "jeu": "biomtoyb",
       "le": "2026-09-26",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "biomtoyc": {
+      "essais": 3,
       "jeu": "biomtoyc",
       "le": "2026-09-26",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "bioplayc": {
+      "essais": 3,
       "jeu": "bioplayc",
       "le": "2026-09-26",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "blazeon": {
+      "essais": 3,
       "jeu": "blazeon",
-      "le": "2026-09-26",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "bloodbrom": {
-      "jeu": "bloodbrom",
-      "le": "2026-09-26",
+      "le": "2026-09-28",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "bloodstm": {
+      "essais": 3,
       "jeu": "bloodstm",
-      "le": "2026-09-26",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "bloodstm220": {
-      "jeu": "bloodstm220",
-      "le": "2026-09-26",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "bloodstm221": {
-      "jeu": "bloodstm221",
-      "le": "2026-09-26",
+      "le": "2026-09-28",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "bounty2": {
+      "essais": 3,
       "jeu": "bounty2",
       "le": "2026-09-26",
       "raison": "jeu inanime",
@@ -626,12 +633,14 @@
       "systeme": "mame"
     },
     "bubsys": {
+      "essais": 3,
       "jeu": "bubsys",
       "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "candy": {
+      "essais": 3,
       "jeu": "candy",
       "le": "2026-09-26",
       "raison": "jeu inanime",
@@ -643,151 +652,106 @@
       "raison": "pas de monnayeur declare",
       "systeme": "mame"
     },
-    "ccastles": {
-      "jeu": "ccastles",
-      "le": "2026-09-26",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "ccastles1": {
-      "jeu": "ccastles1",
-      "le": "2026-09-26",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "ccastles2": {
-      "jeu": "ccastles2",
-      "le": "2026-09-26",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "ccastles3": {
-      "jeu": "ccastles3",
-      "le": "2026-09-26",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "ccastlesf": {
-      "jeu": "ccastlesf",
-      "le": "2026-09-26",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "ccastlesg": {
-      "jeu": "ccastlesg",
-      "le": "2026-09-26",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "ccastlesj": {
-      "jeu": "ccastlesj",
-      "le": "2026-09-26",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "ccastlesp": {
-      "jeu": "ccastlesp",
-      "le": "2026-09-26",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
     "claychal": {
+      "essais": 3,
       "jeu": "claychal",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "clubk2k3": {
+      "essais": 3,
       "jeu": "clubk2k3",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "clubk2kp": {
+      "essais": 3,
       "jeu": "clubk2kp",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "clubk2kpa": {
+      "essais": 3,
       "jeu": "clubk2kpa",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "clubkcyc": {
+      "essais": 3,
       "jeu": "clubkcyc",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "clubkprz": {
+      "essais": 3,
       "jeu": "clubkprz",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "clubkpzb": {
+      "essais": 3,
       "jeu": "clubkpzb",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "clubkpzbp": {
+      "essais": 3,
       "jeu": "clubkpzbp",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "clubkrt": {
+      "essais": 3,
       "jeu": "clubkrt",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "clubkrta": {
+      "essais": 3,
       "jeu": "clubkrta",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "clubkrtc": {
+      "essais": 3,
       "jeu": "clubkrtc",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "clubkrto": {
+      "essais": 3,
       "jeu": "clubkrto",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
-    "contcirc": {
-      "jeu": "contcirc",
-      "le": "2026-09-26",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "contcircu": {
-      "jeu": "contcircu",
-      "le": "2026-09-26",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
     "countrun": {
+      "essais": 3,
       "jeu": "countrun",
-      "le": "2026-09-26",
+      "le": "2026-09-28",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "curvebal": {
+      "essais": 3,
       "jeu": "curvebal",
       "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "cvs2": {
+      "essais": 3,
       "jeu": "cvs2",
       "le": "2026-09-27",
       "raison": "delai depasse",
@@ -812,36 +776,42 @@
       "systeme": "mame"
     },
     "dealer": {
+      "essais": 3,
       "jeu": "dealer",
       "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "decocass": {
+      "essais": 3,
       "jeu": "decocass",
       "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "derbyo2k": {
+      "essais": 3,
       "jeu": "derbyo2k",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "derbyoc": {
+      "essais": 3,
       "jeu": "derbyoc",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "derbyoc2": {
+      "essais": 3,
       "jeu": "derbyoc2",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "derbyocw": {
+      "essais": 3,
       "jeu": "derbyocw",
       "le": "2026-09-27",
       "raison": "delai depasse",
@@ -854,48 +824,56 @@
       "systeme": "mame"
     },
     "doa2": {
+      "essais": 3,
       "jeu": "doa2",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "doa2a": {
+      "essais": 3,
       "jeu": "doa2a",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "doa2m": {
+      "essais": 3,
       "jeu": "doa2m",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "downtown": {
+      "essais": 3,
       "jeu": "downtown",
       "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "downtown2": {
+      "essais": 3,
       "jeu": "downtown2",
       "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "downtownj": {
+      "essais": 3,
       "jeu": "downtownj",
       "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "downtownp": {
+      "essais": 3,
       "jeu": "downtownp",
       "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "dquizgo2": {
+      "essais": 3,
       "jeu": "dquizgo2",
       "le": "2026-09-26",
       "raison": "jeu inanime",
@@ -914,62 +892,72 @@
       "systeme": "mame"
     },
     "dragntr3": {
+      "essais": 3,
       "jeu": "dragntr3",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "drbyocwa": {
+      "essais": 3,
       "jeu": "drbyocwa",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "drbyocwb": {
+      "essais": 3,
       "jeu": "drbyocwb",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "drbyocwc": {
+      "essais": 3,
       "jeu": "drbyocwc",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "drbyocwt": {
+      "essais": 3,
       "jeu": "drbyocwt",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "dtfamily": {
+      "essais": 3,
       "jeu": "dtfamily",
       "le": "2026-09-26",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "dygolf": {
+      "essais": 3,
       "jeu": "dygolf",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "dynabomb": {
+      "essais": 3,
       "jeu": "dynabomb",
       "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "ejanhs": {
+      "essais": 3,
       "jeu": "ejanhs",
-      "le": "2026-09-26",
+      "le": "2026-09-28",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "emeraldaj": {
+      "essais": 3,
       "jeu": "emeraldaj",
-      "le": "2026-09-26",
+      "le": "2026-09-28",
       "raison": "delai depasse",
       "systeme": "mame"
     },
@@ -995,12 +983,6 @@
       "jeu": "exzisust",
       "le": "2026-09-21",
       "raison": "MAME n a rien rendu (machine refusee ?)",
-      "systeme": "mame"
-    },
-    "f1dream": {
-      "jeu": "f1dream",
-      "le": "2026-09-26",
-      "raison": "delai depasse",
       "systeme": "mame"
     },
     "f1en": {
@@ -1040,50 +1022,44 @@
       "systeme": "mame"
     },
     "f355": {
+      "essais": 3,
       "jeu": "f355",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "f355dlx": {
+      "essais": 3,
       "jeu": "f355dlx",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "f355p": {
+      "essais": 3,
       "jeu": "f355p",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "f355twin": {
+      "essais": 3,
       "jeu": "f355twin",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "f355twinp": {
+      "essais": 3,
       "jeu": "f355twinp",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "f355twn2": {
+      "essais": 3,
       "jeu": "f355twn2",
       "le": "2026-09-27",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "fenix": {
-      "jeu": "fenix",
-      "le": "2026-09-26",
-      "raison": "jeu inanime",
-      "systeme": "mame"
-    },
-    "finalap2j": {
-      "jeu": "finalap2j",
-      "le": "2026-09-26",
       "raison": "delai depasse",
       "systeme": "mame"
     },
@@ -1123,30 +1099,6 @@
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
-    "gijoea": {
-      "jeu": "gijoea",
-      "le": "2026-09-26",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "gng": {
-      "jeu": "gng",
-      "le": "2026-09-26",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "gnga": {
-      "jeu": "gnga",
-      "le": "2026-09-26",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "gngc": {
-      "jeu": "gngc",
-      "le": "2026-09-26",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
     "gprider": {
       "jeu": "gprider",
       "le": "2026-09-21",
@@ -1183,19 +1135,15 @@
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
-    "groundfx": {
-      "jeu": "groundfx",
-      "le": "2026-09-26",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
     "gundmct": {
+      "essais": 3,
       "jeu": "gundmct",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "hangon2": {
+      "essais": 3,
       "jeu": "hangon2",
       "le": "2026-09-26",
       "raison": "delai depasse",
@@ -1214,36 +1162,42 @@
       "systeme": "mame"
     },
     "hidctch2": {
+      "essais": 3,
       "jeu": "hidctch2",
       "le": "2026-09-26",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "hidctch2a": {
+      "essais": 3,
       "jeu": "hidctch2a",
       "le": "2026-09-26",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "hidctch3": {
+      "essais": 3,
       "jeu": "hidctch3",
       "le": "2026-09-26",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "hidnc2k": {
+      "essais": 3,
       "jeu": "hidnc2k",
       "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "hidnctch": {
+      "essais": 3,
       "jeu": "hidnctch",
       "le": "2026-09-26",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "hidnctcha": {
+      "essais": 3,
       "jeu": "hidnctcha",
       "le": "2026-09-26",
       "raison": "delai depasse",
@@ -1262,116 +1216,121 @@
       "systeme": "mame"
     },
     "hopper": {
+      "essais": 3,
       "jeu": "hopper",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "hstennis": {
+      "essais": 3,
       "jeu": "hstennis",
       "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "hstennis10": {
+      "essais": 3,
       "jeu": "hstennis10",
       "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
-    "hunchbkg": {
-      "jeu": "hunchbkg",
-      "le": "2026-09-26",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
     "illvelo": {
+      "essais": 3,
       "jeu": "illvelo",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "inidv3cy": {
+      "essais": 3,
       "jeu": "inidv3cy",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "initd": {
+      "essais": 3,
       "jeu": "initd",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "initdexp": {
+      "essais": 3,
       "jeu": "initdexp",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "initdv2e": {
+      "essais": 3,
       "jeu": "initdv2e",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "initdv2j": {
+      "essais": 3,
       "jeu": "initdv2j",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "initdv3e": {
+      "essais": 3,
       "jeu": "initdv3e",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "initdv3j": {
+      "essais": 3,
       "jeu": "initdv3j",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
-    "insector": {
-      "jeu": "insector",
-      "le": "2026-09-26",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
     "inunoos": {
+      "essais": 3,
       "jeu": "inunoos",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "ironfort": {
+      "essais": 3,
       "jeu": "ironfort",
       "le": "2026-09-26",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "ironfortc": {
+      "essais": 3,
       "jeu": "ironfortc",
       "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "isgsm": {
+      "essais": 3,
       "jeu": "isgsm",
       "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "jackrabts": {
+      "essais": 3,
       "jeu": "jackrabts",
       "le": "2026-09-26",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "jjparad2": {
+      "essais": 3,
       "jeu": "jjparad2",
-      "le": "2026-09-26",
+      "le": "2026-09-28",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -1388,12 +1347,14 @@
       "systeme": "mame"
     },
     "jmpbreak": {
+      "essais": 3,
       "jeu": "jmpbreak",
       "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "jmpbreaka": {
+      "essais": 3,
       "jeu": "jmpbreaka",
       "le": "2026-09-26",
       "raison": "jeu inanime",
@@ -1429,43 +1390,43 @@
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
-    "karnovj": {
-      "jeu": "karnovj",
-      "le": "2026-09-26",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
     "keyboard": {
+      "essais": 3,
       "jeu": "keyboard",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "kick4csh": {
+      "essais": 3,
       "jeu": "kick4csh",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "kingrt66": {
+      "essais": 3,
       "jeu": "kingrt66",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "kingrt66p": {
+      "essais": 3,
       "jeu": "kingrt66p",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "kofnw": {
+      "essais": 3,
       "jeu": "kofnw",
       "le": "2026-09-27",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "kofnwj": {
+      "essais": 3,
       "jeu": "kofnwj",
       "le": "2026-09-27",
       "raison": "candidats non confirmes",
@@ -1490,24 +1451,28 @@
       "systeme": "mame"
     },
     "kontest": {
+      "essais": 3,
       "jeu": "kontest",
       "le": "2026-09-26",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "landbrk": {
+      "essais": 3,
       "jeu": "landbrk",
       "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "landbrka": {
+      "essais": 3,
       "jeu": "landbrka",
       "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "landbrkb": {
+      "essais": 3,
       "jeu": "landbrkb",
       "le": "2026-09-26",
       "raison": "jeu inanime",
@@ -1526,14 +1491,16 @@
       "systeme": "mame"
     },
     "linkypip": {
+      "essais": 3,
       "jeu": "linkypip",
       "le": "2026-09-26",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "livequiz": {
+      "essais": 3,
       "jeu": "livequiz",
-      "le": "2026-09-26",
+      "le": "2026-09-28",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
@@ -1574,44 +1541,44 @@
       "systeme": "mame"
     },
     "luplup": {
+      "essais": 3,
       "jeu": "luplup",
       "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "luplup10": {
+      "essais": 3,
       "jeu": "luplup10",
       "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "luplup29": {
+      "essais": 3,
       "jeu": "luplup29",
       "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "luptype": {
+      "essais": 3,
       "jeu": "luptype",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "mamonoro": {
+      "essais": 3,
       "jeu": "mamonoro",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "manicpnc": {
+      "essais": 3,
       "jeu": "manicpnc",
       "le": "2026-09-27",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
-    "mario": {
-      "jeu": "mario",
-      "le": "2026-09-26",
       "raison": "delai depasse",
       "systeme": "mame"
     },
@@ -1622,44 +1589,51 @@
       "systeme": "mame"
     },
     "mazan": {
+      "essais": 3,
       "jeu": "mazan",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "mazanj": {
+      "essais": 3,
       "jeu": "mazanj",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "mazanu": {
+      "essais": 3,
       "jeu": "mazanu",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "mexico86": {
+      "essais": 3,
       "jeu": "mexico86",
-      "le": "2026-09-26",
+      "le": "2026-09-28",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "mgcrystl": {
+      "essais": 3,
       "jeu": "mgcrystl",
-      "le": "2026-09-26",
+      "le": "2026-09-28",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "mgcrystlj": {
+      "essais": 3,
       "jeu": "mgcrystlj",
-      "le": "2026-09-26",
+      "le": "2026-09-28",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "mgcrystlo": {
+      "essais": 3,
       "jeu": "mgcrystlo",
-      "le": "2026-09-26",
+      "le": "2026-09-28",
       "raison": "delai depasse",
       "systeme": "mame"
     },
@@ -1694,218 +1668,247 @@
       "systeme": "mame"
     },
     "mofflott": {
+      "essais": 3,
       "jeu": "mofflott",
-      "le": "2026-09-26",
+      "le": "2026-09-28",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "mrdig": {
+      "essais": 3,
       "jeu": "mrdig",
       "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "mushi2k62": {
+      "essais": 3,
       "jeu": "mushi2k62",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "mushik2e": {
+      "essais": 3,
       "jeu": "mushik2e",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "mushik2k": {
+      "essais": 3,
       "jeu": "mushik2k",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "mushik4e": {
+      "essais": 3,
       "jeu": "mushik4e",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "mushikc": {
+      "essais": 3,
       "jeu": "mushikc",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "mushike": {
+      "essais": 3,
       "jeu": "mushike",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "mushikeo": {
+      "essais": 3,
       "jeu": "mushikeo",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "mushikk": {
+      "essais": 3,
       "jeu": "mushikk",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
-    "mx5000": {
-      "jeu": "mx5000",
-      "le": "2026-09-26",
-      "raison": "delai depasse",
-      "systeme": "mame"
-    },
     "naomi": {
+      "essais": 3,
       "jeu": "naomi",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "naomi2": {
+      "essais": 3,
       "jeu": "naomi2",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "naomigd": {
+      "essais": 3,
       "jeu": "naomigd",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "nbahangt": {
+      "essais": 3,
       "jeu": "nbahangt",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "nbahangtl11": {
+      "essais": 3,
       "jeu": "nbahangtl11",
       "le": "2026-09-26",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "nbahangtl12": {
+      "essais": 3,
       "jeu": "nbahangtl12",
       "le": "2026-09-26",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "nbahangtm11": {
+      "essais": 3,
       "jeu": "nbahangtm11",
       "le": "2026-09-26",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "nbahangtm12": {
+      "essais": 3,
       "jeu": "nbahangtm12",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "nbahangtm13": {
+      "essais": 3,
       "jeu": "nbahangtm13",
       "le": "2026-09-26",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "nbamht": {
+      "essais": 3,
       "jeu": "nbamht",
       "le": "2026-09-26",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "nbamhtl10": {
+      "essais": 3,
       "jeu": "nbamhtl10",
       "le": "2026-09-26",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "nbamhtm10": {
+      "essais": 3,
       "jeu": "nbamhtm10",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "nbamhtp": {
+      "essais": 3,
       "jeu": "nbamhtp",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "ndcfboxa": {
+      "essais": 3,
       "jeu": "ndcfboxa",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "ngdup23a": {
+      "essais": 3,
       "jeu": "ngdup23a",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "ngdup23c": {
+      "essais": 3,
       "jeu": "ngdup23c",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "ngdup23e": {
+      "essais": 3,
       "jeu": "ngdup23e",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "nhidctch": {
+      "essais": 3,
       "jeu": "nhidctch",
       "le": "2026-09-26",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "ninjaslt": {
+      "essais": 3,
       "jeu": "ninjaslt",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "ninjaslta": {
+      "essais": 3,
       "jeu": "ninjaslta",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "ninjasltj": {
+      "essais": 3,
       "jeu": "ninjasltj",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "ninjasltu": {
+      "essais": 3,
       "jeu": "ninjasltu",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "oinori": {
+      "essais": 3,
       "jeu": "oinori",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "omegaf": {
+      "essais": 3,
       "jeu": "omegaf",
-      "le": "2026-09-26",
+      "le": "2026-09-28",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "omegafs": {
+      "essais": 3,
       "jeu": "omegafs",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "delai depasse",
       "systeme": "mame"
     },
@@ -1934,132 +1937,154 @@
       "systeme": "mame"
     },
     "pasha2": {
+      "essais": 3,
       "jeu": "pasha2",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "peekaboo": {
+      "essais": 3,
       "jeu": "peekaboo",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "peekaboou": {
+      "essais": 3,
       "jeu": "peekaboou",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "penfan": {
+      "essais": 3,
       "jeu": "penfan",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "penfana": {
+      "essais": 3,
       "jeu": "penfana",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "pkladies": {
+      "essais": 3,
       "jeu": "pkladies",
       "le": "2026-09-27",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "pkladiesl": {
+      "essais": 3,
       "jeu": "pkladiesl",
       "le": "2026-09-27",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "pkladiesla": {
+      "essais": 3,
       "jeu": "pkladiesla",
       "le": "2026-09-27",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "plgirls2": {
+      "essais": 3,
       "jeu": "plgirls2",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "poittoc": {
+      "essais": 3,
       "jeu": "poittoc",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "pokasuka": {
+      "essais": 3,
       "jeu": "pokasuka",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "pokrdice": {
+      "essais": 3,
       "jeu": "pokrdice",
       "le": "2026-09-27",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "poosho": {
+      "essais": 3,
       "jeu": "poosho",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "progear": {
+      "essais": 3,
       "jeu": "progear",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "pstone2b": {
+      "essais": 3,
       "jeu": "pstone2b",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "puzlbang": {
+      "essais": 3,
       "jeu": "puzlbang",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "puzlbanga": {
+      "essais": 3,
       "jeu": "puzlbanga",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "puzzlekg": {
+      "essais": 3,
       "jeu": "puzzlekg",
-      "le": "2026-09-27",
-      "raison": "delai depasse",
+      "le": "2026-09-28",
+      "raison": "jeu inanime",
       "systeme": "mame"
     },
     "puzznic": {
+      "essais": 3,
       "jeu": "puzznic",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "puzznicu": {
+      "essais": 3,
       "jeu": "puzznicu",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "raccoon": {
+      "essais": 3,
       "jeu": "raccoon",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "rackemup": {
+      "essais": 3,
       "jeu": "rackemup",
       "le": "2026-09-27",
       "raison": "candidats non confirmes",
@@ -2096,210 +2121,182 @@
       "systeme": "mame"
     },
     "rdft": {
+      "essais": 3,
       "jeu": "rdft",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "rdft2": {
+      "essais": 3,
       "jeu": "rdft2",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdft2a": {
+      "essais": 3,
       "jeu": "rdft2a",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdft2aa": {
+      "essais": 3,
       "jeu": "rdft2aa",
-      "le": "2026-09-27",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "rdft2it": {
-      "jeu": "rdft2it",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdft2j": {
+      "essais": 3,
       "jeu": "rdft2j",
-      "le": "2026-09-27",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "rdft2ja": {
-      "jeu": "rdft2ja",
-      "le": "2026-09-27",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "rdft2jb": {
-      "jeu": "rdft2jb",
-      "le": "2026-09-27",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "rdft2jc": {
-      "jeu": "rdft2jc",
-      "le": "2026-09-27",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "rdft2s": {
-      "jeu": "rdft2s",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdft2t": {
+      "essais": 3,
       "jeu": "rdft2t",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdft2u": {
+      "essais": 3,
       "jeu": "rdft2u",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdfta": {
+      "essais": 3,
       "jeu": "rdfta",
-      "le": "2026-09-27",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "rdftadi": {
-      "jeu": "rdftadi",
-      "le": "2026-09-27",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "rdftam": {
-      "jeu": "rdftam",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdftau": {
+      "essais": 3,
       "jeu": "rdftau",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "rdftauge": {
+      "essais": 3,
       "jeu": "rdftauge",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
-    "rdftgb": {
-      "jeu": "rdftgb",
-      "le": "2026-09-27",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "rdftgr": {
-      "jeu": "rdftgr",
-      "le": "2026-09-27",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
     "rdftit": {
+      "essais": 3,
       "jeu": "rdftit",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdftj": {
+      "essais": 3,
       "jeu": "rdftj",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdftja": {
+      "essais": 3,
       "jeu": "rdftja",
       "le": "2026-09-27",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "rdftjb": {
+      "essais": 3,
       "jeu": "rdftjb",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "rdftu": {
+      "essais": 3,
       "jeu": "rdftu",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "rdftua": {
+      "essais": 3,
       "jeu": "rdftua",
       "le": "2026-09-27",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "revenger": {
+      "essais": 3,
       "jeu": "revenger",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "revx": {
+      "essais": 3,
       "jeu": "revx",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "rfjet": {
+      "essais": 3,
       "jeu": "rfjet",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "rfjeta": {
+      "essais": 3,
       "jeu": "rfjeta",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "rfjetj": {
+      "essais": 3,
       "jeu": "rfjetj",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "rfjett": {
+      "essais": 3,
       "jeu": "rfjett",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "rfjetu": {
+      "essais": 3,
       "jeu": "rfjetu",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "rhytngk": {
+      "essais": 3,
       "jeu": "rhytngk",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "ringout": {
+      "essais": 3,
       "jeu": "ringout",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "ringouto": {
+      "essais": 3,
       "jeu": "ringouto",
       "le": "2026-09-27",
       "raison": "jeu inanime",
@@ -2390,8 +2387,9 @@
       "systeme": "mame"
     },
     "sailormn": {
+      "essais": 3,
       "jeu": "sailormn",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "delai depasse",
       "systeme": "mame"
     },
@@ -2414,25 +2412,22 @@
       "systeme": "mame"
     },
     "salmankt": {
+      "essais": 3,
       "jeu": "salmankt",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "sambap": {
+      "essais": 3,
       "jeu": "sambap",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "scorpionmc": {
+      "essais": 3,
       "jeu": "scorpionmc",
-      "le": "2026-09-27",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "screwloo": {
-      "jeu": "screwloo",
       "le": "2026-09-27",
       "raison": "candidats non confirmes",
       "systeme": "mame"
@@ -2456,189 +2451,213 @@
       "systeme": "mame"
     },
     "senkyu": {
+      "essais": 3,
       "jeu": "senkyu",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "senkyua": {
+      "essais": 3,
       "jeu": "senkyua",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "sf2stt": {
+      "essais": 3,
       "jeu": "sf2stt",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "sgdrvsim": {
+      "essais": 3,
       "jeu": "sgdrvsim",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "shadowwa": {
+      "essais": 3,
       "jeu": "shadowwa",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "shimpact": {
+      "essais": 3,
       "jeu": "shimpact",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "shootopl": {
+      "essais": 3,
       "jeu": "shootopl",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "shootpl": {
+      "essais": 3,
       "jeu": "shootpl",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "shootplm": {
+      "essais": 3,
       "jeu": "shootplm",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "shootplmp": {
+      "essais": 3,
       "jeu": "shootplmp",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "shors2k1": {
+      "essais": 3,
       "jeu": "shors2k1",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "shors2k2": {
+      "essais": 3,
       "jeu": "shors2k2",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "shors2k2l": {
+      "essais": 3,
       "jeu": "shors2k2l",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "shors2k2m": {
+      "essais": 3,
       "jeu": "shors2k2m",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "shors2k2s": {
+      "essais": 3,
       "jeu": "shors2k2s",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "shorse": {
+      "essais": 3,
       "jeu": "shorse",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "shorsel": {
+      "essais": 3,
       "jeu": "shorsel",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "shorsem": {
+      "essais": 3,
       "jeu": "shorsem",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "shorsep": {
+      "essais": 3,
       "jeu": "shorsep",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "shorsepb": {
+      "essais": 3,
       "jeu": "shorsepb",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "shorsepl": {
+      "essais": 3,
       "jeu": "shorsepl",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "shorsepm": {
+      "essais": 3,
       "jeu": "shorsepm",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "shorsepr": {
+      "essais": 3,
       "jeu": "shorsepr",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "shorseprl": {
+      "essais": 3,
       "jeu": "shorseprl",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "shorseprs": {
+      "essais": 3,
       "jeu": "shorseprs",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "shorseprvl": {
+      "essais": 3,
       "jeu": "shorseprvl",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "shorseprvr": {
+      "essais": 3,
       "jeu": "shorseprvr",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "shorseps": {
+      "essais": 3,
       "jeu": "shorseps",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "showdown4": {
+      "essais": 3,
       "jeu": "showdown4",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "sisv1": {
+      "essais": 3,
       "jeu": "sisv1",
       "le": "2026-09-27",
       "raison": "jeu inanime",
-      "systeme": "mame"
-    },
-    "sjryuko1": {
-      "jeu": "sjryuko1",
-      "le": "2026-09-27",
-      "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "skykiddx": {
@@ -2654,6 +2673,7 @@
       "systeme": "mame"
     },
     "sl2007": {
+      "essais": 3,
       "jeu": "sl2007",
       "le": "2026-09-27",
       "raison": "delai depasse",
@@ -2672,6 +2692,7 @@
       "systeme": "mame"
     },
     "smarinef": {
+      "essais": 3,
       "jeu": "smarinef",
       "le": "2026-09-27",
       "raison": "jeu inanime",
@@ -2780,6 +2801,7 @@
       "systeme": "mame"
     },
     "soulsurf": {
+      "essais": 3,
       "jeu": "soulsurf",
       "le": "2026-09-27",
       "raison": "jeu inanime",
@@ -2834,54 +2856,49 @@
       "systeme": "mame"
     },
     "sprtjam": {
+      "essais": 3,
       "jeu": "sprtjam",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
-    "spyhunt": {
-      "jeu": "spyhunt",
-      "le": "2026-09-27",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "spyhuntp": {
-      "jeu": "spyhuntp",
-      "le": "2026-09-27",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
     "sspirtfc": {
+      "essais": 3,
       "jeu": "sspirtfc",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "sstrkfgt": {
+      "essais": 3,
       "jeu": "sstrkfgt",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "sstrkfgta": {
+      "essais": 3,
       "jeu": "sstrkfgta",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "stadhr96j2": {
+      "essais": 3,
       "jeu": "stadhr96j2",
       "le": "2026-09-27",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "starforcb": {
+      "essais": 3,
       "jeu": "starforcb",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "stealsee": {
+      "essais": 3,
       "jeu": "stealsee",
       "le": "2026-09-27",
       "raison": "jeu inanime",
@@ -2912,12 +2929,14 @@
       "systeme": "mame"
     },
     "suchie3": {
+      "essais": 3,
       "jeu": "suchie3",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "suplup": {
+      "essais": 3,
       "jeu": "suplup",
       "le": "2026-09-27",
       "raison": "jeu inanime",
@@ -2941,61 +2960,50 @@
       "raison": "MAME n a rien rendu (machine refusee ?)",
       "systeme": "mame"
     },
-    "tdfever": {
-      "jeu": "tdfever",
-      "le": "2026-09-27",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "tdfever2": {
-      "jeu": "tdfever2",
-      "le": "2026-09-27",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
     "tdfever2b": {
+      "essais": 3,
       "jeu": "tdfever2b",
       "le": "2026-09-27",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
-    "tdfeverj": {
-      "jeu": "tdfeverj",
-      "le": "2026-09-27",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
     "tduno": {
+      "essais": 3,
       "jeu": "tduno",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "tduno2": {
+      "essais": 3,
       "jeu": "tduno2",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "teljan": {
+      "essais": 3,
       "jeu": "teljan",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "tetkiwam": {
+      "essais": 3,
       "jeu": "tetkiwam",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "thehustl": {
+      "essais": 3,
       "jeu": "thehustl",
       "le": "2026-09-27",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "thehustlj": {
+      "essais": 3,
       "jeu": "thehustlj",
       "le": "2026-09-27",
       "raison": "candidats non confirmes",
@@ -3020,24 +3028,28 @@
       "systeme": "mame"
     },
     "tokyobus": {
+      "essais": 3,
       "jeu": "tokyobus",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "totd": {
+      "essais": 3,
       "jeu": "totd",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "totdo": {
+      "essais": 3,
       "jeu": "totdo",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "toyland": {
+      "essais": 3,
       "jeu": "toyland",
       "le": "2026-09-27",
       "raison": "delai depasse",
@@ -3092,114 +3104,133 @@
       "systeme": "mame"
     },
     "valkyrie": {
+      "essais": 3,
       "jeu": "valkyrie",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "vf4": {
+      "essais": 3,
       "jeu": "vf4",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "vf4cart": {
+      "essais": 3,
       "jeu": "vf4cart",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "vf4evo": {
+      "essais": 3,
       "jeu": "vf4evo",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "vf4evoct": {
+      "essais": 3,
       "jeu": "vf4evoct",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "vf4tuned": {
+      "essais": 3,
       "jeu": "vf4tuned",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "vfurlong": {
+      "essais": 3,
       "jeu": "vfurlong",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "viprp1": {
+      "essais": 3,
       "jeu": "viprp1",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "viprp1h": {
+      "essais": 3,
       "jeu": "viprp1h",
       "le": "2026-09-27",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "viprp1hk": {
+      "essais": 3,
       "jeu": "viprp1hk",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "viprp1j": {
+      "essais": 3,
       "jeu": "viprp1j",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "viprp1k": {
+      "essais": 3,
       "jeu": "viprp1k",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "viprp1oj": {
+      "essais": 3,
       "jeu": "viprp1oj",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "viprp1ot": {
+      "essais": 3,
       "jeu": "viprp1ot",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "viprp1pt": {
+      "essais": 3,
       "jeu": "viprp1pt",
       "le": "2026-09-27",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "viprp1s": {
+      "essais": 3,
       "jeu": "viprp1s",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "viprp1t": {
+      "essais": 3,
       "jeu": "viprp1t",
       "le": "2026-09-27",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
     "viprp1u": {
+      "essais": 3,
       "jeu": "viprp1u",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "viprp1ua": {
+      "essais": 3,
       "jeu": "viprp1ua",
       "le": "2026-09-27",
       "raison": "jeu inanime",
@@ -3218,42 +3249,42 @@
       "systeme": "mame"
     },
     "vonot": {
+      "essais": 3,
       "jeu": "vonot",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
-    "vstetris": {
-      "jeu": "vstetris",
-      "le": "2026-09-27",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
     "vstrik3": {
+      "essais": 3,
       "jeu": "vstrik3",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "vstrik3c": {
+      "essais": 3,
       "jeu": "vstrik3c",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "vstrik3co": {
+      "essais": 3,
       "jeu": "vstrik3co",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "vtennisg": {
+      "essais": 3,
       "jeu": "vtennisg",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "wccf116": {
+      "essais": 3,
       "jeu": "wccf116",
       "le": "2026-09-27",
       "raison": "delai depasse",
@@ -3266,84 +3297,84 @@
       "systeme": "mame"
     },
     "wccf212e": {
+      "essais": 3,
       "jeu": "wccf212e",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "wccf234j": {
+      "essais": 3,
       "jeu": "wccf234j",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "wccf310j": {
+      "essais": 3,
       "jeu": "wccf310j",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "wccf322e": {
+      "essais": 3,
       "jeu": "wccf322e",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "wccf341j": {
+      "essais": 3,
       "jeu": "wccf341j",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "wccf400j": {
+      "essais": 3,
       "jeu": "wccf400j",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "wccf420e": {
+      "essais": 3,
       "jeu": "wccf420e",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
-    "wfortune": {
-      "jeu": "wfortune",
-      "le": "2026-09-27",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
-    "wfortunea": {
-      "jeu": "wfortunea",
-      "le": "2026-09-27",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
     "wivernwg": {
+      "essais": 3,
       "jeu": "wivernwg",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "wldkicks": {
+      "essais": 3,
       "jeu": "wldkicks",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "wldkicksj": {
+      "essais": 3,
       "jeu": "wldkicksj",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "wldkicksu": {
+      "essais": 3,
       "jeu": "wldkicksu",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "wldrider": {
+      "essais": 3,
       "jeu": "wldrider",
       "le": "2026-09-27",
       "raison": "jeu inanime",
@@ -3356,54 +3387,56 @@
       "systeme": "mame"
     },
     "worldadv": {
+      "essais": 3,
       "jeu": "worldadv",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "wrally2": {
+      "essais": 3,
       "jeu": "wrally2",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "wrally2a": {
+      "essais": 3,
       "jeu": "wrally2a",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "wyvernwg": {
+      "essais": 3,
       "jeu": "wyvernwg",
-      "le": "2026-09-27",
+      "le": "2026-09-28",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "wyvernwga": {
+      "essais": 3,
       "jeu": "wyvernwga",
       "le": "2026-09-27",
       "raison": "delai depasse",
       "systeme": "mame"
     },
     "xtrmhnt2": {
+      "essais": 3,
       "jeu": "xtrmhnt2",
       "le": "2026-09-27",
       "raison": "jeu inanime",
       "systeme": "mame"
     },
     "xtrmhunt": {
+      "essais": 3,
       "jeu": "xtrmhunt",
       "le": "2026-09-27",
       "raison": "candidats non confirmes",
       "systeme": "mame"
     },
-    "yesnoj": {
-      "jeu": "yesnoj",
-      "le": "2026-09-27",
-      "raison": "candidats non confirmes",
-      "systeme": "mame"
-    },
     "zunou": {
+      "essais": 3,
       "jeu": "zunou",
       "le": "2026-09-27",
       "raison": "delai depasse",
@@ -3412,6 +3445,36 @@
   },
   "format": "recalbox-arcade-credits (un fichier par systeme, pour la borne)",
   "jeux": {
+    "005": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 51211,
+        "adresse_hex": "0xC80B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": "Coin A=1 Coin/1 Credit Coin B=1 Coin/1 Credit",
+        "entree_piece": ":D7D6/Coin 1",
+        "entree_start": ":D5D4/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "octets": 1,
+        "pieces_observees": 6,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "005",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 20480,
+        "zone": "0xC800-0xCFFF"
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "005a": {
       "core": "MAME",
       "credits": {
@@ -6193,6 +6256,37 @@
       "releve": {
         "le": "2026-09-12",
         "methode": "lua dans mame"
+      },
+      "systeme": "mame"
+    },
+    "8bpm": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 7375,
+        "adresse_hex": "0x1CCF",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": null,
+        "entree_piece": ":IN0/Coin 1",
+        "entree_start": "?",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 18,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "8bpm",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 3416,
+        "zone": "0x1C00-0x1FEF"
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
     },
@@ -28151,6 +28245,254 @@
       },
       "systeme": "mame"
     },
+    "ccastles": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 151,
+        "adresse_hex": "0x0097",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": "Service Mode=Off",
+        "entree_piece": ":IN0/Coin 1",
+        "entree_start": "?",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 18,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "ccastles",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 70144,
+        "zone": "0x0000-0x7FFF"
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "ccastles1": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 155,
+        "adresse_hex": "0x009B",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": "Service Mode=Off",
+        "entree_piece": ":IN0/Coin 1",
+        "entree_start": "?",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 18,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "ccastles1",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 70144,
+        "zone": ":videoram"
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "ccastles2": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 150,
+        "adresse_hex": "0x0096",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": "Service Mode=Off",
+        "entree_piece": ":IN0/Coin 1",
+        "entree_start": "?",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 18,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "ccastles2",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 70144,
+        "zone": "0x0000-0x7FFF"
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "ccastles3": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 151,
+        "adresse_hex": "0x0097",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": "Service Mode=Off",
+        "entree_piece": ":IN0/Coin 1",
+        "entree_start": "?",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 18,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "ccastles3",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 70144,
+        "zone": "0x0000-0x7FFF"
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "ccastlesf": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 151,
+        "adresse_hex": "0x0097",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": "Service Mode=Off",
+        "entree_piece": ":IN0/Coin 1",
+        "entree_start": "?",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 18,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "ccastlesf",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 70144,
+        "zone": "0x0000-0x7FFF"
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "ccastlesg": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 151,
+        "adresse_hex": "0x0097",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": "Service Mode=Off",
+        "entree_piece": ":IN0/Coin 1",
+        "entree_start": "?",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 18,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "ccastlesg",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 70144,
+        "zone": ":videoram"
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "ccastlesj": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 151,
+        "adresse_hex": "0x0097",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": "Service Mode=Off",
+        "entree_piece": ":IN0/Coin 1",
+        "entree_start": "?",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 18,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "ccastlesj",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 70144,
+        "zone": ":videoram"
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "ccastlesp": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 151,
+        "adresse_hex": "0x0097",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": "Service Mode=Off",
+        "entree_piece": ":IN0/Coin 1",
+        "entree_start": "?",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 18,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "ccastlesp",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 70144,
+        "zone": ":videoram"
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "cdiscon1": {
       "core": "MAME",
       "credits": {
@@ -32531,6 +32873,37 @@
       },
       "systeme": "mame"
     },
+    "contcirc": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 1395,
+        "adresse_hex": "0x0573",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": "Service Mode=Off Coin A=1 Coin/1 Credit",
+        "entree_piece": ":IN0/Coin 1",
+        "entree_start": ":IN1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 7,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "contcirc",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 52736,
+        "zone": ":share1"
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "contcircj": {
       "core": "MAME",
       "credits": {
@@ -32557,6 +32930,37 @@
       "releve": {
         "le": "2026-09-13",
         "methode": "lua dans mame"
+      },
+      "systeme": "mame"
+    },
+    "contcircu": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 1395,
+        "adresse_hex": "0x0573",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": "Coin B=1 Coin/1 Credit Coin A=1 Coin/1 Credit Service Mode=Off",
+        "entree_piece": ":IN0/Coin 1",
+        "entree_start": ":IN1/1 Player Start",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 9,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "contcircu",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 52736,
+        "zone": ":share1"
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
     },
@@ -68537,6 +68941,37 @@
       },
       "systeme": "mame"
     },
+    "groundfx": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2097153,
+        "adresse_hex": "0x200001",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": null,
+        "entree_piece": ":SYSTEM/Coin 1",
+        "entree_start": "?",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 9,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "groundfx",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 492608,
+        "zone": "0x200000-0x21FFFF"
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "growl": {
       "core": "MAME",
       "credits": {
@@ -77384,6 +77819,37 @@
       },
       "systeme": "mame"
     },
+    "hunchbkg": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 7792,
+        "adresse_hex": "0x1E70",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": null,
+        "entree_piece": ":IN0/Coin 1",
+        "entree_start": "?",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 12,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "hunchbkg",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 2240,
+        "zone": "0x1C00-0x1FFF"
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "hunchbks": {
       "core": "MAME",
       "credits": {
@@ -79181,6 +79647,37 @@
       "releve": {
         "le": "2026-09-13",
         "methode": "lua dans mame"
+      },
+      "systeme": "mame"
+    },
+    "insector": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 274,
+        "adresse_hex": "0x0112",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": "Free Play=Off Coinage=1 Coin/1 Credit Service Mode=Off",
+        "entree_piece": ":IN1/Coin 1",
+        "entree_start": "?",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 18,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "insector",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 27040,
+        "zone": "0x0000-0x0FFF"
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
     },
@@ -140820,6 +141317,37 @@
       },
       "systeme": "mame"
     },
+    "screwloo": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 281,
+        "adresse_hex": "0x0119",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": "Coinage=1 Coin/1 Credit Free Play=Off Service Mode=Off",
+        "entree_piece": ":IN1/Coin 1",
+        "entree_start": "?",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 18,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "screwloo",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 26912,
+        "zone": ":nvram"
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "scudhamm": {
       "core": "MAME",
       "credits": {
@@ -150854,6 +151382,37 @@
       },
       "systeme": "mame"
     },
+    "sjryuko1": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 8416,
+        "adresse_hex": "0x20E0",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": "Coin B=1 Coin/1 Credit Coin A=1 Coin/1 Credit",
+        "entree_piece": ":SERVICE/Coin 1",
+        "entree_start": "?",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 10,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "sjryuko1",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 524288,
+        "zone": ":nvram"
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "skingame": {
       "core": "MAME",
       "credits": {
@@ -156423,6 +156982,37 @@
       },
       "systeme": "mame"
     },
+    "spyhunt": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 1071,
+        "adresse_hex": "0x042F",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": "Service Mode=Off",
+        "entree_piece": ":ssio:IP0/Coin 1",
+        "entree_start": "?",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 9,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "spyhunt",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 11392,
+        "zone": ":nvram"
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "spyhunt2": {
       "core": "MAME",
       "credits": {
@@ -156478,6 +157068,37 @@
       "releve": {
         "le": "2026-09-13",
         "methode": "lua dans mame"
+      },
+      "systeme": "mame"
+    },
+    "spyhuntp": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 62511,
+        "adresse_hex": "0xF42F",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": "Service Mode=Off",
+        "entree_piece": ":ssio:IP0/Coin 1",
+        "entree_start": "?",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 9,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "spyhuntp",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 11392,
+        "zone": "0xF000-0xF7FF"
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
     },
@@ -164975,6 +165596,99 @@
       "releve": {
         "le": "2026-09-13",
         "methode": "lua dans mame"
+      },
+      "systeme": "mame"
+    },
+    "tdfever": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 65114,
+        "adresse_hex": "0xFE5A",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": "Coin A=1 Coin/1 Credit",
+        "entree_piece": ":IN0/Coin 1",
+        "entree_start": ":IN2/P1 Button 1",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 12,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "tdfever",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 24576,
+        "zone": "0xF800-0xFFFF"
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "tdfever2": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 65114,
+        "adresse_hex": "0xFE5A",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": "Coin A=1 Coin/1 Credit",
+        "entree_piece": ":IN0/Coin 1",
+        "entree_start": ":IN2/P1 Button 2",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 12,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "tdfever2",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 24576,
+        "zone": "0xF800-0xFFFF"
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "tdfeverj": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 65114,
+        "adresse_hex": "0xFE5A",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": "Coin A=1 Coin/1 Credit",
+        "entree_piece": ":IN0/Coin 1",
+        "entree_start": ":IN2/P1 Button 2",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 12,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "tdfeverj",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 24576,
+        "zone": "0xF800-0xFFFF"
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
     },
@@ -181349,6 +182063,37 @@
       },
       "systeme": "mame"
     },
+    "vstetris": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 1328,
+        "adresse_hex": "0x0530",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": null,
+        "entree_piece": ":COINS1/Coin 1",
+        "entree_start": "?",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 9,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "vstetris",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 6144,
+        "zone": "0x0000-0x07FF"
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
     "vtenis2c": {
       "core": "MAME",
       "credits": {
@@ -184045,6 +184790,68 @@
       "releve": {
         "le": "2026-09-13",
         "methode": "lua dans mame"
+      },
+      "systeme": "mame"
+    },
+    "wfortune": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 8449,
+        "adresse_hex": "0x2101",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": null,
+        "entree_piece": ":60/Coin 1",
+        "entree_start": "?",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 18,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "wfortune",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 16384,
+        "zone": "0x2000-0x3FFF"
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "lua dans mame, acharne"
+      },
+      "systeme": "mame"
+    },
+    "wfortunea": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 8449,
+        "adresse_hex": "0x2101",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": null,
+        "entree_piece": ":60/Coin 1",
+        "entree_start": "?",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 18,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "wfortunea",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 16384,
+        "zone": "0x2000-0x3FFF"
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
     },
@@ -189470,6 +190277,37 @@
       "releve": {
         "le": "2026-09-13",
         "methode": "lua dans mame"
+      },
+      "systeme": "mame"
+    },
+    "yesnoj": {
+      "core": "MAME",
+      "credits": {
+        "adresse": 2099383,
+        "adresse_hex": "0x2008B7",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "dip_imposes": "Coinage=1 Coin/1 Credit",
+        "entree_piece": ":IN2/Coin 1",
+        "entree_start": "?",
+        "j2_verifie_consommation": false,
+        "miroirs": [],
+        "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement",
+        "octets": 1,
+        "pieces_observees": 9,
+        "verifie_consommation": false,
+        "verifie_insertion": true
+      },
+      "jeu": "yesnoj",
+      "ram": {
+        "commande": "lua mame",
+        "taille": 212992,
+        "zone": "0x200000-0x20FFFF"
+      },
+      "releve": {
+        "le": "2026-09-28",
+        "methode": "lua dans mame, acharne"
       },
       "systeme": "mame"
     },

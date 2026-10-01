@@ -1,50 +1,41 @@
 {
   "description": "Adresse RAM du compteur de credits de chaque jeu de ce systeme, indexee par nom de set. Se lit par l'interface reseau de RetroArch : READ_CORE_RAM <adresse> 1 en UDP sur le port 55355.",
   "difficiles": {
-    "clubk2k3": {
-      "core": "Flycast",
-      "essais": 3,
-      "jeu": "clubk2k3",
-      "par": "nuit-credits.py",
-      "raison": "jeu inanime",
-      "systeme": "naomi2",
-      "vu_le": "2026-09-27"
-    },
     "clubkrtc": {
       "core": "Flycast",
-      "essais": 3,
+      "essais": 96,
       "jeu": "clubkrtc",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomi2",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "kingrt66p": {
       "core": "Flycast",
-      "essais": 3,
+      "essais": 96,
       "jeu": "kingrt66p",
       "par": "nuit-credits.py",
       "raison": "candidats non confirmes",
       "systeme": "naomi2",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "naomi2": {
       "core": "Flycast",
-      "essais": 3,
+      "essais": 96,
       "jeu": "naomi2",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomi2",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     },
     "sgdrvsim": {
       "core": "Flycast",
-      "essais": 3,
+      "essais": 96,
       "jeu": "sgdrvsim",
       "par": "nuit-credits.py",
       "raison": "ne demarre pas",
       "systeme": "naomi2",
-      "vu_le": "2026-09-27"
+      "vu_le": "2026-09-28"
     }
   },
   "format": "recalbox-arcade-credits (un fichier par systeme, pour la borne)",
@@ -73,6 +64,38 @@
       },
       "releve": {
         "le": "2026-09-25",
+        "methode": "balayage nocturne",
+        "par": "nuit-credits.py"
+      },
+      "systeme": "naomi2"
+    },
+    "clubk2k3": {
+      "core": "Flycast",
+      "credits": {
+        "adresse": 5717436,
+        "adresse_hex": "0x573DBC",
+        "adresse_j2": null,
+        "adresse_j2_hex": null,
+        "compteur_commun": false,
+        "entree_piece": "select",
+        "j2_verifie_consommation": false,
+        "miroirs": [
+          "0x573DC4"
+        ],
+        "octets": 1,
+        "pieces_observees": 5,
+        "verifie_consommation": true,
+        "verifie_insertion": true
+      },
+      "jeu": "clubk2k3",
+      "nom": "clubk2k3",
+      "ram": {
+        "commande": "READ_CORE_RAM",
+        "hote": "recaldev",
+        "taille": 16777216
+      },
+      "releve": {
+        "le": "2026-09-28",
         "methode": "balayage nocturne",
         "par": "nuit-credits.py"
       },
