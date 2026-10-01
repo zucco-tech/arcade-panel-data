@@ -197,6 +197,13 @@ VERDICT_J2 = 2.0
 # Les valeurs d'origine ; recalbox.conf peut les changer : allinone.brightness,
 # allinone.blink.period, et allinone.game.idle pour INACTIVITE.
 PLEIN = 255                     # brightness au repos, valeur posee par le driver
+# Consoles : le logo de la machine et l intro passent avant l ecran-titre. On
+# attend donc un peu avant d inviter a appuyer, sinon START clignote sur le
+# logo Nintendo. Reglable sans toucher au code :
+#   allinone.console.start.delai = 0   invite tout de suite
+#   allinone.console.start.delai = 6   laisse passer les intros longues
+DELAI_CONSOLE = 3.0
+
 PERIODE = 0.5                   # demi-periode du clignotement
 
 
@@ -1375,6 +1382,12 @@ def main():
     # mais fidele a ce qu un joueur voit : il paie, le start l invite ; il
     # lance, tout s eteint.
     deduits = 0
+    # Consoles : il n y a pas de credit a compter, mais un jeu qui vient de se
+    # lancer attend qu on appuie — ecran-titre, « PRESS START ». Une vraie
+    # borne fait clignoter START dans ce cas, alors on le fait aussi, et on
+    # s arrete au premier appui. Aucune lecture de memoire, aucun cout.
+    attente_console = False
+    console_depuis = 0.0       # quand le jeu console a ete lance
     lance = False              # START a ete presse avec du credit : on joue
     systeme = ""               # celui du jeu en cours, des qu il est connu
     multi = False              # le jeu accepte au moins deux joueurs
@@ -1401,6 +1414,9 @@ def main():
                 codes, bouge = appuis(fd)
                 if en_jeu and (codes or bouge):
                     derniere_activite = maintenant
+                if attente_console and (codes or bouge):
+                    # Le joueur a repondu a l invitation : on rend le bouton.
+                    attente_console = False
                 j = 2 if pads[fd].endswith("P2") else 1
                 # La piece et le start de CE poste, d apres le mappage Recalbox.
                 piece_j = TABLE.code(j, "select") or CODE_PIECE
@@ -1443,7 +1459,12 @@ def main():
                 dernier_mtime = mtime
                 action = champ_etat("Action").lower()
                 if action in ("rungame", "rundemo"):
-                    en_jeu = champ_etat("SystemId").lower() in SYSTEMES
+                    systeme_lance = champ_etat("SystemId").lower()
+                    en_jeu = systeme_lance in SYSTEMES
+                    # Tout ce qui n est pas de l arcade : on invite a appuyer.
+                    attente_console = (bool(systeme_lance) and not en_jeu
+                                       and REGLAGES.get("allinone.console.start", True))
+                    console_depuis = maintenant
                     resolu, adresse, credits, lance = False, None, None, False
                     core, nom = "", None
                     deduits = 0
@@ -1452,6 +1473,7 @@ def main():
                     apprenti.oublier()
                 elif action in ("endgame", "enddemo", "stop", "shutdown", "reboot"):
                     en_jeu = False
+                    attente_console = False
                     resolu, adresse, credits, lance = False, None, None, False
                     for panneau in panneaux.values():
                         panneau.rendre()
@@ -1565,7 +1587,12 @@ def main():
                     > REGLAGES.get("allinone.game.idle", INACTIVITE)):
                 lance, p2_engage = False, False
 
-            if not en_jeu or credits is None or lance:
+            if attente_console and (maintenant - console_depuis
+                                    >= REGLAGES.get("allinone.console.start.delai",
+                                                    DELAI_CONSOLE)):
+                piece.repos()                # pas de monnayeur sur console
+                start.clignoter(maintenant)  # "appuie sur start"
+            elif not en_jeu or credits is None or lance:
                 piece.repos()                # hors jeu, ou en train de jouer :
                 start.repos()                # rien ne clignote
             elif credits == 0:
