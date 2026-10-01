@@ -45,6 +45,31 @@ INSISTANCE = tonumber(os.getenv("MAME_INSISTANCE")) or INSISTANCE
 ATTENTE_START = tonumber(os.getenv("MAME_ATTENTE_START")) or ATTENTE_START
 PIECES = tonumber(os.getenv("MAME_PIECES")) or PIECES
 
+-- MAME_PISTE : l adresse de credits d un jeu de la meme famille (une variante
+-- partage le programme de son parent). Elle ne remplace JAMAIS la preuve :
+-- mesure sur 4879 paires dont on connait les deux adresses, 1811 sont differentes,
+-- soit une sur trois. La piste sert a deux choses seulement :
+--   * trancher quand plusieurs octets descendent au START (on prend le sien) ;
+--   * conclure quand AUCUN ne descend, si l octet de la piste est bien monte
+--     a chaque piece — la fiche dit alors que la consommation n est pas prouvee.
+-- Sans MAME_PISTE, rien ne change.
+local PISTE = tonumber(os.getenv("MAME_PISTE") or "")
+
+-- La piste vient d une fiche, ou l adresse est ecrite ENTIERE (base de la zone
+-- comprise : 0xFFDF = 0xE000 + 0x1FDF). Mais la meme zone est parfois publiee
+-- avec une base a zero, et le meme octet s appelle alors 0x1FDF. Comparer les
+-- adresses entieres raterait donc le bon octet. On compare comme le fait
+-- candidats_piste dans nuit-credits.py : par les bits bas, le decalage d une
+-- zone etant toujours rond.
+local function est_la_piste(zone, adresse)
+    if not PISTE then return false end
+    if zone.debut + adresse == PISTE then return true end
+    for _, bits in ipairs({12, 13, 14, 15, 16, 17, 20}) do
+        if PISTE % (2 ^ bits) == adresse then return true end
+    end
+    return false
+end
+
 local TENUE_START = tonumber(os.getenv("MAME_TENUE_START"))
     or (ACHARNE and 0.5 or 0.1)                -- un START tenu une demi-seconde
 local ZONE_SECOURS_MAX = 64 * 1024             -- une zone de secours ne depasse pas ca
@@ -333,7 +358,8 @@ for _, entree_start in ipairs(demarrages) do
     for _, c in pairs(accords) do
         local vieux = avant_start[c.zone][c.adresse]
         local neuf = apres_start[c.zone][c.adresse]
-        if neuf < vieux and (candidat == nil or c.fois > candidat.fois) then
+        if neuf < vieux and (candidat == nil or c.fois > candidat.fois
+                             or est_la_piste(liste[c.zone], c.adresse)) then
             candidat = c
             preuve = {vieux = vieux, neuf = neuf}
         end
@@ -379,6 +405,18 @@ end
 -- total de pieces encaissees. La fiche porte la marque de ce qui n a pas
 -- ete prouve.
 local sans_preuve = false
+local par_piste = false
+-- L octet de la piste est-il monte a chaque piece ? Alors c est lui, meme si
+-- aucun START ne l a fait descendre : le jeu demarre autrement, mais la
+-- famille dit ou regarder. On l ecrit sans pretendre l avoir prouve.
+if meilleur == nil and PISTE then
+    for _, c in pairs(accords) do
+        if est_la_piste(liste[c.zone], c.adresse) and c.fois >= ACCORDS_MIN then
+            meilleur, sans_preuve, par_piste = c, true, true
+            break
+        end
+    end
+end
 if meilleur == nil and ACHARNE then
     local haut, fideles, seul = 0, 0, nil
     for _, c in pairs(accords) do if c.fois > haut then haut = c.fois end end
@@ -413,5 +451,6 @@ ecrire('{"jeu": ' .. texte(mach.system.name)
        .. ', "start": ' .. texte(nom_start or "?")
        .. ', "dip": ' .. texte(table.concat(dip_poses, " "))
        .. ', "consommation": ' .. (sans_preuve and "false" or "true")
+       .. (par_piste and ', "par_piste": true' or "")
        .. (sans_preuve and ', "note": "aucun START n a fait descendre ce compteur : c est peut-etre un total de pieces, ou un jeu qui demarre autrement"' or "")
        .. '}')
